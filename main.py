@@ -5,6 +5,9 @@ from urllib.request import urlopen
 import pickle
 from link_extractor import LinkExtractor
 from domain_utils import *
+import os
+import graph
+import page_rank
 
 # start = time.time()
 # start_crawling()
@@ -41,34 +44,47 @@ from domain_utils import *
 #     return text
 #
 # print(get_text_selectolax(response.read().decode("utf-8")))
-
 FOLDER = 'uic'
 HOMEPAGE = 'https://www.uic.edu/'
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
+PAGE_RANK_MAX_ITER = 20
 
-with open('code_from_url_dict.pickle', 'rb') as handle:
-    code_from_url = pickle.load(handle)
 
-with open(FOLDER+'/pages/'+'0') as page:
-    first = page.read()
+def preprocess_documents():
+    global link_extractor
+    web_graph = graph.OptimizedDirectedGraph()
 
-link_extractor = LinkExtractor(FOLDER, HOMEPAGE, DOMAIN_NAME)
-link_extractor.feed(first)
-links = link_extractor.page_links()
-count = 0
-print(len(links))
-print()
-for url in links:
-    if url in code_from_url:
-        count +=1
-        print(code_from_url[url])
-    else:
-        print(url)
-print()
-print(count)
+    with open('code_from_url_dict.pickle', 'rb') as handle:
+        code_from_url = pickle.load(handle)
 
-    # for filename in os.listdir(DOCS_PATH):
-    #     if not filename.startswith('.') and filename in os.listdir(GOLD_PATH):
-    #         doc_text = open(DOCS_PATH + filename).read()
+    for filename in os.listdir(FOLDER + '/pages/'):
+        with open(FOLDER + '/pages/' + filename) as f:
+            doc_text = f.read()
+        link_extractor = LinkExtractor(FOLDER, HOMEPAGE, DOMAIN_NAME)
+        link_extractor.feed(doc_text)
+        links = link_extractor.page_links()
+        # print('document number '+filename)
+        # print('total links: '+str(len(links)))
+        count = 0
+        web_graph.add_node(int(filename))
+        for url in links:
+            if url in code_from_url:
+                count += 1
+                web_graph.add_edge(int(filename), code_from_url[url])
+        # print('links in graph '+str(count))
+        # print(web_graph)
+    return web_graph
+
+
+web_g = preprocess_documents()
+print(web_g)
+p_ranker = page_rank.PageRank()
+ranks = p_ranker.page_rank(web_g, PAGE_RANK_MAX_ITER)
+
+print(ranks)
+
+web_g.get_pointing_to()
+
+
 
 
