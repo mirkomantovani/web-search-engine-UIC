@@ -33,6 +33,11 @@ class PageRank:
                 # print('page rank word '+str(i))
                 page_rank[i] = self.s(word_graph, i, p, last_page_rank)
             # normalization and updating steps
+            early_exit = True
             for i in page_rank:
+                if early_exit and last_page_rank[i] != page_rank[i]:
+                    early_exit = False
                 last_page_rank[i] = page_rank[i]
+            if early_exit:
+                return page_rank
         return page_rank

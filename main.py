@@ -69,10 +69,12 @@ def preprocess_documents():
         web_graph.add_node(int(filename))
         for url in links:
             if url in code_from_url:
+                # if code_from_url[url] == 6:
+                #     print(url)
+                #     exit()
                 count += 1
                 web_graph.add_edge(int(filename), code_from_url[url])
-        # print('links in graph '+str(count))
-        # print(web_graph)
+        # print('node '+filename+str(web_graph.get_pointing_to(int(filename))))
     return web_graph
 
 
@@ -83,8 +85,9 @@ ranks = p_ranker.page_rank(web_g, PAGE_RANK_MAX_ITER)
 
 print(ranks)
 
-web_g.get_pointing_to()
-
+import operator
+ranks = sorted(ranks.items(), key=operator.itemgetter(1))
+print(ranks)
 
 
 

@@ -104,6 +104,7 @@ class OptimizedDirectedGraph:
         return -1
 
     def add_inverted(self, pointed, pointing):
-        if pointed not in self.inverted:
-            self.inverted[pointed] = set()
-        self.inverted[pointed].add(pointing)
+        if pointed != pointing:
+            if pointed not in self.inverted:
+                self.inverted[pointed] = set()
+            self.inverted[pointed].add(pointing)
