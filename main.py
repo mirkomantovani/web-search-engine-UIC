@@ -8,6 +8,9 @@ from domain_utils import *
 import os
 import graph
 import page_rank
+import re
+import string
+from nltk.stem import PorterStemmer
 
 # start = time.time()
 # start_crawling()
@@ -28,57 +31,99 @@ import page_rank
 # link_extractor = LinkExtractor(Crawler.base_url, page_url, True, Crawler.domain_name)
 # link_extractor.feed(html_string)
 
-
-# def get_text_selectolax(html):
-#     tree = HTMLParser(html)
-#
-#     if tree.body is None:
-#         return None
-#
-#     for tag in tree.css('script'):
-#         tag.decompose()
-#     for tag in tree.css('style'):
-#         tag.decompose()
-#
-#     text = tree.body.text(separator='\n')
-#     return text
-#
-# print(get_text_selectolax(response.read().decode("utf-8")))
-FOLDER = 'uic'
-HOMEPAGE = 'https://www.uic.edu/'
-DOMAIN_NAME = get_domain_name(HOMEPAGE)
 PAGE_RANK_MAX_ITER = 20
 
 
-def preprocess_documents():
-    global link_extractor
-    web_graph = graph.OptimizedDirectedGraph()
+class CustomTokenizer:
 
-    with open('code_from_url_dict.pickle', 'rb') as handle:
-        code_from_url = pickle.load(handle)
+    def __init__(self, path_stopwords=None):
+        self.path_stopwords = path_stopwords
+        self.inverted_index = {}
+        self.FOLDER = 'uic'
+        self.HOMEPAGE = 'https://www.uic.edu/'
+        self.DOMAIN_NAME = get_domain_name(self.HOMEPAGE)
+        self.stemmer = PorterStemmer()
+        with open(self.path_stopwords, "r") as stop_file:
+            self.stop_words = stop_file.readlines()
 
-    for filename in os.listdir(FOLDER + '/pages/'):
-        with open(FOLDER + '/pages/' + filename) as f:
-            doc_text = f.read()
-        link_extractor = LinkExtractor(FOLDER, HOMEPAGE, DOMAIN_NAME)
-        link_extractor.feed(doc_text)
-        links = link_extractor.page_links()
-        # print('document number '+filename)
-        # print('total links: '+str(len(links)))
-        count = 0
-        web_graph.add_node(int(filename))
-        for url in links:
-            if url in code_from_url:
-                # if code_from_url[url] == 6:
-                #     print(url)
-                #     exit()
-                count += 1
-                web_graph.add_edge(int(filename), code_from_url[url])
-        # print('node '+filename+str(web_graph.get_pointing_to(int(filename))))
-    return web_graph
+    @staticmethod
+    def get_text_selectolax(html):
+        tree = HTMLParser(html)
+
+        if tree.body is None:
+            return None
+
+        for tag in tree.css('script'):
+            tag.decompose()
+        for tag in tree.css('style'):
+            tag.decompose()
+
+        text = tree.body.text(separator=' ')
+        return text
+
+    def process_page(self, code, doc_text):
+        doc_text = self.get_text_selectolax(doc_text)
+        tokens = self.tokenize(doc_text)
+        self.add_in_inverted_index(code, tokens)
+
+    def add_in_inverted_index(self, code, tokens):
+        for token in tokens:
+            self.inverted_index.setdefault(token, {})[code] = self.inverted_index.setdefault(token, {}).get(code, 0) + 1
+
+    def tokenize(self, doc_text):
+        tokens = doc_text.split()
+        tokens = [''.join(c for c in t if c not in string.punctuation) for t in tokens]
+        tokens = map(replace_digits, tokens)
+        # stemming needed before stop word elimination because some stop-words could be stemmed
+        # and become non-stop-words, i.e. "has" -> "ha", "anyone" -> "anyon"
+        tokens = [t for t in tokens if t not in self.stop_words]
+        # stop words elimination
+        tokens = map(self.stemmer.stem, tokens)
+        return tokens
+
+    def preprocess_documents(self):
+        global link_extractor
+        web_graph = graph.OptimizedDirectedGraph()
+
+        with open('code_from_url_dict.pickle', 'rb') as handle:
+            code_from_url = pickle.load(handle)
+
+        for filename in os.listdir(self.FOLDER + '/pages/'):
+            with open(self.FOLDER + '/pages/' + filename) as f:
+                doc_text = f.read()
+
+            self.process_page(int(filename), doc_text)
+
+            link_extractor = LinkExtractor(self.FOLDER, self.HOMEPAGE, self.DOMAIN_NAME)
+            link_extractor.feed(doc_text)
+            links = link_extractor.page_links()
+            # print('document number '+filename)
+            # print('total links: '+str(len(links)))
+            count = 0
+            web_graph.add_node(int(filename))
+            for url in links:
+                if url in code_from_url:
+                    # if code_from_url[url] == 6:
+                    #     print(url)
+                    #     exit()
+                    count += 1
+                    web_graph.add_edge(int(filename), code_from_url[url])
+            # print('node '+filename+str(web_graph.get_pointing_to(int(filename))))
+        return web_graph
 
 
-web_g = preprocess_documents()
+# removing digits and returning the word
+def replace_digits(st):
+    return re.sub('\d', '', st)
+
+
+# returns true if the word has less or equal 2 letters
+def lesseq_two_letters(word):
+    return len(word) <= 2
+
+
+tokenizer = CustomTokenizer()
+web_g = tokenizer.preprocess_documents()
 print(web_g)
 p_ranker = page_rank.PageRank()
 ranks = p_ranker.page_rank(web_g, PAGE_RANK_MAX_ITER)
