@@ -19,6 +19,10 @@ class LinkExtractor(HTMLParser):
             for (attribute, value) in attrs:
                 if attribute == 'href':
                     url = parse.urljoin(self.base_url, value)
+                    # Stripping query string in link
+                    url = url.split('?', maxsplit=1)[0]
+                    # Stripping trailing slashes
+                    url = url.rstrip('/')
                     if self.restrict_to_domain and self.is_in_domain(url):
                         self.links.add(url)
 

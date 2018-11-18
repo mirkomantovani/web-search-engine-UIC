@@ -3,6 +3,7 @@ from urllib.request import urlopen
 from link_extractor import LinkExtractor
 from domain_utils import *
 from crawling_utils import *
+import pickle
 
 
 class Crawler:
@@ -15,8 +16,10 @@ class Crawler:
     save_html_pages = True
     queue = set()
     crawled = set()
+    code_from_url = {}
 
     def __init__(self, folder, base_url, domain_name):
+        # print(Crawler.crawled)
         Crawler.folder = folder
         Crawler.base_url = base_url
         Crawler.domain_name = domain_name
@@ -30,6 +33,7 @@ class Crawler:
     @staticmethod
     def boot():
         create_domain_directory(Crawler.folder)
+        create_domain_directory(Crawler.pages_folder)
         create_data_files(Crawler.folder, Crawler.base_url)
         Crawler.queue = get_set_from_file(Crawler.queue_file)
         Crawler.crawled = get_set_from_file(Crawler.crawled_file)
@@ -37,6 +41,8 @@ class Crawler:
     # Updates user display, fills queue and updates files
     @staticmethod
     def crawl_page(thread_name, page_url):
+        # print(page_url)
+        # print(Crawler.crawled)
         if page_url not in Crawler.crawled:
             print(thread_name + ' now crawling ' + page_url)
             print('Queue ' + str(len(Crawler.queue)) + ' | Crawled  ' + str(len(Crawler.crawled)))
@@ -55,7 +61,15 @@ class Crawler:
                 html_bytes = response.read()
                 html_string = html_bytes.decode("utf-8")
                 if Crawler.save_html_pages:
-                    write_file(Crawler.pages_folder+str(len(Crawler.crawled)), html_string)
+                    code = len(Crawler.crawled)
+                    write_file(Crawler.pages_folder+str(code), html_string)
+                    Crawler.code_from_url[page_url] = code
+                    if code > 100:
+                        print('storing with pickle')
+                        with open('code_from_url_dict.pickle', 'wb') as handle:
+                            pickle.dump(Crawler.code_from_url, handle, protocol=pickle.HIGHEST_PROTOCOL)
+                            # with open('filename.pickle', 'rb') as handle:
+                            #     b = pickle.load(handle)
             link_extractor = LinkExtractor(Crawler.base_url, page_url, True, Crawler.domain_name)
             link_extractor.feed(html_string)
         except Exception as e:
@@ -69,8 +83,6 @@ class Crawler:
         for url in links:
             if (url in Crawler.queue) or (url in Crawler.crawled):
                 continue
-            # if Crawler.domain_name != get_domain_name(url):
-            #     continue
             Crawler.queue.add(url)
 
     @staticmethod

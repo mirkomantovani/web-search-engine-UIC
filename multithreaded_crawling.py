@@ -9,11 +9,11 @@ HOMEPAGE = 'https://www.uic.edu/'
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_PATH = FOLDER + '/queue.txt'
 CRAWLED_PATH = FOLDER + '/crawled.txt'
-THREAD_NUMBER = 6
+THREAD_NUMBER = 1
 # The queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming
 # when information must be exchanged safely between multiple threads.
 queue = Queue()
-counter = 10
+counter = 100
 Crawler(FOLDER, HOMEPAGE, DOMAIN_NAME)
 
 
@@ -34,8 +34,8 @@ def create_workers():
 def work():
     # global counter
     # while counter > 0:
+    #     counter = counter-1
     while True:
-        # counter = counter-1
         url = queue.get()
         Crawler.crawl_page(threading.current_thread().name, url)
         queue.task_done()
