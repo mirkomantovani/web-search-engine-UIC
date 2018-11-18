@@ -62,17 +62,20 @@ class CustomTokenizer:
         text = tree.body.text(separator=' ')
         return text
 
+    def get_inverted_index(self):
+        return self.inverted_index
+
     def process_page(self, code, doc_text):
         doc_text = self.get_text_selectolax(doc_text)
         tokens = self.tokenize(doc_text)
-        print(list(tokens))
+        # print(list(tokens))
         self.add_in_inverted_index(code, tokens)
-        exit()
+        # exit()
 
     def add_in_inverted_index(self, code, tokens):
         for token in tokens:
             self.inverted_index.setdefault(token, {})[code] = self.inverted_index.setdefault(token, {}).get(code, 0) + 1
-        print(self.inverted_index)
+        # print(self.inverted_index)
 
     def tokenize(self, doc_text):
         tokens = doc_text.split()
@@ -140,6 +143,8 @@ p_ranker = page_rank.PageRank()
 ranks = p_ranker.page_rank(web_g, PAGE_RANK_MAX_ITER)
 
 print(ranks)
+
+print(tokenizer.get_inverted_index())
 
 # import operator
 # ranks = sorted(ranks.items(), key=operator.itemgetter(1))
