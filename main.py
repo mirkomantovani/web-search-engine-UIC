@@ -36,7 +36,7 @@ PAGE_RANK_MAX_ITER = 20
 
 class CustomTokenizer:
 
-    def __init__(self, path_stopwords=None):
+    def __init__(self, path_stopwords='stopwords.txt'):
         self.path_stopwords = path_stopwords
         self.inverted_index = {}
         self.FOLDER = 'uic'
@@ -45,6 +45,7 @@ class CustomTokenizer:
         self.stemmer = PorterStemmer()
         with open(self.path_stopwords, "r") as stop_file:
             self.stop_words = stop_file.readlines()
+        self.stop_words = list(map(lambda x: x[:-1], self.stop_words))
 
     @staticmethod
     def get_text_selectolax(html):
@@ -64,21 +65,31 @@ class CustomTokenizer:
     def process_page(self, code, doc_text):
         doc_text = self.get_text_selectolax(doc_text)
         tokens = self.tokenize(doc_text)
+        print(list(tokens))
         self.add_in_inverted_index(code, tokens)
+        exit()
 
     def add_in_inverted_index(self, code, tokens):
         for token in tokens:
             self.inverted_index.setdefault(token, {})[code] = self.inverted_index.setdefault(token, {}).get(code, 0) + 1
+        print(self.inverted_index)
 
     def tokenize(self, doc_text):
         tokens = doc_text.split()
         tokens = [''.join(c for c in t if c not in string.punctuation) for t in tokens]
+        tokens = [t.lower() for t in tokens]
         tokens = map(replace_digits, tokens)
         # stemming needed before stop word elimination because some stop-words could be stemmed
         # and become non-stop-words, i.e. "has" -> "ha", "anyone" -> "anyon"
-        tokens = [t for t in tokens if t not in self.stop_words]
-        # stop words elimination
+        # print(list(tokens))
         tokens = map(self.stemmer.stem, tokens)
+        tokens = [t for t in tokens if not lesseq_two_letters(t)]
+        # stop words elimination
+        # print(len(list(tokens)))
+        # print(self.stop_words)
+        tokens = [t for t in tokens if t not in self.stop_words]
+        # print(len(tokens))
+        tokens = [t for t in tokens if t]
         return tokens
 
     def preprocess_documents(self):
@@ -130,9 +141,11 @@ ranks = p_ranker.page_rank(web_g, PAGE_RANK_MAX_ITER)
 
 print(ranks)
 
-import operator
-ranks = sorted(ranks.items(), key=operator.itemgetter(1))
-print(ranks)
+# import operator
+# ranks = sorted(ranks.items(), key=operator.itemgetter(1))
+# print(ranks)
+
+
 
 
 
