@@ -11,6 +11,7 @@ import page_rank
 import re
 import string
 from nltk.stem import PorterStemmer
+import math
 
 # start = time.time()
 # start_crawling()
@@ -31,8 +32,6 @@ from nltk.stem import PorterStemmer
 # link_extractor = LinkExtractor(Crawler.base_url, page_url, True, Crawler.domain_name)
 # link_extractor.feed(html_string)
 
-PAGE_RANK_MAX_ITER = 20
-
 
 class CustomTokenizer:
 
@@ -43,6 +42,8 @@ class CustomTokenizer:
         self.HOMEPAGE = 'https://www.uic.edu/'
         self.DOMAIN_NAME = get_domain_name(self.HOMEPAGE)
         self.stemmer = PorterStemmer()
+        # needed to compute doc length faster
+        self.docs_tokens = {}
         with open(self.path_stopwords, "r") as stop_file:
             self.stop_words = stop_file.readlines()
         self.stop_words = list(map(lambda x: x[:-1], self.stop_words))
@@ -65,10 +66,14 @@ class CustomTokenizer:
     def get_inverted_index(self):
         return self.inverted_index
 
+    def get_docs_tokens(self):
+        return self.docs_tokens
+
     def process_page(self, code, doc_text):
         doc_text = self.get_text_selectolax(doc_text)
         tokens = self.tokenize(doc_text)
         # print(list(tokens))
+        self.docs_tokens[code] = tokens
         self.add_in_inverted_index(code, tokens)
         # exit()
 
@@ -134,17 +139,6 @@ def replace_digits(st):
 # returns true if the word has less or equal 2 letters
 def lesseq_two_letters(word):
     return len(word) <= 2
-
-
-tokenizer = CustomTokenizer()
-web_g = tokenizer.preprocess_documents()
-print(web_g)
-p_ranker = page_rank.PageRank()
-ranks = p_ranker.page_rank(web_g, PAGE_RANK_MAX_ITER)
-
-print(ranks)
-
-print(tokenizer.get_inverted_index())
 
 # import operator
 # ranks = sorted(ranks.items(), key=operator.itemgetter(1))
