@@ -39,7 +39,7 @@ class CustomTokenizer:
         self.path_stopwords = path_stopwords
         self.inverted_index = {}
         self.FOLDER = 'uic'
-        self.HOMEPAGE = 'https://www.uic.edu/'
+        self.HOMEPAGE = 'https://www.cs.uic.edu/'
         self.DOMAIN_NAME = get_domain_name(self.HOMEPAGE)
         self.stemmer = PorterStemmer()
         # needed to compute doc length faster

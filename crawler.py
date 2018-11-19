@@ -17,6 +17,8 @@ class Crawler:
     queue = set()
     crawled = set()
     code_from_url = {}
+    url_from_code = {}
+    count_code = 0
 
     def __init__(self, folder, base_url, domain_name):
         # print(Crawler.crawled)
@@ -61,9 +63,12 @@ class Crawler:
                 html_bytes = response.read()
                 html_string = html_bytes.decode("utf-8")
                 if Crawler.save_html_pages:
-                    code = len(Crawler.crawled)
+                    # By running concurrent threads this creates multiple equal codes
+                    code = Crawler.count_code
+                    Crawler.count_code += 1
                     write_file(Crawler.pages_folder+str(code), html_string)
                     Crawler.code_from_url[page_url] = code
+                    Crawler.url_from_code[code] = page_url
                     if code > 100:
                         print('storing with pickle')
                         with open('code_from_url_dict.pickle', 'wb') as handle:

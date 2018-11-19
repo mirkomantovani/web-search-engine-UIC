@@ -23,7 +23,8 @@ class LinkExtractor(HTMLParser):
                     url = url.split('?', maxsplit=1)[0]
                     # Stripping trailing slashes
                     url = url.rstrip('/')
-                    if self.restrict_to_domain and self.is_in_domain(url):
+                    url = url.strip()
+                    if url and self.restrict_to_domain and self.is_in_domain(url):
                         self.links.add(url)
 
     def page_links(self):
