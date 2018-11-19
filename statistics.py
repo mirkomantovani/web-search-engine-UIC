@@ -3,10 +3,11 @@ from collections import Counter
 
 
 class TfidfRanker:
-    def __init__(self, inverted_index, n_pages, docs_tokens):
+    def __init__(self, inverted_index, n_pages, docs_tokens, use_cosine_sim=True):
         self.inverted_index = inverted_index
         self.n_pages = n_pages
         self.idf = self.compute_idf()
+        self.use_cosine_sim = use_cosine_sim
         self.doc_length = {}
         for code in range(self.n_pages):
             self.doc_length[code] = self.compute_doc_length(code, docs_tokens[code])
