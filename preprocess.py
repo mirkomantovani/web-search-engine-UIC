@@ -40,7 +40,7 @@ class CustomTokenizer:
         self.inverted_index = {}
         self.FOLDER = 'uic'
         self.n_pages = n_pages
-        self.HOMEPAGE = 'https://www.cs.uic.edu/'
+        self.HOMEPAGE = 'https://www.uic.edu/'
         self.DOMAIN_NAME = get_domain_name(self.HOMEPAGE)
         self.stemmer = PorterStemmer()
         # needed to compute doc length faster
@@ -72,6 +72,10 @@ class CustomTokenizer:
 
     def process_page(self, code, doc_text):
         doc_text = self.get_text_selectolax(doc_text)
+        # print(code)
+        if doc_text is None:
+            print(str(code)+' is none')
+            doc_text = 'none'
         tokens = self.tokenize(doc_text)
         # print(list(tokens))
         self.docs_tokens[code] = tokens
@@ -112,6 +116,11 @@ class CustomTokenizer:
         for filename in range(self.n_pages):
             with open(self.FOLDER + '/pages/' + str(filename)) as f:
                 doc_text = f.read()
+
+            if doc_text is None:
+                print('empty doc')
+                print(filename)
+                continue
 
             self.process_page(int(filename), doc_text)
 

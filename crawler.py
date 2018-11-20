@@ -22,6 +22,10 @@ class Crawler:
 
     def __init__(self, folder, base_url, domain_name):
         # print(Crawler.crawled)
+        with open('code_from_url_dict.pickle', 'rb') as handle:
+            Crawler.code_from_url = pickle.load(handle)
+        with open('url_from_code_dict.pickle', 'rb') as handle:
+            Crawler.url_from_code = pickle.load(handle)
         Crawler.folder = folder
         Crawler.base_url = base_url
         Crawler.domain_name = domain_name
@@ -34,6 +38,7 @@ class Crawler:
     # Creates directory and files for project on first run and starts the spider
     @staticmethod
     def boot():
+        Crawler.count_code = 6428
         create_domain_directory(Crawler.folder)
         create_domain_directory(Crawler.pages_folder)
         create_data_files(Crawler.folder, Crawler.base_url)
@@ -58,7 +63,7 @@ class Crawler:
     def gather_links_save_page(page_url):
         html_string = ''
         try:
-            response = urlopen(page_url)
+            response = urlopen(page_url, timeout=10)
             if 'text/html' in response.getheader('Content-Type'):
                 html_bytes = response.read()
                 html_string = html_bytes.decode("utf-8")
@@ -69,8 +74,8 @@ class Crawler:
                     write_file(Crawler.pages_folder+str(code), html_string)
                     Crawler.code_from_url[page_url] = code
                     Crawler.url_from_code[code] = page_url
-                    if code > 100:
-                        print('storing with pickle')
+                    if code % 100 == 0:
+                        print('storing with pickle: code_from_url and url_from_code')
                         with open('code_from_url_dict.pickle', 'wb') as handle:
                             pickle.dump(Crawler.code_from_url, handle, protocol=pickle.HIGHEST_PROTOCOL)
                         with open('url_from_code_dict.pickle', 'wb') as handle:

@@ -5,11 +5,11 @@ from domain_utils import *
 from crawling_utils import *
 
 FOLDER = 'uic'
-HOMEPAGE = 'https://www.uic.edu/'
+HOMEPAGE = 'https://www.cs.uic.edu/'
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_PATH = FOLDER + '/queue.txt'
 CRAWLED_PATH = FOLDER + '/crawled.txt'
-THREAD_NUMBER = 1
+THREAD_NUMBER = 20
 # The queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming
 # when information must be exchanged safely between multiple threads.
 queue = Queue()
