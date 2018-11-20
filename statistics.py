@@ -8,9 +8,13 @@ def rank_docs(similarities):
 
 
 class TfidfRanker:
-    def __init__(self, inverted_index, n_pages, docs_tokens, use_cosine_sim=True):
+
+    page_rank_multiplier = 10
+
+    def __init__(self, inverted_index, n_pages, docs_tokens, page_ranks, use_cosine_sim=True):
         self.inverted_index = inverted_index
         self.n_pages = n_pages
+        self.page_ranks = page_ranks
         self.idf = self.compute_idf()
         self.use_cosine_sim = use_cosine_sim
         self.doc_length = {}
@@ -66,5 +70,15 @@ class TfidfRanker:
             similarity[doc] = similarity[doc] / self.doc_length[doc] / self.query_length(query)
         return similarity
 
-    def retrieve_most_relevant(self, query_tokens):
-        return rank_docs(self.cosine_similarities(query_tokens))
+    def cosine_page_rank(self, query_tokens):
+        cosine_similarity = self.cosine_similarities(query_tokens)
+        cosine_page_rank_sim = {key: cosine_similarity[key]+self.page_ranks[key]*TfidfRanker.page_rank_multiplier
+                                for key in cosine_similarity}
+        return cosine_page_rank_sim
+
+    def retrieve_most_relevant(self, query_tokens, use_page_rank=False):
+        if use_page_rank:
+            return rank_docs(self.cosine_page_rank(query_tokens))
+        else:
+            return rank_docs(self.cosine_similarities(query_tokens))
+

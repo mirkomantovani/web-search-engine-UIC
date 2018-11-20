@@ -152,8 +152,8 @@ def lesseq_two_letters(word):
     return len(word) <= 2
 
 # import operator
-# ranks = sorted(ranks.items(), key=operator.itemgetter(1))
-# print(ranks)
+# page_ranks = sorted(page_ranks.items(), key=operator.itemgetter(1))
+# print(page_ranks)
 
 
 
