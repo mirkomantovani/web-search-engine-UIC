@@ -73,6 +73,8 @@ class Crawler:
                         print('storing with pickle')
                         with open('code_from_url_dict.pickle', 'wb') as handle:
                             pickle.dump(Crawler.code_from_url, handle, protocol=pickle.HIGHEST_PROTOCOL)
+                        with open('url_from_code_dict.pickle', 'wb') as handle:
+                            pickle.dump(Crawler.url_from_code, handle, protocol=pickle.HIGHEST_PROTOCOL)
                             # with open('filename.pickle', 'rb') as handle:
                             #     b = pickle.load(handle)
             link_extractor = LinkExtractor(Crawler.base_url, page_url, True, Crawler.domain_name)
@@ -89,6 +91,10 @@ class Crawler:
             if (url in Crawler.queue) or (url in Crawler.crawled):
                 continue
             Crawler.queue.add(url)
+
+    @staticmethod
+    def get_url_from_code():
+        return Crawler.url_from_code
 
     @staticmethod
     def update_files():

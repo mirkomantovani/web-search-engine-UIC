@@ -1,5 +1,10 @@
 import math
 from collections import Counter
+import operator
+
+
+def rank_docs(similarities):
+    return sorted(similarities.items(), key=operator.itemgetter(1), reverse=True)
 
 
 class TfidfRanker:
@@ -61,4 +66,5 @@ class TfidfRanker:
             similarity[doc] = similarity[doc] / self.doc_length[doc] / self.query_length(query)
         return similarity
 
-
+    def retrieve_most_relevant(self, query_tokens):
+        return rank_docs(self.cosine_similarities(query_tokens))
