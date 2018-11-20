@@ -35,10 +35,11 @@ import math
 
 class CustomTokenizer:
 
-    def __init__(self, path_stopwords='stopwords.txt'):
+    def __init__(self, n_pages=109, path_stopwords='stopwords.txt'):
         self.path_stopwords = path_stopwords
         self.inverted_index = {}
         self.FOLDER = 'uic'
+        self.n_pages = n_pages
         self.HOMEPAGE = 'https://www.cs.uic.edu/'
         self.DOMAIN_NAME = get_domain_name(self.HOMEPAGE)
         self.stemmer = PorterStemmer()
@@ -107,8 +108,9 @@ class CustomTokenizer:
         with open('code_from_url_dict.pickle', 'rb') as handle:
             code_from_url = pickle.load(handle)
 
-        for filename in os.listdir(self.FOLDER + '/pages/'):
-            with open(self.FOLDER + '/pages/' + filename) as f:
+        # for filename in os.listdir(self.FOLDER + '/pages/'):
+        for filename in range(self.n_pages):
+            with open(self.FOLDER + '/pages/' + str(filename)) as f:
                 doc_text = f.read()
 
             self.process_page(int(filename), doc_text)
