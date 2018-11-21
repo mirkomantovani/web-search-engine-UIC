@@ -9,19 +9,19 @@ class LinkExtractor(HTMLParser):
         super().__init__()
         self.base_url = base_url
         self.page_url = page_url
-        self.exclude = (".docx", ".doc",  ".avi", ".mp4", ".jpg", ".jpeg", ".png", ".gif", ".GIF", ".pdf",
-                        ".gz", ".rar", ".tar", ".tgz", ".zip", ".exe")
+        self.exclude = (".docx", ".doc",  ".avi", ".mp4", ".jpg", ".jpeg", ".png", ".gif", ".pdf",
+                        ".gz", ".rar", ".tar", ".tgz", ".zip", ".exe", ".js", ".css")
         self.restrict_to_domain = restrict_to_domain
         self.domain = domain
         self.links = set()
 
-    # When we call HTMLParser feed() this function is called when it encounters an opening tag <a>
+    # Callback function that handles the opening of a <a> tag while parsing the html
     def handle_starttag(self, tag, attrs):
         if tag == 'a':
             for (attribute, value) in attrs:
                 if attribute == 'href':
                     url = parse.urljoin(self.base_url, value)
-                    if not url.endswith(self.exclude):
+                    if not url.lower().endswith(self.exclude):
                         # Stripping query string in link
                         url = url.split('#')[0]
                         url = url.split('?', maxsplit=1)[0]
