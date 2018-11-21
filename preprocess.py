@@ -1,17 +1,11 @@
-from multithreaded_crawling import start_crawling
 from selectolax.parser import HTMLParser
-import time
-from urllib.request import urlopen
 import pickle
 from link_extractor import LinkExtractor
 from domain_utils import *
-import os
 import graph
-import page_rank
 import re
 import string
 from nltk.stem import PorterStemmer
-import math
 
 # start = time.time()
 # start_crawling()

@@ -21,7 +21,7 @@ class Crawler:
     count_code = 0
 
     def __init__(self, folder, base_url, domain_name):
-        # print(Crawler.crawled)
+        print(Crawler.crawled)
         with open('code_from_url_dict.pickle', 'rb') as handle:
             Crawler.code_from_url = pickle.load(handle)
         with open('url_from_code_dict.pickle', 'rb') as handle:
@@ -38,7 +38,7 @@ class Crawler:
     # Creates directory and files for project on first run and starts the spider
     @staticmethod
     def boot():
-        Crawler.count_code = 6428
+        Crawler.count_code = 6201
         create_domain_directory(Crawler.folder)
         create_domain_directory(Crawler.pages_folder)
         create_data_files(Crawler.folder, Crawler.base_url)

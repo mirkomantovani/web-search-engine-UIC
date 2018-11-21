@@ -11,15 +11,15 @@ class TfidfRanker:
 
     page_rank_multiplier = 10
 
-    def __init__(self, inverted_index, n_pages, docs_tokens, page_ranks, use_cosine_sim=True):
+    def __init__(self, inverted_index, n_pages, page_ranks, use_cosine_sim=True):
         self.inverted_index = inverted_index
         self.n_pages = n_pages
         self.page_ranks = page_ranks
         self.idf = self.compute_idf()
         self.use_cosine_sim = use_cosine_sim
         self.doc_length = {}
-        for code in range(self.n_pages):
-            self.doc_length[code] = self.compute_doc_length(code, docs_tokens[code])
+        # for code in range(self.n_pages):
+        #     self.doc_length[code] = self.compute_doc_length(code, docs_tokens[code])
 
     def tf_idf(self, word, doc):
         return self.inverted_index[word][doc] * self.idf[word]
@@ -43,6 +43,11 @@ class TfidfRanker:
                 for doc in self.inverted_index[word].keys():
                     similarity[doc] = similarity.get(doc, 0) + self.tf_idf(word, doc) * wq
         return similarity
+
+    def compute_lengths(self, docs_tokens):
+        for code in range(self.n_pages):
+            self.doc_length[code] = self.compute_doc_length(code, docs_tokens[code])
+        return self.doc_length
 
     def compute_doc_length(self, code, tokens):
         words_accounted_for = []

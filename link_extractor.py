@@ -10,7 +10,7 @@ class LinkExtractor(HTMLParser):
         self.base_url = base_url
         self.page_url = page_url
         self.exclude = (".docx", ".doc",  ".avi", ".mp4", ".jpg", ".jpeg", ".png", ".gif", ".pdf",
-                        ".gz", ".rar", ".tar", ".tgz", ".zip", ".exe", ".js", ".css")
+                        ".gz", ".rar", ".tar", ".tgz", ".zip", ".exe", ".js", ".css", ".ppt")
         self.restrict_to_domain = restrict_to_domain
         self.domain = domain
         self.links = set()
