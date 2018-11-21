@@ -13,7 +13,7 @@ def ask_query():
 
 
 def display_query_results(docs_list, url_from_code):
-    url_from_code = Crawler.get_url_from_code()
+    # url_from_code = Crawler.get_url_from_code()
     msg = "These are the results of your query:"
     title = "Query results"
     # print(url_from_code)

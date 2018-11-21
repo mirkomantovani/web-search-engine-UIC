@@ -9,7 +9,7 @@ def rank_docs(similarities):
 
 class TfidfRanker:
 
-    page_rank_multiplier = 10
+    page_rank_multiplier = 20
 
     def __init__(self, inverted_index, n_pages, page_ranks, docs_length={}, use_cosine_sim=True):
         self.inverted_index = inverted_index

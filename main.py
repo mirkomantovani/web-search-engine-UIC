@@ -36,7 +36,7 @@ def new_query():
         exit()
     print(query)
     print(tokenizer.tokenize(query))
-    choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), False)[:10],
+    choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), True)[:10],
                                        url_from_code)
     print(choice)
 
