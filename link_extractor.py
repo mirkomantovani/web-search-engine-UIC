@@ -20,6 +20,7 @@ class LinkExtractor(HTMLParser):
                 if attribute == 'href':
                     url = parse.urljoin(self.base_url, value)
                     # Stripping query string in link
+                    url = url.split('#')[0]
                     url = url.split('?', maxsplit=1)[0]
                     # Stripping trailing slashes
                     url = url.rstrip('/')
