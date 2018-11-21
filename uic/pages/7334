@@ -1,0 +1,1078 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - FormattedSearch</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/FormattedSearch?_T=2018-11-21" type="application/x-wiki" title="edit FormattedSearch" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/FormattedSearch"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+@import url('/pub/Main/WebPreferences/mainweb.css');
+@import url('/pub/TWiki/WebPreferences/hideattachments.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> 
+<h1><a name="TWiki_Formatted_Search"></a> TWiki Formatted Search </h1>
+<p />
+<em>Inline search feature allows flexible formatting of search result</em>
+<p />
+The default output format of a <code><a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">%SEARCH{...}%</a></code> is a table consisting of topic names and topic summaries. Use the <code>format="..."</code> parameter to customize the search result. The format parameter typically defines a bullet or a table row containing variables, such as <code>%SEARCH{ "food" format="| $topic | $summary |" }%</code>. See <code><a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">%SEARCH{...}%</a></code> for other search parameters, such as <code>separator=""</code>.
+<p />
+<div class="twikiToc"><span class="twikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Syntax"> Syntax</a> <ul>
+<li> <a href="#1_header_parameter"> 1. header="..." parameter</a>
+</li> <li> <a href="#2_format_parameter"> 2. format="..." parameter</a>
+</li> <li> <a href="#3_footer_parameter"> 3. footer="..." parameter</a>
+</li> <li> <a href="#4_default_parameter"> 4. default="..." parameter</a>
+</li></ul> 
+</li> <li> <a href="#Results_pagination"> Results pagination</a>
+</li> <li> <a href="#Evaluation_order_of_variables"> Evaluation order of variables</a>
+</li> <li> <a href="#Examples"> Examples</a> <ul>
+<li> <a href="#Bullet_list_showing_topic_name_a"> Bullet list showing topic name and summary</a>
+</li> <li> <a href="#Table_showing_form_field_values"> Table showing form field values of topics with a form</a>
+</li> <li> <a href="#Extract_some_text_from_a_topic_u"> Extract some text from a topic using regular expression</a>
+</li> <li> <a href="#Nested_Search"> Nested Search</a>
+</li> <li> <a href="#Most_recently_changed_pages"> Most recently changed pages</a>
+</li> <li> <a href="#Search_with_conditional_output"> Search with conditional output</a>
+</li> <li> <a href="#Restrict_search_based_on_a_date"> Restrict search based on a date range</a>
+</li> <li> <a href="#Embedding_search_forms_to_return"> Embedding search forms to return a formatted result</a>
+</li></ul> 
+</li></ul> 
+</div>
+<p />
+<h2><a name="Syntax"></a> Syntax </h2>
+<p />
+Three parameters can be used to customize a search result:
+<p />
+<h3><a name="1_header_parameter"></a> 1. <code>header="..."</code> parameter </h3>
+<p />
+Use the header parameter to specify the header of a search result. It should correspond to the format of the format parameter. This parameter is optional. <br /> Example: <code>header="| *Topic:* | *Summary:* |"</code>
+<p />
+Variables that can be used in the header string:
+<p />
+             <table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">     
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Expands To:</font></a> </th>
+		</tr>     
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$web</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Name of the web </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$n</code> or <code>$n()</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> New line. Use <code>$n()</code> if followed by alphanumeric character, e.g. write <code>Foo$n()Bar</code> instead of <code>Foo$nBar</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nop</code> or <code>$nop()</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Is a "no operation". This variable gets removed; useful for nested search </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$quot</code> or <code>\"</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Double quote (<code>"</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$aquot</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Apostrophe quote (<code>'</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$percnt</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Percent sign (<code>%</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$dollar</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Dollar sign (<code>$</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$lt</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Less than sign (<code>&lt;</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>$gt</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Greater than sign (<code>&gt;</code>) </td>
+		</tr>     </table>
+<p />
+<p />
+<h3><a name="2_format_parameter"></a> 2. <code>format="..."</code> parameter </h3>
+<p />
+Use the format parameter to specify the format of one search hit.
+<br /> Example: <code>format="| $topic | $summary |"</code>
+<p />
+Variables that can be used in the format string:
+<p />
+             <table cellspacing="0" id="table2" cellpadding="0" class="twikiTable" rules="all" border="1">     
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=0;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=1;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Expands To:</font></a> </th>
+		</tr>     
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$web</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Name of the web </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$topic</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Topic name </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$topic(<i>20</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Topic name, "<tt>- </tt>" hyphenated each 20 characters </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$topic(<i>30, -&lt;br /&gt;</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Topic name, hyphenated each 30 characters with separator "<tt>-&lt;br /&gt;</tt>" </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$topic(<i>40, ...</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Topic name, shortened to 40 characters with "<tt>...</tt>" indication </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$topictitle</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Topic title, in order of sequence defined by: Form field named "Title", topic preference setting named TITLE, topic name </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$parent</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Name of parent topic; empty if not set </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$parent(<i>20</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Name of parent topic, same hyphenation/shortening like <code>$topic()</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$text</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Formatted topic text. In case of a <code>multiple="on"</code> search, it is the line found for each search hit. </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$text(encode:<i>type</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Same as above, but encoded in the specified <em>type</em>. Possible types are the same as in <a href="/bin/view/TWiki/VarENCODE" class="twikiLink">ENCODE</a>. Though <code>ENCODE</code> can take the <code>extra</code> parameter, <code>$text(encode:<i>type</i>)</code> cannot. Example: <code>$text(encode:html)</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$locked</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> LOCKED flag (if any) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$date</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Time stamp of last topic update, e.g. <code>2018-11-21 - 18:59</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$isodate</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Time stamp of last topic update, e.g. <code>2018-11-21T18:59Z</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$rev</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Number of last topic revision, e.g. <code>4</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$username</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Login name of last topic update, e.g. <code>jsmith</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$wikiname</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Wiki user name of last topic update, e.g. <code>JohnSmith</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$wikiusername</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Wiki user name of last topic update, like <code>Main.JohnSmith</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$createdate</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Time stamp of topic revision 1 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$createusername</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Login name of topic revision 1, e.g. <code>jsmith</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$createwikiname</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Wiki user name of topic revision 1, e.g. <code>JohnSmith</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$createwikiusername</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Wiki user name of topic revision 1, e.g. <code>Main.JohnSmith</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$summary</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Topic summary, just the plain text, all TWiki variables, formatting and line breaks removed; up to 162 characters </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$summary(<i>50</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Topic summary, up to 50 characters shown </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$summary(showvarnames)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Topic summary, with <code>%ALLTWIKI{...}%</code> variables shown as <code>ALLTWIKI{...}</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$summary(expandvar)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Topic summary, with <code>%ALLTWIKI{...}%</code> variables expanded </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$summary(noheader)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Topic summary, with leading <code>---+ headers</code> removed<br />  <strong><em>Note:</em></strong> The tokens can be combined, for example <code>$summary(100, showvarnames, noheader)</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$changes</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Summary of changes between latest rev and previous rev </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$changes(<i>n</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Summary of changes between latest rev and rev n </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$formname</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> The name of the form attached to the topic; empty if none </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$formfield(<i>name</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> The field value of a form field; for example, <code>$formfield(TopicClassification)</code> would get expanded to <code>PublicFAQ</code>. This applies only to topics that have a <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWikiForm</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$formfield(<i>name</i>, encode:<i>type</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Form field value, encoded in the specified <em>type</em>. Possible types are the same as in <a href="/bin/view/TWiki/VarENCODE" class="twikiLink">ENCODE</a>: <code>quote</code>, <code>moderate</code>, <code>safe</code>, <code>entity</code>, <code>html</code>, <code>url</code> and <code>csv</code>. The <code>encode:<i>type</i></code> parameter can be combined with other parameters described below, but it needs to be the last parameter. Example: <code>$formfield(Description, 20, encode:html)</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$formfield(<i>name, 10</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Form field value, "<tt>- </tt>" hyphenated each 10 characters </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$formfield(<i>name, 20, -&lt;br /&gt;</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Form field value, hyphenated each 20 characters with separator "<tt>-&lt;br /&gt;</tt>" </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$formfield(<i>name, 30, ...</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Form field value, shortened to 30 characters with "<tt>...</tt>" indication </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$query(<i>query-syntax</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Access topic meta data using SQL-like <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a> syntax. Example: <br />&#8226; <code>$query(attachments.arraysize)</code> returns the number of files attached to the current topic <br />&#8226; <code>$query(attachments[name~'*.gif'].size)</code> returns an array with size of all <code>.gif</code> attachments, such as <code>848, 1425, 923</code> <br />&#8226; <code>$query(parent.name)</code> is equivalent to <code>$parent</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$query(<i>query-syntax</i>, quote:<i>"</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Strings in <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a> result are quoted with the specified quote. Useful to triple-quote strings for use in <a href="/bin/view/TWiki/SpreadSheetPlugin" class="twikiLink">SpreadSheetPlugin</a>'s CALCULATE, such as <code>$query(attachments.comment, quote:''')</code> which returns a list of triple-quoted attachment comment strings -- the spreadhseet funcions will work properly even if comment strings contain commas and parenthesis </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$query(<i>query-syntax</i>, encode:<i>type</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a> result is encoded in the specified <em>type</em>. This is in parallel to <code>$formfield(<i>name</i>, encode:<i>type</i>)</code> mentioned above </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$pattern(<i>reg-exp</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> A regular expression pattern to extract some text from a topic (does not search meta data; use <code>$formfield</code> instead). In case of a <code>multiple="on"</code> search, the pattern is applied to the line found in each search hit.<br />&#8226; Specify a <a href="/bin/view/TWiki/RegularExpression" class="twikiLink">RegularExpression</a> that covers the whole text (topic or line), which typically starts with <code>.*</code>, and must end in <code>.*</code> <br />&#8226; Put text you want to keep in parenthesis, like <code>$pattern(.*?(from here.*?to here).*)</code> <br />&#8226; Example: <code>$pattern(.*?\*.*?Email\:\s*([^\n\r]+).*)</code> extracts the e-mail address from a bullet of format <code>* Email: ...</code> <br />&#8226; This example has non-greedy <code>.*?</code> patterns to scan for the first occurance of the Email bullet; use greedy <code>.*</code> patterns to scan for the last occurance <br />&#8226; Limitation: Do not use <code>.*)</code> inside the pattern, e.g. <code>$pattern(.*foo(.*)bar.*)</code> does not work, but <code>$pattern(.*foo(.*?)bar.*)</code> does <br />&#8226; Note: Make sure that the integrity of a web page is not compromised; for example, if you include an HTML table make sure to include everything including the table end tag </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$pattern(<i>reg-exp</i>, encode:<i>type</i>)</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> A text extracted by <em>reg-exp</em> is encoded in the specified <em>type</em>. This is in parallel to <code>$formfield(<i>name</i>, encode:<i>type</i>)</code> mentioned above </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$count(<i>reg-exp</i>)</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Count of number of times a regular expression pattern appears in the text of a topic (does not search meta data). Follows guidelines for use and limitations outlined above under <code>$pattern(reg-exp)</code>. Example: <code>$count(.*?(---[+][+][+][+]) .*)</code> counts the number of &lt;H4&gt; headers in a page. </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$ntopics</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Number of topics found in current web. This is the current topic count, not the total number of topics </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$tntopics</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> The total number of topics matched </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nwebs</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> The number of webs searched </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nhits</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Number of hits if <code>multiple="on"</code>. Cumulative across all topics in current web. Identical to <code>$ntopics</code> unless <code>multiple="on"</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$n</code> or <code>$n()</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> New line. Use <code>$n()</code> if followed by alphanumeric character, e.g. write <code>Foo$n()Bar</code> instead of <code>Foo$nBar</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nop</code> or <code>$nop()</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Is a "no operation". This variable gets removed; useful for nested search </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$quot</code> or <code>\"</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Double quote (<code>"</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$aquot</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Apostrophe quote (<code>'</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$percnt</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Percent sign (<code>%</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$dollar</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Dollar sign (<code>$</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$lt</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Less than sign (<code>&lt;</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>$gt</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Greater than sign (<code>&gt;</code>) </td>
+		</tr>     </table>
+<p />
+<p />
+<h3><a name="3_footer_parameter"></a> 3. <code>footer="..."</code> parameter </h3>
+<p />
+Use the footer parameter to specify the footer of a search result. It should correspond to the format of the format parameter. This parameter is optional. <br /> Example: <code>footer="| *Topic* | *Summary* |"</code>
+<p />
+Variables that can be used in the footer string:
+<p />
+             <table cellspacing="0" id="table3" cellpadding="0" class="twikiTable" rules="all" border="1">     
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=0;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=1;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Expands To:</font></a> </th>
+		</tr>     
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$web</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Name of the web </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$ntopics</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Number of topics found in current web </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$tntopics</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> The total number of topics matched </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nwebs</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> The number of webs searched </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nhits</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Number of hits if <code>multiple="on"</code>. Cumulative across all topics in current web. Identical to <code>$ntopics</code> unless <code>multiple="on"</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$n</code> or <code>$n()</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> New line. Use <code>$n()</code> if followed by alphanumeric character, e.g. write <code>Foo$n()Bar</code> instead of <code>Foo$nBar</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nop</code> or <code>$nop()</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Is a "no operation". This variable gets removed; useful for nested search </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$quot</code> or <code>\"</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Double quote (<code>"</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$aquot</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Apostrophe quote (<code>'</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$percnt</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Percent sign (<code>%</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$dollar</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Dollar sign (<code>$</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$lt</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Less than sign (<code>&lt;</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>$gt</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Greater than sign (<code>&gt;</code>) </td>
+		</tr>     </table>
+<p />
+<p />
+<h3><a name="4_default_parameter"></a> 4. <code>default="..."</code> parameter </h3>
+<p />
+Use the default parameter to specify a default message if there are no hits in a web. This parameter is optional. <br /> Example: <code>default="| *Note* | Nothing found in the [[$web.WebHome][$web]] web |"</code>
+<p />
+Variables that can be used in the default string:
+<p />
+             <table cellspacing="0" id="table4" cellpadding="0" class="twikiTable" rules="all" border="1">     
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=0;table=4;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=1;table=4;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Expands To:</font></a> </th>
+		</tr>     
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$web</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Name of the web </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$n</code> or <code>$n()</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> New line. Use <code>$n()</code> if followed by alphanumeric character, e.g. write <code>Foo$n()Bar</code> instead of <code>Foo$nBar</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$nop</code> or <code>$nop()</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Is a "no operation". This variable gets removed; useful for nested search </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$quot</code> or <code>\"</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Double quote (<code>"</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$aquot</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Apostrophe quote (<code>'</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$percnt</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Percent sign (<code>%</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$dollar</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Dollar sign (<code>$</code>) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>$lt</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Less than sign (<code>&lt;</code>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>$gt</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Greater than sign (<code>&gt;</code>) </td>
+		</tr>     </table>
+<p />
+<p />
+<h2><a name="Results_pagination"></a> Results pagination </h2>
+<p />
+When a search return many results, you may want to paginate them having the following line below the results.
+<p />
+<a href="/bin/view/TWiki/FormattedSearch#A" class="twikiCurrentTopicLink twikiAnchorLink">&laquo;Prev</a> &nbsp; <a href="/bin/view/TWiki/FormattedSearch#A" class="twikiCurrentTopicLink twikiAnchorLink">1</a> &nbsp; <strong>2</strong> &nbsp; <a href="/bin/view/TWiki/FormattedSearch#A" class="twikiCurrentTopicLink twikiAnchorLink">3</a> &nbsp; <a href="/bin/view/TWiki/FormattedSearch#A" class="twikiCurrentTopicLink twikiAnchorLink">4</a> &nbsp; <a href="/bin/view/TWiki/FormattedSearch#A" class="twikiCurrentTopicLink twikiAnchorLink">5</a> &nbsp; <a href="/bin/view/TWiki/FormattedSearch#A" class="twikiCurrentTopicLink twikiAnchorLink">Next&raquo;</a>
+<p />
+<a href="/bin/view/TWiki/SearchResultsPagination" class="twikiLink">SearchResultsPagination</a> describes how to do it.
+<p />
+<a name="EvaluationOrder"></a>
+<h2><a name="Evaluation_order_of_variables"></a> Evaluation order of variables </h2>
+<p />
+By default, variables embedded in the format parameter of <code>%SEARCH{}%</code> are evaluated once <em>before</em> the search. This is OK for variables that do not change, such as <code>%SCRIPTURLPATH%</code>. Variables that should be evaluated once per search hit <em>must be escaped</em>. For example, to escape a conditional:
+<br /> <code>&nbsp; &nbsp; %IF{ "..." then="..." else="..." }%</code>
+<br /> write this:
+<br /> <code>&nbsp; &nbsp; format="$percntIF{ \"...\" then=\"...\" else=\"...\" }$percnt"</code>
+<p />
+<h2><a name="Examples"></a> Examples </h2>
+<p />
+Here are some samples of formatted searches. The <a href="/bin/view/TWiki/SearchPatternCookbook" class="twikiLink">SearchPatternCookbook</a> has other examples, such as <a href="/bin/view/TWiki/SearchPatternCookbook#SearchUsernames" class="twikiAnchorLink">creating a picklist of usernames</a>, <a href="/bin/view/TWiki/SearchPatternCookbook#SearchTopicChildren" class="twikiAnchorLink">searching for topic children</a> and more.
+<p />
+<a name="SearchBulletList"></a>
+<h3><a name="Bullet_list_showing_topic_name_a"></a> Bullet list showing topic name and summary </h3>
+<p />
+<strong>Write this:</strong>
+<p />
+<pre>
+&#37;SEARCH{
+ &#34;FAQ&#34;
+ scope&#61;&#34;topic&#34;
+ nosearch&#61;&#34;on&#34;
+ nototal&#61;&#34;on&#34;
+ header&#61;&#34;   &#42; &#42;Topic: Summary:&#42;&#34;
+ format&#61;&#34;   &#42; &#91;&#91;$topic]]: $summary&#34;
+ footer&#61;&#34;   &#42; &#42;Topic: Summary&#42;&#34;
+}&#37;
+</pre>
+<p />
+<strong>To get this:</strong>
+<p /> <ul>
+<li> <strong>Topic: Summary:</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiFAQ" class="twikiLink">TWikiFAQ</a>: Frequently Asked Questions About TWiki This is a real FAQ, and also a demo of an easily implemented knowledge base solution. To see how it`s done, view the source...
+</li> <li> <a href="/bin/view/TWiki/TWikiFaqTemplate" class="twikiLink">TWikiFaqTemplate</a>: FAQ: Answer: Back to: TWikiFAQ Contributors:
+</li> <li> <a href="/bin/view/TWiki/TextFormattingFAQ" class="twikiLink">TextFormattingFAQ</a>: Text Formatting FAQ This topics lists frequently asked questions on text formatting. Text formatting applies to people who edit TWiki pages in raw edit mode. TextFormattingRules...
+</li> <li> <strong>Topic: Summary</strong>
+</li></ul> 
+<p />
+<p />
+<h3><a name="Table_showing_form_field_values"></a> Table showing form field values of topics with a form </h3>
+<p />
+In a web where there is a form that contains a <code>TopicClassification</code> field, an <code>OperatingSystem</code> field and an <code>OsVersion</code> field we could write:
+<p />
+<code>| *Topic:* | *OperatingSystem:* | *OsVersion:* |</code> <br />
+<code>%SEARCH{ "[T]opicClassification.*?value=\"[P]ublicFAQ\"" scope="text" type="regex" nosearch="on" nototal="on" format="| [[$topic]] | $formfield(OperatingSystem) | $formfield(OsVersion) |" }%</code>
+<p />
+To get this:
+<p />
+<table cellspacing="0" id="table5" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=0;table=5;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=1;table=5;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">OperatingSystem</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/FormattedSearch?sortcol=2;table=5;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">OsVersion</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/TWiki/FormattedSearch" class="twikiCurrentTopicLink twikiLink">IncorrectDllVersionW32PTH10DLL</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <a href="/bin/view/TWiki/FormattedSearch" class="twikiCurrentTopicLink twikiLink">OsWin</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> 95/98 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <a href="/bin/view/TWiki/FormattedSearch" class="twikiCurrentTopicLink twikiLink">WinDoze95Crash</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLast"> <a href="/bin/view/TWiki/FormattedSearch" class="twikiCurrentTopicLink twikiLink">OsWin</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> 95 </td>
+		</tr></table>
+<p />
+<p />
+<h3><a name="Extract_some_text_from_a_topic_u"></a> Extract some text from a topic using regular expression </h3>
+<p />
+<strong>Write this:</strong>
+<p />
+<pre>
+&#37;SEARCH{
+ &#34;&#95;&#95;Back to\:&#95;&#95; TWikiFAQ&#34;
+ scope&#61;&#34;text&#34;
+ type&#61;&#34;regex&#34;
+ nosearch&#61;&#34;on&#34;
+ nototal&#61;&#34;on&#34;
+ header&#61;&#34;TWiki FAQs:&#34;
+ format&#61;&#34;   &#42; $pattern(.&#42;?FAQ\:&#91;\n\r]&#42;(&#91;^\n\r]+).&#42;) &#91;&#91;$topic]&#91;Answer...]]&#34;
+}&#37;
+</pre>
+<p />
+<strong>To get this:</strong>
+<p />
+TWiki FAQs: <ul>
+<li> How can I create a simple <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWiki Forms</a> based application? <a href="/bin/view/TWiki/AnApplicationWithWikiForm" class="twikiLink">Answer...</a>
+</li> <li> How do I delete or rename a topic? <a href="/bin/view/TWiki/DeleteOrRenameATopic" class="twikiLink">Answer...</a>
+</li> <li> How do I delete or rename a file attachment? <a href="/bin/view/TWiki/DeleteOrRenameAnAttachment" class="twikiLink">Answer...</a>
+</li> <li> Why does the topic revision not increase when I edit a topic? <a href="/bin/view/TWiki/EditDoesNotIncreaseTheRevision" class="twikiLink">Answer...</a>
+</li> <li> TWiki is distributed under the GPL (GNU General Public License). What is GPL? <a href="/bin/view/TWiki/GnuGeneralPublicLicense" class="twikiLink">Answer...</a>
+</li> <li> I've problems with the WebSearch. There is no Search Result on any inquiry. By clicking the Index topic it's the same problem. <a href="/bin/view/TWiki/SearchDoesNotWork" class="twikiLink">Answer...</a>
+</li> <li> What happens if two of us try to edit the same topic simultaneously? <a href="/bin/view/TWiki/SimultaneousEdits" class="twikiLink">Answer...</a>
+</li> <li> I would like to install TWiki on my server. Can I get the source? <a href="/bin/view/TWiki/TWikiDownload" class="twikiLink">Answer...</a>
+</li> <li> What does the "T" in TWiki stand for? <a href="/bin/view/TWiki/WhatDoesTWikiStandFor" class="twikiLink">Answer...</a>
+</li> <li> So what is this WikiWiki thing exactly?  <a href="/bin/view/TWiki/WhatIsWikiWiki" class="twikiLink">Answer...</a>
+</li> <li> Everybody can edit any page, this is scary. Doesn't that lead to chaos? <a href="/bin/view/TWiki/WikiCulture" class="twikiLink">Answer...</a>
+</li></ul> 
+<p />
+<p />
+<h3><a name="Nested_Search"></a> Nested Search </h3>
+<p />
+Search can be nested. For example, search for some topics, then form a new search for each topic found in the first search. The idea is to build the nested search string using a formatted search in the first search.
+<p />
+Here is an example. Let's search for all topics that contain the word "culture" (first search), and let's find out where each topic found is linked from (second search).
+<p /> <ul>
+<li> First search: <ul>
+<li> <code>%SEARCH{ "culture" format=" &nbsp; * $topic is referenced by: (list all references)" nosearch="on" nototal="on" }%</code>
+</li></ul> 
+</li> <li> Second search. For each hit we want this search: <ul>
+<li> <code>%SEARCH{ "(topic found in first search)" format="$topic" nosearch="on" nototal="on" separator=", " }%</code>
+</li></ul> 
+</li> <li> Now let's nest the two. We need to escape the second search, e.g. the first search will build a valid second search string. Note that we escape the second search so that it does not get evaluated prematurely by the first search: <ul>
+<li> Use <code>$percnt</code> to escape the leading percent of the second search
+</li> <li> Use <code>\"</code> to escape the double quotes
+</li> <li> Use <code>$dollar</code> to escape the <code>$</code> of <code>$topic</code>
+</li> <li> Use <code>$nop</code> to escape the <code>}%</code> sequence
+</li></ul> 
+</li></ul> 
+<p />
+<strong>Write this:</strong>
+<p />
+<pre>
+&#37;SEARCH{
+ &#34;culture&#34;
+ format&#61;&#34;   &#42; $topic is referenced by:$n      &#42; $percntSEARCH{ \&#34;$topic\&#34; format&#61;\&#34;$dollartopic\&#34; nosearch&#61;\&#34;on\&#34; nototal&#61;\&#34;on\&#34; separator&#61;\&#34;, \&#34; }$nop&#37;&#34;
+ nosearch&#61;&#34;on&#34;
+ nototal&#61;&#34;on&#34;
+}&#37;
+</pre>
+<p />
+<strong>To get this:</strong>
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/TWikiTemplates" class="twikiLink">TWikiTemplates</a>, <a href="/bin/view/TWiki/TWikiTutorial" class="twikiLink">TWikiTutorial</a>, <a href="/bin/view/TWiki/TWikiUsersGuide" class="twikiLink">TWikiUsersGuide</a>, <a href="/bin/view/TWiki/WebLeftBar" class="twikiLink">WebLeftBar</a>, <a href="/bin/view/TWiki/WebTopMenu" class="twikiLink">WebTopMenu</a>, <a href="/bin/view/TWiki/WelcomeGuest" class="twikiLink">WelcomeGuest</a>
+</li></ul> 
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiCurrentTopicLink twikiLink">FormattedSearch</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/AnApplicationWithWikiForm" class="twikiLink">AnApplicationWithWikiForm</a>, <a href="/bin/view/TWiki/BackupRestorePlugin" class="twikiLink">BackupRestorePlugin</a>, <a href="/bin/view/TWiki/EditTablePlugin" class="twikiLink">EditTablePlugin</a>, <a href="/bin/view/TWiki/EmptyPlugin" class="twikiLink">EmptyPlugin</a>, <a href="/bin/view/TWiki/FormatTokens" class="twikiLink">FormatTokens</a>, <a href="/bin/view/TWiki/HeadlinesPlugin" class="twikiLink">HeadlinesPlugin</a>, <a href="/bin/view/TWiki/HtmlMetaPlugin" class="twikiLink">HtmlMetaPlugin</a>, <a href="/bin/view/TWiki/IfStatements" class="twikiLink">IfStatements</a>, <a href="/bin/view/TWiki/InterwikiPlugin" class="twikiLink">InterwikiPlugin</a>, <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>, <a href="/bin/view/TWiki/PreferencesPlugin" class="twikiLink">PreferencesPlugin</a>, <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>, <a href="/bin/view/TWiki/RegularExpression" class="twikiLink">RegularExpression</a>, <a href="/bin/view/TWiki/RenderListPlugin" class="twikiLink">RenderListPlugin</a>, <a href="/bin/view/TWiki/SearchHelp" class="twikiLink">SearchHelp</a>, <a href="/bin/view/TWiki/SearchPatternCookbook" class="twikiLink">SearchPatternCookbook</a>, <a href="/bin/view/TWiki/SearchResultsPagination" class="twikiLink">SearchResultsPagination</a>, <a href="/bin/view/TWiki/SetGetPlugin" class="twikiLink">SetGetPlugin</a>, <a href="/bin/view/TWiki/SlideShowPlugin" class="twikiLink">SlideShowPlugin</a>, <a href="/bin/view/TWiki/SmiliesPlugin" class="twikiLink">SmiliesPlugin</a>, <a href="/bin/view/TWiki/SpreadSheetPlugin" class="twikiLink">SpreadSheetPlugin</a>, <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a>, <a href="/bin/view/TWiki/TWikiDocumentation" class="twikiLink">TWikiDocumentation</a>, <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWikiForms</a>, <a href="/bin/view/TWiki/TWikiHistory" class="twikiLink">TWikiHistory</a>, <a href="/bin/view/TWiki/TWikiMetaData" class="twikiLink">TWikiMetaData</a>, <a href="/bin/view/TWiki/TWikiNetSkinPlugin" class="twikiLink">TWikiNetSkinPlugin</a>, <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">TWikiReferenceManual</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes04x00" class="twikiLink">TWikiReleaseNotes04x00</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes04x01" class="twikiLink">TWikiReleaseNotes04x01</a>, <a href="/bin/view/TWiki/TWikiScripts" class="twikiLink">TWikiScripts</a>, <a href="/bin/view/TWiki/TWikiSearchDotPm" class="twikiLink">TWikiSearchDotPm</a>, <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>, <a href="/bin/view/TWiki/TWikiTip018" class="twikiLink">TWikiTip018</a>, <a href="/bin/view/TWiki/TWikiTopics" class="twikiLink">TWikiTopics</a>, <a href="/bin/view/TWiki/TWikiUISearchDotPm" class="twikiLink">TWikiUISearchDotPm</a>, <a href="/bin/view/TWiki/TWikiVariablesQuickStart" class="twikiLink">TWikiVariablesQuickStart</a>, <a href="/bin/view/TWiki/TagMePlugin" class="twikiLink">TagMePlugin</a>, <a href="/bin/view/TWiki/TwistyPlugin" class="twikiLink">TwistyPlugin</a>, <a href="/bin/view/TWiki/VarEDITFORMFIELD" class="twikiLink">VarEDITFORMFIELD</a>, <a href="/bin/view/TWiki/VarFORMFIELD" class="twikiLink">VarFORMFIELD</a>, <a href="/bin/view/TWiki/VarMETA" class="twikiLink">VarMETA</a>, <a href="/bin/view/TWiki/VarMETASEARCH" class="twikiLink">VarMETASEARCH</a>, <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">VarSEARCH</a>, <a href="/bin/view/TWiki/VarURLPARAM" class="twikiLink">VarURLPARAM</a>, <a href="/bin/view/TWiki/WatchlistPlugin" class="twikiLink">WatchlistPlugin</a>, <a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a>, <a href="/bin/view/TWiki/WebLeftBar" class="twikiLink">WebLeftBar</a>, <a href="/bin/view/TWiki/WebTopMenu" class="twikiLink">WebTopMenu</a>, <a href="/bin/view/TWiki/WelcomeGuest" class="twikiLink">WelcomeGuest</a>
+</li></ul> 
+</li> <li> <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/AllowWebCreateByUserMappingManager" class="twikiLink">AllowWebCreateByUserMappingManager</a>, <a href="/bin/view/TWiki/AutonomousWebs" class="twikiLink">AutonomousWebs</a>, <a href="/bin/view/TWiki/CopyingTopics" class="twikiLink">CopyingTopics</a>, <a href="/bin/view/TWiki/CustomUserGroupNotations" class="twikiLink">CustomUserGroupNotations</a>, <a href="/bin/view/TWiki/EditTablePlugin" class="twikiLink">EditTablePlugin</a>, <a href="/bin/view/TWiki/FileAttachment" class="twikiLink">FileAttachment</a>, <a href="/bin/view/TWiki/MainFeatures" class="twikiLink">MainFeatures</a>, <a href="/bin/view/TWiki/ManagingTopics" class="twikiLink">ManagingTopics</a>, <a href="/bin/view/TWiki/ManagingUsers" class="twikiLink">ManagingUsers</a>, <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>, <a href="/bin/view/TWiki/PatternSkinCustomization" class="twikiLink">PatternSkinCustomization</a>, <a href="/bin/view/TWiki/SitePermissions" class="twikiLink">SitePermissions</a>, <a href="/bin/view/TWiki/SourceCode" class="twikiLink">SourceCode</a>, <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a>, <a href="/bin/view/TWiki/TWikiDocumentation" class="twikiLink">TWikiDocumentation</a>, <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWikiForms</a>, <a href="/bin/view/TWiki/TWikiFuncDotPm" class="twikiLink">TWikiFuncDotPm</a>, <a href="/bin/view/TWiki/TWikiHistory" class="twikiLink">TWikiHistory</a>, <a href="/bin/view/TWiki/TWikiInstallationGuide" class="twikiLink">TWikiInstallationGuide</a>, <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>, <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">TWikiReferenceManual</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes04x01" class="twikiLink">TWikiReleaseNotes04x01</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes04x02" class="twikiLink">TWikiReleaseNotes04x02</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes06x00" class="twikiLink">TWikiReleaseNotes06x00</a>, <a href="/bin/view/TWiki/TWikiScripts" class="twikiLink">TWikiScripts</a>, <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>, <a href="/bin/view/TWiki/TWikiTopics" class="twikiLink">TWikiTopics</a>, <a href="/bin/view/TWiki/TWikiTutorial" class="twikiLink">TWikiTutorial</a>, <a href="/bin/view/TWiki/TWikiUserAuthentication" class="twikiLink">TWikiUserAuthentication</a>, <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>, <a href="/bin/view/TWiki/TagMePlugin" class="twikiLink">TagMePlugin</a>, <a href="/bin/view/TWiki/UserMasquerading" class="twikiLink">UserMasquerading</a>, <a href="/bin/view/TWiki/VarHIDE" class="twikiLink">VarHIDE</a>, <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">VarSEARCH</a>, <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>, <a href="/bin/view/TWiki/WebPreferencesHelp" class="twikiLink">WebPreferencesHelp</a>, <a href="/bin/view/TWiki/WikiCulture" class="twikiLink">WikiCulture</a>, <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a>
+</li></ul> 
+</li> <li> <a href="/bin/view/TWiki/TWikiSite" class="twikiLink">TWikiSite</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>, <a href="/bin/view/TWiki/InstantEnhancements" class="twikiLink">InstantEnhancements</a>, <a href="/bin/view/TWiki/InterwikiPlugin" class="twikiLink">InterwikiPlugin</a>, <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>, <a href="/bin/view/TWiki/SiteMap" class="twikiLink">SiteMap</a>, <a href="/bin/view/TWiki/SiteStatisticsFooter" class="twikiLink">SiteStatisticsFooter</a>, <a href="/bin/view/TWiki/StartingPoints" class="twikiLink">StartingPoints</a>, <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a>, <a href="/bin/view/TWiki/TWikiDocumentation" class="twikiLink">TWikiDocumentation</a>, <a href="/bin/view/TWiki/TWikiGlossary" class="twikiLink">TWikiGlossary</a>, <a href="/bin/view/TWiki/TWikiI18NDotPm" class="twikiLink">TWikiI18NDotPm</a>, <a href="/bin/view/TWiki/TWikiInstallationGuide" class="twikiLink">TWikiInstallationGuide</a>, <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>, <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">TWikiReferenceManual</a>, <a href="/bin/view/TWiki/TWikiRegistration" class="twikiLink">TWikiRegistration</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes04x02" class="twikiLink">TWikiReleaseNotes04x02</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes05x00" class="twikiLink">TWikiReleaseNotes05x00</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes05x01" class="twikiLink">TWikiReleaseNotes05x01</a>, <a href="/bin/view/TWiki/TWikiReleaseNotes06x00" class="twikiLink">TWikiReleaseNotes06x00</a>, <a href="/bin/view/TWiki/TWikiScripts" class="twikiLink">TWikiScripts</a>, <a href="/bin/view/TWiki/TWikiSite" class="twikiLink">TWikiSite</a>, <a href="/bin/view/TWiki/TWikiTopics" class="twikiLink">TWikiTopics</a>, <a href="/bin/view/TWiki/TWikiTutorial" class="twikiLink">TWikiTutorial</a>, <a href="/bin/view/TWiki/TWikiUserAuthentication" class="twikiLink">TWikiUserAuthentication</a>, <a href="/bin/view/TWiki/TWikiUsersGuide" class="twikiLink">TWikiUsersGuide</a>, <a href="/bin/view/TWiki/WabiSabi" class="twikiLink">WabiSabi</a>, <a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a>, <a href="/bin/view/TWiki/WebLeftBar" class="twikiLink">WebLeftBar</a>, <a href="/bin/view/TWiki/WebSiteTools" class="twikiLink">WebSiteTools</a>, <a href="/bin/view/TWiki/WebStatisticsFooter" class="twikiLink">WebStatisticsFooter</a>, <a href="/bin/view/TWiki/WebTopMenu" class="twikiLink">WebTopMenu</a>, <a href="/bin/view/TWiki/WelcomeGuest" class="twikiLink">WelcomeGuest</a>, <a href="/bin/view/TWiki/WhatDoesTWikiStandFor" class="twikiLink">WhatDoesTWikiStandFor</a>, <a href="/bin/view/TWiki/WhatIsWikiWiki" class="twikiLink">WhatIsWikiWiki</a>, <a href="/bin/view/TWiki/WikiCulture" class="twikiLink">WikiCulture</a>, <a href="/bin/view/TWiki/WikiReferences" class="twikiLink">WikiReferences</a>
+</li></ul> 
+</li> <li> <a href="/bin/view/TWiki/WabiSabi" class="twikiLink">WabiSabi</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/TWikiSite" class="twikiLink">TWikiSite</a>, <a href="/bin/view/TWiki/WabiSabi" class="twikiLink">WabiSabi</a>, <a href="/bin/view/TWiki/WhatIsWikiWiki" class="twikiLink">WhatIsWikiWiki</a>, <a href="/bin/view/TWiki/WikiCulture" class="twikiLink">WikiCulture</a>, <a href="/bin/view/TWiki/WikiReferences" class="twikiLink">WikiReferences</a>
+</li></ul> 
+</li> <li> <a href="/bin/view/TWiki/WhatIsWikiWiki" class="twikiLink">WhatIsWikiWiki</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/TWikiReleaseNotes04x00" class="twikiLink">TWikiReleaseNotes04x00</a>, <a href="/bin/view/TWiki/WikiCulture" class="twikiLink">WikiCulture</a>, <a href="/bin/view/TWiki/WikiReferences" class="twikiLink">WikiReferences</a>
+</li></ul> 
+</li> <li> <a href="/bin/view/TWiki/WikiCulture" class="twikiLink">WikiCulture</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a>, <a href="/bin/view/TWiki/TWikiSite" class="twikiLink">TWikiSite</a>, <a href="/bin/view/TWiki/WabiSabi" class="twikiLink">WabiSabi</a>, <a href="/bin/view/TWiki/WhatIsWikiWiki" class="twikiLink">WhatIsWikiWiki</a>, <a href="/bin/view/TWiki/WikiReferences" class="twikiLink">WikiReferences</a>
+</li></ul> 
+</li> <li> <a href="/bin/view/TWiki/WikiReferences" class="twikiLink">WikiReferences</a> is referenced by: <ul>
+<li> <a href="/bin/view/TWiki/TWikiSite" class="twikiLink">TWikiSite</a>, <a href="/bin/view/TWiki/WelcomeGuest" class="twikiLink">WelcomeGuest</a>
+</li></ul> 
+</li></ul> 
+<p />
+<strong><em>Note:</em></strong> Nested search can be slow, especially if you nest more then 3 times. Nesting is limited to 16 levels. For each new nesting level you need to "escape the escapes", e.g. write <code>$dollarpercntSEARCH{</code> for level three, <code>$dollardollarpercntSEARCH{</code> for level four, etc.
+<p />
+<h3><a name="Most_recently_changed_pages"></a> Most recently changed pages </h3>
+<p />
+<strong>Write this:</strong>
+<p />
+<pre>
+&#37;SEARCH{
+ &#34;\.&#42;&#34;
+ scope&#61;&#34;topic&#34;
+ type&#61;&#34;regex&#34;
+ nosearch&#61;&#34;on&#34;
+ nototal&#61;&#34;on&#34;
+ sort&#61;&#34;modified&#34;
+ reverse&#61;&#34;on&#34;
+ format&#61;&#34;&#124; &#91;&#91;$topic]] &#124; $wikiusername  &#124; $date &#124;&#34;
+ limit&#61;&#34;7&#34;
+}&#37;&#61;
+</pre>
+<p />
+<strong>To get this:</strong>
+<p />
+<table cellspacing="0" id="table6" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/TWiki/WebTopBar" class="twikiLink">WebTopBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Main.pbeltr1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> 2016-09-27 - 03:32 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/TWiki/WebBottomBar" class="twikiLink">WebBottomBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Main.pbeltr1 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> 2016-05-12 - 14:56 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Main.pbeltr1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> 2015-12-08 - 21:41 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/TWiki/VarTOC2" class="twikiLink">VarTOC2</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=TWiki.FormattedSearch;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> 2014-06-16 - 01:48 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/TWiki/VarY" class="twikiLink">VarY</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=TWiki.FormattedSearch;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> 2013-09-14 - 07:33 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/TWiki/WebStatisticsFooter" class="twikiLink">WebStatisticsFooter</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=TWiki.FormattedSearch;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> 2013-08-15 - 08:04 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <a href="/bin/view/TWiki/WelcomeGuest" class="twikiLink">WelcomeGuest</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=TWiki.FormattedSearch;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> 2013-05-01 - 08:03 </td>
+		</tr></table>
+<p />
+<h3><a name="Search_with_conditional_output"></a> Search with conditional output </h3>
+<p />
+A regular expression search is flexible, but there are limitations. For example, you cannot show all topics that are up to exactly one week old, or create a report that shows all records with invalid form fields or fields within a certain range, etc. You need some additional logic to format output based on a condition: <ol>
+<li> Specify a search which returns more hits then you need
+</li> <li> For each search hit apply a spreadsheet formula to determine if the hit is needed
+</li> <li> If needed, format and output the result
+</li> <li> Else supress the search hit
+</li></ol> 
+<p />
+This requires the <a href="http://twiki.org/cgi-bin/view/Plugins/SpreadSheetPlugin" target="_top" title="'Plugins.SpreadSheetPlugin' on TWiki.org" class="interwikiLink">TWiki:Plugins.SpreadSheetPlugin</a>. The following example shows all topics in the Main web that have been updated in the last 7 days.
+<p />
+<strong>Write this:</strong>
+<p />
+<code>%CALCULATE{$SET(weekold, $TIMEADD($TIME(), -7, day))}%</code> <br /> 
+<code>%SEARCH{ "." scope="topic" type="regex" web="Main" nonoise="on" sort="modified" reverse="on" format="$percntCALCULATE{$IF($TIME($date) &lt; $GET(weekold), &lt;nop&gt;, | [[$web.$topic][$topic]] | $wikiusername | $date | $rev |)}$percnt" limit="100" }%</code>
+<p /> <ul>
+<li> The first line sets the <code>weekold</code> variable to the serialized date of exactly one week ago
+</li> <li> The SEARCH has a deferred CALCULATE. The <code>$percnt</code> makes sure that the CALCULATE gets executed once for each search hit
+</li> <li> The CALCULATE compares the date of the topic with the <code>weekold</code> date
+</li> <li> If topic is older, a <code>&lt;nop&gt;</code> is returned, which gets removed at the end of the TWiki rendering process
+</li> <li> Otherwise, the search hit is formatted and returned
+</li> <li> This example is for illustration only, it is easier to use the <code>date="..."</code> paramter in <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">SEARCH</a> to restrict the date.
+</li></ul> 
+<p />
+<strong>To get this:</strong>
+<p />
+<p />
+<p />
+The condition can be anything you like. To restrict search based on a date range it is easier to use the <code>date=""</code> parameter as shown in the next example.
+<p />
+<h3><a name="Restrict_search_based_on_a_date"></a> Restrict search based on a date range </h3>
+<p />
+A search can be restricted based on a <a href="/bin/view/TWiki/TimeSpecifications" class="twikiLink">date range</a>. The following example is identical to the previous one, showing all topics in the Main web that have been updated in the last 7 days.
+<p />
+<strong>Write this:</strong>
+<p />
+<pre>
+&#37;SEARCH{
+ &#34;.&#34;
+ scope&#61;&#34;topic&#34;
+ type&#61;&#34;regex&#34;
+ web&#61;&#34;&#37;USERSWEB&#37;&#34;
+ nonoise&#61;&#34;on&#34;
+ sort&#61;&#34;modified&#34;
+ reverse&#61;&#34;on&#34;
+ format&#61;&#34;&#124; &#91;&#91;$web.$topic]&#91;$topic]] &#124; $wikiusername &#124; $date &#124; $rev &#124;&#34;
+ limit&#61;&#34;100&#34;
+ date&#61;&#34;P1w/$today&#34;
+}&#37;&#61;
+</pre>
+<p />
+<strong>To get this:</strong>
+<p />
+<p />
+<p />
+<h3><a name="Embedding_search_forms_to_return"></a> Embedding search forms to return a formatted result </h3>
+<p />
+Use an HTML form and an embedded formatted search on the same topic. You can link them together with an <code>%URLPARAM{"..."}%</code> variable. Example:
+<p />
+<strong>Write this:</strong>
+<p />
+<pre>
+&#60;form action&#61;&#34;&#37;SCRIPTURLPATH{&#34;view&#34;}&#37;/&#37;WEB&#37;/&#37;TOPIC&#37;&#34;&#62;
+Find Topics: 
+&#60;input type&#61;&#34;text&#34; name&#61;&#34;q&#34; size&#61;&#34;32&#34; value&#61;&#34;&#37;URLPARAM{&#34;q&#34; encode&#61;&#34;entity&#34;}&#37;&#34; /&#62;&#38;nbsp;&#60;input type&#61;&#34;submit&#34; class&#61;&#34;twikiSubmit&#34; value&#61;&#34;Search&#34; /&#62;
+&#60;/form&#62;
+Result:
+&#37;SEARCH{
+ search&#61;&#34;&#37;URLPARAM{&#34;q&#34; encode&#61;&#34;quote&#34;}&#37;&#34;
+ type&#61;&#34;keyword&#34;
+ format&#61;&#34;   &#42; $web.$topic: &#37;BR&#37; $summary&#34;
+ nosearch&#61;&#34;on&#34;
+}&#37;
+</pre>
+<p />
+<strong>To get this:</strong>
+<p />
+<form action="/bin/view/TWiki/FormattedSearch">
+Find Topics: 
+<input type="text" name="q" size="32" value="" />&nbsp;<input type="submit" class="twikiSubmit" value="Search" />
+</form>
+Result:
+<p />
+<p />
+<strong><em>Related Topics:</em></strong> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">UserDocumentationCategory</a>, <a href="/bin/view/TWiki/SearchHelp" class="twikiLink">SearchHelp</a>, <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">VarSEARCH</a>, <a href="/bin/view/TWiki/VarENCODE" class="twikiLink">VarENCODE</a>, <a href="/bin/view/TWiki/SearchResultsPagination" class="twikiLink">SearchResultsPagination</a>, <a href="/bin/view/TWiki/SearchPatternCookbook" class="twikiLink">SearchPatternCookbook</a>, <a href="/bin/view/TWiki/RegularExpression" class="twikiLink">RegularExpression</a>, <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+<p />
+-- <strong><em>Contributors:</em></strong> <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a>, <a href="http://twiki.org/cgi-bin/view/Main/CrawfordCurrie" target="_top" title="'Main.CrawfordCurrie' on TWiki.org" class="interwikiLink">TWiki:Main.CrawfordCurrie</a>, <a href="http://twiki.org/cgi-bin/view/Main/SopanShewale" target="_top" title="'Main.SopanShewale' on TWiki.org" class="interwikiLink">TWiki:Main.SopanShewale</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/FormattedSearch">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiCurrentTopicLink twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

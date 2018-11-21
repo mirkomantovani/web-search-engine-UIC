@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LUG at UIC</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Exo+2:600|Open+Sans' rel='stylesheet' type='text/css'>
+	</head>
+	
+	<body>
+		<!--The top black fixed header would like to auto hide it some how-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<a href="index.html" class="navbar-brand">LUG@UIC <img src="pictures/whiteTux.png" width="25" height="25"></a>
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<!--Navbar menu links-->
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#">HOME</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+						<li><a href="events.html">EVENTS</a></li>
+						<li><a href="contactUs.html">CONTACT US</a></li>
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">LINKS<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							<li><a href="https://acm.cs.uic.edu/">ACM</a></li>
+							<li><a href="http://www.cs.uic.edu/">DEPT OF CS</a></li>
+							<li><a href="http://acm.cs.uic.edu/uicwifi-linux">UIC WiFi in Linux</a></li>
+							<li><a href="http://lug.cs.uic.edu/wiki/">LUG Wiki</a>
+							</ul>	
+						</li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+
+		<!--JUMBOOOO000OO0o0o0o0o0o0o0o0o0o0o0o0o0o0oOootron! I should make the picture change randomly on refresh-->
+		<div class="container">
+			<div class="jumbotron">
+				<div class="jumboContent"><h1>LUG</h1></div><br>
+				<div class="jumboContent"><p>For individuals interested in Linux, Unix, and byproducts.</p></div><br>
+				<a class="btn btn-default" href="contactUs.html#mail">Listserv Sign up?</a>			
+			</div>
+		</div>
+
+		<!--Grid system thing-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="content">
+					<h2>WELCOME!</h2>
+					<p>This is the home page for LUG at UIC. LUG stands for Linux Users Group, this means that we focus on learning all things 
+					related to Linux. Linux is an open source operating system that uses the Linux kernel. Because of its open nature Linux and the Linux kernel can be modified to suit a particular purpose. Thanks to this you can find Linux in many places such as your phone, a car, and even the United States Postal Service use Linux. <br><br>
+					Want to know more? Signup for the Listserv or come to a meeting.</p>
+					</div>
+				</div>
+
+				<!--Calendar will try to auto resize it or something based on size of window-->
+				<div class="col-md-6" id="cal">
+					<p align="center">
+						<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23cccccc&amp;src=ca149os3pmnh0dcopr1jn2negg%40group.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FChicago" style=" border:solid 1px #000 " width="450" height="400" frameborder="0" scrolling="yes"></iframe>
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!--footer goes here-->
+		<footer>
+			<img src="pictures/BlackTux.png" width="40" height="40">
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.jumbotron').mousemove(function(e){
+  					var mousePosX = (e.pageX/$(window).width())*100; 
+  					var mousePosY = (e.pageY/$(window).width())*100;
+  					$('.jumbotron').css('backgroundPosition-x', mousePosX+'%');
+  					$('.jumbotron').css('backgroundPosition-y', mousePosY+'%');
+				}); 
+			});
+		</script>
+	</body>
+</html>

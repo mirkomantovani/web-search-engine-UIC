@@ -1,0 +1,256 @@
+<HEAD>
+<META NAME="allow-search" content="YES">
+<META NAME="searchtitle"  content="Lifelong Machine Learning">
+<META NAME="keywords" CONTENT="Lifelong Machine Learning">
+<META NAME="description" CONTENT="Lifelong Machine Learning, lifelong leaning">
+<META NAME="page-type" CONTENT="html page">
+<META NAME="revisit-after" CONTENT="14 days">
+<META NAME="audience" CONTENT="All">
+<META NAME="author" content="Bing Liu">
+<META NAME="abstract" CONTENT="Lifelong Machine Learning">
+<BASE TARGET="Main">
+<TITLE> Lifelong Machine Learning </TITLE>
+<BODY bgcolor="#f5f5f5">
+<table> <tr>
+<td width="15%" valign=top>
+<h2><img border="0" src="http://www.cs.uic.edu/~liub/new.gif" width="45" height="20"><font color=red>2nd edition</font></h2>
+<center><h3><font color=blue>The First Book<br> dedicated to <br>the topic</font></h3></center>
+<br>
+<center><A HREF="#table-of-contents">2nd edition</a></center>
+<br>
+<center><img align=top  hight = 300 width=220 src="http://www.cs.uic.edu/~liub/lifelong-learning-2-cover.jpg"></center>
+<br>
+<center>1st edition</center>
+<br>
+<center><img align=top  hight = 200 width=150 src="http://www.cs.uic.edu/~liub/lifelongLearning.jpg"></center>
+
+</td>
+<td width="85%" vlign=top>
+
+<center><H1>Lifelong Machine Learning </H1> </center>
+<center><H2><a href="https://www.cs.uic.edu/~zchen/">Zhiyuan Chen</a> and <a href="https://www.cs.uic.edu/~liub/">Bing Liu</a></h2></center>
+
+<center><H3> Second Edition - <A HREF="#table-of-contents">Table of Contents</center></a></h3>
+
+<p><b>Synthesis Lectures on <i>Artificial Intelligence and Machine Learning, Morgan & Claypool Publishers</i>, August, 2018</b>
+<!--
+<H4>Synthesis Lectures on <i>Artificial Intelligence and Machine Learning, Morgan & Claypool Publishers</i>, August, 2018</h4>
+<center><H4> Morgan & Claypool Publishers, August, 2018
+<br> 
+Synthesis Lectures on <i>Artificial Intelligence and Machine Learning</i>
+</h4> </center> -->
+
+<p>
+
+<!--
+<b>Abstract: </b>
+
+<i>Lifelong Machine Learning</i>, Second Edition is an introduction to an advanced machine learning
+paradigm that continuously learns by accumulating past knowledge that it then uses in future
+learning and problem solving. In contrast, the current dominant machine learning paradigm
+learns in isolation: given a training dataset, it runs a machine learning algorithm on the dataset
+to produce a model that is then used in its intended application. It makes no attempt to retain the
+learned knowledge and use it in subsequent learning. Unlike this isolated system, humans learn
+effectively with only a few examples precisely because our learning is very knowledge-driven:
+the knowledge learned in the past helps us learn new things with little data or effort. Lifelong
+learning aims to emulate this capability, because without it, an AI system cannot be considered
+truly intelligent.
+
+<p>
+Research in lifelong learning has developed significantly in the relatively short time since
+the first edition of this book was published. The purpose of this second edition is to expand the
+definition of lifelong learning, update the content of several chapters, and add a new chapter
+about continual learning in deep neural networks—which has been actively researched over the
+past two or three years. A few chapters have also been reorganized to make each of them more
+coherent for the reader. Moreover, the authors want to propose a unified framework for the
+research area. Currently, there are several research topics in machine learning that are closely
+related to lifelong learning—most notably, multi-task learning, transfer learning, and meta-learning because they also employ the idea of knowledge sharing and transfer. This book brings
+all these topics under one roof and discusses their similarities and differences. Its goal is to introduce
+this emerging machine learning paradigm and present a comprehensive survey and review
+of the important research results and latest ideas in the area. This book is thus suitable for students,
+researchers, and practitioners who are interested in machine learning, data mining, natural
+language processing, or pattern recognition. Lecturers can readily use the book for courses in
+any of these related fields.
+-->
+
+<p>
+<b>Lifelong Machine Learning</b> or <b>Lifelong Learning</b> (LL) is an 
+advanced machine learning (ML) paradigm that learns continuously, 
+accumulates the knowledge learned in the past, and uses/adapts it to help 
+future learning and problem solving. In the process, the learner 
+becomes more and more knowledgeable and better and better at learning. 
+This continuous learning ability is one of the hallmarks of human intelligence.
+However, the current dominant ML paradigm learns in isolation: given a
+training dataset, it runs a ML algorithm only on the dataset to produce 
+a model. It makes no attempt to retain the learned knowledge and 
+use it in subsequent learning. 
+Although this isolated ML paradigm, primarily based on datadriven
+optimization, has been very successful, it requires a large number 
+of training examples, and is only suitable for well-defined and narrow 
+tasks in closed environments. In contrast, we humans learn effectively
+with a few examples and in the dynamic and open world because our learning 
+is also very much knowledge-driven: the knowledge
+learned in the past helps us learn new things with little data or 
+effort and adapt to new/unseen situations. LL aims to achieve this 
+capability. Applications such as chatbots, self-driving cars, or any AI
+systems that interact with humans/physical environments are calling for 
+this capability because they need to cope with their dynamic and open 
+environments which leave them with no choice but to continuously learn new 
+things in order to function well. Without the LL capability, an AI 
+system cannot be considered truly intelligent. 
+
+<h3> <font color=red>Main changes to the first edition</font></h3>
+<ul>
+<li> Expanded the definition/scope of lifelong learning (LL) in Chapter 1  
+<a href="http://www.cs.uic.edu/~liub/lifelong-learning/introduction-lifelong-learning.pdf">Introduction</a>. LL is <b>characterized by</b> 1) <i>continuous learning process</i>, 2) <i>knowledge accumulation</i>, 3) <i>use/adapt past knowledge to help new learning</i>, 4) <i>learning in the open world</i>, and 5) <i>learning on the job</i>. 
+<li>Added three new chapters: Chapter 4 <a href="http://www.cs.uic.edu/~liub/lifelong-learning/continual-learning.pdf">Continual Learning and Catastrophic Forgetting</a>, Chapter 5 <a href="http://www.cs.uic.edu/~liub/lifelong-learning/open-world-learning.pdf">Open-world Learning</a>, Chapter 8 <a href="http://www.cs.uic.edu/~liub/lifelong-learning/lifelong-learning-in-dialogues.pdf">Continuous Knowledge Learning in Chatbots</a>
+<li> Introduced the concept of <i><b>learning on the job</b></i> or <i><b>learning while working</b></i>. </li> 
+<li> Updated and/or reorganized the rest of the chapters.</li>
+</ul>
+<!-- Lifelong Machine Learning (or Lifelong Learning) is an 
+advanced machine learning paradigm that
+learns continuously, accumulates the knowledge learned 
+in previous tasks, and uses it to help
+future learning. In the process, the learner becomes 
+more and more knowledgeable and effective at
+learning. This learning ability is one of the hallmarks 
+of human intelligence. However, the current
+dominant machine learning paradigm learns in isolation: 
+given a training dataset, it runs a machine
+learning algorithm on the dataset to produce a model. 
+It makes no attempt to retain the learned
+knowledge and use it in future learning. Although this 
+isolated learning paradigm has been very
+successful, it requires a large number of training examples, 
+and is only suitable for well-defined
+and narrow tasks. In comparison, we humans can learn effectively 
+with a few examples because
+we have accumulated so much knowledge in the past which 
+enables us to learn with little data or
+effort. Lifelong learning aims to achieve this capability. 
+As statistical machine learning matures,
+it is time to make a major effort to break the isolated 
+learning tradition and to study lifelong
+learning to bring machine learning to new heights. 
+Applications such as intelligent assistants,
+chatbots, and physical robots that interact with humans 
+and systems in real-life environments are
+also calling for such lifelong learning capabilities. 
+Without the ability to accumulate the learned
+knowledge and use it to learn more knowledge incrementally, 
+a system will probably never be
+truly intelligent. This book serves as an introductory text 
+and survey to lifelong learning. -->
+
+<p> <b>Teaching and Learning</b>: 
+This book is suitable for students, researchers, and practitioners 
+interested in machine learning, data mining, and natural language 
+processing. Lecturers can use the book in class. Some resources can be found 
+in my <a href="https://www.cs.uic.edu/~liub/lifelong-learning.html">Lifelong Learning</a> research page.  
+
+
+<h3> Get the second edition </h3>
+<TABLE  BORDER=0 width="100%">
+<tr> <td width="49%" valign=top>
+<ul>
+<li> <a href="https://doi.org/10.2200/S00832ED1V01Y201802AIM037">Download for free</a>, if your institution is on this <a href="http://www.morganclaypool.com/page/licensed">list</a>. 
+<li> Order from <a href="http://www.morganclaypoolpublishers.com/catalog_Orig/product_info.php?products_id=1289"> Morgan & Claypool Publishers</a>. 
+<!-- <li> Buy printed copy from <a href="http://www.amazon.com/Sentiment-Analysis-Opinion-Mining-Bing/dp/1608458849/ref=sr_1_1?ie=UTF8&qid=1337885465&sr=8-1">Amazon.com</a> -->
+<li> Download an early <a href="https://www.cs.uic.edu/~liub/lifelong-machine-learning-draft.pdf">draft</a> of the first edition.
+<!--! <li> Download <a href="http://www.morganclaypoolpublishers.com/catalog_Orig/samples/9781627058773_sample.pdf">a sample chapter</a> (free) -->
+<li> Email <a href="http://www.cs.uic.edu/~liub">me</a> for an evaluation copy for teaching. 
+</ul>
+<td> <td width="2%">
+<td width="49%" valign=top>
+207 Pages, August 2018. <br>
+Paperback: ISBN 9781681733029  <br>
+eBook: ISBN 9781681733036 <br>
+
+</tr>
+</table>
+
+<h3> Get the first edition </h3>
+<TABLE  BORDER=0 width="100%">
+<tr> <td width="49%" valign=top>
+<ul>
+<li> <a href="http://www.morganclaypool.com/doi/10.2200/S00737ED1V01Y201610AIM033">Download for free</a>, if your institution is in this <a href="http://www.morganclaypool.com/page/licensed">list</a>. 
+<li> Order from <a href="http://www.morganclaypoolpublishers.com/catalog_Orig/product_info.php?products_id=1289"> Morgan & Claypool Publishers</a>. 
+<!-- <li> Buy printed copy from <a href="http://www.amazon.com/Sentiment-Analysis-Opinion-Mining-Bing/dp/1608458849/ref=sr_1_1?ie=UTF8&qid=1337885465&sr=8-1">Amazon.com</a> -->
+<li> Download an early <a href="https://www.cs.uic.edu/~liub/lifelong-machine-learning-draft.pdf">draft</a> of the first edition
+<!--! <li> Download <a href="http://www.morganclaypoolpublishers.com/catalog_Orig/samples/9781627058773_sample.pdf">a sample chapter</a> (free) -->
+
+</ul>
+<td> <td width="2%">
+<td width="49%" valign=top>
+145 Pages, November 2016. <br>
+Paperback: ISBN 9781627055017 <br>
+eBook: ISBN 9781627058773 <br>
+
+</tr>
+</table>
+
+</td></tr>
+</table>
+<hr>
+<TABLE  BORDER=0 width="100%">
+<tr>
+<td width="49%" valign=top>
+<A NAME="table-of-contents"></A>
+<h3> <a href="http://www.cs.uic.edu/~liub/lifelong-learning/Table-of-Contents.pdf">Table of Contents</a> </h3>
+
+<ol>
+<li><a href="http://www.cs.uic.edu/~liub/lifelong-learning/introduction-lifelong-learning.pdf">Introduction</a>
+<li>Related Learning Paradigms 
+<li>Lifelong Supervised Learning 
+<li><a href="http://www.cs.uic.edu/~liub/lifelong-learning/continual-learning.pdf">Continual Learning and Catastrophic Forgetting</a>
+<li><a href="http://www.cs.uic.edu/~liub/lifelong-learning/open-world-learning.pdf">Open-world Learning</a>
+<li>Lifelong Topic Modeling
+<li>Lifelong Information Extraction
+<li><a href="http://www.cs.uic.edu/~liub/lifelong-learning/lifelong-learning-in-dialogues.pdf">Continuous Knowledge Learning in Chatbots</a>
+<li>Lifelong Reinforcement Learning
+<li> Conclusion and Future Directions 
+<!-- <br>Bibliographyn
+<br>Authors’ Biographies -->
+</ol>
+
+<td width="2%"> 
+<td width="49%" valign=top>
+<h3> Lecture Slides <!-- <a href="http://www.cs.uic.edu/~liub/FBS/sentiment-analysis-tutorial-2012.pdf"> PDF </a> --></h2>
+<ul>
+<li> Slides will be posted here when they are done. Most have been used in tutorials at <a href="https://www.cs.uic.edu/~liub/lifelong-learning.html">IJCAI-2015, KDD-2016, and EMNLP-2016</a>. We are updating them.
+</ul>
+<h3>My <a href="https://www.cs.uic.edu/~liub/lifelong-learning.html">lifelong machine learning</a> research page</h3>
+
+<h3> Errata List for the first edition</h3>
+<ul>
+<li> Page 48 - Equation 3.26: F_{+,i} = P(+ | d_i) - P(- | d_i), and four lines above it: P(- | d_i) = 1.
+<li> Please send me your comments and errata
+</ul>
+
+</ul>
+</tr></table>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2031920; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="1d4151a9"; 
+var sc_remove_link=1; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><img  src="http://c19.statcounter.com/counter.php?sc_project=2031920&amp;java=0&amp;security=1d4151a9&amp;invisible=1" alt="counter free hit unique web" border="0"> </noscript>
+<!-- End of StatCounter Code -->
+
+<HR>
+<B>First Draft:</B> by <a href="https://www.cs.uic.edu/~liub"><i>Bing Liu </i></a> on November 6, 2016. 
+<!--
+<script type="text/javascript" src="http://www.assoc-amazon.com/s/link-enhancer?tag=univofilliatc-20">
+</script>
+<noscript>
+    <img src="http://www.assoc-amazon.com/s/noscript?tag=univofilliatc-20" alt="" />
+</noscript>
+-->
+</BODY>
+</HTML>
+

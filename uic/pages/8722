@@ -1,0 +1,782 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> LecturesS13 &lt; CS340 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS340/LecturesS13?_T=2018-11-21" type="application/x-wiki" title="edit LecturesS13" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS340/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS340/LecturesS13"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
+.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
+.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS340/WebHome">CS340 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS340/LecturesS13" title='Topic revision: 27 (2013-05-02 - 15:51:56)'>LecturesS13</a> <span class='patternRevInfo'>(2013-05-02, Main.troy)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS340/LecturesS13?t=1542827081' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS340/LecturesS13' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="CS_340_Software_Design"></a> CS 340 - Software Design </h1>
+<h3><a name="Lecture_Notes_Spring_2013"></a> Lecture Notes: Spring 2013 </h3> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/notes115.txt" target="_top">notes115.txt</a>: Notes from 1/15/13
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/notes117.txt" target="_top">notes117.txt</a>: Notes from 1/17/13
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/notes122.txt" target="_top">notes122.txt</a>: Lecture Notes 1/22/13
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/notes124.txt" target="_top">notes124.txt</a>: notes124.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/notes128.txt" target="_top">notes128.txt</a>: Notes from 1/28/13
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/notes129.txt" target="_top">notes129.txt</a>: Notes from 1/29
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes131.txt" target="_top">cs340notes131.txt</a>: Notes from 1/31/13
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes204.txt" target="_top">cs340notes204.txt</a>: Notes from 2/4
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes205.txt" target="_top">cs340notes205.txt</a>: cs340notes205.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes207.txt" target="_top">cs340notes207.txt</a>: cs340notes207.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes211.txt" target="_top">cs340notes211.txt</a>: cs340notes211.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes212.txt" target="_top">cs340notes212.txt</a>: cs340notes212.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes214.txt" target="_top">cs340notes214.txt</a>: cs340notes214.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes218.txt" target="_top">cs340notes218.txt</a>: cs340notes218.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes219.txt" target="_top">cs340notes219.txt</a>: cs340notes219.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes221.txt" target="_top">cs340notes221.txt</a>: cs340notes221.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes225.txt" target="_top">cs340notes225.txt</a>: cs340notes225.txt
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes226.txt" target="_top">cs340notes226.txt</a>: cs340notes226.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes307.txt" target="_top">cs340notes307.txt</a>: cs340notes307.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes311.txt" target="_top">cs340notes311.txt</a>: cs340notes311.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/D1S13.zip" target="_top">D1S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/D1S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="D1S13 (this topic does not yet exist; you can create it)">D1S13</a></span>.zip - Qt Demo code from 3/19 slider and spinbox
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes402.txt" target="_top">cs340notes402.txt</a>: cs340notes402.txt
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/D3S13.zip" target="_top">D3S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/D3S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="D3S13 (this topic does not yet exist; you can create it)">D3S13</a></span>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo4S13.zip" target="_top">Demo4S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/Demo4S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="Demo4S13 (this topic does not yet exist; you can create it)">Demo4S13</a></span>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo5S13.zip" target="_top">Demo5S13.zip</a>: <a href="/bin/view/CS340/Demo5S13" class="twikiLink">Demo5S13</a>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo6S13.zip" target="_top">Demo6S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/Demo6S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="Demo6S13 (this topic does not yet exist; you can create it)">Demo6S13</a></span>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo7S13.zip" target="_top">Demo7S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/Demo7S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="Demo7S13 (this topic does not yet exist; you can create it)">Demo7S13</a></span>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo8S13.zip" target="_top">Demo8S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/Demo8S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="Demo8S13 (this topic does not yet exist; you can create it)">Demo8S13</a></span>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo9S13.zip" target="_top">Demo9S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/Demo9S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="Demo9S13 (this topic does not yet exist; you can create it)">Demo9S13</a></span>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo10S13.zip" target="_top">Demo10S13.zip</a>: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS340/Demo10S13?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="Demo10S13 (this topic does not yet exist; you can create it)">Demo10S13</a></span>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/Demo11S13.zip" target="_top">Demo11S13.zip</a>: <a href="/bin/view/CS340/Demo11S13" class="twikiLink">Demo11S13</a>.zip
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/FCS13.zip" target="_top">FCS13.zip</a>: Fortune Client Example
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/FSS13.zip" target="_top">FSS13.zip</a>: Fortune Server Example
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/ECS13.zip" target="_top">ECS13.zip</a>: Echo Client Example
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/ESS13.zip" target="_top">ESS13.zip</a>: Echo Server Example - Contains a flaw if multiple clients connect
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/ES2S13.zip" target="_top">ES2S13.zip</a>: Corrected Echo Server Example
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/CCSS13.zip" target="_top">CCSS13.zip</a>: Combined Client Server Example (simple chat example)
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/CCSS13Apr29.zip" target="_top">CCSS13Apr29.zip</a>: Combined Client Server Example (simple chat example) Updated during lecture 4/29
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes430.txt" target="_top">cs340notes430.txt</a>: cs340notes430.txt
+</li></ul> 
+<p /> <ul>
+<li> Echo Server/Client re-written to use different socket read/write methods <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/ECS13Apr30b.zip" target="_top">ECS13Apr30b.zip</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/ES2S13Apr30b.zip" target="_top">ES2S13Apr30b.zip</a>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS340/LecturesS13/cs340notes502.txt" target="_top">cs340notes502.txt</a>: cs340notes502.txt
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div><div class="twikiAttachments">
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
+<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS340/LecturesS13?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS340/LecturesS13?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS340/LecturesS13?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS340/LecturesS13?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS340/LecturesS13?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/CS340/LecturesS13?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS340/LecturesS13?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/CCSS13.zip">CCSS13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=CCSS13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 6.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 16:17</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Combined Client Server Example (simple chat example) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/CCSS13Apr29.zip">CCSS13Apr29.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=CCSS13Apr29.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 6.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-29 - 16:54</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Combined Client Server Example (simple chat example) Updated during lecture 4/29 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/D1S13.zip">D1S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=D1S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-19 - 16:05</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/D3S13.zip">D3S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=D3S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-02 - 17:23</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo10S13.zip">Demo10S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo10S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-15 - 16:38</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo11S13.zip">Demo11S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo11S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:10</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo4S13.zip">Demo4S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo4S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-09 - 16:36</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo5S13.zip">Demo5S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo5S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 9.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-09 - 16:36</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo6S13.zip">Demo6S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo6S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-09 - 16:36</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo7S13.zip">Demo7S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo7S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-11 - 17:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo8S13.zip">Demo8S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo8S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-15 - 16:38</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/Demo9S13.zip">Demo9S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=Demo9S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-15 - 16:38</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/ECS13.zip">ECS13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=ECS13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 16:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Echo Client Example </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/ECS13Apr30b.zip">ECS13Apr30b.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=ECS13Apr30b.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-30 - 16:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/ES2S13.zip">ES2S13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=ES2S13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 16:16</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Corrected Echo Server Example </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/ES2S13Apr30b.zip">ES2S13Apr30b.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=ES2S13Apr30b.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-30 - 16:39</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/ESS13.zip">ESS13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=ESS13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 16:08</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Echo Server Example - Contains a flaw if multiple clients connect </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/FCS13.zip">FCS13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=FCS13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:10</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Fortune Client Example </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/zip.gif" width="16" height="16" alt="Compressed Zip archive" title="Compressed Zip archive" border="0" /><span class="twikiHidden">zip</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/FSS13.zip">FSS13.zip</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=FSS13.zip;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:11</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Fortune Server Example </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes131.txt">cs340notes131.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes131.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-31 - 18:32</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Notes from 1/31/13 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes204.txt">cs340notes204.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes204.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-04 - 17:08</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Notes from 2/4 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes205.txt">cs340notes205.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes205.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-05 - 19:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes207.txt">cs340notes207.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes207.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-07 - 17:32</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes211.txt">cs340notes211.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes211.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-21 - 17:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes212.txt">cs340notes212.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes212.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-12 - 19:25</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes214.txt">cs340notes214.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes214.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-18 - 18:58</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes218.txt">cs340notes218.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes218.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-19 - 17:09</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes219.txt">cs340notes219.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes219.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-19 - 17:08</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes221.txt">cs340notes221.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes221.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-21 - 17:41</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes225.txt">cs340notes225.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes225.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-11 - 16:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes226.txt">cs340notes226.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes226.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-26 - 17:11</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes307.txt">cs340notes307.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes307.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-11 - 16:52</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes311.txt">cs340notes311.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes311.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-11 - 16:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes402.txt">cs340notes402.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes402.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-02 - 17:21</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes430.txt">cs340notes430.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes430.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-30 - 16:34</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/cs340notes502.txt">cs340notes502.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=cs340notes502.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-05-02 - 15:51</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/notes115.txt">notes115.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=notes115.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-15 - 18:54</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/notes117.txt">notes117.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=notes117.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-17 - 17:23</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/notes122.txt">notes122.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=notes122.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-22 - 17:05</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Lecture Notes 1/22/13 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/notes124.txt">notes124.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=notes124.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-28 - 15:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS340/LecturesS13/notes128.txt">notes128.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS340/LecturesS13?filename=notes128.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-29 - 15:30</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> Notes from 1/28/13 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/CS340/LecturesS13/notes129.txt">notes129.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/CS340/LecturesS13?filename=notes129.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2013-01-29 - 16:52</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS340.LecturesS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS340/LecturesS13?t=1542827081' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS340/LecturesS13' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS340/LecturesS13?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS340/LecturesS13?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r27&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/LecturesS13?rev1=27;rev2=26">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/LecturesS13?rev=26">r26</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/LecturesS13?rev1=26;rev2=25">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/LecturesS13?rev=25">r25</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/LecturesS13?rev1=25;rev2=24">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/LecturesS13?rev=24">r24</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/LecturesS13?rev1=24;rev2=23">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/LecturesS13?rev=23">r23</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS340/LecturesS13?template=backlinksweb' rel='nofollow' title='Search the CS340 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS340/LecturesS13?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS340/LecturesS13?t=1542827081;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS340/LecturesS13?template=oopsmore&amp;param1=27&amp;param2=27' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r27 - 2013-05-02 - 15:51:56 - Main.troy</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS340</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS340/Spring2013" class="twikiLink">Main Page: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS340/LecturesS13" class="twikiCurrentTopicLink twikiLink">Lecture Notes: Spring 13</a>
+</li> <li> <a href="/bin/view/CS340/Spring2013#Assignments" class="twikiAnchorLink">Assignments: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS340/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li></ul> 
+<a href="/bin/edit/CS340.WebLeftBar" target="_top">[edit this menu</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS340/LecturesS13">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS340 Web</a></strong>
+</li> <li> <a href="/bin/view/CS340/WebCreateNewTopic?topicparent=LecturesS13" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS340/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS340/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS340/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS340/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS340/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS340/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS340/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

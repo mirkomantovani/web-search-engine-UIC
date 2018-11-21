@@ -1,0 +1,155 @@
+<TITLE>Active Database Project's Home Page</TITLE>
+<H2>Temporal Triggers in Active Databases for Monitor and Control</H2>
+<HR>
+
+<hr>
+<h3> Project Description</h3>
+
+We are building a rule-processing component that can be
+incorporated into commercial-off-the-shelf Database Management
+Systems. The component will add monitor and control
+capabilities to existing DBMS's. 
+The target applications consist of a continuously changing
+database that represents the
+status of a real system (e.g. a battlefield).
+Using the rule-system the user
+will be able to specify conditions that need to be monitored in real-time
+over the changing database, and actions to be taken upon
+occurrence of these conditions. <p>
+
+Our rule system is used for specifying triggers.
+Each rule is an independent trigger that monitors a separate condition. 
+This is unlike existing 
+AI/logic-programming systems, where all the rules comprise a program 
+with an input and an output. An additional difference is that
+in our systems the database
+is updated by transactions external to the rule-system.<p>
+
+There are two novel aspects of our rule-processing component.
+<ul>
+<li>
+First is the rule language which, in contrast to existing languages,
+allows the concise specification of temporal conditions
+(i.e., conditions on the way the database evolves over time) and
+temporal actions. 
+This is achieved through the use of temporal logic 
+(actually, our rule-language combines temporal logic
+with the underlying database query language).
+So, for example, the user will be able to specify that if the
+aircraft speed, a database variable, decreases by more than 50% in 3 seconds,
+then a certain action is to be taken.
+In contrast, in existing rule-languages the condition is
+specified on the current database state, rather than the way
+the state evolves.
+In our rule language the action part of a rule 
+can also be temporal, e.g.,
+it can invoke a certain program every 10 minutes, for one hour.
+<p>
+
+<li>
+The second novel aspect of our system is the use of incremental
+processing and parallel processing to meet the real-time
+performance requirements. Incremental processing means that
+instead of evaluating from scratch
+each rule-condition after each database update,
+the rule-processing component only checks whether or not the
+UPDATE could have made the condition true.
+It does so by saving intermediate results of previous evaluations.
+Performance enhancement is obtained
+since the size of the database-update and the intermediate
+results is usually much smaller
+than the size of the entire database.
+Performance is further enhanced by performing the incremental
+processing in parallel.<p>
+
+
+<p>
+
+<hr>
+
+<H3>Related Papers:</H3>
+<ul>
+<li>   P. Sistla, O. Wolfson, 
+<!--SIGMOD-95 --!>
+<a href="../active_ps/sigmod95.ps">
+  "Temporal Conditions and Integrity Constraints in Active Database Systems"</a>,
+	<i> Proceedings of the ACM-SIGMOD 1995, 
+	International Conference on Management of Data,</i>
+	San Jose, CA, May 1995.
+<li>   M. Deng, P. Sistla, O. Wolfson, 
+<!--ARTDB-95 --!>
+<a href="../active_ps/artdb95.ps">
+  "Temporal Conditions with Retroactive and Proactive Updates"</a>,
+	<i> Proceedings of ARTDB 1995, 
+	International Workshop on Active and Real-Time Database Systems,</i>
+	Skovde, Sweden, June 1995.
+
+<li>   P. Sistla, O. Wolfson,
+<!--TKDE93 --!>
+<a href="../active_ps/ieee_tkde.ps">
+ "Temporal Triggers in Active Databases"</a>,
+  <i> IEEE Transactions on Knowledge and Data Engineering (TKDE),</i>
+	June 1995 pp. 471-486. 
+
+<li>	P. Sistla, O. Wolfson, 
+<a href="../active_ps/dbe2.ps">
+"Triggers on Database Histories"</a>,
+<!--BOOK-92 --!>
+	(invited), <i> Data Engineering, </i>
+	IEEE Computer Society Press, Dec. 1992.
+
+<li>	O. Wolfson and A. Silberschatz, 
+<!--JLP91 --!>
+	"Decomposability and Its Role in Parallel Logic-Program Evaluation",
+	<i> Journal of Logic Programming (JLP),</i>
+	Vol. 11(3\&4), October/November 1991, pp. 345-358.
+<li>   O. Wolfson, 
+<!--JLP92 --!>
+	"Parallel Evaluation of Datalog Programs by Load Sharing",
+	<i> Journal of Logic Programming (JLP),</i>
+	Vol. 12, April 1992, pp. 369-393.
+<li>   O. Wolfson, W. Zhang, H. Butani, A. Kawaguchi, K. Mok, 
+<!--IJPP92 --!>
+<a href="../other_ps/IJPP92.ps">
+	"Parallel Processing of Graph Reachability in Databases"</a>,
+	<i> International Journal of Parallel Programming (IJPP)</i>,
+	Vol. 21(4), August 1992, pp. 269-302.
+<li>   H. Dewan, D. Ohsie, S. Stolfo, O. Wolfson, S. DaSilva,
+<!--JIIS92 --!>
+	"Incremental Database Rule Processing in PARADISER",
+	<i> Journal of Intelligent Information Systems (JIIS),</i>
+	Vol. 1(2), October 1992, pp. 177-209.
+<li>   O. Wolfson and A. Ozeri, 
+<!--TKDE91 --!>
+	"Parallel and Distributed Processing of Rules by Data-Reduction",
+	<i> IEEE Transactions on Knowledge and Data Engineering (TKDE),</i> 
+	Vol. 5(3), June 93, pp. 523-530.
+<li>	S. Cohen, O. Wolfson, "Why a Single Parallelization Strategy is 
+<!--JCSS90 --!>
+	Not Enough in Knowledge-Bases", (invited article),
+	<i> Journal of Computer and System Sciences (JCSS),</i>
+	special issue on databases, Vol. 47(1), Aug. 1993, pp. 2-44.
+<li>   O. Wolfson, H. Dewan, S. Stolfo, Y. Yemini, 
+<!--SIGMOD-91 --!>
+<a href="../other_ps/sigmod.ps">
+	"Incremental Evaluation of Rules and Its Relationship to 
+	Parallelism"</a>, <i> Proceedings of the ACM-SIGMOD 1991, 
+	International Conference on Management of Data,</i>
+	Denver, CO, May 1991, pp. 78-87.
+<li>   S. Stolfo, H. Dewan, O. Wolfson, 
+<!--ICPP-91 --!>
+	"The PARULEL Parallel Rule Language",
+	<i> Proceedings of the 1991 International Conference on Parallel
+	Processing (ICPP)</i>, St. Charles, IL, Aug. 1991, pp. II/36 - II/45.
+
+</ul>
+
+
+<hr>
+<address>
+<img src="../icons/mail.gif">
+Contact me at 
+<a href="mailto:my last name@cs.uic.edu">my last name@cs.uic.edu</a> <P>
+</address>
+
+

@@ -1,0 +1,136 @@
+
+
+
+ 
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <title>System Login |  University of Illinois System </title>
+    <link rel="stylesheet" href="../css/eas.css?version=4.2c">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">
+	<script type="text/javascript">
+	function show(ele) {
+    	var srcElement = document.getElementById(ele);
+        if(srcElement != null) {
+        	if(srcElement.style.display == "block") {
+            	srcElement.style.display= 'none';
+        	}
+            else {
+                   srcElement.style.display='block';
+            }
+            return false;
+    	}
+	}
+	function infoKeypress(event) {
+		var srcElement = document.getElementById('tttext1');
+		var key = event.keyCode;
+		
+		var testDisplay = srcElement.style.display;
+		if (testDisplay == "block") {
+		  srcElement.style.display = 'none';
+		}
+		else {
+		  srcElement.style.display = 'block';
+		}
+
+	
+	}
+	
+	function displayOff() {
+	  var srcElement = document.getElementById('tttext1');
+	  var testDisplay = srcElement.style.display;
+	  if (testDisplay == "block") {
+		  srcElement.style.display = 'none';
+		}
+		
+	}
+	
+	function setErrorFocus() {
+	  var theId = document.getElementById('login-error-id');
+	  if (theId != null) {
+	    theId.focus();
+	  }
+	  else {
+	    theId = document.getElementById('netid');
+	    theId.focus();
+	  }
+	}
+ 
+  </script>
+  </head>
+  
+  
+ <body onload="setErrorFocus()">
+	  
+	
+	   <div class="box">	
+		   
+		   <div class="content">
+			   
+				<header>
+					<img src="../images/system.png" alt="University of Illinois System" class="logo">
+					<h1 class="hidden">System Login</h1>
+				</header>
+			
+				<main>
+					<div class="mainbox">
+
+						<form method="post" id="easFormId" name="easForm" action="login.do;jsessionid=27E9C3BC2627B7D7C064961D4B4F099F" class="easform">
+							<div class="quest">
+							  
+								
+								<label for="netid">NetID</label>
+                <span class="sr-text" id="screentext">select "What ID to use" button to get more information on ID</span>
+								<span div class="ttipcontainer info">
+								  <span div class="tooltip" title="tool tip" role="button" tabindex="0" onclick="show('tttext1')" 
+								   onkeypress="infoKeypress(event)" ><img src="../images/info.png" alt="ID information" 
+								   aria-label="What ID do I use?">
+								  </span div>
+								  
+								  <span class="ttiptext" id="tttext1" style="display:none" 
+								   aria-live="polite">This can be your NetID or your Enterprise ID.  Forgotten your ID? <a href="https://identity.uillinois.edu/iamFrontEnd/iam/selfservice/netid/">Recover it here</a>
+								  </span>
+					
+								</span div>
+
+								<input type="text" onfocus="displayOff()" name="inputEnterpriseId" id="netid" />
+								
+							</div>
+							<div class="quest">
+								<label for="easpass">Password</label>
+								<input type="password" onfocus="displayOff()" name="password" id="easpass">
+							</div>
+							
+							<input type="submit" name="BTN_LOGIN" value="Log In" class="bttn">
+							
+							<p class="forgot"><a href="https://identity.uillinois.edu/iamFrontEnd/iam/selfservice/reset/">Forgotten or expired password?</a></p>
+							
+						</form>
+					</div>
+					
+					<div class="links">
+						<div class="acct"><a href="../jsp/acct.jsp?redirect=https://appserv6.admin.uillinois.edu/appsloginssa/servlet/SelfServiceLogin?appName=edu.uillinois.aits.TEMHelper">Account options</a></div>
+						<div class="helpme"><a href="../jsp/help.jsp?redirect=https://appserv6.admin.uillinois.edu/appsloginssa/servlet/SelfServiceLogin?appName=edu.uillinois.aits.TEMHelper">Help logging in</a></div>
+					</div>
+					
+				</main>
+		   </div>
+	   </div>
+		  
+		  <footer role="contentinfo" class="copyright">&copy; <script type="text/javascript">document.write(new Date().getFullYear());
+	</script> University of Illinois Board of Trustees |  <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy policy</a>
+				
+			<div class="screenid">EAS 4.2</div>
+			  
+		  </footer>
+
+     </body>
+</html>  
+  
+
+

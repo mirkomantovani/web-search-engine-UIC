@@ -1,0 +1,196 @@
+﻿
+
+
+
+<html>
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ <title>UIC User Identification Service</title>
+ <meta name="viewport" content="width=500, maximum-scale=1.0">
+ <script type="text/javascript">
+  <!--
+  function setfocus( elemId )
+  {
+	document.getElementById( elemId ).focus();
+  }
+  // -->
+ </script>
+ <style type="text/css">
+  a img { border: none }
+  #logo {
+      height: 51;
+      width: 100%;
+      background-color: white;
+      position: relative;
+  }
+  #logo-img-link {
+      position: absolute;
+  }
+  #logo h1 {
+      height: 50px;
+      padding-left: 5pt;
+      margin-left: 310px;
+      border-left: 1px solid #c00;
+      font-family: Helvetica;
+      font-size: 14pt;
+      font-weight: bold;
+      color: #999;
+  }
+  #toolbar {
+      text-align: right;
+      border-right: 1px solid #003;
+  }
+  #toolbar a {
+      color: #003;
+      text-decoration: none;
+      font-family: helvetica;
+      font-weight: bold;
+      font-size: 11pt;
+      padding: 0 5pt;
+      background-color: #ddd;
+      border-top: 1px solid #003;
+      border-bottom: 1px solid #003;
+      border-left: 1px solid #003;
+  }
+  #login-history {
+      text-align: center;
+      margin: auto;
+  }
+  #login-history td {
+      padding: 1pt 5pt;
+  }
+  #pwfdbtabs {
+      border-bottom: 1px solid black;
+  }
+  #pwfdbtabs a {
+      color: #003;
+      text-decoration: none;
+      font-family: helvetica;
+      font-size: 11pt;
+      padding: 0 5pt;
+      background-color: #ddd;
+      border-top: 1px solid #003;
+      border-bottom: 1px solid #003;
+      border-left: 1px solid #003;
+      border-right: 1px solid #003;
+  }
+  #pwfdbtabs a.current {
+      background-color: white;
+      border-bottom: none;
+  }
+  #authdb-users {
+      text-align: center;
+      margin: auto;
+  }
+  #authdb-users td {
+      padding: 1pt 5pt;
+  }
+  body {
+      font-size: 14pt;
+  }
+  input {
+      font-size: 12pt;
+  }
+ </style>
+        <SCRIPT LANGUAGE="JavaScript">
+            function submitForm()
+            {
+            //alert('submitForm');
+            var element = document.getElementById('UserID');
+            //alert(element);
+            var username = element.value;
+            element.value = username.toLowerCase();
+            document.Login.submit();
+            }
+
+document.onkeypress = keyPress;
+
+function keyPress(e) {
+  var x = e || window.event;
+  var key = (x.keyCode || x.which);
+  //alert(e + " " + x + " " + key);
+  if(key == 13 || key == 3){
+     submitForm();
+  }
+}
+
+function setFocus() {
+  //alert(document.getElementById('errorMsg'));
+  document.getElementById('UserID').focus();
+}
+
+        </SCRIPT>
+</head>
+<body onLoad="setFocus()">
+<div id="logo">
+<a id="logo-img-link" name="top" href="http://www.uic.edu/"><img id="logo-img" src="images/uic-logo.gif"></a>
+<h1>User Identification Service</h1>
+</div>
+
+<hr>
+ <div style="text-align: center; margin-top: 10pt">
+ <form method="post" name="Login">
+          <INPUT TYPE=HIDDEN NAME="SMENC" VALUE="ISO-8859-1">
+          <INPUT type=HIDDEN name="SMLOCALE" value="US-EN">
+
+<table style="margin-left: auto;margin-right: auto;">
+<tr>
+<td align="right"><label for="USER" style="font-family: sans-serif; font-weight: bold">NetID</label></td>
+<td><input size="20" name="USER" id="UserID" type="text"></td>
+</tr>
+<tr>
+<td align="right"><label for="PASSWORD" style="font-family: sans-serif; font-weight: bold">Password</label></td>
+<td><input size="20" name="PASSWORD" id="Password" type="password"></td>
+</tr>
+<tr>
+<td colspan="2">Enter password* for NetID, then press Enter.</td>
+</tr>
+<tr>
+<td colspan="2"><span style="font-size:11pt">*ACCC common password or UICMC password</span></td>
+</tr>
+</table>
+
+          <input type="hidden" name="queryString" value="null"/>
+          <input type="button" name="BTN_LOGIN" value="Login" onClick="submitForm();">
+          <!--input type="submit" name="BTN_LOGIN" value="Login"-->
+          <input type=hidden name=target value="HTTPS://fimweb.fim.uic.edu/secure/ConstructionDrawings.aspx">
+          <input type=hidden name=smquerydata value="">
+          <input type=hidden name=smauthreason value="0">
+          <input type=hidden name=smagentname value="Tep5MNTjAjNXR1aQMCuIe4Vt56cgxSY6lkLdvED3uynj4tzalvnfPPNiu/yzyC59">
+          <input type=hidden name=postpreservationdata value="">
+ </form>
+ </div>
+
+<hr style="width: 60%">
+
+<p style="font-weight: bold; text-align: center">Things you should know...</p>
+
+<blockquote>
+       <p>To protect your privacy, this service will provide your <a href="http://www.uic.edu/depts/accc/accts/netids.html">NetID</a> only to secure applications.</p>
+       <p><strong>UIUC & UIS visitors:</strong> Add @uiuc.edu  or @uis.edu to your UIUC or UIS NetID when logging in here. For example, if your UIUC NetID is joan, enter joan@uiuc.edu.</p>
+       <p style="margin: 0">More information about accounts at UIC and NetIDs can be found <a href="http://www.uic.edu/depts/accc/accts/netids.html" style="font-weight: bold">here</a>.</p>
+       <p>To change or recover your password, please visit <a href="http://password.accc.uic.edu" style="font-weight: bold">http://password.accc.uic.edu</a>.</p>
+</blockquote>
+
+<blockquote>
+   <ul>
+       <li>Remember to quit your browser before leaving your computer.</li>
+       <li>This page's URL should start with <code>https://</code> followed
+           by one of the servers listed above. Report the URL of any other
+           WWW server that asks for your NetID password
+           to <a href="mailto:systems@uic.edu">systems@uic.edu</a>.</li>
+       <li>The security padlock icon for this page should be closed/locked.</li>
+       <li> To change or recover your password, please visit <a href="http://password.accc.uic.edu/" style="font-weight:bold">http://password.accc.uic.edu</a>.</li>
+   </ul>
+</blockquote>
+
+<hr>
+   <address>
+   <a href="http://www.uic.edu/depts/accc/cso/" target="_blank">CSO Consultants</a> -
+   <a href="mailto:consult@uic.edu">consult@uic.edu</a>
+   </address>
+   
+SM-C-BS-001
+
+</body>
+</html>

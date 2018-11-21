@@ -1,0 +1,846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; Devroye &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Devroye/WebStatistics?_T=2018-11-21" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Devroye/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Devroye/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Devroye/WebHome/custom.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/Devroye/WebHome">Devroye Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/Devroye/WebStatistics" title='Topic revision: 500 (2017-03-22 - 21:59:53)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-22, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/Devroye/WebStatistics?t=1542826820' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/Devroye/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_Devroye_Web"></a> Statistics for Devroye Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/Devroye/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/Devroye/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/Devroye/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/Devroye/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/Devroye/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/Devroye/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2291<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 499&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />260&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />246&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />152&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />138&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />125&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />101&nbsp;<a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;95&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;94&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;77&nbsp;<a href="/bin/view/Devroye/Masters" class="twikiLink">Masters</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1671<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 494&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />171&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />166&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />105&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;88&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;52&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2328<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 671&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />268&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />172&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />136&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />119&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;91&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;91&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;89&nbsp;<a href="/bin/view/Devroye/ECETeaching" class="twikiLink">ECETeaching</a><br />&nbsp;&nbsp;87&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;85&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2303<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 564&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />310&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />171&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />113&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />110&nbsp;<a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />109&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />104&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;91&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;83&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;81&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2264<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 710&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />319&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />177&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />139&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />108&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />101&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;98&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;86&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;75&nbsp;<a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/Devroye/ECETeaching" class="twikiLink">ECETeaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2265<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 680&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />267&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />185&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />122&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />118&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />113&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />109&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />106&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 957<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 294&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />131&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;69&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/Devroye/UIC-OPRFl" class="twikiLink">UIC-OPRFl</a><br />&nbsp;&nbsp;52&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Devroye/ECETeaching" class="twikiLink">ECETeaching</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Devroye/Masters" class="twikiLink">Masters</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1326<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 424&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />126&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />112&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;&nbsp;93&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;84&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;75&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Devroye/Masters" class="twikiLink">Masters</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2053<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 645&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />168&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />142&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />121&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />120&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />105&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />104&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;99&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;93&nbsp;<a href="/bin/view/Devroye/Masters" class="twikiLink">Masters</a><br />&nbsp;&nbsp;74&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1410<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 404&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />117&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;99&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;84&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;82&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;&nbsp;81&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;76&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1215<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 388&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />102&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;94&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;&nbsp;70&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/Devroye/Masters" class="twikiLink">Masters</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1679<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 507&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />177&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />142&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />142&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />116&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;87&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;82&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;81&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 520<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 187&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;22&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;22&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;20&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;14&nbsp;<a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1267<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 412&nbsp;<a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />112&nbsp;<a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />104&nbsp;<a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />102&nbsp;<a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />100&nbsp;<a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2824 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 9 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 4 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 623 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />172 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />162 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />138 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />121 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;94 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;82 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;81 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;79 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;43 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;40 <a href="/bin/view/Devroye/WebBottomBar" class="twikiLink">WebBottomBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;13 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2686 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 610 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />182 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />169 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />145 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />115 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />115 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;96 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;91 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;76 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;44 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;41 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2721 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 611 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />179 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />138 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />135 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />115 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />114 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />101 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;91 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;64 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;46 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;45 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2307 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 5 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 495 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />148 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />142 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />133 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />112 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;93 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;84 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;77 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;62 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;61 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;46 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;6 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2578 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 6 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 4 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 646 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />174 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />142 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />124 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />121 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />112 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />111 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;85 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;76 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;62 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;51 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;10 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2860 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 636 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />568 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />260 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />118 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />112 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />106 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />105 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;98 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;90 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;49 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;43 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2805 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 3 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 612 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />163 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />160 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />139 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />127 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />117 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;98 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;92 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;92 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;90 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;65 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;3 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3097 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 7 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 622 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />262 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />199 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />155 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />154 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />139 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />101 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;83 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;67 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;64 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;50 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;8 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3435 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 5 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 700 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />298 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />182 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />178 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />161 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />143 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />138 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />108 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;92 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;54 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;53 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;17 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3044 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 647 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />249 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />161 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />155 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />135 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />122 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />113 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;90 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;81 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;53 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;52 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3387 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 766 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />310 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />194 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />159 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />149 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />134 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />125 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;87 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;81 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;39 <a href="/bin/view/Devroye/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;39 <a href="/bin/view/Devroye/WebTopBar" class="twikiLink">WebTopBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3436 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 691 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />329 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />184 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />164 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />150 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />135 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />119 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;98 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;90 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;50 <a href="/bin/view/Devroye/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;47 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3082 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 693 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />290 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />172 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />139 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />134 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />115 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />106 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;92 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;89 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;45 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;41 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3596 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 21 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 13 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 826 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />316 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />193 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />163 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />140 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />137 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />135 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />117 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />102 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;65 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;52 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;34 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4766 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 18 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 2 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 751 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />456 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />427 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />312 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />236 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />199 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />192 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />168 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />168 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />148 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />136 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;20 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 5218 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 755 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />430 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />372 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />365 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />300 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />285 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />233 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />213 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />202 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />186 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />179 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4074 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 760 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />366 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />328 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />264 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />205 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />173 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />159 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />148 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />145 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />130 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />126 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 5314 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 69 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 6 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 1094 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />560 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />506 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />371 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />247 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />208 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />207 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />194 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />176 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />161 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />147 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;75 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4132 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 5 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 2 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 800 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />475 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />276 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />219 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />218 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />190 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />166 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />164 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />151 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />122 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />111 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;7 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2558 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 611 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />331 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />132 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />132 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />115 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;98 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;80 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;74 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;68 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;65 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;31 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1682 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 438 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />204 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;81 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;75 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;63 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;50 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;48 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;40 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;33 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;17 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;11 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2815 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 8 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 635 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />318 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />151 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />128 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;96 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;92 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;85 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;62 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;58 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;35 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;34 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;9 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1860 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 5 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 384 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />184 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />103 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;88 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;73 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;72 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;59 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;46 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;45 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;43 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;35 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;17 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3969 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 8 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 776 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />371 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />209 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />193 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />184 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />157 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />141 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />133 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />122 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />117 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;81 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;12 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3865 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 3 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 774 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />381 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />206 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />190 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />166 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />146 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />113 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />113 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;48 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;47 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;45 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;3 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3106 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 737 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />278 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />148 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />131 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />116 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;93 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;92 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;66 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;60 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;43 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;33 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1918 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 24 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 9 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 427 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />230 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />110 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;86 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;74 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;73 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;66 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;37 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;26 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;22 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;21 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;33 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1089 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 232 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />122 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;64 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;44 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;38 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;37 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;35 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;25 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;21 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;20 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;17 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2067 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 460 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />236 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;98 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;98 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;76 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;74 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;64 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;35 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;33 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;31 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;27 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3579 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 732 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />353 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />204 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />158 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />150 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />113 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;95 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;88 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;79 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;76 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;68 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3529 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 9 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 7 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 675 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />338 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />220 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />145 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />140 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />132 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />111 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;90 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;83 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;72 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;16 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 106 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;20 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;19 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;7 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;&nbsp;6 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2548 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 3 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 495 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />269 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />148 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />127 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />108 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />102 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;92 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;64 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;21 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;21 <a href="/bin/view/Devroye/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;3 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4484 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 8 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 862 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />465 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />240 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />224 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />169 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />153 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />150 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />114 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />101 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />100 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;93 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;8 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 5166 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 3 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 2 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 956 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />484 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />281 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />224 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />223 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />220 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />188 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />185 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />142 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />117 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />110 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;5 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2331 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 414 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />225 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />145 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />108 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />100 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;86 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;80 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;53 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;31 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;28 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a><br />&nbsp;22 <a href="/bin/view/Devroye/WebTopBar" class="twikiLink">WebTopBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3571 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 657 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />374 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />208 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />172 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />159 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />157 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />144 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;95 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;65 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;47 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3279 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 592 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />386 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />187 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />168 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />147 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />145 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />108 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;73 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;57 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;38 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2175 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 411 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />294 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />140 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;89 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;88 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;83 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;73 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;50 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;47 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;33 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;24 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3599 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 33 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 706 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />441 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />210 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />165 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />152 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />146 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />133 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;88 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;70 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;50 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;40 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;37 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2316 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 4 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 387 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />305 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />132 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />105 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;95 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;89 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;78 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;75 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;48 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;31 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;28 <a href="/bin/view/Devroye/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;4 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1955 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 418 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />217 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;90 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;87 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;81 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;80 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;62 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;55 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;29 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;18 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;17 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4338 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 7 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 873 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />399 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />282 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />215 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />181 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />149 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />141 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;86 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;68 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;28 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;7 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4138 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 5 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 830 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />387 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />228 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />188 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />168 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />153 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />141 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;75 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;69 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;51 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;43 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;5 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3495 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 14 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 2 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 667 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />285 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />188 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />148 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />144 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />128 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />124 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;78 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;76 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;37 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;26 <a href="/bin/view/Devroye/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;16 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4568 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 862 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />440 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />240 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />224 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />220 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />172 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />141 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />101 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;86 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;48 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4428 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 813 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />427 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />231 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />223 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />196 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />182 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />143 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />113 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;54 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;54 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;39 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4335 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 3 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 794 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />422 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />224 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />199 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />193 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />172 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />167 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;82 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;81 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;66 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;33 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;3 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 5216 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 8 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 1 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 925 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />503 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />256 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />243 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />238 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />236 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />177 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />118 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;95 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;80 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;61 <a href="/bin/view/Devroye/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;9 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3520 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 4 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 629 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />367 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />185 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />151 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />150 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />131 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />125 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />124 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />103 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;66 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;62 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;6 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2054 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 21 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 1 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 340 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />234 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />107 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;94 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;90 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;83 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;80 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;37 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;21 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;14 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;14 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;22 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3186 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 14 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 582 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />302 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />191 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />131 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />121 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />115 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />113 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;67 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;46 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;46 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/Devroye/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;14 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 5143 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 6 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 2 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 928 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />477 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />282 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />253 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />246 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />224 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />213 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />170 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />102 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;96 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;91 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;6 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span><br />&nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 5223 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 926 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />437 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />306 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />267 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />248 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />235 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />182 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />121 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;80 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;78 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;51 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2969 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 509 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />251 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />194 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />156 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />138 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />128 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />108 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;60 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;46 <a href="/bin/view/Devroye/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;36 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;27 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2713 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 7 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 465 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />224 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />164 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />109 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />104 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;99 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;85 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;61 <a href="/bin/view/Devroye/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;46 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;39 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;38 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;7 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 498 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;93 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;37 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />&nbsp;33 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />&nbsp;24 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />&nbsp;22 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />&nbsp;20 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;15 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;11 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Devroye/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;5 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;5 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4217 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 6 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 809 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />338 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />215 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />213 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />155 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />153 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />150 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;97 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;65 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;59 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;46 <a href="/bin/view/Devroye/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;7 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4642 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 9 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 2 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 971 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />301 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />257 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />199 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />198 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />183 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />147 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;89 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;78 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;72 <a href="/bin/view/Devroye/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;56 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;11 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2916 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 4 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 587 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />213 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />164 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />145 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />134 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />119 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />&nbsp;98 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;65 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />&nbsp;57 <a href="/bin/view/Devroye/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;41 <a href="/bin/view/Devroye/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;37 <a href="/bin/view/Devroye/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;4 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Jul 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1 twikiLast"> 2968 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2 twikiLast"> 92 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3 twikiLast"> 14 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4 twikiLast"> 344 <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />190 <a href="/bin/view/Devroye/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />164 <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a><br />155 <a href="/bin/view/Devroye/AboutMe" class="twikiLink">AboutMe</a><br />140 <a href="/bin/view/Devroye/WebSearch" class="twikiLink">WebSearch</a><br />126 <a href="/bin/view/Devroye/People" class="twikiLink">People</a><br />125 <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a><br />123 <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a><br />111 <a href="/bin/view/Devroye/News" class="twikiLink">News</a><br />106 <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a><br />&nbsp;61 <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;83 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/NatashaDevroye?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="NatashaDevroye (this topic does not yet exist; you can create it)">NatashaDevroye</a></span><br />&nbsp;23 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/Devroye" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Devroye/WebStatistics?t=1542826821' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Devroye/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Devroye/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Devroye/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r500&nbsp;<a rel="nofollow" href="/bin/rdiff/Devroye/WebStatistics?rev1=500;rev2=499">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Devroye/WebStatistics?rev=499">r499</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Devroye/WebStatistics?rev1=499;rev2=498">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Devroye/WebStatistics?rev=498">r498</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Devroye/WebStatistics?rev1=498;rev2=497">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Devroye/WebStatistics?rev=497">r497</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Devroye/WebStatistics?rev1=497;rev2=496">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Devroye/WebStatistics?rev=496">r496</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Devroye/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the Devroye Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Devroye/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Devroye/WebStatistics?t=1542826821;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Devroye/WebStatistics?template=oopsmore&amp;param1=500&amp;param2=500' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r500 - 2017-03-22 - 21:59:53 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Devroye.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/Devroye/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> Devroye</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/Devroye/AboutMe" class="twikiLink">About Me</a>
+</li> <li> <a href="/bin/view/Devroye/Publications" class="twikiLink">Publications</a>
+</li> <li> <a href="/bin/view/Devroye/Presentations" class="twikiLink">Presentations</a>
+</li> <li> <a href="/bin/view/Devroye/News" class="twikiLink">News</a>
+</li> <li> <a href="/bin/view/Devroye/Research" class="twikiLink">Research</a>
+</li> <li> <a href="/bin/view/Devroye/Teaching" class="twikiLink">Teaching</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/Devroye/WebHome/Devroye-CV.pdf" target="_top">CV (.pdf)</a>
+</li> <li> <a href="/bin/view/Devroye/People" class="twikiLink">People</a>
+</li> <li> <a href="/bin/view/Devroye/Masters" class="twikiLink">Master's Students</a>
+</li> <li> <a href="/bin/view/Devroye/DUGS" class="twikiLink">DUGS Links</a>
+</li> <li> <a href="/bin/view/Devroye/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Devroye/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p />
+  <!-- * <a href="/bin/view/Devroye/ECETeaching" class="twikiLink">ECE Lunch on Teaching Methods</a> <ul>
+<li> <a href="/bin/view/Devroye/UIC-OPRFl" class="twikiLink">UIC-OPRF Carpool</a> -->
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

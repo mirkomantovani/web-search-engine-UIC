@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>UIC Guest Wireless Self-Service</title>
+<!--
+<link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.8.16.custom.css">
+-->
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all" />
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="//www.uic.edu/apps/security/js/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script src="//www.uic.edu/apps/security/js/guest.js" type="text/javascript"></script>
+
+<style type="text/css">
+
+body{
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+
+}
+
+/* Header */
+#header-wrapper {	height: 50px;}
+
+#header {width: 1200px;	margin: 0 auto;	padding: 0px 0px 0px 40px}
+
+/* Page */
+#page {	width: 980px;	margin: 0 auto;	padding: 0px 0px 0px 0px;}
+
+
+/* Content */
+#content {	float: left;	width: 450px;	padding: 0px 0px 0px 0px;}
+
+/* Sidebar */
+#sidebar {	float: right;	width: 280px;	margin: 40px 10px;	padding: 0px 10px 0px 0px;	 }
+
+#wireless_form {
+		position:			relative;
+		width:				720px;
+		margin:				0 auto;
+		padding:			0;
+
+}
+
+fieldset {
+	background:#EEEEEE; 
+	padding:10px; 
+	border:1px solid #fff; 
+	border-color:#fff #666661 #666661 #fff; 
+	margin-bottom:36px; width:560px;
+	margin-top:46px;
+	}
+input, textarea, select {
+	font:12px/12px Arial, Helvetica, sans-serif; 
+	padding:0;
+	}
+fieldset.action {
+	background:#F6F0E8; 
+	border-color:#e5e5e5 #797c80 #797c80 #e5e5e5; 
+	margin-top:-20px;
+	}
+legend {
+	background:#878787; 
+	color:#fff; 
+	font:17px/21px Calibri, Arial, Helvetica, sans-serif; 
+	padding:0 10px; 
+	margin:-26px 0 0 -11px; 
+	font-weight:bold; 
+	border:1px solid #fff; 
+	border-color:#e5e5c3 #505014 #505014 #e5e5c3;
+	}
+
+label{
+	display: block;
+	color: #000000;
+	font-weight: bold;
+	line-height: 1.4em;
+        padding:3px 0px;
+}
+
+
+label.required {
+		background: transparent url(required.gif) no-repeat center right;
+}
+	
+
+#wireless_form input{
+	width: 220px;
+	padding: 5px;
+	color: #000;
+	font-family: Arial,  Verdana, Helvetica, sans-serif;
+	font-size: 11px;
+	border: 1px solid #cecece;
+}
+#wireless_form input.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+#wireless_form select{
+	border-color: #282828;
+        margin-bottom:10px;
+        margin-top:0px;
+}
+
+#wireless_form div span{
+	margin-left: 10px;
+	color: #333333;
+	font-size: 11px;
+	font-style: italic;
+}
+#wireless_form div span.error{
+	color: #e46c6e;
+}
+
+
+p.small {
+
+        font-size: 9px;
+	}
+	
+button {
+	clear:both;
+	float: center;
+	width:125px;
+	height:31px;
+	background:#686868;
+	text-align:center;
+	line-height:31px;
+	color:#FFFFFF;
+	font:17px/21px Calibri, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	}
+
+#wireless_form button:hover{
+	background: #B8B8B8;
+}
+
+
+#error{
+	margin-bottom: 20px;
+	border: 1px solid #efefef;
+}
+
+#content h1 {	height: 28px;font-size: 1.5em;}
+
+form.wireless_form label.error, .error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: red;
+	font-style: italic
+}
+
+div#signupResult {display:none;
+                  font-size:16px;
+                  }
+#sidebar li{ 
+	  margin:0 0 1em 0; 
+font-size: 1.2em; 
+	  } 
+ul.link {list-style-type:circle;
+           margin:10px;
+}
+#footer p { margin: 0; padding: 10px 0px 0px 0px; text-align: center;line-height: normal;
+        font-size: 10px;color: #585858;text-shadow:0 2px 3px rgba(0, 0, 0, 0.5); }
+
+.error {
+    text-align: center;
+    color: red;
+	font-size:1.5em;
+	font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div id="header-wrapper">	
+	<div id="header">		
+		<div id="logo">				
+		<table border="0" cellspacing="0" cellpadding="0" width="900">     
+		<tr>	
+			<td height="42" bgcolor="#666699" rowspan="2" style="padding: 0;"><a target="_top" href="//www.uic.edu/depts/accc/home/"><img border="0" vspace="0" hspace="0" height="42" width="100" src="//www.uic.edu/depts/accc/logos/ACCC-button.png" alt="ACCC Home Page" /></a></td>
+			<td nowrap="nowrap" height="24" bgcolor="#F4F5F3" align="center" colspan="8" 	    style="font-weight: bold; color: #666699; font-variant: small-caps; font-family: arial,helvetica,sans-serif; font-size: 1.2em;">	    	    Academic	    Computing <span style="font-variant: normal; font-size: smaller;">and</span>	    Communications	    Center	</td>	
+			<td colspan="2">&nbsp;</td>   
+		 </tr>    
+		 <tr>	
+		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/ACCTS.html"><img border="0" hspace="0" vspace="0" width="67" height="18" src="//www.uic.edu/depts/accc/logos/acct.png" alt="Accounts / Passwords" /></a>	</td> 	
+  		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/EMAIL.html"><img border="0" hspace="0" vspace="0" width="49" height="18" src="//www.uic.edu/depts/accc/logos/email.png" alt="Email" /></a>	</td> 	
+		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/FACIL.html"><img border="0" hspace="0" vspace="0" width="79" height="18" src="//www.uic.edu/depts/accc/logos/facil.png" alt="Labs / Classrooms" /></a>	</td> 	
+		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/TELECOM.html"><img border="0" hspace="0" vspace="0" width="61" height="18" src="//www.uic.edu/depts/accc/logos/telecom.png" alt="Telecom" /></a>	</td> 	
+                     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/NETWORK.html"><img border="0" hspace="0" vspace="0" width="61" height="18" src="//www.uic.edu/depts/accc/logos/network.png" alt="Network" /></a>	</td> 	
+		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/SECURITY.html"><img border="0" hspace="0" vspace="0" width="61" height="18" src="//www.uic.edu/depts/accc/logos/security.png" alt="Security" /></a>	</td> 	
+		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/SOFTWARE.html"><img border="0" hspace="0" vspace="0" width="67" height="18" src="//www.uic.edu/depts/accc/logos/software.png" alt="Software" /></a>	</td> 	
+		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/SERVICES.html"><img border="0" hspace="0" vspace="0" width="67" height="18" src="//www.uic.edu/depts/accc/logos/services.png" alt="Computing and Network Services" /></a> 	</td>	
+                     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/EDUCATION.html"> <img border="0" hspace="0" vspace="0" width="73" height="18" src="//www.uic.edu/depts/accc/logos/ed.png" alt="Education / Teaching" /></a>	</td>	
+		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/HELP.html"><img border="0" hspace="0" vspace="0" width="43" height="18" src="//www.uic.edu/depts/accc/logos/help.png" alt="Getting Help" /></a>	</td>   
+               </tr>   
+               <tr>	
+                     <td colspan="11">&nbsp;</td>    
+               </tr>
+               </table>					</div>	</div>	</div>	
+
+<!-- end #header -->	
+
+<div id="page">	
+<div id="content">
+<h1>UIC Guest Wireless Account Request via SMS</h1>
+
+<div id="signupResult" >
+
+<p>Connecting to UIC-Guest is simple. Simply connect to the UIC-Guest wireless SSID. Once you are connected, open a web browser to any destination (e.g. www.uic.edu) and a web page will appear requesting your login credentials. Enter your UIC-Guest username and password and click Submit.</p>
+</div>
+
+<form action="" method="post" id="wireless_form" name='wireless_form'>
+
+
+<fieldset id="personal">
+					<legend><span>Personal Details</span></legend>
+<p class='small'>Mandatory fields marked <em>*</em></p>
+<div><label for="firstname">First Name <em>*</em></label><input type="text" id="firstname"  name="firstname" />
+<span id="firstnameInfo">Your first name</span> </div>
+<div><label  for="lastname">Last Name <em>*</em></label><input type="text"  id="lastname" name="lastname" />
+<span id="lastnameInfo">Your last name</span> </div0>
+<p><label  for="email">Email Address </label><input type="text" id="email" name="email" /> 
+<span id="emailInfo">Valid E-mail please</span></p>
+<p><label for="phone">Cell Phone Number<em>*</em></label> 
+<input type="text" id="phone" name="phone" />
+<span id="phoneInfo">Valid Cell phone number please, you will need it to receive log in info!</span></p>
+</fieldset>
+<fieldset>
+<legend>Address</legend>
+<div><label  for="addr1">Street Address<em>*</em> </label><input type="text" id="addr1" name="addr1" /> 
+<span id="addr1Info">Your street address</span> 
+</div>
+<div><label for="addr2">Address Line 2 </label><input type="text" id="address2"  name="address2" /> </div>
+<div><label for="city">City <em>*</em></label><input type="text" id="city" name="city" />
+<span id="cityInfo">Your city</span>
+</div>
+<div><label for="state">State<em>*</em> </label>
+<select name="state" id="state">
+  <option value="">Select a State</option>
+  <option value='AK' >AK - Alaska</option>
+  <option value='AL' >AL - Alabama</option>
+  <option value='AR' >AR - Arkansas</option>
+  <option value='AZ' >AZ - Arizona</option>
+  <option value='CA' >CA - California</option>
+  <option value='CO' >CO - Colorado</option>
+  <option value='CT' >CT - Connecticut</option>
+  <option value='DC' >DC - District of Columbia</option>
+  <option value='DE' >DE - Delaware</option>
+  <option value='FL' >FL - Florida</option>
+  <option value='GA' >GA - Georgia</option>
+  <option value='HI' >HI - Hawaii</option>
+  <option value='IA' >IA - Iowa</option>
+  <option value='ID' >ID - Idaho</option>
+  <option value='IL' >IL - Illinois</option>
+  <option value='IN' >IN - Indiana</option>
+  <option value='KS' >KS - Kansas</option>
+  <option value='KY' >KY - Kentucky</option>
+  <option value='LA' >LA - Louisiana</option>
+  <option value='MA' >MA - Massachusetts</option>
+  <option value='MD' >MD - Maryland</option>
+  <option value='ME' >ME - Maine</option>
+  <option value='MI' >MI - Michigan</option>
+  <option value='MN' >MN - Minnesota</option>
+  <option value='MO' >MO - Missouri</option>
+  <option value='MS' >MS - Mississippi</option>
+  <option value='MT' >MT - Montana</option>
+  <option value='NC' >NC - North Carolina</option>
+  <option value='ND' >ND - North Dakota</option>
+  <option value='NE' >NE - Nebraska</option>
+  <option value='NH' >NH - New Hampshire</option>
+  <option value='NJ' >NJ - New Jersey</option>
+  <option value='NM' >NM - New Mexico</option>
+  <option value='NV' >NV - Nevada</option>
+  <option value='NY' >NY - New York</option>
+  <option value='OH' >OH - Ohio</option>
+  <option value='OK' >OK - Oklahoma</option>
+  <option value='OR' >OR - Oregon</option>
+  <option value='PA' >PA - Pennsylvania</option>
+  <option value='RI' >RI - Rhode Island</option>
+  <option value='SC' >SC - South Carolina</option>
+  <option value='SD' >SD - South Dakota</option>
+  <option value='TN' >TN - Tennessee</option>
+  <option value='TX' >TX - Texas</option>
+  <option value='UT' >UT - Utah</option>
+  <option value='VA' >VA - Virginia</option>
+  <option value='VT' >VT - Vermont</option>
+  <option value='WA' >WA - Washington</option>
+  <option value='WI' >WI - Wisconsin</option>
+  <option value='WV' >WV - West Virginia</option>
+</select>
+<span id="stateInfo">Your state</span> </div>
+
+<div><label for="zipcode" >Postal / Zip Code<em>*</em></label> <input type="text" id="zipcode" name="zipcode" /> 
+<span id="zipInfo">Your zipcode</span> </div>
+</fieldset>
+
+					
+<div id="dialog" title="Guest Wireless Policy">
+<h3>Introduction</h3>
+
+<p>Guest access to the UIC wireless network is provided as a service to visitors to the UIC campus. 
+
+All persons requesting guest wireless access  must read and agree to these policies.
+
+Failure to abide by these policies will result in a loss of wireless network access. The use of guest wireless access for illegal purposes is prohibited and violators will be prosecuted to the fullest extent of the law.
+
+<h3>Policies</h3>
+<ul><li>Members of the UIC community (students, faculty and staff) are prohibited from using guest credentials on their devices. Use of guest credential by UIC members  will result in the automatic removal of all wireless privileges.</li>
+
+      <li> A bandwidth usage limit of 4GB per day is in place for everyone that uses the wireless system. Exceeding the bandwidth usage limit will cause the account to be automatically suspended.</li> 
+      <li> All guests are responsible for the security of their machines. Any device exhibiting behavior indicative of being compromised will be automatically removed from the network.</li>
+      <li> Use of file-sharing/downloading programs by guest wireless users is specifically prohibited and will cause access to be terminated. To avoid termination of guest access, please make sure that all file-sharing programs are disabled. Guest accounts terminated for file-sharing will not be reactivated.</li>
+      <li> Attempts to circumvent security controls will result in the permanent loss of network access on campus.</li>
+<li>In addition, guest users of wireless are responsible for abiding by all other applicable ACCC policies, including:</li>
+</ul>                
+<ul class="link">       
+<li><a href="//www.uic.edu/depts/accc/policies/uicpol.html">Acceptable Use Policy</a>
+</li>
+<li>                
+<a href="//www.uic.edu/depts/accc/policies/wireless.html"> Usage Policy for UIC Wireless and Res-Net Networks</a>
+</li>
+</ul>
+<p>
+<input type="checkbox" id="checkbox">&nbsp;I have read and agree to abide by the UIC Guest Wireless policies
+</p>
+</div>
+
+<div>
+				
+<button type="submit" name="send" >sign up</button>
+			</div>
+
+</form>
+
+
+
+		<div style="clear: both;">&nbsp;</div>		
+</div>		<!-- end #content -->		
+<div id="sidebar">
+<ul>
+<li>This web page can be used to request a guest wireless account via SMS (standard text messaging rates apply)  for the UIC-Guest wireless system.  Please note that the text message must be sent to a real phone and this system will not work with the Google Voice text messaging system.</li>
+
+<li>All guest accounts created with this page expire in 48 hours after they are created. There is a limit of 5 guest accounts per semester per person (phone).</li>
+
+<li>All persons requesting guest accounts must accept and abide by the <a href="//accc.uic.edu/policy/guest-wireless">UIC Guest Wireless policy</a>.</li>
+</ul>
+
+		</div>		<!-- end #sidebar -->
+<div style="clear: both;">&nbsp;</div>	</div>	</div>	</div>	<!-- end #page -->	
+
+<div id="footer">
+<p>ACCC Security Office</p>
+</div>
+
+</body>
+</html>
+

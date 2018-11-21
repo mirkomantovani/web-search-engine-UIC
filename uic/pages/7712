@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head><title>
+	OPRS Live - Login
+</title><meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+    <!--Added the function to implement javascript and popup blocker check-->
+    <script type="text/javascript">
+        function checkJavaScriptValidity() {
+            //alert('Hi');
+            var oWin = window.open("", "testpopupblocker", "width=100,height=50,top=5000,left=5000");
+            //alert(oWin);
+            if (oWin == null || typeof (oWin) == "undefined") {
+                //document.getElementById("lblPopupEnabled").style.visibility = 'visible';
+                alert('Please Note that Popup blocker is preventing windows to open for this website. Please allow PopUps for this site.');
+            }
+            else {
+                oWin.close();
+            }
+        }
+
+        /* Issue #367: code change starts - To de-activate or delete a user from the system */
+        function check() {
+            var username = $('#ctl00_MainContent_UserName').val();
+            
+            var password = $('#ctl00_MainContent_Password').val();
+            var is_valid = false;
+
+            if (username.length <= 0) {
+                alert("Please enter the username");
+                document.getElementById('ctl00_MainContent_UserName').focus();
+            }
+            else if (password.length <= 0) {
+                alert("Please enter the password");
+                document.getElementById('ctl00_MainContent_Password').focus();
+            }
+            else {
+                is_valid = true;
+            }
+        return is_valid;
+    }
+    </script>
+<link href="App_Themes/UIC/Foundation_custom.css" type="text/css" rel="stylesheet" /><link href="App_Themes/UIC/foundation-5.4.5/css/foundation.css" type="text/css" rel="stylesheet" /><link href="App_Themes/UIC/foundation-5.4.5/css/foundation.min.css" type="text/css" rel="stylesheet" /><link href="App_Themes/UIC/foundation-5.4.5/css/normalize.css" type="text/css" rel="stylesheet" /><link href="App_Themes/UIC/Style.css" type="text/css" rel="stylesheet" /><link href="App_Themes/UIC/StyleMedia.css" type="text/css" rel="stylesheet" /><link href="App_Themes/UIC/WordDocStyle.css" type="text/css" rel="stylesheet" /></head>
+<body>
+
+    <!-- JavaScript files were grouped into one file - include1.inc -->
+    
+<script src="/JavaScripts/jquery-2.1.1.min.js"></script>
+<script src="/App_Themes/UIC/foundation-5.4.5/js/vendor/modernizr.js"></script>
+<script src="/JavaScripts/ovcrlite.js"></script>
+<script src="/JavaScripts/ovcrlite_ios.js"></script>
+<script src="/App_Themes/UIC/foundation-5.4.5/js/foundation.min.js"></script>
+<script src="/JavaScripts/FooTable-2/js/footable.js"></script>
+
+
+    
+
+    <link href="/App_Themes/UIC/foundation-5.4.5/css/foundation.min.css" rel="stylesheet" type="text/css" />
+    <link href="/App_Themes/UIC/foundation-5.4.5/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/App_Themes/UIC/Foundation_custom.css" rel="stylesheet" type="text/css" />
+
+    <link href="/JavaScripts/FooTable-2/css/footable.core.css" rel="stylesheet" type="text/css" />
+    <link href="/JavaScripts/FooTable-2/css/footable.standalone.css" rel="stylesheet" type="text/css" />
+
+    <link href="/App_Themes/UIC/Style.css" rel="stylesheet" type="text/css" />
+    <link href="/App_Themes/UIC/StyleMedia.css" rel="stylesheet" type="text/css" />
+    <link href="/App_Themes/UIC/Foundation_custom.css" rel="stylesheet" type="text/css" />
+
+    <div id="mastercontainer">
+        <form name="aspnetForm" method="post" action="./" id="aspnetForm" class="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="u20rM1zu/8u8kxNuNysH+P6/Rhy+Ju+JoO+N7auBHTTdXbtHhS95o5ypX94qda12Zn0xM73fgjN++TkXiGkeAQ3RK1wYVDpa/o3V0WfICAcSw7s9DhBfNCBjJ7XgSYIt+oRLaL/ZSoRL57MlAsJJSELZCtTB60rR0BMeNXAD+QOiIF1vsBUen4WH0IdysK9Wxa203MVun5XtXhgL/boAAQ==" />
+
+
+<script src="/ScriptResource.axd?d=myY3Two0UxZV16VMBw4qxdMWEbohdfxhrIfVSVpPZFyPvRcNVyHRr1v5eOiqfIP8zlmCQe-26FEI9n6_-uG4hh7G7kIyIQWJZT3__Rtfyh-44kCgalZkFxb0t0iKmL2z0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=HOXFl7MMm1dB63GFuHwdyxsv_7j3Hmi2vAIry1H0rXZyjSghensze2UynFP9gR3b21ANhwUtIO0aDnMQcxWvJt1_mRtBClUWSXTPQ1iFuqxoYxhBvalfSFelsV5PLqt_0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=VipJU41JWT5zhAy2EhOGe2LC34cqELgSUYUq9OsgFl3v1HK5X4xkaVvLM7Y5MaQ-GjD6UO2Fh6L-JvJf-ezTxBemZ5LVlV0SgVp1EeM3z2qLCs3BznfsuN3j0mDTwEFNGCbLj82tOztS7whY6yARBA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=DzxRqR8F63OBd-f-v8WRb9gURCsS-NqQsJFZzDkxne-KxRHOhNfKpkKJt7qlsB1g9rLAvsGHVT18B_LR7CbqR3Mo_k_4VHd401Ctf_hqFflUe_cA8KYJhp9fLnYIwnJTvNfaOZ5bqqgLduq7kgViRQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=OAE9ClUEcsgee1-mWvA7NvQWEpHBaKy9dWCpllVtM-7Vkf7DCT4SPCclsYfjX4Wt0Zef3L4BAr8zEvNWH-XEw9LVJX324BmLEcUjCTe6ZMAuehEf0EIzfL9R3Phh0fwUv43sJwnksmk885K3x0nL0A2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dbSg62ws39CGO9-YdARrX9Bdw5ni4RRaaRtF9uc7PRHKEM3r4e4WJ4ScQmgKvJfpcfP07jWeI2MuPw3pIi0SeVKp0B-vZmd4RkETC_HY3Y9UjA7y2K0YvUbXZuV21GPLw1brkxa2bygh5q6wiflW4g2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=xMlL9E9xKW6fuiD3u2MjfmZvmsdm6LpMM_NiLqa8fQimaHRY_9dQTr1GUzp5WB2eI_sO0nYxtjv1NIge3J__CXa5zi9TLnwyk9rEwiY2EUx4A_UmqPvyOYESI4dA0DldbBEePK7r1v60cCySjuqE_v3jVteO-DBaGKXGCNYFOQw1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Rw65YHMshb6ZkBUVtQQi7ftD7WQdOMa46VKZqr6UAqz5RPLzgwJSufW5ftLR3Q6gOdqb_EwB-mmxVcQ6tICZTnDN5R5QkZNeELU3aQ6o7mrojedRhR2VqG0_cglj967ov-dR9fKOCa4aobEb_tr9hLMKjFDYjEijfmL92vH-9WILC_EEfnkeKivOmsOKHkYL0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=xqBH4yZwn0tJ_r8YaFcofEb5kDGD7gDXZZuuSGoBDN8cMTOvylxQIlGSYXGkogwAOlKkdXtKMEe278vxDzXh_RZISK73T7qi31Vj3OcsnhioEWrFiy8XjlQxxIZSQ_MTCEy8qgPJfSQmBmDPR2E-qxVz6i2HqrSXM4IuogbVEy01&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=JO395Af4tmZioTGHjrtLmdF5F50IBR_xCk0d800NpPnxf75cUPOIL0I-eRiFPkVaYYETj8Q9CmQSXFy8hf2r9tWUsA9XN9RddEF3b3YRWE00Rs94P5QM_1I1BbDyB86Ps48wUT-njd8kUHdNDZxafyn0YfIeDIHmgqdQNJ0L4r41&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=w2pO3WXOTEHK-ybXIpWfr2nRwy-CRTU97eX6pdD5_gp3o2z_PXEQeEpjZWcrXvMTcxIc2mGdQuL3apyLEsAWlqGiDKGF0t-fuFgY4DlFmAb-kq-ND5r7Re2CmNZG6I9Q_JaTOVXmlHJk2DnSwd3HlxTRttqZpCb2O6eqgL1XGM81&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=8vvEki_uGlqUufBOTYAMWQxhgec525YXvoUYS5NvY_awBaQGBfxjZh0hX1LMgn5CLrPIIY7mrmSKQ2KrqzbhfLq6g5-hyxt_eA3he5_7HCYuXnqFG8U-Lq-94YT6cYzX35mJ4WcILg9_HVnrnJBL3xc8kOdee14s-8qhtlqnIQ01&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=N0GFDQGQlBhB6BmBUpAtcOLNR-fh3IKoz5xWEwBtSLTw-yXAHwKoc_iSOWqQa4_7Cm2Y-_IWCiNIL8BwBht7G7eW_R4dLnH-gWj9yjW-WNn0ZWottn8rNAYlwbDAkFXXrfLsGlJOA28Lf8p50iAOG57RWK1F3yY2khRlfOEKYfQ1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Fk2C-8Es7xMBogK3c9omG2YQxuz9Z3Mk7eknMMScIRFpQ2hvGPUa-tXsy62ldqojK9orcaCeTEDWha6mazy4BDpUwc5o_yED6ow3Aqsag7Ycoj5aFpWGl1CHdq9Yzpcx8LtezszdyPQwwURY3euYI2Td-_olwNgnPSx9XaHf7tY1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=LHHZOtbhqFJq_rveICcOFdK-N37k8NP8h-bHsn3Rq6wRJCjMU6Ss_yvI6VN_Z3aLuL_uTJl4V3HP4gJwfkYB2A1jP8mHKG77kJhorHppHqNp8gtfn4Y34MOIF3CYJj5Ndb20UOfsK3r4NQnFP4BbQGiTXWhx9T4tz88oE-rV0y01&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=c9Xru7HLGJDZEBWLWZAQRdftrb0DKljQ0k8K7jAb-QF86kAxxgxrBVnexGGv5fQhkewTmr3HT2GMmp82I9rgZHe1AdwyieGIQY6x3hVF8uAoukJanxLwtbpGEavkCFWv2GTIR2U9k6ll_yR7ZJ23MQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_pS_xjt4VCXN7pfuGTptO__NEM4oDIIPXi7VsUS0i1wUN8I_dkZGcC_hJ3uc_eM5MWBmgRXgKgyFK4Q4T3mPi7QgI1GGHhQuuNeA1vj2dj5AEkIiMw1oU0t4FcukJEfGoHtlalRblrbFE3gvakmo_g2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=iB9E5_7yHK1BAtyiE869k7zHoKkNYsVO55WwUDkUg-ReD9w45H2qB3axro5IDZ-eBZj5E1P24wUe3yQCoK2Ihbapd08spt0emNocH_kf_0xz9bMwIcu7TzhyXcSr7cTPrEhEZhzGkzYurrGZoYgvHg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=wqrJaHv8cZmMAIVxWd-aALWVjGKoO4B6BWfPdEizSGbOcrCxGdePBnxEpUcHYLt0MMUbbMXwrF9TZnmB-lK9yMX0lceVL9QVIJIX4vhM7ID8cJDEMRAFNutXnC-5QlUrpja6gH6OCmK0e1Vg0_pRaw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=NzkbeRCGHkCECMTqkgr-esB_FaaweNsOF4GpqUuspmLlwuPVVZHebAJ1M-KdBq_zbn4u-x80UYLnlUnn3QALntNTumVTxzUXSV6du-K6VMEoT5D_CUl1PHoEyLVnfAy89jaD6JoScF8URRaRMDAllA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=7xQ7LSPJvgfI-Zly_6suuNuIaspwTAhulzeig08tBPSpB1g_0BvJCZwJh-co4MaKnUGAHEIieoykm6xppCzeYkAsZRq1NTONijuX8CnLx7xmi-0T-TNBMIFCAAMjoYZX0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=4KeBOdbFMcOYZ_1PLyTAR4JQZMzQKVcX8sP8cGdH1eDh-A-AX8pCJ941mrXOTY6dmxGEKb3WsGuei2lccysBXiRB_5q9Xu9FewLRVsng8ypDX1h29UWG9kbCb9OZvDp_0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=bOPf0O2aYgnpDVOM4-q2UFkXVsy_sjRC1S56RTohYHJ3AmAnCgdAhjR1nwXeRCpHzRYGDBvFKqyOVu-mVR8_0-n1cZeMw_icjF8tXPoW0YXsBkoYYVFI_7wxhDgrSZ74DEJ8pvC9j8ezWJZX5lSgZw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=b7_bBV7ZSEWDePIOzCJlVFjsm064zyrM-Dp25yjw6j7hRu2H5ernKpXmAoJvrspyB3889UIWV_QfB3HMHqhd7VprM-s75G8iIEkWY7NCkLjs14Neuqb7DreBURzwMBPACYE1jQPMQeEs9m9qyR23Kg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=snJ74r7KuC2jSc937dwYxfxBAsPYPvGcdjQPfRtuHRoxXaDOkSegpBxVnEUY0bxa8hsCF2Y618RGt8T5mzdK0b0mruAGWw_iQJFz0sKOUzGUA4nW6pORj2q5062Xfvwy7Pr-1DyvQAfUEh30DAlz8A2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=9PQi9Hx837HPKPtzFj-19PelVB6JWrDsvUDUFov5SDRyTqbHi5KnjBSNX65omETIHI6BDEmM-NnZ42zsgDnXZSwpD1Vs-zE0UPzZfGX2VV2jti9ljEv-Qk-MLJnhJSMOkaioCfBGlDWiZaC6UShN89LGcBRM64KKE0msyWjoQ4U1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=XdhM7_J0Zae0yEuXhKQSi1VFF0HyeoW0cdgEocqMSjAmvF5VJu2gi7tNHePmdDWDnlmHatYEMQvVEcfOLWhP_C4LaZ1VPbLUKDjm_kxFejl8jueR7VYicpijwsNjiV1CanUYfGT5mKpdsmjpemwRrrR1gE9QI1whuv7BB8bN0cs1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=PG-7d9fwa03KD9LhCu94Ot4ONvDv8dKxC-fNXkzG8diqRNhpaodih5OGRc1CANxvPO6ZYGyTIoIJk6jZy8vN3zRLgLbW-Am-yzIyq5Rp0iI6YoSqg7FmSmhH8sNkxU-U0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=975YUrylPlVjQ4GLk03wgwlLtuKS2401Y5JFfKPzNz8RdDEPqGSygrbyDJchAmmdOYClJy9cfP3MABPfRHx002XoDZo7Qj8GIMHRHLMKluNa8aTzBE2OKgk7UB0GcTnMferHU4OynYnBn6tH7aF2eg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=AXQiVjCSPv9EhxJpO5hUe6Vy9QD_k9PfzntU-Ygc3p_lTxg7GgC5GaHiKRCsmnI1ChBoXTSobmP9oROrBE69vvBOl3T2ze5-IcqcC7b3mUE9EOJsF2sjFc77tWxFpP3f0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=nhm3wcfpnOQWVgOBjq77hdJEkd-sD04CXZAaxDOUBRmYUb68uUUYHOpF6y9hFQ6P7jdNgLBUMS7FrX5_3jtMYZTLGDbjqCCy7UvjyiTeV_d_1yrTcZPuEZsGT4tOl1Gl0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=JtTA6DrAo0H7htwP7cFuTOG5mCR9c80ulpItkCi9UbqhPyItaGNhBfy4T1N42SSxNafEAR3QDrFPgpufnRGgRLUbZscGOWHYpyo-rpal2G3ndMoJhJAS8y8vrKMk6nGpXEzpZn0DI1BLELbpdu8XAQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=hMYA6PW4Qn4LCOvQRPg63uZBW0zZsSV9JgBStQ-213dT_LlTp7mKHqljAfiBKVrjKXOOU3mWfr8yVhdXNjamhu4wbT0Rhu9hQGBfHgqhJmaorXP9uW553UQH3W0LaeUE1xr7INCX7W9IsPmGsYevhTz2FqD6SxetTOPMUpZIJWQ1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=EbRYxRA98bAjHj5uz9pKV3sR4BLfuMtNhu9jOLZAN4GlqFvgTmhfLiZsWdfkNYKpC3UqK_J_7DSlNf1qAxeNZ_JBVgzHloQtpLXd3-xM4ExUQds21hLTG6xEP4-A4YvuwQGkq_1CmYJE8FcYZ1X2VsHukW57OqrpJF8PvceWePU1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=F0W5olgu9DEXj5aVdB673oSuCW2BLwVtaf3WhtiNFF6lXP5FQk4NnSlQ0CTLj_-FBi860ciaJ486sMqfNGwSmnHFF_5IcV4hVJA3hCmkIWq1I-ENcFSTvH_qyBydQQRrCcNCPbPDPr9BgMakXXWX3A2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=KgpxZpCVZ2O62SjFnbZVwnN-gJqqb3-qK_oJDTFql3Inx6NSRw26nbZVP2GX7fotzZ2tDahp_MgCGR-peOLHKBillkqVX1MTmTfwGywMHXOnyG13wI_Ftw3qjw_um5F90&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Amnpy88eGpb-3j_2_na976mriiTS8nYtotUMRbM6wPPgGAl8j7-wGlkDcuvxru3vwSQVF4iZEIVeR577VaMBP7dN_zipEbcjt5XH6f_SOd5FSp32-uXlFd1cGsWYu1DTHEDTAp1TqcO-g3ZqNdpMLAjrWwm4Ou7aoWbv2VquoGA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=v95q3qf1xhRg1mB88UuDaYa1wMtisIla4P3bpVgvqCvY88X_8iwEs5Pk1L40H6y9ulFJyD652MuV80_N9AdkDvzgd0vHiECUUeLbmIh1_JOIK-pchfge1qTaWOBVWTJMyT8xf53h8MZp-cx0aWDekw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Ef49HqY8EDCeDRvfO32pSunuyL4r06hFXH4UJwDdYDGAXOaDNZ0Ik_g0dTo6mUwchb7Kz6ssqBw0N0Ke1gwD_y8HvQN7C1Gnsea6fB6gOk2tDTn6QRJ5ZxHDudv2NID20Gi68xCd9R-GIFv9si3T_Q2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=u5BU8iO2sa3G7KZmVda9HNszZ_B46mCDbiDYqspB1yEuJIykHI0QyE74MRGQBNcqZU1C-UwvBuTL8iOXffTDN6C6OfHbits1tRdJjvl2Or7eUTwvgVq6zbLDk8Xmp8zxBVOOijaZhEQ1uFxw3yEu8Q2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=k5nduPzj3sojkX6lUn424ziLXVbkYmlF0JJesXNjdOfJ_3rBaHjoIeETnd0cVF8l9g8ML7GxJYbo0UUc0LC9J_VqiDeZzyHyRMHPoGFI3x53M5ZG1qRqd9RRx6dp0POZL74rlSHB4JohmdDLsADqwA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ycWHSRTz2JfXv4-ckw4wkJgIRHNEqBrDBv-wxVVeRdClU64M4eCJhc8DT2GySb7haVOW8uVpVK5Zbm5GMwudsdN3AmesxVfxPGMBSQVK2rp7krW-CB7-EB97zqOjTzpxlZCneLbe_a-vgxM3Atgs82CqyC_IBw0RMNVQESzlx541&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=a53AFrlAb22MOZaVDtwQLhQs8zUrnUjdZrdrocOa9gujqe9RtDYol2NX_pleVVV16hPRkWuQoL5YfSyZoq2Ccau5Z5jCsa9y2KkFAhSUHeZ0lSOKEXj7lEgu72185IYczmvprOHFRPc61WprHJvdPA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=IC8faVwqHcU587-O5lvWFArt_7PanM_tiyi-NET40ic6jflv_TtQzdNAU0bptWUBoMLPnfDYGAGLu_a3okEe7Q72XD7bMHCChHZ_kXeC2OG_FFsF9xswyJU61xo4kBL6-SFJAjIAo6fk9-0_PS7BveRJsYtfrbHHF-D6EVkgJMM1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=WcObK1J4-QD8o_8bJgWIzDWNrCSM_qzFFvkTpl3e7iOVXyZwsh8N-QGCYtOyttJ1Vm9eHNVsw7rzZApY17J80tWqWc_J5oz1MmW5Zri55cVybm-KOY7c7Jh_J3BX8wtSd5MMo1k-k8XGHsQ9WrgvIA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dVqqWVjqMi_OzQVV7bX50CT59Ixsa-awD7akSZi1YkjMdmHnVq1kudl3c5ac1cz0Sr4IjPe_ljMMsa6rIy9uudOOoQF4ZZ0PKS8Z7IzW9gE34UmVUVuu3L2WN5Amhof1Vp47iX3i7GirSyRJYd7Y_w2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dL8Lv_pJ6hJVav1RDIf4cDjDKXYlUWux1CxA0u9Q8drrFsguOgoIFi3ebNFkHdqsZD76OzPfMYbp-kN4EZlZ_rRnJbhwdvRMW8lMw3RmEzGRfzb-afc5WIJ0ks88J25E3gGaG692o9KwqLcMz-Nxuw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=wKPYuQpqJ72KGFO9NohPKYlNvHWrp6lSPBAJO7a2Ca17Hm_gIzIqDYt_d4OFbNdQM6CFNx0Vv33diIg8FI0IvjAjSd4viiP1M_hl2q675tF4P3GdRTbejNWfqYvrad2bqxIeaiT5P2G2CtpPhrvshw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zebcJQky_c9Qrt7oGl2Vx-pJq56ua2RnQdD27qamPG7LwGpd6ycBpLMwepWZ7oT0pFAw1oEkUqWiAsUAUjZ-LWe1IqUEEFqtXKb4UaXeiAE_kCK-nYMCK2zpzBlV-jGX0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=R5JMVwn7Lo4ZVFPUTbh0PzvwniHmQZN2Il2ZDvts03l7xUkvS2oDlJCxpY0y8ODjZ2L8b5rwtB-COE0PXfqMKQFasUlPHO0LA5qK64W1qaIF_m58ni_lUlFU6S2AAmzv0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zwxxMIWTB4DTNd8h90Ax_HJ0Kr4yyRj2vVBH3faAkrs9TQai_cOkaGE3-byYiL5P6ibSIVGwoeMg82cRmxbGZHqL4CrPSSf2EyWoNe6lzLV4Fn7R_5eqVMtj0H11XPHbta5ox6FDBm4yUbBhVHpT9A2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=7MTJt_cniSDYpWbsLvk4-2cBDZycs1_Lc09UPZgjJm0rT573M0cHBBamDGMz-lj7B3U9lAd-uObg-ii1adrFK-7uVjtnyp54cHJ4kQyrEt6_RRqrq9SSosOynT_Ey7GSapPcdhAikpZ-UK99e6hU8yyOZksQtTEPUrpo39QvKtc1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=OHjsgACkxNXjFCWhZ2ysvBv47a-ojYYRz_F9rI5egANsa1IB5PsLFMQWwZ2DDYPCzGt5WX57cSD7cck36NVaANLt92SUXOeQhQF6DjvWOHdAVAbDIZ7wINVrWDMewtkKYEtwmU8JZNfmaczSbU78Gw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=UBvbmUNDVe4YDbFw12dN8eSHGS_hu7sfY1yNe9_wGOQNyQ0jNt6kdj5SV16FJyjdyQv5jdKkJoxOHUs5Zsxcrd8jmqYMQHd38zLxN_1nG5uYL3bx4tLTrDgIKa-wm-7HReGp3pQC1nTKgkrMibRCHA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=eKt9cjkh9XlWu9ViQXtn3m_DGg8tUfQZkjYU9BcI8AZsyc_5ZJpXZxXkrladDMK2Zd506NWtBepq9Uhm9r-r2LH-xPR356RYMtbsKnHkdHd70lvVCGXARjjAuFSxwX_P-jhSwf1PgSFKFHo4Nfu3zw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=iSLWtfgmKFRbQLqeyndix28CJuPr0gjnIG7Gy2UM4Qs5VU7TDHsfp4fTFiZARW8OVetFAe2_Tr6wHMsNs7ti8nVhj5-l6fAsW8cTJ1g4MFkmZqck2lvh4xS_vxb_5AjYkB21Lim0qi_VH0RDDRrVZQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=VrsxaK1hnmg9SnBmdHx-Ph_4D9wKrCGJzYcY3RDdkDRK5xQkuo8aLH__hAs8L6V9mSBXx0Bydfns9uel8u8KMfhceggJ_XlhrvGnxTFcvV3ENJ2seOxiazz_mETIPHOWAqvIVsf4lN8acpbT5syDn_KunO7F5cPP5OW5p1FCPBQ1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=OmaGJ3pHxHlwc_LaSVTNMbAZXPHge5tehDzZj1o0zjiWDMHeRreTABCQUKFJIEDio9qqno7_rJoozN_wxIr7jG_SMnvE5QPQVUQXphJ9Tl7DOeottlhz2u-OytuMVqhPD5MAHDtpEFbXVhU91oWV01cWZmYdLI8_icZfS6JfnEw1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ZNfeiBhGS3RvaGsGiO-xIIQCEWfw-CBPhr7exURMWHVFf5M7UNqC3edJkWDMVm3B-YsH3AlmfgaH5UE-tKlsvNM-9P6wc-_Gk2SV_59mIgH5hod21bDHT3s5CArJEzA52DZE5iVEui9kN7DucTYKtKWxFk6DsXq9XxJjKFhCpng1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=FDW2wLNcG5cDRdYEZcEza1oG6FTdrzjUL-aePpDM_GctvALsHyqS5_crn_ll0XaCpc31WOz5bbq2IhlwM_3dVp27mOpegD92z5oopRSBSmuq9MzDma6bESWzoksiXGpqLwMy7u5mOp_Gd-21ZqK-xKEIrN4eKxjUza4r_69juk01&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=DR334lNwbEDA0HPJdYHdmGOHr1jYbNcHRXW2EzostIwusBUw5m3-82BVXTWXAdJptWVlySoFIIIgIExaMYP0JMgF33K7mWJBV96bQbCBQawQ0Sy0uKkNK_N3MQIClUgHLGJvhR941KLRqW4A_Gl_aJoIQVDBliLc8uLCW4USSo81&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=SI45B5urOsAINy7ov_JLdiVRi3WsiyNkDgIIRV_Q8ChuXhIIRRw2SwAXEm3tWVEWgI5hiwej6i6AHDk9YYPQ-dcakNhfPIPOdicSCF7HmFPOODSqu6pBJRQryjl9SS1dxSz_K4KR5P_sLgaD65E3Fmo2zBFMcm0RX0hossmJUo41&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=3RQAD_vRxBWs7oLHLtlxLFCI_Rjc_i3561u9Tr6St_e5ew5xbOYey2luVHawc6AubjwtjCe6GJFHhkg7SaMbegrG2MPIuWr5qPDGa1R9O4VDOtKDhHQGN_Nj-ZAiiXRJIo1CyRbyJcpqIkUEiIwBbw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=0O2W51txpY0YqhXARGSEH3pZEVjK2LJ55IlIJ9PnajVgyNJp3pl-Ha7Di1jElWM9T2_TpvAkMITaTMzHJTnYfJf5ewJyxr1OMQhKkai4JTPy_0yZs5N1AMG9XbKdXw4U7xWB7KRa-mg6pBnuqQKK1ocL0SGl6Wnpx-roJGTF7Uw1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dQlHS3eYe-8AoHlsxNcNoFd7LMVL1NqrGijl92TNw10NEqS6WxyIhsHwif4NSpVVZaLZF43o0cb4yQntPbpolkZ34qda0IwssXA-cz7v8xlFGU-SFcQD9UfdFQD_Oc-AQ4I8kW2hkBtmEw7RcRRsqdEV46P9Bph0OdmL85cY-7Y1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=CocO0bFJ-9ypfIKmMnzHWHvdCd2HK2DqwiqYzAVFsYqD0nc9OsyEcZX20k_2G-1el4BRWPKX4Cm9xHXPgdchHa5a_gCtCKa_uQrGAYpGIs1L0rerGW0EQo-8zwqMnv8eS8VAnDYZTyB1b2fBZ5EDMb1erc-3CX6BOwXYyEqwM241&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=gWrvFtlRyl6AbQKzikW9Qcwc01OBsdOPox3HHROOfgrhgGmwbvJFy0h9FvwRpVJfdxMXdEF49C0czMSjAvQCeNU6VLQ42PG2anJHpId9LwliKjHkMu0TCsSgHTnMFpqcYjbSwnRlDZzG6T7IgSZTOfdsOBUIj4IUc--c155hIB41&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=TEBz4Jo96H06maD5wBysqEt0hL-0sjEEia8BK--fnzGYNHp-bqS7UQEHsFUfsV5oVKuCjMF2-tIlcVOzJUAjAUY80IDDl-bG53Xjecza1CqqyUaOHgesanJbkkVnCyrCb1eMSrJWO5Bd1pf34pPbSQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=TOKYYcjTjAX0gHZtbRttJwroUXCklReZRqDFaXuLJK_5rRmsMbBcFAVTEkM9SjDAyZoLFdtrNkQoIxs4XF7uthABSnmQXw7p_dofDxElQ1dvBsZoM7R4FPo6FwYgBR6GSzSqVtQ27WutGE9amTK5XpUfnsws1lpgnhxutSsFgZ01&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=YKHRsXnnr5RuGIAggPc0jLj6oJPWtPevujAJekCVCnu9vsb1d3YPS5nuy8jd5sHlhGRu-t2wU32_cN2XkUdM53XPo9z0DX2UAWU5o6LsVp4I6aH61GaAo_i7T-w5HDc5W_dm3u6cRHf6ygHdIbk-tppg91pbxzEfV9IP2HEIfKY1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_JKo9BdmLBMUgwCiOWwVkOOXgwxJYqji9gRCbbJTJbUwSI70ooR1DeaKR4q1LX8Ls5qlJTkEjivULKSXI1WYNioZS7nrGtBC5bx3Txfxx7kWkgWz_mPJ47SKP8FYlB5nMMW4xm4aW2Wug5fM7rGUEkH17WVYNg8b--9UbeTtOtg1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=KkJpjJt7akpGxbC6PNUSeodTR5EeatDh-OYBzZmGEDlGRJqNnmsLB36zu1aN4Oypiafa3vmdjBs8NZyGtNZVBdDLjSCC0ErtTelyRa0F-cjB5gYS68cE6YmLQVR_ZaQUkhs8r4i5zCKJn52jCg-uhA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=siE_q3EzK45xFM5pSNEJEFWRosD-JH5v564ybNO_m_PN5TadaVjbpUZ5FhE-R4hFnWVDUpP9xo3LyGq9J_xI2klEwjrE7iuqWpV-BrVpDl09hPWv1NG-WCILoOUrCDyZSYWgr5I8WybQi0vofJgpFA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=sZE5Kr5gsSQ3Vf0PxLRtlWZ81efkIAJp9OiL7Kqh3QcaI5WbODULKLXvnizob9n2ZfEwVh9k9H0yjhLDcCLdqG-Y7zk_GI_CLGroOI9JYN6jRdZ-KPivVpETfA81xUo_9O7BToTfhJTd1DHHUZlQAPu5pMWb2obrXa_RDB4f_HA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=QNczfoMKy3Cy8pTmzot54xd_blYOaSXku8iCIUOIYmlLH8JLA0Lyryq1O7ebl9QJUz8tA3iyi4IMGvllPyLQzRVGTjK-oq2WzXTJ9B6IlRJvPp3M1BgZyYkGCTiRhH1hYXUXt3AxGLdHrOfEyXsiDzV4MvvXGFlqwQOZWhKnYF41&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=jupWEZe0t8p03WmVSiMjOWFf0IUzTDKP1IS_-oly4GLEnnqKNkrf51-X0Qcl10KjS-Q81-OF5PTne9QxsitK_ykjO2QdPJlUDYq6YN5PzhPpIoy6qks0cL5d5eWIIU1hqGuajargt5D12BRSUf7tPA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=wdofy7cOOHrIu6yg0esA-oi0dP0vG6WhJJe1reM3oYlOonlx2D9cF4EG_T3QzYbVKPPXYV8pqkUgJJu6g1rQc_6aqNoxb5g9nvlT5TlxQbYBwGYRXQ9x-z30DZ-jRd4W5orUwQtJ7UM704OluCsCwA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_VfEfiI1v2fa1Q5So6pZoKsebUJ1Ey0FQcmNhOc4-5coI6U6RM6FIYCeUYhAUo4m101nDEhkfZnGxupsIn4Q-12iouhT7TVyqKwNZQ1fRTG5rmBo39ZsCMtiF25L5ICizwPV2AN0eNprQ1EmxrsSL75N65Lfn186-f579MQlzeY1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=d86rKThERqrYSRrSWGriATz86XNRG3uH4lpIKcma-KO1PYU_s7ikZxiJhLhnZ80GZXnEkIOiizVepadPr14udwPk_2AVI-3n4Q3VX4Pe-MFTyiWmFX5Ai9bXtnAlvpBFti6ah58TXoOfTZ0NX51sRZ9mCHJJWKIh0EhHcqHvu7E1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=xdevPKJY3HkEtrGfRUewDyAw1k6S2VfeBBvnOG-jO-N5aIspShuP7Dq2g_em51X30voyk47gLTaGAaJFuEOqANqQo578cnRV9xXEyjfA78PRec_Mqtl_zAZvCssxNFltSGtTG7rjmjhq8zMmBaxSM2L-WKnKqmNHYgGs-37_z0Y1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=atXBZbPWCKQIIQ8Yb8CEvnQ02jp2LCyIi7JSjdr9FJCufJymFigvVudMry1uoHfy52rEW6_883I0W9Drie88HgRwiZrpd5VCP_z3laSD_DMof0c_CIEUmrcSuqMO_h8VG-ZyH5Cor_LVEETDrq3a_Zr4G08HAx5XvzvgTWPyEOqTkCUve4hCQ6aX7R9TxJIb0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=7uXm_c8s_CXHtcvpLtKGbr8D7CnH5SYNIS4wEuA2gzMhT4NJObaPBK4R3gMSsntmMw-5tNP_hXU0A5Kdn5khrPmwf8Rvs4I3a6bac9bc-cbs18aMC-NbZfM88vKD3-DexGDw9cZUNTScKmGuQd54BVkuJq-WrVC_N6wGF9rcATA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=t0YSALqlCGXxR6peQAQZ1MO3xOKS4SNPe3eG4X-LND5kYfyWYT7_MQGJOj51ycMjF-eGFIR_Uh_4AzdMEg4PRo8wgBneXAfGY1Ad-oXJG7Kmo1meSsT1WGXcS-Ty1TrEZLspn2PfIIExKTwMZ1fbFl8geWPh_VXkYYMVI1CqyGs1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=75dYpWTPW1Hvc9B5Y8TG3Wx5_kyedNOGePmG8JDQm7fnkp7o8vIlhsspXAi8MHOV-qG1YfnCMCOv_U13b6iDlmixtE3akUqLOZqN0TJjVl1POendsb2j2LrX7bEb_RWPZrAQT3d-jx3VdjdUWPHQkld5lQEb81QYt5Pw6c-T7TA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=fCwPGqbsbKTQlYOiU3dTY8eZZNxha8aTqAxtEKko6MClXewioYUeGYmymP5I750RITRT97siNRT_P5NMRr5EEQO_i6nYLpFjYeyClH3S3-yMFVuGnZ_uyNbnPPF4Imn65qDw9dxu8A5Kk-Ll97Qrkw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=w2zaE1F_WRfvUqqrUvOlna1cP_6_QW04rt2iXnRS1hhLQdRmPC491dhk84x_TITjh1llSQKOoTDOFr_pZ7Ms30he74SOFULPzIBSBpPtVqEMRCkIacswD4WprFsjc3mmyqoW4-nz9BtktQrMib6XZ1UJLKLEjJgIFTEuD2y1nOE1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=MzgXC49FdBChnr_Xss1xhEPG8xPWm8-wEC3O0U9e7YrieYcBPuDrjzBNx82Rr48yFswCfvzbnO4OQbQMqcak_T8mvt0LFAGVMx4Krh2w3XC99Mz33jXETGx_b054oswRJU7K44-i1zPI8Py2NDzJGw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=MPZwy0kFdTJutFXLps9D8EkcgthkpXzO6xPAC2OOAlfxXrXESGkJTvfOFWI4Uz-y5qYAts-XVh4s6DzSf1DrNDkXGpMaEEiKTTCkvy80PAlaYWecqP71kBVZYQnNITAvc1XZDPK77Gm-jTolTHkuSw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=9dST3mkQuVMpj83CbjjoavYPdrMWecF2HpoyLRycB5q-lSwpaaroIM2gs4t4-W8jaubG3TOT8Mt4D119Bmw7u5DmoPwFUtQAU8x95GtaNZctfHaSlo4D6ev76xTZN2aiSDPn2t9YpL2ueFsOxZRYvQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=CDuyczMelMWEaITdoudm_YUY3sS6rP04L-pDWhh3dd7Au4hTlNGDXjJzifTyIsqb6RXUk3mWqzl64yWNTJHJaRP5gSpuEOnhnL4BF1z6pDklekF3b7hDPCtrKej4rrnhbIiEgkVHbGQxJyJIe6YaxHJoC1VOqarBkX0lZYYmI_Y1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=6Mjuqql0Xav0eUoAlwHAIDZhEtbCkY97Q3MGKeuwlY6Yc8Q_emgoCxO7jBgqEwdGbaSq8Yl-6FnIhGndiI1gQtl7tV0rXajWzMQGXetauojOoow2aYoNO-5dCsNAbjMyNtKcfmFm8y5ZM49un-FEmmy1LXKf6boxNt7CgmeTWfw1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=c-Ngiq0rdJ5m1TJBiVKm19SI2QPKgEGN7JwU1yQYBD9iJRTRCw2oWT2GrF9lbUsi16XBiNy4B1wF60Gmi5Upyrv4B7dM60c2CnSfjnajBolKqcpz34ciA2mTWoAsw-2JeZV7zWxmO1f5RwQLGCh-lrszjjX6L_LKmRuYP1ihRIE1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=h0Sw-HEuXPjr-lRVCrUuj3JEMDu5929_lZG-kQ-zQ0U7zQUSpjjwDWThvu5YomZG1fUYxIEc2k2otD05pH3jms3oL0KUAqLkz-8BPXLDBC1FPcPR7ONgxzEwncGEf7XQoq1iwgUHtjr5rhKtrxlOHuTA1bF39zNfrJaOTO73BeA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=6LhzTJKA3ZHHqLkZZS5dtI7F6JTGHWlZgteTukAoGzoT9e418Fr4AqcskA3prgGDQ8SolaDc-S1SgX3x1kgOP5vWELaGugpTkwvgB-LOR6odP6uxT306x6s28XEME2WmmkkonrDFDmKxaI05DLiLVDVG5KfR6ShLYv7P3p-rVUE1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=H9JI8k-nScVPEEDE61Y4OQaAUCDqf8synsXO9mKxSU-wNkbJ2go10NxqkZGsc-MsOtmRsN9VhmkmxshShpW4YWaB65qF_NSFXGz-BLNbNLoLkb8_pI7auv0i23otsizJ7ELUBULXe7QrBd1Zc1oQkIWYTDljAPTLpMetONg-P2M1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=tTrzY7mOmnhaTwqC03Y4ZnMbTcD9iuRHI0k7CNOlfLw4R0dSy1TGUuGpfOLffdmBfWx-ZCLpHVFrgzm1OpTj3CcOtV0816U4Q23lMc9jKD1o9C9lMrl9P-qg3kOBEc-uj_F9wMEYDlmDuiQvB3sZTQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=aDxarDwmao7PYR7Co21FyPyQOHuJd5fxv6ylBLQu9jmIlEZm4UtzWj7zWtFl5es4oXtm06u0uUbzDIOXHqNymDYeMNVuRHorqkqy06P59TAipxMpw4t3BkQyo5YzYLKHscsN16T81-Ij3n-wR9Kz9A2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=u0KSKclX3xeGIPhhsFF-D6wEkGYaXTnE2dv-x_dQY9ywhTDvSg9rzNbYaENBmkOsHkpJBckSnjVggCzgpHILgsjj46wAkRoDDuWYBQAvHA-ki0fycjjH_o6MwdwRctiw3fbSUhivnPEC8wZzdN5bmcKxYwa4ILiqNvDaDk2gq6I1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=cVzRz2w72ClSUe32tNkP7EU5S_GVEDm0BDVIkPTwD-k1tojgV_njfbsPvORlNmTMyU17L-u7CDiDOM9lDDBijVdivWZp6AuMsI7fUwD8u3LPwtD_7KDliJjy9AkKiW5U-Aqm_P50C86sft2NFb3SZaxo-Ja6DGN8f2LurDcjTMk1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=eAILuKEe5VqzrhjkzLrwLMg9fXG05_ZBosyMvmPOYkcsK1ONknhCPsvdHQbtv8lg_jdU1qfj7y5_5Hr3dut6E306hDJg_UzL7ri8dqUM2Qb287zaNO9XGa_LNw_zWwE-3WgBW00QYi8jw57g10M6Sg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=8MsCJnbAtoYNyy0aLbTE6umTaqjKfcl7Gq6pqMavR-dJ_K-LpX2RbJm9qZl1KAKQVkUTWig_iAnb9GqwkBqoYLagUoemVFD4qKHLqrc0c_mDRGfbft64DRaGopu5rMFYaBehTwbDldh1s0GgNB9w4A2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ptZfuV8fwlAyU9yEqMEgGcBIxNV7I1ROUPbnEWNk-P7q764ChCqONIDcKKtLp25WJwlN1vvK7SDtmyJ2uBw4FhiR-mfzG__acxAYh7LaP6cYQdC1CAwu6uKU20nQecmZI_SvfsKYUSRBifOjfL46XfDFkYdws6trdzlKuOM7haE1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=UEYQz5N9gELVlN1s2OZtDYWgwOeYY4veKX9I0dm0ZTUfRU1torjRAaLh2ZhZmirCscPR8_jgyGPV5VMfniS0mPJRSekHsyhmDu5C5H6LFEaaTpBw1bRFL9E9_QWtM7-tv6OmkT5JupM-rHBsA2zhGOGz9fmfcSsnLILFDIRGZ101&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=m2BdmlefCImBn4rdLQIu9bl69VTqbMEjoJ5xdUmzTFVuUf0qKZZiJMz9xGO8Y7b5NnjkhCS8HXaG9aHRUTld52Olu8peYADAzMtAuTjn15earFz0Vx5_f-rd4v_1Glql_8JZNovPmLJVgH0ajvLZrBdF072KSunSa6czeLAQOEA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=bcAnDj1uQ-jZP81z0p6XFZwJeF8_jVgWyWTkMuFLUB55_v9R7XtExSyUHFLe0jbxS6l_1c_JUE4lSOUVfrM5v34eUsEqaIGOjZi8cuEd-vx_TzWN79h-tbMnvd3gy-2QWU8ssoEpR4Z2i9bPeJH4T_ct-SdDDMfSJoXtwxBh1Iw1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=yps8-b9qEohNzpOfay-isyGpiOZMvkxe1v4D3VxqH2NX_ekBLhOztmAdGoxzSgzqmQ9QXAAzZE9VmhLH31MhLwfY9c4GbCiwX7eYfvDpfJiZF2NB_DVMSP67g6FST2t0YHFr1oUmIIehwUXbZh-N1w2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=flCBioOp9THDbMwHmoW3Aw_i19xzywxI7PWfj5CL6FIIsKUWbKstw9XL8U89aA120tkuG27WNpbjC8_URcECCnPdFKJKPF0vI2h4Pd6Zgmyx-m-pX0XEFr8g5toz19O_wYr0EqtRCd4wQapdNE4beJ8EMBHAA_KMz0ZaGaDVX5A1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=YKQCV7vkd7efRw4oLjp5iC3T23gP_BaYa45ad7UOV0wzXM0nOLCc8uUQVQoKNK8PC4l6hXumwzEHYDf2LZaWO1jsnSP2FT0TuxXU8bBlaoJHRMSbV8VvBcjLnngjLQRwAzLLFJx1TaqsQCzTNRI_KSc7AoyyOsKy5LOy3lJMTTc1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Ue7lxFvGty5eDe4bCxVRb9rfNZux0NhEKwiJsiTsZ47P2HQvYbnB1DLO_nlUuhHZSStjBTeK3CTtO711RwjQUqa0pF0hZWXNMUxRil57HNcvKsFoDRYa3x59Urw7iTgK3jK3vY_r8X8FriR4K0f_L6pJDZozB7VKvSRu9IP4hFE1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=t_zUang5ahgL37Pzj_fNMYRMBeDp697nWnorHf6vv10sX9_6FqGh1x1aB2_2-Tfkdi5pi0_37kjAdggN6bJzwSNp5X5DLlT1Icx7RBaZHhyh1oMx54zwhTTzSeKolhxQLwOTk62iQftpkM_ojyo1Kchun4bdrRF2rGPyBMsHCls1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=moFd--EtV3IP79jkpq0P55OP1bKwVbSq7FNagdvNRgEKBpbQ0cXJSUr7nYiUVkreNYL9LqEQ5RuQAGR0jKRCLXiHCgPmaoDAl9nI4bx3UwVQhYCTFcA4o5SKkSV04oBSQ2u80_gHNB4bJfPrfDqavLMZvURqGjoBjjx_keD9PJU1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ppo2azf6gWxiMfxGWefLa3bmPyNBTcD8lwhwSVceV3Xk4ePLDnXXZF05-5xguwgI0hiK4fBsRLHTjrblgoV7wTmoyulMNg9Nz6GCdIZd6J5L3kqs58sidYu8uPlO2VjusQS94XuRrM__2El_EjCI-VeLa4Lfb-wotIsYd1_WPAA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=4oX3gT2-0uHnvnBushfglE-hx6d8YqU7KQArl6xEEN0thl42ZZNbiZzK3PzwMaeFohlef3P5UO9etwV-JwZyuwa2rZ3rSSNb_N4iHBRc24dwL7gowztbQpJQn1UaiYMhh7_SQPTC7RvEj8FJfpjeSXrBi1v-Ku___pTNqLB9dtg1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=fUiz23Qelib6T89gpPEficnADX8pKO6h3NdF18zudjgRgqa1YapQL-DIsnBmvZaTiPY6saXRMi3AbiTE7TzUY4452FfnJiTTtcL4h5N8aSdK4065xUtFc1ob8coIb53LBSmiDgUjG_AoWeQpHy0AU3dfjUwfMdZnaLf5Go_3fCw1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=oFP8TChsFB-np-zn5FONYqk0Tex4tkmfo8at5lczfT0zOiP9x4y_HNrD94CkwuhxU5-s5pv72fPo0vYowoTyKz7pxnoIztn8SLqL2O0AwWRIeME1edyQubtp3R5XpH7bcWl4R4XcOt2Fo-7Mncq0qp_Qsv6NhSdACI43RCWmi641&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=CRjRCJD-O7krY1dsOjbp78gq7dfO0qwitmmWTl693kQNRNxuuDgyePkLuJs4xZ5wW_4-jmxDo6xEonMvK0AKMAfJtoFyQXR0ybevoYIv4Q16zczwlWqpDkWAKDG5347ghavE76OHyipfElufGouZZLKyR3vkPF5g9qqz9JTkWqc1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=KVy8QYp7U-UDi_bAoSk8UW5KDCuRqOADKJ67SlXsFxEhnfF-nmy-bYNBL095S46iY9Lx2EXbnuQ9w4vzk4zBUtpqS0_q9jvJGGw74vbjAqCfZPTKm_YDvH62VATyXRIUdoNTVLh5yH0PiAdUXx4QxyLfk0A9qBhZtT3B_y1ky541&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=HMT06htJYwIXIqswbvAk0tDrwE9bEagl4_vNUzx_jpUYOaWcraepqA0UIcHkmEYT83QVOUyyHZznkOdsjlCxqZGcCGwjg6mFz193IBXkpfOE5Zko7sgQggG5o5r4W34IfagFHDD6cBv3ZLvVtZXuaiR5LdK0hB3ADvQtwhG2v_M1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=oYJGgGImuPKKNjEOZIVmFgwBzeGcmmBhtG_U6mgoB8zsshANeld4gIZGCR_G-eM450bJH8A9FcQuXRaNRcHW_YiPzIRPvaQ0fg54rEE4HUkkWe4Z7MthbezSHZfpzjdLNP__jDpqPW0lvakWe8R6vnn84dWHZCsWIu-41yp27p41&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=r0jdnnuQr3HpsqXFeyTLi3cxfRE0YzCbxtsXejAIaV6mzmNT7HfLnLytpu47p7mLNdyc7hygvYx34cq0j6nE7nO9mcekTOcq-cCV3x59_xMMMNrW9RCowVMgM10pNVaQAZL_7thHCtE0iEhxgITWaBGuXpG-105_LLPvkuacTCM1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=2M1pRpS-uVglnh7PZ7yKxUPw3OGy3qQuNzSj6MAQDAkMokngCNNCP2S_4WZHbYdMocuSudd85EMnTb9A5-GErQjDz-0E8rXGM7KFPsOEPjWEiBT9SNUCiy7RpI1dapK2uz-_EGymziMbddacURByOa4AOJjz6F6OboGCO-ZtbGc1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Vd8iQJT4n-ALoKA_GIK-9pkEGfrLmMcol0_uRsHqhywWsNJF2U-MzUGt2Zr7g1H8O-sJ9-YedimH-rCCC39vTIz4ItJykLdWXtXATXtzr9TMqjyYWhFBNGb3_BYQznFvSQAuGPw2rVRwYtTyYmiNJpxNx1LtvtzcJYazjJhWiPg1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=4mWonZqZnzZRSx35IaKfHQGiFUYUzlFt7HTCrAKvpUW_gCrqXodSBYttzG78teKLT4pTIX8ejyvUV29kuRrHAy8GVMITgF75lellko4nwDXykm3oQRMNETXGHdNzCmMliX-RgcYoifUn2k333U4-vXP4SioKUl4Y3aTezxLKJZE1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=w94FNWkxQ4iW_uJasa0DUP7pq267-6V1tkZjwSq1VDioea8LrJTFzw9AiGxVRk89_nna3LE477X8qcuvmeaknyX13eJdphmARlTvlTXiqFRcsjsepwWbye6H3T8bk1_20&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=eAJVYtaeyQhe4lbrVJShAM-v2BysMy2Lce-pb1olUr6Xi1Prda3r2eoRc4vL5cEViyUN1BSbv-sTHyOZoi-GaElrA1844bUvUOgYFW2HK36q6_QJzYPKMTZ8ofDRfO77gvVryKNAQxoCfwT1ck2rPE1dirSnVjs83RMVoz7ZWOo1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=D61-kgKOzTojlGDe2_wNyx-PABqRVGMnxHPtl8Lc_3qn9abRjSqhQY4TtV7ojgL19PaKhPsv2Ol6rWLzbTly0Czd-SCpR5Iq_u8DjqGaOoduZKmmiQg5NnUBwC_nFC4vr-_M_thiD4ZrP6AxTTG6oA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Gg_82lKgjKuCtsNF-gLUDueFc8MtyFKB7l5aPVUJryde8h0HI1VJR4ZE38Fuwv2MIZMvKhi7egNdCuXXvvseVqQX3tXt3oYNnjY02r0fo_0cX9PteSjpNh55v_HfKurQlujG6feTiiIgapYAr5McUw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=hRcB2wp_w8sBEdETvMsTSz77-E8zGy7MNyD3dpYiDhi6gAAw_E32T-5hg2ExG06ecBHqyckHO68KJLR0aNz_AAAamZBBntw0k5GUwJHoloLmHqRRSN_jxU8dH577O6_ucuN7VGnpkzGCPL9Xtp4nDA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dAhtX-LHyE_lp-njpOZj3Th9bsghzsO_KLyAhAc-44ORSO-BvzYj0NJeiJYkOI4NO_Zn70aV9mVJkibsjUHA0QageaRYHesxdEDkAGER6HGcUvWe-bOD1keLM00lgG2VKRUttvXDPMLG4FA1PXG06A2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=0ZUZ7uFEcUB89sw1CEU-nI-kj51qILyvHc0shaRtmRTDrwMhh_k3FPPmKVNLJU0fVxqPjdR1x7mU-I-71reXdx0YHHoL9_ajEqr3MlIE_JwrUL6cexEvaUJ5FpzUAoE5LK_vpT3PV_kGc7HjLT1jjA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ij9jo0pDYZ5QzVK3xJOGAq1Zl_3QLSXR6NmnmYexnddeZzGtbOmrBWpsBndyDTy97wPko8yAycgyLPmt5ZNzWNARPg8rcwxcJzU0GRKKx1cUGyzhqDJt8yAVGtGxFSa6yyj2-CaZMhsYAwhg6Pkeug2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=wC4CQ9lnhoKoyYDJSDlOOc5sUhTpRBZhHo0LGv9sXH5Ru0FDh_g0RDN6P3tKHMhJ5fkD8zelGNhP8Mj1b6Tm4Jxb_xpXlULL4uuigOlGYjXxIKYJ6HVjLQbiqAg9OJXZxnZSLCtuZkybq2b9U-v4vf_bCw-gKbtRU85kF_c4b0w1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=DvJL_SZtU2id4NYjH1wStQX9Cd4otXbIQHF-ZYp5fZllf1bSUpnMOjd3y2QqTNGiZqIV_Z1AeccJ2ISy1tquh7gE-eAC91eRsUH-fOr6FuDAVnF4NtxAIvr-dKBoNyojCRwARsyyu-jkp9YuVPW1dqbDo-j5TK9ew_1WdU89-B865wQF3xoU4SyqdHEAGV6S0&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ahu8cyCp-P7l4PKZkJo4EIx2C_KqGvYP1JPXqdsbn8VwxHys2Vt-6w8OdJJhLhQNNYGXRFgRLQy3XqUvMqpdSwdtFxzhz_kfoPHclGgimo4yLIuJq_6JxY008S8Li-gtQ8E1cvgWMfPHP_s6ONv6-g2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=IUT5yU2S3dmGP0yxll_xrhkFCtSrF7oxBTOMPVe8h99PUAaYDOOmgaqHtGugRwZIbbrNM8MZ1pjS6NwuYsDjs3xCpo-hbzGv71nOAogM27yG4ssttXg8L8xrf1KpjmIB4p1XFte9xE0pzCo5-_pKSOwdVClbPhEbTho3Q9H_gCU1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=jskKhmRrNRA5UwBGF_O43RvCl4ifOU4pRvgHSRUYuu7B0GIbMYgD1QxZaDMkoK2yqGBzGeSEInWi7VvlJJYvyIyHNfJWSb8LzKp8BZ6q9DpmYfwHS87XahncNuut7g2CbTFIpKC6i81aGNXMpYx2oKnVQ3m4E284x9cXZIlfQEk1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=UqhZ0gP8uQh_U2ve_t2J4iBZ52xfxGlPFv_9r9GGJ-vYufEv6ylilHi3rJpvKx72Y7pU5vkoLcfbAU7hkHYVw7pgat0hxe3zbKMWzMkEtswkqZVX_1kUHaANHx0A2bHReO5gtxace63rOfFsNhnOVZKVtmRXOqpfflO0w7TAOAA1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=y9ecHEq2bV5zrXx1wjd6ewk2psHOcaJYKk9UlG9LuOmoTse6rBhCSSB-_-nApL-1ZTEjXR1g3DW0rlzUHIK_wNxNHj5JjqkjP-UtLokUzUsJxd07TcUOPn-A4LO7AaM40&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ldYJyS34RtfiRqR0_pfuX5VxKR6KfbsJiOYv-O7qtmWjM3pA3VaqUb0U26QxsYNIMfLeeniiC5OY2AA-iCt4aAvco3hz-AO2NvV2OqdVw8L10s88iBLYP7tN2_yauiK27mKkL0SpEJHoZDaw979JUQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Jurijhs5LGA-qgbvpIvkJ9el4TEWCLC0UO1RjTp6a_6n3kMEsE0qsRR7yjrSdyZ161Ijmc0wJW2OyPRqQqv0af6Vmjb6rMUBVp9gZ-XJa18vBiHIUGexxU1Syu0sdYlZn5tAIeg8_u3LqQ-TBGjpETT3tggo6sdcfNRqj2dccv41&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=gxPbLfJfTtuMaIlLdd8PG9Bg6YmihxOT8HaoWJkVPPmiRb3tOkTJF53HCSvM4dIWUHydvPCwmylbj-9KJmFI6BMlkgfqOXfkVwlevo9JTkEwZ5V5OZy26Qnk5BAWgPIebARzU98uPqJ58F0J6nD75w2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=1fk0xzwWb6VjFStRTv9jYE42bsTct7rWyGPlQK9b6kWpmoIxZNWTeHmFV94Tq_Qf138FTv1lIjCNgQK6VjjqLyZ6968mv96XT4jQeusDsoP01wxdlIALrSjG8MQyt7J9b8l4uutpF8zdIOsQ74QdtRmJHp2TE4cftzBtOsRiZbs1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_CezENhVqOYaImFojz6qknI7nwcwPu6uENpGYnv63WYZjCTaC4YmoqoXUR0GrwrDPmci6v5jJtBjK4vdXol_4XlqWxmP7-h2QGys5xzO6V0Ii-AnF82qI5utp_DNmdRrLWkdihzkT1xp7hUm2gdXlQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=eBlGuPfJLVNWaEe_12WhnbrwacB25w0grP2HqrsOvL7d6Xxr-Z-UokweupszxNMuOORGsvL6By-QNUtQYLcXX88z-tC1JkCuL0iSJEzpIxVdiAEGqhV_m8uPYhaPqF3F5K59wlTzqjN-7twKl7DpMQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Vy_FDKrcfDT6_KLBXca_ELnbR3W01GiRBUYy6Q0lF1ZSce28KJ6ggIoNG7ZhBPCWn3G5H6vnL6kSDr3QqSabLsZptZpqR3cfVsT49cjXzIueQ38f6hGhE0cC7jO37p7XgayTrcwjIYy7nWHtCQlodw2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=DSvasicIYFHFJL5_fA_lBVYIvgAH8kyR7U8NVQSnb9X2v2MrsR5RAa7wM69jj3U-Y2P_fR9d-w1ttyExaPQW6a0fcpmwvFH_MjoGk_u7wHEv0xl1StVKSuZI_kU73JODRGXq5WnuAvDrjMMo5FhZbA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ZOutrusaRtYv0tdcCOw9xLrMhJPhn3PXHJws3fm7A3XLGobTjzwWc_4Rm5bkZlidW-vsXzJRoDyVIaIpGV_Nawe9fjiKPnLuhWl9_rnKavxNR_9s8UA8xK9ralfhldiemCs0O60e7emkgHrp5ZVIag2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=PFAv5j9dItKgKLbQ9nU-X6uR6zFsH8r9bcmWwm3iPrzSeIGT1m70xx7Rtt25SbAaVwoqy_JsJFGEf3d_duLsgnkStfImql48_ETCbJggyZlbY7Cnu5MYEiHYWn4-pbsSAfOxnZiYrovRlLQbPcsJoQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=6514uuwTdh6Ioq4RybBUkY3SGyNBzQBjp7C5O63m6x2GbBidJwGQ9HDhEsT7idvtPLYJhHBCSB4uuKdPRqOI5OfbYXghtSZyr-Xp01cKhDmfH8V9N1vPPhg1cjc1SziJ0H_goPUD_YZCA53LsGYHFA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=RrhGGFX_7W77oCtDJLy8jG4UV9JkVtar2w1N-LQe_lgRmkQKkB3i26maJToKmZ80CQTkywaBi-BLrb326FZdD36cgSHnvsYZmEv96Gtcm_naa4tqY2WDblQhT8I7ryUwtSRKxbpCwxvDsdrY1S1oCg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=1HES-sBfVDScQpdtndMACy_rEG2UbN0pAlJUc5ftShP7cCTNLS_Geu2IOgEP02ECa8hm9IsCWYRtJZ7k7LbM491c5XKauewnwabmIPHhWSOgynzIH09FOUph1HtLKyIhp1GCmuD9hPXkXvO6grdxAQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=8po0-BdUzEjgv8CVvMyRXZnnD23uDmNSKk1mgSjQ9WhFZ4NkRkJEjt3QVNgkNpLohezWe-NK5eUkUw_gsVivXROFl2w6u6J4Y_kQy0dBtBv8Z_TOne6bdXMI92Fwi28z4ACMHvDcU1e4tsnmDd_msA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=idxLNPB1_VSohRZbP2ELSySNAY-DM_UikBsdWphrzs657FnfH53bxF1OPz7UTWNElHZF-J1fA4C9I-_trayclqO-RMcuWSDvIbcPzH0bu0sa1b1WdA8tTi_asvZdXIMaq0DENf_lFqokPyrTF2jjaQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=GSpYXG8_ww04paPUVrBxc6pZPbsuTl0Z-JlcW7rER7_FbiJrEEa2Nx4ukyPltI1uWvAeFIK1j4fpn89nNUXBNmwFxv7HR4ZEz9EvkAjevn1tn79UHExjHaPTp-hT-T-tgF-C5IGvNbIczUMfZFbZnQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=UQw6sVzabBH6llZ4zJszTKvbsnkXl7uIZM_8ifkeNLqaZ_Es99QYrjSXm1_zr0EwAtk5hXx5u2plf9mWuhkMV6Nqv8ZmKRgy3pkPrW1_Q8myFdHN64iCIzWvba_ZpcftqNMSn3Dxhh-fVKMpoUcgCg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Z6ZaPg6HDeSFpHXuavILaff9KJ5rsDN6TS-nRO4pJ0ztyCUkuixl-CyCbz5C3ZJ-RIo81jc-ssDxOqWIOV3EH1SaoF0nJMVEe410MRSa2Kuz5Cl2raWwdwi6aV9OC79Ee8OMOynjQAcC12c2lgZbsA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=MKwtsvlYJs4Ms7ajHapw5NapsT9kAniVBAyvcWi4e_dupt4-SmJJxAuxmhhU5gGiq_YoFUsc1uSGOwhTxZTwdpoDr2EiEc-Eukq2QCGU73Qbhh9LcWv5yy8OJ5fG6jTZpw_qWjZU9GzOvkBjoRtmCg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=MhGKh51daHKVJGys3F5-UsYaLQ2cMIzRz2FQ5Z7VLWSJd_zjwUnpUtqcRZlKt5TObvFmjQIDPlJQeXy5x9qWPzSEvVKgXVbFIRXqcd_Tqr7Mmlse8WbA0SCweBzbAPiOf3mxLrffuJGuYNWmUFfGXQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-UiucDSDM3OO4qBcN3iFolcYj-ou6XIfcH_3nnxHV_MFsVIJz7qSgXibzQkJTRxF6DrmOMo4N6tYjV5EOW_BJyYfYZVLtzE1_mrFw-sDc9PQtA5SDCzDepng1obQXtx-WBzGemHXRQFcaPpDCJK78g2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dL5aUG2VyvBxzXrDwlBjcZEJMeiJkW7JICrqFVuomAoKxa1EB-AJ2rmcZBTwnxfI1hlcTmKFwqa8p_uOc_wa_EaPasoCzm72xWN-qMjTIZbRreQtfKiQleA43dpwbRg810mQ5EmWkJffVtaNXI_2gA2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=XtL8PmAMFuo_81dD1O0tU_lRC0hMWI05LyYt3FAuEWlkFOCg1mfT6BUJO-QnIizikSMK03Vihproy6PEwwpEYSbKOtLTlqyW_Ji-YHkzP8WEbW9veU0nreu8hZs7QeEEDzSrR7Y2ff6euAIMMVal-Q2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=6Ulth2MkW6eUNNVLfHpgKfiLIP4Agm34845PEVl-rNe0mq7R9ySFSe5_hsuGx1R3UqbFIIb26yBsqJH7Tl1jsX8OabhFuSlatgAWkh5mLvwiT-mOHQqepvuhVoEMT-El3yif-afcmtBWwifJu39EFg2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=5VssjZ0dMt582Pyf4GR9qbWUOHdID2GSEAei8Pjh7T6Aov61_RV43urqdQI0kfGNCuBSmjeHB8zvtL22R6VEvkvcRickz6d8MzBCNGEntUZkXqne-qpR5o5iQtJDCGORjSbn5i7TSKhzP2gKBufayQ2&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=2iAwo2gJZBC00ANFuS6Yxmg1YD_qUJ4OjLBfLyymJtZWlmSZK64SjPNIzTer7z9Fga9cI-JfmuKeXSTgmD-gy8MUz8-vnPf2GCaN25-F48YMZexpriPbY-QzAhsschq4kjw3bfFlWs9NTFnMC-GGYxoFeRJ6S7Bm8r9ypCjcQu81&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=QeJEr81DZjEqQqdkPxu_e9HgHAAFGJs6WNNu3hbEDUlfFz_SqN6cFzaVePD-QXwQlon65BFf3VuqVsogpbYLwMHufqJlNWX4LsYZk5zWGsyLwqoOnP74XDQ7TjgObivZNLyklqMyide8CcCAL6SlOgy92sUS_JM2ZfgkPvHguyY1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=WLkRN4uaaCE9pMnKW5vlKSxim56eyszRq5f8jRaMkeMd9F17Wns8nExTMC6_mtDyw9Zle0X4h3Gx1YsL6Z9GudhkBquXmGLfXkK_0-65NOMv4RwVCP93G99lQGJHzTiJdsHH9ExBy0l34vk6EMYFqiT0Zy1MSLgxmlS2hg8cQvk1&amp;t=ffffffffda74082d" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="30kcYkWCwaYaszv/wbonTD0UoZtokodZ0ExwsdySLz6fuP1M7J5HYWHJ9n+k760bt8rLaRkclSKlzbFuurejXmYUVwZrFAc3KajltC5KHki4xdGz557HkRPOffqlsYSTM9k092vxBLJtiMEAYsxtaRc7n0CcUevygYCoGcfh0qtjoH/Y6kxQ2HQ+y+qQ6dr5KSYJ9bxIzXBACDF+N38K8QnSbUkdM073zAWPSDF81Z2jjL3+qEr3qTw6eXBHjaSI" />
+            
+
+            
+               
+            <div id="skiptolinks">
+                <ul>
+                    <li><a href="#navigation">Skip to navigation</a></li>
+                    <li><a href="#masterbody">Skip to content</a></li>
+                  </ul>
+            </div>
+            
+
+            
+            <div id="masterheader">
+                
+<link rel="shortcut icon" type="image/ico" href="~/Images/acc_web_icon_3.ico" />
+
+
+<div id="navigation" class="sticky" style="background: #074e68;">
+    
+    <nav class="top-bar custom_topbar" data-options="is_hover: false" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name custom_topbar">
+                
+                <a id="ctl00_Nav_Login_Header1_lb_link" href="javascript:__doPostBack(&#39;ctl00$Nav_Login_Header1$lb_link&#39;,&#39;&#39;)" style="color: #fff; font-size: 1.5em; font-family: 'Book Antiqua'; font-weight: bold; text-align: left;">OPRS Live</a>
+                
+            </li>
+             
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+
+             
+
+                <ul class="right" >
+
+                
+                <li class="divider"></li>
+                <li>
+                    <a id="ctl00_Nav_Login_Header1_lb_help" class="link" href="javascript:__doPostBack(&#39;ctl00$Nav_Login_Header1$lb_help&#39;,&#39;&#39;)">Login Help</a>
+
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a id="ctl00_Nav_Login_Header1_lnkContactUs" class="link" href="javascript:__doPostBack(&#39;ctl00$Nav_Login_Header1$lnkContactUs&#39;,&#39;&#39;)">Contact Us</a>
+
+                    </li>
+                </ul>
+
+        </section>
+    </nav>
+</div>
+
+
+
+
+            </div>
+            <div id="masterbody">
+
+                <section class="main-section">
+                    <!--This section is only for Mobile Vertical Menu-->
+                    <div class="centerAlign">
+                        <div id="ctl00_TaskUpdateProgress" style="display:block;">
+	
+                                <div class="screenLock"></div>
+                                <img id="ctl00_TaskLoadingImage" src="Images/ajax-loader.gif" alt="Your request is in progress" align="absmiddle" border="0" />
+                                
+                            
+</div>
+                    </div>
+                    <div id="ctl00_MainContentUpdatePanel">
+	
+                            
+    <br/>
+    <br/>
+    <div>
+        <div style="text-align: center">
+            <div class="row">
+                <div class="small-12 medium-8 large-7 small-centered columns">
+                    
+                     
+
+                    
+                    <br />
+                    
+                    
+                    
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-4 medium-offset-4 columns login-in-form">
+                <div class="content active" id="panelLogin">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h4 class="text-center loginHeader">OPRSLive Login</h4>
+                        </div>
+                        <div class="large-12 columns">
+                            <label>
+                                Email
+                                     <input name="ctl00$MainContent$UserName" type="text" id="ctl00_MainContent_UserName" placeholder="someone@uic.edu" maxlength="50" />
+                            </label>
+                        </div>
+                        <div class="large-12 columns">
+                            <label>
+                                Password
+                                    <input name="ctl00$MainContent$Password" type="password" id="ctl00_MainContent_Password" placeholder="Password" maxlength="50" />
+                            </label>
+                        </div>
+
+                        <div class="large-12 columns">
+                            <input type="submit" name="ctl00$MainContent$LoginButton" value="Login" id="ctl00_MainContent_LoginButton" class="button expand small" />
+                        </div>
+                        <div class="large-12 columns forgot">
+                            <div class="small-6 columns createAccount">
+                                <a href="wp_common/PasswordGenerator.aspx">First Time User</a>
+                            </div>
+                            <div class="small-6 columns forgot">
+                                <a href="wp_common/PasswordReminder.aspx">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="text-center" style="margin:10px;">
+            <label style="font-size:medium;">Are you submitting a Determination of Whether an Activity Represents <br>Human Subjects Research? - 
+                <a id="ctl00_MainContent_Read_this" href="javascript:__doPostBack(&#39;ctl00$MainContent$Read_this&#39;,&#39;&#39;)"> Read this first!</a>
+            </label>      
+        </div>
+        <div style="text-align: center">
+            <div class="row">
+                <br />
+                
+                <br />
+                <br />
+                <span id="ctl00_MainContent_Label1"><b><font color="#3333FF"> </font></b></span>
+            </div>
+        </div>
+    </div>
+    
+
+                        
+</div>
+                </section>
+            </div>
+            <div id="masterfooter">
+                
+
+
+
+<footer>
+       
+    <p class="footer-identity">
+        
+        <img id="ctl00_NavMain_Footer_img_footer" src="images/uic-ovcr-logo-footer.png" alt="UIC OFFICE OF THE VICE CHANCELLOR FOR RESEARCH" border="0" />  
+        &nbsp;&nbsp; | 
+        <a  target="_blank" style="text-decoration: underline;text-decoration-style: dotted" href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy Policy</a>              
+    </p>
+  
+</footer>
+
+
+
+
+
+
+            </div>
+        </form>
+    </div>
+    <script>
+        $(document).foundation();
+    </script>
+
+</body>
+</html>

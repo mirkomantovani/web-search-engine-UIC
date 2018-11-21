@@ -1,0 +1,339 @@
+<HEAD>
+<META NAME="allow-search" content="YES">
+<META NAME="searchtitle"  content="Sentiment Classification, Opinion Extraction, feature-based summary, sentiment analysis">
+<META NAME="keywords" CONTENT="Sentiment Classification, Opinion Extraction, Opinion Summarization, Consumer Reviews, Customer Reviews">
+<META NAME="description" CONTENT="Sentiment Classification, Opinion Extraction">
+<META NAME="page-type" CONTENT="Opinion extraction, Opinion Mining, Opinion summarization">
+<META NAME="revisit-after" CONTENT="14 days">
+<META NAME="audience" CONTENT="All">
+<META NAME="author" content="Bing Liu">
+<META NAME="abstract" CONTENT="Sentiment Analysis, Sentiment Classification, Opinion Extraction">
+<BASE TARGET="Main">
+<TITLE> Opinion Mining, Sentiment Analysis, Opinion Extraction</TITLE>
+<BODY bgcolor="#f5f5f5">
+<H2> <center> Opinion Mining, Sentiment Analysis, and Opinion Spam Detection</center></H2>
+<H3> <center> Feature-Based Opinion Mining and Summarization
+<br> (or Aspect-Based Sentiment Analysis and Summarization)
+<br> <a href="http://www.cs.uic.edu/~liub/FBS/fake-reviews.html">Detecting <i>Fake Reviews</i></a>
+<td><tr></table>
+<br>(Media coverage: <a href="http://www.nytimes.com/2012/01/27/technology/for-2-a-star-a-retailer-gets-5-star-reviews.html?_r=2&ref=business">The New York Times</a>, <a href="http://www.economist.com/node/21008482">The Economist</a>, <a href="http://www.businessweek.com/magazine/a-lie-detector-test-for-online-reviewers-09292011.html">BusinessWeek</a> and <a href="http://www.cs.uic.edu/~liub/FBS/media-coverage.html">more ... </a>) 
+<br><br>
+<A HREF="#lexicon">Opinion Lexicon</a> --------- <A HREF="#datasets">Datasets</a> --------- <A HREF="#talks">Talks</a> --------- <a href="#publications">Publications</a>
+</center></H3>
+<br>
+
+<h3> <font color="red"><i>New Book</i></font>: <img border="0" src="http://www.cs.uic.edu/~liub/new.gif">
+ <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-opinion-emotion-analysis.html">Sentiment Analysis: mining opinions, sentiments, and emotions</a>. <font size=4>Cambridge University Press, 2015.</font></h3>
+<h3> Book: <a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.html"> <b>Sentiment Analysis and Opinion Mining</b></a> <font size=4>(Introduction and Survey), Morgan & Claypool, May 2012. </font></h3>
+
+<H3> See "Feature-Based Opinion Mining and Summmarization" in <a href="http://www.bing.com">Microsoft Live/Bing Search</a> and <a href="http://www.google.com/prdhp">Google Product Search</a> (<a href="http://www.ryanmcd.com/papers/local_service_summ.pdf">paper</a>).</h3>
+<ul>
+<li> <b>Note</b>: I don't know the techniques used by <b>Microsoft Live/Bing</b> (9/28/2007), but <a href="http://www.ryanmcd.com/papers/local_service_summ.pdf"><b>Google</b> has a paper</a>. To see the model, please check out (Hu and Liu, KDD-2004) and (Liu et al, WWW-2005) below, or the books above (better). Try search for a camera and click on reviews. You will see summarized user opinions on product features/aspects in a bar chart. 
+</ul>
+<h3> NLP Handbook Chapter: <a href="http://www.cs.uic.edu/~liub/FBS/NLP-handbook-sentiment-analysis.pdf">Sentiment Analysis and Subjectivity</a>, 2nd Edition, Eds: N. Indurkhya and F.J. Damerau, 2010. 
+</ul>
+<h3> <font color="red"><i>Opinion Parser</i></font>: my sentiment analysis system: <i>now sold</i> &#8656 exclusively licensed  &#8656 licensed to companies. <!-- <a href="https://addstructure.com/">AddStructure</a> and <a href="http://www.opinioneq.com/">OpinionEQ</a>.--> </h3>
+<ul>
+<li> The system analyzes <b>sentiments, opinions</b> and <b>emotions</b>, extracts <b>sentiment targets</b>: <b>entities, topics</b> and their <b>aspects/features</b>, and handles <b>comparative sentences and conditional sentences</b>. 
+<li> I cannot make the system open-source due to its commercial use. If you want to know how it works, please read <b><a href="http://www.cambridge.org/us/academic/subjects/computer-science/knowledge-management-databases-and-data-mining/sentiment-analysis-mining-opinions-sentiments-and-emotions">my new sentiment analysis book</a></b>.
+<li> I hope to build another and better system, <i>IF I HAVE TIME</i>.
+<!-- <li> <font color="red"><b>Try It</b></font>: If you give me a text file, I can run it for you. Each line of the file should be in the following format representing a sentence (the first number is the sentence id): <br>1020/CD It//PRP gave/give/VBD good//JJ results/result/NNS .//. -->
+
+<!--<li> Check out our daily <a href="http://liu.cs.uic.edu/TwitterWeb/DJIA_vs_opinion_with_TimeLine.jsp?type=mood"><font color="fireBrick">Live Stock Market Prediction and Tracking</font></a> using Twitter Sentiment (<i>work-in-progress</i>). -->
+</ul>
+
+<!--
+<h3> Sorry, our <font color="red">Twitter</font> sentiment/opinion search system <a href="http://www.f-crowdmood.com"> CrowdMood</a> is down. See instructions <a href="http://www.cs.uic.edu/~liub/FBS/crowdmood.html"> here</a> <font color="red">No time to fix it. Working on a more advanced system</font>. 
+-->
+<h3><b><font color="red">Tutorial</font>:</b> <a href="http://www.cs.uic.edu/~liub/FBS/Sentiment-Analysis-tutorial-AAAI-2011.pdf">Sentiment Analysis Tutorial</a> - (<a href="http://www.cs.uic.edu/~liub/FBS/AAAI-2011-tutorial-references.pdf">references</a>), given at <a href="http://www.aaai.org/Conferences/AAAI/aaai11.php">AAAI-2011</a>, August 8, 2011 - (<a href="https://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf">Check out the new book</a>)</h3>
+
+<h3><b><font color="red">Interesting Piece</font> from <a href="https://newrepublic.com/article/126123/quantifying-weepy-bestseller">New Republic</a>: 
+If you want to be a successful novelist, should you be sentimental in your writing or not?</b></h3>
+
+
+<a NAME="talks"></a>
+<h3> Recent Keynote and Invited Talks (not updated) (<a href="http://www.cs.uic.edu/~liub/FBS/talks-tutorials-interviews.html">Older Talks</a>)</h3>
+<ol>
+<li>Invited Talk. “Sentiment Analysis with Lifelong Learning.” ETS, December 7, 2015. 
+<li>Invited Talk. “Sentiment Analysis with Lifelong Learning.” Brigham Young University, December. 3, 2015. 
+<li>Keynote speech. “Sentiment Analysis, Lifelong Learning and Intelligent Personal Assistants.” The 2015 Conf. on Technologies and Applications of Artificial Intelligence (TAAI-2015). Taiwan, Nov. 20-22, 2015. 
+<li> Invited talk. “Sentiment analysis and lifelong machine learning.” Frontiers in Computational Mathematics: AMS Central Fall Sectional Meeting, October 2-4, 2015.
+<li> Keynote speech. “The State of Sentiment.” Sentiment Analysis Symposium, New York City, July 15-16, 2015.
+<li> Invited tutorial. "Sentiment analysis: mining opinions, sentiments, and emotions." Sentiment Analysis Symposium, New York City, July 15-16, 2015.
+<li> Keynote speech. “Deception Detection via Pattern Mining of Web Usage Behavior” Workshop on Data mining For Big Data: Applications, Challenges & Perspectives, Morocco, March 25, 2015
+<li> Keynote speech. “Social Media Analysis via Continuous Learning.” Adobe Text Analytics Summit, Feb 26, 2015.
+
+<li><a href="http://www.cs.uic.edu/~liub/FBS/talks-tutorials-interviews.html">Older Talks</a>
+</ol>
+<h2>1. Introduction </h2>
+<p>
+This work is in the area of <i>sentiment analysis and opinion mining</i> from social media, e.g., reviews, forum discussions, and blogs. In our KDD-2004 paper, we proposed the <i><b>Feature-Based Opinion Mining</b></i> model, 
+which is now also called <i><b>Aspect-Based Opinion Mining</b></i> 
+(as the term feature here can confuse with the term feature used in 
+machine learning). The output of such opinion mining is a 
+<i>feature-based opinion summary</i> 
+or <i>aspect-based opinion summary</i>. The commonly known <i>sentiment classification</i> is a sub-task. Our current work is in two main areas, 
+which reflect two kinds of opinions (or evaluations)
+<ul> 
+<li> Mining regular (or direct) opinions. <i>Ex: (1). <b>This camera is great.</b> (2). <b>After taking the drug, I got stomach pain.</b></i>
+<li> Mining comparative opinions. <i>Ex: <b>Coke tastes better than Pepsi.</b></i>
+</ul>
+
+<p> Since 2006, we have also worked on 
+<ul>
+<li><a href="http://www.cs.uic.edu/~liub/FBS/fake-reviews.html">Fake review and opinion spam detection</a>. Fake reviews are also called bogus reviews or fraudulent reviews. See the papers [WWW-2007, WSDM-2008, CIKM-2010a, CIKM-2010b, WWW-2012]
+</ul>
+<p>
+
+<h3>2. Sentiment Analysis or Mining of Regular Opinions</h3>
+<p>
+In this research, we aim to mine and to summarize online opinions in reviews, 
+tweets, blogs, forum discussions, etc. Specifically, we mine features or aspects of entities (e.g., products) or topics on which people have expressed their opinions and determine whether the opinions are positive or negative. For opinion summarization, we advocate the quantitative aspect and the target of opinions because 50% of the people say something is bad is not the same as 5% say it is bad. 
+<br><br>
+<b> Abstraction of the problem</b>: Feature-based opinion mining and summarization (aspect-based opinion mining and summarization) of multiple reviews (KDD-04 and WWW-05)
+<br>
+Formal definitions can be found in my book "<a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.html">Sentiment Analysis and Opinion Mining<a>". They are based on several of our papers in 2004 and 2005. The abstraction provides a model of online opinions, describes what should be extracted from opinion sources (e.g., reviews, forums, and blogs) and how the results 
+may be organized and presented to the user. The main mining tasks are:
+<ul>
+<li> mining entities and their features (or aspects) that have been commented on or evaluated by people,
+<li> determining whether the comment/opinion on each entity feature (or aspect) is positive, negative or neutral (aspect-based sentiment classification), and  
+<li> summarizing the results. 
+</ul>
+
+<h3>3. Sentiment Analysis of Comparative Opinions </h3>
+A comparative sentence usually expresses an ordering relation between two sets 
+of entities with respect to some shared features (or aspects). For example, the 
+comparative sentence <i>"Canon's optics are better than those of Sony and 
+Nikon"</i> expresses the comparative relation: (better, {optics}, {Canon}, 
+{Sony, Nikon}). Comparative sentences use different language constructs 
+from typical opinion sentences (e.g., "Cannon's optic is great").
+<br><br>
+<b>Abstraction of the problem</b>: "which is better than which about what". Again, the formal definitions can be found in my book "<a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.html">Sentiment Analysis and Opinion Mining<a>". The main mining tasks are:
+<br>
+<ul> 
+<li> identify comparative sentences from texts, e.g., reviews, forum or blog postings, and news articles.
+
+<li> extract comparative relations from the identified comparative sentences. 
+</ul>
+<A NAME="lexicon"></A>
+<h3>Opinion Lexicon (or Sentiment Lexicon)</h3>
+<ul>
+<li> <b>Opinion Lexicon</b>: <a href="http://www.cs.uic.edu/~liub/FBS/opinion-lexicon-English.rar">
+A list of English positive and negative opinion words or sentiment words
+</a> (<font color="red">around 6800 words</font>). This list was compiled over many years starting from our first paper (Hu and Liu, KDD-2004). 
+<li> <b>Comparative words</b>: <a href="http://www.cs.uic.edu/~liub/FBS/comparative-lexicon.pdf">A list of non-standard English compariative words and phrases for sentiment analysis</a>. This list was compiled over many years starting from our first paper (Jindal and Liu, SIGIR-2006)
+<li> Although necessary, having an opinion lexicon is far from sufficient for accurate sentiment analysis. See this paper: <a href="http://www.cs.uic.edu/~liub/FBS/NLP-handbook-sentiment-analysis.pdf"><i>Sentiment Analysis and Subjectivity</i></a> or the <a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf"><i>Sentiment Analysis</i></a> book.
+<li> Try <a href="http://trayt.com/">Search for the Best Restaurant</a> based on specific aspects, e.g., "best burger," "friendliest service." The system is a demo, which uses the lexicon (also phrases) and grammatical analysis for opinion mining. 
+</ul>
+<A NAME="datasets"></A>
+<h3>Data Sets</h3>
+<ul>
+<li> <b>Annotated: <a href="http://www.cs.uic.edu/~liub/FBS/CustomerReviewData.zip">Customer Review Datasets (5 products)</a></b> associated with the paper (Hu and Liu, KDD-2004). 
+<li> <b>Annotated</b>: <a href="http://www.cs.uic.edu/~liub/FBS/Reviews-9-products.rar">Additional Customer Review Datasets (9 products)</a> some used in (Ding, Liu and Yu, WSDM-2008), which improves the lexicon-based method proposed in (Hu and Liu, KDD-2004)
+<li> <b>Annotated</b>: <a href="http://www.cs.uic.edu/~liub/FBS/CustomerReviews-3-domains.rar">More Customer Review Datasets (3 products)</a> used in (Liu et al., IJCAI-2015)
+
+<li> <a href="http://liu.cs.uic.edu/download/data/"> Amazon Product Review Data (more than 5.8 million reviews)</a> used in (Jindal and Liu, WWW-2007, WSDM-2008; Lim et al, CIKM-2010; Jindal, Liu and Lim, CIKM-2010; Mukherjee et al. WWW-2011; Mukherjee, Liu and Glance, WWW-2012) for opinion spam (fake review) detection. You can also use it for sentiment analysis. It has information about reviewers, review texts, ratings, 
+product info, etc. Due to the large file size, you may need to use <i>Download Accelerator Plus</i> (DAP) to download. If you use this data, please cite <A HREF="http://www.cs.uic.edu/~liub/FBS/opinion-spam-WSDM-08.pdf">(Jindal and Liu, WSDM-2008)</a>.
+<li> <b><a href="http://www.cs.uic.edu/~liub/FBS/pros-cons.rar">Pros and cons dataset</a></b> used in (Ganapathibhotla and Liu, Coling-2008) for determining context (aspect) dependent sentiment words, which are then applied to sentiment analysis of comparative sentiences (<a href="http://www.cs.uic.edu/~liub/FBS/comparative-train-test.rar">comparative sentence dataset</a>). The same form of Pros and Cons data was also used in (Liu, Hu and Cheng, WWW-2005). 
+<li> <b><a href="http://www.cs.uic.edu/~liub/FBS/data.tar.gz">Comparative sentence dataset</a></b> used in (Jindal and Liu, SIGIR-06) and (Jindal and Liu, AAAI-2006). <b><a href="http://www.cs.uic.edu/~liub/FBS/data-1.tar.gz">Comparative sentence dataset</a></b> used in (Ganapathibhotla and Liu, Coling-2008). 
+<li> <b><a href="http://www.cs.uic.edu/~liub/FBS/blog-gender-dataset.rar">Blog author gender classification data set</a></b> associated with the paper (Mukherjee and Liu, EMNLP-2010)
+<li> <b><a href="http://liu.cs.uic.edu/download/debate/"> Debate data set </a></b> used in (Mukherjee and Liu, ACL-2013; Mukherjee et al. ACL-2013 ). 
+<li> <b><a href="http://liu.cs.uic.edu/download/yelp_filter/"> Yelp Filtered Reviews</a></b> for Opinion spam or fake detection associated with the paper (Mukherjee et al. ICWSM-2013).
+<li> <b><a href="http://liu.cs.uic.edu/download/dianping/">Dianping fake review detection data</a></b> used in our <a href="https://www.cs.uic.edu/~liub/publications/fake-PU-learning-paper274.pdf">ICDM-2014 paper</a> (Li et al., 2014).
+</ul>
+<br>
+<a NAME="publications"></a>
+<h3>Publications - (sentiment analysis)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.cs.uic.edu/~liub/FBS/fake-reviews.html">Publications - (opinion spam or fake review detection)</a></h3>
+
+<OL>
+<!-- <p> <li> Minqing Hu and Bing Liu. "Opinion Feature Extraction Using Class Sequential Rules", <i>Proceedings of AAAI 2006 Spring Sympoia on Computational Approaches to Analyzing Weblogs (AAAI-CAAW 2006)</i>, March 27-29, 2006, Stanford University, CA. <a hreF="http://www.cs.uic.edu/~liub/publications/aaai-caaw-opinion.pdf">[PDF]</a> 
+-->
+
+<p><li>Shuai Wang, Guangyi Lv, Sahisnu Mazumder, Geli Fei, and Bing Liu. Lifelong Learning Memory Networks for Aspect Sentiment Classification. To appear in <i>Proceedings of 2018 IEEE International Conference on Big Data (IEEE BigData 2018)</i>, Seattle, December 10-13, 2018. 
+
+
+<p> <li> Shuai Wang, Sahisnu Mazumder, Bing Liu, Mianwei Zhou, and Yi Chang.  <a href="https://arxiv.org/abs/1801.12345607883.pdf">Target-Sensitive Memory Networks for Aspect Sentiment Classificationy</a>. <i>Proceedings of Annual Meeting of the Association for Computational Linguistics (ACL-2018)</i>, Melbourne, Australia, July 15th to 20th, 2018.
+
+<p> <li> Hu Xu, Bing Liu, Lei Shu and Philip S. Yu.  <a href="https://arxiv.org/abs/1801.0788334567.pdf">Double Embeddings and CNN-based Sequence Labeling for Aspect Extraction</a>. <i>Proceedings of Annual Meeting of the Association for Computational Linguistics (ACL-2018, short paper)</i>, Melbourne, Australia, July 15th to 20th, 2018.
+
+<p> <li> Lei Zhang, Shuai Wang, Bing Liu.  <a href="https://arxiv.org/abs/1801.07883">Deep Learning for Sentiment Analysis: A Survey</a>. arXiv:1801.07883 [cs.CL], <i>Wiley Interdisciplinary Reviews-Data Mining and Knowledge Discovery</i>, 8(4). doi: 10.1002/widm.1253, 2018 (invited paper).
+
+<p> <li> Hao Zhou, Minlie Huang, Tianyang Zhang, Xiaoyan Zhu, Bing Liu. <a href="https://arxiv.org/abs/1704.01074">Emotional Chatting Machine: Emotional Conversation Generation with Internal and External Memory</a>. <i>AAAI-2018</i>, arXiv:1704.01074 [cs.CL], 2017, <b>This paper has been reported extensively in <a href=https://www.google.com/search?q=%22Emotional+Chatting+Machine%22&oq=%22Emotional+Chatting+Machine%22&aqs=chrome..69i57.2508j0j7&sourceid=chrome&ie=UTF-8"><font color="red">Tech News Media</font></a> recently (April and May 2017)</b>.
+
+
+<p> <li> Yasheng Wang, Yang Zhang, and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/emnlp2017.pdf">Sentiment Lexicon Expansion Based on Neural PU Learning, Double Dictionary Lookup, and Polarity Association</a>. <i>Proceedings of 2017 Conference on Empirical Methods in Natural Language Processing (EMNLP-2017)</i>, September 7–11, 2017, Copenhagen, Denmark.
+
+<p> <li> Konstantin Bauman, Bing Liu, and Alexander Tuzhlin. <a href="http://www.cs.uic.edu/~liub/publications/FINAL_aspect_recommendations.pdf">Aspect Based Recommendations: Recommending Items with the Most Valuable Aspects Based on User Reviews</a>. <i>Proceedings of SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD-2017)</i>. Halifax, Nova Scotia - Canada, August 13 - 17, 2017
+
+
+<p> <li>Lei Shu, Hu Xu, and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/acl17_LifelongCRF.pdf">Lifelong Learning CRF for Supervised Aspect Extraction</a>. <i>Proceedings of Annual Meeting of the Association for Computational Linguistics (ACL-2017, short paper)</i>, July 30-August 4, 2017, Vancouver, Canada.
+
+<p> <li>Lei Shu, Bing Liu, Hu Xu, and Annice Kim. <a href="http://www.cs.uic.edu/~liub/publications/emnlp2016.pdf">Lifelong-RL: Lifelong Relaxation Labeling for Separating Entities and Aspects in Opinion Targets</a>. <i>Proceedings of 2016 Conference on Empirical Methods in Natural Language Processing (EMNLP-2016)</i>, November 1–5, 2016, Austin, Texas, USA.
+
+<p> <li> Shuai Wang, Zhiyuan Chen, and Bing Liu. <a href="http://www2016.net/proceedings/proceedings/p167.pdf">Mining Aspect-Speciﬁc Opinion using a Holistic Lifelong Topic Model</a>. <i>Proceedings of the International World Wide Web Conference (WWW-2016)</i>, April 11-15, 2016, Montreal, Canada. 
+
+<p> <li> Qian Liu, Bing Liu, Yuanlin Zhang, Doo Soon Kim and Zhiqiang Gao. <a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/11973/12051">Improving Opinion Aspect Extraction using Semantic Similarity and Aspect Associations</a>. <i>Proceedings of Thirtieth AAAI Conference on Artificial Intelligence (AAAI-2016)</i>, February 12–17, 2016, Phoenix, Arizona, USA.
+
+<p> <li> Zhiyuan Chen, Nianzu Ma and Bing Liu. <a href="http://www.cs.uic.edu/~zchen/papers/ACL2015-Short-Zhiyuan(Brett)Chen.pdf">Lifelong Learning for Sentiment Classification</a>. <i>Proceedings of the 53st Annual Meeting of the Association for Computational Linguistics (ACL-2015, short paper)</i>, 26-31, July 2015, Beijing, China. 
+
+<p> <li> Qian Liu, Zhiqiang Gao, Bing Liu and Yuanlin Zhang. <a href="http://www.aaai.org/ocs/index.php/IJCAI/IJCAI15/paper/view/10766/10842">Automated Rule Selection for Aspect Extraction in Opinion Mining</a>. <i> Proceedings of International Joint Conference on Artificial Intelligence (IJCAI-2015)</i>, July 25-31, 2015.
+
+<p> <li> Huayi Li, Arjun Mukherjee, Jianfeng Si and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/AAAI-2015.pdf">Extracting Verb Expressions Implying Negative Opinions</a>. <i> Proceedings of Twenty-Ninth AAAI Conference on Artificial Intelligence (AAAI-15)</i>. 2015
+
+<p> <li> Zhiyuan Chen, Arjun Mukherjee, and Bing Liu. <a href="http://www.cs.uic.edu/~zchen/papers/ACL2014-Zhiyuan(Brett)Chen.pdf">Aspect Extraction with Automated Prior Knowledge Learning</a>. <i>Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (ACL 2014)</i>, June 22-27, Baltimore, USA.
+
+<p> <li>Qian Liu, Zhiqiang Gao, Bing Liu and Yuanlin Zhang. <a href="http://www.cs.uic.edu/~liub/publications/WI-2014.pdf"> A Logic Programming Approach to Aspect Extraction in Opinion Mining</a>. <i>Proceedings of IEEE/WIC/ACM International Confernece on Web Intelligence (WI-2013)</i>, 2013. 
+
+<p> <li> Zhiyuan Chen, Arjun Mukherjee, Bing Liu, Meichun Hsu, Malu Castellanos, and Riddhiman Ghosh. <a href="http://www.cs.uic.edu/~liub/publications/EMNLP-2013-Aspects.pdf">Exploiting Domain Knowledge in Aspect Extraction</a>. <i>Proceedings of Conference on Empirical Methods in Natural Language Processing (EMNLP-2013)</i>, October 18-21, 2013, Seattle, USA. 
+
+<p> <li> Arjun Mukherjee, Vivek Venkataraman, Bing Liu, and Sharon Meraz. <a href="http://www.cs.uic.edu/~liub/publications/ACL-2013-Arjun-Tolerance.pdf">Public Dialogue: Analysis of Tolerance in Online Discussions</a>. <i>Proceedings of The 51st Annual Meeting of the Association for Computational Linguistics (ACL-2013)</i>, August 4-9, 2013, Sofia, Bulgaria.
+
+<p> <li> Arjun Mukherjee, Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/ACL-2013-Arjun-Pair-Interactions.pdf">Discovering User Interactions in Ideological Discussions</a>. <i>Proceedings of The 51st Annual Meeting of the Association for Computational Linguistics (ACL-2013)</i>, August 4-9, 2013, Sofia, Bulgaria.
+
+<p> <li> Jianfeng Si, Arjun Mukherjee, Bing Liu, Qing Li, Huayi Li, and Xiaotie Deng. <a href="http://www.cs.uic.edu/~liub/publications/ACL-2013-Jianfeng-stock-short.pdf">Exploiting Topic based Twitter Sentiment for Stock Prediction</a>. <i>Proceedings of The 51st Annual Meeting of the Association for Computational Linguistics (ACL-2013, short paper)</i>, August 4-9, 2013, Sofia, Bulgaria.
+
+<p> <li> Zhiyuan Chen, Bing Liu, Meichun Hsu, Malu Castellanos, and Riddhiman Ghosh. <a href="http://www.cs.uic.edu/~liub/publications/NAACL-2013-Zhiyuan-Intention.pdf">Identifying Intention Posts in Discussion Forums</a>. <i>Proceedings of The 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT-2013)</i>, June 9-15, 2013, Atlanta, USA.   
+
+<p> <li> Bing Liu. <a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf">Sentiment Analysis and Opinion Mining</a>. Morgan & Claypool Publishers, May 2012. 
+
+<p> <li> Arjun Mukherjee and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/ACL-2012-comments-modeling.pdf">Modeling Review Comments</a>. <i>Proceedings of 50th Annual Meeting of Association for Computational Linguistics (ACL-2012)</i>, July 8-14, 2012, Jeju, Republic of Korea.  
+
+<p> <li> Arjun Mukherjee and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/ACL-2012-aspect-extraction.pdf">Aspect Extraction through Semi-Supervised Modeling</a>. <i>Proceedings of 50th Annual Meeting of Association for Computational Linguistics (ACL-2012)</i>, July 8-14, 2012, Jeju, Republic of Korea.  
+
+<p> <li> Arjun Mukherjee and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/KDD-2012-contentions.pdf">Mining Contentions from Discussions and Debates</a>. <i>Proceedings of SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD-2012)</i>, Aug. 12-16, 2012, Beijing, China.   
+
+<p> <li> Lei Zhang, Riddhiman Ghosh, Mohamed Dekhil, Meichun Hsu, Bing Liu. <a href="http://www.hpl.hp.com/techreports/2011/HPL-2011-89.pdf">Combining Lexicon-based and Learning-based Methods for Twitter Sentiment Analysis</a>. HP Labs Technical Report, 2011.   
+
+<p> <li> Lei Zhang and Bing Liu. "Extracting Resource Terms for Sentiment Analysis," <i>Proceedings of the 5th International Joint Conference on Natural Language Processing (IJCNLP-2011)</i>, November 8-13, 2011, Chiang Mai, Thailand.
+
+<p><li> Zhongwu Zhai, Bing Liu, Lei Zhang, Hua Xu, Peifa Jia. <a href="http://www.cs.uic.edu/~liub/publications/AAAI_CameraVersion.pdf">Identifying Evaluative Opinions in Online Discussions</a>. <i>Proceedings of AAAI-2011</i>, San Francisco, USA, August 7-11, 2011. 
+
+<p> <li> Lei Zhang and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/ACL-2011-short-noun-opinion.pdf">"Identifying Noun Product Features that Imply Opinions."</a> <i>ACL-2011</i> (short paper), Portland, Oregon, USA, June 19-24, 2011. 
+
+<p> <li>Guang Qiu, Bing Liu, Jiajun Bu and Chun Chen. <a href="http://www.mitpressjournals.org/doi/pdf/10.1162/coli_a_00034"> "Opinion Word Expansion and Target Extraction through Double Propagation."</a> <i>Computational Linguistics</i>, March 2011, Vol. 37, No. 1: 9.27.  
+
+<p><li> Zhongwu Zhai, Bing Liu, Hua Xu, Peifa Jia. <a href="http://www.cs.uic.edu/~liub/publications/PAKDD-2011.pdf">"Constrained LDA for Grouping Product Features in Opinion Mining."</a> <i>Proceedings of PAKDD-2011</i>, Shenzhen, China, 2011. (<i><b>Best Paper Award</b></i>) 
+
+<p> <li> Lei Zhang and Bing Liu. "Entity Set Expansion in Opinion Documents." <i>Proceedings of the ACM Conference on Hypertext and Hypermedia</i> (HT-2011), Eindhoven, Netherlands, June 6-9, 2011. 
+
+<p> <li> Zhongwu Zhai, Bing Liu, Hua Xu and Peifa Jia. <a href="http://www.cs.uic.edu/~liub/publications/wsdm-2011-final.pdf">"Clustering Product Features for Opinion Mining."</a> <i>Proceedings of Fourth ACM 
+International Conference on Web Search and Data Mining (WSDM-2011)</i>, 
+Feb. 9-12, 2011, Hong Kong, China. 
+
+<p> <li> Arjun Mukherjee and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/EMNLP-2010-blog-gender.pdf">"Improving Gender Classification 
+of Blog Authors."</a> <i>Proceedings of Conference on Empirical 
+Methods in Natural Language Processing (EMNLP-10)</i>. Oct. 9-11, 2010, MIT, 
+Massachusetts, USA. 
+
+<p> <li> Xiaowen Ding and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/coling-2010-final-Ding.pdf">"Resolving Object and Attribute 
+Coreference in Opinion Mining."</a> <i> Proceedings of the 23rd 
+International Conference on Computational Linguistics 
+(COLING-2010)</i>, August 23-27, Beijing, China. 
+
+<p> <li> Zhongwu Zhai, Bing Liu, Hua Xu and Peifa Jia. 
+<a href="http://www.cs.uic.edu/~liub/publications/coling_2010_final_Zhai.pdf">"Grouping Product Features Using Semi-Supervised Learning with Soft-Constraints"</a> <i> Proceedings of the 23rd International Conference on Computational Linguistics 
+(COLING-2010)</i>, August 23-27, Beijing, China. 
+
+<p> <li> Lei Zhang and Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/coling-2010-final_Zhang.pdf"> "Extracting and Ranking Product Features
+in Opinion Documents."</a> <i> Proceedings of the 23rd 
+International Conference on Computational Linguistics (COLING-2010)</i>, 
+August 23-27, Beijing, China. 
+
+<p> <li>Bing Liu. <a href="http://www.cs.uic.edu/~liub/FBS/IEEE-Intell-Sentiment-Analysis.pdf">"Sentiment Analysis: A Multifaceted Problem."</a> Invited paper, <i>IEEE Intelligent Systems</i>, 25(3), 2010, pp. 76-80.
+<p> <li>Bing Liu.  <a href="http://www.cs.uic.edu/~liub/FBS/NLP-handbook-sentiment-analysis.pdf">"Sentiment Analysis and Subjectivity."</a> Invited Chapter for the<i> Handbook of Natural Language Processing</i>, Second Edition. March, 2010.
+
+<p> <li>Ramanathan Narayanan, Bing Liu and Alok Choudhary. <a href="http://www.cs.uic.edu/~liub/FBS/EMNLP-camera-ready.pdf">"Sentiment Analysis of Conditional Sentences."</a> <i>Proceedings of Conference on Empirical Methods in Natural Language Processing (EMNLP-09)</i>. August 6-7, 2009. Singapore. 
+
+<p> <li>Guang Qiu, Bing Liu, Jiajun Bu and Chun Chen. <a href="http://www.cs.uic.edu/~liub/FBS/IJCAI-09-Qiu-camera-ready.pdf">"Expanding Domain Sentiment Lexicon through Double Propagation."</a> <i>Proceedings of the 21st International Joint Conference on Artificial Intelligence (IJCAI-09)</i>, Pasadena, California, USA, July 11-17, 2009. 
+
+<p> <li> Xiaowen Ding, Bing Liu and Lei Zhang. <a href="http://www.cs.uic.edu/~liub/FBS/KDD2009_entity-final.pdf">"Entity Discovery and Assignment for Opinion Mining Applications,"</a> <i> Proceedings of ACM SIGKDD Interntaional Conference on Knowledge Disocvery and Data Mining (KDD-09, industrial track)</i>, June 28-July 1, 2009, Paris. 
+
+<p> <li>Bing Liu. "<a hreF="http://www.cs.uic.edu/~liub/FBS/opinion-mining.pdf">Opinion Mining</a>." Invited contribution to <i>Encyclopedia of Database Systems</i>, 2008.
+
+<p><li>Murthy Ganapathibhotla and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/FBS/Coling-2008-camera-ready.pdf">"Mining Opinions in Comparative Sentences."</a> <i>Proceedings of the 22nd International Conference on Computational Linguistics (Coling-2008)</i>, Manchester, 18-22 August, 2008. 
+
+<p><li>Xiaowen Ding, Bing Liu and Philip S. Yu. <A HREF="http://www.cs.uic.edu/~liub/FBS/opinion-mining-final-WSDM.pdf">"A Holistic Lexicon-Based Appraoch to Opinion Mining."</a> <i>Proceedings of First ACM International Conference on Web Search and Data Mining (WSDM-2008)</i>, Feb 11-12, 2008, Stanford University, Stanford, California, USA. 
+
+<p><li>Xiaowen Ding and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/publications/depOpinion-2007.pdf">"The Utility of Linguistic Rules in Opinion Mining."</a> <i>SIGIR-2007</i> (poster paper), 23-27 July 2007, Amsterdam. 
+
+<p><li>Nitin Jindal and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/publications/sigir06-comp.pdf">"Identifying Comparative Sentences in Text Documents"</a> <i>Proceedings of the 29th Annual International ACM SIGIR Conference on Research & Development on Information Retrieval (SIGIR-06)</i>, Seattle 2006.
+
+<p> <li> Nitin Jindal and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/publications/aaai06-comp-relation.pdf">"Mining Comprative Sentences and Relations."</a> <I>Proceedings of 21st National Conference on Artificial Intellgience (AAAI-2006)</I>, July 16.20, 2006, Boston, Massachusetts, USA. 
+
+<p> <li> Bing Liu, Minqing Hu and Junsheng Cheng. <a hreF="http://www.cs.uic.edu/~liub/publications/www05-p536.pdf">"Opinion Observer: Analyzing and Comparing Opinions on the Web"</a><i>Proceedings of the 14th international World Wide Web conference (WWW-2005)</i>, May 10-14, 2005, in Chiba, Japan. 
+
+<p> <li> Minqing Hu and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/publications/aaai04-featureExtract.pdf">"Mining Opinion Features in Customer 
+Reviews."</a> <I>Proceedings of Nineteeth National Conference on Artificial Intellgience (AAAI-2004)</I>, San Jose, USA, July 2004. 
+
+<p> <li> Minqing Hu and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/publications/kdd04-revSummary.pdf">"Mining and summarizing customer reviews."</a>
+<i>Proceedings of the ACM SIGKDD International Conference on 
+Knowledge Discovery & Data Mining (KDD-2004, full paper)</i>, Seattle, 
+Washington, USA, Aug 22-25, 2004. 
+
+</ol>
+<br>
+<A NAME="opinion-spam"></A>
+<h3> Publications - (Opinion spam or fake review detection) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a href="http://www.cs.uic.edu/~liub/FBS/fake-reviews.html">Check out my Opinion Spam Detection project homepage</a>)</h3>
+<ol>
+<p> <li>Huayi Li, Geli Fei, Shuai Wang, Bing Liu, Weixiang Shao, Arjun Mukherjee and Jidong Shao. Bimodal Distribution and Co-Bursting in Review Spam Detection. <i>Proceedings of International World Wide Web Conference (WWW-2017)</i>, April 3-7, 2017, Perth, Australia.
+
+<p> <li> Jing Wang, Clement. T. Yu, Philip S. Yu, Bing Liu, Weiyi Meng. “Diversionary comments under blog posts." Accepted. <i>ACM Transactions on the Web (TWEB)</i>, 2015.
+
+<p><li> Huayi Li, Zhiyuan Chen, Arjun Mukherjee, Bing Liu and Jidong Shao. "Analyzing and Detecting Opinion Spam on a Large-scale Dataset via Temporal and Spatial Patterns." Short paper at <i>ICWSM-2015</i>, 2015. 
+
+<p> <li>Huayi Li, Arjun Mukherjee, Bing Liu, Rachel Kornfieldz and Sherry Emery. <a href="http://www.cs.uic.edu/~liub/publications/twitter-promoters-paper531.pdf">Detecting Campaign Promoters on Twitter using Markov Random Fields</a>. <i>Proceedings of IEEE International Conference on Data Mining (ICDM-2014)</i>,  December 14-17, 2014. 
+
+<p> <li>Huayi Li, Zhiyuan Chen, Bing Liu, Xiaokai Wei and Jidong Shao. <a href="http://www.cs.uic.edu/~liub/publications/fake-PU-learning-paper274.pdf">Spotting Fake Reviews via Collective Positive-Unlabeled Learning</a>. <i>Proceedings of IEEE International Conference on Data Mining (ICDM-2014, short paper)</i>, December 14-17, 2014. 
+
+<p> <li> Tieyun Qian, Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/EMNLP-2013-Tieyun.pdf">Identifying Multiple Userids of the Same Author</a>. <i>Proceedings of Conference on Empirical Methods in Natural Language Processing (EMNLP-2013)</i>, October 18-21, 2013, Seattle, USA. 
+
+<p> <li> Arjun Mukherjee, Abhinav Kumar, Bing Liu, Junhui Wang, Meichun Hsu, Malu Castellanos, and Riddhiman Ghosh. <a href="http://www.cs.uic.edu/~liub/publications/KDD-2013-Arjun-spam.pdf">Spotting Opinion Spammers using Behavioral Footprints</a>. <i>Proceedings of SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD-2013)</i>, August 11-14 2013 in Chicago, USA.    
+
+<p> <li> Geli Fei, Arjun Mukherjee, Bing Liu, Meichun Hsu, Malu Castellanos, and Riddhiman Ghosh. <a href="http://www.cs.uic.edu/~liub/publications/ICWSM-2013-Geli-burst.pdf">Exploiting Burstiness in Reviews for Review Spammer Detection</a>. <i>Proceedings of The International AAAI Conference on Weblogs and Social Media (ICWSM-2013)</i>, July 8-10, 2013, Boston, USA.
+
+<p> <li> Arjun Mukherjee, Vivek Venkataraman, Bing Liu, and Natalie Glance. <a href="http://www.cs.uic.edu/~liub/publications/ICWSM-2013-Arjun-Spam.pdf">What Yelp Fake Review Filter Might Be Doing</a>. <i>Proceedings of The International AAAI Conference on Weblogs and Social Media (ICWSM-2013)</i>, July 8-10, 2013, Boston, USA.
+
+<p> <li> Arjun Mukherjee, Bing Liu, and Natalie Glance. 
+<a href="http://www.cs.uic.edu/~liub/publications/WWW-2012-group-spam-camera-final.pdf">
+Spotting Fake Reviewer Groups in Consumer Reviews</a>. <i>International 
+World Wide Web Conference (WWW-2012)</i>, Lyon, France, April 16-20, 2012. 
+
+<p> <li> Guan Wang, Sihong Xie, Bing Liu, Philip S. Yu. <a href="http://www.cs.uic.edu/~liub/publications/TIST-final.pdf">Identify Online Store Review Spammers via Social Review Graph</a>. <i>ACM Transactions on Intelligent Systems and Technology</i>, accepted for publication, 2011. 
+
+<p> <li> Guan Wang, Sihong Xie, Bing Liu, Philip S. Yu. <a href="http://www.cs.uic.edu/~liub/publications/ICDM-2011-final.pdf">Review Graph based Online Store Review Spammer Detection</a>. <i>ICDM-2011</i>, 2011. 
+
+<p> <li> Arjun Mukherjee, Bing Liu, Junhui Wang, Natalie Glance, Nitin Jindal. <a href="http://www.cs.uic.edu/~liub/publications/WWW-2011-group-review-spam.pdf">Detecting Group Review Spam</a>. <i>WWW-2011 poster paper</i>, 2011. 
+
+<p> <li> Ee-Peng Lim, Viet-An Nguyen, Nitin Jindal, Bing Liu and Hady Lauw. 
+<a href="http://www.cs.uic.edu/~liub/publications/cikm-2010-final-spam.pdf">"Detecting Product Review Spammers using Rating Behaviors."</a>
+<i>The 19th ACM International Conference on Information and Knowledge 
+Management (CIKM-2010, full paper)</i>, Toronto, Canada, Oct 26 - 30, 2010. 
+
+<p> <li> Nitin Jindal, Bing Liu and Ee-Peng Lim. <a href="http://www.cs.uic.edu/~liub/publications/CIKM-final-unexpected.pdf">"Finding Unusual Review 
+Patterns Using Unexpected Rules."</a> <i>The 19th ACM 
+International Conference on Information and Knowledge Management 
+(CIKM-2010, short paper)</i>, Toronto, Canada, Oct 26 - 30, 2010. 
+
+<p><li>Nitin Jindal and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/FBS/opinion-spam-WSDM-08.pdf">"Opinion Spam and Analysis."</a> <i>Proceedings of First ACM International Conference on Web Search and Data Mining (WSDM-2008)</i>, Feb 11-12, 2008, Stanford University, Stanford, California, USA. 
+
+<p><li>Nitin Jindal and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/publications/reviewSpam-2007.pdf">"Review Spam Detection."</a> Proceedings of <i>WWW-2007</i> (poster paper), May 8-12, Banff, Canada. 
+</ol>
+<br>
+<!-- <h4>My younger daughter <a href="http://www.kateliu.com">Kate Liu</a> plays piano.</h4> -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2031920;
+var sc_invisible=1;
+var sc_partition=18;
+var sc_security="1d4151a9";
+var sc_remove_link=1;
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><img  src="http://c19.statcounter.com/counter.php?sc_project=2031920&amp;java=0&amp;security=1d4151a9&amp;invisible=1" alt="counter free hit unique web" border="0"> </noscript>
+<!-- End of StatCounter Code -->
+
+
+<br>
+<p>Created on May 15, 2004 by <a href="http://www.cs.uic.edu/~liub">Bing Liu</a>; and Minqing Hu.
+</body>

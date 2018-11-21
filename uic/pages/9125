@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebTopicList &lt; CS111 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS111/WebTopicList?_T=2018-11-21" type="application/x-wiki" title="edit WebTopicList" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS111/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS111/WebTopicList"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS111/WebHome">CS111 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS111/WebTopicList" title='Topic revision: 1 (2006-11-15 - 19:43:52)'>WebTopicList</a> <span class='patternRevInfo'>(2006-11-15, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS111.WebTopicList;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS111/WebTopicList?t=1542827185' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS111/WebTopicList' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="All_topics_in_CS111_web"></a> All topics in CS111 web </h1>
+<p /> <ul>
+<li> <a href="/bin/view/CS111/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsF12" class="twikiLink">AssignmentsF12</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsF13" class="twikiLink">AssignmentsF13</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsF14" class="twikiLink">AssignmentsF14</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsF15" class="twikiLink">AssignmentsF15</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsF16" class="twikiLink">AssignmentsF16</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS13" class="twikiLink">AssignmentsS13</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS14" class="twikiLink">AssignmentsS14</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS15" class="twikiLink">AssignmentsS15</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS17" class="twikiLink">AssignmentsS17</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS18" class="twikiLink">AssignmentsS18</a>
+</li> <li> <a href="/bin/view/CS111/BabyElephantWalk60" class="twikiLink">BabyElephantWalk60</a>
+</li> <li> <a href="/bin/view/CS111/CS111" class="twikiLink">CS111</a>
+</li> <li> <a href="/bin/view/CS111/CS111Fall2012" class="twikiLink">CS111Fall2012</a>
+</li> <li> <a href="/bin/view/CS111/CS111Fall2013" class="twikiLink">CS111Fall2013</a>
+</li> <li> <a href="/bin/view/CS111/CS111Fall2014" class="twikiLink">CS111Fall2014</a>
+</li> <li> <a href="/bin/view/CS111/CS111Fall2015" class="twikiLink">CS111Fall2015</a>
+</li> <li> <a href="/bin/view/CS111/CS111Fall2016" class="twikiLink">CS111Fall2016</a>
+</li> <li> <a href="/bin/view/CS111/CS111Spring2013" class="twikiLink">CS111Spring2013</a>
+</li> <li> <a href="/bin/view/CS111/CS111Spring2014" class="twikiLink">CS111Spring2014</a>
+</li> <li> <a href="/bin/view/CS111/CS111Spring2015" class="twikiLink">CS111Spring2015</a>
+</li> <li> <a href="/bin/view/CS111/CS111Spring2017" class="twikiLink">CS111Spring2017</a>
+</li> <li> <a href="/bin/view/CS111/CS111Spring2018" class="twikiLink">CS111Spring2018</a>
+</li> <li> <a href="/bin/view/CS111/CantinaBand3" class="twikiLink">CantinaBand3</a>
+</li> <li> <a href="/bin/view/CS111/CantinaBand60" class="twikiLink">CantinaBand60</a>
+</li> <li> <a href="/bin/view/CS111/CodeF12" class="twikiLink">CodeF12</a>
+</li> <li> <a href="/bin/view/CS111/CodeF13" class="twikiLink">CodeF13</a>
+</li> <li> <a href="/bin/view/CS111/CodeF14" class="twikiLink">CodeF14</a>
+</li> <li> <a href="/bin/view/CS111/CodeF15" class="twikiLink">CodeF15</a>
+</li> <li> <a href="/bin/view/CS111/CodeF16" class="twikiLink">CodeF16</a>
+</li> <li> <a href="/bin/view/CS111/CodeS13" class="twikiLink">CodeS13</a>
+</li> <li> <a href="/bin/view/CS111/CodeS14" class="twikiLink">CodeS14</a>
+</li> <li> <a href="/bin/view/CS111/CodeS15" class="twikiLink">CodeS15</a>
+</li> <li> <a href="/bin/view/CS111/CodeS17" class="twikiLink">CodeS17</a>
+</li> <li> <a href="/bin/view/CS111/CodeS18" class="twikiLink">CodeS18</a>
+</li> <li> <a href="/bin/view/CS111/DrJava" class="twikiLink">DrJava</a>
+</li> <li> <a href="/bin/view/CS111/Exam1F15" class="twikiLink">Exam1F15</a>
+</li> <li> <a href="/bin/view/CS111/Exam1SolnF12" class="twikiLink">Exam1SolnF12</a>
+</li> <li> <a href="/bin/view/CS111/Exam1SolnF14" class="twikiLink">Exam1SolnF14</a>
+</li> <li> <a href="/bin/view/CS111/Exam1SolutionS13" class="twikiLink">Exam1SolutionS13</a>
+</li> <li> <a href="/bin/view/CS111/Exam1SolutionsF13" class="twikiLink">Exam1SolutionsF13</a>
+</li> <li> <a href="/bin/view/CS111/Exam1SolutionsS14" class="twikiLink">Exam1SolutionsS14</a>
+</li> <li> <a href="/bin/view/CS111/Exam1TopicsF13" class="twikiLink">Exam1TopicsF13</a>
+</li> <li> <a href="/bin/view/CS111/Exam1TopicsS14" class="twikiLink">Exam1TopicsS14</a>
+</li> <li> <a href="/bin/view/CS111/Exam2F15" class="twikiLink">Exam2F15</a>
+</li> <li> <a href="/bin/view/CS111/Exam2SolnF14" class="twikiLink">Exam2SolnF14</a>
+</li> <li> <a href="/bin/view/CS111/Exam2SolnF21" class="twikiLink">Exam2SolnF21</a>
+</li> <li> <a href="/bin/view/CS111/Exam2SolutionS13" class="twikiLink">Exam2SolutionS13</a>
+</li> <li> <a href="/bin/view/CS111/Exam2SoultionsS14" class="twikiLink">Exam2SoultionsS14</a>
+</li> <li> <a href="/bin/view/CS111/Exam2TopicsF13" class="twikiLink">Exam2TopicsF13</a>
+</li> <li> <a href="/bin/view/CS111/Exam2TopicsS13" class="twikiLink">Exam2TopicsS13</a>
+</li> <li> <a href="/bin/view/CS111/Exam2TopicsS14" class="twikiLink">Exam2TopicsS14</a>
+</li> <li> <a href="/bin/view/CS111/Exam3TopicsF13" class="twikiLink">Exam3TopicsF13</a>
+</li> <li> <a href="/bin/view/CS111/Exam3TopicsS14" class="twikiLink">Exam3TopicsS14</a>
+</li> <li> <a href="/bin/view/CS111/ExamTopicsF16" class="twikiLink">ExamTopicsF16</a>
+</li> <li> <a href="/bin/view/CS111/ExamTopicsS17" class="twikiLink">ExamTopicsS17</a>
+</li> <li> <a href="/bin/view/CS111/ExamTopicsS18" class="twikiLink">ExamTopicsS18</a>
+</li> <li> <a href="/bin/view/CS111/FileChooser" class="twikiLink">FileChooser</a>
+</li> <li> <a href="/bin/view/CS111/ImageFiles" class="twikiLink">ImageFiles</a>
+</li> <li> <a href="/bin/view/CS111/ImperialMarch60" class="twikiLink">ImperialMarch60</a>
+</li> <li> <a href="/bin/view/CS111/IntroductionToComputing" class="twikiLink">IntroductionToComputing</a>
+</li> <li> <a href="/bin/view/CS111/JavaDocs" class="twikiLink">JavaDocs</a>
+</li> <li> <a href="/bin/view/CS111/Lab01f13" class="twikiLink">Lab01f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab02f13" class="twikiLink">Lab02f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab03f13" class="twikiLink">Lab03f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab04f13" class="twikiLink">Lab04f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab05f13" class="twikiLink">Lab05f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab06f13" class="twikiLink">Lab06f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab09f13" class="twikiLink">Lab09f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab10S13" class="twikiLink">Lab10S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab10S14" class="twikiLink">Lab10S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab10f12" class="twikiLink">Lab10f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab10f13" class="twikiLink">Lab10f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab10f14" class="twikiLink">Lab10f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab10f15" class="twikiLink">Lab10f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab10f16" class="twikiLink">Lab10f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab10s15" class="twikiLink">Lab10s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab10s17" class="twikiLink">Lab10s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab10s18" class="twikiLink">Lab10s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab11S13" class="twikiLink">Lab11S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab11S14" class="twikiLink">Lab11S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab11S18" class="twikiLink">Lab11S18</a>
+</li> <li> <a href="/bin/view/CS111/Lab11f12" class="twikiLink">Lab11f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab11f13" class="twikiLink">Lab11f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab11f14" class="twikiLink">Lab11f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab11f15" class="twikiLink">Lab11f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab11f16" class="twikiLink">Lab11f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab11s15" class="twikiLink">Lab11s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab11s17" class="twikiLink">Lab11s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab12S13" class="twikiLink">Lab12S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab12S14" class="twikiLink">Lab12S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab12f12" class="twikiLink">Lab12f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab12f13" class="twikiLink">Lab12f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab12f14" class="twikiLink">Lab12f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab12f15" class="twikiLink">Lab12f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab12f16" class="twikiLink">Lab12f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab12s15" class="twikiLink">Lab12s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab12s17" class="twikiLink">Lab12s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab12s18" class="twikiLink">Lab12s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab13F12" class="twikiLink">Lab13F12</a>
+</li> <li> <a href="/bin/view/CS111/Lab13S13" class="twikiLink">Lab13S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab13S14" class="twikiLink">Lab13S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab13S15" class="twikiLink">Lab13S15</a>
+</li> <li> <a href="/bin/view/CS111/Lab13f13" class="twikiLink">Lab13f13</a>
+</li> <li> <a href="/bin/view/CS111/Lab13f14" class="twikiLink">Lab13f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab13f15" class="twikiLink">Lab13f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab13f16" class="twikiLink">Lab13f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab13s17" class="twikiLink">Lab13s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab13s18" class="twikiLink">Lab13s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab14s18" class="twikiLink">Lab14s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab1S13" class="twikiLink">Lab1S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab1S14" class="twikiLink">Lab1S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab1f12" class="twikiLink">Lab1f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab1f14" class="twikiLink">Lab1f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab1f15" class="twikiLink">Lab1f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab1f16" class="twikiLink">Lab1f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab1s15" class="twikiLink">Lab1s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab1s17" class="twikiLink">Lab1s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab1s18" class="twikiLink">Lab1s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab2S13" class="twikiLink">Lab2S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab2S14" class="twikiLink">Lab2S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab2f12" class="twikiLink">Lab2f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab2f14" class="twikiLink">Lab2f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab2f15" class="twikiLink">Lab2f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab2f16" class="twikiLink">Lab2f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab2s15" class="twikiLink">Lab2s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab2s17" class="twikiLink">Lab2s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab2s18" class="twikiLink">Lab2s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab3S13" class="twikiLink">Lab3S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab3S14" class="twikiLink">Lab3S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab3f12" class="twikiLink">Lab3f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab3f14" class="twikiLink">Lab3f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab3f15" class="twikiLink">Lab3f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab3f16" class="twikiLink">Lab3f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab3s15" class="twikiLink">Lab3s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab3s17" class="twikiLink">Lab3s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab3s18" class="twikiLink">Lab3s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab4S13" class="twikiLink">Lab4S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab4S14" class="twikiLink">Lab4S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab4f12" class="twikiLink">Lab4f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab4f14" class="twikiLink">Lab4f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab4f15" class="twikiLink">Lab4f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab4f16" class="twikiLink">Lab4f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab4s15" class="twikiLink">Lab4s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab4s17" class="twikiLink">Lab4s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab4s18" class="twikiLink">Lab4s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab5S13" class="twikiLink">Lab5S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab5S14" class="twikiLink">Lab5S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab5f12" class="twikiLink">Lab5f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab5f14" class="twikiLink">Lab5f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab5f15" class="twikiLink">Lab5f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab5f16" class="twikiLink">Lab5f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab5s15" class="twikiLink">Lab5s15</a>
+</li> <li> <a href="/bin/view/CS111/Lab5s17" class="twikiLink">Lab5s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab5s18" class="twikiLink">Lab5s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab6f12" class="twikiLink">Lab6f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab7f12" class="twikiLink">Lab7f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab8f12" class="twikiLink">Lab8f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab8f15" class="twikiLink">Lab8f15</a>
+</li> <li> <a href="/bin/view/CS111/Lab8f16" class="twikiLink">Lab8f16</a>
+</li> <li> <a href="/bin/view/CS111/Lab8s17" class="twikiLink">Lab8s17</a>
+</li> <li> <a href="/bin/view/CS111/Lab8s18" class="twikiLink">Lab8s18</a>
+</li> <li> <a href="/bin/view/CS111/Lab9S13" class="twikiLink">Lab9S13</a>
+</li> <li> <a href="/bin/view/CS111/Lab9S14" class="twikiLink">Lab9S14</a>
+</li> <li> <a href="/bin/view/CS111/Lab9f12" class="twikiLink">Lab9f12</a>
+</li> <li> <a href="/bin/view/CS111/Lab9f14" class="twikiLink">Lab9f14</a>
+</li> <li> <a href="/bin/view/CS111/Lab9s15" class="twikiLink">Lab9s15</a>
+</li> <li> <a href="/bin/view/CS111/LectureNotesF12" class="twikiLink">LectureNotesF12</a>
+</li> <li> <a href="/bin/view/CS111/LectureNotesF13" class="twikiLink">LectureNotesF13</a>
+</li> <li> <a href="/bin/view/CS111/LectureNotesS13" class="twikiLink">LectureNotesS13</a>
+</li> <li> <a href="/bin/view/CS111/LectureNotesS14" class="twikiLink">LectureNotesS14</a>
+</li> <li> <a href="/bin/view/CS111/Notes1002" class="twikiLink">Notes1002</a>
+</li> <li> <a href="/bin/view/CS111/NotesF14" class="twikiLink">NotesF14</a>
+</li> <li> <a href="/bin/view/CS111/NotesF15" class="twikiLink">NotesF15</a>
+</li> <li> <a href="/bin/view/CS111/NotesF16" class="twikiLink">NotesF16</a>
+</li> <li> <a href="/bin/view/CS111/NotesS15" class="twikiLink">NotesS15</a>
+</li> <li> <a href="/bin/view/CS111/NotesS17" class="twikiLink">NotesS17</a>
+</li> <li> <a href="/bin/view/CS111/NotesS18" class="twikiLink">NotesS18</a>
+</li> <li> <a href="/bin/view/CS111/PinkPanther30" class="twikiLink">PinkPanther30</a>
+</li> <li> <a href="/bin/view/CS111/PinkPanther60" class="twikiLink">PinkPanther60</a>
+</li> <li> <a href="/bin/view/CS111/Porj4f16" class="twikiLink">Porj4f16</a>
+</li> <li> <a href="/bin/view/CS111/Proj1F16" class="twikiLink">Proj1F16</a>
+</li> <li> <a href="/bin/view/CS111/Proj1S14" class="twikiLink">Proj1S14</a>
+</li> <li> <a href="/bin/view/CS111/Proj1S18" class="twikiLink">Proj1S18</a>
+</li> <li> <a href="/bin/view/CS111/Proj1f13" class="twikiLink">Proj1f13</a>
+</li> <li> <a href="/bin/view/CS111/Proj1f14" class="twikiLink">Proj1f14</a>
+</li> <li> <a href="/bin/view/CS111/Proj1f15" class="twikiLink">Proj1f15</a>
+</li> <li> <a href="/bin/view/CS111/Proj1s15" class="twikiLink">Proj1s15</a>
+</li> <li> <a href="/bin/view/CS111/Proj1s17" class="twikiLink">Proj1s17</a>
+</li> <li> <a href="/bin/view/CS111/Proj2S14" class="twikiLink">Proj2S14</a>
+</li> <li> <a href="/bin/view/CS111/Proj2S18" class="twikiLink">Proj2S18</a>
+</li> <li> <a href="/bin/view/CS111/Proj2f13" class="twikiLink">Proj2f13</a>
+</li> <li> <a href="/bin/view/CS111/Proj2f14" class="twikiLink">Proj2f14</a>
+</li> <li> <a href="/bin/view/CS111/Proj2f15" class="twikiLink">Proj2f15</a>
+</li> <li> <a href="/bin/view/CS111/Proj2f16" class="twikiLink">Proj2f16</a>
+</li> <li> <a href="/bin/view/CS111/Proj2s15" class="twikiLink">Proj2s15</a>
+</li> <li> <a href="/bin/view/CS111/Proj2s17" class="twikiLink">Proj2s17</a>
+</li> <li> <a href="/bin/view/CS111/Proj3S14" class="twikiLink">Proj3S14</a>
+</li> <li> <a href="/bin/view/CS111/Proj3f13" class="twikiLink">Proj3f13</a>
+</li> <li> <a href="/bin/view/CS111/Proj3f14" class="twikiLink">Proj3f14</a>
+</li> <li> <a href="/bin/view/CS111/Proj3f15" class="twikiLink">Proj3f15</a>
+</li> <li> <a href="/bin/view/CS111/Proj3f16" class="twikiLink">Proj3f16</a>
+</li> <li> <a href="/bin/view/CS111/Proj3s15" class="twikiLink">Proj3s15</a>
+</li> <li> <a href="/bin/view/CS111/Proj3s17" class="twikiLink">Proj3s17</a>
+</li> <li> <a href="/bin/view/CS111/Proj3s18" class="twikiLink">Proj3s18</a>
+</li> <li> <a href="/bin/view/CS111/Proj4S14" class="twikiLink">Proj4S14</a>
+</li> <li> <a href="/bin/view/CS111/Proj4f13" class="twikiLink">Proj4f13</a>
+</li> <li> <a href="/bin/view/CS111/Proj4f14" class="twikiLink">Proj4f14</a>
+</li> <li> <a href="/bin/view/CS111/Proj4f15" class="twikiLink">Proj4f15</a>
+</li> <li> <a href="/bin/view/CS111/Proj4s15" class="twikiLink">Proj4s15</a>
+</li> <li> <a href="/bin/view/CS111/Proj4s17" class="twikiLink">Proj4s17</a>
+</li> <li> <a href="/bin/view/CS111/Project1S13" class="twikiLink">Project1S13</a>
+</li> <li> <a href="/bin/view/CS111/Project1f12" class="twikiLink">Project1f12</a>
+</li> <li> <a href="/bin/view/CS111/Project2S13" class="twikiLink">Project2S13</a>
+</li> <li> <a href="/bin/view/CS111/Project2f12" class="twikiLink">Project2f12</a>
+</li> <li> <a href="/bin/view/CS111/Project3S13" class="twikiLink">Project3S13</a>
+</li> <li> <a href="/bin/view/CS111/Project3f12" class="twikiLink">Project3f12</a>
+</li> <li> <a href="/bin/view/CS111/Project4S13" class="twikiLink">Project4S13</a>
+</li> <li> <a href="/bin/view/CS111/Project4f12" class="twikiLink">Project4f12</a>
+</li> <li> <a href="/bin/view/CS111/SimpleInput" class="twikiLink">SimpleInput</a>
+</li> <li> <a href="/bin/view/CS111/SimpleOutput" class="twikiLink">SimpleOutput</a>
+</li> <li> <a href="/bin/view/CS111/SolnExam1s15" class="twikiLink">SolnExam1s15</a>
+</li> <li> <a href="/bin/view/CS111/SolnExam2s15" class="twikiLink">SolnExam2s15</a>
+</li> <li> <a href="/bin/view/CS111/SoundFiles" class="twikiLink">SoundFiles</a>
+</li> <li> <a href="/bin/view/CS111/SoundSample" class="twikiLink">SoundSample</a>
+</li> <li> <a href="/bin/view/CS111/SpanClass%3d" class="twikiLink">SpanClass=</a>
+</li> <li> <a href="/bin/view/CS111/StarWars3" class="twikiLink">StarWars3</a>
+</li> <li> <a href="/bin/view/CS111/StarWars60" class="twikiLink">StarWars60</a>
+</li> <li> <a href="/bin/view/CS111/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS111/SyllabusFall2012" class="twikiLink">SyllabusFall2012</a>
+</li> <li> <a href="/bin/view/CS111/TopicsExam1s15" class="twikiLink">TopicsExam1s15</a>
+</li> <li> <a href="/bin/view/CS111/TopicsExam2s15" class="twikiLink">TopicsExam2s15</a>
+</li> <li> <a href="/bin/view/CS111/WebAtom" class="twikiLink">WebAtom</a>
+</li> <li> <a href="/bin/view/CS111/WebChanges" class="twikiLink">WebChanges</a>
+</li> <li> <a href="/bin/view/CS111/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a>
+</li> <li> <a href="/bin/view/CS111/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a>
+</li> <li> <a href="/bin/view/CS111/WebIndex" class="twikiLink">WebIndex</a>
+</li> <li> <a href="/bin/view/CS111/WebLeftBar" class="twikiLink">WebLeftBar</a>
+</li> <li> <a href="/bin/view/CS111/WebLink" class="twikiLink">WebLink</a>
+</li> <li> <a href="/bin/view/CS111/WebNotify" class="twikiLink">WebNotify</a>
+</li> <li> <a href="/bin/view/CS111/WebPreferences" class="twikiLink">WebPreferences</a>
+</li> <li> <a href="/bin/view/CS111/WebRss" class="twikiLink">WebRss</a>
+</li> <li> <a href="/bin/view/CS111/WebSearch" class="twikiLink">WebSearch</a>
+</li> <li> <a href="/bin/view/CS111/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a>
+</li> <li> <a href="/bin/view/CS111/WebStatistics" class="twikiLink">WebStatistics</a>
+</li> <li> <a href="/bin/view/CS111/WebTopicList" class="twikiCurrentTopicLink twikiLink">WebTopicList</a>
+</li></ul> 
+<p />
+See also the verbose <a href="/bin/view/CS111/WebIndex" class="twikiLink">WebIndex</a>. </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS111/WebTopicList?t=1542827185' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS111/WebTopicList' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS111/WebTopicList?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS111/WebTopicList?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r1</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS111/WebTopicList?template=backlinksweb' rel='nofollow' title='Search the CS111 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS111/WebTopicList?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS111/WebTopicList?t=1542827185;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS111/WebTopicList?template=oopsmore&amp;param1=1&amp;param2=1' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r1 - 2006-11-15 - 19:43:52 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS111.WebTopicList;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS111/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS111</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS111/CS111Spring2018" class="twikiLink">Web Page Spr 18</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CS111Spring2018/syl111s18.pdf" target="_top">Syllabus Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/NotesS18" class="twikiLink">Lecture Notes Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/CodeS18" class="twikiLink">Sample Code Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS18" class="twikiLink">Assignments Spr 18</a>
+</li></ul> 
+<a href="/bin/edit/CS111/WebLeftBar" target="_top">&#91;edit this menu</a>]
+<p />
+<hr />
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS111/WebTopicList">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/bin/view/CS111/" target="_top">CS 111 Main Page</a>
+</li> <li> <a href="/bin/view/CS111/WebCreateNewTopic?topicparent=WebTopicList" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS111/WebTopicList" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS111/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS111/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS111/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS111/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS111/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS111/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

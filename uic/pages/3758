@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CS 491 - Virtual and Augmented Reality </title>
+  <link rel="shortcut icon" href="favicon.ico"></link>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script type="text/javascript">
+    function UpdatePageSize () {
+        var container = document.getElementById ("all");
+        var container2 = document.getElementById ("menu");
+
+        var newHeight = container.offsetHeight - container2.offsetHeight ;
+        var newHeightString = newHeight.toString();
+
+        var newWidth = container.offsetWidth;
+        var newWidthString = newWidth.toString();
+
+        document.getElementById('otherID').setAttribute("height", newHeightString+"px;");
+        document.getElementById('otherID').setAttribute("width", newWidthString+"px;");
+
+       document.getElementById('innerID').setAttribute("height", newHeightString+"px;");
+        document.getElementById('innerID').setAttribute("width", newWidthString+"px;");
+  }      
+
+    function ChangeifiOS () {
+        var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+
+       if (iOS == true)
+          {
+            //iOS doesn't like scrolling iFrames or objects so for now 
+            // open the lower pages as new pages
+
+             var anchors = document.getElementsByTagName('a');
+              for (var i = 0; i < anchors.length; i++) {
+                anchors[i].target = '_top';
+                }
+          }
+
+  }
+
+		window.onresize = function()
+			{
+  			UpdatePageSize();
+			}
+
+   </script>
+
+
+
+</head>
+
+<body id="all" onload="ChangeifiOS(); UpdatePageSize()" ontouchstart="" onmouseover="">
+
+<div id="menu">
+<nav>
+  <ul>
+  <li><a href="491header.html" target="otherName">CS 491</a></li>
+  <li><a href="syllabus.html" target="otherName">syllabus</a></li>
+  <li><a href="#">in class</a>
+    <ul>
+		<li><a href="week01.html" target="otherName">Week 1</a></li>
+		<li><a href="week02.html" target="otherName">Week 2</a></li>
+		<li><a href="week03.html" target="otherName">Week 3</a></li>
+		<li><a href="week04.html" target="otherName">Week 4</a></li>
+    <li><a href="week05.html" target="otherName">Weeks 5 and 6</a></li>
+		<li><a href="week07.html" target="otherName">Weeks 7 and 8</a></li>
+		<li><a href="week09.html" target="otherName">Weeks 9 and 10</a></li>
+		<li><a href="week11.html" target="otherName">Week 11</a></li>
+		<li><a href="week12.html" target="otherName">Weeks 12 and 13</a></li>
+		<li><a href="week14.html" target="otherName">Week 14</a></li>
+    <li><a href="week15.html" target="otherName">Week 15</a></li>
+    </ul>
+  </li>
+    <li><a href="491.pdf" target="">grades</a></li>
+  <li><a href="#">projects</a>
+    <ul>
+      <li><a href="18project1.html" target="otherName">Project 1</a></li>
+      <li><a href="18project2.html" target="otherName">Project 2</a></li>
+      <li><a href="18project3.html" target="otherName">Project 3</a></li>
+    </ul>
+  </li>
+    <li><a href="#">past years</a>
+    <ul>
+        <li><a href="#">2017</a>
+          <ul>
+            <li><a href="17project1.html" target="otherName">Project 1</a></li>
+            <li><a href="17project2.html" target="otherName">Project 2</a></li>
+            <li><a href="17project3.html" target="otherName">Project 3</a></li>
+            <li><a href="17choice.html" target="otherName">Student's Choice</a></li>
+            <li><a href="week14 2017.html" target="otherName">Putting it Together</a></li>
+          </ul>
+        </li>
+      </ul>
+  </li>
+  <li><a href="http://www.evl.uic.edu/aej">andy</a></li>
+  <li><a href="http://www.evl.uic.edu">evl</a></li>
+  </ul>
+</nav>
+</div>
+
+<div class="innerpage" id="innerID">
+
+<!-- <div class="innerpage" style="-webkit-overflow-scrolling:touch;"> -->
+
+<!-- <object name="otherName" id="otherID" data="maininfo.html" type="text/html" width="0" height="0"></object> -->
+
+<!-- <iframe  name="otherName" id="otherID" src="491header.html" type="text/html" width="0" height="0" frameBorder="0"></iframe> -->
+
+<object name="otherName" id="otherID" data="491header.html" width="0" height="0" type="text/html">
+    You should be seeing another page embedded here
+</object>
+
+</div>
+
+</body>
+
+</html>
+

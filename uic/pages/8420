@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; CS385spring12 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS385spring12/WebStatistics?_T=2018-11-21" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS385spring12/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS385spring12/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS385spring12/WebHome">CS385spring12 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS385spring12/WebStatistics" title='Topic revision: 416 (2017-03-21 - 23:00:53)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-21, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS385spring12/WebStatistics?t=1542827015' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS385spring12/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_CS385spring12_Web"></a> Statistics for CS385spring12 Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 952<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 111&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;80&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;72&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/CS385spring12/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 704<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 53&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />38&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />38&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />35&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />34&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />33&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />32&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />32&nbsp;<a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a><br />31&nbsp;<a href="/bin/view/CS385spring12/Homework6" class="twikiLink">Homework6</a><br />31&nbsp;<a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 614<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 65&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />52&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />51&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />48&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />27&nbsp;<a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />26&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />26&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />26&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />24&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />22&nbsp;<a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 494<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 92&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />34&nbsp;<a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />30&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />29&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />28&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />28&nbsp;<a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a><br />23&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />19&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />18&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />16&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 534<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 64&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />43&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />43&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />35&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />26&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />24&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />22&nbsp;<a href="/bin/view/CS385spring12/WebLeftBar" class="twikiLink">WebLeftBar</a><br />22&nbsp;<a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />21&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />20&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 611<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 60&nbsp;<a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />57&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />56&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />42&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />26&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />25&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />23&nbsp;<a href="/bin/view/CS385spring12/WebLeftBar" class="twikiLink">WebLeftBar</a><br />23&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />21&nbsp;<a href="/bin/view/CS385spring12/WebTopicList" class="twikiLink">WebTopicList</a><br />20&nbsp;<a href="/bin/view/CS385spring12/Homework6" class="twikiLink">Homework6</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 137<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 25&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />13&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;8&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;&nbsp;7&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/CS385spring12/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 479<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 52&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />26&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />25&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />24&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />22&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />21&nbsp;<a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />20&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />18&nbsp;<a href="/bin/view/CS385spring12/Homework3" class="twikiLink">Homework3</a><br />18&nbsp;<a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />17&nbsp;<a href="/bin/view/CS385spring12/VirtualBox" class="twikiLink">VirtualBox</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1088<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 122&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;72&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 846<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 79&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />52&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />43&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />42&nbsp;<a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />40&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />39&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />37&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />36&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />34&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />33&nbsp;<a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-05 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 255<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 36&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />21&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />14&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />14&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />12&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />11&nbsp;<a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />10&nbsp;<a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />10&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />10&nbsp;<a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 678<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 83&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />44&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />40&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />40&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />35&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />31&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />30&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />27&nbsp;<a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />27&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />24&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 985<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 97&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />62&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />59&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />58&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />51&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />44&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />42&nbsp;<a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />39&nbsp;<a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />37&nbsp;<a href="/bin/view/CS385spring12/Homework4" class="twikiLink">Homework4</a><br />37&nbsp;<a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 396<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 59&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />29&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />27&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />25&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />23&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />18&nbsp;<a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />16&nbsp;<a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />16&nbsp;<a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />15&nbsp;<a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />14&nbsp;<a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 459<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 47&nbsp;<a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />34&nbsp;<a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />24&nbsp;<a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />20&nbsp;<a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />20&nbsp;<a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />20&nbsp;<a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />19&nbsp;<a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />19&nbsp;<a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />18&nbsp;<a href="/bin/view/CS385spring12/VirtualBox" class="twikiLink">VirtualBox</a><br />18&nbsp;<a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 971 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;98 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;54 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;38 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;35 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;33 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;32 <a href="/bin/view/CS385spring12/Homework3" class="twikiLink">Homework3</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;93 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;54 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;49 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;46 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;45 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;45 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1109 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 112 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;61 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;61 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;61 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;54 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;47 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;47 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;39 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;39 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/VirtualBox" class="twikiLink">VirtualBox</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1580 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 199 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />109 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />109 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;92 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;87 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;84 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;74 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;73 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;71 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;69 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;65 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1602 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 201 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />125 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />123 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />118 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />115 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />109 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />109 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;97 <a href="/bin/view/CS385spring12/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;85 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;62 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;57 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 795 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;79 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;64 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;52 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;46 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;42 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;30 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;26 <a href="/bin/view/CS385spring12/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;26 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1823 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 567 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />120 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />115 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;81 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;81 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;60 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;58 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;56 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;55 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;55 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1061 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 144 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;75 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;61 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;57 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;47 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;43 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;41 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1066 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 134 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;82 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;55 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;52 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;39 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 995 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;84 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;56 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;38 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;35 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;35 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;34 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 845 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 102 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;48 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;42 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;42 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;34 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;33 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;29 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;29 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;28 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1033 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 106 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;83 <a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;72 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;57 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;48 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;46 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;42 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;42 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;35 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;34 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 737 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;99 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;59 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;52 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;35 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;31 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;30 <a href="/bin/view/CS385spring12/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;29 <a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;27 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;27 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;25 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 860 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 132 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;76 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;53 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;34 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;30 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;27 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;26 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2182 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 240 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />221 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />100 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;78 <a href="/bin/view/CS385spring12/Homework7" class="twikiLink">Homework7</a><br />&nbsp;76 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;75 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;72 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;70 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;65 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;61 <a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;59 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3000 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 398 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />259 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />229 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />207 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />105 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />102 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;91 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;89 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;89 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;88 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;82 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1995 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 246 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />192 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />163 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />133 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;98 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;87 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;85 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />&nbsp;85 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;64 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;54 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;53 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3688 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1205 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />380 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />215 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />186 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />138 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />116 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />109 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />103 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;89 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;80 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;78 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2093 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 511 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />216 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />134 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />109 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />&nbsp;92 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;71 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;59 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;57 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;55 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;52 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 922 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;99 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;98 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;89 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;64 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;33 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;32 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;31 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;31 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;27 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 414 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;59 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;44 <a href="/bin/view/CS385spring12/Homework7" class="twikiLink">Homework7</a><br />&nbsp;22 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;18 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;17 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;16 <a href="/bin/view/CS385spring12/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;13 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;13 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;13 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;13 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;11 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 551 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;67 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;28 <a href="/bin/view/CS385spring12/Homework7" class="twikiLink">Homework7</a><br />&nbsp;25 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;24 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;23 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;20 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;20 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;20 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;20 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;20 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;20 <a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1562 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 227 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />136 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;80 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;65 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;63 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;48 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;41 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;41 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />&nbsp;38 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/Homework7" class="twikiLink">Homework7</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3056 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 344 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />292 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />222 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />163 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />139 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />125 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;82 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;77 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;72 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />&nbsp;71 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;70 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1686 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 226 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />170 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;76 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;71 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;57 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/Homework4" class="twikiLink">Homework4</a><br />&nbsp;35 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;34 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;30 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2503 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 378 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />369 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;98 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;93 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;71 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;45 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;42 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/CS385spring12/Homework4" class="twikiLink">Homework4</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1230 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 155 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />133 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;56 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;43 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;40 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;32 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;32 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;28 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;27 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 156 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;19 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;19 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;12 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;9 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a><br />&nbsp;&nbsp;6 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;6 <a href="/bin/view/CS385spring12/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;5 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;&nbsp;5 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;&nbsp;4 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;&nbsp;4 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;4 <a href="/bin/view/CS385spring12/Homework3" class="twikiLink">Homework3</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1498 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 268 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />172 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;66 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;47 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;43 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;39 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;34 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;34 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;29 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;28 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;27 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2508 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 351 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />260 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />125 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />106 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />100 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;89 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;86 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;71 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;48 <a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a><br />&nbsp;45 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2027 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 312 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />231 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;79 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;77 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;77 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;66 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;64 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;55 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;50 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;49 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;43 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1586 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 202 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />198 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;64 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;60 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;53 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;53 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;45 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;37 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;32 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;27 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;26 <a href="/bin/view/CS385spring12/Homework4" class="twikiLink">Homework4</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3996 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 495 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />384 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />278 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />153 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />146 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />135 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />129 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />113 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;90 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;88 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;74 <a href="/bin/view/CS385spring12/Homework8" class="twikiLink">Homework8</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4175 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 467 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />456 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />385 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />181 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />167 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />162 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />160 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />130 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />117 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />113 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />102 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3212 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 744 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />284 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />283 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />165 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />116 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />107 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;82 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />&nbsp;63 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;56 <a href="/bin/view/CS450/Homework7PL" class="twikiLink">CS450.Homework7PL</a><br />&nbsp;48 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;47 <a href="/bin/view/CS450/Homework8PL" class="twikiLink">CS450.Homework8PL</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2676 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 366 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />253 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />135 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;81 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;75 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;74 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;72 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;66 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;64 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;63 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;59 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3107 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 398 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />280 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />126 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />121 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;95 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;89 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;83 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;79 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />&nbsp;70 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;67 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;57 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1895 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 292 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />186 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;84 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;80 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;76 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;68 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;47 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;43 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;32 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />&nbsp;31 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;29 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 215 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />210 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />124 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />115 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;88 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;83 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;82 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;53 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;51 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;51 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;43 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1402 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 155 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />151 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;79 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;68 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;55 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;53 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;36 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;35 <a href="/bin/view/CS385spring12/HomeworkSchedule" class="twikiLink">HomeworkSchedule</a><br />&nbsp;31 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;28 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;28 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2282 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 336 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />174 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />103 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;82 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;78 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;74 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;67 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;51 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;48 <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;45 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />&nbsp;38 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 8489 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 15 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1073 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />871 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />601 <a href="/bin/view/CS385spring12/Homework9" class="twikiLink">Homework9</a><br />337 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />243 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />239 <a href="/bin/view/CS450/Homework8PL" class="twikiLink">CS450.Homework8PL</a><br />197 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />142 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />116 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />107 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;70 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;14 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span><br />&nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TimothyMerrifield?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="TimothyMerrifield (this topic does not yet exist; you can create it)">TimothyMerrifield</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 8301 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 56 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 941 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />870 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />526 <a href="/bin/view/CS450/Homework8PL" class="twikiLink">CS450.Homework8PL</a><br />402 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />317 <a href="/bin/view/CS450/Homework7PL" class="twikiLink">CS450.Homework7PL</a><br />228 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />192 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />177 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />131 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />101 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />&nbsp;93 <a href="/bin/view/CS385spring12/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;47 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TimothyMerrifield?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="TimothyMerrifield (this topic does not yet exist; you can create it)">TimothyMerrifield</a></span><br />&nbsp;&nbsp;9 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 8441 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 45 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 921 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />892 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />433 <a href="/bin/view/CS385spring12/Homework6" class="twikiLink">Homework6</a><br />397 <a href="/bin/view/CS385spring12/Homework5" class="twikiLink">Homework5</a><br />302 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />245 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />233 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />114 <a href="/bin/view/CS385spring12/WebIndex" class="twikiLink">WebIndex</a><br />108 <a href="/bin/view/CS385spring12/CodeReviews" class="twikiLink">CodeReviews</a><br />106 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />104 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;23 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span><br />&nbsp;22 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TimothyMerrifield?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="TimothyMerrifield (this topic does not yet exist; you can create it)">TimothyMerrifield</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Jan 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1 twikiLast"> 12368 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLast"> 46 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> 1417 <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />1291 <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a><br />892 <a href="/bin/view/CS385spring12/Homework1" class="twikiLink">Homework1</a><br />539 <a href="/bin/view/CS385spring12/Homework2" class="twikiLink">Homework2</a><br />403 <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">LectureNotes</a><br />378 <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a><br />227 <a href="/bin/view/CS385spring12/Homework3" class="twikiLink">Homework3</a><br />204 <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion</a><br />119 <a href="/bin/view/CS385spring12/WebChanges" class="twikiLink">WebChanges</a><br />105 <a href="/bin/view/CS385spring12/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;97 <a href="/bin/view/CS385spring12/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;44 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span><br />&nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TimothyMerrifield?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="TimothyMerrifield (this topic does not yet exist; you can create it)">TimothyMerrifield</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/CS385spring12" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS385spring12/WebStatistics?t=1542827015' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS385spring12/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS385spring12/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS385spring12/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r416&nbsp;<a rel="nofollow" href="/bin/rdiff/CS385spring12/WebStatistics?rev1=416;rev2=415">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?rev=415">r415</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS385spring12/WebStatistics?rev1=415;rev2=414">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?rev=414">r414</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS385spring12/WebStatistics?rev1=414;rev2=413">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?rev=413">r413</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS385spring12/WebStatistics?rev1=413;rev2=412">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS385spring12/WebStatistics?rev=412">r412</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS385spring12/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the CS385spring12 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS385spring12/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS385spring12/WebStatistics?t=1542827015;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS385spring12/WebStatistics?template=oopsmore&amp;param1=416&amp;param2=416' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r416 - 2017-03-21 - 23:00:53 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS385spring12.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS385spring12/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS385spring12</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS385spring12/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS385spring12/LectureNotes" class="twikiLink">Lecture Notes</a>
+</li> <li> <a href="/bin/view/CS385spring12/Homeworks" class="twikiLink">Homeworks</a>
+</li> <li> <a href="http://piazza.com/class#spring2012/cs385" target="_top">Discussion Board</a>
+</li> <li> <a href="/bin/view/CS385spring12/Subversion" class="twikiLink">Subversion help</a>
+</li> <li> <a href="/bin/view/CS385spring12/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

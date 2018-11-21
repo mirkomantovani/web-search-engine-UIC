@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebCreateNewTopic &lt; CS499 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS499/WebCreateNewTopic?_T=2018-11-21" type="application/x-wiki" title="edit WebCreateNewTopic" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS499/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS499/WebCreateNewTopic"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script><script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiString.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/unicode_chars.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+function openTemplateWindow () {
+	var window = twiki.Window.openPopup(
+		"https://www.cs.uic.edu/bin/view/",
+			{
+	 			topic:"WebTemplateTopics",
+	 			web:"TWiki",
+	 			template:"viewplain",
+	 			attributes:"resizable=1,scrollbars=1,status=1,toolbar=1",
+	 			urlparams:"web=CS499"
+	 		}
+	 	);
+	return false;
+}
+function getQueryUrl() {
+	return "/bin/view/CS499/WebCreateNewTopic?;pickparent=1"
+}
+/* Localized texts */
+var TEXT_FEEDBACK_HEADER = "Topic will be named: ";
+/* Url params */
+var URL_PICK_PARENT = "";
+var URL_TEMPLATE = "";
+//]]>
+</script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/webtopiccreator.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic">
+<h1><a name="Create_New_Topic_in_CS499_Web"></a> Create New Topic in CS499 Web </h1>
+<form name="newtopicform" id="newtopicform" action="/bin/edit/CS499/">
+<input type="hidden" name="onlynewtopic" value="on" />
+<input type="hidden" name="nowysiwyg" value="0" />
+<div class="twikiFormSteps">
+<div class="twikiFormStep">
+<h3><a name="Topic_name"></a> Topic name: </h3>
+<p>
+<input type="text" class="twikiInputField" name="topic" id="topic" size="40"   /> <span id="webTopicCreatorFeedback" class="twikiGrayText"><!--generated name will be put here--></span>
+</p><p><input type="checkbox" id="nonwikiword" name="nonwikiword" %NONWIKIWORDFLAG% /><label for="nonwikiword">Allow non WikiWord for the new topic name</label><br /> It's usually best to choose a <a target='WikiWord' class='twikiPopUp' href='/bin/view/TWiki/WikiWord' rel='nofollow'>WikiWord</a> for the new topic name, otherwise automatic linking may not work. Characters not allowed in topic names, such as spaces will automatically be removed.</p>
+</div><!--/twikiFormStep-->
+<div class="twikiFormStep">
+<h3><a name="Topic_parent"></a> Topic parent: </h3>
+<p>
+<input type='text' size='40' name='topicparent' class='twikiInputField' value='' />&nbsp;<a id='pickparent' href='/bin/view/CS499/WebCreateNewTopic?;pickparent=1'>Pick from a list</a>
+</p>
+</div><!--/twikiFormStep-->
+<div class="twikiFormStep">
+<h3><a name="Use_template"></a> Use template: </h3>
+<p>
+<select name="templatetopic" class="twikiSelect"><option value="">Default template</option></select> <a id="viewtemplates" href="https://www.cs.uic.edu/bin/view/TWiki/WebTemplateTopics?web=CS499">View templates</a> 
+</p>
+</div><!--/twikiFormStep-->
+<div class="twikiFormStep">
+<p>
+<input id="submit" type="submit" class="twikiSubmit" value='Create this topic' />
+</p>
+</div><!--/twikiFormStep-->
+</div><!--/twikiFormSteps-->
+</form>
+</div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<p />
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS499/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS499</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS499/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS499/LectureNotes?topicparent=CS499.WebCreateNewTopic;nowysiwyg=0" rel="nofollow" title="Lecture&#32;Notes (this topic does not yet exist; you can create it)">Lecture Notes</a></span>
+</li> <li> <a href="/bin/view/CS499/Homeworks" class="twikiLink">Homeworks</a>
+</li> <li> <a href="/bin/view/CS499/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li></ul> 
+<a href="/bin/edit/CS499.WebLeftBar" target="_top">[edit this menu</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS499/WebCreateNewTopic">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS499/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS499 Web</a></strong>
+</li> <li> <a href="/bin/view/CS499/WebCreateNewTopic?topicparent=WebCreateNewTopic" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS499/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS499/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS499/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS499/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS499/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS499/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS499/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

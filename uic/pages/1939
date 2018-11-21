@@ -1,0 +1,258 @@
+<html><head>
+<title>TRANPRO Information Management System</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-language" content="en-us">
+<meta name="author" content="IDOT">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="copyright" content="(C) Copyright 2018; ">
+
+<script src="Superfish_files/jquery.min.js"></script>
+<script src="Superfish_files/jquery.tabs.pack.js"></script>
+<script src="Superfish_files/jquery.history.pack.js"></script>
+<script src="Superfish_files/chili-1.7.pack.js"></script>
+<script src="Superfish_files/hoverIntent.js"></script>
+
+<script src="Superfish_files/jquery.bgiframe.min.js"></script>
+
+
+<script>
+
+$(function() {	
+	// alter default so arrow mark-up is not generated for this demo.
+	// so many menu items (total of all examples) could slow initialisation performance
+	// so arrow mark-up will be generated manually. Could go without arrows altogether
+	// but that would risk people not finding the examples that show arrow support.
+	$.fn.superfish.defaults.autoArrows = false;
+
+	// initialise supersubs before it gets hidden by tabs or superfish. Need to measure widths while visible.
+	$('#sample-menu-5').supersubs({
+		minWidth:    12,
+		maxWidth:    27,
+		extraWidth:  1
+	}).superfish();	
+	
+    // initialise the tabs
+    var main = $('#main').tabs(1);
+    $('#samples').tabs( { selectedClass: 'sample-tab-selected', bookmarkable: true });
+
+	// initialise examples
+	$('#sample-menu-1').superfish({
+		autoArrows : true // emulate default behaviour for this example
+	});
+
+	$('#sample-menu-2')
+	.superfish().find("ul").bgIframe({opacity:false}); // add this bit for bgIframe support only
+
+	$('#sample-menu-3').superfish({
+		animation: {height:'show'},
+		delay: 1200
+	});
+	
+	$('#sample-menu-4').superfish({
+		pathClass: 'current'
+	});	
+
+	/*$('.sf-menu a').addClass('sf-with-ul');*/
+});
+
+</script>
+<link href="mapLayers/default.css" rel="stylesheet" type="text/css">
+<link href="css/ghizal.css" rel="stylesheet" type="text/css">
+<meta http-equiv="content-language" content="en-us">
+<meta name="author" content="IDOT">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="copyright" content="(C) Copyright &lt;?php echo date('Y'); ?&gt; ">
+<link rel="stylesheet" media="screen" href="css/superfish.css">
+<link rel="stylesheet" media="screen" href="css/superfish-vertical.css">
+<link rel="stylesheet" media="screen" href="css/superfish-navbar.css">
+<script src="Superfish_files/jquery.min.js"></script>
+<script src="Superfish_files/jquery.tabs.pack.js"></script>
+<script src="Superfish_files/jquery.history.pack.js"></script>
+<script src="Superfish_files/chili-1.7.pack.js"></script>
+<script src="Superfish_files/hoverIntent.js"></script>
+<script src="Superfish_files/jquery.bgiframe.min.js"></script>
+<script src="Superfish_files/superfish.js"></script>
+<script src="Superfish_files/supersubs.js"></script>
+
+<script>
+
+$(function() {	
+	// alter default so arrow mark-up is not generated for this demo.
+	// so many menu items (total of all examples) could slow initialisation performance
+	// so arrow mark-up will be generated manually. Could go without arrows altogether
+	// but that would risk people not finding the examples that show arrow support.
+	$.fn.superfish.defaults.autoArrows = false;
+
+	// initialise supersubs before it gets hidden by tabs or superfish. Need to measure widths while visible.
+	$('#sample-menu-5').supersubs({
+		minWidth:    12,
+		maxWidth:    27,
+		extraWidth:  1
+	}).superfish();	
+	
+    // initialise the tabs
+    var main = $('#main').tabs(1);
+    $('#samples').tabs( { selectedClass: 'sample-tab-selected', bookmarkable: true });
+
+	// initialise examples
+	$('#sample-menu-1').superfish({
+		autoArrows : true // emulate default behaviour for this example
+	});
+
+	$('#sample-menu-2')
+	.superfish().find("ul").bgIframe({opacity:false}); // add this bit for bgIframe support only
+
+	$('#sample-menu-3').superfish({
+		animation: {height:'show'},
+		delay: 1200
+	});
+	
+	$('#sample-menu-4').superfish({
+		pathClass: 'current'
+	});	
+
+	/*$('.sf-menu a').addClass('sf-with-ul');*/
+});
+
+</script>
+<link href="mapLayers/default.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+</head>
+
+<body>
+
+
+	
+
+<div id = "topBanner"> 
+
+</div>
+<div id="menutop">
+<table bgcolor="#052638" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr align="center" valign="top" nowrap="">
+<td align="center" nowrap="nowrap" valign="top"><table>
+  <tbody><tr>
+      <td width="100"><a href="index.php">TRANPRO Home</a></td>
+    <td width="125"><a href="php/clickmap.php">Transportation Providers</a></td>
+    <td width="56"><a href="gisMapTemp.php">GIS Map</a></td>
+    <td width="127"><a href="about/aboutHSTP.php">About Illinois HSTP</a></td>
+    <td width="39"><strong><a href="funding/index.php">Funding Programs</a></strong></td>
+    <td width="104">
+        <a href="about/HSTPResources.php">HSTP Resources</a></td>
+        <td><ul id="sample-menu-1" class="sf-menu sf-js-enabled sf-shadow">
+<li class="">
+						<a href="#" class="sf-with-ul">Links<span class="sf-sub-indicator"> </span></a>
+					  <ul style="font-family: Arial, Verdana, sans-serif; display: none; visibility: hidden;">
+							<li>
+								<a href="http://www.dot.state.il.us " target="_blank" class="sf-with-ul">IDOT</a>
+							</li>
+                           <li>
+								<a href="http://www.idot.illinois.gov/about-idot/our-story/governance/organizational-structure/division-of-public-intermodal-transportation/index" target="_blank" class="sf-with-ul">DPIT</a>
+							</li>
+                            <li>
+								<a href="http://www.utc.uic.edu" target="_blank" class="sf-with-ul">UTC</a>
+</li> 
+<li>
+								<a href="links.html" class="sf-with-ul">Links</a>
+</li> 
+</ul>
+</li>
+</ul>
+                            
+                  
+                  </td>
+                  <td>
+                  	<ul id="sample-menu-1" class="sf-menu sf-js-enabled sf-shadow">
+                  	                  		<a href="login/login.php">Login</a>
+                  	</span>
+                  	</ul>
+                  </td>
+  
+  </tr>
+</tbody></table>
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id = "leftSideNav">
+  <p>&nbsp;</p>
+  New UIC Report on Illinois Seniors and Transportation:
+  <p align="left"><strong><a href="./Documents/Planning-Transportation-to-Meet-the-Needs-of-an-Aging-Illinois-2.26_reduced-1.pdf" target="_blank">Planning Transportation to Meet the Needs of an Aging Illinois: An Assessment(PDF) </a></strong> </p>
+  <p>&nbsp;</p>
+  
+ <a href="./downloads/LEHD_2011.zip" target="_blank"><strong>Download Illinois LEHD 2011 census tract data</strong></a>
+<br>
+<br>
+<a href="./downloads/LEHD Documentation.docx" target="_blank"><strong>Review DataSets offered</strong></a>
+</div>
+
+		<div id = "mainContent">
+			<br/>
+			<br/>
+			<span class="Newshead1">
+				<center>
+					The TRANPRO Information Management System
+				</center> </span>
+			<br>
+			<span class="Newstext"> <a href="http://www.utc.uic.edu" target="_blank">The Urban Transportation Center at UIC</a> has developed the TRANPRO Information Management System to assist the Illinois Department of Transportation in implementing transportation coordination as outlined within the Illinois Human Service Transportation Plan.  The TRANPRO system provides consistent comparable data at the regional planning level in order to facilitate transportation planning, coordination and mobility manqagement.  The system includes a detailed statewide transportation provider inventory and geo-coded socioeconomic data at the local, regional and state levels.  The system also provides program information that can assist HSTP coordinators in guiding transportation providers through the funding application process for relevant FTA programs.</span>
+			<p></p>
+			<div align="left">
+				<span class="Newshead">The Statewide Public and Specialized Transportation Provider Inventory </span><span class="Newstext">consists of transportation provider information compiled from the Illinois HSTP Coordinators regional inventories, and grantee data provided by IDOT and the Illinois Department on Aging. The information is organized by county, HSTP region and Regional Planning Organization. Providers can be queried by region, by name or by the funding programs that support transportation services.</span>
+			</div>
+			<p></p>
+			<div align="left">
+				<span class="Newshead">The GIS</span><span class="Newstext"> portion of the web site offers an ArcIMS application showing the distribution of transportation services by service areas defined by residential eligibility against a base map of socioeconomic data that can be used to analyze the demand for and delivery of transportation services.</span>
+				<p></p>
+				<p></p>
+				<div align="left">
+					<span class="Newshead">The About Illinois HSTP section </span><span class="Newstext"> of the web site provides background information on the HSTP process as implemented in downstate Illinois.</span>
+					<p></p>
+					<p></p>
+					<div align="left">
+						<div align="left">
+							<span class="Newshead">The Funding Program section</span><span class="Newstext"> provides basic information on FTA Human Service Transportation Programs and the Rural and Small Urban Public Transportation program, including information relevant to applicants for these programs. </span>
+							<p></p>
+							<p></p>
+							<div align="left">
+								<div align="left">
+									<span class="Newshead">The HSTP Resources page</span><span class="Newstext">is designed to serve the needs of Illinois's HSTP Coordinators and is available only through special user accounts. HSTP Coordinators can maintain and update their regional transportation provider information online in order for it to be included in the statewide inventory. The system also provides county-level Census data from the Demographic Census and the Economic Census. These data are available as zip files and are organized by HSTP region. </span>
+								</div>
+								<p></p>
+								<span class="Newshead"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+
+<div id = "footer">
+</div>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+</table></td>
+<td width="4"><img src="mapLayers/clear.gif" alt="" height="10" width="4"></td>
+</tr>
+</tbody></table>
+
+
+<center></center>
+
+
+
+<img src="mapLayers/clear.gif" alt="" height="10" width="20">
+
+
+
+
+</body></html>

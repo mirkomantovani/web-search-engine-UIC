@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebChanges &lt; CS340 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS340/WebChanges?_T=2018-11-21" type="application/x-wiki" title="edit WebChanges" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS340/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS340/WebChanges"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS340/WebHome">CS340 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS340/WebChanges" title='Topic revision: 1 (2006-11-15 - 19:43:52)'>WebChanges</a> <span class='patternRevInfo'>(2006-11-15, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS340/WebChanges?t=1542826771' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS340/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Recent_Changes_in_CS340_Web_retr"></a> Recent Changes in CS340 Web <span style="font-size: 50%">retrieved at 18:59 (GMT)</span> </h1>
+<p />
+<div id="searchTopNavWebChanges" style="margin-bottom: 1em; "></div>
+<!-- remove the format parameter to show absolute date instead if topic age -->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebStatistics"><b>WebStatistics</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebStatistics" title="2017-03-22 - 12:08" rel="nofollow">1 year ago</a> - r501 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Statistics for CS340 Web Month: Topic views: Topic saves: File uploads: Most popular topic views: Top contributors for topic save...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/LecturesS13"><b>LecturesS13</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/LecturesS13" title="2013-05-02 - 15:51" rel="nofollow">5 years ago</a> - r27 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Lecture Notes: Spring 2013 notes115.txt: Notes from 1/15/13 notes117.txt: Notes from 1/17/13 notes122.txt: Lecture Notes...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Spring2013"><b>Spring2013</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Spring2013" title="2013-04-23 - 16:14" rel="nofollow">5 years ago</a> - r16 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Spring 2013 Call #: 17424 Syllabus for Spring Semester 2013 Meeting Times Days Time Location Monday 10:00 10:...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Demo11S13"><b>Demo11S13</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ijoo2?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="ijoo2 (this topic does not yet exist; you can create it)">ijoo2</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Demo11S13" title="2013-04-23 - 00:00" rel="nofollow">5 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Main.ijoo2 2013 04 23sdfasdf</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/AssignmentsS13"><b>AssignmentsS13</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/AssignmentsS13" title="2013-04-16 - 16:54" rel="nofollow">5 years ago</a> - r5 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Assignments Page Spring 2013 Project 1: Due 1/31/13 Kings in the Corner proj1.pdf Project 2: Due 2/22/13 Sliding Block Puzzles...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Demo5S13"><b>Demo5S13</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Dsiuch2?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="dsiuch2 (this topic does not yet exist; you can create it)">dsiuch2</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Demo5S13" title="2013-04-10 - 12:32" rel="nofollow">5 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Main.dsiuch2 2013 04 10</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/MinGW"><b>MinGW</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Akehin4?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="akehin4 (this topic does not yet exist; you can create it)">akehin4</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/MinGW" title="2013-01-21 - 02:34" rel="nofollow">5 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Main.akehin4 2013 01 21</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebLeftBar"><b>WebLeftBar</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebLeftBar" title="2013-01-15 - 19:52" rel="nofollow">5 years ago</a> - r5 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Syllabus Main Page: Spring 2013 Lecture Notes: Spring 13 Assignments: Spring 2013 Additional Material edit this menu 1 Web Create New Topic...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Syllabus"><b>Syllabus</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Syllabus" title="2013-01-11 - 18:15" rel="nofollow">5 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Syllabus syl340s13.pdf: Syllabus for Spring Semester 2013 syl340s12.pdf: Syllabus for Spring Semester 2012</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebHome"><b>WebHome</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebHome" title="2013-01-11 - 18:10" rel="nofollow">5 years ago</a> - r6 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design 4 Hours. Programming language semantics, scope, overloading, data abstraction, constructors. Procedural and object oriented design, programming...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Lectures"><b>Lectures</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Lectures" title="2012-04-26 - 15:37" rel="nofollow">6 years ago</a> - r20 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Notes from Lectures for Spring 2012 cs340notes0110.txt: Notes from 1/10/12 cs340notes0112.txt: Notes from 1/12/12 cs340notes0119.txt: Notes from 1/...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/CombinedCS"><b>CombinedCS</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/CombinedCS" title="2012-04-18 - 15:02" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Code from the Combined Client Server Example https://www.cs.uic.edu/pub/CS340/CombinedCS/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/CombinedCS...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/QtExamplesS12"><b>QtExamplesS12</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/QtExamplesS12" title="2012-04-18 - 14:59" rel="nofollow">6 years ago</a> - r9 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Examples from Class from the Spring 2012 Semester S12Demo1 S12Demo2 S12Demo3 S12Demo4 S12Demo5 S12Demo6 Showing the use of the QTimer class S12Demo7 Simple QThread...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/EchoClient"><b>EchoClient</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/EchoClient" title="2012-04-18 - 14:56" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Code for the EchoClient example https://www.cs.uic.edu/pub/CS340/EchoClient/client.h client.h https://www.cs.uic.edu/pub/CS340/EchoClient/main.cpp...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Project5s12"><b>Project5s12</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Project5s12" title="2012-04-12 - 03:22" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Machine Problem 5, Spring 2012 Mancala Networked Due: Thursday, April 26, 2012 at 11:59 pm For this project, student may work with one...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Spring2012"><b>Spring2012</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Spring2012" title="2012-04-12 - 03:15" rel="nofollow">6 years ago</a> - r19 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Spring 2012 Call #: 17424 syl340s12.pdf: Syllabus for Spring Semester 2012 Meeting Times Days Time Location Monday...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/EchoServer"><b>EchoServer</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/EchoServer" title="2012-04-05 - 16:47" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Echo Server Example Older Qt Creator Version Note: Does not handle multiple client connections properly https://www.cs.uic.edu/pub/CS340/EchoServer/main...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/FortuneClient2"><b>FortuneClient2</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/FortuneClient2" title="2012-04-05 - 16:43" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fortune Client Qt Creator Version 2.3.1 https://www.cs.uic.edu/pub/CS340/FortuneClient2/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/FortuneClient...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/FortuneServer2"><b>FortuneServer2</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/FortuneServer2" title="2012-04-05 - 16:31" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fortune Server for Qt Creator version 2.3.1 https://www.cs.uic.edu/pub/CS340/FortuneServer2/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/FortuneServer...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/FortuneServer"><b>FortuneServer</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/FortuneServer" title="2012-04-02 - 20:22" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fortune Server Code https://www.cs.uic.edu/pub/CS340/FortuneServer/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/FortuneServer/mainwindow.cpp...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/FortuneClient"><b>FortuneClient</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/FortuneClient" title="2012-04-02 - 20:20" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fortune Client Code https://www.cs.uic.edu/pub/CS340/FortuneClient/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/FortuneClient/client.cpp...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Demo11"><b>Demo11</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Demo11" title="2012-04-02 - 20:10" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Setting up a Widget for both Left and Right mouse presses. Note: the base widget used here is a QButton, but this can be done with any class that inherits rom the...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo9"><b>S12Demo9</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo9" title="2012-03-26 - 16:15" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Examples from the in class demo on 3/26/12 Uses shared memory and the QMutex class for synchronization https://www.cs.uic.edu/pub/CS340/S12Demo9/main.cpp...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Project4s12"><b>Project4s12</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Project4s12" title="2012-03-20 - 14:58" rel="nofollow">6 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Project 3 Memory Game Due: Thursday, April 5, 2012 at 11:59 pm In this program, you are to use the Qt Library to create a version of the `Memory Game` as can be...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo8"><b>S12Demo8</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo8" title="2012-03-15 - 17:09" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Code from Demo8 https://www.cs.uic.edu/pub/CS340/S12Demo8/main.cpp main.cpp Main.troy 2012 03 15</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo7"><b>S12Demo7</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo7" title="2012-03-15 - 17:08" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Code from Demo7 https://www.cs.uic.edu/pub/CS340/S12Demo7/main.cpp main.cpp Main.troy 2012 03 15</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo6"><b>S12Demo6</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo6" title="2012-03-15 - 17:06" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Code for Demo 6 from class https://www.cs.uic.edu/pub/CS340/S12Demo6/resource1.qrc resource1.qrc https://www.cs.uic.edu/pub/CS340/S12Demo6/mainwindow...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo5"><b>S12Demo5</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo5" title="2012-03-12 - 16:21" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Demo 5 from class https://www.cs.uic.edu/pub/CS340/S12Demo5/Rescouce1.qrc Rescouce1.qrc https://www.cs.uic.edu/pub/CS340/S12Demo5/mainwindow.ui...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo1"><b>S12Demo1</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo1" title="2012-03-12 - 16:16" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Files frm Demo 1 from Spring 2012 https://www.cs.uic.edu/pub/CS340/S12Demo1/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/S12Demo1/mainwindow...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo4"><b>S12Demo4</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo4" title="2012-03-06 - 18:59" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Files from in Class Example S12Demo4 https://www.cs.uic.edu/pub/CS340/S12Demo4/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/S12Demo4/mainwindow...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo3"><b>S12Demo3</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo3" title="2012-03-06 - 18:56" rel="nofollow">6 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Files for the example S12Demo3 https://www.cs.uic.edu/pub/CS340/S12Demo3/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/S12Demo3/mainwindow...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/S12Demo2"><b>S12Demo2</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/S12Demo2" title="2012-03-05 - 15:59" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Files for Qt Example S12Demo2 https://www.cs.uic.edu/pub/CS340/S12Demo2/main.cpp main.cpp https://www.cs.uic.edu/pub/CS340/S12Demo2/mainwindow.cpp...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Project3s12"><b>Project3s12</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Project3s12" title="2012-03-01 - 15:27" rel="nofollow">6 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Project 3 Sliding Block Puzzles Due: Thursday, March 8, 2012 at 11:59 pm A sliding block puzzle consists of a number of pieces that fit...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Homeworks"><b>Homeworks</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Homeworks" title="2012-02-21 - 18:39" rel="nofollow">6 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Spring 2012 Homeworks and Projects Project 1: Sudoku Solver Due Main.troy 2012 01 11</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/LectureNotes"><b>LectureNotes</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/LectureNotes" title="2012-02-21 - 18:35" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Lecture Notes from Spring 2012 Main.troy 2012 02 21</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Project2s12"><b>Project2s12</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Project2s12" title="2012-02-14 - 18:14" rel="nofollow">6 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Spring 2012 Project 2 File Compression Due: Thursday, February 16, 2012 at 11:59 pm For this assignment, you are to use the Huffman...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/AdditionalMaterial"><b>AdditionalMaterial</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Drusna2?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="drusna2 (this topic does not yet exist; you can create it)">drusna2</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/AdditionalMaterial" title="2012-01-27 - 00:57" rel="nofollow">6 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Main.drusna2 2012 01 27</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/Project1"><b>Project1</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="troy (this topic does not yet exist; you can create it)">troy</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/Project1" title="2012-01-13 - 22:08" rel="nofollow">6 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS 340 Software Design Spring 2012 MP 1 Sudoku Solver Tuesday January 31, 2012 at 11:59 pm Sudoku is a puzzle that often uses a 9x9 grid of 81 squares. The...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebPreferences"><b>WebPreferences</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebPreferences" title="2011-12-02 - 19:15" rel="nofollow">6 years ago</a> - r11 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS340 Web Preferences The following settings are web preferences of the CS340 web. These preferences overwrite the site level preferences in . and...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebNotify"><b>WebNotify</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebNotify" title="2009-05-14 - 12:19" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">This is a subscription service to be automatically notified by e mail when topics change in this 1 web. This is a convenient service, so you do not have to come...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebTopicList"><b>WebTopicList</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebTopicList" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebSearchAdvanced"><b>WebSearchAdvanced</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebSearchAdvanced" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebSearch"><b>WebSearch</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebSearch" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebIndex"><b>WebIndex</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebIndex" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebChanges"><b>WebChanges</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebChanges" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebAtom"><b>WebAtom</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebAtom" title="2006-01-24 - 06:07" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">TWiki`s CS340 web The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebCreateNewTopic"><b>WebCreateNewTopic</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebCreateNewTopic" title="2005-11-08 - 06:37" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/CS340/WebRss"><b>WebRss</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/CS340/WebRss" title="2005-03-28 - 09:40" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">/CS340 The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<p />
+<div id="searchBottomNavWebChanges" style="">
+<p />
+ &nbsp;
+<p />
+</div>
+<script type="text/javascript">
+  $('#searchTopNavWebChanges').hide(); $('#searchBottomNavWebChanges').hide();
+  $('#searchTopNavWebChanges').html("&nbsp; ");
+</script>
+<p />
+Show <a href='/bin/view/CS340/WebChanges?limit=10' rel='nofollow'>10</a>&#44; <a href='/bin/view/CS340/WebChanges?limit=20' rel='nofollow'>20</a>&#44; <b>50</b>&#44; <a href='/bin/view/CS340/WebChanges?limit=100' rel='nofollow'>100</a>&#44; <a href='/bin/view/CS340/WebChanges?limit=500' rel='nofollow'>500</a>&#44; <a href='/bin/view/CS340/WebChanges?limit=1000' rel='nofollow'>1000</a> results per page, or <a href='/bin/view/CS340/WebChanges?limit=all' rel='nofollow'>show all</a>.
+<p />
+<strong><em>Related topics:</em></strong> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> <a href="/bin/view/CS340/WebRss" class="twikiLink">RSS feed</a>, <a href="/bin/view/CS340/WebAtom" class="twikiLink">ATOM feed</a>, <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a>, <a href="/bin/view/TWiki/SiteChanges" class="twikiLink">site changes</a>, <a href="/bin/view/TWiki/SiteMap" class="twikiLink">site map</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS340/WebChanges?t=1542826771' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS340/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS340/WebChanges?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS340/WebChanges?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r1</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS340/WebChanges?template=backlinksweb' rel='nofollow' title='Search the CS340 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS340/WebChanges?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS340/WebChanges?t=1542826771;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS340/WebChanges?template=oopsmore&amp;param1=1&amp;param2=1' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r1 - 2006-11-15 - 19:43:52 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS340.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS340</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS340/Spring2013" class="twikiLink">Main Page: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS340/LecturesS13" class="twikiLink">Lecture Notes: Spring 13</a>
+</li> <li> <a href="/bin/view/CS340/Spring2013#Assignments" class="twikiAnchorLink">Assignments: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS340/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li></ul> 
+<a href="/bin/edit/CS340.WebLeftBar" target="_top">[edit this menu</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS340/WebChanges">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS340 Web</a></strong>
+</li> <li> <a href="/bin/view/CS340/WebCreateNewTopic?topicparent=WebChanges" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS340/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS340/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS340/WebChanges" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS340/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS340/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS340/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS340/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

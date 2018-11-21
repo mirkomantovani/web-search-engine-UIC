@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LUG at UIC</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Exo+2:600|Open+Sans' rel='stylesheet' type='text/css'>
+	</head>
+	
+	<body>
+		<!--The top black fixed header would like to auto hide it some how-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<a href="index.html" class="navbar-brand">LUG@UIC <img src="pictures/whiteTux.png" width="25" height="25"></a>
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<!--Navbar menu links-->
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+						<li><a href="events.html">EVENTS</a></li>
+						<li class="active"><a href="#">CONTACT US</a></li>
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">LINKS<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							<li><a href="https://acm.cs.uic.edu/">ACM</a></li>
+							<li><a href="http://www.cs.uic.edu/">DEPT OF CS</a></li>
+							<li><a href="http://acm.cs.uic.edu/uicwifi-linux">UIC WiFi in Linux</a></li>
+							<li><a href="http://lug.cs.uic.edu/wiki/">LUG Wiki</a>
+							</ul>	
+						</li>
+					</ul>	
+				</div>
+			</div>
+		</div>
+
+		<!--JUMBOOOO000OO0o0o0o0o0o0o0o0o0o0o0o0o0o0oOootron!-->
+		<div class="container">
+			<div class="jumbotron">
+				<div class="jumboContent"><h1>LUG</h1></div><br>
+				<div class="jumboContent"><p>For individuals interested in Linux, Unix, and byproducts.</p></div><br>
+				<a class="btn btn-default" href="contactUs.html#mail">Listserv Sign up?</a>			
+			</div>
+		</div>
+
+		<!--Grid system thing-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="content" id="mail">
+						<h2>MAILING LIST</h2>
+						<p>We have an active mailing list hosted by UIC&rsquo;s Listserv system.
+						To join us, email listserv@uic.edu with the body &ldquo;SUBSCRIBE LUG&rdquo;</p>
+						<p>Mailing list archives: <a href="http://listserv.uic.edu/archives/lug.html">archives</a></p>
+						<h2>EMAIL</h2>
+						<p>To contact a traditional officer, email the general listserv or message on Slack #general asking for a traditional officer: lug[at]uic[dot]edu.</p>
+
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="content">
+						<h2>IRC</h2>
+						<p><b>Server:</b> acm.cs.uic.edu<br><b>Channel:</b> #lug</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="content">
+						<h2>SLACK</h2>
+						<p><b>URL:</b> <a href="https://lugatuic.slack.com">lugatuic.slack.com</a><br>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="content">
+						<h2>LOCATION</h2>
+						<p>LUG shares an office with the UIC ACM in SEL 2264.
+						Meetings are in SEL 2260 unless otherwise announced.</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=41.870184,-87.64852&amp;num=1&amp;t=m&amp;ie=UTF8&amp;ll=41.871366,-87.649999&amp;spn=0.006391,0.016072&amp;z=16&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=41.870184,-87.64852&amp;num=1&amp;t=m&amp;ie=UTF8&amp;ll=41.871366,-87.649999&amp;spn=0.006391,0.016072&amp;z=16&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+				</div>	
+			</div>
+		</div>
+
+		<!--footer goes here-->
+		<footer>
+			<img src="pictures/BlackTux.png" width="40" height="40">
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.jumbotron').mousemove(function(e){
+  					var mousePosX = (e.pageX/$(window).width())*100; 
+  					var mousePosY = (e.pageY/$(window).width())*100;
+  					$('.jumbotron').css('backgroundPosition-x', mousePosX+'%');
+  					$('.jumbotron').css('backgroundPosition-y', mousePosY+'%');
+				}); 
+			});
+		</script>
+	</body>
+</html>

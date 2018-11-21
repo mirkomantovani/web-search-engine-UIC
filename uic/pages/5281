@@ -1,0 +1,925 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; DiEugenio &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/DiEugenio/WebStatistics?_T=2018-11-21" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/DiEugenio/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/DiEugenio/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/DiEugenio/WebHome">DiEugenio Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/DiEugenio/WebStatistics" title='Topic revision: 715 (2017-03-22 - 22:00:59)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-22, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=DiEugenio.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/DiEugenio/WebStatistics?t=1542826209' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/DiEugenio/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_DiEugenio_Web"></a> Statistics for DiEugenio Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1534<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 470&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />238&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />106&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;99&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;91&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1537<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 535&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />250&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />100&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;81&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;61&nbsp;<a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1410<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 588&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />196&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />106&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;77&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1528<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 753&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />124&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />107&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;95&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;79&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1544<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 629&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />192&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />113&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />101&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;69&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1706<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 583&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />279&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />178&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />117&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;84&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;60&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 709<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 304&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;17&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;16&nbsp;<a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 680<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 273&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;25&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;24&nbsp;<a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1915<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 655&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />198&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />145&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />110&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;97&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;88&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;84&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;61&nbsp;<a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1265<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 315&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />167&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;86&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;76&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/DiEugenio/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 947<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 293&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />180&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 955<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 235&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />168&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;82&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1092<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 325&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />216&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;89&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;74&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/DiEugenio/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 694<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 187&nbsp;<a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;99&nbsp;<a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;25&nbsp;<a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1369 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 325 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;85 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;75 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;66 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;62 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;60 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1453 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 346 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />134 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;84 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;67 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;51 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;41 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;39 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1405 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 271 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;85 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;85 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;79 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;66 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;63 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;50 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;50 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1434 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 287 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;85 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;78 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;73 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;73 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;70 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;58 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;51 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1739 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 427 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />151 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;99 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;88 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;87 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;84 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;81 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;75 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1832 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 988 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />165 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;61 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;58 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;51 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;43 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;37 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;35 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2117 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 342 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />190 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />183 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />113 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />107 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />107 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />106 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />105 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;75 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;70 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;67 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1875 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 370 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />301 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />127 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />103 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;78 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;66 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;66 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;66 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2143 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 522 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />178 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />149 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />145 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />122 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />105 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;96 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;65 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;60 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;59 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1994 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 459 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />171 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />137 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />114 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;98 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;90 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;73 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;50 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1918 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 487 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />132 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;95 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;88 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;64 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;51 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 879 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 198 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;86 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;24 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1230 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 280 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;91 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;91 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/BarbaraDiEugenio?topicparent=DiEugenio.WebStatistics;nowysiwyg=0" rel="nofollow" title="BarbaraDiEugenio (this topic does not yet exist; you can create it)">BarbaraDiEugenio</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1020 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 201 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;81 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;70 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1856 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 460 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />122 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />112 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />106 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />100 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;81 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;79 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;75 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;58 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4584 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 794 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />617 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />567 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />382 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />369 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />191 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />185 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />132 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />115 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />115 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />114 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 5624 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1106 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />831 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />786 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />378 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />337 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />291 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />192 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />165 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />152 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />140 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />137 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3842 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 715 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />632 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />523 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />403 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />301 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />200 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />165 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;80 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;77 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;70 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;69 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4876 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 954 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />914 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />740 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />398 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />364 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />240 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />177 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;99 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;82 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;81 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;81 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3273 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 701 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />623 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />363 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />213 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />206 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />194 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />163 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;63 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;59 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;58 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2022 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 500 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />173 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />172 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />158 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />136 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />110 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;87 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1060 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 256 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />111 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;75 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;58 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;43 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;24 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1222 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 286 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />114 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;78 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;23 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1416 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 295 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />203 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;88 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;80 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;74 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;63 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2497 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 470 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />421 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />265 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />193 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />160 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />120 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />100 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;87 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1466 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 385 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />156 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;95 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;80 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;72 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;62 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 215 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />148 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;71 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;61 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;22 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;22 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1470 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 28 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 6 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 321 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />147 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />122 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />114 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;83 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;73 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;54 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;43 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;28 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;34 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/BarbaraDiEugenio?topicparent=DiEugenio.WebStatistics;nowysiwyg=0" rel="nofollow" title="BarbaraDiEugenio (this topic does not yet exist; you can create it)">BarbaraDiEugenio</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1017 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 229 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />184 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />133 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;70 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;37 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;19 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1634 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 317 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />273 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />155 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />118 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;93 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;90 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;73 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;43 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;39 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1457 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 325 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />236 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />167 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;93 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;80 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;63 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;60 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;37 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1297 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 326 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />198 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />141 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;94 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;64 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2592 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 602 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />311 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />290 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />262 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />210 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />120 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />100 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;85 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3051 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 625 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />604 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />384 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />209 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />185 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />133 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />129 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;84 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;72 <a href="/bin/view/DiEugenio/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;59 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 682 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 106 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />103 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;84 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;24 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;24 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;23 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;23 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;22 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;21 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1896 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 332 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />305 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />231 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />111 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />110 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />104 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;69 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;51 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1520 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 313 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />225 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />165 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />107 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;87 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;78 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;39 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 531 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 101 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;86 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;37 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;23 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;21 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;19 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;17 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;16 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;16 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;15 <a href="/bin/view/DiEugenio/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1518 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 340 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />280 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />172 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;82 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;58 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 737 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 168 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />134 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;96 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;21 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;20 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;20 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;18 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;18 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 649 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 143 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />121 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;93 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;20 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;19 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;18 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;17 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;16 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;16 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1322 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 315 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />179 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />170 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;80 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;35 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1521 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 318 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />272 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />153 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;95 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;70 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;59 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;50 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;41 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1127 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 263 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />179 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />121 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;88 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;73 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;54 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;23 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1514 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 348 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />295 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />165 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;76 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;75 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;60 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1713 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 445 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />371 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />120 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />106 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;73 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;67 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;41 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;39 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1457 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 361 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />290 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />162 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;84 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;67 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;37 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1492 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 306 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />277 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />195 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;80 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;64 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;41 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;39 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1777 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 423 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />365 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />136 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />133 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;98 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;65 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2460 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 694 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />654 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />119 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;96 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;96 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;83 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;65 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;65 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;61 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;61 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;61 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2504 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 581 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />346 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />164 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />164 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />162 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />134 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />128 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;85 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;83 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;74 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;72 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3171 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 681 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />645 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />188 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />164 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />136 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />131 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />118 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />116 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;95 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;95 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;93 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1008 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 206 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />164 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;87 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;50 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;41 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 811 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 4 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 173 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />119 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;39 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;37 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;35 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;23 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;22 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;4 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/BarbaraDiEugenio?topicparent=DiEugenio.WebStatistics;nowysiwyg=0" rel="nofollow" title="BarbaraDiEugenio (this topic does not yet exist; you can create it)">BarbaraDiEugenio</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 105 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;23 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;8 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;6 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;5 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;5 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;5 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;5 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;4 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;4 <a href="/bin/view/DiEugenio/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;4 <a href="/bin/view/DiEugenio/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;4 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2068 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 453 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />390 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />306 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />111 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;84 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;68 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;57 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;43 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1274 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 271 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />265 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;80 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;67 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;60 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;54 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;41 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;35 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1458 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 316 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />226 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;82 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;81 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;71 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;55 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 881 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 229 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />141 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;49 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;43 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;37 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;24 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1276 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 306 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />196 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />164 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;32 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 482 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 111 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;70 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;22 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;20 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;19 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;18 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;16 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;14 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;14 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;14 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 299 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;87 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;53 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;35 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;9 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;8 <a href="/bin/view/DiEugenio/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;6 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;6 <a href="/bin/view/DiEugenio/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;6 <a href="/bin/view/DiEugenio/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;6 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;6 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1223 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 241 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />189 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;66 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;54 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;50 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;48 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;47 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;44 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 826 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 179 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />168 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;42 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;34 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 795 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 181 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />156 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1323 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 254 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />240 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />136 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />111 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;56 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;46 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;41 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;39 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;36 <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 874 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 176 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />133 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;52 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;45 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;40 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;31 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;30 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;28 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;28 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 666 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 141 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />105 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;33 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;29 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;26 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;25 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;24 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;23 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;22 <a href="/bin/view/DiEugenio/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;22 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 195 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;36 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;12 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;12 <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a><br />&nbsp;11 <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors</a><br />&nbsp;&nbsp;9 <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">Pointers</a><br />&nbsp;&nbsp;8 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;8 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;8 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;8 <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;&nbsp;5 <a href="/bin/view/DiEugenio/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Jun 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1 twikiLast"> 254 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLast"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> 110 <a href="/bin/view/DiEugenio/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;27 <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;15 <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;8 <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;7 <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;7 <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;7 <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;7 <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;7 <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;7 <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;7 <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;&nbsp;3 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/RebeccaDoma?topicparent=DiEugenio.WebStatistics;nowysiwyg=0" rel="nofollow" title="RebeccaDoma (this topic does not yet exist; you can create it)">RebeccaDoma</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/DiEugenio" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/DiEugenio/WebStatistics?t=1542826209' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/DiEugenio/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/DiEugenio/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/DiEugenio/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r715&nbsp;<a rel="nofollow" href="/bin/rdiff/DiEugenio/WebStatistics?rev1=715;rev2=714">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?rev=714">r714</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/DiEugenio/WebStatistics?rev1=714;rev2=713">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?rev=713">r713</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/DiEugenio/WebStatistics?rev1=713;rev2=712">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?rev=712">r712</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/DiEugenio/WebStatistics?rev1=712;rev2=711">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/DiEugenio/WebStatistics?rev=711">r711</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/DiEugenio/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the DiEugenio Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/DiEugenio/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/DiEugenio/WebStatistics?t=1542826209;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/DiEugenio/WebStatistics?template=oopsmore&amp;param1=715&amp;param2=715' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r715 - 2017-03-22 - 22:00:59 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=DiEugenio.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> DiEugenio</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/DiEugenio/Research" class="twikiLink">Research</a>
+</li> <li> <a href="/bin/view/DiEugenio/Teaching" class="twikiLink">Teaching</a>
+</li> <li> <a href="/bin/view/DiEugenio/Publications" class="twikiLink">Publications</a>
+</li> <li> <a href="/bin/view/DiEugenio/Honors" class="twikiLink">Honors and Awards</a>
+</li> <li> <a href="/bin/view/DiEugenio/Pointers" class="twikiLink">NLP/AI/CS Pointers</a>
+</li> <li> <a href="/bin/view/DiEugenio/Links" class="twikiLink">Links</a>
+</li> <li> <a href="/bin/view/DiEugenio/Personal" class="twikiLink">Personal</a>
+</li> <li> <a href="/bin/view/DiEugenio/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<p />
+<a href="/bin/edit/DiEugenio.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/DiEugenio/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/DiEugenio/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> DiEugenio Web</a></strong>
+</li> <li> <a href="/bin/view/DiEugenio/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/DiEugenio/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/DiEugenio/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/DiEugenio/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/DiEugenio/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/DiEugenio/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/DiEugenio/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/DiEugenio/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

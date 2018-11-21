@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebChanges &lt; Cruz &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Cruz/WebChanges?_T=2018-11-21" type="application/x-wiki" title="edit WebChanges" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Cruz/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Cruz/WebChanges"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/Cruz/WebHome">Cruz Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/Cruz/WebChanges" title='Topic revision: 1 (2006-11-15 - 19:43:52)'>WebChanges</a> <span class='patternRevInfo'>(2006-11-15, Main.TWikiContributor)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/Cruz/WebChanges?t=1542825686' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/Cruz/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Recent_Changes_in_Cruz_Web_retri"></a> Recent Changes in Cruz Web <span style="font-size: 50%">retrieved at 18:41 (GMT)</span> </h1>
+<p />
+<div id="searchTopNavWebChanges" style="margin-bottom: 1em; "></div>
+<!-- remove the format parameter to show absolute date instead if topic age -->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebHome"><b>WebHome</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebHome" title="2018-08-30 - 05:09" rel="nofollow">2 months ago</a> - r83 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Isabel F. Cruz Professor of Illlinois Faculty Scholar (2011 2014) Cities Institute Faculty Scholar (2014 2015) Researcher of the Year (Natural Sciences and Engineering...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Teaching"><b>Teaching</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Teaching" title="2018-08-30 - 05:05" rel="nofollow">2 months ago</a> - r19 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Teaching Since I joined UIC in the Fall semester of 2001, I have taught CS 401, CS 480, and CS 586 (previously CS 594). My newest course is CS418 (previously CS...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2018"><b>CS586Fall2018</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2018" title="2018-08-30 - 05:00" rel="nofollow">2 months ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS586 Data and Web SemanticsSyllabus Welcome (back) to UIC! The following is preliminary. There may be adjustments and updates. Introduction Semantics is an essential...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/OntologyMatchingVisualAnalytics"><b>OntologyMatchingVisualAnalytics</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/OntologyMatchingVisualAnalytics" title="2018-07-29 - 23:32" rel="nofollow">3 months ago</a> - r7 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">NSF Award: III: Small: Enhancing Ontology Matching with Visual Analytics PI: Isabel Cruz Number: 1618126 Abstract An ontology is a representation of a domain, be...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/NewFormatConferences"><b>NewFormatConferences</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/NewFormatConferences" title="2018-05-28 - 19:58" rel="nofollow">5 months ago</a> - r20 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Conference Committees, Editorships, Distinguished Talks to prior events 2019 Program Committee Member: EDBT, WWW. 2018 Senior Program Committee Member: SIGSPATIALProgram...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Contact"><b>Contact</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Contact" title="2018-05-23 - 00:35" rel="nofollow">5 months ago</a> - r10 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">University of Illinois at Chicago of Engineering of Computer ScienceScience and Engineering Offices851 South Morgan Street (M/C 152)Chicago, Illinois 60607 7053 Email...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/News"><b>News</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/News" title="2018-05-22 - 23:08" rel="nofollow">5 months ago</a> - r33 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">News Juan F. Sequeda: `Integrating Relational Databases with the Semantic Web` (November 2015)Visit by ADVIS alumn Venkat Raghavan to CS586 and the ADVIS Lab as part...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/VisualAnalytics"><b>VisualAnalytics</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/VisualAnalytics" title="2017-01-24 - 06:09" rel="nofollow">1 year ago</a> - r13 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">NSF Award: EAGER: Visual Analytics for Ontology Matching PI: Maria Isabel Cruz Award Number: 1143926 Abstract Ontologies are developed to provide semantics for...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2016"><b>CS586Fall2016</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2016" title="2016-08-19 - 23:59" rel="nofollow">2 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fall 2016 CS586 `Data and Web Semantics`Schedule: T R 12:30 1:45 pmRoom: LC A2 News Welcome! The Blackboard web site will contain further information for this...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2015"><b>CS586Fall2015</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2015" title="2016-08-19 - 22:54" rel="nofollow">2 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fall 2015CS586 `Data and Web Semantics`Schedule: T R 12:30 1:45 pmRoom: 220SH News Welcome! The Blackboard web site will contain further information for this...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Publications"><b>Publications</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Publications" title="2015-11-11 - 02:24" rel="nofollow">3 years ago</a> - r40 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Recent Publications of the ADVIS Lab on Semantic Data Integration SDI , Semantic Desktop SD , Geographic Information Systems GIS , Security and Semantic Web SSW...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/ShortBio"><b>ShortBio</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/ShortBio" title="2015-10-21 - 03:06" rel="nofollow">3 years ago</a> - r23 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Short Bio Isabel F. Cruz is Professor of Computer Science in the College of Engineering at the University of Illinois at Chicago. She holds a PhD degree in Computer...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Biosketch"><b>Biosketch</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Biosketch" title="2015-10-21 - 03:02" rel="nofollow">3 years ago</a> - r48 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Biographical Sketch (bio). F. Cruz is Professor of Science in the of Engineering at the of Illinois at Chicago. She holds PhD and MS degrees in Science from the of...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2014"><b>CS586Fall2014</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2014" title="2014-08-25 - 21:02" rel="nofollow">4 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fall 2014CS586 `Data and Web Semantics`Schedule: T R 12:30 1:45 pmRoom: 1000 SEO or LCA A003 (9/9, 9/30, 10/2, 10/7, 10/21, 10/23, 11/11, only) NewsWelcome! The Blackboard...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2013"><b>CS586Fall2013</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2013" title="2013-08-27 - 06:17" rel="nofollow">5 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fall 2013CS586 `Data and Web Semantics`Schedule: T R 12:30 1:45 pmRoom: 301 LH NewsThe Blackboard web site for the course has been requested. Once the web site is...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2012"><b>CS586Fall2012</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2012" title="2013-08-27 - 06:06" rel="nofollow">5 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fall 2012CS586 `Data and Web Semantics`Schedule: T R 2:00 3:15 pmRoom: 315 LH NewsThe Blackboard web site for the course has been requested. Once the web site is set...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Committees"><b>Committees</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Committees" title="2012-12-07 - 11:16" rel="nofollow">5 years ago</a> - r12 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Committees at UIC UIC 2011 2013 Executive Committee of the College of Engineering 2012 Provost`s Sustainability Strategic Thinking Advisory Committee...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebLeftBar"><b>WebLeftBar</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Pbeltr1?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="pbeltr1 (this topic does not yet exist; you can create it)">pbeltr1</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebLeftBar" title="2012-08-28 - 21:14" rel="nofollow">6 years ago</a> - r10 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">edit this 1 Web Create New Topic Index Search Changes Notifications RSS Feed Statistics Preferences...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Conferences"><b>Conferences</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Conferences" title="2012-08-26 - 05:43" rel="nofollow">6 years ago</a> - r8 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Conference Committees Program Committees, Invited Conference Talks and Participations http://www.cs.uic.edu/Cruz/Conf 2000 2005 2000 2005 2000 National Committees...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2011"><b>CS586Fall2011</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2011" title="2012-08-24 - 02:33" rel="nofollow">6 years ago</a> - r7 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Fall 2011CS586 `Data and Web Semantics`Schedule: T R 2:00 3:15 pmRoom: 104 LH NewsThe Blackboard web site for the course has been created and is operational as of...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Links"><b>Links</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Links" title="2012-04-20 - 03:04" rel="nofollow">6 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Links Chicago and Chicago Area Weather (Yahoo, Wunderground) in Chicago (this site is the result of the research of Nelson and his group at UIC) Trains...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS480Spring2012"><b>CS480Spring2012</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS480Spring2012" title="2012-01-10 - 07:53" rel="nofollow">6 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Spring 2012 CS480 `Database Systems`Schedule: M W 3:00 4:15 pmRoom: 304 SH NewsThe Blackboard web site for the course has been created. This page will no longer...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Conf-2006-2010"><b>Conf-2006-2010</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Conf-2006-2010" title="2011-01-23 - 07:04" rel="nofollow">7 years ago</a> - r14 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Program Committees, Invited Conference Talks and Participations (2006 2011) 2011 International Conference on Conceptual Modeling (ER), Brussels, Belgium, October...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/OAEICompetition2010"><b>OAEICompetition2010</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/OAEICompetition2010" title="2010-11-29 - 00:33" rel="nofollow">7 years ago</a> - r4 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">ADVIS Lab: the AgreementMaker system is first in matching biomedical ontologies The Alignment Evaluation Initiative (OAEI) aims to improve the work on ontology alignment...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Visitors20102011"><b>Visitors20102011</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Visitors20102011" title="2010-09-24 - 09:16" rel="nofollow">8 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">The ADVIS Research Laboratory welcomes two visitors in 2010 2011: Matteo Palmonari and Michele Caci. Palmonari is a Researcher from the University of Milan Bicocca...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/CS586Fall2010"><b>CS586Fall2010</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/CS586Fall2010" title="2010-08-25 - 18:43" rel="nofollow">8 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Isabel F. Cruz Teaching CS586 Fall 2010 CS586 Data and Web Semantics Schedule: T R 2:00 3:15 pm Room (Courtesy of EVL): 2068 ERF (instructions on how to get...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/OAEICompetition"><b>OAEICompetition</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/OAEICompetition" title="2009-10-14 - 23:53" rel="nofollow">9 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">ADVIS Lab: the AgreementMaker ontology matching system ranks high among peers The Alignment Evaluation Initiative (OAEI) aims to improve the work on ontology alignment...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/NSFMatchingGrant"><b>NSFMatchingGrant</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/NSFMatchingGrant" title="2009-09-03 - 02:33" rel="nofollow">9 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Main.ifcruz 03 Sep 2009</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Angela"><b>Angela</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Angela" title="2009-08-02 - 06:52" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Postdoc Angela Maduko joins the ADVIS Lab Maduko has joined the lab on July 16 as a postdoctoral research associate. Her research interests are in databases and Semantic...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Conf-old"><b>Conf-old</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Conf-old" title="2009-07-05 - 05:35" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Program Committees, Invited Talks and Participations (1995 1999) 1999 International Conference on Very Large Databases (VLDB 99), Program Committee Member (Edinburgh...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebPreferences"><b>WebPreferences</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebPreferences" title="2009-07-05 - 03:20" rel="nofollow">9 years ago</a> - r13 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Cruz Web Preferences The following settings are web preferences of the Cruz web. These preferences overwrite the site level preferences in . and...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Conf-2000-2005"><b>Conf-2000-2005</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Conf-2000-2005" title="2009-07-05 - 02:25" rel="nofollow">9 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Program Committees, Invited Conference Talks and Participations (2000 2005) 2005 International Conference on Geospatial Semantics (GeoS 2005), Mexico City, Mexico...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/Research"><b>Research</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ifcruz?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="ifcruz (this topic does not yet exist; you can create it)">ifcruz</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/Research" title="2009-07-04 - 16:21" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Research My main areas of research are in Database and Information Systems . Some of my particular interests are in the following topics (note about manuscripts here...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebStatistics"><b>WebStatistics</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebStatistics" title="2009-07-03 - 20:14" rel="nofollow">9 years ago</a> - r4 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Statistics for Cruz Web Month: Topic views: Topic saves: File uploads: Most popular topic views: Top contributors for topic save and...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebNotify"><b>WebNotify</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebNotify" title="2009-05-14 - 12:19" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">This is a subscription service to be automatically notified by e mail when topics change in this 1 web. This is a convenient service, so you do not have to come...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebTopicList"><b>WebTopicList</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebTopicList" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebSearchAdvanced"><b>WebSearchAdvanced</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebSearchAdvanced" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebSearch"><b>WebSearch</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebSearch" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebIndex"><b>WebIndex</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebIndex" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebChanges"><b>WebChanges</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebChanges" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebAtom"><b>WebAtom</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebAtom" title="2006-01-24 - 06:07" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">TWiki`s Cruz web The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebCreateNewTopic"><b>WebCreateNewTopic</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebCreateNewTopic" title="2005-11-08 - 06:37" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Cruz/WebRss"><b>WebRss</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Cruz.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Cruz/WebRss" title="2005-03-28 - 09:40" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">/Cruz The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<p />
+<div id="searchBottomNavWebChanges" style="">
+<p />
+ &nbsp;
+<p />
+</div>
+<script type="text/javascript">
+  $('#searchTopNavWebChanges').hide(); $('#searchBottomNavWebChanges').hide();
+  $('#searchTopNavWebChanges').html("&nbsp; ");
+</script>
+<p />
+Show <a href='/bin/view/Cruz/WebChanges?limit=10' rel='nofollow'>10</a>&#44; <a href='/bin/view/Cruz/WebChanges?limit=20' rel='nofollow'>20</a>&#44; <b>50</b>&#44; <a href='/bin/view/Cruz/WebChanges?limit=100' rel='nofollow'>100</a>&#44; <a href='/bin/view/Cruz/WebChanges?limit=500' rel='nofollow'>500</a>&#44; <a href='/bin/view/Cruz/WebChanges?limit=1000' rel='nofollow'>1000</a> results per page, or <a href='/bin/view/Cruz/WebChanges?limit=all' rel='nofollow'>show all</a>.
+<p />
+<strong><em>Related topics:</em></strong> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> <a href="/bin/view/Cruz/WebRss" class="twikiLink">RSS feed</a>, <a href="/bin/view/Cruz/WebAtom" class="twikiLink">ATOM feed</a>, <a href="/bin/view/Cruz/WebNotify" class="twikiLink">WebNotify</a>, <a href="/bin/view/TWiki/SiteChanges" class="twikiLink">site changes</a>, <a href="/bin/view/TWiki/SiteMap" class="twikiLink">site map</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Cruz/WebChanges?t=1542825688' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Cruz/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Cruz/WebChanges?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Cruz/WebChanges?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r1</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Cruz/WebChanges?template=backlinksweb' rel='nofollow' title='Search the Cruz Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Cruz/WebChanges?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Cruz/WebChanges?t=1542825688;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Cruz/WebChanges?template=oopsmore&amp;param1=1&amp;param2=1' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r1 - 2006-11-15 - 19:43:52 - Main.TWikiContributor</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/Cruz/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> Cruz</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/Cruz/Biosketch" class="twikiLink">Biosketch</a>
+</li> <li> <a href="/bin/view/Cruz/News" class="twikiLink">News</a>
+</li> <li> <a href="/bin/view/Cruz/Teaching" class="twikiLink">Teaching</a>
+</li> <li> <a href="/bin/view/Cruz/Research" class="twikiLink">Research</a>
+</li> <li> <a href="/bin/view/Cruz/Publications" class="twikiLink">Publications</a>
+</li> <li> <a href="/bin/view/Cruz/NewFormatConferences" class="twikiLink">Conferences</a>
+</li> <li> <a href="/bin/view/Cruz/Committees" class="twikiLink">Committees</a>
+</li> <li> <a href="/bin/view/Cruz/Links" class="twikiLink">Links</a>
+</li> <li> <a href="/bin/view/Cruz/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<a href="/bin/edit/Cruz.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Cruz/WebChanges">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/Cruz/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Cruz Web</a></strong>
+</li> <li> <a href="/bin/view/Cruz/WebCreateNewTopic?topicparent=WebChanges" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Cruz/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Cruz/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Cruz/WebChanges" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/Cruz/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/Cruz/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Cruz/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Cruz/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

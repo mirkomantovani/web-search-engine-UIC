@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>evl weather</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+     <!-- <script type="text/javascript" src="./d3.v2.min.js"></script>  -->
+
+
+ </head>
+  <body >
+    <div id="all" style="width:100%; height:100%; position:fixed; left:0;top:0; background: #fff">
+        <div id="viz" style="width:100%; height:100%; float:left; background: #fff"></div>
+    </div>
+
+<!--
+        <div id="viz" style="width:50%; height:100%; float:left; background: #fff"></div>
+        <div id="viz2" style="width:50%; height:100%; float:right; background: #fff"></div>
+
+-->
+
+<script src="./evlweather.js"></script>
+
+<script>
+var weather_App1 = new weather_App;
+weather_App1.initApp("F");
+weather_App1.startup("#viz");
+
+setInterval(function() {weather_App1.updateAll() }, 45000);
+
+/////
+
+window.onresize = function()
+    {
+    weather_App1.updateWindow();
+    };
+</script>
+
+  </body>
+
+</html>
+

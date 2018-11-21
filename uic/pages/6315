@@ -1,0 +1,932 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; Piotr &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Piotr/WebStatistics?_T=2018-11-21" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Piotr/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Piotr/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/Piotr/WebHome">Piotr Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/Piotr/WebStatistics" title='Topic revision: 691 (2017-03-23 - 20:18:16)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-23, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Piotr.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/Piotr/WebStatistics?t=1542826612' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/Piotr/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_Piotr_Web"></a> Statistics for Piotr Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/Piotr/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/Piotr/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/Piotr/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/Piotr/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/Piotr/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/Piotr/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1064<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 273&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />195&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;98&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;87&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 977<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 253&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />219&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;61&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 622<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 224&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;76&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;24&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 626<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 156&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 563<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 141&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />102&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;20&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 657<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 186&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />114&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;25&nbsp;<a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 667<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 366&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;22&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;20&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;20&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 543<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 214&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;88&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;20&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;17&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;16&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1128<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 286&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />151&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;77&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;74&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;72&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;63&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 888<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 240&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />174&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;60&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-04 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1161<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 348&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />306&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1046<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 423&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />198&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;60&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1293<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 381&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />379&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;75&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;60&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 224<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 65&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />63&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />14&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />14&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;8&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;7&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;7&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 802<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 250&nbsp;<a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />151&nbsp;<a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1318 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 384 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />124 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;61 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;53 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;50 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;49 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;46 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;44 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;44 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;43 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;43 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1270 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 388 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />109 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;63 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;56 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;49 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;43 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;39 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;38 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;38 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1272 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 399 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;70 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;52 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;52 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;52 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;48 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;44 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;43 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1810 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 536 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;97 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;94 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;91 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;75 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;74 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;72 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;71 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;60 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;60 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1318 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 423 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />145 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;78 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;72 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;64 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;52 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;51 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;47 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;44 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;43 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 652 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 193 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;49 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;48 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;30 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;30 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;30 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;29 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;24 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;21 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2483 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 1017 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />450 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;96 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;91 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;85 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;72 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;64 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;63 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;60 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;58 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;45 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1610 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 489 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />229 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;98 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;78 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;66 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;58 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;46 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;44 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;43 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1333 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 432 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;99 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;56 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;54 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;54 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;52 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;51 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;49 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;44 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;39 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1630 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 465 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />133 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;88 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;79 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;75 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;63 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;54 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;39 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1717 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 596 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />140 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;75 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;56 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;53 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;47 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;42 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;41 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;37 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;36 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 937 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 287 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;90 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;66 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;35 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;32 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;30 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;28 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;28 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;26 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;22 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 857 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 312 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;58 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;32 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;32 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;25 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;24 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;24 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;21 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1406 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 401 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;90 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;88 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;64 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;64 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;58 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;55 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;55 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;53 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;50 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1688 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 460 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />126 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />114 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;98 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;97 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;97 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;57 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;55 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;54 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;52 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;51 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3570 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 632 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />530 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />483 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />433 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />172 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />168 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />134 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />103 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;96 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;92 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;90 <a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4833 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 958 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />830 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />758 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />494 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />241 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />199 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />175 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />133 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />130 <a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />117 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />112 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3452 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 921 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />568 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />564 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />395 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />115 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />105 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;81 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;80 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;73 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;69 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;65 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3660 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 758 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />727 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />609 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />433 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />192 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />154 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />100 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;72 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;69 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;69 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;67 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2390 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 420 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />376 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />341 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />288 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />142 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />115 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;70 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;57 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;53 <a href="/bin/view/Piotr/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;53 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 595 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 181 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;70 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;58 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;40 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;16 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;15 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;13 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;13 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;12 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 898 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 280 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />118 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;70 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;50 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;41 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;26 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;25 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;22 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;22 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;21 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1205 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 394 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />164 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;98 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;83 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;48 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;42 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;27 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;26 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;26 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;19 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;17 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 969 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 303 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />124 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;85 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;36 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;31 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;29 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;29 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;23 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;17 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;15 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;14 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2066 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 442 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />371 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />210 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />177 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />119 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;98 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;53 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;44 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;43 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;43 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1235 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 385 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />192 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;99 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;80 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;55 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;42 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;26 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;26 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;22 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;20 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1227 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 390 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />148 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />146 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;75 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;48 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;42 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;23 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;23 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;21 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;18 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1237 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 380 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />152 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />125 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;92 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;91 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;50 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;37 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;29 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;22 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;22 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;21 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1247 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 390 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />183 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />106 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />106 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;64 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;39 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;30 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;26 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;24 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1035 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 322 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />131 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />115 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;91 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;56 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;33 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;28 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;21 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;19 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;19 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;17 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1668 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 434 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />242 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />210 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />127 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;81 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;70 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;39 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;35 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;34 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;33 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1667 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 450 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />233 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />219 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />100 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;68 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;55 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;51 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;37 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;36 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;36 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;34 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1048 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 293 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />164 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;87 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;54 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;41 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;32 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;32 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;30 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;27 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3290 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 737 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />709 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />438 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />336 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />143 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;96 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;95 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;72 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;58 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;53 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2756 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 535 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />496 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />464 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />202 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />125 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />122 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;81 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;65 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;62 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;54 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;53 <a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1138 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 325 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />210 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;97 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;64 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;46 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;32 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;31 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;28 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;25 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;25 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1858 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 360 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />319 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />304 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />103 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;80 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;57 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;47 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;47 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;46 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;45 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1443 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 334 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />220 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />184 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;95 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;67 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;49 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;41 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;39 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;37 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;32 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;30 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1830 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 375 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />276 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />160 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />112 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />100 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;92 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;73 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;65 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;61 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;59 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;56 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1292 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 320 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />264 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;96 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;91 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;53 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;42 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;35 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;35 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;35 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;34 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1372 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 322 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />253 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />140 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;94 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;73 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;33 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;32 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;31 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;29 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1735 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 403 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />249 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />173 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />125 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;76 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;73 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;46 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;42 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1893 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 376 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />299 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />198 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />133 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />121 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;85 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;67 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;60 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;57 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;52 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;52 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1556 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 258 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />255 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />201 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;86 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;83 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;76 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;54 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;53 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;52 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;49 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;48 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2057 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 376 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />349 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />240 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />144 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />110 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;81 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;62 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;60 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;57 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;54 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2156 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 417 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />370 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />357 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />163 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;93 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;65 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;61 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;59 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;48 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;48 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1738 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 392 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />269 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />239 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />108 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;81 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;52 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;48 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;46 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;38 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1640 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 395 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />275 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />126 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;89 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;69 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;68 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;44 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;43 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;42 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;42 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;38 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1628 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 348 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />297 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />117 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />107 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;73 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;72 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;67 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;49 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;45 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;41 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 650 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 189 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />106 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;42 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;21 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;18 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;13 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;12 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;12 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;11 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;11 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1559 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 308 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />188 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />116 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />103 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;82 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;79 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;74 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;73 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;72 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;72 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;67 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2176 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 539 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />291 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />174 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />150 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />105 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;93 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;80 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;73 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;68 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;67 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;63 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2927 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 617 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />472 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />180 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />167 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />159 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />130 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />121 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />107 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />104 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />102 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />100 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1125 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 229 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />185 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;68 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;64 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;61 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;57 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;55 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;47 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;47 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;42 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;38 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 780 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 187 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />125 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;64 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;45 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;34 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;26 <a href="/bin/view/Piotr/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;25 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;24 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;23 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;22 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;21 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 391 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 104 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;78 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;20 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;14 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;12 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;12 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;8 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;8 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;8 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2532 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 473 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />423 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />410 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />316 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;92 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;84 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;70 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;58 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;54 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;52 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;52 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1809 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 420 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />233 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />180 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />106 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;79 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;61 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;52 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;50 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;50 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;49 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;48 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2097 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 400 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />346 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />338 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;93 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;89 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;83 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;72 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;58 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;55 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;54 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;53 <a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1315 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 275 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />274 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />128 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;71 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;49 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;47 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;39 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;38 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;38 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;36 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;33 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1062 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 219 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />203 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;90 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;86 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;56 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;50 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;35 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;34 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;30 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;29 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;27 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1404 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 324 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />204 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />168 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;70 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;57 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;42 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;41 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;40 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;38 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;35 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1065 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 331 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />103 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;61 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;39 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;37 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;37 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;36 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;31 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;25 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;23 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 930 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 323 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;88 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;48 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;40 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;30 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;28 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;27 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;25 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;24 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;24 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 122 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;36 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;27 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;11 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;7 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;7 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;6 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Piotr/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2537 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1040 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />462 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />175 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;84 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;66 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;64 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;62 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;62 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;51 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;47 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2516 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 900 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />387 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />218 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />118 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />113 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />103 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />101 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;85 <a href="/bin/view/Piotr/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;45 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;45 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;43 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2293 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 445 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />387 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />251 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />196 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />156 <a href="/bin/view/Piotr/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;97 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;80 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;71 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;59 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;57 <a href="/bin/view/Piotr/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;54 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 3 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 457 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />304 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />168 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />104 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;89 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;79 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;69 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;67 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;61 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;61 <a href="/bin/view/Piotr/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;59 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;3 Main.piotr </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Sep 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1 twikiLast"> 971 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2 twikiLast"> 11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4 twikiLast"> 235 <a href="/bin/view/Piotr/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />209 <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;42 <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a><br />&nbsp;34 <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a><br />&nbsp;34 <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a><br />&nbsp;32 <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a><br />&nbsp;28 <a href="/bin/view/Piotr/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;27 <a href="/bin/view/Piotr/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;26 <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a><br />&nbsp;26 <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;24 <a href="/bin/view/Piotr/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;11 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/PhilBeltran?topicparent=Piotr.WebStatistics;nowysiwyg=0" rel="nofollow" title="PhilBeltran (this topic does not yet exist; you can create it)">PhilBeltran</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/Piotr" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Piotr/WebStatistics?t=1542826613' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Piotr/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Piotr/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Piotr/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r691&nbsp;<a rel="nofollow" href="/bin/rdiff/Piotr/WebStatistics?rev1=691;rev2=690">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Piotr/WebStatistics?rev=690">r690</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Piotr/WebStatistics?rev1=690;rev2=689">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Piotr/WebStatistics?rev=689">r689</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Piotr/WebStatistics?rev1=689;rev2=688">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Piotr/WebStatistics?rev=688">r688</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Piotr/WebStatistics?rev1=688;rev2=687">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Piotr/WebStatistics?rev=687">r687</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Piotr/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the Piotr Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Piotr/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Piotr/WebStatistics?t=1542826613;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Piotr/WebStatistics?template=oopsmore&amp;param1=691&amp;param2=691' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r691 - 2017-03-23 - 20:18:16 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Piotr.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> Piotr</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/Piotr/Research" class="twikiLink">Research</a>
+</li> <li> <a href="/bin/view/Piotr/Teaching" class="twikiLink">Teaching</a>
+</li> <li> <a href="/bin/view/Piotr/Publications" class="twikiLink">Publications</a>
+</li> <li> <a href="/bin/view/Piotr/Links" class="twikiLink">Links</a>
+</li> <li> 
+</li> <li> 
+</li> <li> <a href="/bin/view/Piotr/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<p />
+<a href="/bin/edit/Piotr.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Piotr/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/Piotr/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Piotr Web</a></strong>
+</li> <li> <a href="/bin/view/Piotr/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Piotr/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Piotr/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Piotr/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/Piotr/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/Piotr/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Piotr/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Piotr/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+    <!-- Website style adapted from http://compbio.cs.uic.edu/netinf17/-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Elena Zheleva, Course on Data Science for Networks, University of Illinois at Chicago (UIC)">
+    <link rel="shortcut icon" type="image/ico" href="../../img/uic.ico">
+    <meta name="author" content="Elena Zheleva">
+
+    <title>CS 594 - Data Science for Networks</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--link href="css/css.css" rel="stylesheet" type="text/css">
+    <link href="../../css/css(1).css" rel="stylesheet" type="text/css">
+    <link href="../../css/css(2).css" rel="stylesheet" type="text/css">
+    <link href="../../css/css(3).css" rel="stylesheet" type="text/css"-->
+    <link href="../../css/print.css" rel="stylesheet" type="text/css" media="print" >
+    <!--link href="css/fa-fonts.css" rel="stylesheet" type="text/css"-->
+</head>
+
+<body id="page-top" class="index">
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96672401-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+
+<!-- StatCounter Analytics -->
+<script type="text/javascript">
+var sc_project=11304851; 
+var sc_invisible=1; 
+var sc_security="279e2772"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="site stats"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11304851/0/279e2772/1/" alt="site
+stats"></a></div></noscript>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#page-top">Main</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#news">News</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#teaching">Teaching</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#pubs">Publications</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#service">Service</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#bio">Bio</a>
+                    </li>
+                </ul>
+            </div-->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading text-left">CS 594 Data Science for Networks</div>
+                <div class="intro-lead-in text-left">University of Illinois at Chicago, Fall 2017</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section id="intro">
+        <div class="container">
+            <div class="row text-justify">
+                <div class="col-lg-3 text-left">
+                <p class="large text-muted"> 
+                <br>
+               <b>Time: </b> MW 3-4:15pm
+                </p>
+                <p class="large text-muted">
+                       <b>Location: </b> TBH 180E
+                </p>
+                <p class="large text-muted"><b>Instructor</b>: <a href="../../">Prof. Elena Zheleva</a>
+                
+                </p>     
+                <p class="large text-muted"><b>Office hours</b>: Tue 3-4pm, SEO 1140</p> 
+                <p class="large text-muted"><b>Contact:</b> 
+                <script type="text/javascript">
+//<![CDATA[
+<!--
+var x="function f(x){var i,o=\"\",l=x.length;for(i=l-1;i>=0;i--) {try{o+=x.c" +
+"harAt(i);}catch(e){}}return o;}f(\")\\\"function f(x,y){var i,o=\\\"\\\\\\\""+
+"\\\\,l=x.length;for(i=0;i<l;i++){y%=127;o+=String.fromCharCode(x.charCodeAt" +
+"(i)^(y++));}return o;}f(\\\"\\\\>4?(3:\\\\\\\\016\\\\\\\\025L\\\\\\\\024\\\\"+
+"\\\\026\\\\\\\\014\\\\\\\\022\\\\\\\\002\\\\\\\\004\\\\\\\\007BIP\\\\\\\\01" +
+"4N\\\\\\\\007\\\\\\\\002\\\\\\\\024\\\\\\\\024N(W\\\\\\\\033\\\\\\\\026\\\\" +
+"\\\\021\\\\\\\\025\\\\\\\\016\\\\\\\\024F\\\\\\\\030\\\\\\\\004hdnfrdFraj$n" +
+"hxR-0e{gxp+K:\\\\\\\\\\\\\\\\wzuqB=\\\\\\\\036DXKAICQIi_BO\\\\\\\\003KKE\\\\"+
+"\\\\r\\\\\\\\035R\\\\\\\\n\\\\\\\\027\\\\\\\\037\\\\\\\\014\\\\\\\\010\\\\\\"+
+"\\002\\\"\\\\,90)\\\"(f};)lo,0(rtsbus.o nruter};)i(tArahc.x=+o{)--i;0=>i;1-" +
+"l=i(rof}}{)e(hctac};l=+l;x=+x{yrt{)29=!)31/l(tAedoCrahc.x(elihw;lo=l,htgnel" +
+".x=lo,\\\"\\\"=o,i rav{)x(f noitcnuf\")"                                     ;
+while(x=eval(x));
+//-->
+//]]>
+</script>
+               </p>
+                </div>
+                <div class="col-lg-9 text-left">
+                      <h3 class="section-heading">Description</h3>
+                      <p class="large">
+                      Data science is playing an increasingly important role in many aspects of our lives, from personalizing our online (and offline) experiences to helping us make sense of large, heterogeneous datasets in various domains. To have a holistic theoretical understanding of data science, researchers need to be familiar with relevant methodologies from computer science, statistics, economics, and physics. The assigned course readings will give an overview of research in this area, including topics in: 1) machine learning, 2) causal inference and dealing with bias, 3) network science, and 4) privacy and ethics. The course will place emphasis on network modeling, as many realistic data sources can be represented as networks of interconnected objects, such as social networks, citation networks, and the world wide web. 
+</p>
+                      <h3 class="section-heading">Course objectives</h3>
+                      <p class="large">
+                      This is a seminar course. The goal of the course is to expose graduate students to state-of-the-art research on reasoning about network data. The class project plays a central role in the course, and it should be taken as an opportunity to connect your research area of interest to the course topics.
+                      </p>
+                      <h3 class="section-heading">Topics</h3>
+                      <p class="large">
+                      <i>Machine learning for networks</i>: statistical relational learning, collective classification, link prediction, network clustering, graphical models, stochastic blockmodels, entity resolution in networks, anomaly detection, graph identification (approx. 5 weeks)
+                      </p>
+                      <p class="large">
+			          <i>Causal inference and bias</i>: controlled and natural experiments, propensity scores and matching, causal inference modeling, structural equations, causal Bayesian models, interventions, different types of bias, peer and network effects, connecting predictive and causal modeling (approx. 4-5 weeks) 
+                      </p> 
+                      <p class="large">
+                                  <i>Network science</i>: Random networks, evolving networks, scale-free property, modularity, centrality measures and communities, information diffusion models (approx. 1-2 weeks)
+                      </p>
+                      <p class="large">
+                                  <i>Privacy and ethics</i>: known vulnerabilities and challenges, anonymization, differential privacy, personalized privacy assistants, fairness, accountable algorithms (approx. 2 weeks)
+                      <h3 class="section-heading">Student deliverables</h3>
+                      <p class="large">
+                      Paper summaries/discussion - 30%
+                      <br>Presentations - 20% 
+                      <br>Course project - 50% (proposal, progress report, final presentation, final report)
+                      </p>
+                      
+                      <h3>Prerequisites</h3> <p class="large">CS 412 Machine Learning or equivalent; or consent of the instructor.</p>
+                      <h3>Course materials</h3> <p class="large">We will be using <a href="http://piazza.com/uic/fall2017/cs594/home">Piazza</a> for all course discussions and materials. Students registered for the course will be sent an enrollment email before the first day of class.
+                      </p>
+                      <h3>Course schedule (check Piazza for most up-to-date)</h3>
+                      <p class="large">
+                         <table border="1" cellspacing="0" cellpadding="6px" width="974" height="3074">
+<tbody>
+<tr>
+<td>Date</td>
+<td>Topic</td>
+<td>Assigned reading</td>
+<td>Announcements</td>
+</tr>
+<tr>
+<td>8/28</td>
+<td>Introduction and syllabus</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8/30</td>
+<td>Predictive modeling in networks</td>
+<td>"<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.190.8115&amp;rep=rep1&amp;type=pdf" target="_blank">Link mining</a>," L. Getoor, C. Diehl. SIGKDD Explorations 2005.</td>
+<td>
+Sign up for topics
+<br>
+Quiz on prerequisites</td>
+</tr>
+<tr>
+<td>9/4</td>
+<td>Labor Day - No class</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9/6</td>
+<td>Graphical models</td>
+<td>
+"<a href="https://homes.cs.washington.edu/~taskar/pubs/gms-srl07.pdf" target="_blank">Graphical models in a nutshell</a>," D. Koller, N. Friedman, L. Getoor, B. Taskar. Book chapter in <em>Introduction to Statistical Relational Learning</em>, 2007.</td>
+<td></td>
+</tr>
+<tr>
+<td>9/11</td>
+<td>
+Collective classification</td>
+<td>
+
+"<a href="https://users.soe.ucsc.edu/~getoor/Papers/sen-aimag08.pdf" target="_blank">Collective classification in network data</a>," P. Sen, G. Namata, M. Bilgic, L. Getoor, B. Gallagher, T. Eliassi-Rad. AI Magazine 2008.
+<br>
+<em>Optional</em>: "<a href="http://www.vldb.org/pvldb/vol8/p581-gatterbauer.pdf" target="_blank">Linearized and single-pass belief propagation</a>," W. Gatterbauer, S. Gunnemann, D. Koutra, C. Faloutsos. VLDB 2015.</td>
+<td></td>
+</tr>
+<tr>
+<td>9/13</td>
+<td>Entity resolution</td>
+<td>
+
+"<a href="https://linqspub.soe.ucsc.edu/basilic/web/Publications/2007/bhattacharya:tkdd07/bhattacharya-tkdd.pdf" target="_blank">Collective entity resolution in relational data</a>," I. Bhattacharya, L. Getoor. SDM 2007.
+<br>
+<em>Optional</em>: "<a href="http://www.vldb.org/pvldb/vol4/p208-rastogi.pdf" target="_blank">Large-scale collective entity matching</a>," V. Rastogi, N. Dalvi, M. Garofalakis. VLDB 2011.</td>
+<td></td>
+</tr>
+<tr>
+<td>9/18</td>
+<td>Link prediction</td>
+<td>
+
+"<a href="https://www.cs.cornell.edu/home/kleinber/link-pred.pdf" target="_blank">The link prediction problem for social networks</a>," D. Liben-Nowell, J. Kleinberg. CIKM 2003.
+<br>"<a href="http://wwwconference.org/proceedings/www2010/www/p981.pdf" target="_blank">Modeling relationship strength in online social networks</a>," R. Xiang, J. Neville, M. Rogati. WWW 2010.
+<br>
+<em>Optional: </em>"<a href="https://papers.nips.cc/paper/2465-link-prediction-in-relational-data.pdf" target="_blank">Link prediction in relational data</a>," B. Taskar, M. Wong, P. Abbeel, D. Koller. NIPS 2003.</td>
+<td></td>
+</tr>
+<tr>
+<td>9/20</td>
+<td>Network science</td>
+<td>
+"<a href="https://arxiv.org/pdf/cond-mat/0303516.pdf" target="_blank">The structure and function of complex networks</a>", M. Newman, SIAM Review 2003.</td>
+<td></td>
+</tr>
+<tr>
+<td>9/25</td>
+<td>Network properties and evolution</td>
+<td>
+
+"<a href="http://www-cs-faculty.stanford.edu/people/jure/pubs/powergrowth-kdd05.pdf" target="_blank">Graphs over time: Densification laws, shrinking diameters and possible explanations</a>," J. Leskovec, J. Kleinberg, C. Faloutsos. KDD 2005.
+<br>"<a href="https://linqspub.soe.ucsc.edu/basilic/web/Publications/2009/zheleva:kdd09/fp659-zheleva.pdf" target="_blank">Co-evolution of social and affiliation networks</a>," E. Zheleva, H. Sharara, L.Getoor. KDD 2009.
+<br>
+<em>Optional</em>: "<a href="http://epubs.siam.org/doi/pdf/10.1137/070710111" target="_blank">Power-law distributions in empirical data</a>," A. Clauset, C. Shalizi, M. Newman. SIAM Review 2009.</td>
+<td></td>
+</tr>
+<tr>
+<td>9/27</td>
+<td>
+
+Cascades/information diffusion</td>
+<td>
+
+"<a href="http://www.ramb.ethz.ch/CDstore/www2010/www/p591.pdf" target="_blank">What is Twitter, a social network or a news media</a>," H. Kwak, C. Lee, H. Park, and S. Moon. WWW 2010.
+<br>"<a href="https://people.mpi-sws.org/~manuelgr/pubs/activity-shaping-main.pdf" target="_blank">Shaping social activity by incentivizing users</a>," M. Farajtabar, N. Du, M. Rodriguez, I. Valera, H. Zha, L. Song. NIPS 2014. 
+<br>
+<em>Optional:</em> "Optimizing the effectiveness of incentivized social sharing," J. Pfeiffer, E. Zheleva. ASONAM 2017.</td>
+<td>Project proposal due</td>
+</tr>
+<tr>
+<td>10/2</td>
+<td>
+Network clustering and community finding</td>
+<td>
+
+"<a href="https://arxiv.org/pdf/cond-mat/0308217.pdf" target="_blank">Finding and evaluating community structure in networks</a>," M. Newman and M. Girvan. Phys. Rev. E, 2004.
+<br>"<a href="http://www.pnas.org/content/110/36/14534.full.pdf" target="_blank">Efficient discovery of overlapping communities in massive networks</a>," P. Gopalan, D. Blei. PNAS 2013.
+<br>
+<em>Optional:</em> "<a href="http://www-cs-faculty.stanford.edu/people/jure/pubs/comscore-icdm12.pdf" target="_blank">Defining and evaluating communities based on ground truth</a>," J. Yang, J. Leskovec. ICDM 2012.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/4</td>
+<td>Anomaly detection</td>
+<td>
+"<a href="http://www.cs.cmu.edu/afs/cs.cmu.edu/Web/People/deepay/mywww/papers/icdm05.pdf" target="_blank">Neighborhood formation and anomaly detection in bipartite graphs</a>," J. Sun, H. Qu, D. Chakrabarti, C. Faloutsos. ICDM 2005.
+<br>"<a href="http://www.andrew.cmu.edu/user/lakoglu/pubs/16-sdm-amen.pdf" target="_blank">Scalable anomaly ranking of attributed neighborhoods</a>," B. Perozzi, L. Akoglu. SDM 2016.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/9</td>
+<td>Social recommenders</td>
+<td>
+"<a href="http://www-db.deis.unibo.it/courses/SI-LS/papers4pres/ABC+09.pdf" target="_blank">Group recommendation: Semantics and efficiency</a>," S. Amer-Yahia, S. Roy, A. Chawla, G. Das, C. Yu. VLDB 2009.
+<br>"<a href="https://www.cs.uic.edu/~elena/pubs/kotsogiannis-wsdm17.pdf" target="_blank">Directed edge recommender system</a>," I. Kotsogiannis, E. Zheleva, A. Machanavajjhala. WSDM 2017.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/11</td>
+<td>Statistical relational learning</td>
+<td>
+
+"<a href="https://arxiv.org/pdf/1203.3469.pdf" target="_blank">Probabilistic similarity logic</a>," M. Broecheler, L. Mihalkova, L. Getoor. UAI 2010.
+<br>
+<em>Optional</em>: "<a href="https://arxiv.org/pdf/1505.04406.pdf" target="_blank">Hinge-loss Markov Random Fields and probabilistic soft logic</a>," S. Bach, M. Broecheler, B. Huang, L. Getoor. 2015.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/16</td>
+<td>Causal inference</td>
+<td>"<a href="https://www.jstor.org/stable/2289064" target="_blank">Statistics and causal inference</a>," P.Holland, JASA 1986.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/18</td>
+<td>Causal inference and ML</td>
+<td>
+"<a href="http://www.pnas.org/content/113/27/7310.full.pdf" target="_blank">Causal inference in economics and marketing</a>," H. Varian, NAS 2016.
+<br>"<a href="https://pdfs.semanticscholar.org/5420/9fb1cfd2d1baf1c87929c75e263815ec8172.pdf" target="_blank">Prediction and explanation in social systems</a>," J. Hofman, A. Sharma, D. Watts. Science 2017.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/23</td>
+<td>Estimating causal effects</td>
+<td>
+
+"<a href="http://www.pnas.org/content/113/27/7353.full.pdf" target="_blank">Recursive partitioning for heterogeneous causal effects</a>," S. Athey, G. Imbens. NAS 2016.
+<br>
+<em>Optional:</em> "<a href="http://www.biostat.jhsph.edu/~dscharf/Causal/rubin.journ.psych.ed.pdf" target="_blank">Estimating causal effects of treatments in randomized and nonrandomized studies</a>," D. Rubin, Journal of Ed. Psychology 1974.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/25</td>
+<td>Causality and networks</td>
+<td>
+"<a href="https://arxiv.org/abs/1004.4704" target="_blank">Homophily and contagion are generically confounded in observational social network studies</a>." C. Shalizi and A. Thomas. Sociological Methods and Research, 40, 2011.</td>
+<td></td>
+</tr>
+<tr>
+<td>10/30</td>
+<td>Controlled experiments</td>
+<td>
+
+"<a href="http://web.media.mit.edu/~msaveski/assets/publications/2017_detecting_network_effects/paper.pdf" target="_blank">Detecting network effects: Randomizing over randomized experiments</a>," M. Saveski, J. Pouget-Abadie, G. Saint-Jacques, W. Duan, S. Ghosh, Y. Xu, E. Airoldi. KDD 2017.
+<br>"<a href="http://www.pnas.org/content/113/27/7316.full.pdf" target="_blank">Estimating peer effects in networks with peer encouragement designs</a>," D. Eckles, R. Kizilcec, E. Bakshy. NAS 2016.
+<br>
+<em>Optional: </em>"<a href="https://poseidon01.ssrn.com/delivery.php?ID=468065099084000016006003110014120074002033009058089053073090103071090000069068124090056119012045118056006022018020066029116113050004033058059087031022081127074071085059080122019119100023019088001108102112107108006004089091107123065001080119005017030&amp;EXT=pdf" target="_blank">Creating social contagion through firm-mediated message design: evidence from a randomized field experiment</a>," T. Sun, S. Viswanathan, E. Zheleva. ICIS 2014.
+<br>"<a href="https://arxiv.org/pdf/1201.4145.pdf" target="_blank">The role of social networks in information diffusion</a>," E. Bakshy, I. Rosenn, C. Marlow, L. Adamic. WWW 2012.</td>
+<td>Progress report due</td>
+</tr>
+<tr>
+<td>11/1</td>
+<td>Observational studies: natural experiments and propensity scores</td>
+<td>
+
+"<a href="https://cs.stanford.edu/people/jure/pubs/social-influence-wsdm17.pdf" target="_blank">Online actions with offline impact: how online social networks influence online and offline user behavior</a>," T. Althoff, P. Jindal, J. Leskovec. WSDM 2017.
+<br>"<a href="http://www.aolteanu.com/papers/cscw2017_outcome_extraction.pdf" target="_blank">Distilling the outcomes of personal experiences: A propensity-scored analysis of social media</a>," A. Olteanu, O. Varol, E. Kiciman. CSCW 2017.
+<br>
+<em>Optional: </em>"<a href="http://www.jstor.org/stable/pdf/2288398.pdf?refreqid=excelsior%3A3380b0a60fb3dbf91661215e6a627ac2" target="_blank">Reducing bias in observational studies using subclassification on the propensity score</a>." P. Rosenbaum, D. Rubin. JASA 1984.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/6</td>
+<td>Causal Bayesian Networks</td>
+<td>
+"<a href="http://bayes.cs.ucla.edu/BOOK-2K/ch1-3.pdf" target="_blank">Causal Bayesian Networks</a>," Chapter 1.3, and
+<br>"<a href="http://bayes.cs.ucla.edu/BOOK-2K/ch1-4.pdf" target="_blank">Functional Causal Models</a>," Chapter 1.4 in <em>Causality</em> by Judea Pearl.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/8</td>
+<td>Causal Bayesian networks</td>
+<td>
+
+"<a href="http://www.pnas.org/content/113/27/7345.full.pdf" target="_blank">Causal inference and the data-fusion problem</a>," E. Bareinboim and J. Pearl, NAS 2016.
+<br>
+"<a href="http://web.cs.iastate.edu/~jtian/papers/AAAI-14-r425.pdf" target="_blank">Recovering from selection bias in causal and statistical inference</a>," E. Bareinboim, J. Tian, J. Pearl. AAAI 2014.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/13</td>
+<td>Causal Bayesian networks</td>
+<td>
+
+"<a href="http://jmlr.org/papers/volume17/14-518/14-518.pdf" target="_blank">Distinguishing Cause from Effect Using Observational Data: Methods and Benchmarks</a>," J. Mooij, J. Peters, D. Janzing, J. Zscheischler, B Scholkopf. JMLR 2016.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/15</td>
+<td>Bias and data science</td>
+<td>
+
+"<a href="https://arxiv.org/pdf/1608.04468.pdf" target="_blank">Unbiased learning-to-rank with biased feedback</a>," T. Joachims, A. Swaminathan, T. Schnabel. WSDM 2017.
+<br>
+<em>Optional:</em> "<a href="https://poseidon01.ssrn.com/delivery.php?ID=695120099066115005023096118076067092097036019031031092110087122090071087089114073093056035048125008059096097014070029067123122038022089021065115028091117112103086070058005001081078080087064086125114004117090012089085095016013114065022003016109100025120&amp;EXT=pdf" target="_blank">Social data: biases, methodological pitfalls, and ethical boundaries</a>," A. Olteanu, C. Castillo, F. Diaz, E. Kiciman. 2016.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/20</td>
+<td>Privacy and networks</td>
+<td>
+
+"<a href="http://www.cs.bu.edu/groups/dblab/pub_pdfs/sigmod_privacy_graph.pdf" target="_blank">Towards identity anonymization on graphs</a>," M. Hay, G. Miklau, D. Jensen, D. Towsley, P. Weis. VLDB 2008.
+<br>"<a href="https://linqspub.soe.ucsc.edu/basilic/web/Publications/2009/zheleva:www09/fp660-zheleva.pdf" target="_blank">To join or not to join: The illusion of privacy in social networks with mixed public and private user profiles</a>," E. Zheleva, L. Getoor. WWW 2009.
+<br>
+<em>Optional:</em> "<a href="http://www.shivakasiviswanathan.com/TCC13fullversion.pdf" target="_blank">Analyzing graphs with node differential privacy</a>," S. Kasiviswanathan, K. Nissim, S. Raskhodnikova, A. Smith. TCC 2013.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/22</td>
+<td>Personalized privacy assistants</td>
+<td>
+
+"<a href="http://www.survey.ethz.ch/CDstore/www2010/www/p351.pdf" target="_blank">Privacy wizards for social networking sites</a>," L. Fang, K. LeFevre. WWW 2010.
+<br>"<a href="https://www.usenix.org/system/files/conference/soups2016/soups2016-paper-liu.pdf" target="_blank">Follow my recommendations: A personalized privacy assistant for mobile app permissions</a>," B. Liu, M. Andersen, F. Schaub, H. Almuhimedi, S. Zhang, N. Sadeh, A. Acquisti, Y. Agarwal. SOUPS 2016.
+<br>
+<em>Optional: </em>"<a href="http://www.pamspam.com/wp-content/uploads/2016_IJHCS_Wisniewski_Privacy_Profiling.pdf" target="_blank">Making privacy personal: profiling social network uses to inform privacy education and nudging</a>," P. Wisniewski, B. Knijnenburg, H. Lipford. IJHCS 2017.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/27</td>
+<td>Fairness and accountable algorithms</td>
+<td>
+
+"<a href="https://arxiv.org/abs/1703.00056" target="_blank">Fair prediciton with disparate impact: a study of bias in recidivism prediction intruments</a>," A. Chouldechova. Big Data 2017.
+<br>"<a href="https://arxiv.org/abs/1510.02377" target="_blank">FairTest: Inferring unwarranted associations in data-driven applications</a>," F. Tramer et al. Euro S&amp;P 2017.
+<br>
+<em>Optional</em>: "<a href="https://arxiv.org/pdf/1104.3913.pdf" target="_blank">Fairness through awareness</a>," C. Dwork, M. Hardt, T. Pitassi, O. Reingold, R. Zemel. ITCS 2012.</td>
+<td></td>
+</tr>
+<tr>
+<td>11/29</td>
+<td>Project presentations</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12/4</td>
+<td>Project presentations</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12/6</td>
+<td>Project presentations</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12/11</td>
+<td>Finals week</td>
+<td></td>
+<td>Final report due</td>
+</tr>
+</tbody>
+</table>
+
+                      </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-darkest-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <!--div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div-->
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!--script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script-->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+
+</body>
+</html>

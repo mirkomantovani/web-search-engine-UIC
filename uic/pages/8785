@@ -1,0 +1,1036 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - CommentPlugin</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/CommentPlugin?_T=2018-11-21" type="application/x-wiki" title="edit CommentPlugin" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/CommentPlugin"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+@import url('/pub/Main/WebPreferences/mainweb.css');
+@import url('/pub/TWiki/WebPreferences/hideattachments.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TABLEPLUGIN_table9 --> <style type="text/css" media="all">
+.twikiTable#table9 {width:100%;}
+.twikiTable#table9 td.twikiTableCol0 {width:170;}
+.twikiTable#table9 th.twikiTableCol0 {width:170;}
+</style>
+<!-- TABLEPLUGIN_table8 --> <style type="text/css" media="all">
+.twikiTable#table8 {width:100%;}
+.twikiTable#table8 td.twikiTableCol0 {width:170;}
+.twikiTable#table8 th.twikiTableCol0 {width:170;}
+</style>
+<!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- TABLEPLUGIN_table7 --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#table7 {width:100%;}
+.twikiTable#table7 td.twikiTableCol0 {width:170;}
+.twikiTable#table7 th.twikiTableCol0 {width:170;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Comment_Plugin"></a>  Comment Plugin </h1>
+<!--
+   Contributions to this plugin are appreciated. Please update the plugin page at
+   <a href="http://twiki.org/cgi-bin/view/Plugins/CommentPlugin" target="_top">http://twiki.org/cgi-bin/view/Plugins/CommentPlugin</a> or provide feedback at
+   <a href="http://twiki.org/cgi-bin/view/Plugins/CommentPluginDev" target="_top">http://twiki.org/cgi-bin/view/Plugins/CommentPluginDev</a>.
+   If you are a TWiki contributor please update the plugin in the SVN repository.
+-->
+<sticky><div style="float:right; background-color:#EBEEF0; margin:0 0 20px 20px; padding: 0 10px 0 10px;">
+<div class="twikiToc"><span class="twikiTocTitle">Page contents</span> <ul>
+<li> <a href="#Features"> Features</a>
+</li> <li> <a href="#Syntax"> Syntax</a> <ul>
+<li> <a href="#Positioning_the_comment"> Positioning the comment</a> <ul>
+<li> <a href="#Location_relative_to_COMMENT_tag"> Location relative to <code>%COMMENT</code> tag</a>
+</li> <li> <a href="#Location_relative_to_a_TWiki_anc"> Location relative to a TWiki anchor</a>
+</li> <li> <a href="#Location_relative_to_an_arbitrar"> Location relative to an arbitrary text string</a>
+</li></ul> 
+</li> <li> <a href="#Default_templates"> Default templates</a>
+</li></ul> 
+</li> <li> <a href="#Customization"> Customization</a> <ul>
+<li> <a href="#Defining_custom_templates"> Defining custom templates</a>
+</li> <li> <a href="#Per_topic_custom_comment_templat"> Per topic custom comment template</a>
+</li> <li> <a href="#Customization_example"> Customization example</a>
+</li> <li> <a href="#The_PROMPT_template"> The PROMPT template</a> <ul>
+<li> <a href="#Providing_attribute_values"> Providing attribute values</a>
+</li> <li> <a href="#Special_variables"> Special variables</a>
+</li> <li> <a href="#Customization_example_AN1"> Customization example</a>
+</li></ul> 
+</li> <li> <a href="#The_OUTPUT_template"> The OUTPUT template</a>
+</li></ul> 
+</li> <li> <a href="#Plugin_Settings"> Plugin Settings</a>
+</li> <li> <a href="#Plugin_Installation_Instructions"> Plugin Installation Instructions</a>
+</li> <li> <a href="#Plugin_Info"> Plugin Info</a>
+</li></ul> 
+</div>
+</div></sticky>
+<strong>The Comment Plugin lets users quickly post comments to a page without an edit/preview/save cycle.</strong>
+<p />
+<strong><em>Related topics:</em></strong> <a href="/bin/view/TWiki/CommentPluginTemplate" class="twikiLink">CommentPluginTemplates</a>, <a href="/bin/view/TWiki/CommentPluginExamples" class="twikiLink">CommentPluginExamples</a>
+<p />
+<h2><a name="Features"></a> Features </h2>
+<p />
+Inserts an edit box into the page that allows users to type in and save comments. Comments can be made <ul>
+<li> in different formats (as defined by a template),
+</li> <li> in both forward and reverse chronological order,  
+</li> <li> signed or unsigned, dated or undated (as defined by a template),
+</li> <li> in other topics, or other positions within the current topic.
+</li></ul> 
+<p />
+<h2><a name="Syntax"></a> Syntax </h2>
+<p />
+<a name="StandardAttrs"></a>
+Write <code>%COMMENT{<i>attributes</i>}%</code> anywhere in a TWiki topic.
+<p /> <ul>
+<li> A <code>%COMMENT%</code> without parameters shows a simple text box.
+</li> <li> A <code>%COMMENT{}%</code> can handle the following parameters:                 <table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">     		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Parameter</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Default</font></a> </th>		</tr>     		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>type</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> This is the name of the template to use for this comment. Comment templates are defined in a TWiki template - see <a href="/bin/view/TWiki/CommentPlugin#TemPlates" class="twikiCurrentTopicLink twikiAnchorLink">customization</a>. If this attribute is not defined, the type is whatever is defined by COMMENTPLUGIN_DEFAULT_TYPE, either in this topic or in your <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>. </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> <code>"below"</code> </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>default</code> </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Default text to put into the textarea of the prompt. </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> &nbsp; </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>target</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Name of the topic to add the comment to </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> the current topic </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>location</code> </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Regular expression specifying the comment location in the target topic. Read <em>carefully</em> the <a href="/bin/view/TWiki/CommentPlugin" class="twikiCurrentTopicLink twikiLink">CommentPlugin</a> documentation! </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> &nbsp; </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>mode</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> For compatibility with older versions only, synonymous with <code>type</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> &nbsp; </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>nonotify</code> </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Set to "on" to disable change notification for target topics </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> <code>"off"</code> </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>noform</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Set to "on" to disable the automatic form that encloses your comment block - <em>remember</em> to insert <code>&lt;form&gt;</code> tags yourself! See <a href="/bin/view/TWiki/CommentPluginExamples#noform" class="twikiAnchorLink">CommentPluginExamples#noform</a> for an example. </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> <code>"off"</code> </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>nopost</code> </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Set to "on" to disable insertion of the posted text into the topic. </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> <code>"off"</code> </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>remove</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Set to "on" to remove the comment prompt after the first time it is clicked. </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> <code>"off"</code> </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>button</code> </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Button label text </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> <code>"Add comment"</code> </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>emailto</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> Send comment by email. Use comma "," to seperate multiple email addresses. This feature is disabled by default. To enable this feature, please set up "$TWiki::cfg{Plugins}{CommentPlugin}{EmailEnabled} = 1;". </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> &nbsp; </td>		</tr>     </table>
+</li></ul> 
+<p />
+(See also <a href="/bin/view/TWiki/CommentPlugin#MoreAttrs" class="twikiCurrentTopicLink twikiAnchorLink">additional attributes</a>)
+<p />
+<h3><a name="Positioning_the_comment"></a> Positioning the comment </h3>
+<p />
+<code>%COMMENT</code> supports several ways to specify <em>where</em> a comment should be inserted in the target topic. This is referred to as the <em>location</em> of the comment.
+<p />
+<h4><a name="Location_relative_to_COMMENT_tag"></a> Location relative to <code>%COMMENT</code> tag </h4>
+<p />
+The default <em>location</em> is the <code>%COMMENT</code> tag itself. For example:
+<pre>
+&#37;COMMENT{type&#61;&#34;below&#34;}&#37;
+</pre>
+will add comments in the current topic, directly below the <code>%COMMENT</code> tag.
+<p />
+<h4><a name="Location_relative_to_a_TWiki_anc"></a> Location relative to a TWiki anchor </h4>
+<p />
+The <code>target</code> attribute may specify a web, and may also specify an anchor within the target topic; for example, 
+<pre>
+&#37;COMMENT{type&#61;&#34;above&#34; target&#61;&#34;&#37;USERSWEB&#37;.PersonalRemarks#InsertHere&#34;}&#37;
+</pre>
+This uses a standard TWiki in-topic anchor as the insertion location. See <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a> for more about TWiki anchors.
+<p />
+<h4><a name="Location_relative_to_an_arbitrar"></a> Location relative to an arbitrary text string </h4>
+<p />
+Getting more sophisticated, you can also specify a regular expression for the target location using the <code>location</code> parameter. The target topic is searched for the regular expression, and the comment inserted relative to the string that the search matched. For example,
+<pre>
+&#37;COMMENT{type&#61;&#34;above&#34; location&#61;&#34;Flights of Fancy&#34;}&#37;
+</pre>
+will place comments above the first occurrence of the string <code>Flights of Fancy</code> in the current topic.
+<p />
+<strong>Warning</strong> of course, if a user's comment contains the string "Flights of Fancy" they may and up <em>changing the location</em> for the next comment! Also, if you use a tag in the location, then you've just inserted another tag in the page that contains the <code>%COMMENT</code>! So be very careful how you specify the RE for <code>location</code>. Note that the RE is matched using perl "multiple line" mode, so ^ and $ match the start of a line and the end of a line respectively. <br /> 
+Also note that you cannot have the text <code>location="</code> just before the location.
+<p />
+I look forward to someone leveraging this feature to create - for example - threaded conversations using <code>%COMMENT</code>.
+<p />
+If you specify an anchor <em>and</em> a <code>location</code>, the anchor will be ignored.
+<p />
+<h3><a name="Default_templates"></a> Default templates </h3>
+<p />
+Templates are used to define the "comment style" i.e. how comments appear in the page. The default is to add comments in "Blog like" style using bulleted lists, with the most recent comment at the top, but many other styles are available such as tables or Wiki thread mode comments. It is easy to define your own customer styles as well.
+<p />
+A set of default comment templates are shipped with the plugin - see also <a href="/bin/view/TWiki/CommentPluginTemplate" class="twikiLink">CommentPluginTemplates</a>:
+<table cellspacing="0" id="table2" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=0;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Template type</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=1;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>top</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Comments, signed and dated (server time), added at top of the topic (the anchor is ignored) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>bottom</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Comments, signed and dated (server time), added at end of the target topic (the anchor is ignored) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>above</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Comments, signed and dated (server time), added immediately before the target anchor, or the <code>%COMMENT</code> if no anchor is specified </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>below</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Comments, signed and dated (server time), added immediately below the target anchor, or the <code>%COMMENT</code> if no anchor is specified </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>belowthreadmode</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Comments, signed and dated, added recurse after comment box </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>threadmode</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Wiki thread mode comment, signed and dated (server time) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>tableprepend</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Comments, signed and dated (server time), formatted as an HTML table row, added below the anchor (which must be in an HTML &lt;table&gt;) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>tableappend</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Comments, signed and dated (server time), formatted as an HTML table row, added above the anchor (which must be in an HTML &lt;table&gt;) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>action</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Action added to action table directly above comment box (see <a href="/bin/view/TWiki/CommentPlugin#PluginInstallation" class="twikiCurrentTopicLink twikiAnchorLink">Plugin Installation Instructions</a> below for important notes) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>table</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Tablerows adding on end </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>toctalk</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Talk using TOC adding on end </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>bookmark</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Create a list of annotated bookmarks </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>return</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Post to a different topic and return </td>
+		</tr></table>
+<p />
+Your local installation may add more template types as well - see <a href="/bin/view/TWiki/CommentPlugin#TemPlates" class="twikiCurrentTopicLink twikiAnchorLink">Customization</a>, below.
+<p />
+<a name="TemPlates"></a>
+<h2><a name="Customization"></a> Customization </h2>
+<p />
+Customization of the comment plugin requires <ul>
+<li> familiarity with HTML forms
+</li> <li> some familiarity with the <a href="/bin/view/TWiki/TWikiTemplates" class="twikiLink">TWiki templating language</a>.
+</li></ul> 
+<p />
+To define a comment type, you have to provide two simple template definitions in the template file; one for the prompt box, and one for the generated output. If we have a template type "mytype", these are named <code>PROMPT:mytype</code> and <code>OUTPUT:mytype</code> respectively. See <code>comments.tmpl</code> in the templates directory for examples.
+<p />
+The plugin picks up these template definitions from a standard TWiki template file, <code>templates/comments.tmpl</code>. This allows different templates to be defined for different TWiki skins.
+<p />
+<a name="CustomTemplates"></a>
+<h3><a name="Defining_custom_templates"></a> Defining custom templates </h3>
+<p />
+By default, <code>templates/comments.tmpl</code> includes the topic <a href="/bin/view/TWiki/CommentPluginTemplate" class="twikiLink">CommentPluginTemplate</a>, which contains all the shipped standard templates and in turn includes TWiki.UserCommentsTemplate that can include non-standard customizations.
+<p />
+This allows for several levels of customization: <ol>
+<li> To <strong>override all default templates, everywhere</strong>, change <code>comments.tmpl</code> to include a different topic (this customization will be lost next time you upgrade, though).
+</li> <li> To add <strong>site-wide local template customizations</strong>, add them to <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/TWiki/UserCommentsTemplate?topicparent=TWiki.CommentPlugin;nowysiwyg=0" rel="nofollow" title="UserCommentsTemplate (this topic does not yet exist; you can create it)">UserCommentsTemplate</a></span> (create if it does not exist yet). You can redefine the standard templates here if you want, and your definitions will override the standard definitions.
+</li> <li> To override templates on a <strong>web-by-web basis</strong>, add a topic <code>UserCommentsTemplate</code> to the web (this will replace TWiki.UserCommentsTemplate)
+</li> <li> To override templates <strong>for a specific skin</strong>, add them to TWiki.UserComments&lt;Skin&gt;Template (where &lt;Skin&gt; is the name of the skin with the first letter capitalized, e.g. Pattern)
+</li></ol> 
+<p />
+<a name="PerTopicTemplate"></a>
+<h3><a name="Per_topic_custom_comment_templat"></a> Per topic custom comment template </h3>
+<p />
+You can also define a <strong>comment template in a topic</strong>, by passing the topic location with a <code>templatetopic</code> parameter. For example:
+<pre>
+&#37;COMMENT{type&#61;&#34;blogpost&#34; templatetopic&#61;&#34;BlogPostCommentTemplate&#34; target&#61;&#34;&#37;TOPIC&#37;&#34; button&#61;&#34;Add comment&#34; }&#37;
+</pre>
+<p />
+<code>templatetopic</code> accepts <code>topic</code> or <code>web.topic</code> syntax. See an example in <a href="/bin/view/TWiki/CommentPluginExamples#TemplateTopic" class="twikiAnchorLink">CommentPluginExamples#TemplateTopic</a>.
+<p />
+If you use any topic other than <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/TWiki/UserCommentTemplate?topicparent=TWiki.CommentPlugin;nowysiwyg=0" rel="nofollow" title="UserCommentTemplate (this topic does not yet exist; you can create it)">UserCommentTemplate</a></span>, it is critically important that you include this line at the end of your comment template topic:
+<pre>
+%TMPL:INCLUDE{"%SYSTEMWEB%.CommentPlugin"}%
+</pre>
+Without this line your templates will not be picked up.
+<p />
+<img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Templates are picked up by following the <a href="/bin/view/TWiki/TWikiTemplates#Finding_Templates" class="twikiAnchorLink">standard TWiki rules</a> for locating template files. Note that you can use <code>%TMPL:INCLUDE%</code> to include other files of templates. <br /> 
+<img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Note that from TWiki release 4.1.0 leading and trailing whitespace is no longer stripped. This means that when you upgrade to TWiki 4.1.X you may need to remove the first line break in your custom comment templates. See <a href="/bin/view/TWiki/TWikiReleaseNotes04x01" class="twikiLink">TWikiReleaseNotes04x01</a> for more information.
+<p />
+<h3><a name="Customization_example"></a> Customization example </h3>
+<p />
+Provide both a <code>PROMPT</code> and an <code>OUTPUT</code> definition:
+<p />
+<pre>
+&#37;TMPL:DEF{PROMPT:myComment}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{OUTPUT:myComment}&#37;&#37;TMPL:P{outputoneliner}&#37;&#37;POS:TOP&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p />
+Call your custom comment with:
+<p />
+<pre>
+&#37;COMMENT{type&#61;&#34;myComment&#34;}&#37;
+</pre>
+<p />
+<h3><a name="The_PROMPT_template"></a> The <code>PROMPT</code> template </h3>
+<p />
+The <code>PROMPT</code> template defines the contents of an HTML form that is used to capture the comment. This form invokes the comment generator when submitted. Parameters to the comment generator are defined using standard HTML input fields, such as <code>input</code>, <code>textarea</code> and <code>select</code>. The user enters values for these parameters, and these are then available when the <code>OUTPUT</code> template is expanded, in the form of <code>%URLPARAM%</code>s.
+<p />
+<strong>Note</strong> that you must define a "submit" button if you want the form to work!
+<p />
+Only the input fields of the form need be defined. The plugin automatically generates the <code>&lt;form&gt;</code> and <code>&lt;/form&gt;</code> tags, with these two exceptions:
+<p /> <ol>
+<li> The COMMENT has a <code>noform="on"</code> parameter. In this case, the <code>PROMPT</code> template has to specify the form tags and some additional hidden input fields. See <a href="/bin/view/TWiki/CommentPluginExamples#noform" class="twikiAnchorLink">CommentPluginExamples#noform</a> example.
+</li> <li> The <code>PROMPT</code> template contains <code>%COMMENTFORMSTART%</code> and <code>%COMMENTFORMEND%</code>, which gives control over where to add the form tags and the hidden input fields: <ul>
+<li> <code>%COMMENTFORMSTART%</code> - HTML form start tag
+</li> <li> <code>%COMMENTFORMEND%</code> - hidden input fields and HTML form end tag 
+</li></ul> 
+</li></ol> 
+<p />
+The latter feature can be used to define a <code>PROMPT</code> template that contains more than one form, such as a comment plugin prompt form, and a second form with a "notify authors" button (see <a href="http://twiki.org/cgi-bin/view/Plugins/NotifyAuthorsPlugin" target="_top" title="'Plugins.NotifyAuthorsPlugin' on TWiki.org" class="interwikiLink">TWiki:Plugins.NotifyAuthorsPlugin</a>).
+<p />
+Example <code>PROMPT</code> template with two forms:
+<p />
+<pre>
+&#37;TMPL:DEF{PROMPT:two&#95;form&#95;demo}&#37;
+&#37;COMMENTFORMSTART&#37; &#60;!-- form start tag --&#62;
+&#60;textarea &#37;DISABLED&#37; rows&#61;&#34;&#37;rows&#124;5&#37;&#34; cols&#61;&#34;&#37;cols&#124;80&#37;&#34; name&#61;&#34;comment&#34;&#62;&#60;/textarea&#62;
+&#60;input &#37;DISABLED&#37; type&#61;&#34;submit&#34; value&#61;&#34;&#37;button&#124;Add comment&#37;&#34; class&#61;&#34;twikiButton&#34; /&#62;
+&#37;COMMENTFORMEND&#37; &#60;!-- hidden input fields and form end tag --&#62;
+&#37;NOTIFYAUTHORS&#37; &#60;!-- second form with notify authors button --&#62;
+&#37;TMPL:END&#37;
+</pre>
+<p />
+<a name="MoreAttrs"></a>
+<h4><a name="Providing_attribute_values"></a> Providing attribute values </h4>
+<p />
+If an attribute is given to the <code>%COMMENT</code> tag that is not one of the <a href="/bin/view/TWiki/CommentPlugin#StandardAttrs" class="twikiCurrentTopicLink twikiAnchorLink">standard attributes</a>, then that attribute is taken as the name of a parameter to be expanded in the <code>PROMPT</code> template. Expressions in the template of the form <code>%</code><i>param</i><code>|</code><i>default</i><code>%</code> (e.g. <code>%rows|3%</code>, <code>%button|Push me%</code>) are expanded to the values given in the <code>%COMMENT</code>. For example, if the <code>PROMPT</code> template 'example' contains:
+<pre>
+&lt;textarea rows=%rows|3% cols="%cols|50%" value="%tval|Rubbish%">
+</pre>
+and the %COMMENT tag is:
+<pre>
+%COMMENT{type="example" cols="75"}%
+</pre>
+then the template will be expanded as
+<pre>
+&lt;textarea rows="3" cols="75" value="Rubbish">
+</pre>
+<p />
+<h4><a name="Special_variables"></a> Special variables </h4>
+<p />
+As well as support for all the usual TWiki variables in templates, the following special variables are supported in the <code>PROMPT</code> definition:
+       <table cellspacing="0" id="table3" cellpadding="0" class="twikiTable" rules="all" border="1">    
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=0;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Variable</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=1;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description</font></a> </th>
+		</tr>    
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>%DISABLED%</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Set to 'disabled' when you cannot comment (e.g. in preview mode). </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>%MESSAGE%</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> The text specified by <code>default</code>. This may be overridden by a helpful message when the prompt is DISABLED. </td>
+		</tr>    </table>
+<p />
+<strong>EXPERT</strong> Note that when a comment is saved, the TWiki <code>save</code> script is invoked on the target topic, with a number of parameters provided by the comment form. Normally the <a href="/bin/view/TWiki/CommentPlugin" class="twikiCurrentTopicLink twikiLink">CommentPlugin</a> will provide these fields in the form, but experts can also provide the fields themselves in order to get finer control over what is submitted, or you might want to define your own HTML forms that do comment submission. The parameters that the <a href="/bin/view/TWiki/CommentPlugin" class="twikiCurrentTopicLink twikiLink">CommentPlugin</a> recognises are as follows:
+<table cellspacing="0" id="table4" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=0;table=4;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">CGI parameter</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/CommentPlugin?sortcol=1;table=4;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_action</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Must be <code>save</code> to get the <a href="/bin/view/TWiki/CommentPlugin" class="twikiCurrentTopicLink twikiLink">CommentPlugin</a> to perform </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_type</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Type of the OUTPUT template </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_index</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Zero-based index of the %COMMENT in the source topic. Used to place a post relative to an existing %COMMENT. </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_anchor</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Anchor taken from the <code>target</code> spec </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_location</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> As passed to %COMMENT </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_nonotify</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> As passed to %COMMENT </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_remove</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Zero-based index of a %COMMENT to remove from the target topic </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>comment_nopost</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> As passed to %COMMENT </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>comment_templatetopic</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> As passed to %COMMENT </td>
+		</tr></table>
+Note that <code>comment_location</code> overrides <code>comment_anchor</code>, and both override <code>comment_index</code>. Example, shows an "I Approve" button that adds your approval signature to the end of the topic:
+<pre>
+&#60;form method&#61;&#34;post&#34; action&#61;&#34;&#37;SCRIPTURL{save}&#37;/&#37;WEB&#37;/&#37;TOPIC&#37;&#34;&#62;
+&#60;input type&#61;&#34;submit&#34; value&#61;&#34;I Approve&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;comment&#95;action&#34; value&#61;&#34;save&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;comment&#95;type&#34; value&#61;&#34;bottom&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;comment&#34; value&#61;&#34;I Approve&#34; /&#62;
+&#60;/form&#62;
+</pre>
+<p />
+<h4><a name="Customization_example_AN1"></a> Customization example with custom form template </h4>
+<p />
+Write a custom form in a topic. <ul>
+<li> In the form set the location of the prompt with <code>%COMMENTPROMPT%</code>; the prompt will be positioned here.
+</li> <li> In %COMMENT use parameter <code>noform="on"</code>
+</li> <li> In %COMMENT use parameter <code>templatetopic</code> to point to the topic with the form template
+</li></ul> 
+<p />
+Example form:
+<pre>
+&#37;TMPL:DEF{FORM:example}&#37;
+&#60;form method&#61;&#34;post&#34; action&#61;&#34;&#37;SCRIPTURL{save}&#37;/&#37;BASEWEB&#37;/&#37;BASETOPIC&#37;&#34; enctype&#61;&#34;application/x-www-form-urlencoded&#34; name&#61;&#34;examplecomment&#34; id&#61;&#34;examplecomment&#34;&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;redirectto&#34; value&#61;&#34;&#37;BASEWEB&#37;.&#37;BASETOPIC&#37;&#34; /&#62;
+&#37;COMMENTPROMPT&#37;
+&#60;/form&#62;
+&#37;TMPL:END&#37;
+</pre>
+<p />
+Example comment:
+<pre>
+&#37;COMMENT{noform&#61;&#34;on&#34; type&#61;&#34;example&#34; templatetopic&#61;&#34;Sandbox.CommentPluginTemplateExample&#34; target&#61;&#34;&#37;TOPIC&#37;&#34; button&#61;&#34;Add comment&#34; }&#37;
+</pre>
+<p />
+<h3><a name="The_OUTPUT_template"></a> The <code>OUTPUT</code> template </h3>
+<p />
+The <code>OUTPUT</code> template defines the format for the text that actually gets embedded into the topic. All the usual TWiki variables are available in the <code>PROMPT</code> definition, but note that they get expanded <em>when the comment is inserted in the text</em>, so time, date and username will refer to the time and date when the comment was made, and the user who made it.
+<p />
+There are also four position tags that are used to indicate where the comment should be placed, relative to the <code>location</code> defined in the <code>%COMMENT</code> tag:
+<p />
+        <table cellspacing="0" id="table5" cellpadding="0" class="twikiTable" rules="all" border="1">    
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>%POS:TOP%</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> If present, comments will be inserted <strong>at the top of the topic</strong> i.e. before any other text </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>%POS:BOTTOM%</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> If present, comments will be inserted <strong>at the end of the topic</strong> i.e. after all existing text </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>%POS:BEFORE%</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> If present, comments will be inserted <b>immediately before the <code>%COMMENT%</code> tag</b> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>%POS:AFTER%</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> If present, comments will be inserted <b>immediately after the <code>%COMMENT%</code> tag</b> </td>
+		</tr>    </table>
+<p />
+Note that these position tags are obviously mutually exclusive. If you define more than one, the result is undefined. If none is present, the default is taken from the plugin setting <code>COMMENTPLUGIN_DEFAULT_TYPE</code>
+<p />
+     <table cellspacing="0" id="table6" cellpadding="0" class="twikiTable" rules="all" border="1">    
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>%COMMENTPROMPT%</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Use with a custom form. If present, the comment prompt will be positioned here. </td>
+		</tr>    </table>
+<p />
+All the usual <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> that can be used in a topic template can also be used in an <code>OUTPUT</code> template. See <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> for details.
+<p />
+<h2><a name="Plugin_Settings"></a> Plugin Settings </h2>
+<p />
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="twistyIdTWikiCommentPlugin1show" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Show details <img alt="toggleopen.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleopen.gif" /> </span></a> </span> <span id="twistyIdTWikiCommentPlugin1hide" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Hide details <img alt="toggleclose.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleclose.gif" /> </span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="twistyIdTWikiCommentPlugin1toggle" class="twistyContent twikiMakeHidden twistyInited">
+<p />
+Plugin settings are stored as preferences settings. Do <strong><em>not</em></strong> change the settings here, they are here only for illustration purposes showing the default values. Define the settings in <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=TWiki.CommentPlugin;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span>, in a WebPreferences or in individual topics. For example, to customize the <code>COMMENTPLUGIN_DEFAULT_TYPE</code> setting, add a <code>* Set COMMENTPLUGIN_DEFAULT_TYPE = ...</code> bullet in Main.TWikiPreferences.
+<p /> <ul>
+<li> Name of file in the <code>twiki/templates</code> directory that contains the comment templates. The default 'comments.tmpl' automatically includes user templates from <a href="/bin/view/TWiki/CommentPluginTemplate" class="twikiLink">TWiki.CommentPluginTemplate</a>, which in turn includes <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/TWiki/UserCommentsTemplate?topicparent=TWiki.CommentPlugin;nowysiwyg=0" rel="nofollow" title="UserCommentsTemplate (this topic does not yet exist; you can create it)">TWiki.UserCommentsTemplate</a></span>. <ul>
+<li> Set COMMENTPLUGIN_TEMPLATES = comments
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Default template type (above or below) : <ul>
+<li> Set COMMENTPLUGIN_DEFAULT_TYPE = above
+</li></ul> 
+</li></ul> 
+<p />
+</div></div> <!--/twistyPlugin-->
+<p />
+<a name="PluginInstallation"></a>
+<h2><a name="Plugin_Installation_Instructions"></a> Plugin Installation Instructions </h2>
+<p />
+This plugin is pre-installed. TWiki administrators can upgrade the plugin as needed on the TWiki server.
+<p />
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="twistyIdTWikiCommentPlugin2show" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Show details <img alt="toggleopen.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleopen.gif" /> </span></a> </span> <span id="twistyIdTWikiCommentPlugin2hide" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Hide details <img alt="toggleclose.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleclose.gif" /> </span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="twistyIdTWikiCommentPlugin2toggle" class="twistyContent twikiMakeHidden twistyInited">
+<p /> <ul>
+<li> For an <strong><em>automated installation</em></strong>, run the <a href="https://www.cs.uic.edu/bin/configure" target="_top">configure</a> script and follow "Find More Extensions" in the in the <strong><em>Extensions</em></strong> section. <ul>
+<li> See the <a href="http://twiki.org/cgi-bin/view/Plugins/BuildContribInstallationSupplement" target="_top">installation supplement</a> on TWiki.org for more information.
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Or, follow these <strong><em>manual installation</em></strong> steps: <ul>
+<li> Download the ZIP file from the extension home on twiki.org (see below).
+</li> <li> Unzip <code><b>CommentPlugin.zip</b></code> in your twiki installation directory.
+</li> <li> Set the ownership of the extracted directories and files to the webserver user.
+</li> <li> Install the dependencies (if any).
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Plugin <strong><em>configuration and testing</em></strong>:  <ul>
+<li> Run the <a href="https://www.cs.uic.edu/bin/configure" target="_top">configure</a> script and enable the plugin in the <strong><em>Plugins</em></strong> section.
+</li> <li> Configure additional plugin settings in the <strong><em>Extensions</em></strong> section if needed.
+</li> <li> Test if the installation was successful using the examples provided.
+</li></ul> 
+</li></ul> 
+<p />
+<p />
+Note that if you want to use the <code>action</code> template then you must also: <ol>
+<li> Install the <a href="http://twiki.org/cgi-bin/view/Plugins/ActionTrackerPlugin" target="_top" title="'Plugins/ActionTrackerPlugin' on TWiki.org" class="interwikiLink">TWiki:Plugins/ActionTrackerPlugin</a>;
+</li> <li> Put the CommentPlugin <strong>before</strong> the ActionTrackerPlugin in the <code>{PluginsOrder}</code> configuration option (in <code>configure</code>)
+</li></ol> 
+<p />
+</div></div> <!--/twistyPlugin-->
+<p />
+<h2><a name="Plugin_Info"></a> Plugin Info </h2>
+<p /> <ul>
+<li> Set SHORTDESCRIPTION = Quickly post comments to a page without an edit/preview/save cycle.
+</li></ul> 
+<p />
+ <table width="100%" cellspacing="0" id="table7" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Plugin Author: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://twiki.org/cgi-bin/view/Main/CrawfordCurrie" target="_top" title="'Main.CrawfordCurrie' on TWiki.org" class="interwikiLink">TWiki:Main.CrawfordCurrie</a> <a href="http://www.c-dot.co.uk" target="_top">http://www.c-dot.co.uk</a> inspired by the work of <a href="http://twiki.org/cgi-bin/view/Main/DavidWeller" target="_top" title="'Main.DavidWeller' on TWiki.org" class="interwikiLink">TWiki:Main.DavidWeller</a> and <a href="http://twiki.org/cgi-bin/view/Main/PeterMasiar" target="_top" title="'Main.PeterMasiar' on TWiki.org" class="interwikiLink">TWiki:Main.PeterMasiar</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Copyright: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> &copy; 2004, <a href="http://twiki.org/cgi-bin/view/Main/CrawfordCurrie" target="_top" title="'Main.CrawfordCurrie' on TWiki.org" class="interwikiLink">TWiki:Main.CrawfordCurrie</a>; <br />  &copy; 2009 <a href="http://twiki.org/cgi-bin/view/Main/SopanShewale" target="_top" title="'Main.SopanShewale' on TWiki.org" class="interwikiLink">TWiki:Main.SopanShewale</a>; <br />  &copy; 2004-2013 <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a>; <br />  &copy; 2004-2013 <a href="http://twiki.org/cgi-bin/view/TWiki/TWikiContributor" target="_top" title="'TWiki.TWikiContributor' on TWiki.org" class="interwikiLink">TWiki:TWiki.TWikiContributor</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> License: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> GPL (<a href="http://www.gnu.org/copyleft/gpl.html" target="_top">GNU General Public License</a>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Plugin Version: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> 2013-02-10 </td>
+		</tr></table>
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="twistyIdTWikiCommentPlugin3show" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Show Change History <img alt="toggleopen.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleopen.gif" /></span></a> </span> <span id="twistyIdTWikiCommentPlugin3hide" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Hide Change History <img alt="toggleclose.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleclose.gif" /> </span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="twistyIdTWikiCommentPlugin3toggle" class="twistyContent twikiMakeHidden twistyInited">
+<table width="100%" cellspacing="0" id="table8" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2013-02-10: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7141" target="_top" title="'Item7141' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7141</a>: Control over where to add the form tag in comment PROMPT template -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2013-02-06: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7139" target="_top" title="'Item7139' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7139</a>: Use BUBBLESIGNATUREFORMAT if defined, showing nice bubble boxes around around default comments -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2013-01-09: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7123" target="_top" title="'Item7123' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7123</a>: Use TWISTY in plugin settings section, installation instructions and change history </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2013-01-04: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7115" target="_top" title="'Item7115' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7115</a>: Configurable signatures with profile pictures - use SIGNATUREFORMAT setting in default comment box signature -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2012-11-16: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7039" target="_top" title="'Item7039' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7039</a>: Adapting it to the enhnaced TWiki::Func::getScriptUrl() -- <a href="http://twiki.org/cgi-bin/view/Main/HideyoImazu" target="_top" title="'Main.HideyoImazu' on TWiki.org" class="interwikiLink">TWiki:Main.HideyoImazu</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2012-11-12: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6967" target="_top" title="'Item6967' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6967</a>: Better layout of default comment box -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2012-11-11: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7020" target="_top" title="'Item7020' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7020</a>: Categorize TWiki Variable COMMENT -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2012-09-26: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6945" target="_top" title="'Item6945' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6945</a>: Send comment to multiple email addresses. </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2012-09-26: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6944" target="_top" title="'Item6944' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6944</a>: Get script URL with TWiki::Func::getMasterWebScriptUrl. </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2011-06-16: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6754" target="_top" title="'Item6754' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6754</a>: Fix for action comment template missing %ENDACTION% -- <a href="http://twiki.org/cgi-bin/view/Main/JohnRouillard" target="_top" title="'Main.JohnRouillard' on TWiki.org" class="interwikiLink">TWiki:Main.JohnRouillard</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2011-06-12: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6725" target="_top" title="'Item6725' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6725</a>: Change global package variables from "use vars" to "our"; adding NO_PREFS_IN_TOPIC in plugin package -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2011-03-28: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6672" target="_top" title="'Item6672' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6672</a> - doc improvements: Adding link to HIDE </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2010-12-11: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6530" target="_top" title="'Item6530' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6530</a> - doc improvements -- <a href="http://twiki.org/cgi-bin/view/Main/ScottGutman" target="_top" title="'Main.ScottGutman' on TWiki.org" class="interwikiLink">TWiki:Main.ScottGutman</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2010-05-16: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6433" target="_top" title="'Item6433' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6433</a> - doc improvements </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2010-03-19 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6404" target="_top" title="'Item6404' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6404</a> Use $br in newline parameter for break tag instead of turning off encoding -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main/PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main/PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2010-02-27 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6276" target="_top" title="'Item6276' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6276</a> Cannot specify percentBRpercent for newline value -- <a href="http://twiki.org/cgi-bin/view/Main/SopanShewale" target="_top" title="'Main/SopanShewale' on TWiki.org" class="interwikiLink">TWiki:Main/SopanShewale</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2009-01-21 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6163" target="_top" title="'Item6163' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6163</a> Fix for Comment Plugin losing data if target anchor is missing -- <a href="http://twiki.org/cgi-bin/view/Main/TimotheLitt" target="_top" title="'Main/TimotheLitt' on TWiki.org" class="interwikiLink">TWiki:Main/TimotheLitt</a> and <a href="http://twiki.org/cgi-bin/view/Main/SopanShewale" target="_top" title="'Main/SopanShewale' on TWiki.org" class="interwikiLink">TWiki:Main/SopanShewale</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 03 Aug 2008 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> The TWiki 4.2.1 release version </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 11 Apr 2008 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item5518" target="_top" title="'Item5518' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item5518</a> corrected the template definition for bulletabove </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 5 Sep 2007 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item3689" target="_top" title="'Item3689' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item3689</a> corrected <code>location</code> handling <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item4181" target="_top" title="'Item4181' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item4181</a> added <a href="/bin/view/TWiki/VarCOMMENT" class="twikiLink">VarCOMMENT</a> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item4402" target="_top" title="'Item4402' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item4402</a> corrected access check </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 22 Jun 2007 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Removed the long-deprecated <code>%TIME</code> (use %GMTIME instead). Minor doc changes </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 14021 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item3755" target="_top" title="'Item3755' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item3755</a> Fixed incorrect handling of line terminators when targeting an anchor </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 13311 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Added option to define a comment template in any topic. Pass the topic location with <code>templatetopic</code> (either <code>topic</code> or <code>web.topic</code>). See an example in <a href="/bin/view/TWiki/CommentPluginExamples#TemplateTopic" class="twikiAnchorLink">CommentPluginExamples:templatetopic</a>. </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 12822 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item3598" target="_top" title="'Item3598' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item3598</a> minor doc fixes </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 12750 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item3510" target="_top" title="'Item3510' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item3510</a> added a note about the changed template spec in TWiki 4.1.0. Code remains unchanged </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 11358 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item2802" target="_top" title="'Item2802' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item2802</a> moved SHORTDESCRIPTION to .pm. Coded up TWiki:Main/PankajPant's suggestions as <code>nopost</code> and <code>remove</code>. Added default text for the %COMMENT as requested by <a href="http://twiki.org/cgi-bin/view/Main/AndyGlew" target="_top" title="'Main.AndyGlew' on TWiki.org" class="interwikiLink">TWiki:Main.AndyGlew</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 11118 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item2322" target="_top" title="'Item2322' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item2322</a> removed span tag around oneliner bullet output </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 8788 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item1465" target="_top" title="'Item1465' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item1465</a>  Item1577: reverted 8433 to fix inclusion of correct user templates </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 8787 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item1573" target="_top" title="'Item1573' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item1573</a>  renamed standard templates topic to avoid naming clash on Windows, where filenames are case-insensitive </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 8433 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item1465" target="_top" title="'Item1465' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item1465</a>  Fix 'TWiki.' to '%TWIKIWEB%.'; also fixed include 'UserComments' to 'UserCommentsTemplate' (at least that is what the doc suggests) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 7427 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item845" target="_top" title="'Item845' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item845</a>  removed duplicate date in default comments; stick with server time </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 7251 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item810" target="_top" title="'Item810' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item810</a>  fix for user template inclusion; reorganised templates to make customisation easier </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 5906 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item143" target="_top" title="'Item143' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item143</a>  apache warning from comment plugin when CommentsTmpl.txt not found </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 5519 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> CommentPluginOnAnchorsBroken: incorporated JacobEisinger's fix </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 5518 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> CommentPluginOnAnchorsBroken: incorporated OlivierBerger's fix </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 5455 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> On Niels Kodslo's prompting, removed the global recursion prevention that I believe is no longer needed. </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 5280 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Removed templates, and some minor fixes </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 5250 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Removed newlines from prompt box </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 4902 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Changed to use viewauth. Moved templates into user topics. </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 4901 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Added templates in user webs support </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 4897 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Fixes for disabling during preview; re-enabled old legacy parameters </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 4889 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Chopped down from PeterMasiar version, removing several parameters, savecomment script, changing way templates are done. Major rewrite, atcherly. </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 4882 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Update from PeterMasiar's 2.0 version, plus documentation and small code improvements. </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> 4745 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> 06 Mar 2002 initial commit </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin-->
+<table width="100%" cellspacing="0" id="table9" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Plugin Home: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://TWiki.org/cgi-bin/view/Plugins/CommentPlugin" target="_top">http://TWiki.org/cgi-bin/view/Plugins/CommentPlugin</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Feedback: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://TWiki.org/cgi-bin/view/Plugins/CommentPluginDev" target="_top">http://TWiki.org/cgi-bin/view/Plugins/CommentPluginDev</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Appraisal: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> <a href="http://TWiki.org/cgi-bin/view/Plugins/CommentPluginAppraisal" target="_top">http://TWiki.org/cgi-bin/view/Plugins/CommentPluginAppraisal</a> </td>
+		</tr></table>
+<p />
+<strong><em>Related Topics:</em></strong> <a href="/bin/view/TWiki/CommentPluginTemplate" class="twikiLink">CommentPluginTemplates</a>, <a href="/bin/view/TWiki/CommentPluginExamples" class="twikiLink">CommentPluginExamples</a>, <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>, <a href="/bin/view/TWiki/TWikiPlugins" class="twikiLink">TWikiPlugins</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/CommentPlugin">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

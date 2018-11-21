@@ -1,0 +1,160 @@
+
+
+<html>
+
+<head>
+<style="font-family:verdana;font-size:10pt;">
+    <title>Account Creation Page</title>
+</style>    
+
+<script language = "Javascript">
+
+function orgCopy()
+{
+   document.forms[0].elements[10].value = document.forms[0].elements[7].value;
+}
+
+function isAllZeroes(str)
+{
+  var allZero = "0";
+  
+  for (var i=0; i<str.length; i++) {
+    if (allZero.indexOf(str.charAt(i)) == "-1") {
+      return false;
+    }
+  }
+  return true;
+}
+
+function validate(field)
+{
+   var valid = "0123456789"
+   var ok = "yes";
+   var temp;
+   
+   for (var i=0; i<field.value.length; i++) 
+   {
+      temp = "" + field.value.substring(i, i+1);
+      if (valid.indexOf(temp) == "-1") ok = "no";
+   }
+   if (ok == "yes") {
+     if (isAllZeroes(field.value)) ok = "no";
+   }
+   if (ok == "no") 
+   {
+      alert("Invalid CFOAP entry!\n\nThese are required fields and must be all numeric.\nFields with all zeros are NOT accepted.");
+      field.value = "";
+      field.select();
+      field.focus();
+      return false;
+   }
+   else {
+     if (field.value == document.getElementById('orgNum').value)
+       orgCopy();
+   }
+   return true;
+}
+
+function validate_all()
+{
+  var fldNames = ["chartNumber","fundNumber","organizationNumber","programNumber"];
+  
+  for (var i=0; i<fldNames.length; i++) {
+    if (!validate(document.accountForm.elements[fldNames[i]])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+</script>
+
+</head>
+
+<body>
+<h1><CENTER>Application for Biologic Resources Laboratory Account</CENTER></h1>
+<br>
+<h3> <CENTER> 
+   The following information must be provided in order to proceed
+   with the next step of the application process. Required fields 
+   are marked with an asterisk. You need a protocol on file with the
+   <A HREF="http://www.uic.edu/depts/ovcr/research/protocolreview/oacib/">OACIB</A> office. If you have any questions regarding the application 
+   process, please call Mary Urbina at 6-7040.
+</CENTER></h3>
+
+<form name="accountForm" action="servlet/AuthenticationAccount" method="post" onSubmit="return validate_all();">
+   <p>
+   
+    <TABLE BORDER = "0" ALIGN = "CENTER" CELL PADDING = "0">
+    <TR> 
+       <TD> Person Requesting Account First Name *</TD>
+       <TD><input name="personfirstName" SIZE=12></TD>
+    </TR>
+    
+    <TR>
+       <TD> Person Requesting Account Last Name *</TD>
+       <TD><input name="personlastName" SIZE=12></TD>
+    </TR>
+
+    <TR>
+       <TD> Person Requesting Account Phone Number *</TD>
+       <TD><input name="personphone" SIZE=12>e.g. 999-999-9999</TD>
+    </TR>
+    
+    <TR>
+       <TD> Person Requesting Account Email Address *</TD>
+       <TD><input name="personemail" SIZE=12></TD>
+    </TR>
+    
+
+    <TR>
+       <TD> Protocol/ACC number (e.g.XX-XXX) *</TD>
+       <TD><input name="protocolNumber" MAXLENGTH = 6 SIZE = 12></TD>
+    </TR>
+    
+    <TR>
+        <TD><P ALIGN = "CENTER"> </TD>
+        <TD><P ALIGN = "CENTER">C</TD>
+        <TD><P ALIGN = "CENTER">F</TD>
+        <TD><P ALIGN = "CENTER">O</TD>
+        <TD><P ALIGN = "CENTER">A</TD>
+        <TD><P ALIGN = "CENTER">P</TD>
+    </TR>
+
+    <TR>
+       <TD>CFOAPAL/Banner Number *</TD>
+       <TD><P ALIGN="CENTER"><input name="chartNumber" MAXLENGTH=1 SIZE = 1 onBlur = "validate(this);"></TD>
+       <TD><P ALIGN="CENTER"><input name="fundNumber" MAXLENGTH=6 SIZE=5 onBlur = "validate(this);"></TD>
+       <TD><P ALIGN="CENTER"><input name="organizationNumber" id="orgNum" MAXLENGTH=6 SIZE=5 onBlur = "validate(this);"></TD>
+       <TD>
+           <P ALIGN="CENTER">
+           <input name="accountNumber" MAXLENGTH=6 SIZE=5 value="141100" onFocus="blur();" style="background-color:#aaa;" >
+           </P>
+       </TD>
+       <TD><P ALIGN="CENTER"><input name="programNumber" MAXLENGTH=6 SIZE=5 onBlur = "validate(this);"></TD>
+    </TR>
+         
+    <TR>
+       <TD> Banner Organization Code *</TD>
+       <TD><input name="organizationCode" MAXLENGTH = 6 SIZE = 12></TD>
+       
+    </TR>
+    
+    <TR>
+       <TD> Index Code (optional) </TD>
+       <TD><input name="indexCode" MAXLENGTH=6 SIZE = 12></TD>
+    </TR>
+           
+    <TR>
+       <TD><input type ="submit" value = "Continue"></TD>
+    </TR>
+    
+    </TABLE>
+   
+    </p>    
+    
+</form>
+</body>
+</html>
+
+

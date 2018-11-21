@@ -1,0 +1,1190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> CodeS13 &lt; CS111 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS111/CodeS13?_T=2018-11-21" type="application/x-wiki" title="edit CodeS13" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS111/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS111/CodeS13"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
+.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
+.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS111/WebHome">CS111 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS111/CS111Spring2013" class="twikiLink">CS111Spring2013</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS111/CodeS13" title='Topic revision: 17 (2013-04-30 - 20:25:33)'>CodeS13</a> <span class='patternRevInfo'>(2013-04-30, Main.troy)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS111/CodeS13?t=1542827011' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS111/CodeS13' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="CS_111_Program_Design_I"></a> CS 111 - Program Design I </h1>
+<h3><a name="Sample_Code_Spring_2013"></a> Sample Code: Spring 2013 </h3> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Template.java" target="_top">Template.java</a>: Java Program Template
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect122a.java" target="_top">Lect122a.java</a>: Simple variable use in Java
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect129a.java" target="_top">Lect129a.java</a>: Perform a simple drawing with a turtle
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect129b.java" target="_top">Lect129b.java</a>: draw two squares with a turtle, one green square and one red square
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect131a.java" target="_top">Lect131a.java</a>: Draw squares using loops
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect131b.java" target="_top">Lect131b.java</a>: Draw an octogon and a hexagon
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect131c.java" target="_top">Lect131c.java</a>: Draw a larger hexagon is a larger world
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect131d.java" target="_top">Lect131d.java</a>: Have the turtle move randomly around the world
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect131e.java" target="_top">Lect131e.java</a>: Write a drawSquare() method which is used 3 times by multiple turtles.
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect205a.java" target="_top">Lect205a.java</a>: Write a drawOctogon() method that takes multiple parameters to allow for change in side length. Also include drawPolygon().
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect205b.java" target="_top">Lect205b.java</a>: Has the turtle draw on a Picture instead of a World. The modified picture is also saved.
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect207a.java" target="_top">Lect207a.java</a>: drawOctogon() allows the color and line thinkness to be specified via parameter values.
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect207b.java" target="_top">Lect207b.java</a>: includes a moveTurtle() method which can help repositioning the turtle in a Picture/World.
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect207c.java" target="_top">Lect207c.java</a>: Uses a loop to call the drawOctogon() method mutliple mutliple times from main.
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect212a.java" target="_top">Lect212a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect212b.java" target="_top">Lect212b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect212c.java" target="_top">Lect212c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect212d.java" target="_top">Lect212d.java</a>
+</li></ul> 
+<strong>Picture Manipulation Examples</strong>  <ul>
+<li> <br /> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect214a.java" target="_top">Lect214a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect214b.java" target="_top">Lect214b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect214c.java" target="_top">Lect214c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect214d.java" target="_top">Lect214d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226a.java" target="_top">Lect226a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226b.java" target="_top">Lect226b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226c.java" target="_top">Lect226c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226d.java" target="_top">Lect226d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226e.java" target="_top">Lect226e.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226f.java" target="_top">Lect226f.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226g.java" target="_top">Lect226g.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect226h.java" target="_top">Lect226h.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect228a.java" target="_top">Lect228a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect228b.java" target="_top">Lect228b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect228c.java" target="_top">Lect228c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect228d.java" target="_top">Lect228d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect305a.java" target="_top">Lect305a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect305b.java" target="_top">Lect305b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect305c.java" target="_top">Lect305c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect305d.java" target="_top">Lect305d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect305e.java" target="_top">Lect305e.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect305f.java" target="_top">Lect305f.java</a>
+</li> <li> <br /> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect307a.java" target="_top">Lect307a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect307b.java" target="_top">Lect307b.java</a>
+</li> <li> <br /> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312a.java" target="_top">Lect312a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312b.java" target="_top">Lect312b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312c.java" target="_top">Lect312c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312d.java" target="_top">Lect312d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312e.java" target="_top">Lect312e.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312f.java" target="_top">Lect312f.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312g.java" target="_top">Lect312g.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect312h.java" target="_top">Lect312h.java</a>
+</li> <li> <br /> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314a.java" target="_top">Lect314a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314b.java" target="_top">Lect314b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314c.java" target="_top">Lect314c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314d.java" target="_top">Lect314d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314e.java" target="_top">Lect314e.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314f.java" target="_top">Lect314f.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314g.java" target="_top">Lect314g.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314h.java" target="_top">Lect314h.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect314i.java" target="_top">Lect314i.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect319a.java" target="_top">Lect319a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect319b.java" target="_top">Lect319b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect319c.java" target="_top">Lect319c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect319d.java" target="_top">Lect319d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect321a.java" target="_top">Lect321a.java</a>
+</li> <li> 
+</li></ul> 
+<strong>Sound Examples</strong>  <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect321b.java" target="_top">Lect321b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect402a.java" target="_top">Lect402a.java</a> - Example if integer array usage
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect402b.java" target="_top">Lect402b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect402c.java" target="_top">Lect402c.java</a>
+</li> <li> <br /> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect404a.java" target="_top">Lect404a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect404b.java" target="_top">Lect404b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect404c.java" target="_top">Lect404c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect404d.java" target="_top">Lect404d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect404e.java" target="_top">Lect404e.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect416a.java" target="_top">Lect416a.java</a> - This code could be useful for Project 4
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect416b.java" target="_top">Lect416b.java</a> - This code could be useful for Project 4
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect418a.java" target="_top">Lect418a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect418b.java" target="_top">Lect418b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect418c.java" target="_top">Lect418c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect418d.java" target="_top">Lect418d.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect423a.java" target="_top">Lect423a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect423b.java" target="_top">Lect423b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect423c.java" target="_top">Lect423c.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect423d.java" target="_top">Lect423d.java</a>
+</li></ul> 
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect425a.java" target="_top">Lect425a.java</a>: Lect425a.java
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/QuickSort.java" target="_top">QuickSort.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/SelectionSort.java" target="_top">SelectionSort.java</a>
+</li> <li> <br /> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect430a.java" target="_top">Lect430a.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect430b.java" target="_top">Lect430b.java</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS13/Lect430c.java" target="_top">Lect430c.java</a>
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div><div class="twikiAttachments">
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
+<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS111/CodeS13?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS111/CodeS13?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS111/CodeS13?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS111/CodeS13?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS111/CodeS13?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/CS111/CodeS13?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS111/CodeS13?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect122a.java">Lect122a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect122a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-30 - 19:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect129a.java">Lect129a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect129a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-30 - 19:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect129b.java">Lect129b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect129b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-01-30 - 19:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect131a.java">Lect131a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect131a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-01 - 23:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect131b.java">Lect131b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect131b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-01 - 23:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect131c.java">Lect131c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect131c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-01 - 23:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect131d.java">Lect131d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect131d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-01 - 23:54</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect131e.java">Lect131e.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect131e.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-01 - 23:54</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect205a.java">Lect205a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect205a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-09 - 19:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect205b.java">Lect205b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect205b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-09 - 19:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect207a.java">Lect207a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect207a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-09 - 19:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect207b.java">Lect207b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect207b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-09 - 19:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect207c.java">Lect207c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect207c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-09 - 19:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect212a.java">Lect212a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect212a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-13 - 20:06</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect212b.java">Lect212b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect212b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-13 - 20:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect212c.java">Lect212c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect212c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-13 - 20:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect212d.java">Lect212d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect212d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-02-13 - 20:07</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect214a.java">Lect214a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect214a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect214b.java">Lect214b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect214b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect214c.java">Lect214c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect214c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect214d.java">Lect214d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect214d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226a.java">Lect226a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226b.java">Lect226b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226c.java">Lect226c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226d.java">Lect226d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226e.java">Lect226e.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226e.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226f.java">Lect226f.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226f.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226g.java">Lect226g.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226g.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect226h.java">Lect226h.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect226h.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect228a.java">Lect228a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect228a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect228b.java">Lect228b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect228b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect228c.java">Lect228c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect228c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect228d.java">Lect228d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect228d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-01 - 19:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect305a.java">Lect305a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect305a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-07 - 18:57</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect305b.java">Lect305b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect305b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-07 - 18:57</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect305c.java">Lect305c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect305c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-07 - 18:58</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect305d.java">Lect305d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect305d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-07 - 18:58</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect305e.java">Lect305e.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect305e.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-07 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect305f.java">Lect305f.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect305f.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-07 - 19:43</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect307a.java">Lect307a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect307a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-08 - 17:30</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect307b.java">Lect307b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect307b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-08 - 17:31</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312a.java">Lect312a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:39</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312b.java">Lect312b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:39</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312c.java">Lect312c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:39</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312d.java">Lect312d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312e.java">Lect312e.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312e.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312f.java">Lect312f.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312f.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312g.java">Lect312g.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312g.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect312h.java">Lect312h.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect312h.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-13 - 14:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314a.java">Lect314a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:26</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314b.java">Lect314b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:26</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314c.java">Lect314c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:34</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314d.java">Lect314d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:47</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314e.java">Lect314e.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314e.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:47</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314f.java">Lect314f.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314f.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:47</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314g.java">Lect314g.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314g.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:47</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314h.java">Lect314h.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314h.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:47</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect314i.java">Lect314i.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect314i.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-03-18 - 01:48</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect319a.java">Lect319a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect319a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect319b.java">Lect319b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect319b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect319c.java">Lect319c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect319c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:46</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect319d.java">Lect319d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect319d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:46</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect321a.java">Lect321a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect321a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:46</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect321b.java">Lect321b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect321b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:46</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect402a.java">Lect402a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect402a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:46</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect402b.java">Lect402b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect402b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:46</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect402c.java">Lect402c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect402c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-03 - 17:46</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect404a.java">Lect404a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect404a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:48</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect404b.java">Lect404b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect404b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect404c.java">Lect404c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect404c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect404d.java">Lect404d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect404d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect404e.java">Lect404e.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect404e.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect416a.java">Lect416a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect416a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 20:17</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect416b.java">Lect416b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect416b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-16 - 20:17</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect418a.java">Lect418a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect418a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 20:04</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect418b.java">Lect418b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect418b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 20:05</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect418c.java">Lect418c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect418c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 20:05</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect418d.java">Lect418d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect418d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-18 - 20:05</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect423a.java">Lect423a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect423a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-23 - 20:18</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect423b.java">Lect423b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect423b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-23 - 20:18</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect423c.java">Lect423c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect423c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-23 - 20:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect423d.java">Lect423d.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect423d.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-23 - 20:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect425a.java">Lect425a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect425a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-25 - 20:02</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect430a.java">Lect430a.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect430a.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-30 - 20:24</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect430b.java">Lect430b.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect430b.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-30 - 20:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/Lect430c.java">Lect430c.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=Lect430c.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-30 - 20:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/QuickSort.java">QuickSort.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=QuickSort.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-25 - 20:03</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS13/SelectionSort.java">SelectionSort.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS13?filename=SelectionSort.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-04-25 - 20:03</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/CS111/CodeS13/Template.java">Template.java</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/CS111/CodeS13?filename=Template.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2013-01-15 - 18:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS13;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> Java Program Template </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS111/CodeS13?t=1542827012' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS111/CodeS13' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS111/CodeS13?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS111/CodeS13?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r17&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS13?rev1=17;rev2=16">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS13?rev=16">r16</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS13?rev1=16;rev2=15">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS13?rev=15">r15</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS13?rev1=15;rev2=14">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS13?rev=14">r14</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS13?rev1=14;rev2=13">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS13?rev=13">r13</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS111/CodeS13?template=backlinksweb' rel='nofollow' title='Search the CS111 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS111/CodeS13?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS111/CodeS13?t=1542827012;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS111/CodeS13?template=oopsmore&amp;param1=17&amp;param2=17' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r17 - 2013-04-30 - 20:25:33 - Main.troy</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS111/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS111</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS111/CS111Spring2018" class="twikiLink">Web Page Spr 18</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CS111Spring2018/syl111s18.pdf" target="_top">Syllabus Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/NotesS18" class="twikiLink">Lecture Notes Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/CodeS18" class="twikiLink">Sample Code Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS18" class="twikiLink">Assignments Spr 18</a>
+</li></ul> 
+<a href="/bin/edit/CS111/WebLeftBar" target="_top">&#91;edit this menu</a>]
+<p />
+<hr />
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS111/CodeS13">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/bin/view/CS111/" target="_top">CS 111 Main Page</a>
+</li> <li> <a href="/bin/view/CS111/WebCreateNewTopic?topicparent=CodeS13" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS111/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS111/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS111/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS111/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS111/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS111/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS111/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

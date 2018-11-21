@@ -1,0 +1,650 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<link rel="stylesheet" href="https://printingstatus.accc.uic.edu/bower_components/components-font-awesome/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status | ACCC Print Pulse</title>
+    <link rel="stylesheet" href="https://printingstatus.accc.uic.edu/css/vendor.css" />
+    <link rel="stylesheet" href="https://printingstatus.accc.uic.edu/css/app.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,600" rel="stylesheet" type="text/css">
+<meta name="csrf-token" content="oTTurXuCcVUJxjn687u9Vg1aFMmoSKwYN7fOdm0B">
+<script src="//printingstatus.accc.uic.edu/ws/socket.io/socket.io.js"></script>
+<script src="https://printingstatus.accc.uic.edu/js/app.js"></script>
+<script src="https://printingstatus.accc.uic.edu/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="https://printingstatus.accc.uic.edu/bower_components/paper-card/paper-card.html">
+<style is="custom-style">
+  paper-card {
+    width: 100%;
+}
+  paper-card.white {
+    --paper-card-header-color: #fff;
+  }
+  paper-card.red {
+    background: var(--paper-red-500);
+    color: #fff;
+  }
+  .red a {
+    color: #fff;
+  }
+  paper-card > .card-content {
+    padding: 16px;
+    position: relative;
+  }
+
+  #collapse{
+	margin-left: 8px;
+  }
+
+  .all-select{
+	font-size: 
+	font-family: 'Raleway', sans-serif;
+	background-color: #1976d2;
+	border: none;
+	color: white;
+	padding: 6px 15px;
+	text-align: none;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;		
+  }
+</style>    
+  </head>
+  <body>
+    <div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text logo"><img width="127" src="https://printingstatus.accc.uic.edu/images/logow-50.png" alt="UIC ACCC Logo"> Print Pulse</li>
+      <li><a href="https://printingstatus.accc.uic.edu/status/all">Status</a></li>
+    </ul>
+  </div>
+</div>
+    <div class="row">
+	<div class="small-12 columns"><p class="status">Last Updated: <span id="date">2018-11-21 12:28:03</span> (Will Update Every 2 Minutes)</p></div>
+</div>
+<div id="disruption" class="row" style="display: none;">
+  <paper-card heading='Service Disruption' class="red white" aria-hidden="true">
+  <div class="card-content">
+There is an ongoing service disruption for the printing service.  We are working to resolve these issues as quickly as possible. As a result, statuses below may not be completely accurate.  Our apologies for any inconvenience that this may have caused. If you have questions or concerns about printing, please contact us by email at consult@uic.edu, by phone at 312-413-0003, or in person at the C-STOP in the BSB Learning Center.
+  </div>
+</paper-card>
+</div>
+<div class="row">
+<div class="small-12 columns"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span> - Online
+&nbsp;<span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Offline" class="circle status-down"></span> - Offline &nbsp; <img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> - Wēpa Kiosk 
+</div>
+<br />
+<br />
+<div class="small-12 columns">
+<button type="button" class="all-select" id="expand">Expand All</button>
+<button type="button" class="all-select" id="collapse"> Collapse All  </button>
+</div>
+</div>
+
+<br />
+<div class="row">
+  <div class="small-12 columns"><h1>East</h1><hr class="sheader"/>
+  <p class="instructions">Click on a building to show more details. Buildings in gray indicate that the building is outside of the hours of operation.</p></div>
+</div>
+<div class="row small-up-1 medium-up-3 large-up-4 small-uncollapse">
+  <div class="columns vspaced"><button class="title-bar building-1" tabindex="0" type="button">Behavioral Science Building<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-behavioral-science-building">
+  <li><button class="tabs-title" data-toggle="behavioral-science-building1 hoo-behavioral-science-building" data-toggler=".is-active" id="hoo-behavioral-science-building" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-behavioral-science-building">
+  <div class="tabs-panel" id="behavioral-science-building1" data-toggler=".is-active">
+    <p><strong>Summer:</strong> M-F, 9AM-3PM</p>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+            
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; BSB 1st Floor - 1</td>
+                        <td class="text-center bsb-1st-floor-1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; BSB 1st Floor - 2 (Color)</td>
+                        <td class="text-center bsb-1st-floor-2-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; BSB 1st Floor - 3 (Color)</td>
+                        <td class="text-center bsb-1st-floor-3-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; BSB Basement - 1 (Color)</td>
+                        <td class="text-center bsb-basement-1-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; BSB Basement - 2 (Color)</td>
+                        <td class="text-center bsb-basement-2-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-3" tabindex="0" type="button">Grant Hall<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-grant-hall">
+  <li><button class="tabs-title" data-toggle="grant-hall1 hoo-grant-hall" data-toggler=".is-active" id="hoo-grant-hall" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-grant-hall">
+  <div class="tabs-panel" id="grant-hall1" data-toggler=".is-active">
+    <p><strong>Fall/Spring:</strong> M-F 8AM-5PM</p>
+    <p><strong>Summer:</strong> Closed</p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+                <tr>
+            <td>GH 306 - BW1</td>
+                        <td class="text-center gh-306-bw1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                    </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-5" tabindex="0" type="button">Richard Daley Library<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-richard-daley-library">
+  <li><button class="tabs-title" data-toggle="richard-daley-library1 hoo-richard-daley-library" data-toggler=".is-active" id="hoo-richard-daley-library" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-richard-daley-library">
+  <div class="tabs-panel" id="richard-daley-library1" data-toggler=".is-active">
+    <p>Please reference the <a href="http://library.uic.edu/libraries/daley/hours" target="_blank">library website</a> for hours of operation.</p>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+            
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 1 (Color)</td>
+                        <td class="text-center lib-1st-floor-1-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 2 (Color)</td>
+                        <td class="text-center lib-1st-floor-2-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 3 (Color)</td>
+                        <td class="text-center lib-1st-floor-3-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 4 (Color)</td>
+                        <td class="text-center lib-1st-floor-4-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 5 (Color)</td>
+                        <td class="text-center lib-1st-floor-5-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 6</td>
+                        <td class="text-center lib-1st-floor-6"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 7</td>
+                        <td class="text-center lib-1st-floor-7"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 8</td>
+                        <td class="text-center lib-1st-floor-8"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 1st Floor - 9</td>
+                        <td class="text-center lib-1st-floor-9"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 2nd Floor - 1 (Color) (Scanner)</td>
+                        <td class="text-center lib-2nd-floor-1-color-scanner"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 2nd Floor - 2</td>
+                        <td class="text-center lib-2nd-floor-2"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 2nd Floor - 3</td>
+                        <td class="text-center lib-2nd-floor-3"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 2nd Floor - 4 (Color)</td>
+                        <td class="text-center lib-2nd-floor-4-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 3rd Floor - 1 (Color) (Scanner)</td>
+                        <td class="text-center lib-3rd-floor-1-color-scanner"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 3rd Floor - 2 (Color)</td>
+                        <td class="text-center lib-3rd-floor-2-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 4th Floor - 1 (Color) (Scanner)</td>
+                        <td class="text-center lib-4th-floor-1-color-scanner"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LIB 4th Floor - 2 (Color)</td>
+                        <td class="text-center lib-4th-floor-2-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-6" tabindex="0" type="button">Science &amp; Engineering Laboratories East<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-science-engineering-laboratories-east">
+  <li><button class="tabs-title" data-toggle="science-engineering-laboratories-east1 hoo-science-engineering-laboratories-east" data-toggler=".is-active" id="hoo-science-engineering-laboratories-east" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-science-engineering-laboratories-east">
+  <div class="tabs-panel" id="science-engineering-laboratories-east1" data-toggler=".is-active">
+    <p><strong>Fall/Spring/Summer:</strong> 24/7</p>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+                <tr>
+            <td>SELE 2265 - BW1</td>
+                        <td class="text-center sele-2265-bw1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                        <tr>
+            <td>SELE 2265 - BW2</td>
+                        <td class="text-center sele-2265-bw2"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                    </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-7" tabindex="0" type="button">Science &amp; Engineering Offices<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-science-engineering-offices">
+  <li><button class="tabs-title" data-toggle="science-engineering-offices1 hoo-science-engineering-offices" data-toggler=".is-active" id="hoo-science-engineering-offices" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-science-engineering-offices">
+  <div class="tabs-panel" id="science-engineering-offices1" data-toggler=".is-active">
+    <p><strong>Fall/Spring/Summer:</strong> M-F: 9AM-5PM</p>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+                <tr class="status-down-bg" id="seo-1200-bw1">
+            <td>SEO 1200 - BW1</td>
+                        <td class="text-center seo-1200-bw1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Offline" class="circle status-down"></span></td>
+                    </tr>
+                    </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-8" tabindex="0" type="button">Science and Engineering South<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-science-and-engineering-south">
+  <li><button class="tabs-title" data-toggle="science-and-engineering-south1 hoo-science-and-engineering-south" data-toggler=".is-active" id="hoo-science-and-engineering-south" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-science-and-engineering-south">
+  <div class="tabs-panel" id="science-and-engineering-south1" data-toggler=".is-active">
+    <p><strong>Fall/Spring:</strong> M-F:8AM-5PM</p>
+    <p><strong>Summer 4Wk:</strong> Closed</p>
+    <p><strong>Summer 8Wk:</strong> M-F: 8AM-5PM</p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+            
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; SES 3510 - 1 (Color)</td>
+                        <td class="text-center ses-3510-1-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-9" tabindex="0" type="button">Student Center East Tower<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-student-center-east-tower">
+  <li><button class="tabs-title" data-toggle="student-center-east-tower1 hoo-student-center-east-tower" data-toggler=".is-active" id="hoo-student-center-east-tower" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-student-center-east-tower">
+  <div class="tabs-panel" id="student-center-east-tower1" data-toggler=".is-active">
+    <p><strong>Fall/Spring:</strong> M-F:8AM-7PM</p>
+    <p><strong>Summer:</strong> Closed</p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+                <tr>
+            <td>SCET 401 - BW1</td>
+                        <td class="text-center scet-401-bw1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                        <tr>
+            <td>SCET 401 - BW2</td>
+                        <td class="text-center scet-401-bw2"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                        <tr>
+            <td>SCET 401 - BW3</td>
+                        <td class="text-center scet-401-bw3"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                        <tr>
+            <td>SCET 401 - BW4</td>
+                        <td class="text-center scet-401-bw4"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                        <tr>
+            <td>SCET 401 - Color</td>
+                        <td class="text-center scet-401-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                    </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-11" tabindex="0" type="button">Student Residence and Commons<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-student-residence-and-commons">
+  <li><button class="tabs-title" data-toggle="student-residence-and-commons1 hoo-student-residence-and-commons" data-toggler=".is-active" id="hoo-student-residence-and-commons" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-student-residence-and-commons">
+  <div class="tabs-panel" id="student-residence-and-commons1" data-toggler=".is-active">
+    <p><strong>Fall/Spring/Summer:</strong> 24/7</p>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+                <tr>
+            <td>SRC 2027 - BW1</td>
+                        <td class="text-center src-2027-bw1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                        <tr>
+            <td>SRC 2027 - BW2</td>
+                        <td class="text-center src-2027-bw2"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                    </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-12" tabindex="0" type="button">Thomas Beckham Hall<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-thomas-beckham-hall">
+  <li><button class="tabs-title" data-toggle="thomas-beckham-hall1 hoo-thomas-beckham-hall" data-toggler=".is-active" id="hoo-thomas-beckham-hall" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-thomas-beckham-hall">
+  <div class="tabs-panel" id="thomas-beckham-hall1" data-toggler=".is-active">
+    <p><strong>Summer:</strong> Closed</p>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+                <tr>
+            <td>TBH Classroom Annex - BW1</td>
+                        <td class="text-center tbh-classroom-annex-bw1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                    </tbody>
+    </table>
+  </div>
+  </div>
+    </div>
+  <br />
+<div class="row">
+  <div class="small-12 columns"><h1>West</h1><hr class="sheader"/>
+  <p class="instructions">Click on a building to show more details. Buildings in gray indicate that the building is outside of the hours of operation.</p></div>
+</div>
+<div class="row small-up-1 medium-up-3 large-up-4 small-uncollapse">
+  <div class="columns vspaced"><button class="title-bar building-2" tabindex="0" type="button">Benjamin Goldberg Research Center<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-benjamin-goldberg-research-center">
+  <li><button class="tabs-title" data-toggle="benjamin-goldberg-research-center1 hoo-benjamin-goldberg-research-center" data-toggler=".is-active" id="hoo-benjamin-goldberg-research-center" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-benjamin-goldberg-research-center">
+  <div class="tabs-panel" id="benjamin-goldberg-research-center1" data-toggler=".is-active">
+    <p><strong>Fall/Spring/Summer:</strong> 24/7</p>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+                <tr>
+            <td>BGRC 105 - BW1</td>
+                        <td class="text-center bgrc-105-bw1"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                        <tr class="status-down-bg" id="bgrc-105-bw2">
+            <td>BGRC 105 - BW2</td>
+                        <td class="text-center bgrc-105-bw2"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Offline" class="circle status-down"></span></td>
+                    </tr>
+                    </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="columns vspaced"><button class="title-bar building-4" tabindex="0" type="button">Library of the Health Sciences<i class="fa fa-chevron-down float-right show-for-small-only" aria-hidden="true"></i></button>
+  <div class="box box-hidden">
+<div class="hours-box">
+<ul class="tabs" id="tabs-library-of-the-health-sciences">
+  <li><button class="tabs-title" data-toggle="library-of-the-health-sciences1 hoo-library-of-the-health-sciences" data-toggler=".is-active" id="hoo-library-of-the-health-sciences" tabindex="0" type="button">Hours of Operation</button></li>
+
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs-library-of-the-health-sciences">
+  <div class="tabs-panel" id="library-of-the-health-sciences1" data-toggler=".is-active">
+    <p><strong>Fall/Spring:</strong> M-TH:8Am-9PM, Fri:8AM-5PM, Sat:9AM-5PM, Sun:1PM-9PM.</p>
+    <p><strong>Summer:</strong> M-Th: 8AM-9PM, Fri:8AM-5PM, Sat:9AM-5PM, Sun: 1PM-9PM</p>
+    <p></p>
+  </div>
+</div>
+
+
+</div>
+    <table>
+        <tbody>
+            
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LHS 1st Floor - 1 (Color)</td>
+                        <td class="text-center lhs-1st-floor-1-color"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LHS 1st Floor - 2</td>
+                        <td class="text-center lhs-1st-floor-2"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                
+        <tr>
+            <td><img src="https://printingstatus.accc.uic.edu/images/wepa_logo_blue.jpg" class="wepa"> &nbsp; LHS 2nd Floor - 1 (Color) (Scanner)</td>
+                        <td class="text-center lhs-2nd-floor-1-color-scanner"><span data-tooltip aria-haspopup="true" data-disable-hover="false" title="Online" class="circle status-up"></span></td>
+                    </tr>
+                </tbody>
+    </table>
+  </div>
+  </div>
+    </div>
+    
+
+        <br />
+    <br />
+    <div class="row">
+      <div class="small-12 columns">
+        <hr />
+        <p class="footer">As we continue to improve your UIC print experience please provide feedback and questions to <a href="mailto:consult@uic.edu">consult@uic.edu</a>, or call <a href="tel:3124130003">312-413-0003</a>.</p>
+      </div>
+    </div>
+            <script src="https://printingstatus.accc.uic.edu/bower_components/foundation/js/vendor/jquery.js"></script>
+    <script src="https://printingstatus.accc.uic.edu/bower_components/what-input/dist/what-input.min.js"></script>
+    <script src="https://printingstatus.accc.uic.edu/bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script>
+// Two separate script tags are needed to support browsers that lack some ES6 features. IE11.
+$(document).ready(function() {
+    $('.title-bar').click(function() {
+      $(this).next().slideToggle();
+    });
+	
+	$('#expand').click(function() {
+		$('.title-bar').next().slideDown();
+	});
+
+	$('#collapse').click(function() {
+		$('.title-bar').next().slideUp();
+	});
+});
+</script>
+<script>
+$(document).ready(function() {
+    Echo.channel('printer-status').listen('.new-status', (e) =>{
+        var currStatus = e["status"];
+        for(var key in currStatus){
+            if(currStatus.hasOwnProperty(key)){
+                console.log(key + "=>" + currStatus[key]);
+                var docKey = "text-center " + key;
+                var element = document.getElementsByClassName(key)[0];
+                var upperElement = document.getElementById(key);
+                if(element != null){
+                    console.log(element);
+                    if(currStatus[key] == 1){
+                        /*
+                        var htmlStatus = "<span data-tooltip aria-haspopup=\"true\" data-disable-hover=\"false\" title=\"Online\" class=\"circle status-up\"></span>";
+                        var backgroundStatus = "<tr id=\"" + key +"\">";
+                        upperElement.innerHTML = backgroundStatus;
+                        element.innerHTML = htmlStatus;
+                        */
+                        var htmlStatus = "<span data-tooltip aria-haspopup=\"true\" data-disable-hover=\"false\" title=\"Online\" class=\"circle status-up\"></span>";
+                        element.innerHTML = htmlStatus;
+                        $("#"+key).replaceWith("<tr id=\"" + key +"\">" + $("#"+key).html()+ "</tr>")   
+                    }
+                    else if(currStatus[key] == -1){
+                        var htmlStatus = "<span data-tooltip aria-haspopup=\"true\" data-disable-hover=\"false\" title=\"One or more issues\" class=\"circle status-down\"></span>";
+                        element.innerHTML = htmlStatus;   
+                        $("#"+key).replaceWith("<tr id=\"" + key +"\">" + $("#"+key).html()+ "</tr>")   
+                    }
+                    else if(currStatus[key] == -2){
+                        var htmlStatus = "<span data-tooltip aria-haspopup=\"true\" data-disable-hover=\"false\" title=\"Printer is offline\" class=\"circle status-down\"></span>";
+                        element.innerHTML = htmlStatus;   
+                        $("#"+key).replaceWith("<tr class=\"status-down-bg\" id=\"" + key +"\">" + $("#"+key).html()+ "</tr>")   
+                    }
+                    else if(currStatus[key] == 2){
+                        var htmlStatus = "<span data-tooltip aria-haspopup=\"true\" data-disable-hover=\"false\" title=\"Printer is only online. No associated Release Station\" class=\"circle status-down\">P</span>";
+                        element.innerHTML = htmlStatus;   
+                        $("#"+key).replaceWith("<tr id=\"" + key +"\">" + $("#"+key).html()+ "</tr>")   
+                    }
+                    else{
+                        var htmlStatus = "<span data-tooltip aria-haspopup=\"true\" data-disable-hover=\"false\" title=\"Offline\" class=\"circle status-down\"></span>";
+                        element.innerHTML = htmlStatus;   
+                        $("#"+key).replaceWith("<tr class=\"status-down-bg\" id=\"" + key +"\">" + $("#"+key).html()+ "</tr>")   
+                    }
+                }
+            }
+        }
+        var date = document.getElementById("date");
+        date.innerHTML = e["date"];
+    });
+    Echo.channel('printer-status').listen('.disruption', (e) => {
+    console.log(e);
+    //$banner = document.querySelector('#disruption');
+    $jbanner = $('#disruption');
+    if (parseInt(e["status"]) == 0) {
+        console.log("hide the banner!");
+        //$banner.className += " hide";
+        $jbanner.slideUp();
+      } else {
+        // We have a disruption.
+        console.log("display the banner!");
+        //$banner.className.replace(new RegExp('(?:^|\\s)'+ 'hide' + '(?:\\s|$)'), ' '); // Use this to support older browsers.
+        $jbanner.removeClass('hide').slideDown();
+      }
+    });
+
+});
+</script>
+  </body>
+</html>

@@ -1,0 +1,1046 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - TWikiPreferences</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/TWikiPreferences?_T=2018-11-21" type="application/x-wiki" title="edit TWikiPreferences" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/TWikiPreferences"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
+	}
+	#patternTopBarContents { background-image:url(/pub/TWiki/PatternSkin/TWiki_header.gif); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="TWiki_Site_Level_Preferences"></a> TWiki Site-Level Preferences </h1>
+<p />
+This topic defines <strong><em>site-level</em></strong> settings that apply to all users and webs on this <a href="/bin/view/TWiki/TWikiSite" class="twikiLink">TWikiSite</a>.
+<p />
+<div class="twikiNotification"> <strong><em><img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> NOTE:</em></strong> Don't edit this topic, changes will be lost on the next TWiki upgrade. Define new site-level settings, or overload below settings in <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span> </div>
+<p />
+Preference settings local to your site should be set in <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span> (this topic is pointed to by {LocalSitePreferences}, which is set by the admin in the <a href="/bin/configure" target="_top">configure</a> interface). Settings in <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span> will override settings in this topic, and should be used for defining custom settings and variables.
+<p />
+<a href="/bin/view/TWiki/TWikiVariables#PreferencesVariables" class="twikiAnchorLink">Read more</a> on how to set Preferences Variables.
+<p />
+<div class="twikiToc"> <ul>
+<li> <a href="#Default_Web_Preferences"> Default Web Preferences</a>
+</li> <li> <a href="#Default_User_Settings"> Default User Settings</a>
+</li> <li> <a href="#TWiki_Platform_Settings"> TWiki Platform Settings</a> <ul>
+<li> <a href="#Search_Settings"> Search Settings</a>
+</li> <li> <a href="#E_mail_Settings"> E-mail Settings</a>
+</li> <li> <a href="#HTTP_EQUIV_Settings"> HTTP-EQUIV Settings</a>
+</li></ul> 
+</li> <li> <a href="#Skin_Settings"> Skin Settings</a> <ul>
+<li> <a href="#Pattern_Skin"> Pattern Skin</a>
+</li> <li> <a href="#Skin_Icons"> Skin Icons</a>
+</li> <li> <a href="#Legacy_Support"> Legacy Support</a>
+</li></ul> 
+</li> <li> <a href="#Plugins_Settings"> Plugins Settings</a>
+</li> <li> <a href="#Parameterized_Variables"> Parameterized Variables</a>
+</li> <li> <a href="#Rendering_Shortcuts_Settings"> Rendering Shortcuts Settings</a>
+</li> <li> <a href="#Miscellaneous_Settings"> Miscellaneous Settings</a>
+</li> <li> <a href="#Security_Settings"> Security Settings</a>
+</li> <li> <a href="#Creating_New_Preference_Variable"> Creating New Preference Variables</a>
+</li> <li> <a href="#Protected_System_Settings"> Protected System Settings</a>
+</li> <li> <a href="#Related_Topics"> Related Topics</a>
+</li></ul> 
+</div>
+<p />
+<a name="DefaultWebPreferences"></a>
+<h2><a name="Default_Web_Preferences"></a> Default Web Preferences </h2>
+<p />
+<img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> <strong>NOTE:</strong> These are just defaults; don't change them here. Instead, add them to the WebPreferences topic in each web
+<p /> <ul>
+<li> List of selected topics in a web (used in menus) <ul>
+<li> Set WEBTOPICLIST = <a href="/bin/view/TWiki/WebChanges" class="twikiLink">Changes</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> <a href="/bin/view/TWiki/WebIndex" class="twikiLink">Index</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> <a href="/bin/view/TWiki/WebSearch" class="twikiLink">Search</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> Go <input type="text" name="topic" size="16" />
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Web-specific background color: (is overwritten by web preferences) <ul>
+<li> Set WEBBGCOLOR = #FFD8AA
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="http://en.wikipedia.org/wiki/Favicon" target="_top">favicon</a>: Attach a <code>favicon.ico</code> to a web's <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a> or add a <code>FAVICON</code> setting to <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a> <ul>
+<li> Set FAVICON = <a href="https://www1.cs.uic.edu/images/favicon.ico" target="_top">https://www1.cs.uic.edu/images/favicon.ico</a>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Image, URL and alternate tooltip text of web's logo. <ul>
+<li> Set WEBLOGOIMG = <img alt="T-logo-140x40-t.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiLogos/T-logo-140x40-t.gif" />
+</li> <li> Set WEBLOGOURL = <a href="https://www.cs.uic.edu/bin/view/Main/WebHome" target="_top">https://www.cs.uic.edu/bin/view/Main/WebHome</a>
+</li> <li> Set WEBLOGOALT = Home - this site is powered by TWiki(R)
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> List this web in the <a href="/bin/view/TWiki/SiteMap" class="twikiLink">SiteMap</a>: <ul>
+<li> If yes, set SITEMAPLIST to <code>on</code>, do not set NOSEARCHALL, and add the "what" and "use to..." description for the site map. Make sure to list only links that include the name of the web, e.g. TWiki.Topic links.
+</li> <li> Set SITEMAPLIST = on
+</li> <li> Set SITEMAPWHAT = Describe what this web does
+</li></ul> 
+</li></ul> 
+<p />
+<a name="CopyrightNotice"></a> <ul>
+<li> Copyright notice: <ul>
+<li> Set WEBCOPYRIGHT = Copyright &copy; 2008-2018 by the contributing authors. All material on this collaboration platform is the property of the contributing authors. <br /> Ideas, requests, problems regarding TWiki? <a href='mailto:webmaster@cs.uic.edu?subject=TWiki%20Feedback%20on%20TWiki.TWikiPreferences'>Send feedback</a>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Simplified Copyright notice for the <a href="/bin/view/TWiki/WebRss" class="twikiLink">WebRss</a> feed (don't use any special characters, html tags, entities, wiki markup or <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a>) <ul>
+<li> Set WEBRSSCOPYRIGHT = Copyright 2018 by contributing authors
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Exclude web from a <code>web="all"</code> search: (Set to <code>on</code> for hidden webs; is overwritten by web preferences) <strong><em>Note</em></strong> it is much better to use <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControls</a> in individual webs to control who can and can't view the contents of a web. NOSEARCHALL is retained for compatibility, but you should avoid using it. <ul>
+<li> Set NOSEARCHALL = 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Prevent automatic linking of <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a> and acronyms (if set to <code>on</code>); link WikiWords (if empty); can be overwritten by web preferences: <ul>
+<li> Set NOAUTOLINK = 
+</li> <li> <strong><em>Note:</em></strong> Use the <code>[[...][...]]</code> syntax to link topics in case you disabled WikiWord linking. The <code>&lt;noautolink&gt; ... &lt;/noautolink&gt;</code> syntax can be used to prevents links within a block of text.
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Use topic title instead of topic name in forced links, such as in link <code>[[BugItem1234]]</code>. If enabled, the link label is set to the form field named "Title", the topic preferences setting named TITLE, or the topic name if neither exists. Forced links with label such as <code>[[BugItem1234][bug 1234]]</code> are not affected. The topic title can be shown even with disabled flag by using syntax <code>[[+BugItem1234]]</code>. <strong><em>NOTE:</em></strong> Page rendering may be slower if enabled and if there are many forced links in a topic. <ul>
+<li> Set SHOWTOPICTITLELINK = 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> If you use non WikiWords for topic names (for example "Expenses" or "Mighty1") and if you use bracket notation to link to those topics, it is useful to <strong>turn of all warnings</strong> (like: "WARNING: This topic name is not recommended because it will not be linked automatically") and checkboxes ("Allow non WikiWord for the new topic name"). Can be overwritten by web preferences. Set to <code>on</code> to activate: <ul>
+<li> Set HIDE_NON_WIKI_WORD_WARNINGS =
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Warn if <code>%INCLUDE{}%</code> of topic fails: Fail silently if empty or <code>off</code>. Output warning message (defined in templates/oopsalerts.tmpl) if set to <code>on</code>. Otherwise output specific text (use <code>$topic</code> for topic). You can override this in web preferences, or by using a <code>warn="..."</code> parameter with <code>%INCLUDE{}%</code> : <ul>
+<li> Set INCLUDEWARNING = on
+</li></ul> 
+</li></ul> 
+<p />
+<a name="TableOfContents"></a> <ul>
+<li> Generated Table of Contents (TOC) settings <ul>
+<li> The first header level to appear in the TOC: <ul>
+<li> Set TOC_MIN_DEPTH = <ul>
+<li> If not set: <code>1</code>
+</li> <li> Possible values: <code>1</code> to <code>6</code>
+</li></ul> 
+</li></ul> 
+</li> <li> The last header level to appear in the TOC:       <ul>
+<li> Set TOC_MAX_DEPTH = <ul>
+<li> If not set: <code>6</code>
+</li> <li> Possible values: <code>1</code> to <code>6</code>
+</li> <li> Can be overridden by <code>depth</code> parameter of <a href="/bin/view/TWiki/VarTOC2" class="twikiLink">variable TOC</a>
+</li></ul> 
+</li></ul> 
+</li> <li> The default TOC title: <ul>
+<li> Set TOC_TITLE = <ul>
+<li> If not set: nothing
+</li> <li> Possible values: any string, for example <code>On this page:</code>
+</li> <li> Can be overridden by <code>title</code> parameter of <a href="/bin/view/TWiki/VarTOC2" class="twikiLink">variable TOC</a>
+</li></ul> 
+</li></ul> 
+</li> <li> The default TOC style: <ul>
+<li> Set TOC_STYLE = <ul>
+<li> If not set: nothing
+</li> <li> Possible values: any CSS directive, for example <code>float: right; border: dotted gray 1px;</code>
+</li> <li> Can be overridden by <code>style</code> parameter of <a href="/bin/view/TWiki/VarTOC2" class="twikiLink">variable TOC</a>
+</li></ul> 
+</li></ul> 
+</li> <li> Do not show a TOC if the topic it contains is included in another topic: <ul>
+<li> Set TOC_HIDE_IF_INCLUDED = <ul>
+<li> If not set: included TOC is shown
+</li> <li> Possible values: <code>on</code> or nothing
+</li></ul> 
+</li></ul> 
+</li></ul> 
+</li></ul> 
+<p />
+<a name="DefaultUserSettings"></a>
+<h2><a name="Default_User_Settings"></a> Default User Settings </h2>
+<p />
+<img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> <strong>NOTE:</strong> They are typically redefined in topics of individual <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiUsers?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiUsers (this topic does not yet exist; you can create it)">TWikiUsers</a></span>
+<p /> <ul>
+<li> Preference for the editor, default is the WYSIWYG editor. The options are raw, wysiwyg: <ul>
+<li> Set EDITMETHOD = wysiwyg
+</li> <li> #Set EDITMETHOD = raw
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Fixed <a href="/bin/view/TWiki/TopMenuSkin#FixedTopMenu" class="twikiAnchorLink">pulldown menu-bar</a>, on or off. If on, the menu-bar is always visible at the top, regardless of the window scroll position. If off, the menu-bar hides when scrolled, and can be shown by hovering over the gray TWiki icon. <ul>
+<li> Set FIXEDTOPMENU = off
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Show tool-tip topic info on mouse-over of <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a> links. Setting can be on, off, or customized. An empty setting or off setting disables the tool-tips (for better performance). The setting can contain $summary to show the topic summary, $date for the last change date, $rev for the revision, $username for the login name of the last editor, $wikiname for the WikiName, $wikiusername for Main.WikiName, $topic for the topic name, and $web for the web name <ul>
+<li> Set LINKTOOLTIPINFO = off
+</li> <li> #Set LINKTOOLTIPINFO = $username - $date - $rev: $summary
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> In the user profile page, show the tag cloud instead of the watchlist changes in case the <a href="/bin/view/TWiki/WatchlistPlugin" class="twikiLink">WatchlistPlugin</a> is installed and enabled. <ul>
+<li> #Local TAGCLOUDPROFILE = on
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Horizontal size of text edit box: <ul>
+<li> Set EDITBOXWIDTH = 70
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Vertical size of text edit box: <ul>
+<li> Set EDITBOXHEIGHT = 22
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Style of text edit box. Set to <code>width: 99%</code> for full window width (default; this will overwrite the EDITBOXWIDTH setting), or <code>width: auto</code> to disable. This setting works for IE and some other recent browsers. <ul>
+<li> Set EDITBOXSTYLE = width:99%
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Default state of the <strong><em>Force New Revision</em></strong> (<a href="/bin/view/TWiki/ForceNewRevision" class="twikiLink">ForceNewRevision</a>) check box in preview. Check box is initially checked if <code>Set FORCENEWREVISIONCHECKBOX = checked="checked"</code>, or unchecked if empty: <ul>
+<li> Set FORCENEWREVISIONCHECKBOX = 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Default state of the <strong><em>Minor Changes, Don't Notify</em></strong> (<a href="/bin/view/TWiki/DontNotify" class="twikiLink">DontNotify</a>) check box in preview. Check box is initially checked if <code>Set DONTNOTIFYCHECKBOX = checked="checked"</code>, or unchecked if empty: <ul>
+<li> Set DONTNOTIFYCHECKBOX = 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Default state of the <strong><em>link</em></strong> check box in the attach file page. Checkbox is initially checked if <code>Set ATTACHLINKBOX = checked="checked"</code>, or unchecked if empty (<code>Set ATTACHLINKBOX =</code>). If checked, a link is created to the attached file at the end of the topic: <ul>
+<li> Set ATTACHLINKBOX = 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Format of file link when the <strong><em>link</em></strong> check box is checked: <ul>
+<li> <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" /> <strong>NOTE:</strong> Keyword <code><b>$name</b></code> gets expanded to filename; <code><b>$comment</b></code> to comment; <code><b>\t</b></code> to tab (3 spaces for bullets).
+</li></ul> 
+</li></ul> 
+<!-- verbatim tag required to prevent error in Apache log; does not suppress Set -->
+<pre>
+      &#42; Set ATTACHEDFILELINKFORMAT &#61; \n   &#42; &#91;&#91;&#37;ATTACHURLPATH&#37;/$name]&#91;$name]]: $comment
+</pre>
+<p /> <ul>
+<li> Format of images when the <strong><em>link</em></strong> check box is checked: <ul>
+<li> <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" /> <strong>NOTE:</strong> Keyword <code><b>$name</b></code> gets expanded to filename; <code><b>$comment</b></code> to comment; <code><b>$width</b></code> to width of image; <code><b>$height</b></code> to height of image; <code><b>$size</b></code> to <code><b>width="..." height="..."</b></code> attribute of <code><b>img</b></code> tag; <code><b>\t</b></code> to tab and <code><b>\n</b></code> to linefeed. Use 3 leading spaces for bullets.
+</li></ul> 
+</li></ul> 
+<pre>
+      &#42; Set ATTACHEDIMAGEFORMAT &#61; \n   &#42; $comment: &#60;br /&#62;\n     &#60;img src&#61;&#34;&#37;ATTACHURLPATH&#37;/$name&#34; alt&#61;&#34;$name&#34; $size /&#62;
+</pre>
+<p />
+<a name="TWikiPlatformSettings"></a>
+<h2><a name="TWiki_Platform_Settings"></a> TWiki Platform Settings </h2>
+<p /> <ul>
+<li> TWiki site name: <ul>
+<li> Set WIKITOOLNAME = TWiki
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Image, URL and alternate tooltip text of the logo <strong>for this installation</strong>: you should change these settings for your site, or they can be overwridden in WebPreferences for individual webs by defining these variables there. <ul>
+<li> Set WIKILOGOIMG = <img alt="T-logo-140x40-t.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiLogos/T-logo-140x40-t.gif" />
+</li> <li> Set WIKILOGOURL = <a href="https://www.cs.uic.edu/bin/view/Main/WebHome" target="_top">https://www.cs.uic.edu/bin/view/Main/WebHome</a>
+</li> <li> Set WIKILOGOALT = Home - this site is powered by TWiki(R)
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Home page of this site. This is DEPRECATED, please use %WIKILOGOURL% instead. <ul>
+<li> Set WIKIHOMEURL = /bin/view/Main/WebHome
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> List of TWiki webs - on the first line of the upper toolbar (to add a new web, see <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a> and <a href="/bin/view/TWiki/SiteMap" class="twikiLink">SiteMap</a>): <ul>
+<li> Set WIKIWEBLIST = <a href="/bin/view/Main/WebHome" class="twikiLink">Main</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> <a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink">TWiki</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> <a href="/bin/view/Sandbox/WebHome" class="twikiLink">Sandbox</a>
+</li> <li> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> <strong>NOTE:</strong> To automatically list all non-hidden webs in alphabetical order, use the <code>&#37;WEBLIST{}&#37;</code> variable instead: <br />        <a href="/bin/view/AES/WebHome" class="twikiLink">AES</a> | <a href="/bin/view/Advis/WebHome" class="twikiLink">Advis</a> | <a href="/bin/view/BIOE/WebHome" class="twikiLink">BIOE</a> | <a href="/bin/view/Bits/WebHome" class="twikiLink">Bits</a> | <a href="/bin/view/Bits/Mobicom10/WebHome" class="twikiLink">Bits.Mobicom10</a> | <a href="/bin/view/Bits/People/WebHome" class="twikiLink">Bits.People</a> | <a href="/bin/view/BoXu/WebHome" class="twikiLink">BoXu</a> | <a href="/bin/view/Buy/WebHome" class="twikiLink">Buy</a> | <a href="/bin/view/CHE/WebHome" class="twikiLink">CHE</a> | <a href="/bin/view/CME/WebHome" class="twikiLink">CME</a> | <a href="/bin/view/CS101/WebHome" class="twikiLink">CS101</a> | <a href="/bin/view/CS107/WebHome" class="twikiLink">CS107</a> | <a href="/bin/view/CS111/WebHome" class="twikiLink">CS111</a> | <a href="/bin/view/CS111Green/WebHome" class="twikiLink">CS111Green</a> | <a href="/bin/view/CS111GreenFA16/WebHome" class="twikiLink">CS111GreenFA16</a> | <a href="/bin/view/CS111GreenFA17/WebHome" class="twikiLink">CS111GreenFA17</a> | <a href="/bin/view/CS111Law/WebHome" class="twikiLink">CS111Law</a> | <a href="/bin/view/CS111Media/WebHome" class="twikiLink">CS111Media</a> | <a href="/bin/view/CS151/WebHome" class="twikiLink">CS151</a> | <a href="/bin/view/CS201/WebHome" class="twikiLink">CS201</a> | <a href="/bin/view/CS202/WebHome" class="twikiLink">CS202</a> | <a href="/bin/view/CS211/WebHome" class="twikiLink">CS211</a> | <a href="/bin/view/CS301/WebHome" class="twikiLink">CS301</a> | <a href="/bin/view/CS335/WebHome" class="twikiLink">CS335</a> | <a href="/bin/view/CS340/WebHome" class="twikiLink">CS340</a> | <a href="/bin/view/CS342/WebHome" class="twikiLink">CS342</a> | <a href="/bin/view/CS361fall13/WebHome" class="twikiLink">CS361fall13</a> | <a href="/bin/view/CS377/WebHome" class="twikiLink">CS377</a> | <a href="/bin/view/CS385/WebHome" class="twikiLink">CS385</a> | <a href="/bin/view/CS385fall14/WebHome" class="twikiLink">CS385fall14</a> | <a href="/bin/view/CS385spring11/WebHome" class="twikiLink">CS385spring11</a> | <a href="/bin/view/CS385spring12/WebHome" class="twikiLink">CS385spring12</a> | <a href="/bin/view/CS385spring14/WebHome" class="twikiLink">CS385spring14</a> | <a href="/bin/view/CS401/WebHome" class="twikiLink">CS401</a> | <a href="/bin/view/CS422/WebHome" class="twikiLink">CS422</a> | <a href="/bin/view/CS450/WebHome" class="twikiLink">CS450</a> | <a href="/bin/view/CS450fall09/WebHome" class="twikiLink">CS450fall09</a> | <a href="/bin/view/CS450fall10/WebHome" class="twikiLink">CS450fall10</a> | <a href="/bin/view/CS450fall11/WebHome" class="twikiLink">CS450fall11</a> | <a href="/bin/view/CS474/WebHome" class="twikiLink">CS474</a> | <a href="/bin/view/CS477/WebHome" class="twikiLink">CS477</a> | <a href="/bin/view/CS491/WebHome" class="twikiLink">CS491</a> | <a href="/bin/view/CS491Law/WebHome" class="twikiLink">CS491Law</a> | <a href="/bin/view/CS499/WebHome" class="twikiLink">CS499</a> | <a href="/bin/view/CS594WN/WebHome" class="twikiLink">CS594WN</a> | <a href="/bin/view/CSGSA/WebHome" class="twikiLink">CSGSA</a> | <a href="/bin/view/CSOpenHouse/WebHome" class="twikiLink">CSOpenHouse</a> | <a href="/bin/view/ClementYu/WebHome" class="twikiLink">ClementYu</a> | <a href="/bin/view/ComputationalEcology/WebHome" class="twikiLink">ComputationalEcology</a> | <a href="/bin/view/ComputerSupport/WebHome" class="twikiLink">ComputerSupport</a> | <a href="/bin/view/ConferenceRooms/WebHome" class="twikiLink">ConferenceRooms</a> | <a href="/bin/view/CoolCS/WebHome" class="twikiLink">CoolCS</a> | <a href="/bin/view/Cruz/WebHome" class="twikiLink">Cruz</a> | <a href="/bin/view/Cruz/NSFMatchingGrant/WebHome" class="twikiLink">Cruz.NSFMatchingGrant</a> | <a href="/bin/view/Devroye/WebHome" class="twikiLink">Devroye</a> | <a href="/bin/view/DiEugenio/WebHome" class="twikiLink">DiEugenio</a> | <a href="/bin/view/ECE/WebHome" class="twikiLink">ECE</a> | <a href="/bin/view/ECE341s12/WebHome" class="twikiLink">ECE341s12</a> | <a href="/bin/view/ECE534/WebHome" class="twikiLink">ECE534</a> | <a href="/bin/view/EngineeringDiversity/WebHome" class="twikiLink">EngineeringDiversity</a> | <a href="/bin/view/FESP/WebHome" class="twikiLink">FESP</a> | <a href="/bin/view/Feinerman/WebHome" class="twikiLink">Feinerman</a> | <a href="/bin/view/HKN/WebHome" class="twikiLink">HKN</a> | <a href="/bin/view/IE/WebHome" class="twikiLink">IE</a> | <a href="/bin/view/IEEE/WebHome" class="twikiLink">IEEE</a> | <a href="/bin/view/Isaim2012/WebHome" class="twikiLink">Isaim2012</a> | <a href="/bin/view/Isaim2014/WebHome" class="twikiLink">Isaim2014</a> | <a href="/bin/view/Jakob/WebHome" class="twikiLink">Jakob</a> | <a href="/bin/view/JohnBell/WebHome" class="twikiLink">JohnBell</a> | <a href="/bin/view/Kanich/WebHome" class="twikiLink">Kanich</a> | <a href="/bin/view/KenBrezinsky/WebHome" class="twikiLink">KenBrezinsky</a> | <a href="/bin/view/Kenyon/WebHome" class="twikiLink">Kenyon</a> | <a href="/bin/view/KirstenGorton/WebHome" class="twikiLink">KirstenGorton</a> | <a href="/bin/view/MASG/WebHome" class="twikiLink">MASG</a> | <a href="/bin/view/MIE/WebHome" class="twikiLink">MIE</a> | <a href="/bin/view/MIE/NonAcademicChecklist/WebHome" class="twikiLink">MIE.NonAcademicChecklist</a> | <a href="/bin/view/MIE/UndergraduatePrograms/WebHome" class="twikiLink">MIE.UndergraduatePrograms</a> | <a href="/bin/view/MRC/WebHome" class="twikiLink">MRC</a> | <a href="/bin/view/Main/WebHome" class="twikiLink">Main</a> | <a href="/bin/view/Murata/WebHome" class="twikiLink">Murata</a> | <a href="/bin/view/NewLookTest/WebHome" class="twikiLink">NewLookTest</a> | <a href="/bin/view/News/WebHome" class="twikiLink">News</a> | <a href="/bin/view/PSYu/WebHome" class="twikiLink">PSYu</a> | <a href="/bin/view/PeterNelson/WebHome" class="twikiLink">PeterNelson</a> | <a href="/bin/view/PhilTest/WebHome" class="twikiLink">PhilTest</a> | <a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome" class="twikiLink">PhilTest.Teaching.CS594Fall13</a> | <a href="/bin/view/Piotr/WebHome" class="twikiLink">Piotr</a> | <a href="/bin/view/Reach/WebHome" class="twikiLink">Reach</a> | <a href="/bin/view/Reed/WebHome" class="twikiLink">Reed</a> | <a href="/bin/view/RonFernandez/WebHome" class="twikiLink">RonFernandez</a> | <a href="/bin/view/Sandbox/WebHome" class="twikiLink">Sandbox</a> | <a href="/bin/view/Shatz/WebHome" class="twikiLink">Shatz</a> | <a href="/bin/view/Sistla/WebHome" class="twikiLink">Sistla</a> | <a href="/bin/view/Sloan/WebHome" class="twikiLink">Sloan</a> | <a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink">TWiki</a> | <a href="/bin/view/Tanya/WebHome" class="twikiLink">Tanya</a> | <a href="/bin/view/Theys/WebHome" class="twikiLink">Theys</a> | <a href="/bin/view/Troy/WebHome" class="twikiLink">Troy</a> | <a href="/bin/view/Ziebart/WebHome" class="twikiLink">Ziebart</a> | <a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome" class="twikiLink">Ziebart.Teaching.CS594Fall13</a> | <a href="/bin/view/Zuck/WebHome" class="twikiLink">Zuck</a>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Maximum size of <a href="/bin/view/TWiki/FileAttachment" class="twikiLink">FileAttachments</a> in KB, 0 for no limit: <ul>
+<li> Set ATTACHFILESIZELIMIT = 10000
+</li></ul> 
+</li></ul> 
+<p />
+<a name="BroadcastMessage"></a> <ul>
+<li> Broadcast message for skins supporting a %BROADCASTMESSAGE% at the top of the page: (IMPORTANT: Set to empty message if not used; #Comment out unused messages) <ul>
+<li> Set BROADCASTMESSAGE = 
+</li> <li> #Set BROADCASTMESSAGE = <strong>NOTE:</strong> Edit and Attach will be disabled today between 05:00 PM and 06:00 PM PDT (00:00 to 01:00 GMT) for a scheduled TWiki maintenance.
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Users or groups allowed to <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">create new top-level webs</a>: (ex: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/WebCreatorsGroup?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="WebCreatorsGroup (this topic does not yet exist; you can create it)">WebCreatorsGroup</a></span>). If set to nothing, only administrators will be able to do this. <ul>
+<li> Set ALLOWROOTCHANGE = <a href="/bin/view/Main/TWikiAdminGroup" class="twikiLink">TWikiAdminGroup</a>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Predefined variables overridable by preferences variables. Please read <a href="/bin/view/TWiki/TWikiVariables#PredefinedVariables" class="twikiAnchorLink">TWikiVariables#PredefinedVariables</a> for details <ul>
+<li> Set OVERRIDABLEPREDEFINEDVARIABLES = all
+</li></ul> 
+</li></ul> 
+<a name="SearchSettings"></a>
+<h3><a name="Search_Settings"></a> Search Settings </h3>
+<p /> <ul>
+<li> Default type for search, one of: keyword (for search engine like syntax), regex (for <a href="/bin/view/TWiki/RegularExpression" class="twikiLink">RegularExpression</a> search), or literal (for verbatim search) <ul>
+<li> Set SEARCHDEFAULTTYPE = keyword
+</li></ul> 
+</li> <li> Default for <code>%SEARCH{}%</code> variable, one of: keyword, regex, or literal <ul>
+<li> Set SEARCHVARDEFAULTTYPE = literal
+</li></ul> 
+</li> <li> Stop words, e.g., common words and characters to exclude from a keyword search: <ul>
+<li> Set SEARCHSTOPWORDS = a, all, am, an, and, any, as, at, b, be, by, c, d, e, for, from, g, h, how, i, i'm, i.e., in, is, isn't, it, it's, its, j, k, l, m, n, o, of, on, or, p, q, r, s, t, that, that's, the, this, to, u, v, w, was, wasn't, what, what's, when, where, who, who's, will, with, x, y, z
+</li></ul> 
+</li> <li> Default number of results per page in <a href="/bin/view/TWiki/SearchResultsPagination" class="twikiLink">SearchResultsPagination</a>: <ul>
+<li> Set SEARCHRESULTSPERPAGE = 50
+</li></ul> 
+</li></ul> 
+<p />
+<a name="EmailSettings"></a>
+<h3><a name="E_mail_Settings"></a> E-mail Settings </h3>
+<p /> <ul>
+<li> 'Mail this topic' mailto: link - can be included in topics, templates or skins <ul>
+<li> Set MAILTHISTOPIC = <a href="mailto:?subject=TWikiPreferences&amp;body=https://www.cs.uic.edu/bin/view/TWiki/TWikiPreferences">Send a link to this page</a>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> 'Mail this topic' link text <ul>
+<li> Set MAILTHISTOPICTEXT = Send a link to this page
+</li></ul> 
+</li></ul> 
+<p />
+<a name="HttpEquivSettings"></a>
+<h3><a name="HTTP_EQUIV_Settings"></a> HTTP-EQUIV Settings </h3>
+<p /> <ul>
+<li> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> <strong>NOTE:</strong> Changing cache behaviour with these settings should not be necessary and may cause cache-related problems (e.g. <a href="http://twiki.org/cgi-bin/view/Codev/BackFromPreviewLosesText" target="_top" title="'Codev.BackFromPreviewLosesText' on TWiki.org" class="interwikiLink">TWiki:Codev.BackFromPreviewLosesText</a> or <a href="http://twiki.org/cgi-bin/view/Codev/RefreshEditPage" target="_top" title="'Codev.RefreshEditPage' on TWiki.org" class="interwikiLink">TWiki:Codev.RefreshEditPage</a>). These settings do not affect proxy caches.
+</li> <li> <strong>NOTE:</strong> The current values of these preferences are not displayed in view mode (values are <code>&lt;link&gt;</code>-tags).
+</li></ul> 
+<p /> <ul>
+<li> <code><b>http-equiv</b></code> meta tags for <code><b>view</b></code>, <code><b>rdiff</b></code>, <code><b>attach</b></code>, <code><b>search*</b></code> scripts: <ul>
+<li> #Set HTTP_EQUIV_ON_VIEW = 
+</li> <li> Set HTTP_EQUIV_ON_VIEW = <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <code><b>http-equiv</b></code> meta tags for <code><b>edit</b></code> script: <ul>
+<li> Set HTTP_EQUIV_ON_EDIT = 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <code><b>http-equiv</b></code> meta tags for <code><b>preview</b></code> script: <ul>
+<li> Set HTTP_EQUIV_ON_PREVIEW = 
+</li></ul> 
+</li></ul> 
+<p />
+<a name="SkinSettings"></a>
+<h2><a name="Skin_Settings"></a> Skin Settings </h2>
+<p /> <ul>
+<li> Skin overriding the default TWiki templates: (can be overwritten by <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a> and user preferences)  <ul>
+<li> Set SKIN = tagme, topmenu, pattern
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <strong><em>Note:</em></strong> See <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a> for currently installed skins
+</li></ul> 
+<p />
+<a name="PatternSkin"></a>
+<h3><a name="Pattern_Skin"></a> Pattern Skin </h3>
+<p /> <ul>
+<li> Default TWiki styles of <a href="/bin/view/TWiki/PatternSkin" class="twikiLink">PatternSkin</a> <ul>
+<li> Set TWIKILAYOUTURL = /pub/TWiki/PatternSkin/layout.css
+</li> <li> Set TWIKISTYLEURL = /pub/TWiki/PatternSkin/style.css
+</li> <li> Set TWIKICOLORSURL = /pub/TWiki/PatternSkin/colors.css
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Custom overriding styles (enabled pr. default but empty, to prevent browsers from fetching %USERLAYOUTURL%-style URLs) <ul>
+<li> Set USERLAYOUTURL = 
+</li> <li> Set USERSTYLEURL = 
+</li> <li> Set USERCOLORSURL = 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <strong>PatternSkin header settings</strong> <ul>
+<li> Set WEBHEADERART = /pub/TWiki/PatternSkin/TWiki_header.gif
+</li> <li> #Set WEBHEADERBGCOLOR = #faf8f0
+</li></ul> 
+</li></ul> 
+<p />
+<a name="SkinIcons"></a>
+<h3><a name="Skin_Icons"></a> Skin Icons </h3>
+<p /> <ul>
+<li> Topic containing the icon graphics library. Icons can easily be rendered with <code>%ICON{name}%</code>. <ul>
+<li> Set ICONTOPIC = <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/SiteDocGraphics?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="SiteDocGraphics (this topic does not yet exist; you can create it)">SiteDocGraphics</a></span>
+</li></ul> 
+</li></ul> 
+<p />
+<a name="LegacySupport"></a>
+<h3><a name="Legacy_Support"></a> Legacy Support </h3>
+<p /> <ul>
+<li> Support for legacy "EDITTOPIC", used to be hard-coded, now replaced by TMPL:P conditional instantiation <ul>
+<li> Set EDITURL = /bin/edit/TWiki/TWikiPreferences?t=1542826092
+</li> <li> Set EDITTOPIC = <a href="/bin/edit/TWiki/TWikiPreferences?t=1542826092" title="Edit Topic - deprecated usage - please see release notes">Edit</a>
+</li></ul> 
+</li></ul> 
+<p />
+<a name="PluginsSettings"></a>
+<h2><a name="Plugins_Settings"></a> Plugins Settings </h2>
+<p /> <ul>
+<li> You can enable/disable Plugins using the <a href="/bin/configure" target="_top">configure</a> interface.
+</li> <li> You can also disable installed plugins in individual webs/topics by defining the %DISABLEDPLUGINS% TWiki variable to be a list of plugins to disable e.g. <ul>
+<li> Set DISABLEDPLUGINS = <a href="/bin/view/TWiki/SpreadSheetPlugin" class="twikiLink">SpreadSheetPlugin</a>,EditTablePlugin
+</li> <li> Currently, %DISABLEDPLUGINS% is set to "%DISABLEDPLUGINS%"
+</li></ul> 
+</li> <li> Currently activated Plugins: <a href="/bin/view/TWiki/SpreadSheetPlugin" class="twikiLink">SpreadSheetPlugin</a>, <a href="/bin/view/TWiki/BackupRestorePlugin" class="twikiLink">BackupRestorePlugin</a>, <a href="/bin/view/TWiki/BibtexPlugin" class="twikiLink">BibtexPlugin</a>, <a href="/bin/view/TWiki/ColorPickerPlugin" class="twikiLink">ColorPickerPlugin</a>, <a href="/bin/view/TWiki/CommentPlugin" class="twikiLink">CommentPlugin</a>, <a href="/bin/view/TWiki/DatePickerPlugin" class="twikiLink">DatePickerPlugin</a>, <a href="/bin/view/TWiki/EditTablePlugin" class="twikiLink">EditTablePlugin</a>, <a href="/bin/view/TWiki/HeadlinesPlugin" class="twikiLink">HeadlinesPlugin</a>, <a href="/bin/view/TWiki/HtmlMetaPlugin" class="twikiLink">HtmlMetaPlugin</a>, <a href="/bin/view/TWiki/InterwikiPlugin" class="twikiLink">InterwikiPlugin</a>, <a href="/bin/view/TWiki/JQueryPlugin" class="twikiLink">JQueryPlugin</a>, <a href="/bin/view/TWiki/PreferencesPlugin" class="twikiLink">PreferencesPlugin</a>, <a href="/bin/view/TWiki/SetGetPlugin" class="twikiLink">SetGetPlugin</a>, <a href="/bin/view/TWiki/SlideShowPlugin" class="twikiLink">SlideShowPlugin</a>, <a href="/bin/view/TWiki/SmiliesPlugin" class="twikiLink">SmiliesPlugin</a>, <a href="/bin/view/TWiki/TablePlugin" class="twikiLink">TablePlugin</a>, <a href="/bin/view/TWiki/TagMePlugin" class="twikiLink">TagMePlugin</a>, <a href="/bin/view/TWiki/TinyMCEPlugin" class="twikiLink">TinyMCEPlugin</a>, <a href="/bin/view/TWiki/TwistyPlugin" class="twikiLink">TwistyPlugin</a>, <a href="/bin/view/TWiki/WatchlistPlugin" class="twikiLink">WatchlistPlugin</a>, <a href="/bin/view/TWiki/WysiwygPlugin" class="twikiLink">WysiwygPlugin</a>
+</li></ul> 
+<p /> <ul>
+<li> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> <strong>NOTE:</strong> You can enable/disable Plugins by passing a comma-separated list of Plugin names in the <code>debugenableplugins</code> url parameter; for example, <a href="https://www.cs.uic.edu/bin/view/TWiki/TWikiPreferences?debugenableplugins=SmiliesPlugin" target="_top">https://www.cs.uic.edu/bin/view/TWiki/TWikiPreferences?debugenableplugins=SmiliesPlugin</a> will display this topic with all Plugins disabled except the <a href="/bin/view/TWiki/SmiliesPlugin" class="twikiLink">SmiliesPlugin</a>.
+</li> <li> Detailed diagnostics can be found in <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li> <li> Legacy settings: <ul>
+<li> Set INSTALLEDPLUGINS = The INSTALLEDPLUGINS variable is no longer supported. You can set the Plugins execution order using the <a href="/bin/configure" target="_top">configure</a> interface.
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/TinyMCEPlugin" class="twikiLink">TinyMCEPlugin</a>: Topic containing a <a href="/bin/view/TWiki/VarSTARTSECTION" class="twikiLink">section</a> named <code>INIT</code> which will hold the default initialization parameters for the TinyMCE editor. See <a href="/bin/view/TWiki/TinyMCEPlugin" class="twikiLink">TinyMCEPlugin</a> for details. <ul>
+<li> Set TINYMCEPLUGIN_INIT_TOPIC = <a href="/bin/view/TWiki/TinyMCEPlugin" class="twikiLink">TinyMCEPlugin</a>
+</li></ul> 
+</li></ul> 
+<p />
+<!-- Legacy settings for CommentPlugin: <ul>
+<li> Name of file in the 'templates' directory that contains the comment templates: <ul>
+<li> Set COMMENTPLUGIN_TEMPLATES = comments
+</li></ul> 
+</li> <li> Default template type: <ul>
+<li> Set COMMENTPLUGIN_DEFAULT_TYPE = above
+</li></ul> 
+</li></ul> 
+-->
+<p />
+<a name="ParameterizedVariables"></a>
+<h2><a name="Parameterized_Variables"></a> Parameterized Variables </h2>
+<p />
+<a href="/bin/view/TWiki/ParameterizedVariables" class="twikiLink">ParameterizedVariables</a> for global use are defined here.
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/TWikiDashboardAddOn" class="twikiLink">TWikiDashboardAddOn</a> variable, documented in <a href="/bin/view/TWiki/VarDASHBOARD" class="twikiLink">VarDASHBOARD</a>: <ul>
+<li> Set DASHBOARD = %INCLUDE{ "TWiki.TWikiDashboardAddOn" section="%section%" %IF{ "'%height{ default="" }%'!=''" then="height=\"%height%\"" }% %IF{ "'%width{ default="" }%'!=''" then="width=\"%width%\"" }% %IF{ "'%ENCODE{ "%image{ default="" }%" type="entity" }%'!=''" then="image=\"%image%\"" }% %IF{ "'%ENCODE{ "%title{ default="" }%" type="entity" }%'!=''" then="title=\"%title%\"" }% %IF{ "'%ENCODE{ "%button1{ default="" }%" type="entity" }%'!=''" then="button1=\"%button1%\"" }% %IF{ "'%ENCODE{ "%button2{ default="" }%" type="entity" }%'!=''" then="button2=\"%button2%\"" }% %IF{ "'%ENCODE{ "%button3{ default="" }%" type="entity" }%'!=''" then="button3=\"%button3%\"" }% %IF{ "'%ENCODE{ "%button4{ default="" }%" type="entity" }%'!=''" then="button4=\"%button4%\"" }% %IF{ "'%ENCODE{ "%button5{ default="" }%" type="entity" }%'!=''" then="button5=\"%button5%\"" }% %IF{ "'%ENCODE{ "%button6{ default="" }%" type="entity" }%'!=''" then="button6=\"%button6%\"" }% %IF{ "'%ENCODE{ "%button7{ default="" }%" type="entity" }%'!=''" then="button7=\"%button7%\"" }% %IF{ "'%ENCODE{ "%button8{ default="" }%" type="entity" }%'!=''" then="button8=\"%button8%\"" }% %IF{ "'%ENCODE{ "%style{ default="" }%" type="entity" }%'!=''" then="style=\"%style%\"" }% %IF{ "'%ENCODE{ "%titlestyle{ default="" }%" type="entity" }%'!=''" then="titlestyle=\"%titlestyle%\"" }% %IF{ "'%ENCODE{ "%contentstyle{ default="" }%" type="entity" }%'!=''" then="contentstyle=\"%contentstyle%\"" }% }%
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/UserReports" class="twikiLink">UserReports</a> variable, documented in <a href="/bin/view/TWiki/VarUSERREPORT" class="twikiLink">VarUSERREPORT</a>: <ul>
+<li> Set USERREPORT = %INCLUDE{ "TWiki.UserReports" section="%action%" %IF{ "'%ENCODE{ "%search{ default="~~" }%" type="entity" }%'!='~~'" then="search=\"%search%\"" }% %IF{ "'%limit{ default="~~" }%'!='~~'" then="limit=\"%limit%\"" }% %IF{ "'%order{ default="~~" }%'!='~~'" then="order=\"%order%\"" }% %IF{ "'%sort{ default="~~" }%'!='~~'" then="sort=\"%sort%\"" }% %IF{ "'%reverse{ default="~~" }%'!='~~'" then="reverse=\"%reverse%\"" }% %IF{ "'%user{ default="~~" }%'!='~~'" then="user=\"%user%\"" }% %IF{ "'%users{ default="~~" }%'!='~~'" then="users=\"%users%\"" }% %IF{ "'%selected{ default="~~" }%'!='~~'" then="selected=\"%selected%\"" }% %IF{ "'%height{ default="~~" }%'!='~~'" then="height=\"%height%\"" }% %IF{ "'%width{ default="~~" }%'!='~~'" then="width=\"%width%\"" }% %IF{ "'%ENCODE{ "%title{ default="~~" }%" type="entity" }%'!='~~'" then="title=\"%title%\"" }% %IF{ "'%name{ default="~~" }%'!='~~'" then="name=\"%name%\"" }% %IF{ "'%columns{ default="~~" }%'!='~~'" then="columns=\"%columns%\"" }% %IF{ "'%ENCODE{ "%style{ default="~~" }%" type="entity" }%'!='~~'" then="style=\"%style%\"" }% %IF{ "'%ENCODE{ "%firstoption{ default="~~" }%" type="entity" }%'!='~~'" then="firstoption=\"%firstoption%\"" }% %IF{ "'%ENCODE{ "%firstvalue{ default="~~" }%" type="entity" }%'!='~~'" then="firstvalue=\"%firstvalue%\"" }% }%
+</li> <li> Set USERSIG = <style> .userReportsSig { display: inline-block; white-space: nowrap; padding: 0 2px 0 0; border: 1px solid #e8e8eb; background-color: #f4f4fa; -moz-box-shadow: 1px 1px 2px #e8e8e8; -webkit-box-shadow: 1px 1px 2px #e8e8e8; box-shadow: 1px 1px 2px #e8e8e8; -moz-border-radius: 4px; border-radius: 4px; } .userReportsSig a:link { border: 0 none; } .userReportsSig img { vertical-align: middle; } .userReportsBubble { position: absolute; background-image: url(/pub/TWiki/UserReports/faded-bubble.png); background-repeat: no-repeat; margin-top: -57px; margin-left: -18px; width: 920px; height: 90px; z-index: -1; } </style><span class="userReportsSig"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/DEFAULT?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="0 (this topic does not yet exist; you can create it)"><img src="/pub/Main/UserProfileHeader/default-user-profile.jpg" height="24" alt="" /> %DEFAULT%  </a></span> </span>
+</li> <li> Set BUBBLESIG = <span class="userReportsSig"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/DEFAULT?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="0 (this topic does not yet exist; you can create it)"><img src="/pub/Main/UserProfileHeader/default-user-profile.jpg" height="24" alt="" /> %DEFAULT%  </a></span> </span><div class="userReportsBubble"></div><div style='height: 5px;'></div>
+</li></ul> 
+</li></ul> 
+<p />
+<a name="RenderingShortcuts"></a>
+<h2><a name="Rendering_Shortcuts_Settings"></a> Rendering Shortcuts Settings </h2>
+<p />
+These <a href="/bin/view/TWiki/TWikiRenderingShortcut" class="twikiLink">TWikiRenderingShortcuts</a> facilitate doc writing.
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarBB" class="twikiLink">Line break and bullet</a> with different levels of indentation: <ul>
+<li> Set BB = <br />&#8226;
+</li> <li> Set BB2 = <br />&nbsp;&nbsp;&#8226;
+</li> <li> Set BB3 = <br />&nbsp;&nbsp;&nbsp;&nbsp;&#8226;
+</li> <li> Set BB4 = <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarBR" class="twikiLink">Line break</a>: Note that the setting has an intentional trailing space <ul>
+<li> Set BR = <br /> 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarBULLET" class="twikiLink">Bullet sign</a>: <ul>
+<li> Set BULLET = &#8226;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarCARET" class="twikiLink">Vertical caret symbol</a>: <ul>
+<li> Set CARET = &#94;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarCOPY" class="twikiLink">Copyright symbol</a>: <ul>
+<li> Set COPY = &copy;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarLAQUO" class="twikiLink">Left</a> &amp; <a href="/bin/view/TWiki/VarRAQUO" class="twikiLink">right double angle quote</a>: <ul>
+<li> Set LAQUO = &#171;
+</li> <li> Set RAQUO = &#187;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarNBSP" class="twikiLink">Non-breaking space symbol</a>: <ul>
+<li> Set NBSP = &nbsp;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarPARENTBC" class="twikiLink">Parent breadcrumbs</a> for headings: <ul>
+<li> Add <code>%PARENTBC%</code> to a heading of a topic to show the breadcrumb of its parents. Parent topics are linked, topic names are shown spaced out in a smaller font, and are separated by <code>&#187;</code> quotes. In addition, a <code>parentlist</code> <a href="/bin/view/TWiki/SetGetPlugin" class="twikiLink">SetGetPlugin</a> variable is set to the parent list, and a <code>parent</code> variable is set to the immediate parent. This can be retrieved later in the topic using <code>%GET{parentlist}%</code> and <code>%GET{parent}%</code>, respectively.
+</li> <li> Example raw text:<br />  <code>---+ %PARENTBC% Myself and me</code>
+</li> <li> Expands to: <h1> <span style="font-size: 58%"> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiCurrentTopicLink twikiLink">Grandma And Granpa</a> &#187; <a href="/bin/view/TWiki/TWikiPreferences" class="twikiCurrentTopicLink twikiLink">Mother And Father</a> &#187; </span> Myself and me</h1>
+</li> <li> Set PARENTBC = <span style="font-size: 58%">  &#187; </span>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarREG" class="twikiLink">Registered trademark symbol</a>: <ul>
+<li> Set REG = &reg;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarTM" class="twikiLink">Trademark symbol</a>: <ul>
+<li> Set TM = &trade;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarTOPICURL" class="twikiLink">Topic URL</a>: URL of current topic <ul>
+<li> Set TOPICURL = <a href="https://www.cs.uic.edu/bin/view/TWiki/TWikiPreferences" target="_top">https://www.cs.uic.edu/bin/view/TWiki/TWikiPreferences</a>
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/VarVBAR" class="twikiLink">Vertical bar / pipe symbol</a>: <ul>
+<li> Set VBAR = &#124;
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <strong><em>Hint:</em></strong> Above shortcuts are useful in TWiki tables where you cannot use newlines
+</li></ul> 
+<p />
+<a name="DocGraphics"></a> <ul>
+<li> Graphics used in TWiki documentation - view all images in <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/SiteDocGraphics?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="SiteDocGraphics (this topic does not yet exist; you can create it)">SiteDocGraphics</a></span>. <em>(There are various ways to set up common icons as text variables. This is simply one quick approach.)</em>: <ul>
+<li> Set H = <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" />
+</li> <li> Set I = <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="IDEA!" title="IDEA!" width="16" height="16" border="0" />
+</li> <li> Set M = <img src="/pub/TWiki/TWikiDocGraphics/arrowright.gif" alt="MOVED TO..." title="MOVED TO..." width="16" height="16" border="0" />
+</li> <li> Set N = <img src="/pub/TWiki/TWikiDocGraphics/new.gif" alt="NEW" title="NEW" width="30" height="16" border="0" />
+</li> <li> Set P = <img src="/pub/TWiki/TWikiDocGraphics/pencil.gif" alt="REFACTOR" title="REFACTOR" width="16" height="16" border="0" />
+</li> <li> Set Q = <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="QUESTION?" title="QUESTION?" width="16" height="16" border="0" />
+</li> <li> Set S = <img src="/pub/TWiki/TWikiDocGraphics/starred.gif" alt="PICK" title="PICK" width="16" height="16" border="0" />
+</li> <li> Set T = <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" />
+</li> <li> Set U = <img src="/pub/TWiki/TWikiDocGraphics/updated.gif" alt="UPDATED" title="UPDATED" width="55" height="16" border="0" />
+</li> <li> Set WIP = <img src="/pub/TWiki/TWikiDocGraphics/wip.gif" alt="Work in Progess!" title="Work in Progress!" width="16" height="16" border="0" />
+</li> <li> Set X = <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" />
+</li> <li> Set Y = <img src="/pub/TWiki/TWikiDocGraphics/choice-yes.gif" alt="DONE" title="DONE" width="16" height="16" border="0" />
+</li></ul> 
+</li></ul> 
+<p />
+<a name="ColoredText"></a> <ul>
+<li> Colored text: (see more <a href="/bin/view/TWiki/StandardColors" class="twikiLink">StandardColors</a>)       <table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">     		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> You type: </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <code>%RED% red text %ENDCOLOR% and %GREEN% green text %ENDCOLOR%</code> </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> You get: </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> <span style="color: #ff0000"> red text </span> and <span style="color: #008000"> green text </span> </td>		</tr>     </table> <ul>
+<li> <strong><em>Note:</em></strong> <code>%&lt;color&gt;%</code> text must end with <code>%ENDCOLOR%</code>. If you want to switch from one color to another one you first need to end the active color with <code>%ENDCOLOR%</code>, such as <code>%RED% some text %ENDCOLOR% %GREEN% more text %ENDCOLOR%</code>.        <!-- Two sets of colors follow: Color test and color setting -->
+</li> <li> <span style="color: #ffff00"> <strong>%YELLOW% looks like this</strong> </span>
+</li> <li> <span style="color: #ff6600"> <strong>%ORANGE% looks like this</strong> </span>
+</li> <li> <span style="color: #ff0000"> <strong>%RED% looks like this</strong> </span>
+</li> <li> <span style="color: #ff00ff"> <strong>%PINK% looks like this</strong> </span>
+</li> <li> <span style="color: #800080"> <strong>%PURPLE% looks like this</strong> </span>
+</li> <li> <span style="color: #008080"> <strong>%TEAL% looks like this</strong> </span>
+</li> <li> <span style="color: #000080"> <strong>%NAVY% looks like this</strong> </span>
+</li> <li> <span style="color: #0000ff"> <strong>%BLUE% looks like this</strong> </span>
+</li> <li> <span style="color: #00ffff"> <strong>%AQUA% looks like this</strong> </span>
+</li> <li> <span style="color: #00ff00"> <strong>%LIME% looks like this</strong> </span>
+</li> <li> <span style="color: #008000"> <strong>%GREEN% looks like this</strong> </span>
+</li> <li> <span style="color: #808000"> <strong>%OLIVE% looks like this</strong> </span>
+</li> <li> <span style="color: #800000"> <strong>%MAROON% looks like this</strong> </span>
+</li> <li> <span style="color: #996633"> <strong>%BROWN% looks like this</strong> </span>
+</li> <li> <span style="color: #000000"> <strong>%BLACK% looks like this</strong> </span>
+</li> <li> <span style="color: #808080"> <strong>%GRAY% looks like this</strong> </span>
+</li> <li> <span style="color: #c0c0c0"> <strong>%SILVER% looks like this</strong> </span>
+</li> <li> <span style='background : #808080;'><span style="color: #ffffff"> <strong>%WHITE% looks like this (with gray background)</strong> </span></span>
+</li> <li> The following settings define the colors: (they are enclosed in verbatim tags to avoid incorrect nesting of XHTML tags)
+</li></ul> 
+</li></ul> 
+<pre>
+      &#42; Set YELLOW &#61; &#60;span style&#61;&#34;color: #ffff00&#34;&#62;
+      &#42; Set ORANGE &#61; &#60;span style&#61;&#34;color: #ff6600&#34;&#62;
+      &#42; Set RED &#61; &#60;span style&#61;&#34;color: #ff0000&#34;&#62;
+      &#42; Set PINK &#61; &#60;span style&#61;&#34;color: #ff00ff&#34;&#62;
+      &#42; Set PURPLE &#61; &#60;span style&#61;&#34;color: #800080&#34;&#62;
+      &#42; Set TEAL &#61; &#60;span style&#61;&#34;color: #008080&#34;&#62;
+      &#42; Set NAVY &#61; &#60;span style&#61;&#34;color: #000080&#34;&#62;
+      &#42; Set BLUE &#61; &#60;span style&#61;&#34;color: #0000ff&#34;&#62;
+      &#42; Set AQUA &#61; &#60;span style&#61;&#34;color: #00ffff&#34;&#62;
+      &#42; Set LIME &#61; &#60;span style&#61;&#34;color: #00ff00&#34;&#62;
+      &#42; Set GREEN &#61; &#60;span style&#61;&#34;color: #008000&#34;&#62;
+      &#42; Set OLIVE &#61; &#60;span style&#61;&#34;color: #808000&#34;&#62;
+      &#42; Set MAROON &#61; &#60;span style&#61;&#34;color: #800000&#34;&#62;
+      &#42; Set BROWN &#61; &#60;span style&#61;&#34;color: #996633&#34;&#62;
+      &#42; Set BLACK &#61; &#60;span style&#61;&#34;color: #000000&#34;&#62;
+      &#42; Set GRAY &#61; &#60;span style&#61;&#34;color: #808080&#34;&#62;
+      &#42; Set SILVER &#61; &#60;span style&#61;&#34;color: #c0c0c0&#34;&#62;
+      &#42; Set WHITE &#61; &#60;span style&#61;&#34;color: #ffffff&#34;&#62;
+      &#42; Set ENDCOLOR &#61; &#60;/span&#62;
+</pre>
+<p />
+<a name="ColoredBackground"></a> <ul>
+<li> Colored background: (see more <a href="/bin/view/TWiki/StandardColors" class="twikiLink">StandardColors</a>)       <table cellspacing="0" id="table2" cellpadding="0" class="twikiTable" rules="all" border="1">     		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> You type: </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <code>%REDBG% red background %ENDBG% </td> &nbsp; &nbsp; &nbsp; &nbsp; <td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> %GREENBG% green background %ENDBG%</code> </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> You get: </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLast"> <div style="background-color: #ff8080; padding:0 3px 0 3px"> red background </div> </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> <div style="background-color: #99cc99; padding:0 3px 0 3px"> green background </div> </td>		</tr>     </table> <ul>
+<li> <strong><em>Note:</em></strong> These background colors are block level elements, e.g. take up a whole row of text by default. Useful to set background colors in cells of TWiki tables.        <!-- Two sets of colors follow: Color test and color setting -->
+</li> <li> <div style="background-color: #ffff80; padding:0 3px 0 3px"> <strong>%YELLOWBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #ffbb80; padding:0 3px 0 3px"> <strong>%ORANGEBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #ff8080; padding:0 3px 0 3px"> <strong>%REDBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #ff80ff; padding:0 3px 0 3px"> <strong>%PINKBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #dd99dd; padding:0 3px 0 3px"> <strong>%PURPLEBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #80c0c0; padding:0 3px 0 3px"> <strong>%TEALBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #8080c0; padding:0 3px 0 3px"> <strong>%NAVYBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #8080ff; padding:0 3px 0 3px"> <strong>%BLUEBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #80ffff; padding:0 3px 0 3px"> <strong>%AQUABG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #80ff80; padding:0 3px 0 3px"> <strong>%LIMEBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #99cc99; padding:0 3px 0 3px"> <strong>%GREENBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #c0c080; padding:0 3px 0 3px"> <strong>%OLIVEBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #c08080; padding:0 3px 0 3px"> <strong>%MAROONBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #bb9988; padding:0 3px 0 3px"> <strong>%BROWNBG% looks like this</strong> </div>
+</li> <li> <span style="color:#ffffff"><div style="background-color: #000000; padding:0 3px 0 3px"> <strong>%BLACKBG% looks like this</strong> </div></span>
+</li> <li> <div style="background-color: #a0a0a0; padding:0 3px 0 3px"> <strong>%GRAYBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #c0c0c0; padding:0 3px 0 3px"> <strong>%SILVERBG% looks like this</strong> </div>
+</li> <li> <div style="background-color: #ffffff; padding:0 3px 0 3px"> <strong>%WHITEBG% looks like this</strong> </div>
+</li> <li> The following settings define the background colors: (they are enclosed in verbatim tags to avoid incorrect nesting of XHTML tags)
+</li></ul> 
+</li></ul> 
+<pre>
+      &#42; Set YELLOWBG &#61; &#60;div style&#61;&#34;background-color: #ffff80; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set ORANGEBG &#61; &#60;div style&#61;&#34;background-color: #ffbb80; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set REDBG &#61; &#60;div style&#61;&#34;background-color: #ff8080; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set PINKBG &#61; &#60;div style&#61;&#34;background-color: #ff80ff; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set PURPLEBG &#61; &#60;div style&#61;&#34;background-color: #dd99dd; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set TEALBG &#61; &#60;div style&#61;&#34;background-color: #80c0c0; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set NAVYBG &#61; &#60;div style&#61;&#34;background-color: #8080c0; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set BLUEBG &#61; &#60;div style&#61;&#34;background-color: #8080ff; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set AQUABG &#61; &#60;div style&#61;&#34;background-color: #80ffff; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set LIMEBG &#61; &#60;div style&#61;&#34;background-color: #80ff80; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set GREENBG &#61; &#60;div style&#61;&#34;background-color: #99cc99; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set OLIVEBG &#61; &#60;div style&#61;&#34;background-color: #c0c080; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set MAROONBG &#61; &#60;div style&#61;&#34;background-color: #c08080; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set BROWNBG &#61; &#60;div style&#61;&#34;background-color: #bb9988; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set BLACKBG &#61; &#60;div style&#61;&#34;background-color: #000000; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set GRAYBG &#61; &#60;div style&#61;&#34;background-color: #a0a0a0; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set SILVERBG &#61; &#60;div style&#61;&#34;background-color: #c0c0c0; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set WHITEBG &#61; &#60;div style&#61;&#34;background-color: #ffffff; padding:0 3px 0 3px&#34;&#62;
+      &#42; Set ENDBG &#61; &#60;/div&#62;
+</pre>
+<p />
+<a name="MiscellaneousSettings"></a>
+<h2><a name="Miscellaneous_Settings"></a> Miscellaneous Settings </h2>
+<p /> <ul>
+<li> Format of a <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/TWiki/NewWikiWord?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="NewWikiWord (this topic does not yet exist; you can create it)">NewWikiWord</a></span> link:
+</li> <li> Note that <code>$text</code> is the topic link text, <code>$summary</code> is the HTML-cleaned topic link text, <code>$topic</code> is the name of the new topic, and <code>$web</code> is the name of the web for the new topic. Values are taken from the link syntax <code>[[$web.$topic][$text]]</code>. For normal plain WikiWord links <code>$text</code> and <code>$topic</code> are the same. The value of <code>$web</code> is the current web unless the link is in the format <code>$web.$topic</code>. <ul>
+<li> default setting: <ul>
+<li> Set NEWLINKFORMAT = <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/%24web/$topic?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="$summary (this topic does not yet exist; you can create it)">$text</a></span>
+</li></ul> 
+</li> <li> alternative setting: <ul>
+<li> #Set NEWLINKFORMAT = <a class="twikiNewLink" href="https://www.cs.uic.edu/bin/edit/%24web/$topic?topicparent=TWiki.TWikiPreferences" rel="nofollow" title="Create this topic">$text</a>
+</li></ul> 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> User signature format. The SIGNATUREFORMAT is used when creating new topics, BUBBLESIGNATUREFORMAT is used when adding comments with <a href="/bin/view/TWiki/CommentPlugin" class="twikiLink">CommentPlugin</a>: <ul>
+<li> default setting: <ul>
+<li> Set BUBBLESIGNATUREFORMAT = -- <span class="userReportsSig"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWiki&#32;Guest&#32;&#32;&#32;&#32;2018&#32;11&#32;21 (this topic does not yet exist; you can create it)"><img src="/pub/Main/UserProfileHeader/default-user-profile.jpg" height="24" alt="" /> TWiki Guest  - 2018-11-21</a></span> </span><div class="userReportsBubble"></div><div style='height: 5px;'></div>
+</li> <li> Set SIGNATUREFORMAT = -- <span class="userReportsSig"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWiki&#32;Guest&#32;&#32;&#32;&#32;2018&#32;11&#32;21 (this topic does not yet exist; you can create it)"><img src="/pub/Main/UserProfileHeader/default-user-profile.jpg" height="24" alt="" /> TWiki Guest  - 2018-11-21</a></span> </span>
+</li> <li> <strong><em>Note:</em></strong> The USERSIG is defined in section "user_sig" of <a href="/bin/view/TWiki/UserReports" class="twikiLink">UserReports</a>. The desired expanded signature format in a topic is <code>%USERSIG{%WIKINAME% - %DATE%}%</code>, this with unexpanded USERSIG, but expanded WIKINAME and DATE. A hack using CALCULATE is used to keep USERSIG unexpanded: <code>%CALCULATE{%U}%SERSIG{...}%</code>
+</li></ul> 
+</li> <li> alternative legacy setting: <ul>
+<li> #Set SIGNATUREFORMAT = -- <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span> - 2018-11-21
+</li></ul> 
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/PreviewBackground" class="twikiLink">PreviewBackground</a> image: <ul>
+<li> Set PREVIEWBGIMAGE = /pub/TWiki/PreviewBackground/preview2bg.gif
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> User-friendly synonyms for system webs <ul>
+<li> Set DOCWEB = TWiki
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Show extra help for ApacheLogin users for <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> login <ul>
+<li> Set ADMINLOGIN = <a href="https://www.cs.uic.edu/bin/login?sudo=sudo;origurl=https://www.cs.uic.edu/bin/view/TWiki/TWikiPreferences" target="_top">internal admin login</a> (use the username suggested and the password set in configure).
+</li></ul> 
+</li></ul> 
+<p />
+<a name="SecuritySettings"></a>
+<h2><a name="Security_Settings"></a> Security Settings </h2>
+<p /> <ul>
+<li> Only TWiki administrators are allowed to change this topic: <ul>
+<li> Set ALLOWTOPICCHANGE = <a href="/bin/view/Main/TWikiAdminGroup" class="twikiLink">TWikiAdminGroup</a>
+</li> <li> Set ALLOWTOPICRENAME = <a href="/bin/view/Main/TWikiAdminGroup" class="twikiLink">TWikiAdminGroup</a>
+</li></ul> 
+</li> <li> Disable WYSIWYG editor for this preferences topic only: <ul>
+<li> Local TINYMCEPLUGIN_DISABLE = on
+</li></ul> 
+</li></ul> 
+<p />
+<a name="NewPreferences"></a>
+<h2><a name="Creating_New_Preference_Variable"></a> Creating New Preference Variables </h2>
+<p />
+You can introduce new VARIABLES and use them in your topics and templates. There is no need to change the TWiki engine (Perl scripts). <ul>
+<li> A preference is defined in a <a href="/bin/view/TWiki/TWikiShorthand" class="twikiLink">TWikiShorthand</a> bullet item: <code><b>[3 spaces] * [space] Set NAME = value</b></code> <br /> Example (as a nested bullet item, indented 6 spaces): <ul>
+<li> Set WEBBGCOLOR = #FFFFC0
+</li></ul> 
+</li> <li> Preferences are used as <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> by enclosing the name in percent signs: <code><b>%</b></code>. Example: <ul>
+<li> When you write variable <code><b>%WEBBGCOLOR%</b></code>, it gets expanded to <code>#FFD8AA</code> .
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> The sequential order of the preference settings is significant. Define preferences that use other preferences FIRST. For example, set <code><b>WEBCOPYRIGHT</b></code> before <code><b>WIKIWEBMASTER</b></code> since the copyright notice uses the TWiki administrator e-mail address.
+</li> <li> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> In order to protect your custom variables from being overwritten when upgrading the <a href="/bin/view/TWiki/TWikiPreferences" class="twikiCurrentTopicLink twikiLink">TWiki.TWikiPreferences</a> topic, it is recommended that custom variables are defined in <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span>.
+</li></ul> 
+<p />
+<a name="ProtectedSystemSettings"></a>
+<h2><a name="Protected_System_Settings"></a> Protected System Settings </h2>
+<p />
+The following settings are declared final to protect them as read only. These are system variables that should never be attempted set or altered in any preference topic or topic settings.
+<p /> <ul>
+<li> Set FINALPREFERENCES = WEB, TOPIC
+</li></ul> 
+<p />
+This topic should not be edited.
+<p /> <ul>
+<li> Local READONLYSKINMODE = 1
+</li></ul> 
+<p />
+<a name="RelatedTopics"></a>
+<h2><a name="Related_Topics"></a> Related Topics </h2>
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a> has preferences of the TWiki web.
+</li> <li> User topics in Main can have optional user preferences.
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> has a list of common <code>%VARIABLES%</code>.
+</li> <li> <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a> explains how to restrict access by users or groups.
+</li> <li> <a href="/bin/view/TWiki/PreferencesPlugin" class="twikiLink">PreferencesPlugin</a> makes editing preferences a snap.
+</li></ul> 
+<p />
+<strong><em>Note</em></strong>: Can't edit?
+<a href="/bin/view/TWiki/TWikiPreferences?raw=on" target="_top">View raw topic</a>
+<p />
+<div class="twikiNotification"> <strong><em><img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> NOTE:</em></strong> Don't edit this topic, changes will be lost on the next TWiki upgrade. Define new site-level settings, or overload above settings in <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=TWiki.TWikiPreferences;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span> </div> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/TWikiPreferences">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiCurrentTopicLink twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

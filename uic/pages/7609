@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>UIC Off-Campus Housing</title>
+
+<link rel='stylesheet' type='text/css' href='/files/main_style.css'>
+<link rel="stylesheet" href="/files/lightbox/lightbox.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/files/nav-menu.js"></script>
+<script type="text/JavaScript" src="landlord/js/sha512.js"></script> 
+<script type="text/JavaScript" src="landlord/js/forms.js"></script>
+<script src="/files/lightbox/lightbox.min.js"></script>
+</head>
+
+<body>
+<div id="header-wrap">
+    <div id="logo"><br>
+      <img src="http://www.commuter.uic.edu/uiclogo.png">
+    </div>
+	<div id="social-icon">
+      Connect with us! &nbsp;&nbsp;
+      <a href='https://www.facebook.com/uiccsrc' class="facebook"><span class="sr">C S R C Facebook</span></a>
+      <a href='https://twitter.com/UICCSRC' class="twitter"><span class="sr">C S R C Twitter</span></a>
+   
+    </div>
+</div>
+<div id="container-wrap1">
+	<div id="container-wrap2">
+		<div id="container-wrap3">
+			<div id="container">
+				<div id="navigation">
+					<div id="navigation-detail">
+            &nbsp;<font size="5">   <b><a href="http://www.commuter.uic.edu/">Back to Home</a>       </b> </font>
+					</div>
+				</div>
+				<div id="content">
+<!--START HERE -->
+<div id="dual-left">
+<h1>Off-Campus Housing</h1>
+Welcome to the UIC off-campus housing directory. This directory provides up-to-date listings accessible to students, faculty, and staff of UIC.
+
+<div style="font-weight:bold; padding:20px 0px;">UIC Students, Faculty & Staff</div>
+All individuals with a NetID are able to view up-to-date listings around the Chicagoland area. Users are also able to search for roommates, post listings for rental properties, and subletting. To login, click the NetID Login on the right. If you are still waiting to receive a NetID or are a student at another Chicago school, then you can <a href="temp_account_request.php">apply for a temporary account here.</a> Temporary accounts are only allowed to view ads.
+<div style="font-weight:bold; padding:20px 0px">Landlords</div>
+Landlords are able to list rental properties through our Off-Campus Housing database. This service is free to use and is an excellent way to connect directly to UIC students. Newly registered landlords can create postings immediately. All postings will be made public upon approval of their account which usually takes between 1 – 3 business days.
+<div style="padding:40px 0px; font-weight:bold">
+The Commuter Student Resource Center does not inspect listings and a listing does not imply a recommendation or guarantee of accuracy or availability. It is in the best interest of the student to contact the landlord or roommate directly and make arrangements to see the accommodations and discuss any rules and negotiable terms. Users should exercise reasonable care when choosing landlords, tenants or roommates. Users of this website should exercise a certain amount of caution and common sense in responding to requests to send them social security numbers or pre-payments.
+</div>
+<div style="text-align:center; padding-bottom:20px; letter-spacing:5px">
+	<a href="/images/housing_view.png" data-lightbox="housing"><img style="max-height:100px; max-width:100px" src="/images/housing_view.png" alt="example 1" /></a>
+	<a href="/images/housing_listing.png" data-lightbox="housing"><img style="max-height:100px; max-width:100px" src="/images/housing_listing.png" alt="example 2" /></a>
+	<a href="/images/housing_create.png" data-lightbox="housing"><img style="max-height:100px; max-width:100px" src="/images/housing_create.png" alt="example 3" /></a>
+</div>
+<div style="font-weight:bold"><a href="http://www.housing.uic.edu/index.php">If you are interested in Campus Housing, click here.</a></div>
+</div>
+
+<div id="dual-right">
+	<div style="font-size:14px; text-align:left; display:inline-block; padding-top:50px; width:200px">
+    <a href="uic/listing_view.php"><strong>NetID Login</strong></a>
+    <div style="padding-top:45px"></div>
+        <div id="error"><p style="color:#c00; margin-top:-31px">Please enable javascript to login</p></div>
+    
+    <strong>Login</strong>
+    <div style="text-align:left; padding-top:15px">
+    <form action="landlord/includes/process_login.php" method="post" name="login_form"> 
+      <label for="email">Email</label><br><input type="text" name="email" id="email" disabled><br>
+      <label for="password">Password</label><br><input type="password" name="password" id="password" disabled><br>
+      <input name="submit" type="submit" value="Login" disabled onclick="formhash(this.form, this.form.password);" />
+    </form>
+    </div>
+    <div style="float:right; padding-right:60px; padding-top:10px;"><a href="forgot_password.php"><i>Forgot Password</i></a></div>
+    <div style="padding-top:70px; font-weight:bold">Not registered?<br><a href="landlord/register.php">Register as Landlord</a></div>
+    <div style="padding-top:70px">*Best viewed using <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer 11+</a>, <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox 10+</a>, or <a href="https://www.google.com/intl/en_us/chrome/browser/">Chrome 25+</a></div>
+    </div>
+</div>
+<!--STOP HERE -->
+				  <div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+var x =  navigator.cookieEnabled;
+if (x){
+	document.forms['login_form']['email'].disabled = false;
+	document.forms['login_form']['password'].disabled = false;
+	document.forms['login_form']['submit'].disabled = false;
+	document.getElementById('error').innerHTML = '';
+}else{
+	document.getElementById('error').innerHTML = '<p style="color:#c00; margin-top:-31px">Please enable cookies to login</p>';
+}
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-25380356-1', 'uic.edu');
+ga('send', 'pageview');
+</script>
+<div id="footer">
+	<a href="http://www.uic.edu/uic/studentlife/studentservices/disability.shtml">Disability Resources</a> | 
+    <a href="http://www.uic.edu/uic/studentlife/campus/emergency-information.shtml">Emergency Information</a> | 
+    <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a> | 
+    <a href="/contact_us.html">Contact Us</a><br>
+	<span style="font-size:11px">&copy; Copyright 2014 The Board of Trustees of the University of Illinois</span>
+</div>
+</body>
+
+</html>

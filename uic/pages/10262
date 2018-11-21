@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; CS361fall13 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS361fall13/WebStatistics?_T=2018-11-21" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS361fall13/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS361fall13/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS361fall13/WebHome">CS361fall13 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS361fall13/WebStatistics" title='Topic revision: 25 (2014-01-05 - 08:07:58)'>WebStatistics</a> <span class='patternRevInfo'>(2014-01-05, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS361fall13/WebStatistics?t=1542827423' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS361fall13/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_CS361fall13_Web"></a> Statistics for CS361fall13 Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 315 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;29 <a href="/bin/view/CS361fall13/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;29 <a href="/bin/view/CS361fall13/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;23 <a href="/bin/view/CS361fall13/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;19 <a href="/bin/view/CS361fall13/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;18 <a href="/bin/view/CS361fall13/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;11 <a href="/bin/view/CS361fall13/Homework7" class="twikiLink">Homework7</a><br />&nbsp;&nbsp;9 <a href="/bin/view/CS361fall13/Homework4" class="twikiLink">Homework4</a><br />&nbsp;&nbsp;9 <a href="/bin/view/CS361fall13/Homework10" class="twikiLink">Homework10</a><br />&nbsp;&nbsp;8 <a href="/bin/view/CS361fall13/CourseSchedule" class="twikiLink">CourseSchedule</a><br />&nbsp;&nbsp;8 <a href="/bin/view/CS361fall13/Homework3" class="twikiLink">Homework3</a><br />&nbsp;&nbsp;8 <a href="/bin/view/CS361fall13/ReadingList" class="twikiLink">ReadingList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3441 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 344 <a href="/bin/view/CS361fall13/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />262 <a href="/bin/view/CS361fall13/LectureNotes" class="twikiLink">LectureNotes</a><br />257 <a href="/bin/view/CS361fall13/WebChanges" class="twikiLink">WebChanges</a><br />169 <a href="/bin/view/CS361fall13/CourseSchedule" class="twikiLink">CourseSchedule</a><br />159 <a href="/bin/view/CS361fall13/Homework10" class="twikiLink">Homework10</a><br />155 <a href="/bin/view/CS361fall13/Syllabus" class="twikiLink">Syllabus</a><br />148 <a href="/bin/view/CS361fall13/WebIndex" class="twikiLink">WebIndex</a><br />114 <a href="/bin/view/CS361fall13/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;75 <a href="/bin/view/CS361fall13/ReadingList" class="twikiLink">ReadingList</a><br />&nbsp;69 <a href="/bin/view/CS361fall13/Homework1" class="twikiLink">Homework1</a><br />&nbsp;67 <a href="/bin/view/CS361fall13/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4941 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 32 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 478 <a href="/bin/view/CS361fall13/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />440 <a href="/bin/view/CS361fall13/WebChanges" class="twikiLink">WebChanges</a><br />272 <a href="/bin/view/CS361fall13/CourseSchedule" class="twikiLink">CourseSchedule</a><br />255 <a href="/bin/view/CS361fall13/Homework9" class="twikiLink">Homework9</a><br />254 <a href="/bin/view/CS361fall13/LectureNotes" class="twikiLink">LectureNotes</a><br />205 <a href="/bin/view/CS361fall13/WebPreferences" class="twikiLink">WebPreferences</a><br />194 <a href="/bin/view/CS361fall13/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />183 <a href="/bin/view/CS361fall13/WebIndex" class="twikiLink">WebIndex</a><br />172 <a href="/bin/view/CS361fall13/Homework8" class="twikiLink">Homework8</a><br />163 <a href="/bin/view/CS361fall13/Syllabus" class="twikiLink">Syllabus</a><br />109 <a href="/bin/view/CS361fall13/Homework1" class="twikiLink">Homework1</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;32 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 6691 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 60 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 776 <a href="/bin/view/CS361fall13/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />453 <a href="/bin/view/CS361fall13/Homework6" class="twikiLink">Homework6</a><br />390 <a href="/bin/view/CS361fall13/CourseSchedule" class="twikiLink">CourseSchedule</a><br />339 <a href="/bin/view/CS361fall13/WebChanges" class="twikiLink">WebChanges</a><br />336 <a href="/bin/view/CS361fall13/LectureNotes" class="twikiLink">LectureNotes</a><br />262 <a href="/bin/view/CS361fall13/Syllabus" class="twikiLink">Syllabus</a><br />212 <a href="/bin/view/CS361fall13/Homework7" class="twikiLink">Homework7</a><br />181 <a href="/bin/view/CS361fall13/Homework5" class="twikiLink">Homework5</a><br />157 <a href="/bin/view/CS361fall13/ReadingList" class="twikiLink">ReadingList</a><br />147 <a href="/bin/view/CS361fall13/Homework1" class="twikiLink">Homework1</a><br />144 <a href="/bin/view/CS361fall13/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;37 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span><br />&nbsp;23 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TimothyMerrifield?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="TimothyMerrifield (this topic does not yet exist; you can create it)">TimothyMerrifield</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 7503 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 78 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 754 <a href="/bin/view/CS361fall13/CourseSchedule" class="twikiLink">CourseSchedule</a><br />688 <a href="/bin/view/CS361fall13/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />386 <a href="/bin/view/CS361fall13/Homework1" class="twikiLink">Homework1</a><br />373 <a href="/bin/view/CS361fall13/LectureNotes" class="twikiLink">LectureNotes</a><br />366 <a href="/bin/view/CS361fall13/Homework2" class="twikiLink">Homework2</a><br />324 <a href="/bin/view/CS361fall13/Homework4" class="twikiLink">Homework4</a><br />305 <a href="/bin/view/CS361fall13/Syllabus" class="twikiLink">Syllabus</a><br />213 <a href="/bin/view/CS361fall13/Homework3" class="twikiLink">Homework3</a><br />169 <a href="/bin/view/CS361fall13/WebChanges" class="twikiLink">WebChanges</a><br />122 <a href="/bin/view/CS361fall13/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;91 <a href="/bin/view/CS361fall13/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;77 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span><br />&nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TimothyMerrifield?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="TimothyMerrifield (this topic does not yet exist; you can create it)">TimothyMerrifield</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Aug 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1 twikiLast"> 459 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLast"> 29 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> &nbsp;71 <a href="/bin/view/CS361fall13/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;55 <a href="/bin/view/CS361fall13/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;44 <a href="/bin/view/CS361fall13/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;36 <a href="/bin/view/CS361fall13/CourseSchedule" class="twikiLink">CourseSchedule</a><br />&nbsp;26 <a href="/bin/view/CS361fall13/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;24 <a href="/bin/view/CS361fall13/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;24 <a href="/bin/view/CS361fall13/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;22 <a href="/bin/view/CS361fall13/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;22 <a href="/bin/view/CS361fall13/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;20 <a href="/bin/view/CS361fall13/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;20 <a href="/bin/view/CS361fall13/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;29 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/CS361fall13" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS361fall13/WebStatistics?t=1542827423' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS361fall13/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS361fall13/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS361fall13/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r25&nbsp;<a rel="nofollow" href="/bin/rdiff/CS361fall13/WebStatistics?rev1=25;rev2=24">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?rev=24">r24</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS361fall13/WebStatistics?rev1=24;rev2=23">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?rev=23">r23</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS361fall13/WebStatistics?rev1=23;rev2=22">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?rev=22">r22</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS361fall13/WebStatistics?rev1=22;rev2=21">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS361fall13/WebStatistics?rev=21">r21</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS361fall13/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the CS361fall13 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS361fall13/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS361fall13/WebStatistics?t=1542827423;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS361fall13/WebStatistics?template=oopsmore&amp;param1=25&amp;param2=25' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r25 - 2014-01-05 - 08:07:58 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS361fall13.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS361fall13/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS361fall13</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS361fall13/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS361fall13/CourseSchedule" class="twikiLink">Homework Schedule</a>
+</li> <li> <a href="/bin/view/CS361fall13/LectureNotes" class="twikiLink">Lecture Notes</a>
+</li> <li> <a href="/bin/view/CS361fall13/ReadingList" class="twikiLink">Reading List</a>
+</li> <li> <a href="/bin/view/CS361fall13/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li> <li> <a href="https://piazza.com/class/hjsnllvm3vc4sy" target="_top">Piazza Board</a>
+</li> <li> <a href="https://jakob.signin.aws.amazon.com/console" target="_top">EC2 Sign-In Page</a>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

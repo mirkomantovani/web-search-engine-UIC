@@ -1,0 +1,239 @@
+<HTML>
+<HEAD>
+<meta http-equiv="REFRESH" content="0;url=http://www.cs.uic.edu/Sistla">
+<TITLE>Symmetry Based Model Checker</TITLE>
+</HEAD>
+<BASEFONT SIZE=4>
+
+
+<H1>Symmetry Based Model Checker</H1>
+
+SMC is a symmetry based model checker that was developed at
+University of Illinois at Chicago, Electric Engineering Department
+under the coordination of 
+<a href="http://www.eecs.uic.edu/~sistla/">Prasad. A. Sistla</a>
+with the contribution of Leonidas Miliades and 
+<a href="http://math.uic.edu/~viktor">Viktor Gyuris</a>. <p>
+
+The program demonstrates the latest results on how the symmetry of
+a concurrent program can be utilized in compressing the computation space.
+The input to
+the system consists of a concurrent program given as a set of processes
+ specified as transition
+systems. It also takes as input a Buchi automaton on infinite strings that
+accepts all the incorrect computations, that is, the automaton accepts the
+complement of the correctness property.
+The system checks if there exists a fair computation of the
+program that is accepted by the automaton, i.e., if there
+exists an incorrect computation. If such a computation exists
+it outputs a ``YES'' answer, otherwise it  terminates with a ``NO'' 
+answer indicating that the program satisfies the correctness property.<p>
+
+The program first reads the code of the concurrent program written in
+the input language specified <a href = "#language"> below</a> as well as
+the finite state automaton that provides the negation of the property to be
+checked.
+From the read code the compressed computation space, called
+Annotated Quotient Structure (AQS), is constructed. 
+Finally, the product of the automaton and the AQS is constructed 
+(called the BBar structure) and a search for a reachable strongly
+connected component is performed.
+For brief introduction follow  <a href="tool.ps"><i>
+SMC: A Symmetry based Model Checker for Verification of Liveness Properties</i></a>. 
+ For details on the theoretical 
+background, see <a href="symmetry.ps"><i>
+On-the-Fly Model checking under Fairness that 
+Exploits Symmetry</i></a>. <p>
+
+
+<H2>Syntax of SMC</H2>
+
+SYNOPSIS: <tt>SMC [-s&lt;num&gt;][-v&lt;num&gt;][[-p] filename]</tt><p>
+
+OPTIONS:<br>
+<tt>-s&lt;num&gt;</tt> <ul>This parameter controls the symmetry compression.
+If the lowest bit of <tt>&lt;num&gt;</tt> is set then state symmetry compression
+is performed otherwise not. State symmetry can be effective in the case
+when in most states of the computation multiple processes are in a similar
+local state.<br>
+
+Bit 1 and 2 of <tt>&lt;num&gt;</tt> defines the method
+used for symmetry detection in the AQS construction: 0 means no symmetry check,
+method 1 performs one naive fixpoint search and then 
+matches all the processes in corresponding classes randomly,
+while method 2 consists of a loop of a fixpoint search and a single 
+class matching.
+If the program has no symmetry (each module is instantiated in 1-2 copies)
+then method 0 is the fastest. If those modules that are instantiated in
+numerous copies have shared variables only with the ones that are instantiated
+in only a few copies then method 1 outperforms the others. In all other cases
+method 3 is the optimal. Method 3 has the longest running time, but it gives
+better compression results.</ul>  
+ <tt>-s&lt;num&gt;</tt><ul>This parameter controls the output verbosity.
+Bit 0: basic information on performance.
+Bit 1: the parsed input text is printed in a lengthy way.
+Bit 2: information on each AQS state is printed.
+Bit 3: information on each BBar state is printed.</ul>
+<tt>[-p] filename</tt><ul> Specifies the name of the program file.
+Default is <tt>ClientServer.prg</tt>.</ul>
+The C++ source code of the program can be downloaded
+from <a href="program.tar.gz"> here </a>. 
+
+<a name="language"></a>
+<H2>The Input language</H2>
+
+
+The model checker assumes that the input program has the following
+architecture: 
+processes are divided into modules; 
+all processes in a module are identical upto renaming, 
+that is, any permutation mapping processes
+in a module to processes in the same module is a symmetry of the system. 
+Processes communicate through
+shared variables. A shared variable between two processes is specificed
+by the name together with the indices of the processes. 
+If a process in a module <tt> C</tt> has a shared variable with another process
+in module <tt> D</tt>, then every process in <tt> C</tt> has such a shared variable 
+with every process in <tt> D</tt>.
+In expressions process indices are replaced by index variables.
+The type of an index variable is a defined module, the range of the
+index variable is <i>0,...,n-1</i> where <i>n</i> is the number
+of instances of the type of that variable.<p> 
+
+
+An input consists of commands separated by semicolon. A command is
+one of module declaration, variable declaration, index variable declaration
+or module description. All variables need to be declared, but index
+variables can be declared implicitly. A module description is a set
+of module commands. A module command is of the form <tt>condition ->
+actions</tt>. A condition is an expression with positive value. An expression
+is built from variables and constants using the following operands:
+<ul><li> arithmetical:<tt> + - * ? %</tt>,
+<li> logical:<tt> < > <= >= == != <> and & or | not !</tt>,
+<li> <tt>i == j</tt> and <tt>i != j</tt> where <tt> i</tt> and <tt>j</tt>
+are index variables,
+<li> <tt>&lt;quantor&gt;( &lt;ind_var&gt; : &lt;expression&gt;)</tt>
+where <tt>&lt;quantor&gt;</tt> is one of <tt>ALL EXISTS AND OR PRODUCT
+SUM NUMBEROF</tt>.
+</ul>
+Finally, an action is either an assignment of a variable or a generalized
+assignment.
+ 
+The input language is defined by the following grammar:
+<pre>
+program   : Program commands
+
+commands  : commands command
+          | command
+
+command : Module  name = value ;                        
+        | name [ some_module_names ] = value ;                            
+        | ind_var : module
+        | ind_var ;
+
+some_module_names : 
+                  | module_names 
+
+module_names      : name 
+                  | name,  module_names
+
+ind_var : name
+        | name `of' name 
+
+module  : { module_commands }
+        | module_command 
+
+module_commands : module_commands module_command 
+                | 
+
+module_command  : condition -> actions ;
+                
+actions : action 
+        | action , actions 
+       
+action  : variable  = condition
+        | ALL ( ind_var : actions ) 
+</pre>
+
+An example program is the client server driver specification:
+<pre>
+
+Program
+Module controller = 1;
+Module client     = 49;
+lc[controller]              = 0;
+lk[client]                  = 0;
+reply[controller, client]   = 0;
+request[controller, client] = 0;
+buzy[controller]            = 0;
+
+c of controller :
+{ 
+lc[c] == 0 &  request[c, k] == 1  -> 
+                reply[c, k] = 1, buzy[c] = 1 , lc[c] = 1;
+lc[c] == 1 & buzy[c] == 0  -> 
+                lc[c] = 0 ;
+}
+
+k of client :
+{
+lk[k] == 0  ->  request[c, k] = 1 , lk[k] = 1;
+lk[k] == 1 & reply[c, k] == 1 ->
+                reply[c, k] = 0, request[c, k] = 0, lk[k] = 2;
+lk[k] == 2 ->   buzy[c] = 0 , lk[k] = 0;
+}
+</pre>
+
+<h2> The language of the automata specification </h2>
+The finite state automaton is given by enumerating its 
+transitions. A transition is of the form <tt>condition -> 
+auto_state : auto_state</tt>. In the first command the
+initial state of the automaton need to be specified.
+The final states can be specified any time. The list
+of tracked processes is computed automatically, unless
+it is manually specified. (For details on tracking consult
+the <a href="TEXT/symmetry.ps">mentioned paper</a>).
+
+<pre>
+automata :  InitialState name ; a_commands      
+
+a_commands:
+                | a_command ; a_commands
+        
+a_command       : FinalState 
+                | FinalState a_fin_states 
+                | Tracking             
+                | Tracking a_trackings   
+                | a_transition 
+ 
+a_fin_states    : name
+                | name , a_fin_states  
+
+a_trackings     : a_tracking
+                | a_tracking , a_trackings
+
+a_tracking      : number `of' name 
+
+a_transition    : condition -> name : name
+</pre>
+
+The Mutual Exclusion property for the
+client server program is coded in the following example.
+<pre>
+InitialState M0;
+
+FinalState M1; 
+ALL(k1 of client: ALL(k2 of client: k1== k2 or  lk[k1] + lk[k2] < 4)) -> M0:M0;
+EXISTS(k1:EXISTS(k2: k1!=k2 & lk[k1]==2 & lk[k2]==2)) -> M0:M1;
+True              -> M1:M1;
+
+</pre>
+
+<hr>
+
+<em> Last updated April 11, 1997. </em><p>
+
+
+</BODY>
+</HTML>
+

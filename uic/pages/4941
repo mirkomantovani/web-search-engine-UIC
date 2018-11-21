@@ -1,0 +1,203 @@
+<HEAD>
+<META NAME="allow-search" content="YES">
+<META NAME="searchtitle"  content="detecting fake reviews, spot fake reviews, detecting fake reviews, spotting fake reviews">
+<META NAME="keywords" CONTENT="detect fake reviews, spot fake reviews, detecting fake reviews, spotting fake reviews">
+<META NAME="description" CONTENT="Sentiment Classification, Opinion Extraction">
+<META NAME="page-type" CONTENT="detect fake reviews, spot fake reviews, detecting fake reviews, spotting fake reviews">
+<META NAME="revisit-after" CONTENT="14 days">
+<META NAME="audience" CONTENT="All">
+<META NAME="author" content="Bing Liu">
+<META NAME="abstract" CONTENT="detect fake reviews, spot fake reviews, detecting fake reviews, spotting fake reviews">
+<BASE TARGET="Main">
+<TITLE> Opinion Spam Detection: Detect Fake Reviews and Reviewers </TITLE>
+<BODY bgcolor="#f5f5f5">
+<H1> <center> Opinion Spam Detection: Detecting Fake Reviews and Reviewers</center></H1>
+<h3> <center> Many names: Spam Review, Fake Review, Bogus Review, Deceptive review
+<br> Opinion Spammer, Review Spammer, Fake Reviewer, Shill (Stooge or Plant),
+<br> (See this <a href="http://www.nytimes.com/2012/01/27/technology/for-2-a-star-a-retailer-gets-5-star-reviews.html?_r=2&ref=business">The New York Times</a> front page article, Jan. 26, 2012)
+<br> (Bloomberg <a href="http://www.businessweek.com/magazine/a-lie-detector-test-for-online-reviewers-09292011.html">BusinessWeek</a>, Sept. 29, 2011 and <a href="http://www.cs.uic.edu/~liub/FBS/media-coverage.html">more ... </a>) </center></H3>
+
+<h3> <font color="red"><i>New Book</i></font>: <img border="0" src="http://www.cs.uic.edu/~liub/new.gif">
+ <a href="http://www.cambridge.org/us/academic/subjects/computer-science/knowledge-management-databases-and-data-mining/sentiment-analysis-mining-opinions-sentiments-and-emotions">Sentiment Analysis: mining opinions, sentiments, and emotions</a>. <font size=4>Cambridge University Press, available from March 2015.</font></h3>
+<h3> Book: <a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.html"> <b>Sentiment Analysis and Opinion Mining</b></a> <font size=4>(Introduction and Survey), Morgan & Claypool, May 2012. </font></h3>
+
+<h3><i>Fake news detection</i> can be done in similar ways to fake review detection as the behaviors of fraudsters in both cases are similar. </h3>
+
+<h2>Introduction </h2>
+<p>
+It has become a common practice for people to read online opinions/reviews for different purposes. For example, if one wants to buy a product, one typically goes to a review site (e.g., amazon.com) to read some reviews of the product. If most reviews are positive, one is likely to buy the product. If most reviews 
+are negative, one will almost certainly not buy it. 
+Positive opinions can result in significant financial gains and/or fames for 
+busineses, organizations and individuals. This, unfortunately, gives strong incentives for opinion spamming. 
+<center><p> <font color="red"><b>Can you figure out</font> which of these <A HREF="#reviews">three reviews</a> are fake?</b></center>
+<p><b>Opinion Spamming</b>: It refers to "illegal" activities (e.g., <i>writing fake reviews</i>, also called <i>shilling</i>) that try to mislead readers or automated <a href="http://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">opinion mining and sentiment analysis</a> systems by giving undeserving positive opinions to some target entities in order to promote the entities and/or by giving false 
+negative opinions to some other entities in order to damage their reputations. 
+Opinion spam has many forms, e.g., <i>fake reviews</i> (also called <i>bogus reviews</i>), <i>fake comments</i>, <i>fake blogs</i>, <i>fake social network postings</i>, <i>deceptions</i>, and <i>deceptive messages</i>. 
+
+<p>We believe that as opinions on the Web are increasingly used in practice by consumers, organizations, and businesses for their decision making, opinion spamming will get worse and also more sophisticated. 
+Detecting spam reviews or opinions will become more and more critical. The situation is already quite bad. 
+<p>To the best of our knowledge, my group is the first to conduct 
+research on detecting fake 
+reviews and reviewers (or shills). Our first paper was published in 2007, and subsequent papers were published in 2008, 2010, and 2012. Both my books <a href="http://www.cs.uic.edu/~liub/WebMiningBook.html"><b>Web Data Mining</b></a> and <a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf"><b>Sentiment Analysis and Opinion Mining</b></a> discuss the issue. 
+<p> <b>NOTE</b>: This is closely related to <b>Astroturfing</b>: "Astroturfing refers to political, advertising, or public relations campaigns that are designed to mask the sponsors of the message to give the appearance of coming from a disinterested, grassroots participant. Astroturfing is intended to give the statements the credibility of an independent entity by withholding information about the source's financial connection. The term is a derivation of AstroTurf, a brand of synthetic carpeting designed to look like natural grass." Quoted from the <a href="http://en.wikipedia.org/wiki/Astroturfing">Wikipedia</a> page.
+
+<h3> Acknowledgement: This project has been partially funded by <i>National Science Foundation, Microsoft, and Google</i> </h3>
+
+<H3><font color="red">Fake Review Detection</font></h3> 
+We have used supervised learning, pattern discovery, graph-based methods, and relational modeling to solve the problem. Below are some main signals that we have used:
+<ol>
+<li> Review content:
+<ol> 
+<li><b>Lexical features</b> such as word n-grams, part-of-speech n-grams, and other lexical attributes.
+<li><b>Content and style similarity</b> of reviews from different reviewers. 
+<li><b>Semantic inconsistency</b> (we have never used this kind of features). For example, a reviewer wrote "My wife and I bought this car ..." in one review and then in another review he/she wrote "My husband really love ..." (I heard this example from a friend in a company which actively detects fake reviews). 
+</ol>
+<li> Reviewer abnormal behaviors: 
+<ol> 
+<li> <b>Public data available from Web sites</b>, e.g., reviewer id, time of posting, frequency of posting, first reviewers of products, and many more. For example, do you see anything wrong with the reviews from this user, 
+<a href="http://www.amazon.com/gp/pdp/profile/A3URRTIZEE8R7W">Big John</a>? What about after you see the reviews of these two users, <a href="http://www.amazon.com/gp/pdp/profile/A254LYRIZUYXZG">Cletus</a> and <a href="http://www.amazon.com/gp/cdp/member-reviews/A1O70AIHNS4EIY">Jake</a>? In fact, if you 
+browse the reviews of their reviewed products, you will find another 
+suspicious 
+user/reviewer. This is just one example of atypical behaviors that our algorithms are able to discover. 
+<li> <b>Web site private/internal data </b>(we have not used such data, but they are extremely useful), e.g., IP and MAC addresses, time taking to post a review, physical location of the reviewer, etc (a lot of them). 
+</ol>
+<li> Product related features: E.g., product decription, sales volume, and sales rank
+<li> Relationships: Complex relationships among reviewers, reviews, and entities (e.g., products and stores). 
+</ol>
+
+<h3>Some Fake Review Cases in the News</h3>
+<ul>
+<li><b>Must Read:</b> <a href="http://www.bbc.co.uk/news/technology-22166606">Samsung probed in Taiwan over 'fake web reviews'</a>, April 16, 2013 [BBC News].
+<li><b>Must Read:</b> <a href="http://www.thedenverchannel.com/news/woman-paid-to-post-five-star-google-feedback">Woman Paid To Post Five-Star Google Feedback</a>, September 15, 2012 [ABC7 News] (our algorithm in <a href="http://www.cs.uic.edu/~liub/publications/WWW-2012-group-spam-camera-final.pdf">WWW-2012</a> paper can catch them). 
+<li><b>Must Read:</b> <a href="http://www.localgoldmine.com/blog/reputation-management/are-you-buying-reviews-for-google-places/">Are You Buying Reviews For Google Places?</a>, Local Internet Marketing, January 27, 2012. (our algorithm in <a href="http://www.cs.uic.edu/~liub/publications/WWW-2012-group-spam-camera-final.pdf">WWW-2012</a> paper can catch them).
+<li><b>Must Read:</b> <a href="http://www.nytimes.com/2012/08/26/business/book-reviewers-for-hire-meet-a-demand-for-online-raves.html?pagewanted=1&_r=2&partner=rss&emc=rss">The Best Book Reviews Money Can Buy</a>, August 25, 2012 [The New York Times]. 
+<li><b>Must Read:</b> <a href="http://www.nytimes.com/2012/01/27/technology/for-2-a-star-a-retailer-gets-5-star-reviews.html?_r=2&ref=business">For $2 a Star, an Online Retailer Gets 5-Star Product Reviews</a>, Jan 26, 2012 [The New York Times]. 
+<li><b>Must Read:</b> <a href="http://www.nytimes.com/2004/02/14/us/amazon-glitch-unmasks-war-of-reviewers.html">Amazon Glitch Unmasks War Of Reviewers</a>, February 14, 2004 [The New York Times]. 
+<li><a href="http://www.nytimes.com/2010/08/27/technology/27ftc.html">Charges Settled Over Fake Reviews on iTunes</a>, August 26, 2010 [The New York Times]. 
+<li><a href="http://www.nytimes.com/2009/07/15/technology/internet/15lift.html">Company Settles Case of Reviews It Faked</a>, July 14, 2009 [The New York Times]. 
+<li><a href="http://travel.usatoday.com/hotels/post/2009/07/tripadvisor-warns-consumers-about-fake-reviews-week-long-hotel-sales-ethics-rules-reduce-trips-taken-by-congress/68494570/1">TripAdvisor warns consumers about fake reviews</a>, July 16, 2009 [USA Today]. 
+<li><a href="http://thedailybackground.com/2009/01/16/exclusive-belkins-development-rep-is-hiring-people-to-write-fake-positive-amazon-reviews/">Belkin's Development Rep is Hiring People to Write Fake Positive Amazon Reviews</a>, January 16, 2009 [The Daily Background]. 
+<li><a href="http://blogs.wsj.com/wallet/2009/07/09/delonghis-strange-brew-tracking-down-fake-amazon-raves/">A Fake Amazon Reviewer Confesses</a>, July 9, 2009 [The Wall Street Journal]. 
+</ul>
+
+<h3> Professional Fake Review Writing Services (some <i>Reputation Management</i> companies)</h3>
+<ul>
+<li><a href="http://postingpositivereviews.blogspot.com/">Post positive reviews</a> (this site's content and even URL keep changing) 
+<li><a href="http://www.sponsoredreviews.com/">Sponsored reviews</a> (a site where advertisers and bloggers get in touch to write paid reviews)
+<li><a href="https://payperpost.com/"> Pay per post</a> (also a site where advertisers and bloggers get in touch to write paid reviews)
+<li><a href="http://www.freelancer.com/projects/Forum-Posting-Reviews/Need-someone-write-post-positive.html">Need someone to write positive reviews about our company</a> (budget: $250-$750 USD)
+<li><a href="http://www.freelancer.com/projects/by-tag/fake-review-writer.html">Fake review writer</a>
+<li> <a href="http://www.productreviewwriter.com/">Product review writer for hire</a>
+<li> <a href="http://www.hire-a-content-writer.com/">Hire a content writer</a>
+<li> <a href="http://www.blog-relations.com/2006/12/19/fake-amazon-book-reviews/">Fake Amazon book reviews (hiring book reviewers)</a>
+<li><a href="http://www.amazon.com/Wheelmate-Laptop-Steering-Wheel-Desk/dp/B000IZGIA8/ref=cm_cr_pr_product_top"><font color="red">People are just having fun (not serious)</font></a>
+</ul>
+
+<h3> How to Spot Fake Reviews Manually</h3>
+<ul>
+<li><a href="http://consumerist.com/2010/04/how-you-spot-fake-online-reviews.html">30 Ways You Can Spot Fake Online Reviews</a> -- <A href="#reviews">Test Your Ability!</a>
+<li><a href="http://www.moneytalksnews.com/2011/07/25/3-tips-for-spotting-fake-product-reviews-%E2%80%93-from-someone-who-wrote-them/">3 Tips for Spotting Fake Product Reviews - From Someone Who Wrote Them</a>
+<li><a href="http://lifehacker.com/5511726/hone-your-eye-for-fake-online-reviews">Hone Your Eye for Fake Online Reviews</a>
+<li><a href="http://www.consumersearch.com/blog/how-to-spot-fake-user-reviews">How to spot fake user reviews</a>
+
+</ul>
+<p> I am doubtful that people can really spot fake reviews reliably (especially those well written ones). I have done experiments with 30+ students to show otherwise. One of the fallacies is that people usually think others would write like them or should write in certain ways.    
+
+<h3>Manipulating Social Media (sock puppets - fake identities - fake personas)</h3>
+<ul>
+<li><a href="http://www.guardian.co.uk/technology/2011/mar/17/us-spy-operation-social-networks">Revealed: US spy operation that manipulates social media</a>, Guardian.co.uk, Thursday 17 March 2011.
+<li> <a href="http://www.guardian.co.uk/commentisfree/cifamerica/2011/mar/17/us-internet-morals-clumsy-spammer">America's absurd stab at systematising sock puppetry</a>, Guardian.co.uk, Thursday 17 March 2011.
+</ul>
+<h3>China's Internet "Water Army" (Shuijun) - Opinion Spammers</h3>
+<ul>
+<li> You can hire people to write and post fake reviews or comments, and even bribe staff at review, forum and microblog sites to delete posts that you do not like.</li>
+<li> <a href="http://english.peopledaily.com.cn/90001/90776/90882/7253359.html">'Water Army' Whistleblower Threatened</a>, January 7, 2011, People's Daily.
+<li> <a href="http://www.wired.com/beyond_the_beyond/2010/06/the-chinese-online-water-army/">The Chinese Online "Water Army"</a>, June 25, 2010, Wired.com.
+<li> If you read Chinese, see <a href="http://baike.baidu.com/view/3098178.htm">this description</a> from Baidu Baike at baidu.com. 
+</ul>
+
+<!-- <h2>Types of Opinion Spammers </h2>
+<ul>
+<li><b>Individual spammers</b>: In this case, a spammer, who does not work with anyone else, writes spam reviews. The spammer may register at a review site as a single user, or as many fake users using different user-ids. He/she can also register at multiple review sites and write spam reviews. 
+<li><b>Group spammers</b>: A group of spammers works together to promote a target entity and/or to damage the reputation of another. They may also register at multiple sites and spam on these sites. Group spam can be very damaging because they may take control of the sentiment on a product and completely mislead potential customers.
+</ul>
+-->
+
+<h2>Data Sets</h2>
+<ul>
+<li> <a href="http://liu.cs.uic.edu/download/data/">Amazon Product Review Data (Huge)</a> used in (Jindal and Liu, WWW-2007; WSDM-2008; Lim et al, CIKM-2010; Jindal, Liu and Lim, CIKM-2010; Mukherjee et al. WWW-2011; Mukherjee, Liu and Glance, WWW-2012) for review spam (fake review) detection. It has information about reviewers, review text, ratings, product info, etc. Due to the large file size, you may need to use <i>Download Accelerator Plus</i> (DAP) to download. If you use this data, please cite (Jindal and Liu, WSDM-2008). 
+</ul>
+
+<h2>Publications</h2>
+<OL>
+
+<p> <li>Huayi Li, Geli Fei, Shuai Wang, Bing Liu, Weixiang Shao, Arjun Mukherjee and Jidong Shao. <a href="https://www.cs.uic.edu/~hli/docs/www17_coburst.pdf">Bimodal Distribution and Co-Bursting in Review Spam Detection</a>. <i>Proceedings of International World Wide Web Conference (WWW-2017)</i>, April 3-7, 2017, Perth, Australia.
+
+<p> <li> Jing Wang, Clement. T. Yu, Philip S. Yu, Bing Liu, Weiyi Meng. “Diversionary comments under blog posts." Accepted. <i>ACM Transactions on the Web (TWEB)</i>, 2015.
+
+<p><li> Huayi Li, Zhiyuan Chen, Arjun Mukherjee, Bing Liu and Jidong Shao. "Analyzing and Detecting Opinion Spam on a Large-scale Dataset via Temporal and Spatial Patterns." Short paper at <i>ICWSM-2015</i>, 2015. 
+
+<p> <li>Huayi Li, Arjun Mukherjee, Bing Liu, Rachel Kornfieldz and Sherry Emery. <a href="http://www.cs.uic.edu/~liub/publications/twitter-promoters-paper531.pdf">Detecting Campaign Promoters on Twitter using Markov Random Fields</a>. to appear in <i>Proceedings of IEEE International Conference on Data Mining (ICDM-2014)</i>,  December 14-17, 2014. 
+
+<p> <li>Huayi Li, Zhiyuan Chen, Bing Liu, Xiaokai Wei and Jidong Shao. <a href="http://www.cs.uic.edu/~liub/publications/fake-PU-learning-paper274.pdf">Spotting Fake Reviews via Collective Positive-Unlabeled Learning</a>. to appear in <i>Proceedings of IEEE International Conference on Data Mining (ICDM-2014, short paper)</i>, December 14-17, 2014. 
+
+<p> <li> Tieyun Qian, Bing Liu. <a href="http://www.cs.uic.edu/~liub/publications/EMNLP-2013-Qian-Liu.pdf">Identifying Multiple Userids of the Same Author</a>. To appear in <i>Proceedings of Conference on Empirical Methods in Natural Language Processing (EMNLP-2013)</i>, October 18-21, 2013, Seattle, USA. 
+
+<p> <li> Arjun Mukherjee, Abhinav Kumar, Bing Liu, Junhui Wang, Meichun Hsu, Malu Castellanos, and Riddhiman Ghosh. <a href="http://www.cs.uic.edu/~liub/publications/KDD-2013-Arjun-spam.pdf">Spotting Opinion Spammers using Behavioral Footprints</a>. <i>To appear in Proceedings of SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD-2013)</i>, August 11-14 2013 in Chicago, USA.    
+
+<p> <li> Arjun Mukherjee, Vivek Venkataraman, Bing Liu, and Natalie Glance. <a href="http://www.cs.uic.edu/~liub/publications/ICWSM-2013-Arjun-Spam.pdf">What Yelp Fake Review Filter Might Be Doing</a>. <i>Proceedings of The International AAAI Conference on Weblogs and Social Media (ICWSM-2013)</i>, July 8-10, 2013, Boston, USA.
+
+<p> <li> Geli Fei, Arjun Mukherjee, Bing Liu, Meichun Hsu, Malu Castellanos, and Riddhiman Ghosh. <a href="http://www.cs.uic.edu/~liub/publications/ICWSM-2013-Geli-burst.pdf">Exploiting Burstiness in Reviews for Review Spammer Detection</a>. <i>Proceedings of The International AAAI Conference on Weblogs and Social Media (ICWSM-2013)</i>, July 8-10, 2013, Boston, USA.
+
+<p> <li> Arjun Mukherjee, Bing Liu, and Natalie Glance. 
+<a href="http://www.cs.uic.edu/~liub/publications/WWW-2012-group-spam-camera-final.pdf"> Spotting Fake Reviewer Groups in Consumer Reviews</a>. 
+<i>International World Wide Web Conference (WWW-2012)</i>, Lyon, France, April 16-20, 2012. (See <i><a href="http://www.cs.uic.edu/~liub/FBS/media-coverage.html">media coverage</a></i> of this work from April 16, 2012)
+
+<p> <li> Guan Wang, Sihong Xie, Bing Liu, Philip S. Yu. <a href="http://www.cs.uic.edu/~liub/publications/TIST-final.pdf">Identify Online Store Review Spammers via Social Review Graph</a>. <i>ACM Transactions on Intelligent Systems and Technology</i>, accepted for publication, 2011. 
+
+<p> <li> Guan Wang, Sihong Xie, Bing Liu, Philip S. Yu. <a href="http://www.cs.uic.edu/~liub/publications/ICDM-2011-final.pdf">Review Graph based Online Store Review Spammer Detection</a>. <i>ICDM-2011</i>, 2011. 
+
+<p> <li> Arjun Mukherjee, Bing Liu, Junhui Wang, Natalie Glance, Nitin Jindal. <a href="http://www.cs.uic.edu/~liub/publications/WWW-2011-group-review-spam.pdf">Detecting Group Review Spam</a>. <i>WWW-2011 poster paper</i>, 2011. 
+
+<p> <li> Nitin Jindal, Bing Liu and Ee-Peng Lim. <a href="http://www.cs.uic.edu/~liub/publications/CIKM-final-unexpected.pdf">"Finding Unusual Review 
+Patterns Using Unexpected Rules"</a> <i>Proceedings of the 19th ACM 
+International Conference on Information and Knowledge Management 
+(CIKM-2010, short paper)</i>, Toronto, Canada, Oct 26 - 30, 2010. 
+
+<p> <li> Ee-Peng Lim, Viet-An Nguyen, Nitin Jindal, Bing Liu and Hady Lauw. 
+<a href="http://www.cs.uic.edu/~liub/publications/cikm-2010-final-spam.pdf">"Detecting Product Review Spammers using Rating Behaviors."</a> <i>Proceedings of the 19th ACM International Conference on Information and Knowledge 
+Management (CIKM-2010, full paper)</i>, Toronto, Canada, Oct 26 - 30, 2010. 
+
+<p><li>Nitin Jindal and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/FBS/opinion-spam-WSDM-08.pdf">"Opinion Spam and Analysis."</a> <i>Proceedings of First ACM International Conference on Web Search and Data Mining (WSDM-2008)</i>, Feb 11-12, 2008, Stanford University, Stanford, California, USA. 
+
+<p><li>Nitin Jindal and Bing Liu. <A HREF="http://www.cs.uic.edu/~liub/publications/reviewSpam-2007.pdf">"Review Spam Detection."</a> Proceedings of <i>WWW-2007</i> (poster paper), May 8-12, Banff, Canada. 
+
+</ol>
+<A NAME="reviews"></A>
+<h2> Three Reviews - Can you figure out which ones are fake?</h2>
+<ol>
+<li> I want to make this review in order to comment on the excellent service that my mother and I received on the Serenade of the Seas, a cruise line for Royal Caribbean. There was a lot of things to do in the morning and afternoon portion for the 7 days that we were on the ship. We went to 6 different islands and saw some amazing sites! It was definitely worth the effort of planning beforehand. The dinner service was 5 star for sure. One of our main waiters, Muhammad was one of the nicest people I have ever met. However, I am not one for clubbing, drinking, or gambling, so the nights were pretty slow for me because there was not much else to do. Either than that, I recommend the Serenade to anyone who is looking for excellent service, excellent food, and a week full of amazing day-activities!
+<p><li> This movie starring big names - Tom Hanks, Sandra Bullock, Viola Davis, and John Goodman - is one of the most emotionally endearing films of 2012. While some might argue that this film was "too Hollywood" and others might see the film solely because of the cast, it is Thomas Horn's performance as young Oskar that is deserving of awards. The story is about a 9-year-old boy on a journey to make sense of his father's tragic death in the 9/11 attacks on the World Trade Center. Oskar is a bright and nervous adventurer calmed only by the rattle of a tambourine in his ear. "I got tested once to see if I had Asperger's disease," the boy offers in explain of his odd behavior. "The tests weren't definitive." One year after the tragedy, Oskar finds a key in his father's closest and thus begins a quest to find the missing lock. Oskar's battle to control his emotional anxiety and form and mend relationships proves difficult, even with his mother. "If the sun were to explode, you wouldn't even know about it for eight minutes," Oskar narrates. "For eight minutes, the world would still be bright and it would still feel warm." Those fleeting eight minutes Oskar has left of his father make for two hours and nine minutes of Extremely Emotional and Incredibly Inspiring film. Leaving the theatre, emotionally drained, it is a wonder where a movie like this has been. We saw Fahrenheit 9/11 and United 93, but finally here is the story of a New York family's struggle to understand why on "the worst day" innocent people would die. I highly recommend this movie as a must see.
+<p>
+<li> High Points: Guacamole burger was quite tall; clam chowder was tasty.  The decor was pretty good, but not worth the downsides. Low Points: Noisy, noisy, noisy.  The appetizers weren't very good at all. And the service kind of lagged.  A cross between Las Vegas and Disney world, but on the cheesy side. This Cafe is a place where you eat inside a plastic rain forest.  The walls are lined with fake trees, plants, and wildlife, including animatronic animals.  A flowing waterfall makes sure that you won't hear the conversations of your neighbors without yelling.  I could see it being fun for a child's birthday party (there were several that occurred during our meal), but not a place to go if you're looking for a good meal.
+<p>
+<li> <b>The answer is at the bottom of my homepage. If you get them right, please let me know your clues. </b> You can click my name below to get to my homepage. 
+</ol>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2031920;
+var sc_invisible=1;
+var sc_partition=18;
+var sc_security="1d4151a9";
+var sc_remove_link=1;
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><img  src="http://c19.statcounter.com/counter.php?sc_project=2031920&amp;java=0&amp;security=1d4151a9&amp;invisible=1" alt="counter free hit unique web" border="0"> </noscript>
+<!-- End of StatCounter Code -->
+
+
+<br>
+<p>Created by <a href="http://www.cs.uic.edu/~liub">Bing Liu,</a> 2008.
+</body>
+</html>

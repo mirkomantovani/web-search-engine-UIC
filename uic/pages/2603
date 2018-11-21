@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CS 422 - User Interface Design and Programming</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico"></link>
+
+    <script type="text/javascript">
+    function UpdatePageSize () {
+        var container = document.getElementById ("all");
+        var container2 = document.getElementById ("menu");
+
+        var newHeight = container.offsetHeight - container2.offsetHeight ;
+        var newHeightString = newHeight.toString();
+
+        var newWidth = container.offsetWidth;
+        var newWidthString = newWidth.toString();
+
+        document.getElementById('otherID').setAttribute("height", newHeightString+"px;");
+        document.getElementById('otherID').setAttribute("width", newWidthString+"px;");
+
+       document.getElementById('innerID').setAttribute("height", newHeightString+"px;");
+        document.getElementById('innerID').setAttribute("width", newWidthString+"px;");
+  }      
+
+    function ChangeifiOS () {
+        var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+
+        if (iOS == true)
+          {
+            //iOS doesn't like scrolling iFrames so for now 
+            // open the iFrame pages as new pages
+
+             var anchors = document.getElementsByTagName('a');
+              for (var i = 0; i < anchors.length; i++) {
+                anchors[i].target = '_top';
+                }
+          }
+  }
+
+		window.onresize = function()
+			{
+  			UpdatePageSize();
+			}
+
+   </script>
+
+
+
+</head>
+
+<body id="all" onload="ChangeifiOS(); UpdatePageSize()" ontouchstart="" onmouseover="">
+
+<div id="menu">
+<nav>
+  <ul>
+  <li><a href="maininfo.html" target="otherName">CS 422</a></li>
+  <li><a href="syllabus.html" target="otherName">syllabus</a></li>
+  <li><a href="#">lectures</a>
+    <ul>
+		<li><a href="week01.html" target="otherName">Week 1</a></li>
+		<li><a href="week02.html" target="otherName">Week 2</a></li>
+		<li><a href="week03.html" target="otherName">Week 3</a></li>
+		<li><a href="week04.html" target="otherName">Week 4</a></li>
+		<li><a href="week05.html" target="otherName">Week 5</a></li>
+		<li><a href="week06.html" target="otherName">Week 6</a></li>
+		<li><a href="week07.html" target="otherName">Week 7</a></li>
+		<li><a href="week10.html" target="otherName">Week 10</a></li>
+		<li><a href="week11.html" target="otherName">Week 11</a></li>
+		<li><a href="week12.html" target="otherName">Week 12</a></li>
+		<li><a href="week13.html" target="otherName">Week 13</a></li>
+    </ul>
+  </li>
+    <li><a href="422.pdf" target="otherName">grades</a></li>
+  <li><a href="#">hw</a>
+    <ul>
+      <li><a href="17hw1.html" target="otherName">HW 1</a></li>
+    </ul>
+  </li>
+  <li><a href="17final.html" target="otherName">final</a></li>
+  <li><a href="#">projects</a>
+    <ul>
+      <li><a href="17project1.html" target="otherName">Project 1</a></li>
+      <li><a href="17project2.html" target="otherName">Project 2</a></li>
+    </ul>
+  </li>
+  <li><a href="#">past years</a>
+    <ul>
+      <li><a href="#">2016</a>
+    <ul>
+      <li><a href="16hw1.html" target="otherName">Homework</a></li>
+      <li><a href="16project1.html" target="otherName">Project 1</a></li>
+      <li><a href="16project2.html" target="otherName">Project 2</a></li>
+      <li><a href="16final.html" target="otherName">Final Exam</a></li>
+    </ul>
+      <li><a href="#">2012</a>
+    <ul>
+      <li><a href="hw1.html" target="otherName">Homework</a></li>
+      <li><a href="12project1.html" target="otherName">Project 1</a></li>
+      <li><a href="12project2.html" target="otherName">Project 2</a></li>
+      <li><a href="12project3.html" target="otherName">Project X</a></li>
+      <li><a href="12final.html" target="otherName">Final Exam</a></li>
+    </ul>
+      <li><a href="#">2008</a>
+    <ul>
+      <li><a href="08project1.html" target="otherName">Project 1</a></li>
+      <li><a href="08project2.html" target="otherName">Project 2</a></li>
+      <li><a href="oldexams08.html" target="otherName">Final Exam</a></li>
+    </ul>
+      </li>
+      <li><a href="#">2006</a>
+          <ul>
+          <li><a href="06project1.html" target="otherName">Project 1</a></li>
+          <li><a href="06project2.html" target="otherName">Project 2</a></li>
+          <li><a href="oldexams06.html" target="otherName">Final Exam</a></li>
+      </ul>
+      </li>
+      <li><a href="#">2002</a>
+          <ul>
+
+          <li><a href="02project1.html" target="otherName">Project 1</a></li>
+          <li><a href="02project2.html" target="otherName">Project 2</a></li>
+          <li><a href="oldexams02.html" target="otherName">Exams</a></li>
+      </ul>
+      </li>
+
+      <li><a href="#">2000</a>
+        <ul>
+          <li><a href="00project1.html" target="otherName">Project 1</a></li>
+          <li><a href="00project2.html" target="otherName">Project 2</a></li>
+          <li><a href="00project3.html" target="otherName">Project 3</a></li>
+          <li><a href="oldexams00.html" target="otherName">Exams</a></li>
+      </ul>
+      </li>
+
+      <li><a href="#">1999</a>
+        <ul>
+          <li><a href="oldexams99.html" target="otherName">Exams</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </li>
+  <li><a href="http://www.evl.uic.edu/aej">andy</a></li>
+  <li><a href="http://www.evl.uic.edu">evl</a></li>
+  </ul>
+</nav>
+</div>
+
+
+
+<div class="innerpage" id="innerID">
+
+<!-- <div class="innerpage" style="-webkit-overflow-scrolling:touch;"> -->
+
+<!-- <object name="otherName" id="otherID" data="maininfo.html" type="text/html" width="0" height="0"></object> -->
+
+<!--<iframe  name="otherName" id="otherID" src="422header.html" type="text/html" width="0" height="0" frameBorder="0"></iframe>-->
+
+<object name="otherName" id="otherID" data="maininfo.html" width="0" height="0" type="text/html">
+    You should be seeing another page embedded here
+</object>
+
+</div>
+
+</body>
+
+</html>
+

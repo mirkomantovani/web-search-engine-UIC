@@ -1,0 +1,127 @@
+
+<html>
+
+<head>
+<title>Donate and attend the LALS Fundraiser and Anniversary Kick-off Event</title>
+</head>
+
+<body style="background-color:#E6E6FA" >
+    <div align="center">
+    
+<img src="images/dollsbanner.jpg" align="middle">
+<h1 align="center">Thank You for Supporting the<br /> Latin American and Latino Studies Program <br />Student Scholarship Fund</h1>
+<p>We're glad you will join us at our event on October 29 at the National Museum of Mexican Art.</p>
+<p>&nbsp;</p>
+
+<p>Please enter the number of tickets requested below.  <br />Each student ticket costs $15 (of which $5 is a tax-deductible gift to the Fund). </p>
+<p>You will then be directed to the <a href="http://www.uif.uillinois.edu">University of Illinois
+Foundation's</a> secure Online Giving site for your personal and credit card
+information.</p>
+
+
+<p>&nbsp;</p>
+
+<p>I would like to make a contribution to the <strong>Student Scholarship Fund</strong> as follows</p>
+
+<form method="POST" action="https://ps.uif.uillinois.edu/Gifts/Payment.aspx" id="Form1">
+  <input type="hidden" name="FUND1" value="33341456/Latin American and Latino Studies Student Scholarship Fund">
+  <input type="hidden" name="DEPARTMENT" value="Latin American and Latino Studies Program">
+  <input type="hidden" name="DEPARTMENT_EMAIL" value="bct@uic.edu">
+  <input type="hidden" name="GIFT_AMOUNT1" id="GIFT_AMOUNT1" value="0">
+  <input type="hidden" name="NONGIFT_AMOUNT1" id="NONGIFT_AMOUNT1" value="0"> 
+  <input type="hidden" name="TRACKING_CODE" value="5WAA9">
+
+<p>Please enter your email address: <input type="email" ID="UDF_emailaddress" name="UDF_emailaddress"></p>
+<input type="hidden" name="UDF_emailaddress_DESCRIPTION" VALUE="Email:">
+
+<p>Number of Tickets:	<input type="text" name="NO_TICKETS" id="NO_TICKETS" size="10" onclick="this.focus()" onblur="IsNumeric2('NO_TICKETS')">&nbsp;&nbsp; </p>
+<p>Are you an alum of Latin American and Latino Studies?</p>    
+   
+        <input type="radio" ID="UDF_alum" name="UDF_alum" value="No"> No
+        <input type="radio" ID="UDF_alum" name="UDF_alum" value="Yes"> Yes
+        <input type="hidden" name="UDF_alum_DESCRIPTION" VALUE="LALS Alum?">
+<br />
+    
+      <p><small>(The amounts below will update when you enter the number of tickets.)</small></p>
+    
+	<p>Gift Amount: <span id="GIFT_VALUE">$0.00</span></p>
+	<p>Non-Gift Amount: <span id="NONGIFT_VALUE">$0.00</span></p>
+    
+      <p>After clicking on Continue you will be taken to the UIF website to complete your transaction.<br /> You will then receive a confirmation email from the Foundation and later a follow-up email from LALS. Thanks.</p>
+    <p><input type="submit" value="Continue"></p>
+    
+<hr width="33%">
+    
+    <p>If you are not already on our mailing list would you like to be added to keep up to date on LALS news and events?</p>
+    <select name="UDF_MAILINGLIST" id="UDF_MAILINGLIST" >
+        <option value="YES">Yes, please keep me up to date on what's happening in LALS.</option>
+        <option value="ALREADY">I am already receiving your mailings. Thanks.</option>
+        <option value="NO">No thanks. Not interested in at this time.</option>
+    </select>
+    
+<input type="hidden" name="UDF_MAILINGLIST_DESCRIPTION" value="Email list Response:">
+    <p><small>You can always sign up for the mailing list on our website.</small></p>
+    
+   
+	
+</form>
+<script type="text/javascript" language="JavaScript">
+function IsNumeric2()
+{
+	
+
+   var mynumber = document.getElementById('NO_TICKETS').value;
+   var ValidChars = "0123456789";
+   var IsNumber=true;
+   var Char;
+
+
+
+   for (i = 0; i < mynumber.length && IsNumber == true; i++) 
+      { 
+      Char = mynumber.charAt(i); 
+      if (ValidChars.indexOf(Char) == -1) 
+
+         {
+	alert("Please enter a valid number.");
+return false;
+        
+         }
+      }    
+
+	doCalc(mynumber)
+   
+   
+   }
+
+function doCalc(mynumber)
+{
+
+var vform;
+
+var GA_Cost;
+var Non_GA_Cost;
+vform = document.Form1;
+GA_Cost = 5
+Non_GA_Cost = 10
+
+
+
+document.getElementById('GIFT_VALUE').innerHTML = "$" + (mynumber * GA_Cost) + ".00"
+document.getElementById('NONGIFT_VALUE').innerHTML =  "$" + (mynumber * Non_GA_Cost) + ".00"
+document.getElementById('GIFT_AMOUNT1').value = (mynumber * GA_Cost) + ".00"
+document.getElementById('NONGIFT_AMOUNT1').value = (mynumber * Non_GA_Cost) + ".00"
+
+}
+</script>
+        </div>
+    <table>
+        <tr>
+            <td><img src="images/uiclalslogo.png" align="left"></td>
+            <td><img src="images/lalslogobutteryflyonly.png" align="right" width="25%""></td>
+        </tr>
+       
+    
+    </table>
+</body>
+</html>

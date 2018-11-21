@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Office of the Dean of Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/site.css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css"> 
+    
+    <!--royalslider CSS-->
+    <link href="assets/royalslider/royalslider.css" rel="stylesheet">
+ 	<link href="assets/royalslider/skins/default/rs-default.css" rel="stylesheet">
+   <link href="assets/royalslider/skins/minimal-white/rs-minimal-white.css" rel="stylesheet">
+     <!-- slider JS files -->    
+	<script  src="royalslider/jquery-1.8.3.min.js"></script>
+	<script src="royalslider/jquery.royalslider.min.js"></script>
+    <script src="assets/royalslider/jquery.easing-1.3.js"> </script>
+   
+<style>
+.error{
+border: 1px solid #F00000;
+}
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}
+
+<!-- slider css -->
+
+  #video-gallery {
+width: 100%;
+color: #FFF;
+}
+
+.videoGallery .rsCloseVideoBtn {
+  display: none;
+} 
+/* Styling thumbnails */
+.videoGallery h5 {
+  margin: 0;
+}
+.videoGallery p {
+  color: #ddd;
+  font-size: 13px;
+}
+.videoGallery .rsTmb {
+  padding: 20px;
+}
+
+.videoGallery .rsThumbs .rsThumb {
+  width: 940px;
+  height: 80px;
+  border-bottom: 1px solid #2E2E2E;
+}
+.videoGallery .rsThumbs.rsThumbsVer {
+  width: 220px;
+  padding: 0;
+}
+.videoGallery .rsThumb:hover {
+  background: #000;
+}
+.videoGallery .rsThumb.rsNavSelected {
+  background-color: #18bc9c;
+  border-bottom: 1px solid #009E56;
+}
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+  background: #202020;
+}
+.sampleBlock {
+  left: 3%; 
+  top: 1%; 
+  width: 100%;
+  max-width: 400px;
+  color: #FFF;
+  font-weight:bold;
+   background: #000;
+  background: rgba(0,0,0,0.75);
+  padding:7px 10px 10px 10px;
+}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .videoGallery .rsTmb {
+    padding: 6px 8px;
+  }
+  .videoGallery h5 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .videoGallery .rsThumbs.rsThumbsVer {
+    width: 100px;
+    padding: 0;
+  }
+  .videoGallery .rsThumbs .rsThumb {
+    width: 100px;
+    height: 47px;
+  }
+  .videoGallery .rsTmb p {
+    display: none;
+  }
+  .videoGallery .rsOverflow,
+  .royalSlider.videoGallery {
+    height: 300px !important;
+  }
+  .sampleBlock {
+    font-size: 14px;
+  }
+}
+<!-- Block Text Slider -->
+#slider-with-blocks-1 {
+  width: 100%;
+  height: 100%;
+}
+.rsContent {
+  color: #FFF;
+  font-size: 24px;
+  line-height: 32px;
+  float: left;
+}
+
+.bContainer {
+  position: relative;
+}
+.rsABlock {
+  left: 30px;
+	top: 280px;
+	position: absolute;
+	z-index: 15;
+	
+}
+
+.rsBBlock {
+  position: relative;
+  display: block;
+  left: auto;
+  top: auto;
+}
+.blockHeadline {
+  font-size: 42px;
+  line-height: 50px;
+}
+.blockSubHeadline {
+  font-size: 32px;
+  line-height: 40px
+}
+.txtCent {
+  text-align: center; 
+  width: 100%; 
+}
+.slide1 {
+  background: #f06b50;
+}
+.slide1 .bContainer {
+	top: 30px;
+}
+.slide2 {
+    background: #ffbc11;
+    color:#000;
+}
+.slide2 .bContainer {
+  top: 20px;
+}
+.slide2 .txtCent {
+  line-height: 44px;
+}
+.slide2 .blockHeadline {
+   line-height: 66px;
+}
+.slide3 {
+    background: #45aab8;
+    color:#FFF;
+}
+.slide3 .bContainer {
+   top: 24px;
+}
+.slide3 span {
+  line-height: 44px;
+}
+.slide4 .bContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  top: 24px;
+}
+.photoCopy {
+  position: absolute;
+  line-height: 24px;
+  font-size: 12px;
+  background: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0px 10px;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  top: auto;
+  border-radius: 2px;
+  z-index: 25;
+}
+.photoCopy a {
+  color: #FFF;
+}
+.palmImg {
+  left: 0;
+  top: auto;
+  bottom: -60px;
+  position: absolute;
+}
+@media screen and (min-width: 0px) and (max-width: 960px) { 
+  .rsContent {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .blockHeadline {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 26px;
+    line-height: 32px
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 500px) { 
+  .royalSlider,
+  .rsOverflow {
+    height: 200px !important;
+  }
+  .rsContent {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .blockHeadline {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 22px;
+    line-height: 32px
+  }
+}
+
+.label {
+  margin-right: 5px;
+}
+</style>
+
+</head>
+<body>
+  
+<div id="skip"><a href="#content">Skip to Main Content</a></div> 
+<div class="container header_container">
+<div id="header">
+<div id="header_logo">
+<div id="header_logo_left"><a href="http://www.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uic_logo','','img/banner-UIC.png',1)"><img src="img/banner-UIC.png" alt="link to UIC home page" id="uic_logo"/></a><a href="http://vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ovcsa_logo','','img/banner-OVCSA2.png',1)"><img src="img/banner-OVCSA2.png" alt="link to OVCSA home page" id="ovcsa_logo" width="200" height="40"/></a></div>
+<div id="header_logo_right"><a href="http://www.uic.edu" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uofi_logo','','img/banner-UniversityofIlli2.png',1)"><img src="img/banner-UniversityofIlli2.png" alt="link to UIC" id="uofi_logo"/></a></div>
+</div>
+<div class="clearfloat"></div>
+</div>
+<div class="triangle_left"></div>
+<div class="triangle_right"></div>
+</div>
+<!-- title -->   
+<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 style="padding-left:12px"><strong>OFFICE OF THE DEAN OF STUDENTS</strong></h1>
+          </div>         
+        </div>
+      </div>
+</div>
+<div class="container" id="navbar_container">
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">    
+            <div class="bs-example">
+              <div class="navbar navbar-default" id="nav_bar">
+                   <div class="container">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                         <a class="navbar-brand" href="index.shtml">Home</a>
+                      </div>
+                      <div class="navbar-collapse collapse navbar-responsive-collapse">
+                         <ul class="nav navbar-nav">
+                          <li><a href="about.shtml">About Us</a></li>    
+                          <li><a href="services.shtml">Students</a></li>     
+                          <li><a href="units.shtml">Faculty & Staff</a></li>
+                          <li><a href="contact.shtml">Contact Us</a></li>            
+						  <li><a href="needhelp.shtml">Need Help?</a></li> 
+                        </ul>
+                        <form class="navbar-form navbar-right" id="cse-search-box" action="search.shtml">
+                        <input type="hidden" value="003292673167871140938:_ftumhdite0" name="cx" />
+                        <input type="hidden" value="FORID:11" name="cof" />
+                        <input type="hidden" value="UTF-8" name="ie" />                        
+                        <input type="text"  id="search"  name="q" class="form-control col-lg-8" placeholder="Search">     
+                        </form>   
+	</div><!-- /.nav-collapse -->
+                  </div><!-- /.container -->
+                  </div><!-- /.navbar -->
+             
+            </div><!-- /example -->
+          </div>
+        </div>
+      </div>
+    <!-- end of Navbar-->
+</div>
+    
+                                           
+<!--main container-->
+<div class="container">
+<div class="Flexible-container">
+<img src="img/dos_uicare.jpg" alt="About Dean Of Students" class="img-responsive">      
+<!-- <iframe width="970" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/ms?msa=0&amp;msid=208244508139172196484.0004eb274ec2cc4bf1e43&amp;hl=en&amp;ie=UTF8&amp;t=m&amp;ll=41.874834,-87.658002&amp;spn=0.001997,0.010396&amp;z=17&amp;output=embed"></iframe> -->
+</div>
+
+  <div class="row">
+	
+    <div class="col-lg-12">
+    <div id="welcome">
+    <h3>Contact a U and I Care Partner</h3>
+    <hr style="margin:8px auto" />
+    <div class="row">
+    <div class="col-lg-6" style="width: 75%;">
+	
+			<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> African American Academic Network (AAAN)
+
+
+                </h4><hr style="margin:8px auto" />
+                <h6> 2800 Student Services Building</h6>         
+				<i class="fa fa-phone"></i>  (312) 996-5040<br>
+				<i class="fa fa-envelope"></i>  aaan@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://aaan.uic.edu/">aaan.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+       		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> African American Cultural Center (AACC)
+
+
+                </h4><hr style="margin:8px auto" />       
+				<i class="fa fa-phone"></i>  (312) 996-9549<br>
+				<i class="fa fa-envelope"></i>  uicaacc@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://aacc.uic.edu/">aacc.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				     <div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Arab American Cultural Center (ARABAMCC)
+                </h4><hr style="margin:8px auto" />
+                <h6>111 Stevenson Hall</h6>         
+				<i class="fa fa-phone"></i> (312) 413-3253<br>
+				<i class="fa fa-envelope"></i> ARABAMCC@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="https://arabamcc.uic.edu/">arabamcc.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Asian American Resource 
+and Cultural Center (AARCC)
+                </h4><hr style="margin:8px auto" />
+                <h6>101 Taft Hall</h6>         
+				<i class="fa fa-phone"></i> (312) 413-9569<br>
+				<i class="fa fa-envelope"></i> aarcc@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://aarcc.uic.edu/">aarcc.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+		        
+       <div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Campus Advocacy Network (CAN) 
+                </h4><hr style="margin:8px auto" />
+                <h6>1101 W. Taylor St, 3rd Floor</h6>         
+				<i class="fa fa-phone"></i> (312) 413-1025<br>
+				<i class="fa fa-envelope"></i> can@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://can.uic.edu/">can.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Campus Housing
+
+                </h4><hr style="margin:8px auto" />
+                <h6> 818 S. Wolcott Ave, Suite 200 </h6>         
+				<i class="fa fa-phone"></i>  (312) 355-3000<br>
+				<i class="fa fa-envelope"></i> housing@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://housing.uic.edu/">housing.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+        		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Center for Student Involvement 
+                </h4><hr style="margin:8px auto" />
+                <h6>340 Student Center East</h6>         
+				<i class="fa fa-phone"></i> (312) 413-5070<br>
+				<i class="fa fa-envelope"></i> studentinvolvement@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://campusprograms.uic.edu/">involvement.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				        <div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> College of Medicine - Student Affairs
+                </h4><hr style="margin:8px auto" />
+                <h6>1853 Polk St.</h6>         
+				<i class="fa fa-phone"></i> (312) 996-2450<br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Counseling Center
+
+                </h4><hr style="margin:8px auto" />
+                <h6> 2010 Student Services Building</h6>         
+				<i class="fa fa-phone"></i>  (312) 996-3490<br>
+				<i class="fa fa-globe"></i> <a href="http://counseling.uic.edu/">counseling.uic.edu</a><br>
+                In-Touch Hotline: (312) 996-5535<br>
+         
+            </div>
+			
+			
+      
+        </div>
+
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Disability Resource Center (DRC)
+                </h4><hr style="margin:8px auto" />
+                <h6>1190 Student Services Building</h6>         
+				<i class="fa fa-phone"></i> (312) 413-2183<br>
+				<i class="fa fa-globe"></i> <a href="http://drc.uic.edu/">drc.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Gender and Sexuality Center
+                </h4><hr style="margin:8px auto" />
+                <h6>181 Behavioral Sciences Building</h6>         
+				<i class="fa fa-phone"></i> (312) 413-8619<br>
+				<i class="fa fa-envelope"></i> lgbtqa@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://genderandsexuality.uic.edu/">genderandsexuality.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				
+			<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Latin American Recruitment and Educational Services (LARES)
+                </h4><hr style="margin:8px auto" />
+                <h6>2064 Student Services Building</h6>         
+				<i class="fa fa-phone"></i> (312) 996-3356<br>
+				<i class="fa fa-envelope"></i> lares.uic.edu/contact-us/<br>
+				<i class="fa fa-globe"></i> <a href="http://lares.uic.edu/">lares.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Latino Cultural Center (LRC)
+                </h4><hr style="margin:8px auto" />
+                <h6>Lecture Center B, Room 2</h6>         
+				<i class="fa fa-phone"></i> (312) 996-9092<br>
+				<i class="fa fa-envelope"></i> lcc@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://latinocultural.uic.edu/">latinocultural.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Native American Support Program (NASP)
+
+                </h4><hr style="margin:8px auto" />
+                <h6>2700 Student Services Building</h6>         
+				<i class="fa fa-phone"></i> (312) 996-4515<br>
+				<i class="fa fa-envelope"></i> nasp@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://nasp.uic.edu/">nasp.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+		
+				<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Office of Access and Equity (OAE) Title IX Coordinator
+
+                </h4><hr style="margin:8px auto" />
+                <h6>809 S. Marshfield Ave, Room 717</h6>         
+				<i class="fa fa-phone"></i> (312) 996-8670<br>
+				<i class="fa fa-envelope"></i> oae@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://oae.uic.edu/">oae.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+		
+        <div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> The Office of the Dean of Students
+                </h4><hr style="margin:8px auto" />
+                <h6>3030 Student Services Building</h6>         
+				<i class="fa fa-phone"></i> (312) 996-4857<br>
+				<i class="fa fa-envelope"></i> dos@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://dos.uic.edu/">dos.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Office of First Year Initiatives – Transition Coaching
+
+                </h4><hr style="margin:8px auto" />
+                <h6> 2180 Student Services Building</h6>   
+				<i class="fa fa-phone"></i> (312) 996-3102<br>				
+				<i class="fa fa-envelope"></i><a href="mailto:lizah@uic.edu" target="_top">  lizah@uic.edu</a><br>
+                <i class="fa fa-envelope"></i><a href="mailto:bbeck4@uic.edu" target="_top">  bbeck4@uic.edu</a><br>
+				<i class="fa fa-globe"></i> <a href="http://cssi.uic.edu/"> cssi.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+				
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> UIC Police Department (UICPD)
+                </h4><hr style="margin:8px auto" />
+                <h6>2064 Student Services Building</h6>         
+				<i class="fa fa-phone"></i> (312) 355-5555 <strong>(Emergency)</strong><br>
+				<i class="fa fa-phone"></i> (312) 996-2830 (Non-emergency)<br>
+				<i class="fa fa-globe"></i> <a href="http://police.uic.edu/">police.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+			
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Undocumented Student Support
+
+                </h4><hr style="margin:8px auto" />
+                <h6> 2627 University Hall, MC 103</h6>         
+				<i class="fa fa-phone"></i>  (312) 355-0011<br>
+				<i class="fa fa-envelope"></i>  tcabrera@uic.edu<br>
+				<i class="fa fa-globe"></i> <a href="http://dream.uic.edu/">dream.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+		
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Wellness Center
+                </h4><hr style="margin:8px auto" />
+                <h6>238 Student Center East</h6>         
+				<i class="fa fa-phone"></i> (312) 413-2120<br>
+				<i class="fa fa-envelope"></i> wellness@uic.eduu<br>
+				<i class="fa fa-globe"></i> <a href="http://wellness.uic.edu/">wellness.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+		
+		
+		
+		
+		<div class="media" style="background-color:#FFFFFF;">
+            
+            <div class="media-body" style="padding:10px 15px 10px 15px;">
+                <h4 class="media-heading"><i class="fa fa-user"></i> Women’s Leadership and Resource Center (WLRC)
+
+
+                </h4><hr style="margin:8px auto" />
+                <h6> 1101 W. Taylor St, 3rd Floor </h6>         
+				<i class="fa fa-phone"></i> (312) 413-1025<br>
+				<i class="fa fa-globe"></i> <a href="http://wlrc.uic.edu/">wlrc.uic.edu</a><br>
+                
+         
+            </div>
+			
+			
+      
+        </div>
+		
+		
+		
+      
+      
+        <br>
+        
+        </div>
+		
+<div class="col-lg-3">
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="uicare.shtml">About U and I Care</a>
+<a class="list-group-item " href="infostudents.shtml">For Students Needing Help</a>
+<a class="list-group-item" href="uicarestudentstostudents.shtml">For Students Helping Students</a>
+<a class="list-group-item" href="uicarestaff.shtml">For Faculty/Staff</a>
+<a class="list-group-item" href="uicarecontact.shtml">Contact a U and I Care Partner</a>
+</div>
+  
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="uicare.shtml">Quick Links</a>
+<a class="list-group-item " href="https://cm.maxient.com/reportingform.php?UnivofIllinoisChicago&layout_id=2">Request Assistance</a>
+<a class="list-group-item" href="http://sexualmisconduct.uic.edu/forstdntsurvivors.shtml">Sexual Misconduct</a>
+<a class="list-group-item" href="studentconductprocess.shtml">Student Conduct</a>
+<a class="list-group-item" href="contact.shtml">Consult with the Office of the Dean of Students</a>
+</div>
+     
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="about.shtml">Other Services</a>
+<a class="list-group-item " href="studentconductprocess.shtml">Student Conduct Process</a>
+<a class="list-group-item" href="studentadvocacyservices.shtml">Student Advocacy Services</a>
+<a class="list-group-item" href="studentombudsservices.shtml">Student Ombuds Services</a>
+<a class="list-group-item" href="studentlegalservices.shtml">Student Legal Services</a>
+<a class="list-group-item" href="studentveteranaffairs.shtml">Student Veteran Affairs</a>
+<a class="list-group-item" href="studentgovernanceadvising.shtml">Student Governance Advising</a>
+<a class="list-group-item" href="religiousworkersassociation.shtml">Religious Workers Association</a>
+<a class="list-group-item" href="policiesandprocedures.shtml">Policies & Procedures</a>
+</div> 
+  
+</div>
+		
+        </div>
+        </div>
+    </div></div>
+    
+    </div>
+   
+ <!--footer-->
+ <div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="container footer_container">  
+<div class="triangle_left_footer"></div>
+<div class="triangle_right_footer"></div> 
+<div id="footer-wrap">
+<div class="content-wrap-spacer"></div>
+<div class="row">
+<div class="col-lg-4" style="color:#00000; padding-top: 10px; padding-bottom:10px;text-align:center;" > 
+Student Services Building (SSB)<br>
+1200 West Harrison St,<br>
+3030 SSB (MC 318)<br>
+Chicago, IL 60607<br><br>
+
+<small><i class="fa fa-phone"></i> Phone: 312-996-4857 <br>
+<i class="fa fa-print"></i> Fax: 312-413-3716 
+</small>
+</div>
+   		
+<div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px; text-align: center;" >
+      
+<a href="http://vcsa.uic.edu">OVCSA</a>
+|
+<a href="http://www.uic.edu">UIC</a>
+|
+<a href="sitemap.shtml">Site Map</a>
+|
+<a href="needhelp.shtml">Need Help?</a>
+ <p style="color:#3498DB; font-size:11px; line-height:1;"><br>Copyright © 2018 The Board of Trustees of the University of Illinois | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a> </p>
+</p> 
+        
+        </div>        
+        <div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px;">   
+         
+             <a href="http://vcsa.uic.edu"><img src="img/banner-OVCSA-white3.png" class="img-responsive" alt="OVCSA"></a> 
+            
+        </div>
+        
+    </div>
+</div>
+  
+</div>
+<div class="row">
+          <div class="col-lg-12">
+         </div>
+        </div>
+
+<script>
+//vravic2 added this script for valdiation of message textarea
+   $( "#submitbutton" ).click(function(event) {
+	  if($("#textarea").val()=='')
+	  {
+		$("#textarea").addClass("error");
+		event.preventDefault();
+	  }
+	});
+	
+   </script>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54652433-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+<!--footer-->
+    
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>  
+    
+    
+    <!-- script and styling for sticky nav bar-->
+<script>
+$(document).ready(function() {
+  
+  $(window).scroll(function () {
+     console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 180) {
+      $('#nav_bar').addClass('navbar-fixed');
+	  $('#navbar_container').removeClass('container');
+    }
+    if ($(window).scrollTop() < 181) {
+      $('#nav_bar').removeClass('navbar-fixed');
+	  $('#navbar_container').addClass('container');
+    }
+  });
+});
+</script>
+<!--switch images-->
+<script type="text/javascript"> 
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+} 
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+  </body>
+</html>

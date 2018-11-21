@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Office of the Dean of Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/site.css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css"> 
+    
+    <!--royalslider CSS-->
+    <link href="assets/royalslider/royalslider.css" rel="stylesheet">
+ 	<link href="assets/royalslider/skins/default/rs-default.css" rel="stylesheet">
+   <link href="assets/royalslider/skins/minimal-white/rs-minimal-white.css" rel="stylesheet">
+     <!-- slider JS files -->    
+	<script  src="royalslider/jquery-1.8.3.min.js"></script>
+	<script src="royalslider/jquery.royalslider.min.js"></script>
+    <script src="assets/royalslider/jquery.easing-1.3.js"> </script>
+   
+<style>
+.error{
+border: 1px solid #F00000;
+}
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}
+
+<!-- slider css -->
+
+  #video-gallery {
+width: 100%;
+color: #FFF;
+}
+
+.videoGallery .rsCloseVideoBtn {
+  display: none;
+} 
+/* Styling thumbnails */
+.videoGallery h5 {
+  margin: 0;
+}
+.videoGallery p {
+  color: #ddd;
+  font-size: 13px;
+}
+.videoGallery .rsTmb {
+  padding: 20px;
+}
+
+.videoGallery .rsThumbs .rsThumb {
+  width: 940px;
+  height: 80px;
+  border-bottom: 1px solid #2E2E2E;
+}
+.videoGallery .rsThumbs.rsThumbsVer {
+  width: 220px;
+  padding: 0;
+}
+.videoGallery .rsThumb:hover {
+  background: #000;
+}
+.videoGallery .rsThumb.rsNavSelected {
+  background-color: #18bc9c;
+  border-bottom: 1px solid #009E56;
+}
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+  background: #202020;
+}
+.sampleBlock {
+  left: 3%; 
+  top: 1%; 
+  width: 100%;
+  max-width: 400px;
+  color: #FFF;
+  font-weight:bold;
+   background: #000;
+  background: rgba(0,0,0,0.75);
+  padding:7px 10px 10px 10px;
+}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .videoGallery .rsTmb {
+    padding: 6px 8px;
+  }
+  .videoGallery h5 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .videoGallery .rsThumbs.rsThumbsVer {
+    width: 100px;
+    padding: 0;
+  }
+  .videoGallery .rsThumbs .rsThumb {
+    width: 100px;
+    height: 47px;
+  }
+  .videoGallery .rsTmb p {
+    display: none;
+  }
+  .videoGallery .rsOverflow,
+  .royalSlider.videoGallery {
+    height: 300px !important;
+  }
+  .sampleBlock {
+    font-size: 14px;
+  }
+}
+<!-- Block Text Slider -->
+#slider-with-blocks-1 {
+  width: 100%;
+  height: 100%;
+}
+.rsContent {
+  color: #FFF;
+  font-size: 24px;
+  line-height: 32px;
+  float: left;
+}
+
+.bContainer {
+  position: relative;
+}
+.rsABlock {
+  left: 30px;
+	top: 280px;
+	position: absolute;
+	z-index: 15;
+	
+}
+
+.rsBBlock {
+  position: relative;
+  display: block;
+  left: auto;
+  top: auto;
+}
+.blockHeadline {
+  font-size: 42px;
+  line-height: 50px;
+}
+.blockSubHeadline {
+  font-size: 32px;
+  line-height: 40px
+}
+.txtCent {
+  text-align: center; 
+  width: 100%; 
+}
+.slide1 {
+  background: #f06b50;
+}
+.slide1 .bContainer {
+	top: 30px;
+}
+.slide2 {
+    background: #ffbc11;
+    color:#000;
+}
+.slide2 .bContainer {
+  top: 20px;
+}
+.slide2 .txtCent {
+  line-height: 44px;
+}
+.slide2 .blockHeadline {
+   line-height: 66px;
+}
+.slide3 {
+    background: #45aab8;
+    color:#FFF;
+}
+.slide3 .bContainer {
+   top: 24px;
+}
+.slide3 span {
+  line-height: 44px;
+}
+.slide4 .bContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  top: 24px;
+}
+.photoCopy {
+  position: absolute;
+  line-height: 24px;
+  font-size: 12px;
+  background: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0px 10px;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  top: auto;
+  border-radius: 2px;
+  z-index: 25;
+}
+.photoCopy a {
+  color: #FFF;
+}
+.palmImg {
+  left: 0;
+  top: auto;
+  bottom: -60px;
+  position: absolute;
+}
+@media screen and (min-width: 0px) and (max-width: 960px) { 
+  .rsContent {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .blockHeadline {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 26px;
+    line-height: 32px
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 500px) { 
+  .royalSlider,
+  .rsOverflow {
+    height: 200px !important;
+  }
+  .rsContent {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .blockHeadline {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 22px;
+    line-height: 32px
+  }
+}
+
+.label {
+  margin-right: 5px;
+}
+</style>
+
+</head>
+<body>
+  
+<div id="skip"><a href="#content">Skip to Main Content</a></div> 
+<div class="container header_container">
+<div id="header">
+<div id="header_logo">
+<div id="header_logo_left"><a href="http://www.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uic_logo','','img/banner-UIC.png',1)"><img src="img/banner-UIC.png" alt="link to UIC home page" id="uic_logo"/></a><a href="http://vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ovcsa_logo','','img/banner-OVCSA2.png',1)"><img src="img/banner-OVCSA2.png" alt="link to OVCSA home page" id="ovcsa_logo" width="200" height="40"/></a></div>
+<div id="header_logo_right"><a href="http://www.uic.edu" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uofi_logo','','img/banner-UniversityofIlli2.png',1)"><img src="img/banner-UniversityofIlli2.png" alt="link to UIC" id="uofi_logo"/></a></div>
+</div>
+<div class="clearfloat"></div>
+</div>
+<div class="triangle_left"></div>
+<div class="triangle_right"></div>
+</div>
+<!-- title -->   
+<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 style="padding-left:12px"><strong>OFFICE OF THE DEAN OF STUDENTS</strong></h1>
+          </div>         
+        </div>
+      </div>
+</div>
+<div class="container" id="navbar_container">
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">    
+            <div class="bs-example">
+              <div class="navbar navbar-default" id="nav_bar">
+                   <div class="container">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                         <a class="navbar-brand" href="index.shtml">Home</a>
+                      </div>
+                      <div class="navbar-collapse collapse navbar-responsive-collapse">
+                         <ul class="nav navbar-nav">
+                          <li><a href="about.shtml">About Us</a></li>    
+                          <li><a href="services.shtml">Students</a></li>     
+                          <li><a href="units.shtml">Faculty & Staff</a></li>
+                          <li><a href="contact.shtml">Contact Us</a></li>            
+						  <li><a href="needhelp.shtml">Need Help?</a></li> 
+                        </ul>
+                        <form class="navbar-form navbar-right" id="cse-search-box" action="search.shtml">
+                        <input type="hidden" value="003292673167871140938:_ftumhdite0" name="cx" />
+                        <input type="hidden" value="FORID:11" name="cof" />
+                        <input type="hidden" value="UTF-8" name="ie" />                        
+                        <input type="text"  id="search"  name="q" class="form-control col-lg-8" placeholder="Search">     
+                        </form>   
+	</div><!-- /.nav-collapse -->
+                  </div><!-- /.container -->
+                  </div><!-- /.navbar -->
+             
+            </div><!-- /example -->
+          </div>
+        </div>
+      </div>
+    <!-- end of Navbar-->
+</div>
+    
+      
+<!--main container-->
+<div class="container">
+<div class="Flexible-container">         
+<img src="img/dos_uicare.jpg" alt="About Dean Of Students" class="img-responsive">  
+</div>
+<br />
+	
+<div class="row">
+<a tabindex="-1" name="content"></a>
+<div class="col-lg-9">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="h3">Information for Students Needing Help</h3>
+</div>
+<div class="panel-body">
+<p>We are here to help you!</p>
+<p>UIC is dedicated to assisting all students experiencing personal difficulties no matter how serious or small the situation may seem. The resources listed below address some of the more commonly reported areas of difficulties students face.  If your situation is not addressed below, or if you prefer to speak to someone, please contact the Office of the Dean of Students at (312) 996-4857 or any of the U and I Care partners for further assistance.</p>
+
+</div>
+</div>
+<!-- Quick Links Section
+<div class="row">
+   	<div class="col-lg-12">
+	   <div style="background-color:#3498DB; color:#FFFFFF; left:0;
+        margin:15px auto 0; overflow:hidden; padding:2px 0 0 10px; text-transform:uppercase;">
+ 	    <h3 style="color:#FFFFFF; text-align: center;"> <i class="fa fa-bookmark"></i><strong> QUICK LINKS</strong></h3>
+        </div>
+        <div id="qlinks" style="box-shadow: 0 8px 6px -6px #000000;">
+
+		<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#abuse';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Sexual Assault </span></button>
+        </div>
+		  <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#abuse';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Stalking </span></button>
+        </div>
+
+        <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Homelessness </span></button>
+        </div>
+		 <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Food Insecurity </span></button>
+        </div>
+        <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Hospitalization </span></button>
+        </div>  
+		<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Death in Family  </span></button>
+        </div>
+<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#emotionaldistress';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Feeling Depressed or Suicidal   </span></button>
+        </div>		
+			<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#harass';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Feeling Harassed </span></button>
+        </div>	
+
+        </div>
+   </div>
+   </div>
+   <br />
+-->
+
+<!-- New Layout for Questions -->
+<div class="row">
+   	<div class="col-lg-12">
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you need to talk to someone about a personal situation or an academic concern?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#emotionaldistress';" style="width:100%" "height:200px;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you feeling depressed or really stressed, emotional or anxious?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#abuse';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Not sure what to do if someone sexually assaulted you, is stalking you or you feel you are in an abusive relationship?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#financialhardship';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you experiencing financial hardship?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#healthy';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you thinking of leading a healthier life or looking for information on wellness and nutrition?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#identity';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you have questions regarding your gender identity or sexuality and are not sure who to talk to?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#surgery';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Considering procedures for surgical gender transition and would like to talk to someone about it?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#disability';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you have or think you might have a disability and are not sure who to talk to?</span></button>
+		</div>
+		<a class="jump" name="concern"></a>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#harass';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you feel like someone is harassing you or discriminating against you?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#lonely';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you feeling lonely and are looking to make new friends and become more involved on campus?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#undocument';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you scared to talk to someone about your undocumented status? Don’t be!</span></button>
+		</div>
+	</div>
+</div>
+   
+<!-- Old Layout for Questions
+<div class="bs-example">
+<ul class="list-group">
+<li class="list-group-item">
+<a style="color:white;" href="#concern">
+<span class="anchorlink">Need to talk to someone about a personal situation or an academic concern? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#emotionaldistress">
+<span class="anchorlink">Feeling depressed, stressed, emotional or anxious? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#abuse">
+<span class="anchorlink">Not sure what to do if someone sexually assaulted you, is stalking you or in an abusive relationship? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#financialhardship">
+<span class="anchorlink">Are you experiencing financial hardship? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#healthy">
+<span class="anchorlink">Thinking of leading a healthier life or looking for information on wellness and nutrition? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#identity">
+<span class="anchorlink">Questions regarding your gender identity or sexuality? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#surgery">
+<span class="anchorlink">Considering procedures for surgical gender transition and would like to talk to someone about it? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#disability">
+<span class="anchorlink">Do you have or think you might have a disability and are not sure who to talk to? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#harass">
+<span class="anchorlink">Do you feel like someone is harassing you or discriminating against you? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#lonely">
+<span class="anchorlink">Are you feeling lonely and are looking to make new friends and become involved?  </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a class="jump" name="concern"></a>
+<a style="color:white;" href="#undocument">
+<span class="anchorlink">Are you scared to talk to someone about your undocumented status?  Don’t be!  </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+</ul>
+</div>
+-->
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you need to talk to someone about a personal situation or an academic concern? </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		You can talk to someone on the <a href="http://dos.uic.edu">Office of the Dean of Students</a> about <strong><u>any</u></strong> personal matter.  We will either provide you with direct assistance or make sure to connect you to the appropriate resource.  Some examples of situations addressed by DOS include but are not limited to:<br>
+		<p style="text-align:center">
+		<span class="label label-default">Crime Victims Assistance </span>
+		<span class="label label-default">Personal Crisis </span> 
+		<span class="label label-default">Threats </span>
+		<span class="label label-default">Bullying  </span>
+		<span class="label label-default">Homelessness  </span><br>
+		<span class="label label-default">Food Insecurity  </span>
+		<span class="label label-default">Fire Victims Assistance  </span>
+		<span class="label label-default">Financial Emergencies  </span><br>
+		<span class="label label-default">Academic Difficulties  </span>
+		<span class="label label-default">Death in the Family  </span>
+		<span class="label label-default">Hospitalization  </span>
+		<span class="label label-default">Religious Accommodations  </span>
+		<span class="label label-default">Legal Assistance  </span><br>
+		<span class="label label-default">Suicidal Ideations or Attempts  </span>
+		<span class="label label-default">Dealing with Unwanted Advances  </span>
+		<span class="label label-default">Grade Dispute  </span>	
+		</p>
+		<br>
+		<p><center><a href="docs/homelessshelters.pdf" style="margin-right:12px;">List of Chicago Homeless Shelters</a>
+		<a href="docs/foodpantries.pdf">List of Chicago-based Food Pantries</a></center></p>
+		<br>
+		<p style="text-align:center"><strong>The Office of the Dean of Students</strong><br>
+	3030 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-4857<br>
+	<i class="fa fa-envelope"></i> dos@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://dos.uic.edu/">dos.uic.edu</a>
+	</p>
+	
+	<a class="jump" name="emotionaldistress"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>	
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you feeling depressed or really stressed, emotional or anxious?  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://counseling.uic.edu/">Counceling Center</a> provides a safe, supportive, and confidential setting to explore your concerns towards improving your emotional and physical well-being and your ability to better focus on your academics.  Some examples of areas you can talk to a counselor about include but are not limited to:<br>
+		<p style="text-align:center">
+		<span class="label label-default">Depression  </span>
+		<span class="label label-default">Anxiety  </span> 
+		<span class="label label-default">Suicidal Ideations  </span>
+		<span class="label label-default">Dealing with a Crisis or Trauma   </span>
+		<span class="label label-default">Difficulties Transitioning to College   </span><br>
+		<span class="label label-default">A Difficult Break-up  </span>
+		<span class="label label-default">Gender or Cultural Identity Concerns   </span>
+		<span class="label label-default">Stress   </span>
+		<span class="label label-default">Mental Health Concerns   </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Counseling Center</strong><br>
+	2010 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-3490<br>
+	<i class="fa fa-globe"></i> <a href="http://counseling.uic.edu/">counseling.uic.edu</a><br>
+	In-Touch Hotline: (312)996-5535 
+	</p>
+	<a class="jump" name="abuse"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>	
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Not sure what to do if someone sexually assaulted you, is stalking you or you feel you are in an abusive relationship? </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://can.uic.edu/">Campus Advocacy Network</a> is dedicated to providing you with confidential, anonymous, free services to UIC students who have experienced some form or sexual misconduct.  Some of the specific areas you can talk to an advocate at CAN about include but are not limited to:<br>
+		<p style="text-align:center">
+		<span class="label label-default">Stalking   </span> 
+		<span class="label label-default">Sexual Assault   </span> 
+		<span class="label label-default">Domestic/Dating Violence   </span>
+		<span class="label label-default">Hate Crime   </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Campus Advocacy Network</strong><br>
+	2010 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 413-1025<br>
+	<i class="fa fa-envelope"></i> can@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://can.uic.edu/">Campus Advocacy Network</a><br>
+	</p>
+	<a class="jump" name="financialhardship"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you experiencing financial hardship?</h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		Financial hardship can happen to anyone and it often takes place unexpectedly.  We know it isn’t easy telling someone that you need financial help especially when it comes to something very personal, like food, clothing, and toiletries.  But U&I Care partners are experienced in helping you find resources in a very safe, comfortable and non-judgmental environment.  We encourage you to contact the Office of the Dean of Students for assistance. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Personal Crisis </span> 
+		<span class="label label-default">Homelessness </span> 
+		<span class="label label-default">Food Insecurity </span>
+		<span class="label label-default">Fire Victims Assistance </span>
+		<span class="label label-default">Financial Emergencies </span> 
+		<span class="label label-default">Death in the Family or Other Family Crisis </span> 
+		<span class="label label-default">Hospitalization  </span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>The Office of the Dean of Students</strong><br>
+	3030 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-4857<br>
+	<i class="fa fa-envelope"></i> dos@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://dos.uic.edu/">dos.uic.edu</a><br>
+	</p>
+	<a class="jump" name="healthy"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you thinking of leading a healthier life or looking for information on wellness and nutrition? </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://wellness.uic.edu/">Wellness Center</a> is an excellent resource for health and wellness information to help you make healthy choices in a number of personal areas.  You can contact or visit the office for any of the following: <br>
+		<p style="text-align:center">
+		<span class="label label-default">Sexual Well-Being  </span> 
+		<span class="label label-default">Free Condoms & Lubricants  </span> 
+		<span class="label label-default">Emotional Health  </span>
+		<span class="label label-default">Environmental Health  </span><br>
+		<span class="label label-default">Free Food Pantry  </span> 
+		<span class="label label-default">Emergency Personal Toiletry Packs  </span> 
+		<span class="label label-default">Nutritional Education  </span> <br>
+		<span class="label label-default">Balancing Life   </span> 
+		<span class="label label-default">Spiritual Appreciation  </span> 
+		<span class="label label-default">Social Support   </span> 
+		<span class="label label-default">Alcohol & Marijuana Education   </span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Wellness Center</strong><br>
+	238 Student Center East<br>
+	<i class="fa fa-phone"></i> (312) 413-2120<br>
+	<i class="fa fa-envelope"></i> wellness@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://wellness.uic.edu/">wellnesscenter.uic.edu</a><br>
+	</p>
+	<a class="jump" name="identity"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you have questions regarding your gender identity or sexuality and are not sure who to talk to?  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://genderandsexuality.uic.edu/">Gender and Sexuality Center</a> provides a safe space to explore <strong>gender identity</strong> and its intersection with other social identities such as race, religion, and class. Call or visit GSC to talk to someone about any of the following: <br>
+		<p style="text-align:center">
+		<span class="label label-default">Gender Identity Concerns   </span> 
+		<span class="label label-default">Coming Out   </span> 
+		<span class="label label-default">Gender Transitioning   </span>
+		<span class="label label-default">Safe Zones   </span><br>
+		<span class="label label-default">Connecting with the LGBTQ Community  </span> 
+		<span class="label label-default">Becoming Involved in LGBTQ Clubs   </span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Gender and Sexuality Center</strong><br>
+	181 Behavioral Sciences Building <br>
+	<i class="fa fa-phone"></i> (312) 413-8619<br>
+	<i class="fa fa-envelope"></i> lgbtqa@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://genderandsexuality.uic.edu/">genderandsexuality.uic.edu</a> <br>
+	</p>
+	<a class="jump" name="surgery"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Considering procedures for surgical gender transition and would like to talk to someone about it?   </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		<a href="http://gapadvocates.webhost.uic.edu/">GAP Advocates @ UIC</a> are students, faculty, and staff trained to be student-centered and trauma informed resources for students considering surgery for gender reassignment.  Their primary purpose is to provide the best quality of care for you by being someone who will listen, support, and connect you with resources. <br>
+
+		<p style="text-align:center"><strong>GAP Advocates @ UIC</strong><br>
+	<i class="fa fa-globe"></i> <a href="http://gapadvocates.webhost.uic.edu/"> gapadvocates.webhost.uic.edu</a> <br>
+	</p>
+	<a class="jump" name="disability"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you have or think you might have a disability and are not sure who to talk to?   </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://drc.uic.edu/">Disability Resource Center</a> works to provide you with high quality services and resources to help make UIC a welcoming and accessible place.  Visit or contact DRC to talk about any of the following: <br>
+		<p style="text-align:center">
+		<span class="label label-default">Transitioning to College </span> 
+		<span class="label label-default">Understanding Accommodations on Campus </span> <br>
+		<span class="label label-default">Transportation Services    </span>
+		<span class="label label-default">Test-Taking Services   </span>
+		<span class="label label-default">Note-taking Assistance  </span> 
+		<span class="label label-default"> Media Conversion   </span> <br>
+		<span class="label label-default"> Assistive Learning Devices    </span>
+		<span class="label label-default"> American Sign Language Interpreters    </span>
+		<span class="label label-default"> CART and Captioning Services   </span>
+		<span class="label label-default"> Connecting with others on Campus </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Disability Resource Center</strong><br>
+	1190 Student Services Building <br>
+	<i class="fa fa-phone"></i> (312) 413-2183<br>
+	<i class="fa fa-globe"></i> <a href="http://drc.uic.edu/">drc.uic.edu</a> <br>
+	</p>
+	<a class="jump" name="harass"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you feel like someone is harassing you or discriminating against you?  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The Office of the Dean of Students (DOS) serves as a general resource for you especially when you are dealing with a situation that you are not sure what to do.  We can help you determine what your best options might be including getting you connected with appropriate offices or services. DOS is a perfect “first step” in addressing a situation like someone who may be harassing or discriminating against you. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Crime Victims Assistance </span> 
+		<span class="label label-default">Personal Crisis </span> 
+		<span class="label label-default">Threats </span>
+		<span class="label label-default">Bullying   </span>
+		<span class="label label-default">Homelessness   </span> <br>
+		<span class="label label-default">Food Insecurity </span> 
+		<span class="label label-default">Fire Victims Assistance    </span>
+		<span class="label label-default">Financial Emergencies  </span>
+		<span class="label label-default">Academic Difficulties   </span><br>
+		<span class="label label-default">Death in the Family    </span>
+		<span class="label label-default">Hospitalization    </span>
+		<span class="label label-default">Religious Accommodations    </span>
+		<span class="label label-default">Legal Assistance    </span><br>
+		<span class="label label-default">Suicidal Ideations or Attempts    </span>
+		<span class="label label-default">| Dealing with Unwanted Advances    </span>
+		<span class="label label-default">Grade Dispute    </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>The Office of the Dean of Students</strong><br>
+	3030 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-4857<br>
+	<i class="fa fa-envelope"></i> dos@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://dos.uic.edu/">dos.uic.edu</a> <br><br></p>
+	
+	You can also contact the <a href="http://oae.uic.edu/">Office of Access and Equity</a> (OAE) directly.  OAE strives to increase access to employment, programs, and services by helping make our environment free of unlawful discrimination and harassment.  You can speak to a representative about any of the following:<br>
+	<p style="text-align:center">
+		<span class="label label-default">Sexual Misconduct  </span> 
+		<span class="label label-default">Discrimination  </span> 
+		<span class="label label-default">Gender Inclusive Resources  </span>
+		<span class="label label-default">Lactation Rooms    </span><br>
+		<span class="label label-default"> Grievance Procedures    </span>
+		<span class="label label-default">Dispute Resolution Services </span> 
+		</p>
+		
+		<p style="text-align:center"><strong>Office of Access and Equity</strong><br>
+	809 S. Marshfield Ave Room 717<br>
+	<i class="fa fa-phone"></i> (312) 996-8670<br>
+	<i class="fa fa-envelope"></i> oae@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://oae.uic.edu/">oae.uic.edu</a></p>
+	
+	</p>
+	<a class="jump" name="lonely"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you feeling lonely and are looking to make new friends and become more involved on campus?   </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The Center for Student Involvement can help you connect with other students, provide you with opportunities to get involved in student organizations and social programming.  Talk to a representative if you are interested in any of the following:. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Becoming a Member of a Student Organization </span> 
+		<span class="label label-default">Greek Life </span> 
+		<span class="label label-default">Concerts  </span>
+		<span class="label label-default">Cultural Programs   </span><br>
+		<span class="label label-default">Exhibits    </span>
+		<span class="label label-default">Internet Radio</span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Center for Student Involvement</strong><br>
+	340 Student Center East<br>
+	<i class="fa fa-phone"></i> (312) 413-5070<br>
+	<i class="fa fa-globe"></i> <a href="http://campusprograms.uic.edu/">campusprograms.uic.edu</a> <br>
+	</p>
+	<p style="text-align:center"><strong>Undergraduate Student Government</strong><br>
+	397 Student Center East<br>
+	<i class="fa fa-globe"></i> <a href="http://usg.uic.edu/"> usg.uic.edu</a> <br>
+	</p>
+	<p style="text-align:center"><strong>Graduate Student Council</strong><br>
+	380 Student Center East<br>
+	<i class="fa fa-envelope"></i> gsc-officer@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://gradstudentcouncil.uic.edu/">  gradstudentcouncil.uic.edu</a> <br>
+	</p>
+	<p style="text-align:center"><strong>Health Professions Student Council</strong><br>
+	College of Pharmacy, Room 216, Last Thursday of the Month, 6 PM<br>
+	<i class="fa fa-globe"></i> <a href="http://hpsc.org.uic.edu/">hpsc.org.uic.edu</a> <br>
+	</p>
+	
+	<p style="text-align:center"><strong>Student Leadership and Volunteer Services</strong><br>
+	390 Student Center East<br>
+	<i class="fa fa-phone"></i> (312) 996-4500<br>
+	<i class="fa fa-envelope"></i> sldvs@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://sldvs.uic.edu/">sldvs.org.uic.edu</a> <br>
+	</p>
+	
+	
+	</p>
+	<a class="jump" name="undocument"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you scared to talk to someone about your undocumented status?  Don’t be!  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		<a href="http://dream.uic.edu/">Undocumented Student Support</a> in the Office of Diversity offers assistance to students by providing helpful information in a safe and private environment.  To learn more about any of the following, contact Tanya Cabrera, Associate Director for Equity and Inclusion. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Academic Assistance </span> 
+		<span class="label label-default">Financial Aid Information </span> 
+		<span class="label label-default">Legal Assistance </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Office of Diversity</strong><br>
+		Tanya Cabrera<br>
+		Associate Director for Equity and Inclusion<br>
+	601 South Morgan<br>
+	2627 UH<br>
+	<i class="fa fa-phone"></i> (312) 355-0011<br>
+	</p>
+	
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+</div>
+<div class="col-lg-3">
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="uicare.shtml">About U and I Care</a>
+<a class="list-group-item " href="infostudents.shtml">For Students Needing Help</a>
+<a class="list-group-item" href="uicarestudentstostudents.shtml">For Students Helping Students</a>
+<a class="list-group-item" href="uicarestaff.shtml">For Faculty/Staff</a>
+<a class="list-group-item" href="uicarecontact.shtml">Contact a U and I Care Partner</a>
+</div>
+  
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="uicare.shtml">Quick Links</a>
+<a class="list-group-item " href="https://cm.maxient.com/reportingform.php?UnivofIllinoisChicago&layout_id=2">Request Assistance</a>
+<a class="list-group-item" href="http://sexualmisconduct.uic.edu/forstdntsurvivors.shtml">Sexual Misconduct</a>
+<a class="list-group-item" href="studentconductprocess.shtml">Student Conduct</a>
+<a class="list-group-item" href="contact.shtml">Consult with the Office of the Dean of Students</a>
+</div>
+     
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="about.shtml">Other Services</a>
+<a class="list-group-item " href="studentconductprocess.shtml">Student Conduct Process</a>
+<a class="list-group-item" href="studentadvocacyservices.shtml">Student Advocacy Services</a>
+<a class="list-group-item" href="studentombudsservices.shtml">Student Ombuds Services</a>
+<a class="list-group-item" href="studentlegalservices.shtml">Student Legal Services</a>
+<a class="list-group-item" href="studentveteranaffairs.shtml">Student Veteran Affairs</a>
+<a class="list-group-item" href="studentgovernanceadvising.shtml">Student Governance Advising</a>
+<a class="list-group-item" href="religiousworkersassociation.shtml">Religious Workers Association</a>
+<a class="list-group-item" href="policiesandprocedures.shtml">Policies & Procedures</a>
+</div> 
+    
+  
+		
+	</div></div>
+</div><!-- end of main container-->
+<!--footer-->
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="container footer_container">  
+<div class="triangle_left_footer"></div>
+<div class="triangle_right_footer"></div> 
+<div id="footer-wrap">
+<div class="content-wrap-spacer"></div>
+<div class="row">
+<div class="col-lg-4" style="color:#00000; padding-top: 10px; padding-bottom:10px;text-align:center;" > 
+Student Services Building (SSB)<br>
+1200 West Harrison St,<br>
+3030 SSB (MC 318)<br>
+Chicago, IL 60607<br><br>
+
+<small><i class="fa fa-phone"></i> Phone: 312-996-4857 <br>
+<i class="fa fa-print"></i> Fax: 312-413-3716 
+</small>
+</div>
+   		
+<div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px; text-align: center;" >
+      
+<a href="http://vcsa.uic.edu">OVCSA</a>
+|
+<a href="http://www.uic.edu">UIC</a>
+|
+<a href="sitemap.shtml">Site Map</a>
+|
+<a href="needhelp.shtml">Need Help?</a>
+ <p style="color:#3498DB; font-size:11px; line-height:1;"><br>Copyright © 2018 The Board of Trustees of the University of Illinois | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a> </p>
+</p> 
+        
+        </div>        
+        <div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px;">   
+         
+             <a href="http://vcsa.uic.edu"><img src="img/banner-OVCSA-white3.png" class="img-responsive" alt="OVCSA"></a> 
+            
+        </div>
+        
+    </div>
+</div>
+  
+</div>
+<div class="row">
+          <div class="col-lg-12">
+         </div>
+        </div>
+
+<script>
+//vravic2 added this script for valdiation of message textarea
+   $( "#submitbutton" ).click(function(event) {
+	  if($("#textarea").val()=='')
+	  {
+		$("#textarea").addClass("error");
+		event.preventDefault();
+	  }
+	});
+	
+   </script>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54652433-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+     
+<!--footer-->
+    
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>  
+    
+    
+    <!-- script and styling for sticky nav bar-->
+<script>
+$(document).ready(function() {
+  $(window).scroll(function () {
+     console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 180) {
+      $('#nav_bar').addClass('navbar-fixed');
+	  $('#navbar_container').removeClass('container');
+    }
+    if ($(window).scrollTop() < 181) {
+      $('#nav_bar').removeClass('navbar-fixed');
+	  $('#navbar_container').addClass('container');
+    }
+  });
+});
+</script>
+<!--switch images-->
+<script type="text/javascript"> 
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+} 
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+  </body>
+</html>

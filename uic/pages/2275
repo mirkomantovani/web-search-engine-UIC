@@ -1,0 +1,787 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - TWikiForms</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/TWikiForms?_T=2018-11-21" type="application/x-wiki" title="edit TWikiForms" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/TWikiForms"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+@import url('/pub/Main/WebPreferences/mainweb.css');
+@import url('/pub/TWiki/WebPreferences/hideattachments.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TABLEPLUGIN_table4 --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> 
+<h1><a name="TWiki_Forms_Foundation_of_TWiki"></a> TWiki Forms - Foundation of TWiki Applications </h1>
+<p />
+<em>Add structure to content with forms attached to twiki topics. TWiki forms (with form fields) and formatted search are the base for building database applications.</em>
+<p />
+<div class="twikiToc"><span class="twikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Overview"> Overview</a>
+</li> <li> <a href="#Defining_a_Form"> Defining a Form</a>
+</li> <li> <a href="#Adding_a_Form_to_a_Topic"> Adding a Form to a Topic</a>
+</li> <li> <a href="#Changing_a_Form"> Changing a Form</a>
+</li> <li> <a href="#Structure_of_a_Form_Template"> Structure of a Form Template</a>
+</li> <li> <a href="#Form_Field_Types"> Form Field Types</a> <ul>
+<li> <a href="#Values_in_Other_Topics"> Values in Other Topics</a>
+</li></ul> 
+</li> <li> <a href="#Using_a_form_template_on_a_diffe"> Using a form template on a different web</a>
+</li> <li> <a href="#Extending_the_range_of_form_data"> Extending the range of form data types</a>
+</li> <li> <a href="#Hints_and_Tips"> Hints and Tips</a> <ul>
+<li> <a href="#Editing_Just_Form_Data_Without_T"> Editing Just Form Data, Without Topic Text</a>
+</li> <li> <a href="#Build_an_HTML_Form_to_Create_New"> Build an HTML Form to Create New Form-based Topics</a>
+</li> <li> <a href="#Update_Specific_Form_Fields"> Update Specific Form Fields</a>
+</li> <li> <a href="#Searching_for_Form_Data"> Searching for Form Data</a>
+</li> <li> <a href="#Gotcha"> Gotcha!</a>
+</li></ul> 
+</li></ul> 
+</div>
+<p />
+<h2><a name="Overview"></a> Overview </h2>
+<p />
+By adding form-based input to free form content, you can structure topics with unlimited, easily searchable categories. A form is enabled for a web and can be added to a topic. The form data is shown in tabular format when the topic is viewed, and can be changed in edit mode using edit fields, radio buttons, check boxes and list boxes. Many different form types can be defined in a web, though a topic can only have one form attached to it at a time.
+<p />
+Typical steps to build an application based on TWiki forms:
+<p /> <ol>
+<li> Define a form template
+</li> <li> Enable the form for a web
+</li> <li> Add the form to a <a href="/bin/view/TWiki/TWikiTemplates#Template_Topics" class="twikiAnchorLink">template topic</a>
+</li> <li> Build an HTML form to create new topics based on that template topic
+</li> <li> Build a <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a> to list topics that share the same form
+</li></ol> 
+<p />
+<img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> <strong><em>Tip:</em></strong> The blog <a href="http://twiki.org/cgi-bin/view/Blog/BlogEntry201009x1" target="_top" title="'Blog.BlogEntry201009x1' on TWiki.org" class="interwikiLink">How to Create a TWiki Application</a> on TWiki.org is a good tutorial to get started with TWiki forms based applications.
+<p />
+<h2><a name="Defining_a_Form"></a> Defining a Form </h2>
+<p />
+A Form Template specifies the fields in a form. A Form Template is simply a page containing a TWiki table, where each row of the table specifies one form field.
+<p /> <ol>
+<li> Create a new topic with your form name: <code><b>YourForm</b></code>, <code><b>ExpenseReportForm</b></code>, <code><b>InfoCategoryForm</b></code>, <code><b>RecordReviewForm</b></code>, whatever you need.      <br />  <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" width="16" height="16" alt="Tip, idea" title="Tip, idea" border="0" /> The name of a Form Template topic must end in Form.
+</li> <li> Create a TWiki table, with each column representing one element of an entry field: <code><b>Name</b></code>, <code><b>Type</b></code>, <code><b>Size</b></code>, <code><b>Values</b></code>, <code><b>Tooltip message</b></code>, and <code><b>Attributes</b></code> <em>(see sample below)</em>.
+</li> <li> For each field, fill in a new line; for the type of field, select from the list.
+</li> <li> Save the topic
+</li></ol> 
+<p />
+<blockquote>
+<strong>Example:</strong> <br /> 
+<code>| *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |</code> <br /> 
+<code>| TopicClassification | select | 1 | NoDisclosure, PublicSupported, PublicFAQ | blah blah... | &nbsp; |</code> <br /> 
+<code>| OperatingSystem | checkbox | 3 | OsHPUX, OsLinux, OsSolaris, OsWin | blah blah... | &nbsp; |</code> <br /> 
+<code>| OsVersion | text | 16 | | blah blah... | &nbsp; |</code>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Type</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Size</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Values</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Tooltip message</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Attributes</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/Sandbox/TopicClassification">TopicClassification</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> select </td>
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <a href="/bin/view/Sandbox/NoDisclosure">NoDisclosure</a>, <a href="/bin/view/Sandbox/PublicSupported">PublicSupported</a>, <a href="/bin/view/Sandbox/PublicFAQ">PublicFAQ</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> blah blah... </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <a href="/bin/view/Sandbox/OperatingSystem">OperatingSystem</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> checkbox </td>
+			<td bgcolor="#edf4f9" align="center" valign="top" class="twikiTableCol2"> 3 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3"> <a href="/bin/view/Sandbox/OsHPUX">OsHPUX</a>, <a href="/bin/view/Sandbox/OsLinux">OsLinux</a>, <a href="/bin/view/Sandbox/OsSolaris">OsSolaris</a>, <a href="/bin/view/Sandbox/OsWin">OsWin</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> blah blah... </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <a href="/bin/view/Sandbox/OsVersion">OsVersion</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> text </td>
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol2 twikiLast"> 16 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLast"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> blah blah... </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+</blockquote>
+<p />
+See <a href="/bin/view/TWiki/TWikiForms#FormStructure" class="twikiCurrentTopicLink twikiAnchorLink">structure of a form</a> for full details of what types are available and what all the columns mean.
+<p />
+You can also retrieve possible values for <code>select</code>, <code>checkbox</code> or <code>radio</code> types from other topics:
+<p />
+<blockquote>
+<strong>Example:</strong>
+<p /> <ul>
+<li> In the WebForm topic, define the form:     <br />         <table cellspacing="0" id="table2" cellpadding="0" class="twikiTable" rules="all" border="1">     		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=0;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=1;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Type</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=2;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Size</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=3;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Values</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=4;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Tooltip message</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=5;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Attributes</font></a> </th>		</tr>     		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> TopicClassification </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> select </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> 1 </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> &nbsp; </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> blah blah... </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> OperatingSystem </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> checkbox </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> 3 </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3"> &nbsp; </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> blah blah... </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> OsVersion </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> text </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLast"> 16 </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLast"> &nbsp; </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> blah blah... </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp; </td>		</tr>     </table>     <br />     <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Leave the <code><b>Values</b></code> field <strong>blank</strong>.
+</li></ul> 
+<p /> <ul>
+<li> Then in the TopicClassification topic, define the possible values:     <br />     <code>| *Name*&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</code> <br />      <code>| NoDisclosure&nbsp; &nbsp; &nbsp; |</code> <br />      <code>| Public Supported&nbsp; |</code> <br />      <code>| Public FAQ&nbsp; &nbsp; &nbsp; &nbsp; |</code> <br />         <table cellspacing="0" id="table3" cellpadding="0" class="twikiTable" rules="all" border="1">     		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=0;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name</font></a> </th>		</tr>     		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLastCol"> NoDisclosure </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLastCol"> Public Supported </td>		</tr>		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLastCol twikiLast"> Public FAQ </td>		</tr>     </table>
+</li></ul> 
+</blockquote>
+<p />
+Field values can also be set using the result of expanding other TWiki variables. For example,
+<p />
+<blockquote>
+<code>%SEARCH{"Office$" scope="topic" web="%USERSWEB%" nonoise="on" type="regex" format="$web.$topic" separator=", " }%</code>
+</blockquote>
+<p />
+When used in the value field of the form definition, this will find all topic names in the Main web which end in "Office" and use them as the legal field values.
+<p />
+<a name="EnablingForms"></a>
+<a name="AddingForm"></a>
+<h2><a name="Adding_a_Form_to_a_Topic"></a> Adding a Form to a Topic </h2>
+<p /> <ul>
+<li> To add a Form, follow the "More topic actions" link at the bottom of a topic, select "Add or Replace Form". <ul>
+<li> Select a Form Template topic. These are topics with names ending in Form that contain a Form Template table.
+</li> <li> A Form is typically added to a <a href="/bin/view/TWiki/TWikiTemplates#TemplateTopic" class="twikiAnchorLink">template topic</a>, either to the <code>WebTopicEditTemplate</code> topic in a web, or a new topic that serves as an application specific template topic.
+</li> <li> Modify the template topic to set the initial Form values.
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Additionally a new topic can be given a Form using the <code>formtemplate</code> parameter in the (edit or save) URL.  Initial values can then be provided in the URLs or as form values: <ul>
+<li> other than checkboxes: <code><b>name</b></code>, ex: <code><b>?BugPriority=1</b></code>
+</li> <li> checkbox: <code><b>namevalue=1</b></code>, ex: <code><b>?ColorRed=1</b></code>. <br />         Boxes with a tick must be specified.
+</li> <li> Example: This will add a textfield for the new topic name and a "Create"-Button to your topic. When the button is pressed, the topic editor will open with the form "MyForm" already attached to the new topic.       <pre>
+    &#60;form name&#61;&#34;newtopic&#34; action&#61;&#34;&#37;SCRIPTURLPATH{&#34;edit&#34;}&#37;/&#37;WEB&#37;/&#34;&#62;
+       &#60;input type&#61;&#34;hidden&#34; name&#61;&#34;formtemplate&#34; value&#61;&#34;MyForm&#34; /&#62;
+       New topic name &#60;input type&#61;&#34;text&#34; name&#61;&#34;topic&#34; size&#61;&#34;40&#34; /&#62;
+       &#60;input type&#61;&#34;submit&#34; class&#61;&#34;twikiSubmit&#34; value&#61;&#34;Create&#34; /&#62;
+    &#60;/form&#62;
+       </pre>
+</li></ul> 
+</li> <li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/warning.gif) no-repeat 0 .2em;"> <strong><em>Note:</em></strong> You can create a topic in one step, without going through the edit screen. To do that, specify the <code>save</code> script instead of the <code>edit</code> script in the form action. When you specify the <code>save</code> script you <strong><em>have</em></strong> to use the "post" method. Example:       <pre>
+    &#60;form name&#61;&#34;newtopic&#34; action&#61;&#34;&#37;SCRIPTURLPATH{&#34;save&#34;}&#37;/&#37;WEB&#37;/&#34; method&#61;&#34;post&#34;&#62;
+       .....
+    &#60;/form&#62;
+       </pre>
+</li> <li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/help.gif) no-repeat 0 .2em;"> The <code>edit</code> and <code>save</code> scripts understand many more parameters, see <a href="/bin/view/TWiki/TWikiScripts#edit" class="twikiAnchorLink">TWikiScripts#edit</a> and <a href="/bin/view/TWiki/TWikiScripts#save" class="twikiAnchorLink">TWikiScripts#save</a> for details.
+</li></ul> 
+<p /> <ul>
+<li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/tip.gif) no-repeat 0 .2em;"> <strong><em>Tip:</em></strong> For TWiki applications you can <a href="/bin/view/TWiki/TWikiTemplates#AutomaticallyGeneratedTopicname" class="twikiAnchorLink">automatically generate unique topicnames</a>.
+</li></ul> 
+<p /> <ul>
+<li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/warning.gif) no-repeat 0 .2em;"> <strong><em>Note:</em></strong> Initial values will <strong>not</strong> be set in the form of a new topic if you <em>only</em> use the formtemplate parameter.
+</li></ul> 
+<p />
+<a name="ChangingForm"></a>
+<h2><a name="Changing_a_Form"></a> Changing a Form </h2>
+<p /> <ul>
+<li> To change a Form, follow the "More topic actions" link at the bottom of a topic, select "Add or Replace Form", and select a new Form.
+</li></ul> 
+<p /> <ul>
+<li> You can change a form definition, and TWiki will try to make sure you don't lose any data from the topics that use that form. 
+</li></ul> 
+<p /> <ul>
+<li> If you add a new field to the form, then it will appear next time you edit a topic that uses the form.
+</li></ul> 
+<p /> <ul>
+<li> If you delete a field from the form, or change a field name, then the data will not be visible when you edit the topic (the changed form definition will be used). <strong>If you save the topic, the old data will be lost</strong> (though thanks to revision control, you can always see it in older versions of the topic)
+</li></ul> 
+<p /> <ul>
+<li> If two people edit the same topic containing a form at exactly the same time, and both change fields in the form, TWiki will try to merge the changes so that no data is lost.
+</li></ul> 
+<p />
+<a name="FormStructure"></a>
+<h2><a name="Structure_of_a_Form_Template"></a> Structure of a Form Template </h2>
+<p />
+A Form Template specifies the fields in a form. A Form Template is simply a page containing a TWiki table, where each row of the table specifies one form field.
+<p />
+Each <strong>row</strong> of the table defines one element of an input field:
+<p />
+ <table cellspacing="0" id="table4" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <font color="#ffffff">Name</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLast"> <font color="#ffffff">Type</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLast"> <font color="#ffffff">Size</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3 twikiLast"> <font color="#ffffff">Values</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4 twikiLast"> <font color="#ffffff">Tooltip message</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> <font color="#ffffff">Attributes</font> </th>
+		</tr></table>
+<p />
+The <code>Name</code>, <code>Type</code> and <code>Size</code> columns are required. Other columns are optional. The form template <strong>must</strong> have a header row, e.g. at least <code>| *Name* | *Type* | *Size* |</code> is required. Columns:
+<p /> <ul>
+<li> <strong>Name column:</strong> <code><b>Name</b></code> is the name of the form field.
+</li></ul> 
+<p /> <ul>
+<li> <strong>Type, Size, Value columns:</strong> <code><b>Type</b></code>, <code><b>Size</b></code> and <code><b>Value</b></code> describe the type, size and initial value of this form field. Type <code><b>text</b></code>, <code><b>checkbox</b></code>, <code><b>select</b></code> and more are described in the <a href="/bin/view/TWiki/TWikiForms#FormFieldTypes" class="twikiCurrentTopicLink twikiAnchorLink">Form Field Types</a> section below.
+</li></ul> 
+<p /> <ul>
+<li> <strong>Tooltip message column:</strong> The <code><b>Tooltip message</b></code> will be displayed when the cursor is hovered over the field in <code>edit</code> view.
+</li></ul> 
+<p /> <ul>
+<li> <strong>Attributes column:</strong> <code><b>Attributes</b></code> specifies special attributes for the field. Multiple attributes can be entered, separated by spaces. <ul>
+<li> An attribute <code>H</code> indicates that this field is <strong>hidden</strong>, e.g. not shown in view mode. However, the field is available for editing and storing information.     <br />  <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> <strong><em>Tip:</em></strong> The TWiki form header is suppressed in view mode if all fields of the form are hidden. For better usability it is good to hide the whole form if the display and interaction of all form fields is done externally. For example, the display and modification of form field values can be done in a header topic that is included in each page.
+</li> <li> An attribute <code>M</code> indicates that this field is <strong>mandatory</strong>. The topic cannot be saved unless a value is provided for this field. If the field is found empty during topic save, an error is raised and the user is redirected to an <code>oops</code> page. Mandatory fields are indicated by an asterisks next to the field name.
+</li></ul> 
+</li></ul> 
+<p />
+For example, a simple form just supporting entry of a name and a date would look as follows:
+<pre>
+&#124; &#42;Name&#42; &#124; &#42;Type&#42; &#124; &#42;Size&#42; &#124;
+&#124; Name   &#124; text   &#124; 80     &#124;
+&#124; Date   &#124; date   &#124; 30     &#124;
+</pre>
+<p />
+<strong>Field Name Notes:</strong>
+<p /> <ul>
+<li> Field names have to be unique.
+</li> <li> A very few field names are reserved. If you try to use one of these names, TWiki will automatically append an underscore to the name when the form is used.
+</li> <li> You can space out the title of the field, and it will still find the topic e.g. <code>Aeroplane Manufacturers</code> is equivalent to <code>AeroplaneManufacturers</code>.
+</li> <li> If a <code>label</code> field has no name, it will <strong>not</strong> be shown when the form is <strong>viewed</strong>, only when it is <strong>edited</strong>.
+</li> <li> Field names can in theory include any text, but you should stick to alphanumeric characters. If you want to use a non-wikiname for a <code>select</code>, <code>checkbox</code> or <code>radio</code> field, and want to get the values from another topic, you can use  <code><b>[[...]]</b></code> links. This notation can also be used when referencing another topic to obtain field values, but a name other than the topic name is required as the name of the field. 
+</li> <li> Leading and trailing spaces are <em>not</em> significant.
+</li></ul> 
+<p />
+<strong>Field Value Notes:</strong>
+<p /> <ul>
+<li> The field value will be used to initialize a field when a form is created, unless specific values are given by the topic template or query parameters. The first item in the list for a select or radio type is the default item. For <code>label</code>, <code>text</code>, and <code>textarea</code> fields the value may also contain commas. <code>checkbox</code> fields cannot be initialized through the form template.
+</li> <li> Leading and trailing spaces are <em>not</em> significant.
+</li> <li> Field values can also be generated through a <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>, which must yield a suitable table as the result.
+</li> <li> Variables in the initial values of a form definition get expanded when the form definition is loaded. <ul>
+<li> If you want to use a <code>|</code> character in the initial values field, you have to precede it with a backslash, thus: <code>\|</code>.
+</li> <li> You can use <code>&lt;nop&gt;</code> to prevent TWiki variables from being expanded.
+</li> <li> The <a href="/bin/view/TWiki/FormatTokens" class="twikiLink">FormatTokens</a> can be used to prevent expansion of other characters.
+</li></ul> 
+</li></ul> 
+<p />
+<strong>General Notes:</strong>
+<p /> <ul>
+<li> The topic definition is not read when a topic is viewed.
+</li> <li> Form definition topics can be protected in the usual manner, using  <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a>, to limit who can change the form template and/or individual value lists. Note that view access is required to be able to edit topics that use the form definition, though view access to the form definition is <em>not</em> required to view a topic where the form has been used.
+</li></ul> 
+<p />
+<a name="FormFieldTypes"></a>
+<h2><a name="Form_Field_Types"></a> Form Field Types </h2>
+<p />
+Each table row of a form template defines one element of an input field:
+<p />
+<table cellspacing="0" id="table5" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <font color="#ffffff">Name</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLast"> <font color="#ffffff">Type</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLast"> <font color="#ffffff">Size</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3 twikiLast"> <font color="#ffffff">Values</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4 twikiLast"> <font color="#ffffff">Tooltip message</font> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> <font color="#ffffff">Attributes</font> </th>
+		</tr></table>
+<p />
+Many types of form fields are available. Some are TWiki internal, some are provided by extensions. <a href="http://twiki.org/cgi-bin/view/Plugins/TWikiFormFieldExtensions" target="_top" title="'Plugins.TWikiFormFieldExtensions' on TWiki.org" class="interwikiLink">Find more TWiki form field extensions</a> on TWiki.org. The <code><b>Size</b></code> and <code><b>Value</b></code> depend on the <code><b>Type</b></code> used. Form field types:
+<p />
+<table cellspacing="0" id="table6" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=0;table=6;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Type</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=1;table=6;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=2;table=6;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Size</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/TWikiForms?sortcol=3;table=6;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Value</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>text</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> One-line text field </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> Text box width in number of characters </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLastCol"> Initial (default) content </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>textarea</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Multi-line text box </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> Columns x rows, such as <code>80x6</code>; default is <code>40x5</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3 twikiLastCol"> Initial (default) content </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>label</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Read-only text label </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLastCol"> Text of the label </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>checkbox</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> One or more checkboxes that can be toggled individually </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> Number of checkboxes shown per line </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3 twikiLastCol"> Comma-space-separated list of item labels - can be a dynamic SEARCH </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>checkbox+buttons</code> </td>
+			<td bgcolor="#ffffff" colspan="3" valign="top"> Like <code>checkbox</code>, adding <strong>[Set]</strong> and <strong>[Clear]</strong> buttons </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>radio</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Radio buttons, mutually exclusive; only one can be selected </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> Number of radio buttons shown per line </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3 twikiLastCol"> Comma-space-separated list of item labels - can be a dynamic SEARCH </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>combobox</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <img src='/pub/TWiki/TWikiForms/screenshot-combobox.png' alt='screenshot-combobox' width='170' height='132' align='right' style='margin-left:15px;' /> Text field &amp; select combination box, rendered as a text input field and a button to open up a selector box </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> Text box width in number of characters </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLastCol"> Comma-space-separated list of options of the select box - can be a dynamic SEARCH </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>select</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Select box, rendered as a picklist or a multi-row selector box depending on the size value </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> &#8226; <code>1</code>: Show a picklist <br />&#8226; Number &gt; 1: Multi-row selector box of specified size <br />&#8226; Range e.g. <code>3..10</code>: Multi-row selector box with variable size - the box will never be smaller than 3 items, never larger than 10, and will be 5 high if there are only 5 options </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3 twikiLastCol"> Comma-space-separated list of options of the select box - can be a dynamic SEARCH </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>select+multi</code> </td>
+			<td bgcolor="#ffffff" colspan="3" valign="top"> Like <code>select</code>, turning multi-select on, to allow Shift+Click and Ctrl+Click to select (or deselect) multiple items </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>select+values</code> </td>
+			<td bgcolor="#edf4f9" colspan="3" valign="top"> Like <code>select</code>, allowing definition of values that are different to the displayed text. An option is defined as <code>value: title</code>, where the <code>value</code> is the value passed on form submit, and <code>title</code> is the option text shown to the user. For example:<br />  <code>&#124; Field 9 &#124; select+values &#124; 3 &#124; One, 2: Two, III: Three &#124; Various values formats &#124;</code> <br />  shows <form><select size="3" style="font-size: 90%;"><option>One</option><option>Two</option><option>Three</option></select></form> but the values of options <code>Two</code> and <code>Three</code> are <code>2</code> and <code>III</code>, respectively. A legacy <code>title=value</code> syntax is supported as well, for example: <code>One, Two=2, Three=III</code>. </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>select+multi+values</code> </td>
+			<td bgcolor="#ffffff" colspan="3" valign="top"> Combination of <code>select+multi</code> and <code>select+values</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>color</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> <img src='/pub/TWiki/ColorPickerPlugin/screenshot-small.png' alt='screenshot-small' width='150' height='170' align='right' /> Single-line text box and a color picker to pick a color. The color can also be typed into the text box, such as <code>#123456</code>. <a href="/bin/view/TWiki/ColorPickerPlugin" class="twikiLink">See details</a>. </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> Text box width in number of characters </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3 twikiLastCol"> Initial (default) color </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>date</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> <img src='/pub/TWiki/DatePickerPlugin/screenshot-small.png' alt='screenshot-small' width='150' height='127' align='right' style='margin-left:15px;' /> Text input field and a button next to it to pick a date from a pop-up calendar. The date can also be typed into the text box. <a href="/bin/view/TWiki/DatePickerPlugin" class="twikiLink">See details</a>. </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLast"> Text box width in number of characters </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLastCol twikiLast"> Initial (default) date </td>
+		</tr></table>
+<p />
+<h3><a name="Values_in_Other_Topics"></a> Values in Other Topics </h3>
+<p />
+As described above, you can also retrieve possible values for select, checkbox or radio types from other topics. For example, if you have a rows defined like this:
+<pre>
+&#124; &#42;Name&#42;                 &#124; &#42;Type&#42; &#124; &#42;Size&#42; &#124;
+&#124; AeroplaneManufacturers &#124; select &#124;        &#124;
+</pre>
+the TWiki will look for the topic AeroplaneManufacturers to get the possible values for the <code>select</code>.
+<p />
+The AeroplaneManufacturers topic must contain a table, where each row of the table describes a possible value. The table only requires one column, <code><b>Name</b></code>. Other columns may be present, but are ignored.
+<p />
+For example:
+<pre>
+&#124; &#42;Name&#42; &#124;
+&#124; Routan &#124;
+&#124; Focke-Wulf &#124;
+&#124; De Havilland &#124;
+</pre>
+<p />
+<strong>Notes:</strong> <ul>
+<li> The <code><b>Values</b></code> column <strong>must be empty</strong> in the referring form definition.
+</li></ul> 
+<p />
+<h2><a name="Using_a_form_template_on_a_diffe"></a> Using a form template on a different web </h2>
+<p />
+You can use a form template on a different web by specifying a form template in the WEB.TOPIC format.
+<p />
+In addition, you can put a comma separated list of webs in the <code>TWIKIFORMPATH</code> variable.
+It's referred to only when a form template is spcified without a web (TOPIC instead of WEB.TOPIC).
+The webs in <code>TWIKIFORMPATH</code> are examined in the listed order until the specified template is found.
+<p />
+<code>TWIKIFORMPATH</code> may contain TWiki variables. For example:
+<pre>
+   * Set TWIKIFORMPATH = %APPLICATION_WEB%, %WEB%
+</pre>
+<p />
+If <code>TWIKIFORMPATH</code> is defined, the current web is examined only if all the webs listed in it don't have the form template.
+<p />
+<h2><a name="Extending_the_range_of_form_data"></a> Extending the range of form data types </h2>
+<p />
+You can extend the range of data types accepted by forms by using <a href="/bin/view/TWiki/TWikiPlugins" class="twikiLink">TWikiPlugins</a>. All such extended data types are single-valued (can only have one value) with the following exceptions: <ul>
+<li> any type name starting with <code>checkbox</code>
+</li> <li> any type name with <code>+multi</code> anywhere in the name
+</li></ul> 
+Types with names like this can both take multiple values.
+<p />
+<h2><a name="Hints_and_Tips"></a> Hints and Tips </h2>
+<p />
+<h3><a name="Editing_Just_Form_Data_Without_T"></a> Editing Just Form Data, Without Topic Text </h3>
+<p />
+In some cases you want to change only the form data. You have the option of hiding the topic text with two methods:
+<p /> <ul>
+<li> To display only the form whenever you edit a topic, set the preference variable EDITACTION to value <code>form</code> (<a href="/bin/view/TWiki/VarEDITACTION" class="twikiLink">see details</a>).
+</li> <li> To change the edit action in a URL, add a <code>action=form</code> parameter to the edit URL string, such as<br />  <code>%SCRIPTURL{edit}%/%BASEWEB%/%BASETOPIC%?t=%SERVERTIME{$epoch}%;action=form</code> (<a href="/bin/view/TWiki/TWikiScripts#edit" class="twikiAnchorLink">see details</a>).
+</li></ul> 
+<p />
+<a name="CreateNewTopic"></a>
+<h3><a name="Build_an_HTML_Form_to_Create_New"></a> Build an HTML Form to Create New Form-based Topics </h3>
+<p />
+New topics with a form are created by simple HTML forms asking for a topic name. For example, you can have a <code>SubmitExpenseReport</code> topic where you can create new expense reports, a <code>SubmitVacationRequest</code> topic, and so on. These can specify the required template topic with its associated form. <a href="/bin/view/TWiki/TWikiTemplates#TemplateTopics" class="twikiAnchorLink">Template topics</a> has more.
+<p />
+A Form Template specifies the fields in a form. A Form Template is simply a page containing a TWiki table, where each row of the table specifies one form field.
+<p />
+<a name="UpdateFormFields"></a>
+<h3><a name="Update_Specific_Form_Fields"></a> Update Specific Form Fields </h3>
+<p />
+All the form fields are shown and can be updated when editing a topic that has a form. It is possible to have more control over the layout of a form, or update just a subset of the form fields by using a custom HTML form. For example, in a bug tracker, each topic would include a header topic that shows a form with some fields to update specific form fields of the bug item. Use the <a href="/bin/view/TWiki/VarEDITFORMFIELD" class="twikiLink">EDITFORMFIELD</a> variable to easily create this form in the header topic. Example:
+<p />
+<pre>
+&#37;EDITFORMFIELD{ &#34;form&#34; type&#61;&#34;start&#34; action&#61;&#34;save&#34; topic&#61;&#34;&#37;BASETOPIC&#37;&#34; }&#37;
+&#124; Priority: &#124; &#37;EDITFORMFIELD{ &#34;Priority&#34; topic&#61;&#34;&#37;BASETOPIC&#37;&#34; }&#37; &#124;
+&#124; Status:   &#124; &#37;EDITFORMFIELD{ &#34;Status&#34;   topic&#61;&#34;&#37;BASETOPIC&#37;&#34; }&#37; &#124;
+&#124;  &#124; &#37;EDITFORMFIELD{ &#34;form&#34; type&#61;&#34;submit&#34; value&#61;&#34;Update&#34; }&#37; &#124;
+&#37;EDITFORMFIELD{ &#34;LastUpdate&#34; type&#61;&#34;hidden&#34; value&#61;&#34;&#37;SERVERTIME{$year-$mo-$day}&#37;&#34; }&#37;
+&#37;EDITFORMFIELD{ &#34;form&#34; type&#61;&#34;end&#34; }&#37;
+</pre>
+<p />
+Assuming the base topic has a BugForm with Priority and Status fields of type select, a LastUpdate field of type text, and some other fields. Above form shows a table with selectors for Priority and Status, and an Update button. On form submit, the Priority, Status and LastUpdate fields are updated in the base topic.
+<p />
+<a name="UsingFormData"></a>
+<h3><a name="Searching_for_Form_Data"></a> Searching for Form Data </h3>
+<p />
+TWiki Forms accept user-input data, stored as <a href="/bin/view/TWiki/TWikiMetaData" class="twikiLink">TWikiMetaData</a>. Meta data also contains program-generated info about changes, attachments, etc. To find, format and display form and other meta data, see <a href="/bin/view/TWiki/TWikiMetaData" class="twikiLink">TWikiMetaData</a>, <a href="/bin/view/TWiki/VarEDITFORMFIELD" class="twikiLink">EDITFORMFIELD</a>, <a href="/bin/view/TWiki/VarFORMFIELD" class="twikiLink">FORMFIELD</a>, <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">SEARCH</a> and <a href="/bin/view/TWiki/VarMETASEARCH" class="twikiLink">METASEARCH</a> variables in <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>, and <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">TWiki Formatted Search</a>.
+<p />
+<blockquote>
+<strong>Example</strong> <br /> 
+TWiki users often want to have an overview of topics they contributed to. With the <code><b>$formfield</b></code> parameter it is easy to display the value of a classification field next to the topic link:
+<pre>
+&#124; &#42;Topic&#42; &#124; &#42;Classification&#42; &#124;
+&#37;SEARCH{&#34;&#37;USERSWEB&#37;.UserName&#34; scope&#61;&#34;text&#34; nosearch&#61;&#34;on&#34; nototal&#61;&#34;on&#34; sort&#61;&#34;modified&#34; reverse&#61;&#34;on&#34;
+format&#61;&#34;&#124;&#60;b&#62;&#91;&#91;$web.$topic]&#91;$topic]]&#60;/b&#62; &#124;&#60;nop&#62;$formfield(TopicClassification) &#124;&#34; web&#61;&#34;Sandbox&#34;}&#37;
+</pre>
+</blockquote> 
+<p />
+Searching forms this way is obviously pretty inefficient, but it's easy to do. If you want better performance, take a look at some of the structured wiki extensions that support higher performance searching e.g. <a href="http://twiki.org/cgi-bin/view/Plugins/DBCachePlugin" target="_top" title="'Plugins.DBCachePlugin' on TWiki.org" class="interwikiLink">TWiki:Plugins.DBCachePlugin</a>.
+<p />
+<h3><a name="Gotcha"></a> Gotcha! </h3>
+<p /> <ul>
+<li> Some browsers may strip linefeeds from <code>text</code> fields when a topic is saved. If you need linefeeds in a field, make sure it is a <code>textarea</code>.
+</li></ul> 
+<p />
+<p />
+<p />
+<strong><em>Related Topics:</em></strong> <a href="/bin/view/TWiki/TWikiTemplates" class="twikiLink">TWikiTemplates</a>, <a href="/bin/view/TWiki/TWikiScripts" class="twikiLink">TWikiScripts</a>, <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">VarSEARCH</a>, <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>, <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">UserDocumentationCategory</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/TWikiForms">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

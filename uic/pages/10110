@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; CS422 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS422/WebStatistics?_T=2018-11-21" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS422/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS422/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS422/WebHome">CS422 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS422/WebStatistics" title='Topic revision: 150 (2017-03-23 - 07:59:36)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-23, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS422.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS422/WebStatistics?t=1542827384' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS422/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_CS422_Web"></a> Statistics for CS422 Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS422/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS422/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS422/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS422/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS422/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS422/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1229<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 199&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;95&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;84&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;82&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />&nbsp;&nbsp;81&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />&nbsp;&nbsp;70&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />&nbsp;&nbsp;61&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/CS422/Android" class="twikiLink">Android</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 849<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 113&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;69&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/CS422/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/CS422/Android" class="twikiLink">Android</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 785<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 145&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/CS422/Android" class="twikiLink">Android</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 744<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 96&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />89&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />86&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />85&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />75&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />42&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />32&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />31&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />22&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a><br />18&nbsp;<a href="/bin/view/CS422/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 756<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 123&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;66&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />&nbsp;&nbsp;63&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 930<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 222&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;68&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />&nbsp;&nbsp;60&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/CS422/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 204<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 24&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />23&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />14&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />11&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />11&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;8&nbsp;<a href="/bin/view/CS422/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;8&nbsp;<a href="/bin/view/CS422/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;8&nbsp;<a href="/bin/view/CS422/AndroidSetupLinux" class="twikiLink">AndroidSetupLinux</a><br />&nbsp;&nbsp;8&nbsp;<a href="/bin/view/CS422/Android" class="twikiLink">Android</a><br />&nbsp;&nbsp;7&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 508<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 53&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />43&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />38&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />38&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />35&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />31&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />24&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a><br />21&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />18&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />18&nbsp;<a href="/bin/view/CS422/Android" class="twikiLink">Android</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1455<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 145&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />106&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />101&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />&nbsp;&nbsp;91&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;88&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;84&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;74&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />&nbsp;&nbsp;69&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1144<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 98&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />90&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />87&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />77&nbsp;<a href="/bin/view/CS422/AndroidSetupMac" class="twikiLink">AndroidSetupMac</a><br />72&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />66&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />57&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />53&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />44&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a><br />44&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-04 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 729<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 81&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />69&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />49&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />43&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />41&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />39&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a><br />38&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />30&nbsp;<a href="/bin/view/CS422/WebNotify" class="twikiLink">WebNotify</a><br />27&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />26&nbsp;<a href="/bin/view/CS422/AndroidSetupWithMarketplace" class="twikiLink">AndroidSetupWithMarketplace</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 921<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 279&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;65&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;52&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/CS422/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/CS422/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/CS422/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 690<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 77&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />60&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />51&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />47&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />44&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />38&nbsp;<a href="/bin/view/CS422/WebNotify" class="twikiLink">WebNotify</a><br />35&nbsp;<a href="/bin/view/CS422/Android" class="twikiLink">Android</a><br />31&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />30&nbsp;<a href="/bin/view/CS422/Syllabus" class="twikiLink">Syllabus</a><br />29&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 625<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 91&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />68&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />42&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a><br />40&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a><br />37&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />36&nbsp;<a href="/bin/view/CS422/Android" class="twikiLink">Android</a><br />34&nbsp;<a href="/bin/view/CS422/Homeworks" class="twikiLink">Homeworks</a><br />34&nbsp;<a href="/bin/view/CS422/Syllabus" class="twikiLink">Syllabus</a><br />29&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />25&nbsp;<a href="/bin/view/CS422/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 502<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 38&nbsp;<a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />34&nbsp;<a href="/bin/view/CS422/CyanogenModOnEmulator" class="twikiLink">CyanogenModOnEmulator</a><br />30&nbsp;<a href="/bin/view/CS422/AndroidExample" class="twikiLink">AndroidExample</a><br />29&nbsp;<a href="/bin/view/CS422/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />28&nbsp;<a href="/bin/view/CS422/WebIndex" class="twikiLink">WebIndex</a><br />26&nbsp;<a href="/bin/view/CS422/Syllabus" class="twikiLink">Syllabus</a><br />25&nbsp;<a href="/bin/view/CS422/AndroidSetupWindows" class="twikiLink">AndroidSetupWindows</a><br />24&nbsp;<a href="/bin/view/CS422/WebNotify" class="twikiLink">WebNotify</a><br />24&nbsp;<a href="/bin/view/CS422/WebPreferences" class="twikiLink">WebPreferences</a><br />24&nbsp;<a href="/bin/view/CS422/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp; </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> May 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/CS422" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS422/WebStatistics?t=1542827385' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS422/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS422/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS422/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r150&nbsp;<a rel="nofollow" href="/bin/rdiff/CS422/WebStatistics?rev1=150;rev2=149">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS422/WebStatistics?rev=149">r149</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS422/WebStatistics?rev1=149;rev2=148">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS422/WebStatistics?rev=148">r148</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS422/WebStatistics?rev1=148;rev2=147">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS422/WebStatistics?rev=147">r147</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS422/WebStatistics?rev1=147;rev2=146">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS422/WebStatistics?rev=146">r146</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS422/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the CS422 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS422/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS422/WebStatistics?t=1542827385;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS422/WebStatistics?template=oopsmore&amp;param1=150&amp;param2=150' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r150 - 2017-03-23 - 07:59:36 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS422.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS422</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS422/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <span style="color: #0000ff; text-decoration: underline" class="Apple-style-span"><a href="/bin/view/CS422/LectureNotes" class="twikiLink">Lecture Notes</a></span>
+</li> <li> <span style="color: #0000ff; text-decoration: underline" class="Apple-style-span"><a href="/bin/view/CS422/Homeworks" class="twikiLink">Homeworks</a></span>
+</li> <li> <span style="color: #0000ff"><u><a href="http://www.cs.uic.edu/bin/edit/Android" title="Android Wiki Page"><a href="/bin/view/CS422/Android" class="twikiLink">Android</a></a></u></span>
+</li> <li> <span style="color: #0000ff; text-decoration: underline" class="Apple-style-span"><a href="/bin/view/CS422/AdditionalMaterial" class="twikiLink">Additional Material</a></span>
+</li></ul> 
+<p />
+<a href="/bin/edit/CS422.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS422/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS422/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS422 Web</a></strong>
+</li> <li> <a href="/bin/view/CS422/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS422/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS422/WebSearch?topicparent=CS422.WebStatistics;nowysiwyg=0" rel="nofollow" title="Search (this topic does not yet exist; you can create it)"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a></span>
+</li> <li> <a href="/bin/view/CS422/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS422/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS422/WebRss?topicparent=CS422.WebStatistics;nowysiwyg=0" rel="nofollow" title="RSS&#32;Feed (this topic does not yet exist; you can create it)"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a></span>
+</li> <li> <a href="/bin/view/CS422/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS422/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

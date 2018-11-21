@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> FormsAndLinks &lt; ECE &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/ECE/FormsAndLinks?_T=2018-11-21" type="application/x-wiki" title="edit FormsAndLinks" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/ECE/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/ECE/FormsAndLinks"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
+.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
+.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/ECE/WebHome">ECE Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/ECE/FormsAndLinks" title='Topic revision: 39 (2016-09-10 - 21:03:52)'>FormsAndLinks</a> <span class='patternRevInfo'>(2016-09-10, Main.ncerta)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/ECE/FormsAndLinks?t=1542827313' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/ECE/FormsAndLinks' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Administrative_Forms"></a> Administrative Forms </h1>
+<p />
+2016-2017 Committee List: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/2016_2017_ECE_Committees.pdf" target="_top">PDF</a>
+<p />
+2016 Spring Phone Directory: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/2016_ECE_Internal_Directory.pdf" target="_top">PDF</a>
+<h3><a name="Employee_Reimbursement"></a> Employee Reimbursement </h3>
+ Invoice Voucher Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Invoice_Voucher_Form.xls" target="_top">XLS</a>
+<p />
+Missing Receipt Affidavit: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Missing_Receipt_Affidavit.pdf" target="_top">PDF</a>, <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Missing_Receipt_Affidavit.doc" target="_top">DOC</a>
+<p />
+Reasonable Exception Request: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Reasonable_Justification_Exception_Request.doc" target="_top">DOC</a>
+<p />
+Travel Approval Request: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Travel_Approval_Request.pdf" target="_top">PDF</a>
+<p />
+Travel Exception Request: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Travel_Exception_Request.doc" target="_top">DOC</a>
+<p />
+Travel Reimbursement Request Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Travel_Reimbursement_Request_Form.xls" target="_top">XLS</a>
+<h3><a name="Human_Resources"></a> Human Resources </h3>
+ Attachment 5--Faculty Research Assistantship Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/attchmnt5.pdf" target="_top">PDF</a>
+<p />
+Monthly Leave Report for employees (time sheet):<a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Monthly_Leave_Report_for_employees_time_sheet.pdf" target="_top">PDF</a>
+<p />
+Research Assistant Appointment Request: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Research_Assistant_Appointment_Request.pdf" target="_top">PDF</a>
+<p />
+Student Employment Requisition: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Student_Employee_Requisition.pdf" target="_top">PDF</a>
+<p />
+Student Time Report: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Student_Time_Report.pdf" target="_top">PDF</a>
+<h3><a name="Grants"></a> Grants </h3>
+ Anticipation Account Approval Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Anticipation_Account_Approval_Form.doc" target="_top">DOC</a>
+<p />
+OVCR Cover Page: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/OVCR_Cover_Page.doc" target="_top">DOC</a>
+<p />
+Proposal Approval Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Proposal_Approval_Form.doc" target="_top">DOC</a>
+<p />
+Re-Budget or No Cost Request: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Re-Budget_or_No_Cost_Request_Form.doc" target="_top">DOC</a>
+<p />
+Request for Waiver of Indirect Cost: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Request_for_Waiver_of_Indirect_Cost.doc" target="_top">DOC</a>
+<h3><a name="Budget_Templates"></a> Budget Templates </h3>
+<p />
+<strong>FY_17</strong>
+<p />
+1 Year Budget Temp Revised 10-08-15: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/1_year_FY17.xlsx" target="_top">XLS</a>
+<p />
+2 Year Budget Temp Revised 10-08-15: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/2_year_FY17.xlsx" target="_top">XLS</a>
+<p />
+3 Year Budget Temp Revised 10-08-15: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/3_year_FY17.xlsx" target="_top">XLS</a>
+<p />
+4 Year Budget Temp Revised 10-08-15: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/4_year_FY17.xlsx" target="_top">XLS</a>
+<p />
+5 Year Budget Temp Revised 10-08-15: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/5_year_FY17.xlsx" target="_top">XLS</a>
+<p />
+6 Year Budget Temp Revised 10-08-15: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/6_year_FY17.xlsx" target="_top">XLS</a>
+<p />
+<h3><a name="Main_Office"></a> Main Office </h3>
+ Fax Cover Page: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/faxcover.pdf" target="_top">PDF</a>
+<p />
+Key Request, Building Access, Key Return , Refund of Deposit Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/keyacc.pdf" target="_top">PDF</a>
+<p />
+Order Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/Order_Form.pdf" target="_top">PDF</a>
+<p />
+UPS Request Form: <a href="https://www.cs.uic.edu/pub/ECE/FormsAndLinks/UPS_Request_Form.pdf" target="_top">PDF</a>
+<h2><a name="Graduate_Forms"></a> Graduate Forms </h2>
+ <a href="/bin/view/ECE/GraduateForms" class="twikiLink">Graduate Forms</a> 
+<h2><a name="Links_to_Other_Forms"></a> Links to Other Forms </h2>
+ <a href="http://tigger.uic.edu/depts/ovcr/research/proposals/" target="_top">Office of the Vice Chancellor for Research </a>
+<p />
+<a href="http://www.obfs.uillinois.edu/forms/" target="_top">Office of Business and Financial Services</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div><div class="twikiAttachments">
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
+<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/1_year_091112.xlsx">1_year_091112.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=1_year_091112.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 24.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-09-20 - 16:26</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/1_year_FY13.xlsx">1_year_FY13.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=1_year_FY13.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 24.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-07-24 - 14:55</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/1_year_FY14.xlsx">1_year_FY14.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=1_year_FY14.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 29.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-09-23 - 17:20</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/1_year_FY15.xlsx">1_year_FY15.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=1_year_FY15.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 32.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-07-31 - 13:56</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/1_year_FY16.xlsx">1_year_FY16.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=1_year_FY16.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 51.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-11-10 - 15:41</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/1_year_FY17.xlsx">1_year_FY17.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=1_year_FY17.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 29.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-10-19 - 16:16</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2012-2013_Committees.pdf">2012-2013_Committees.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2012-2013_Committees.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 58.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-08-30 - 18:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2012-2013_Internal_Directory.pdf">2012-2013_Internal_Directory.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2012-2013_Internal_Directory.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 205.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-10-11 - 19:56</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2013-2014_ECE_Internal_Directory.pdf">2013-2014_ECE_Internal_Directory.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2013-2014_ECE_Internal_Directory.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1364.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-08-29 - 16:54</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2013-2014_ECE_Internal_Directory_Updated_March_2013.pdf">2013-2014_ECE_Internal_Directory_Updated_March_2013.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2013-2014_ECE_Internal_Directory_Updated_March_2013.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 204.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-03-11 - 15:51</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2013_2014_ECE_Committees.pdf">2013_2014_ECE_Committees.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2013_2014_ECE_Committees.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 78.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-09-06 - 19:32</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2014-2015_ECE_Internal_Directory.pdf">2014-2015_ECE_Internal_Directory.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2014-2015_ECE_Internal_Directory.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 39.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-02-27 - 19:48</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2014-2015_Internal_Directory.pdf">2014-2015_Internal_Directory.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2014-2015_Internal_Directory.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 191.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-09-15 - 16:11</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2014_2015_ECE_Committees.pdf">2014_2015_ECE_Committees.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2014_2015_ECE_Committees.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 195.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-09-15 - 16:06</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2015_2016_ECE_Committees.pdf">2015_2016_ECE_Committees.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2015_2016_ECE_Committees.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 72.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-09-11 - 13:18</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2015_2016_ECE_Internal_Directory.pdf">2015_2016_ECE_Internal_Directory.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2015_2016_ECE_Internal_Directory.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 68.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-09-11 - 13:22</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2016_2017_ECE_Committees.pdf">2016_2017_ECE_Committees.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2016_2017_ECE_Committees.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 200.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-10 - 21:03</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2016_ECE_Internal_Directory.pdf">2016_ECE_Internal_Directory.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2016_ECE_Internal_Directory.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 70.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-04-06 - 13:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2_year_091112.xlsx">2_year_091112.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2_year_091112.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 23.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-09-20 - 16:27</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2_year_FY13.xlsx">2_year_FY13.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2_year_FY13.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 23.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-07-24 - 14:56</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2_year_FY14.xlsx">2_year_FY14.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2_year_FY14.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 28.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-09-23 - 17:20</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2_year_FY15.xlsx">2_year_FY15.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2_year_FY15.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 28.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-07-31 - 13:57</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2_year_FY16.xlsx">2_year_FY16.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2_year_FY16.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 51.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-11-10 - 15:41</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/2_year_FY17.xlsx">2_year_FY17.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=2_year_FY17.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 30.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-10-19 - 16:16</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/3_year_091112.xlsx">3_year_091112.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=3_year_091112.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 25.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-09-20 - 16:27</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/3_year_FY13.xlsx">3_year_FY13.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=3_year_FY13.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 25.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-07-24 - 14:56</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/3_year_FY14.xlsx">3_year_FY14.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=3_year_FY14.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 31.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-09-23 - 17:21</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/3_year_FY15.xlsx">3_year_FY15.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=3_year_FY15.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 31.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-07-31 - 13:57</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/3_year_FY16.xlsx">3_year_FY16.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=3_year_FY16.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 60.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-11-10 - 15:41</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/3_year_FY17.xlsx">3_year_FY17.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=3_year_FY17.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 31.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-10-19 - 16:16</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/4_year_091112.xlsx">4_year_091112.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=4_year_091112.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 27.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-09-20 - 16:27</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/4_year_FY13.xlsx">4_year_FY13.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=4_year_FY13.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 27.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-07-24 - 14:56</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/4_year_FY14.xlsx">4_year_FY14.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=4_year_FY14.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 32.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-09-23 - 17:21</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/4_year_FY15.xlsx">4_year_FY15.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=4_year_FY15.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 33.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-07-31 - 13:58</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/4_year_FY16.xlsx">4_year_FY16.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=4_year_FY16.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 74.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-11-10 - 15:41</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/4_year_FY17.xlsx">4_year_FY17.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=4_year_FY17.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 33.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-10-19 - 16:17</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/5_year_091112.xlsx">5_year_091112.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=5_year_091112.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 29.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-09-20 - 16:27</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/5_year_FY13.xlsx">5_year_FY13.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=5_year_FY13.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 28.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-07-24 - 14:56</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/5_year_FY14.xlsx">5_year_FY14.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=5_year_FY14.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 34.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2013-09-23 - 17:21</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/5_year_FY15.xlsx">5_year_FY15.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=5_year_FY15.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 35.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-07-31 - 13:58</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/5_year_FY16.xlsx">5_year_FY16.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=5_year_FY16.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 61.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-11-10 - 15:42</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/5_year_FY17.xlsx">5_year_FY17.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=5_year_FY17.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 35.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-10-19 - 16:17</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/6_year_FY15.xlsx">6_year_FY15.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=6_year_FY15.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 36.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-07-31 - 13:58</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/6_year_FY16.xlsx">6_year_FY16.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=6_year_FY16.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 66.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-11-10 - 15:42</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/xls.gif" width="16" height="16" alt="Microsoft Excel Spreadsheet" title="Microsoft Excel Spreadsheet" border="0" /><span class="twikiHidden">xlsx</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/ECE/FormsAndLinks/6_year_FY17.xlsx">6_year_FY17.xlsx</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/ECE/FormsAndLinks?filename=6_year_FY17.xlsx;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 36.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2015-10-19 - 16:17</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/ECE/FormsAndLinks/Research_Assistant_Appointment_Request.pdf">Research_Assistant_Appointment_Request.pdf</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/ECE/FormsAndLinks?filename=Research_Assistant_Appointment_Request.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 22.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2012-11-29 - 14:18</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=ECE.FormsAndLinks;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/ECE/FormsAndLinks?t=1542827313' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/ECE/FormsAndLinks' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/ECE/FormsAndLinks?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/ECE/FormsAndLinks?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r39&nbsp;<a rel="nofollow" href="/bin/rdiff/ECE/FormsAndLinks?rev1=39;rev2=38">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?rev=38">r38</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/ECE/FormsAndLinks?rev1=38;rev2=37">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?rev=37">r37</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/ECE/FormsAndLinks?rev1=37;rev2=36">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?rev=36">r36</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/ECE/FormsAndLinks?rev1=36;rev2=35">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/ECE/FormsAndLinks?rev=35">r35</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/ECE/FormsAndLinks?template=backlinksweb' rel='nofollow' title='Search the ECE Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/ECE/FormsAndLinks?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/ECE/FormsAndLinks?t=1542827313;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/ECE/FormsAndLinks?template=oopsmore&amp;param1=39&amp;param2=39' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r39 - 2016-09-10 - 21:03:52 - Main.ncerta</div><!-- /patternRevInfo--><div class="patternMoved"><i>ECE.FormsAndLinks moved from ECE.AdministrativeLinks on 2010-07-09 - 19:07 by Main.awu5</i> - <form style="display:inline" method="post" action="/bin/rename/ECE/FormsAndLinks"><input type="hidden" name="crypttoken" value="5495c5b0a2cdb7c56c4d74a7c943ed17" /><input type="hidden" name="newweb" value="ECE"/><input type="hidden" name="newtopic" value="AdministrativeLinks"/><input type="hidden" name="confirm" value="on"/><input type="hidden" name="nonwikiword" value="checked"/><input type="submit" name="submit" value="put it back" class="twikiButton"/></form></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/ECE/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> ECE</a>
+</li></ul> 
+</div>
+Admissions
+   <br />&nbsp;&nbsp;&#8226; <a href="/bin/view/ECE/UndergraduateProgram" class="twikiLink">Undergraduate</a>
+   <br />&nbsp;&nbsp;&#8226; <a href="/bin/view/ECE/Admission" class="twikiLink">Graduate</a> <ul>
+<li> <a href="/bin/view/ECE/Courses" class="twikiLink">Courses</a>
+</li></ul> 
+<hr /> <ul>
+<li> <a href="/bin/view/ECE/Employment" class="twikiLink">Employment</a>
+</li> <li> <a href="/bin/view/ECE/Calendar" class="twikiLink">Calendar</a>
+</li> <li> <a href="/bin/view/ECE/EventsPage" class="twikiLink">Events</a>
+</li> <li> <a href="/bin/view/ECE/LinksMain" class="twikiLink">UIC Links</a>
+</li> <li> <a href="/bin/view/ECE/FormsAndLinks" class="twikiCurrentTopicLink twikiLink">Administrative Forms</a>
+</li> <li> <a href="http://www1.ece.uic.edu/consulting" target="_top">ECE Support</a>
+</li></ul> 
+<hr />
+<p /> <ul>
+<li> <a href="http://www.rrc.uic.edu/ncf" target="blank">Nanotech Core Facility</a>
+</li> <li> <a href="http://wisest.uic.edu" target="_top">WISEST Faculty</a>
+</li> <li> <a href="http://www.engineering.uic.edu" target="_top">College of Engineering</a>
+</li> <li> <a href="http://www.aftercollege.com/groups/listings.asp?id=1546326015" target="_top">Job Board</a>
+</li> <li>  <a href="http://www.ecc.uic.edu" target="_blank">Career Center</a>
+</li></ul> 
+<p />
+<hr />
+<p /> <ul>
+<li> <strong><a href="/bin/view/ECE/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> ECE Home</a></strong>
+</li> <li> <a href="http://www.cs.uic.edu/ECE/WebHomeLogin"><img alt="" src="https://www.cs.uic.edu/pub/ECE/WebLeftBar/key.jpg" /> Login</a>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

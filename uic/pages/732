@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <title>BIG-IP logout page</title>
+    <link rel="stylesheet" type="text/css" HREF="/public/include/css/apm.css">
+    <script src="/public/include/js/common.js" language="javascript"></script>
+    <script src="/public/include/js/u_plugin.js" language="javascript"></script>
+	
+    <script language="javascript">
+      function InsertActivexControl(clsid, params)
+      {
+          var container = document.getElementById("logoutActivexContainer");
+          
+          if (navigator.appName == "Microsoft Internet Explorer") {
+              var paramsCode = "";
+              for (var item in params) {
+                  paramsCode += "<param name='" + item + "' value='" + params[item] + "'>";
+              }
+              
+              container.innerHTML = 
+                  "<center><object classId=CLSID:" + clsid + " border=0 width=1 height=1>" +
+                  paramsCode + "</object></center>";
+          }
+          else {
+              var pluginHost = new UPluginHost("", container);
+              var control = {"clsid": clsid, "width": 1, "height": 1};
+              pluginHost.hostControl(control, params);
+          }
+      }
+	  
+      function OnLoad()
+      {
+
+        var display_session = get_cookie("LastMRH_Session");
+        if(null != display_session) {
+          document.getElementById("sessionDIV").innerHTML = '<BR>The session reference number: &nbsp;' + display_session + '<BR><BR>';
+          document.getElementById("sessionDIV").style.visibility = "visible";
+        }
+
+        try
+        {	
+          if (("undefined" != typeof(window.external))
+              && ("unknown" != typeof(window.external))
+              && ("undefined" != typeof(window.external.WebLogonNotifyUser))
+              && ("unknown" != typeof(window.external.WebLogonNotifyUser)))
+          {
+            window.external.WebLogonNotifyUser();
+          }
+        }
+        catch(e) {};
+        try
+        {
+            if (get_cookie("F5_PWS") == "1")
+            {
+                document.cookie = "F5_PWS=0; path=/; expires=Fri, 01-Jan-1970 00:00:01 GMT";
+                var pwsClassId = "7E73BE8F-FD87-44EC-8E22-023D5FF960FF";
+                InsertActivexControl(pwsClassId, {"command": "exit"} );
+            }
+            else if (get_cookie("F5_GPO") == "1")
+            {
+                document.cookie = "F5_GPO=0; path=/; expires=Fri, 01-Jan-1970 00:00:01 GMT";
+                var gpoClassId = "";
+                InsertActivexControl(gpoClassId, {"GroupPolicyRollback": "TRUE"} );
+            }
+        }catch (e) {};
+      }
+    </script>
+  </head>
+
+<body onload="OnLoad();">
+<script>
+try{
+
+    if(window.external && window.external.WebLogonOnAuthFailure) {
+        window.external.WebLogonOnAuthFailure();
+    }
+}catch(e){};
+    try {
+        window.external.OnHostClose();
+    } catch(e) { }
+</script>
+<!-- UIH Custom Settings -->
+<div id="uih_BodyContent">
+<!-- UIH Custom Settings -->
+<meta name="viewport" id="viewport" content="initial-scale=1.0" />       
+<script language="javascript">
+//orientation toolbox
+function setViewport(){
+	    document.getElementById("viewport").setAttribute('content', Math.abs(window.orientation) == 90 ? 'width=device-height, initial-scale=1' : 'width=device-width, initial-scale=1.0' );
+	}
+setViewport();
+window.onorientationchange = function() {
+    setViewport();
+}    
+</script>
+<table id="uih_tblMain" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+	<td>
+		<div id="uih_header">
+			<h1><a href="http://hospital.uillinois.edu" title="University of Illinois Hospital" style="display: block; background: transparent url('/public/images/customization/Common/EMPLOYEEPORTAL_PROD_SP2016_20171213_apm_general_ui/logo_image_en.gif') no-repeat 50px 15px; width: 425px; height: 110px;"></a></h1>
+			<div id="uih_headernav">
+				<ul>
+					<li class="last">call us at <span>866.600.CARE</span></li>
+					<li><a href="http://hospital.uillinois.edu/contact_us.html" title="Send an email to Medical Center staff">Contact UI Health Online</a></li>
+					<li class="first"><a href="http://hospital.uillinois.edu/locations_and_maps.html" title="View directions for reaching the Medical Center">Locations &amp; Maps</a></li>
+				</ul>
+				<div style="clear:both;"></div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		<div id="uih_nav">
+			<ul>
+				<li><a href="http://hospital.uillinois.edu">Home</a></li>
+				<li><a href="http://hospital.uillinois.edu/find_a_doctor.html">Find a Doctor</a></li>
+				<li><a href="http://hospital.uillinois.edu/patient_care_services.html">Patient Care Services</a></li>
+				<li><a href="http://hospital.uillinois.edu/referring_physicians.html">Referring Physicians</a></li>
+				<li><a href="http://hospital.uillinois.edu/patients_and_visitors.html">Patients &amp; Visitors</a></li>
+				<li><a href="http://hospital.uillinois.edu/About">About Us</a></li>
+                <li><a href="http://hospital.uillinois.edu/FAQ" target="_blank">FAQ</a></li>                
+			</ul>
+			<div style="clear:both;"></div>
+		</div>
+	</td>
+	</tr>
+    <tr >           
+    	
+        <td id="header_rightcell"></td>
+        </tr>    
+</table><noscript>
+<div id="noscript_warning_red">JavaScript is not enabled. Please enable JavaScript in your browser or contact your system administrator for assistance.</div>
+<div id="noscript_warning_newsession">To open a new session, please  <A href="/">click here.</A></div>
+</noscript>
+<table id="main_table" class="logout_page">
+<tr>
+        <td id="main_table_info_cell">
+        <table id="interaction_table">
+            <tr>
+                <td id="interaction_table_header">Your session could not be established.</td>
+            </tr>
+            <tr>
+                <td class="interaction_table_option_cell"><br><DIV ID="sessionDIV" style='visibility:hidden' align=left></DIV>
+                    <font color=red>BIG-IP can not find session information in the request. This can happen because your browser restarted after an add-on was installed. If this occurred, click the link below to continue.  This can also happen because cookies are disabled in your browser. If so, enable cookies in your browser and start a new session.</font><br>                    <br>Thank you for using the UI Health Employee Portal.<br><br>
+                    To start a new session, please <A href='/'>click here.</A>                </td>
+            </tr>
+            <tr>
+                <td class="interaction_table_footer"></td>
+            </tr>
+        </table>
+    </td>
+    <td id="main_table_image_cell"><img src="/public/images/my/tr.gif"></td></tr>
+</table>
+<div id="page_footer"><div>This online service is provided by the University of Illinois Hospital & Health Sciences System and is for the exclusive use of its employees and staff.<p> <i>Copyright © 2013 University of Illinois Hospital & Health Sciences System. All rights reserved.</i><br> Unauthorized access is prohibited. Usage will be monitored.</div></div><!-- UIH Custom Settings -->
+</div>
+<!-- UIH Custom Settings -->
+<DIV ID="logoutActivexContainer" class="inspectionHostDIVSmall"></DIV>
+
+</body>
+</html>

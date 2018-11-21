@@ -1,0 +1,1316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> CodeS17 &lt; CS111 &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS111/CodeS17?_T=2018-11-21" type="application/x-wiki" title="edit CodeS17" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS111/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS111/CodeS17"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
+.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
+.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS111/WebHome">CS111 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS111/CS111Spring2017" class="twikiLink">CS111Spring2017</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS111/CodeS17" title='Topic revision: 26 (2017-04-28 - 15:46:06)'>CodeS17</a> <span class='patternRevInfo'>(2017-04-28, Main.troy)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS111/CodeS17?t=1542826603' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS111/CodeS17' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="CS_111_Program_Design_I"></a> CS 111 - Program Design I </h1>
+<h3><a name="Spring_2017_Sample_Code"></a> Spring 2017 Sample Code </h3>
+<p />
+Please note that the Python files get posted as .txt files so they can be viewed on the web page.
+<p />
+<strong>Sound Manipulation Code</strong> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0425c.py.txt" target="_top">lect0425c.py.txt</a> - Reverse a sound by exchanging values
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0425b.py.txt" target="_top">lect0425b.py.txt</a> - Modify the create echo code to repeatedly echo like a "reverb machine"
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0425a.py.txt" target="_top">lect0425a.py.txt</a> - Modify the create echo code so the the first second is repeatedly echoed
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/quicksort.py.txt" target="_top">quicksort.py.txt</a> - Sorting the sample values using the quick sort algorithm
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0420c.py.txt" target="_top">lect0420c.py.txt</a> - Sorting the sample values using the selection sort algorithm
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0420b.py.txt" target="_top">lect0420b.py.txt</a> - "Normalize" a sound - making it as loud as possible while avoiding clipping
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0420a.py.txt" target="_top">lect0420a.py.txt</a> - Accessing the individual characters from a String
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0418b.py.txt" target="_top">lect0418b.py.txt</a> - Create an echo for a sound
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0418a.py.txt" target="_top">lect0418a.py.txt</a> - Code from page 267 of the text to generate sine waves
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413i.py.txt" target="_top">lect0413i.py.txt</a> - Looping through a list of integer and modifying the list
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413h.py.txt" target="_top">lect0413h.py.txt</a> - Looping through a list of integer values and summing up the values
+</li> <li> Joining the same sound together so it repeats 5 times with different pitches<br /> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413g.py.txt" target="_top">lect0413g.py.txt</a> - Executing a loop 5 times to create and join each part
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413f.py.txt" target="_top">lect0413f.py.txt</a> - Using 5 change pitch calls instead of 4
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413e.py.txt" target="_top">lect0413e.py.txt</a> - Using 5 join calls instead of 4
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413d.py.txt" target="_top">lect0413d.py.txt</a> - Creating the various pitches and then joining the all together
+</li></ul> 
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413c.py.txt" target="_top">lect0413c.py.txt</a> - Changing the pitch/frequency of a sound
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413b.py.txt" target="_top">lect0413b.py.txt</a> - Deceasing the pitch/frequency of a sound ("expanding" the length)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0413a.py.txt" target="_top">lect0413a.py.txt</a> - Increasing the pitch/frequency of a sound ("compressing" the length)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0411c.py.txt" target="_top">lect0411c.py.txt</a> - Reverse a sound
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0411b.py.txt" target="_top">lect0411b.py.txt</a> - Crop a sound (make sound bite/byte)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0411a.py.txt" target="_top">lect0411a.py.txt</a> - Join two sounds together (so they play one before the other)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0406d.py.txt" target="_top">lect0406d.py.txt</a> - Combine two sounds together (so they play at same time)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0406c.py.txt" target="_top">lect0406c.py.txt</a> - Fade out a sound over X seconds
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0406b.py.txt" target="_top">lect0406b.py.txt</a> - Fade in a sound over X seconds
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0406a.py.txt" target="_top">lect0406a.py.txt</a> - Fade in a sound over 3 seconds
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0328d.py.txt" target="_top">lect0328d.py.txt</a> - Code to increase the volume of a sound by quadrupling the amplitude values
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0328c.py.txt" target="_top">lect0328c.py.txt</a> - Code to open and play a Sound File
+</li></ul> 
+<strong>Picture Manipulation Code</strong> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0328a.py.txt" target="_top">lect0328a.py.txt</a> - Green Screen Algorithm ("chromakey") - Designed to work with this picture:<br /> <ul>
+<li> <img alt="batmanGreenScreen.jpg" src="https://www.cs.uic.edu/pub/CS111/CodeS17/batmanGreenScreen.jpg" />
+</li></ul> 
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0316e.py.txt" target="_top">lect0316e.py.txt</a> - Resize picture by some Percent Change
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0316d.py.txt" target="_top">lect0316d.py.txt</a> - Enlarge the size of a picture by 2
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0316c.py.txt" target="_top">lect0316c.py.txt</a> - Reduce the size of a picture by 2 correct version
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0316b.py.txt" target="_top">lect0316b.py.txt</a> - Reduce the size of a picture by 2 FLAWED Version - invalid if width or height values are odd
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0316a.py.txt" target="_top">lect0316a.py.txt</a> - Crop a picture
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0314f.py.txt" target="_top">lect0314f.py.txt - Copy a picture onto another picture multiple times</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0314e.py.txt" target="_top">lect0314e.py.txt - Copy two different pictures onto another picture</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0314d.py.txt" target="_top">lect0314d.py.txt - Make a collage from two pictures</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0314c.py.txt" target="_top">lect0314c.py.txt - Copy a picture three times while mirroring the second copy</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0314b.py.txt" target="_top">lect0314b.py.txt - Copy a picture three times</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0314a.py.txt" target="_top">lect0314a.py.txt - Copy a picture three times</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0309g.py.txt" target="_top">lect0309g.py.txt - Duplicate/Repeat a picture </a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0309f.py.txt" target="_top">lect0309f.py.txt - Rotate picture 90 degress clockwise direction</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0309e.py.txt" target="_top">lect0309e.py.txt - Flip Diagonally (Flip along main diagonal)</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0309d.py.txt" target="_top">lect0309d.py.txt - Flip both Vertically and Horizontally</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0309c.py.txt" target="_top">lect0309c.py.txt - Flip Horizontally (Flip along a horizontal axis)</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0309b.py.txt" target="_top">lect0309b.py.txt - Mirror Image program (Flip along a vertical axis)</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0309a.py.txt" target="_top">lect0309a.py.txt - Copy a picture (position manipulation template)</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0307b.py.txt" target="_top">lect0307b.py.txt</a> - Edge Detection Algorithm (compares colors of neighboring pixels)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0307a.py.txt" target="_top">lect0307a.py.txt</a> - Reworking Red Eye program to use the boolean operator: and
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0302d.py.txt" target="_top">lect0302d.py.txt</a> - Code to superimpose two pictures together (amount of superimposing changes across picture from left to right)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0302c.py.txt" target="_top">lect0302c.py.txt</a> - Superimpose two pictures into a new picture
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0302b.py.txt" target="_top">lect0302b.py.txt</a> - 4 Color Posterization using Python elif clauses
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0302a.py.txt" target="_top">lect0302a.py.txt</a> - 4 color posterization using nested if statement
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0228e.py.txt" target="_top">lect0228e.py.txt</a> - Showing code to quit from a python program on an error
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0228d.py.txt" target="_top">lect0228d.py.txt</a> - Improved Red Eye Reduction example (highlighting if statements)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0228c.py.txt" target="_top">lect0228c.py.txt</a> - First attempt at Red Eye Reduction (highlighting if statement and distance() function)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0228b.py.txt" target="_top">lect0228b.py.txt</a> - Two color posterization of Purple-ish and Yellow-ish (highlighting if-else statement)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0228a.py.txt" target="_top">lect0228a.py.txt</a> - Two color posterization of <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS111/BlackORWhite?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="BlackORWhite (this topic does not yet exist; you can create it)">BlackORWhite</a></span> (highlighting if-else statement)
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lab0227a.py.txt" target="_top">lab0227a.py.txt</a> - Showing two "starting" functions in one file
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0223c.py.txt" target="_top">lect0223c.py.txt</a> - Use of for loop with python list of varying values
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0223b.py.txt" target="_top">lect0223b.py.txt</a> - Make gray-scale picture using <strong>for loops</strong> instead of while loops
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0223a.py.txt" target="_top">lect0223a.py.txt</a> - Make gray-scale picture using weighted value calculation for red, green and blue
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221j.py.txt" target="_top">lect0221j.py.txt</a> - Make a gray-scale picture (black and white) using the average of the red, green and blue color values at each pixel
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221i.py.txt" target="_top">lect0221i.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221h.py.txt" target="_top">lect0221h.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221g.py.txt" target="_top">lect0221g.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221f.py.txt" target="_top">lect0221f.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221e.py.txt" target="_top">lect0221e.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221d.py.txt" target="_top">lect0221d.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221c.py.txt" target="_top">lect0221c.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221b.py.txt" target="_top">lect0221b.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0221a.py.txt" target="_top">lect0221a.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0209c.py.txt" target="_top">lect0209c.py.txt</a> - Darken the colors of the pixels in a portion of a picture
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0209b.py.txt" target="_top">lect0209b.py.txt</a> - Change the pixels to red in a portion of a picture
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0209a.py.txt" target="_top">lect0209a.py.txt</a> - Draw a red line, pixel by pixel, on a picture
+</li></ul> 
+<strong>Turtle Drawing Code Examples</strong> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0207e.py.txt" target="_top">lect0207e.py.txt - Drawing shapes a varying positions</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0207d.py.txt" target="_top">lect0207d.py.txt - Drawing shapes of varying color (red to purple to blue)</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0207c.py.txt" target="_top">lect0207c.py.txt - Showing basic use of the make color function</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0207b.py.txt" target="_top">lect0207b.py.txt - Using a loop that counts down instead of counting up</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0207a.py.txt" target="_top">lect0207a.py.txt - Using a wide pen and repeated shapes to draw a "filled-in" shape</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0202e.py.txt" target="_top">lect0202e.py.txt</a> - Using a wide pen and repeated shapes to draw a "filled-in" shape
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0202d.py.txt" target="_top">lect0202d.py.txt</a> - Using the loop counter variable to change the size of the shape
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0202c.py.txt" target="_top">lect0202c.py.txt - Using a loop draw a shape multiple times</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0202b.py.txt" target="_top">lect0202b.py.txt</a> - Using a function to reposition a turtle
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0202a.py.txt" target="_top">lect0202a.py.txt</a> - Code to open a .jpg file to draw on and save the resulting picture
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0131f.py.txt" target="_top">lect0131f.py.txt</a> - A function to draw a Circle
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0131e.py.txt" target="_top">lect0131e.py.txt</a> - Call the function to draw an Octagon multiple times with a loop
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0131d.py.txt" target="_top">lect0131d.py.txt</a> - Use a loop to draw an Octagon
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0131c.py.txt" target="_top">lect0131c.py.txt</a> - Adding functions that modify the width of the pen and the pen's color
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0131b.py.txt" target="_top">lect0131b.py.txt</a> - Adding functions that modify the width of the pen and the pen's color
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0131a.py.txt" target="_top">lect0131a.py.txt</a> - Expanding the function to add a length parameter
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0126c.py.txt" target="_top">lect0126c.py.txt</a> - Code with multiple Turtles using multiple functions
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0126b.py.txt" target="_top">lect0126b.py.txt</a> - Using a function to draw a square
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0126a.py.txt" target="_top">lect0126a.py.txt</a> - Changing the Color of a Turtle's pen
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0124f.py.txt" target="_top">lect0124f.py.txt</a> - Drawing two shapes separated by space
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0124e.py.txt" target="_top">lect0124e.py.txt</a> - Drawing two shapes one on top of the other
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0124d.py.txt" target="_top">lect0124d.py.txt</a> - Drawing a square
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0124c.py.txt" target="_top">lect0124c.py.txt</a> - Moving two turtles around on one world
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0124b.py.txt" target="_top">lect0124b.py.txt</a> - Create a world, create a turtle, move the turtle
+</li></ul> 
+<strong>General Python Code</strong> <ul>
+<li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0124a.py.txt" target="_top">lect0124a.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0119a.py.txt" target="_top">lect0119a.py.txt</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CodeS17/lect0117a.py.txt" target="_top">lect0117a.py.txt</a>
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div><div class="twikiAttachments">
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
+<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS111/CodeS17?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS111/CodeS17?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS111/CodeS17?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS111/CodeS17?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS111/CodeS17?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/CS111/CodeS17?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS111/CodeS17?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/jpg.gif" width="16" height="16" alt="JPEG" title="JPEG" border="0" /><span class="twikiHidden">jpg</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/batmanGreenScreen.jpg">batmanGreenScreen.jpg</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=batmanGreenScreen.jpg;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 12.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-28 - 15:34</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lab0227a.py.txt">lab0227a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lab0227a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-27 - 00:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0117a.py.txt">lect0117a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0117a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-17 - 20:55</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0119a.py.txt">lect0119a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0119a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-20 - 00:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0124a.py.txt">lect0124a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0124a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-24 - 18:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0124b.py.txt">lect0124b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0124b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-24 - 18:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0124c.py.txt">lect0124c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0124c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-24 - 18:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0124d.py.txt">lect0124d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0124d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-24 - 18:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0124e.py.txt">lect0124e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0124e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-24 - 18:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0124f.py.txt">lect0124f.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0124f.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-24 - 18:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0126a.py.txt">lect0126a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0126a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-26 - 18:59</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0126b.py.txt">lect0126b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0126b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-26 - 18:59</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0126c.py.txt">lect0126c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0126c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-26 - 18:59</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0131a.py.txt">lect0131a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0131a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-31 - 19:04</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0131b.py.txt">lect0131b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0131b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-31 - 19:04</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0131c.py.txt">lect0131c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0131c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-31 - 19:04</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0131d.py.txt">lect0131d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0131d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-31 - 19:04</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0131e.py.txt">lect0131e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0131e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-31 - 19:04</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0131f.py.txt">lect0131f.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0131f.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-01-31 - 19:05</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0202a.py.txt">lect0202a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0202a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-02 - 20:15</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0202b.py.txt">lect0202b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0202b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-02 - 20:15</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0202c.py.txt">lect0202c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0202c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-02 - 20:16</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0202d.py.txt">lect0202d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0202d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-02 - 20:16</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0202e.py.txt">lect0202e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0202e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-02 - 20:16</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0207a.py.txt">lect0207a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0207a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-07 - 21:09</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0207b.py.txt">lect0207b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0207b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-07 - 21:09</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0207c.py.txt">lect0207c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0207c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-07 - 21:09</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0207d.py.txt">lect0207d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0207d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-07 - 21:09</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0207e.py.txt">lect0207e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0207e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-07 - 21:09</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0209a.py.txt">lect0209a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0209a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-10 - 17:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0209b.py.txt">lect0209b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0209b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-10 - 17:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0209c.py.txt">lect0209c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0209c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-10 - 17:38</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221a.py.txt">lect0221a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221b.py.txt">lect0221b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221c.py.txt">lect0221c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221d.py.txt">lect0221d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221e.py.txt">lect0221e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221f.py.txt">lect0221f.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221f.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221g.py.txt">lect0221g.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221g.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221h.py.txt">lect0221h.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221h.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221i.py.txt">lect0221i.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221i.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0221j.py.txt">lect0221j.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0221j.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-23 - 16:45</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0223a.py.txt">lect0223a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0223a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-24 - 17:10</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0223b.py.txt">lect0223b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0223b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-28 - 20:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0223c.py.txt">lect0223c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0223c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-24 - 17:11</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0228a.py.txt">lect0228a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0228a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-28 - 20:52</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0228b.py.txt">lect0228b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0228b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-28 - 20:56</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0228c.py.txt">lect0228c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0228c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.2&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-28 - 20:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0228d.py.txt">lect0228d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0228d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-28 - 20:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0228e.py.txt">lect0228e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0228e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-02-28 - 20:53</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0302a.py.txt">lect0302a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0302a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-03 - 17:36</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0302b.py.txt">lect0302b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0302b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-03 - 17:36</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0302c.py.txt">lect0302c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0302c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-03 - 17:36</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0302d.py.txt">lect0302d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0302d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-03 - 17:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0307a.py.txt">lect0307a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0307a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-09 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0307b.py.txt">lect0307b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0307b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-07 - 19:31</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0309a.py.txt">lect0309a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0309a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-09 - 18:50</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0309b.py.txt">lect0309b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0309b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-09 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0309c.py.txt">lect0309c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0309c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-09 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0309d.py.txt">lect0309d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0309d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-09 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0309e.py.txt">lect0309e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0309e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 17:55</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0309f.py.txt">lect0309f.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0309f.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-09 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0309g.py.txt">lect0309g.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0309g.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-09 - 18:49</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0314a.py.txt">lect0314a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0314a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 15:39</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0314b.py.txt">lect0314b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0314b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 15:39</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0314c.py.txt">lect0314c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0314c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 15:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0314d.py.txt">lect0314d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0314d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 15:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0314e.py.txt">lect0314e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0314e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 15:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0314f.py.txt">lect0314f.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0314f.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 15:39</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0316a.py.txt">lect0316a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0316a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 17:42</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0316b.py.txt">lect0316b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0316b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 17:42</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0316c.py.txt">lect0316c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0316c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 17:42</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0316d.py.txt">lect0316d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0316d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.7&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 17:42</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0316e.py.txt">lect0316e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0316e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-16 - 17:44</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0328a.py.txt">lect0328a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0328a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-28 - 15:31</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0328c.py.txt">lect0328c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0328c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-28 - 20:02</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0328d.py.txt">lect0328d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0328d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-03-28 - 20:02</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0406a.py.txt">lect0406a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0406a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-06 - 19:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0406b.py.txt">lect0406b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0406b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-06 - 19:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0406c.py.txt">lect0406c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0406c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-06 - 19:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0406d.py.txt">lect0406d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0406d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-06 - 19:19</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0411a.py.txt">lect0411a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0411a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 19:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0411b.py.txt">lect0411b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0411b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 19:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0411c.py.txt">lect0411c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0411c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 19:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413a.py.txt">lect0413a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 19:59</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413b.py.txt">lect0413b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:00</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413c.py.txt">lect0413c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.0&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:00</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413d.py.txt">lect0413d.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413d.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:00</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413e.py.txt">lect0413e.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413e.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413f.py.txt">lect0413f.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413f.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413g.py.txt">lect0413g.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413g.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413h.py.txt">lect0413h.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413h.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0413i.py.txt">lect0413i.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0413i.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-13 - 20:01</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0418a.py.txt">lect0418a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0418a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.6&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-18 - 18:06</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0418b.py.txt">lect0418b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0418b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-18 - 18:06</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0420a.py.txt">lect0420a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0420a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-25 - 15:26</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0420b.py.txt">lect0420b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0420b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 5.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-25 - 15:27</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0420c.py.txt">lect0420c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0420c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 6.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-25 - 15:38</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0425a.py.txt">lect0425a.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0425a.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-28 - 15:40</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0425b.py.txt">lect0425b.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0425b.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-28 - 15:41</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS111/CodeS17/lect0425c.py.txt">lect0425c.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS111/CodeS17?filename=lect0425c.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 2.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2017-04-28 - 15:41</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/CS111/CodeS17/quicksort.py.txt">quicksort.py.txt</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/CS111/CodeS17?filename=quicksort.py.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 2.3&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2017-04-25 - 15:37</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS111.CodeS17;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS111/CodeS17?t=1542826605' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS111/CodeS17' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS111/CodeS17?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS111/CodeS17?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r26&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS17?rev1=26;rev2=25">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS17?rev=25">r25</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS17?rev1=25;rev2=24">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS17?rev=24">r24</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS17?rev1=24;rev2=23">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS17?rev=23">r23</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS111/CodeS17?rev1=23;rev2=22">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS111/CodeS17?rev=22">r22</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS111/CodeS17?template=backlinksweb' rel='nofollow' title='Search the CS111 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS111/CodeS17?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS111/CodeS17?t=1542826605;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS111/CodeS17?template=oopsmore&amp;param1=26&amp;param2=26' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r26 - 2017-04-28 - 15:46:06 - Main.troy</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS111/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS111</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS111/CS111Spring2018" class="twikiLink">Web Page Spr 18</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS111/CS111Spring2018/syl111s18.pdf" target="_top">Syllabus Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/NotesS18" class="twikiLink">Lecture Notes Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/CodeS18" class="twikiLink">Sample Code Spr 18</a>
+</li> <li> <a href="/bin/view/CS111/AssignmentsS18" class="twikiLink">Assignments Spr 18</a>
+</li></ul> 
+<a href="/bin/edit/CS111/WebLeftBar" target="_top">&#91;edit this menu</a>]
+<p />
+<hr />
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS111/CodeS17">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <a href="https://www.cs.uic.edu/bin/view/CS111/" target="_top">CS 111 Main Page</a>
+</li> <li> <a href="/bin/view/CS111/WebCreateNewTopic?topicparent=CodeS17" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS111/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS111/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS111/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS111/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS111/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS111/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS111/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

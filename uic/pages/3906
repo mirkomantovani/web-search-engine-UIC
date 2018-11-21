@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+
+<script language="JavaScript1.1">
+<!--
+
+/*
+JavaScript Image slideshow:
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free JavaScript here!
+*/
+
+var slideimages=new Array()
+var slidelinks=new Array()
+function slideshowimages(){
+for (i=0;i<slideshowimages.arguments.length;i++){
+slideimages[i]=new Image()
+slideimages[i].src=slideshowimages.arguments[i]
+}
+}
+
+function slideshowlinks(){
+for (i=0;i<slideshowlinks.arguments.length;i++)
+slidelinks[i]=slideshowlinks.arguments[i]
+}
+
+function gotoshow(){
+if (!window.winslide||winslide.closed)
+winslide=window.open(slidelinks[whichlink])
+else
+winslide.location=slidelinks[whichlink]
+winslide.focus()
+}
+
+//-->
+</script>
+
+
+
+
+
+
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Berry Research Laboratory, Vikas Berry</title>
+<link rel="stylesheet" href="emx_nav_left.css" type="text/css" />
+<script type="text/javascript">
+<!--
+var time = 3000;
+var numofitems = 7;
+
+//menu constructor
+function menu(allitems,thisitem,startstate){ 
+  callname= "gl"+thisitem;
+  divname="subglobal"+thisitem;  
+  this.numberofmenuitems = allitems;
+  this.caller = document.getElementById(callname);
+  this.thediv = document.getElementById(divname);
+  this.thediv.style.visibility = startstate;
+}
+
+//menu methods
+function ehandler(event,theobj){
+  for (var i=1; i<= theobj.numberofmenuitems; i++){
+    var shutdiv =eval( "menuitem"+i+".thediv");
+    shutdiv.style.visibility="hidden";
+  }
+  theobj.thediv.style.visibility="visible";
+}
+				
+function closesubnav(event){
+  if ((event.clientY <48)||(event.clientY > 107)){
+    for (var i=1; i<= numofitems; i++){
+      var shutdiv =eval('menuitem'+i+'.thediv');
+      shutdiv.style.visibility='hidden';
+    }
+  }
+}
+// -->
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: 200%;
+	font-weight: bold;
+}
+.style3 {font-size: 100%}
+.style20 {
+	font-size: 16pt;
+	color: #000000;
+}
+.style22 {
+	font-size: 16pt;
+	font-weight: bold;
+	color: #000000;
+}
+.style5 {
+	font-family: "Times New Roman", Times, serif;
+	color: #FF0004;
+	font-size: larger;
+}
+.style31 {color: #000099}
+.style33 {
+	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	color: #0000FF;
+}
+.style35 {font-family: Georgia, "Times New Roman", Times, serif; font-size: 14px; font-weight: bold;}
+.style36 {font-size: 9px}
+.style12 {font-size: medium; font-weight: bold; font-family: "Palatino Linotype"; color: #000000; }
+.style47 {font-size: 12pt}
+-->
+</style>
+</head>
+<body onmousemove="closesubnav(event);">
+<div class="skipLinks">skip to: <a href="#content">page content</a> | <a href="#pageNav">links on this page</a> | <a href="#globalNav">site navigation</a> | <a href="#siteInfo">footer (site information)</a> </div>
+
+
+<div id="masthead">
+  <h1 class="style1" id="siteName">
+  
+    
+    
+     
+    
+   <!--Adobe Edge Runtime-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script type="text/javascript" charset="utf-8" src="http://animate.adobe.com/runtime/5.0.1/edge.5.0.1.min.js"></script>
+    <style>
+        .edgeLoad-EDGE-271447618  { visibility:hidden; }
+    </style>
+<script>
+   AdobeEdge.loadComposition('BRL-Logo', 'EDGE-271447618', {
+    scaleToFit: "both",
+    centerStage: "none",
+    minW: "0",
+    maxW: "1900",
+    width: "830px",
+    height: "75px"
+}, {"dom":{}}, {"dom":{}});
+</script>
+<!--Adobe Edge Runtime End--> 
+    
+    
+	  <div id="Stage" class="EDGE-271447618"></div>
+    
+    
+        
+    
+    
+  
+  </h1>
+  
+  
+  <div id="globalNav"> <img alt="" src="gblnav_left.gif" height="32" width="4" id="gnl" /> <img alt="" src="glbnav_right.gif" height="32" width="4" id="gnr" />
+    <div id="globalLink"> <a href="index.html" id="gl1" class="glink" onmouseover="ehandler(event,menuitem1);">Main</a><a href="Publications.html" id="gl2" class="glink">Publications</a><a href="People.html" id="gl4" class="glink" onmouseover="ehandler(event,menuitem4);">Group Members </a><a href="News.html" id="gl5" class="glink" onmouseover="ehandler(event,menuitem5);">News</a><a href="Projects.html" id="gl6" class="glink" onmouseover="ehandler(event,menuitem6);">Current Projects</a><a href="Facilities.html" id="gl3" class="glink" onmouseover="ehandler(event,menuitem3);">Facilities</a></div>
+i<!--end globalLinks-->
+  </div>
+  <!-- end globalNav -->
+  <div id="subglobal1" class="subglobalNav"></div>
+  <div id="subglobal2" class="subglobalNav"></div>
+  <div id="subglobal3" class="subglobalNav"></div>
+  <div id="subglobal4" class="subglobalNav"></div>
+  <div id="subglobal5" class="subglobalNav"></div>
+  <div id="subglobal6" class="subglobalNav"></div>
+  <div id="subglobal7" class="subglobalNav"></div>
+  <div id="subglobal8" class="subglobalNav"> <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> | <a href="#">subglobal8 link</a> </div>
+</div>
+<!-- end masthead -->
+
+
+<div id="pagecell1">
+  <!--pagecell1-->
+  <img alt="" src="tl_curve_white.gif" height="6" width="6" id="tl" /> <img alt="" src="tr_curve_white.gif" height="6" width="6" id="tr" />
+  <div id="breadCrumb"> <a href="http://www.uic.edu">UIC</a> / <a href="http://www.che.uic.edu/">Chemical Engineering </a> / <a href="http://www.che.uic.edu/CHE/Faculty">Faculty</a> / <a href="http://vikasb.people.uic.edu/index.html">Berry</a> <a href="CV_VikasBerry.pdf">(CV)</a> </div>
+ 
+ 
+  <div id="pageName">
+    
+	
+	</script> 
+	<div align="right">
+	  <h1 align="left">Berry Research Laboratory</h1>
+	  <h1 align="left">University of Illinois at Chicago </h1>
+	</div>
+  </div>
+  
+  
+  
+  
+  <div id="pageNav">
+    <div id="sectionLinks"> 
+      <p><a href="index.html">Main</a> <a href="Publications.html">Publications</a> <a href="People.html">People</a> <a href="News.html">News</a> <a href="Projects.html">Current Projects</a><a href="contact.html">Contact</a><a href="Facilities.html">Facilities</a></p>
+    </div>
+    <div class="relatedLinks">
+      <div 
+align="center"> <span class="style31">
+                </marquee>
+      </span>
+        <marquee bgcolor="#EBEDEC" scrollamount="4" 
+direction="up" onmouseover="this.stop();" onmouseout="this.start();" loop="true" height = "600" width="170" >
+        <p align="justify" class="style33"><span class="style35">BRL publishes in Nature Communications.</span></p>
+        <p align="justify" class="style33"><span class="style35"> <a href="http://www.nature.com/ncomms/journal/v3/n5/full/ncomms1834.html"><img src="Nature-Communications.jpg" alt="Nature Communications" name="ONR" width="167" height="42" border="0" id="ScienceDaily" /></a></span></p>
+        <p align="justify" class="style33"><span class="style35"></span><span class="style35">Berry appointed as an Editorial-Board Member of the Nature Publication Group's Scientific Reports.</span></p>
+        <p align="justify" class="style33"><span class="style35"> <a href="http://www.nature.com/srep/eap-ebm/index.html"><img src="Scientific-Reports.jpg" alt="Scientific-Reports" name="ONR" width="159" height="25" border="0" id="ScienceDaily" /></a></span></p>
+        <p align="justify" class="style33"><span class="style35"></span><span class="style35">Berry receives ONR grant to study Graphene  Ribbons. <img src="ONR.jpg" alt="onr" name="ONR" width="78" height="34" border="0" id="ScienceDaily" /></span></p>
+        <p align="justify" class="style33"><span class="style35">Berry receives NSF CAREER Award to study Graphene  Dots. <a href="http://www.nsf.gov/awardsearch/afSearch.do?SearchType=afSearch&amp;page=4&amp;QueryText=&amp;PIFirstName=Vikas&amp;PILastName=Berry&amp;IncludeCOPI=true&amp;PIInstitution=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgOfficer=&amp;ProgEleCode=&amp;BooleanElement=false&amp;ProgRefCode=&amp;BooleanRef=false&amp;ProgProgram=&amp;ProgFoaCode=&amp;OriginalAwardDateOperator=&amp;OriginalAwardDateFrom=&amp;OriginalAwardDateTo=&amp;StartDateOperator=&amp;StartDateFrom=&amp;StartDateTo=&amp;ExpDateOperator=&amp;ExpDateFrom=&amp;ExpDateTo=&amp;AwardNumberOperator=&amp;AwardNumberFrom=&amp;AwardNumberTo=&amp;AwardAmount=&amp;AwardInstrument=&amp;Restriction=0&amp;Search=Search"><img src="NSF.gif" alt="nsf" name="ScienceDaily" width="49" height="42" border="0" id="ScienceDaily" /></a></span></p>
+        <p align="justify" class="style33"><span class="style35">Bacterial wrapping with graphene-protein hybrids featured in </span><a href="http://www.nature.com/news/2010/100318/full/news.2010.134.html"><img src="nature-news.JPG" alt="" name="nnews" width="140" height="20" border="0" id="nnews" /></a><a href="http://news.softpedia.com/news/Graphene-Shrouds-for-Bacteria-Created-137867.shtml">Softpedia</a><span class="style35"><a href="http://physicsworld.com/blog/2009/03/fancy_a_bacterium_wrap.html">Physics World News</a></span></p>
+        <p align="justify" class="style33"><span class="style35"></span>BRL receives NSF grant to study pi- functionalization of graphene<a href="http://www.nsf.gov/awardsearch/afSearch.do?SearchType=afSearch&amp;page=4&amp;QueryText=&amp;PIFirstName=Vikas&amp;PILastName=Berry&amp;IncludeCOPI=true&amp;PIInstitution=&amp;PIState=&amp;PIZip=&amp;PICountry=&amp;ProgOrganization=&amp;ProgOfficer=&amp;ProgEleCode=&amp;BooleanElement=false&amp;ProgRefCode=&amp;BooleanRef=false&amp;ProgProgram=&amp;ProgFoaCode=&amp;OriginalAwardDateOperator=&amp;OriginalAwardDateFrom=&amp;OriginalAwardDateTo=&amp;StartDateOperator=&amp;StartDateFrom=&amp;StartDateTo=&amp;ExpDateOperator=&amp;ExpDateFrom=&amp;ExpDateTo=&amp;AwardNumberOperator=&amp;AwardNumberFrom=&amp;AwardNumberTo=&amp;AwardAmount=&amp;AwardInstrument=&amp;Restriction=0&amp;Search=Search"><img src="NSF.gif" alt="" name="ScienceDaily" width="49" height="42" border="0" id="ScienceDaily" /></a></p>
+        <p align="justify" class="style33">BRL publishes in Nano Letters <span class="style36">(Mohanty,   Fahrenholtz, Nagaraja, Boyle, Berry)</span> <span class="style5"><a href="http://pubs.acs.org/doi/abs/10.1021/nl104292k">[link]</a></span></p>
+        <p align="justify" class="style33">BRL's work on graphene / bio interfacing featured in<a href="http://www.sciencedaily.com/releases/2009/04/090413141256.htm"><img src="scncdaily.JPG" alt="" name="ScienceDaily" width="138" height="24" border="0" id="ScienceDaily" /></a><strong><a href="http://www.nanotech-now.com/news.cgi?story_id=32890">Nanotech-now</a><a href="http://www.physorg.com/news158850916.html">Phyorg</a><a href="http://www.sciencecentric.com/news/article.php?q=09041318-k-state-engineers-create-dna-sensors-that-could-identify-cancer">ScienceCentric</a><a href="http://www.reuters.com/article/pressRelease/idUS114792+13-Apr-2009+PRN20090413">Reuters</a><a href="http://www.bio-medicine.org/medicine-news-1/K-State-engineers-create-DNA-sensors-that-could-identify-cancer-using-material-only-one-atom-thick-42325-1/">Bio-Medicine</a><a href="http://esciencenews.com/articles/2009/04/13/k.state.engineers.create.dna.sensors.could.identify.cancer.using.material.only.one.atom.thick">eScienceNews</a></strong></p>
+        <p align="justify" class="style33"><span class="style35">Graphene/Gold-Snowflake  featured in <a href="http://www.physorg.com/news174590038.html">PhysOrg</a></span><a href="http://www.sciencedaily.com/releases/2009/10/091013112521.htm"><img src="scncdaily.JPG" alt="sc2" name="ScienceDaily" width="138" height="22" border="0" id="ScienceDaily" /></a><span class="style12"><a href="http://www.aiche.org/uploadedFiles/CEP/Issues/2009-11/110904.pdf"><img src="cep.JPG" alt="cep2" name="cep1" width="139" height="24" border="0" id="cep1" /></a></span></p>
+        <h1 align="justify" class="style33">BRL publishes in Nano Letters <span class="style36">(Mohanty and Berry)</span> <span class="style5"><a href="http://pubs.acs.org/doi/abs/10.1021/nl802412n">[link]</a></span></h1>
+        <p align="justify" class="style33">BRL publishes in Small <span class="style36">(Jasuja, Thompson, and Berry)</span> <span class="style5"><a href="http://www3.interscience.wiley.com/journal/121495810/abstract">[link]</a></span></p>
+        <h1 align="justify" class="style33">BRL publishes in ACS Nano <span class="style36">( Jasuja and Berry)</span><a href="http://pubs.acs.org/doi/abs/10.1021/nn900504v" class="style5">[link]</a></h1>
+        <h1 align="justify" class="style33">&nbsp;</h1>
+        <h1 align="justify" class="style33">BRL publishes in Small <span class="style36">(Mohanty,  Nagaraja, Armesto and Berry) [Hydride Reduction of Graphene] </span><a href="http://www3.interscience.wiley.com/journal/123192468/abstract" class="style5">[link]</a></h1>
+        <p align="justify" class="style33">BRL publishes in Advanced Materials<span class="style5"><a href="http://www3.interscience.wiley.com/journal/123235302/abstract">[link]</a></span></p>
+        <p align="justify" class="style33">BRL publishes in JPCL <span class="style36">(Jasuja, Linn, Melton, and Berry)</span> <span class="style5"><a href="http://pubs.acs.org/doi/abs/10.1021/jz100580x">[link]</a></span></p>
+        </marquee>
+      </div>
+
+    </div>
+  </div>
+  <div id="content">
+    <div class="feature">
+    
+    
+   
+    
+    
+    
+      <table border="1" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
+        <tr>
+          <td valign="top" ><p align="justify">BRL investigates the fundamental science behind the biological  and the nanoscale phenomena to rationally integrate them to develop high  functionality/sensitivity nanotechnologies.</p>
+            <p align="justify"><strong>Current Interests:</strong> BRL is studying chemically and  structurally modified 2D Nanomaterials produced by innovative techniques. </p>
+            <p><span class="style22">Graphene Science, Technology and BioNanoTechnology</span> </p>
+			  <span class="style20"><a href="javascript:gotoshow()"><img src="grapheneDNA1.jpg" name="slide" border=0 width=400 height=300 /></a></span>
+            <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"> </p>
+              <p align="justify"><strong>BioNanoTechnology:</strong>
+                <basefont />
+                By interfacing nanotechnology with biocomponents
+                (a field now known as &lsquo;<em>Bionanotechnology</em>&rsquo;), in part by leveraging their  specific biochemistries, novel bio-nano hybrid systems can be built. These hybrids  can operate at high sensitivity and/or with unique functionalities originating  from the multiplexed bio and nano phenomena. Such bio-nano interfacing has the  potential to advance several applications, including biomolecular mechanics,  biosensing, and biomolecular electronics. <span class="style3">Graphene is a single atom thick sheet of sp2  hybridized carbon atoms arranged in a honeycomb lattice. With its dense cloud  of charge carriers confined in atomic thickness and its large chemically modifiable  surface area, graphene is a promising material for electronic sensing systems, electro-switches,  biotechnology, and defense applications. BRL is studying the effect of several chemical  and structural modifications of graphene on its  electrical, optical, and  interfacial properties. The modified-graphene-hybrids being studied include graphene  nanoribbons, graphene-gold hybrid, graphene-DNA, graphene-bacteria, graphene-proteins,  and graphene-azo.</span> </p>
+              <p align="justify"><strong>Graphene Nanotechnology:</strong> Because of the edge states and quantum confinement, the shape and size of graphene nanostructures dictate their electrical, optical, magnetic and chemical properties. BRL has developed a route to produce graphene nanostructures with predetermined shapes (square, rectangle, triangle and ribbon) and controlled dimensions via diamond-edge-induced nanotomy (nanoscale-cutting) of graphite into graphite nanoblocks. Currently, BRL is studying the transport properties throught graphene quantum dots and nanoribbons.
+                
+            <p align="justify" class="style3"><strong>Graphene Science and Technology:</strong> Graphene &ndash; single atom-thick sheet of  sp2-hybridized carbon atoms &ndash; exhibits several fundamentally unique and arguably  superior properties. These include highest carrier mobility at RT, ultrafast photo-detection, single molecule sensitivity, hydrogen visualization-template for TEM, tunable spintronics, high  optical absorptivity (2.3%), high thermal conductivity (25 X silicon), and high  mechanical strength (strongest nanomaterial). BRL has made significant  contributions towards outlining the underlying phenomena defining  graphene-based: detection,  functionalization, exfoliation, nanoparticle-incorporation, and bio-interfaces.</p>
+              <p align="justify" class="style3"><strong>Novel Atomically-Thick Nanomaterials:</strong> BRL has been working on synthesizing and studying the properties  of several (next-generation) atomically-thick nano-materials: (a) Exfoliation of single-atom-thick sheets of Boron Nitride (BN). With a large band-gap and low optical absorbance, these ultrathin  sheets will act as atomic-tunneling-barriers, which BRL is incorporating  between conducting nanoparticles. The passage of the electrons through the BN&rsquo;s  energy-levels produces UV-photons (~ 6 eV). BRL is studying these  photon-emission and other fundamental optical properties of BN dispersions as a  function of surface chemistry. (b) BRL is studying the  surface-sensitivity of Molybdenum Disulphide (MoS2) monolayers (3 atoms thick).</p>
+         <p>&nbsp;</p>
+         <p><strong>News In Photonic Media </strong> </p>
+              <iframe width="330" height="200" src="http://www.youtube.com/embed/mIVLgfYJknE?start=157&end=272" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+              
+                <p>
+                  <script>
+<!--
+
+//configure the paths of the images, plus corresponding target links
+slideshowimages("nanotomy.jpg", "grapheneDNA1.jpg","wrap.jpg", "cell-sensor.jpg", "microwave.jpg", "goldstar.jpg")
+
+//configure the speed of the slideshow, in miliseconds
+var slideshowspeed=4000
+
+var whichlink=0
+var whichimage=0
+function slideit(){
+if (!document.images)
+return
+document.images.slide.src=slideimages[whichimage].src
+whichlink=whichimage
+if (whichimage<slideimages.length-1)
+whichimage++
+else
+whichimage=0
+setTimeout("slideit()",slideshowspeed)
+}
+slideit()
+
+//-->
+                  </script>
+                </p>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </td><td width="auto" rowspan="1" valign="top">
+		  
+		  
+		   <a class="twitter-timeline" href="https://twitter.com/vikasberry" data-widget-id="436544990676656128">Tweets by @vikasberry</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(436544990676656128)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		  
+		  
+		  	 
+		  
+		  
+		  
+		  
+		  
+		  
+		            </td>
+        </tr>
+        <tr>
+          <td valign="top">
+		  
+		    <p>&nbsp;</p></td>
+			
+          <td width="337" valign="top">
+		  </p>
+		  
+		  
+		  
+	
+		  </td>
+        
+      </table>
+    </div>
+  </div>
+  <div id="siteInfo">
+    <div align="center">
+      <p><a href="index.html">Main</a> |<a href="contact.html">Contact Us</a> | Vikas Berry </p>
+      
+	  
+	  
+	  	  
+	  <p>&nbsp;</p>
+    </div>
+  </div>
+</div>
+<!--end pagecell1-->
+<br />
+<script type="text/javascript">
+    <!--
+      var menuitem1 = new menu(7,1,"hidden");
+			var menuitem2 = new menu(7,2,"hidden");
+			var menuitem3 = new menu(7,3,"hidden");
+			var menuitem4 = new menu(7,4,"hidden");
+			var menuitem5 = new menu(7,5,"hidden");
+			var menuitem6 = new menu(7,6,"hidden");
+			var menuitem7 = new menu(7,7,"hidden");
+    // -->
+    </script>
+</body>
+</html>

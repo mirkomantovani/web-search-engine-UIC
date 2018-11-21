@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>UIC Forum</title>
+<link rel="stylesheet" type="text/css" href="home.css" />
+</head>
+<body>
+<div id="level1">
+<div id="skip"><a href="#content">Skip to Main Content</a></div> 
+<img id="banner" usemap="#bannermap" src="images/banner.jpg" title="UIC Office of  the Vice Chancellor for Student Affairs" alt="UIC Office of the Vice Chancellor for Student Affairs"/>
+	<map id="bannermap" name="bannermap">
+	<area shape="rect" coords="100,2,350,75" href="http://vcsa.uic.edu" title="OVCSA Home" alt="OVCSA Home"/>
+	<area shape="rect" coords="0,0,80,75" href="http://www.uic.edu" title="UIC Home" alt="UIC Home"/>
+	<area shape="default" nohref="nohref" alt="default" />
+	</map>	
+
+<h1 class="hidden">UIC Forum</h1>
+</div>
+<div id="level2">
+<h2 class="hidden">Top links for UIC Forum</h2>
+<ul>
+<li><a href="boxoffice.shtml">box office tickets</a></li>
+<li><a href="bldg_policy.shtml">building policies</a></li>
+<li><a href="directions.shtml">directions/ parking</a></li>
+<li><a href="features.shtml">forum&nbsp; features</a></li>
+<li><a href="aboutus.shtml">about<br /> us</a></li>
+</ul>
+
+</div>
+<div id="level3">
+<h2 class="hidden">Room Links for UIC Forum</h2>
+<ul>
+<li class="default"><a href="audiovisualpackages.shtml">Audio/Visual</a></li>
+<li class="default"><a href="rental.shtml">Rental</a></li>
+<li class="default"><a href="meeting.shtml">Meeting Rooms</a></li>
+<li class="default"><a href="mainhall.shtml">Main Hall</a></li>
+<li class="default"><a href="index.shtml">Home</a></li>
+</ul>
+
+<object type="application/x-shockwave-flash" data="forumviewer.swf" width="700" height="367">
+<param name="movie" value="forumviewer.swf"/>
+</object>
+</div>
+<div id="wrapper">
+<div id="level4_main_home">
+<a name="content" tabindex="-1"></a>
+<h2>UIC Forum</h2>
+<p class="content_border">
+The UIC Forum is one of the more unique, versatile and accessible facilities in Chicago Illinois. By hosting your event at the UIC Forum, not only are you taking advantage of our convenient location and customer oriented staff, but you are also adding a touch of class to your special occasion.<br /><br />
+
+With more than 30,000 square feet, the UIC Forum is the ideal space for a variety of events including but not limited to conventions and trade shows' speaking engagements and lectures' concerts and other performances' banquets and galas' seminars and meetings and commencements.<br /><br />
+
+Guided tours of the UIC Forum are available by contacting (312) 413-9875 for a reservation.<br />
+</p>
+<h2>Events</h2>
+<div id="feeddiv"></div>
+<!-- RSS feed reader -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAG7fcM-CmXumABRSpL7-UDBTnTtJKvPJPr8e2Elnni7Aq1ChASxTDI73TrSMW37NWkBB5sAZVPZuS1Q">
+</script>
+<script type="text/javascript">
+google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
+</script>
+
+<script type="text/javascript">
+
+var feedcontainer=document.getElementById("feeddiv")
+var feedurl="http://www.emsenterprise.uic.edu/mcal/RSSFeeds.aspx?data=sdJ%2fQt3yAULOHYrcvLhxTRqO%2fezHqc2uJ6dA%2ffbe31A%3d"
+var feedlimit=3
+var rssoutput="<ul id='events_ul'>"
+
+function rssfeedsetup(){
+var feedpointer=new google.feeds.Feed(feedurl) //Google Feed API method
+feedpointer.setNumEntries(feedlimit) //Google Feed API method
+feedpointer.setResultFormat(google.feeds.Feed.XML_FORMAT)
+feedpointer.load(displayfeed) //Google Feed API method
+}
+
+function displayfeed(result){
+	var x
+if (!result.error){
+var thefeeds=result.xmlDocument.getElementsByTagName("item");
+for (var i=0; i<thefeeds.length; i++)
+{
+var description =  thefeeds[i].getElementsByTagName("description")
+var title = thefeeds[i].getElementsByTagName("title")
+var link = thefeeds[i].getElementsByTagName("link")
+rssoutput+="<li><h3 class='events_heading'><a href='"+ link[0].firstChild.nodeValue + "'>" + title[0].firstChild.nodeValue + "</a></h3><p class='event_description'>"+ description[0].firstChild.nodeValue + "</p></li>"
+}
+rssoutput+="</ul>"
+feedcontainer.innerHTML=rssoutput
+}
+else
+alert("Error fetching feeds!")
+}
+
+window.onload=function(){
+rssfeedsetup()
+}
+
+</script>
+
+<p class="content"><a href="http://www.emsenterprise.uic.edu/mcal/MasterCalendar.aspx?data=f1bM4GJyEC4evME8IbBAkJX9z9ok7lcOgIRibvIN7tNrkBp%2f9Wd4uMLh0%2bG4NtW1I5YPZiYP5%2ftC68dS7BuXSe2bxF1xEuHk6jTQxKh8O4fPAykX3JJA0S5rmdsl6fwOINVCwzAuAU3EDeHC73e5Nmm42%2foB3H%2bWjVRYG2Mrjnsgndzfbl9VwKNqMN5Jr3R%2fefKypEWNO3Q%3d">Full Event Calendar</a></p>
+
+</div>
+<div id="sidebar">
+<h2 class="sidebar_heading">Contact Information</h2>
+<p class="content">
+UIC Forum<br />
+725 W Roosevelt Rd.<br /> (MC 126)<br />
+Chicago&sbquo; IL 60608<br />
+Phone (312) 413-9875<br />
+Fax (312) 996-2196<br />
+uicforum@uic.edu<br />
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdBJyFT-wYNtBxWlstIRU3Oo7pUZJi8WXnB8fhKO5QStZAMag/viewform" style="color:#3f8ac5;"><strong>Student Job Application</strong></a><br />
+<a href="docs/Bag_Policy.pdf" style="color:#3f8ac5;"><strong>Bag Policy</strong></a><br />
+<a href="docs/Policy_for_the_Mandatory_Use_of_Metal_Detectors.pdf" style="color:#3f8ac5;"><strong>Metal Detectors Policy</strong></a><br />
+<br />
+<a href=" https://www.facebook.com/UIClife/" target="_blank"><img style="padding:10px" border="0" alt="Facebook" src="images/facebook_w.png" width="28" height="28"></a>
+<a href="https://www.instagram.com/UIClife/" target="_blank"><img style="padding:10px" border="0" alt="Instagram" src="images/instagram-logo_w.png" width="28" height="28"></a>
+<a href="https://twitter.com/@UIClife" target="_blank" ><img style="padding:10px" border="0" alt="Twitter" src="images/twitter_w.png" width="28" height="28"></a>
+</p>
+
+</div>
+<div id="level5">
+<div id="bottom_utility"><a href="http://vcsa.uic.edu">Student Affairs</a> | <a href="http://www.uic.edu">UIC</a> | <a 
+href="mailto:saweb@uic.edu;uicforum@uic.edu">Contact Webmaster</a> | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a>
+<p>Copyright &copy; 2018 The Board of Trustees of the University of Illinois </p>
+ </p>
+</div>
+</div>
+<script type="text/javascript" 
+  src="//www.uic.edu/inc/emergency/alert.js">
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54654624-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
+
+

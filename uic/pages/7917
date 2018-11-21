@@ -1,0 +1,331 @@
+<html>
+<head>
+<title>CS 340 - Project 1</title>
+</head>
+
+<body>
+<h2>CS 340 - Software Design</h2>
+<h3>Spring 2012</h3>
+<br>
+<h3>MP 1 - Sudoku Solver</h3>
+Due Date: Tuesday January 31, 2012 at 11:59 pm
+<p>
+Sudoku is a puzzle that often uses a 9x9 grid of 81 squares.
+The grid is divided into rows, columns and boxes.  The boxes
+are 3x3 sub-grids of 9 squares. Thus each row, column and box
+contains 9 squares.  The object is the fill in the numbers from
+1 to 9 so that each row, column and box contain each number from
+1 to 9 only once.  For more information, check out the
+<a href="http://en.wikipedia.org/wiki/Sudoku">wikipedia entry 
+for Sudoku</a>.  Note that the wikipedia uses the term "region"
+instead of "box".
+The following is an example of such a puzzle.<br>
+<img src="250px-Sudoku-by-L2G-20050714.gif">
+<p>
+When solving a sudoku puzzle, the solver attempts to find a situation
+that will resolve (or help resolve) a value in a square.  
+For this assignment, you are to write in C/C++ a Sudoku solver 
+only needs to find the following
+situations as defined in the <a href="http://angusj.com/sudoku/hints.php">
+Step-by-Step Guide to Solving Sudoku</a> by 
+<a href="http://angusj.com/sudoku/">Angus Johnson</a>.
+<ul>
+<li>Singles
+
+<li>Hidden Singles (sometimes called Hidden Values)
+<li>Locked Candidates
+<li>Naked Pairs
+</ul>
+<p>
+The general algorithm that most solvers use (and that will be expected
+for this program) is to begin with a list of all possible values
+(i.e. 1 through 9) in each square of the grid.  This list is often
+called the <b>candidate list</b>.  As each square is
+resolved, remove that value from the candidate list for 
+the squares that share a row, column
+or box with the square that is resolved.  For a nice application
+that can show a Sudoku puzzle being solved check out
+<a href="http://www.sudokusolver.co.uk/step.html">Sudoku Solver by Logic</a>.
+You can step thought the resolution of all 81 squares using this
+page.  The default puzzle on the page will show examples of recognizing
+the situations of
+singles, hidden singles/values and locked candidates.
+
+<p>
+<h3>The four situations</h3>
+<ul>
+<li>Single<p>
+A single is when a square, X, only has one posible value, V, because the
+other values are already resolved in a square that share a row,
+column or box with X.  In the puzzle at the top of the page, the 
+square in the vary center of the puzzle (row 5, column 5) 
+must have the value of 5
+since the values 1,2,3,4,6,7,8 and 9 are already known in squares
+that share the row, column or box with the square at row 5, column 5.  
+
+<ul>
+<li>There is 1 at row 5, column 9 and row 8, column 5.
+<li>There is 2 at row 6, column 5.
+<li>There is 3 at row 5, column 6.
+<li>There is 4 at row 5, column 1.
+<li>There is 6 at row 4, column 5.
+<li>There is 7 at row 1, column 5.
+<li>There is 8 at row 5, column 4 and row 9, column 5.
+<li>There is 9 at row 2, column 5.
+</ul>
+<p>
+This situation is easy to recognize using candidate lists.  When
+an unresolved square anly has a single value in its candidate list,
+you have a single.
+<p>
+<li>Hidden Single (or Hidden Value)<p>
+A hidden single is when a square, X, must have the value V because
+no other square in a row, column or box could have that value.
+Consider the following puzzle.<br>
+
+<img src="200px-Cross-hatching.gif">
+<br>
+The green square at row 3, column 5
+must contain the value of 5 because no other 
+square in the upper right box could contain the value of 5.
+The top row of the box is prevented from having a 5 because of
+the 5 at row 1, column 1.  The second row of the box is prevented
+from having a 5 because of the 5 at row 2, column 6.  The right
+column of the box is prevented from having a 5 because of the 5
+at row 8, column 9.  The box can't have a 5 at row 3, column 8 since
+it is known to have a 6.
+<p>
+This situation is recognized by checking the canditadate lists for
+all squares in a group (a group can be a row, a column or a box).
+If a value only appears in only one candiate list for a group,
+that value must be the value for the square that corresponds to
+this candidate list.
+<p>
+<li>Locked Candidate<p>
+This situation will not resolve the value in a square but will reduce 
+the number of possible candidate values for a square.
+<p>
+This situation involves two groups (where a group is a row, column
+or box) that have three intersecting squares.  The possible groups
+could be:
+<ul>
+<li>a box and a row 
+<li>a box and a column  
+<li>a row and a box
+<li>a column and a box
+</ul>
+
+When it is determined that a value must be contained in the 
+squares in the first group and these these squares are also
+part of a second group, this value can be removed from the
+candidate lists for the other squares in the second group.
+<p>
+Consider the following example.  The value of 3 in the fifth row
+must occur in the first 3 squares (the middle sub-row in the green box).
+Thus the value of 3 can be removed from the candidate lists of all
+the squares in the top sub-row and the bottom sub-row of the green box.
+Once this has been done, the square at position (6,1) should only have
+the value of 4 in its candidate list and can be resolved.  After that
+is resolved, the square at position (4,1) should only have the
+value of 5 in its candidate list and can be resolved.  The data for
+this puzzle is available in <a href="proj1data5.txt">proj1data5.txt</a>.
+<tt>
+<table border=1>
+<tr><td>
+	<table border=1>
+	<tr><td>&nbsp;1&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;2&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+        </table>
+    <td>
+	<table border=1>
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;3&nbsp; <td>&nbsp;&nbsp;&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+        </table>
+    <td>
+	<table border=1>
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+        </table>
+<tr><td>
+	<table border=1 bgcolor="green">
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;6&nbsp;
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;8&nbsp;
+        </table>
+    <td>
+	<table border=1>
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;4&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;6&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+        </table>
+    <td>
+	<table border=1>
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;7&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;9&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;5&nbsp;
+        </table>
+<tr><td>
+	<table border=1>
+	<tr><td>&nbsp;7&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+
+	<tr><td>&nbsp;9&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+        </table>
+    <td>
+	<table border=1>
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+        </table>
+    <td>
+	<table border=1>
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp; <td>&nbsp;&nbsp;&nbsp;
+
+	<tr><td>&nbsp;&nbsp;&nbsp; <td>&nbsp;3&nbsp; <td>&nbsp;&nbsp;&nbsp;
+        </table>
+</table>
+</tt>
+<p>
+<li>Naked Pairs<p>
+This situation will not resolve the value in a square but will reduce 
+the number of possible candidate values for a square.
+<p>
+When a group (row, column or box) has two squares that have the
+same two value candidate list those two values must exist in those
+two squares.  Those two values can be removed from any other candidate
+lists in the group.
+<p>
+Consider the following example.  The candidate lists for the two green
+squares are both (4,6).  The candidate list for the red square is 
+(2,4,6,8).  The candidate list for the blue square is (4,6,8).
+The green squares have a naked pairs situation.  Since the green
+squares have the values of 4 or 6 we can remove those values
+from the candidate list for all squares in the same group (the
+fifth row in this case).  By removing the value of 4 and 6 from
+the blue square, its candidate list will only have the single value
+of 8 and can be resolved.  Now, the red square will have had the values
+of 4 and 6 removed by the naked pairs and the value of 8 removed
+by the single value, so it will have only a single value of 2 left
+in its candidate list and can be resolved.  The data for this
+puxxle is available in <a href="proj1data4.txt">proj1data4.txt</a>.
+
+<tt>
+<table border=1>
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;2&nbsp;<td>&nbsp;
+	<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;8&nbsp;<td>&nbsp;
+	<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+	<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+	<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+<tr><td>&nbsp;1&nbsp;<td bgcolor="red">&nbsp;&nbsp;&nbsp;<td>&nbsp;3&nbsp;
+
+	<td bgcolor="green">&nbsp;&nbsp;&nbsp;<td>&nbsp;5&nbsp;
+	<td bgcolor="green">&nbsp;&nbsp;&nbsp;<td>&nbsp;7&nbsp;
+	<td bgcolor="blue">&nbsp;&nbsp;&nbsp;<td>&nbsp;9&nbsp;
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+	<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+	<td>&nbsp;2&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+
+	<td>&nbsp;8&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;
+	<td>&nbsp;<td>&nbsp;<td>&nbsp;2&nbsp;<td>&nbsp;
+</table>
+</tt>
+</ul>
+<p>
+<h3>Description of Input and Output</h3>
+The input for your program will be an ASCII text file that will have
+3 values per line: 
+<ol>
+<li>a row position (listed first)
+<li>a column position (listed second)
+
+<li>a value (listed last)
+</ol>
+This information will give the beginning layout of the puzzle.
+The filename is to be given to the program using a command line
+argument.  If any of the row, columns or values is outside of
+the range from 1 to 9, 
+print an appropriate error message and
+ignore that line of input for the puzzle.
+If the input attempts to place a value in a square that is invalid
+(the value is not one of the values contained in the square's
+candidate list), 
+print an appropriate error message and
+ignore that line of input for the puzzle.
+Below are some example data files:
+<ul>
+<li><a href="proj1data1.txt">proj1data1.txt</a> - A Gentle Puzzle
+<li><a href="proj1data2.txt">proj1data2.txt</a> - A Gentle Puzzle
+<li><a href="proj1data3.txt">proj1data3.txt</a> - A Moderate Puzzle
+<li><a href="proj1data4.txt">proj1data4.txt</a> - An Unsolvable Puzzle using 
+Naked Pairs
+
+<li><a href="proj1data5.txt">proj1data5.txt</a> - An Unsolvable Puzzle using
+Locked Candidates
+</ul>
+<p>
+Once the puzzle is read in, the initial state of the
+puzzle is to be displayed to standard output in a 9x9 grid.  The
+squares that need to be resovled should listed with a period.
+<p>
+When the program has finished working on the puzzle, it is to display
+a message to standard output 
+whether the puzzled was completely solved or not and then
+it is to print out the final state of the puzzle.  This will be done
+by printing the puzzle in a 9x9 format.  If the puzzle was not completely
+solved, the squares that still need to be resolved should be listed
+with a period as was done with the initial state of the puzzle.
+<p>
+Your program is also to allow a flag of -v on the command line to
+put the program in verbose mode.  When run in this mode, your program
+is to print out to standard output
+some message about each situation that is being resolved.  If the
+puzzle is solved by the program, somewhere around 81 messages would be 
+displayed.
+This message must specify the situation that is being resolved,
+the row and column of the square(s) involved and the value(s)
+involved.  If this command line value is not given, this information
+should not be displayed by your program.
+<p>
+Your program is also to allow a flag of -o on the command line.
+When this flag is used the final state of the puzzle is to be
+written to a file.  The filename would be given as the command
+line argument immediately following the -o flag.  The format
+of this output should be the same as the format used to read
+in a puzzle (an ASCII text file that will have 3 values per line: 
+a row position, a column position and a value).
+<p>
+Your program is also to allow a flag of -h on the command line.
+When this flag is used the final state of the puzzle is to be
+written to an HTML file.  When this file is opened by a browser,
+a properly formed 9x9 Sudoku puzzle will be displayed.  The
+filename would be given as the command line argument immediately
+following the -h flag.  It is suggested that an HTML table is 
+used to display the Sudoku puzzle.
+<p>
+Note that all three flags can be given in any order.
+<p>
+<h3>Submission of the Program</h3>
+You are to submit your program via the Assignment Link for
+Project 1 in Blackboard.
+
+<p>
+</body>
+</html>
+

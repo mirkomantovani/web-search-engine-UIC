@@ -1,0 +1,81 @@
+<HEAD>
+<META NAME="allow-search" content="YES">
+<META NAME="searchtitle"  content="LPU S-EM Spy-EM Expectation Maximization 
+[Bing Liu, Robert Grossman, Yanhong Zhai, MDR, S-EM, Spy EM, SEM, sem, NB, nb, text mining, Web mining, Web content mining, data record extraction
+text Classification, text learning, text categorization, partially supervised learning, Naive Bayesian Classifier, Lidstaone smoothing, lidstone correction, laplace correction, semi-supervised learning, learning with positive and unlabeled data, machine learning, Classification, Estimators, Leave-one-out, 
+Estimator, Algorithm, Learning, Training] by webmaster@cs.uic.edu">
+<META NAME="keywords" CONTENT="Bing Liu, Wee Sun Lee, Philip Yu and Xiaoli Li, LPU, lpu, SVM, S-EM, SEM, NB, sem, nb, Text Classification, Classification, Estimators, Leave-one-out, Estimator, Algorithm, Learning, Machine Learning, Training">
+<META NAME="description" CONTENT="Data Record Extraction or Structured Data Extraction">
+<META NAME="page-type" CONTENT="Bing Liu, Robert Grossman, Yanhong Zhai, record extraction, Web mining,  categorization, Estimators, Leave-one-out, Estimator, Algorithm, Learning, Machine Learning, Training">
+<META NAME="revisit-after" CONTENT="14 days">
+<META NAME="audience" CONTENT="All">
+<META NAME="author" content="liub">
+<META NAME="abstract" CONTENT="Data Extraction, Information Extraction">
+<BASE TARGET="Main">
+<TITLE> Extract Data Records from Web Pages -- information/data extraction </TITLE>
+<BODY bgcolor="#f5f5f5">
+<H2> <center> MDR: <i>M</i>ining <i>D</i>ata <i>R</i>ecords from Web Pages </center></H2>
+<H1> <center> MDR Download and Help </center> </h1>
+<p>
+MDR is a Web mining system that identifies and extracts regularly structured data records (e.g., products and data tables) from Web pages automatically. See the paper below for details: 
+<ul>
+<p><li> Bing Liu, Robert Grossman, Yanhong Zhai. "Mining Data Records in Web Pages." <i> Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery & Data Mining </i>(KDD-2003), Washington, DC, USA, August 
+24 - 27, 2003. <A HREF="http://www.cs.uic.edu/~liub/publications/kdd2003-dataRecord.pdf">[PDF - conference version]</a>, <A HREF="http://www.cs.uic.edu/~liub/publications/KDD-03-techReport.pdf">[Full version]</a>
+</ul>
+<br>
+<h2> Executable (.exe) </h2>
+<p>
+We only provide executable (.exe) version of the system (without source) which runs on Windows PC. The program is free for scientific use. Please contact us, if you are planning to use the software for commercial purposes. The software must not be distributed without prior permission of the authors. 
+<br>
+<br><br>
+<H2> Download and Install </h2>
+<ol>
+<li>Download the MDR program <A HREF="http://www.cs.uic.edu/~liub/WebDataExtraction/mdr.zip"> here </a>
+<li>Extract the files in the zip file to a directory. You are on your way. 
+</ol>
+<h5> Note: A more robust and efficient implementation of the algorithm is in production use in an ecommerce company </h5>
+<p> If you have downloaded MDR, <A href="http://www.cs.uic.edu/~liub">Please 
+send us an email</A> so that we can put you in our mailinglist to inform 
+you any new versions and bug-fixes. 
+
+<br><br>
+<br>
+<h2> How to use </h2>
+<ol>
+<li> Click on "mdr.exe". You will get a small interface window. 
+<li> You can type or paste a URL (including http://) or a local path into the Combo Box; the Combo Box contains a list of URLs which you have added. At the begining it may be empty. 
+<li> If you are interested in extracting tables (or with rows and columns of data), Click on "Extract" in the Table section.
+<li> If you are interested in extracting other types of data records, click on "Extract" in the "Data Records (other types)" section. We separate the two functions for efficiency reasons. 
+<li> After the execution, the output file will be displayed in an IE window. The extracted tables or data regions and data records are there; 
+</ol>
+Some Notes: 
+<ul>
+<li> You will notice that the output window has some unineresting records. Simple cleaning up can be done to remove them, but we have not done it as it is not much of research ...
+<li>There are a few output files in the directory which are for our debuging purposes, you don't have to worry about them. You don't have to delete them. But if you want to understand them, please send us an email. 
+<li>If MDR could not successfully extract the data records in a page, one reason could be that the tags in the page are not well formed for MDR to build a correct tag tree. Although we tried to fixed some of these errors, we did not spend enough time on this. Most of the pages that we tested have reasonably well formed tags. Please send us those pages that you encounter problems with MDR. We hope to improve it over time. 
+</ul>
+ 
+Options
+<p>
+Only show the data regions with "$" sign : When dealing with E-Commerce websites, most data records of interest are merchandise. If this option is checked, MDR only outputs that data regions in which the data records are merchiandise. (Here we assume every merchandise has a price with "$" sign. ) In this way, some data regions that also contain regular pattern data records will not be displayed. </p><BR>
+ 
+
+Parameter
+
+<p> There is one threshold parameter in the algorithm, which may affect the extraction results of the system. 
+<p>
+Similarity Threshold: Only when the similarity value of two tag strings is higher than Similarity Threshold, the two sub-trees represented by these two tag strings are considered as having similar pattern. Then, the data record represented by these two tag strings can be extracted out. The default value of Similarity Threshold is 60%, which is obtained from pilot studies and works well for most Web pages. If you cannot get the expected data record after clicking "Extract", try to change the Similarity Threshold to a larger value.  
+</ul>           
+<HR>
+<!-- Gostats.com web hit code. Please do not change this-->
+<script type="text/javascript">var go_mem="liub1234";</script>
+<script type="text/javascript" src="http://c2.gostats.com/go.js"></script>
+<noscript>
+<a href="http://c2.gostats.com/gogi/viewstats.pl?mn=liub1234" target="_top">
+<img src="http://c2.gostats.com/gogi/count.pl?mn=liub1234" border=0 alt="Free Hit Counter"></a>
+</noscript><br>
+<a href="http://gostats.com">free hit counter</a>
+<!-- End of Gostats.com web hit code -->
+
+<p>Created on Oct 3 2003 by <a href="http://www.cs.uic.edu/~liub">Bing Liu</a>; and <a href="http://www.cs.uic.edu/~yzhai">Yanhong Zhai</a>. 
+</body>

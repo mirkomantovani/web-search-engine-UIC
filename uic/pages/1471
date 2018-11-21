@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>UIC NetID Claim</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/apps/netidclaim/htdocs/assets/styles/netidclaim.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+
+  <div class="jumbotron" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 logo"> </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container" role="main">
+
+
+
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+
+    <h1>
+    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    UIC NetID Activation
+    </h1>
+
+<div class="alert alert-info">
+  <b>Need assistance?</b>  Contact the ACCC Service Desk if you require special assistance or have questions.  
+<br>
+<strong>Academic Computing and Communications Center</strong> 312-413-0003 <strong>consult@uic.edu</strong> http://accc.uic.edu
+</div>
+
+
+<!-- DEFINE MESSAGES HERE -->
+    
+
+
+
+
+
+
+<p>
+  <strong>Welcome to UIC!</strong>
+Once you activate your UIC NetID and password, use it to access most authenticated University of Illinois computing 
+and networking services (e.g., Self-Service Enterprise applications like Student Registration & Records, Financial Aid) 
+as well as UIC campus-based services like email, Blackboard, Wifi and computer labs. 
+</p>
+
+<p>
+<strong>One NetID. One Password.</strong>
+Your new NetID is a unique identifier assigned to you.  It becomes part of your UIC email address (<b>NetID@uic.edu</b>) and is your login name for these services.
+
+<p>A secure and well-managed password is key to protecting your access to University of Illinois computing resources.  
+The activation process includes setting up password recovery options for self-service management so that you will be 
+prepared, in advance, if you need to recover your password.  
+</p>
+
+<hr>
+
+<p><b>Are you a new UIC employee?</b>  You will create your NetID and password in <b><a target=_blank href='https://newhire.uihr.uillinois.edu/cf/newlog.cfm'>UI New Hire</a></b>.
+
+
+<p> <strong>Already have a UIC NetID and password?</strong> Go to: <b><a target=_blank href='https://password.uic.edu/'>password.uic.edu</a></b>
+</p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 activation-step">
+
+<form method="post" action="/apps/netidclaim/manage" class="form-horizontal">
+
+    <input type="hidden" name="do" value="verify">
+
+  <h2>Identity Verification</h2>
+
+  <div class="form-group">
+    <label for="uin" class="col-sm-4 control-label">University ID Number (UIN)</label>
+    <div class="col-sm-8">
+      <input id="uin" name="uin" class="form-control"
+        aria-describedby="uin-help" required>
+      <span id="uin-help" class="help-block">
+        The <b>blue 9-digit number</b> found on your i-card or in communications from 
+	UIC's Admissions Office or sponsoring department.
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="token" class="col-sm-4 control-label">Activation Token</label>
+    <div class="col-sm-8">
+      <input id="token" name="token" class="form-control"
+        aria-describedby="token-help"  required>
+      <span id="token-help" class="help-block">
+        The <b>8-digit number</b> received from UIC's Admissions Office or sponsoring department.
+      </span>
+    </div>
+  </div>
+
+  <h2>Policy Compliance</h2>
+
+  <p>
+    Please review the ACCC Acceptable Use Policy for ACCC
+    Services and then indicate your acceptance in the checkbox.
+  </p>
+
+  <textarea class="form-control" rows="10">
+   Conditions For Use of Academic Computing and Communications Center
+   (ACCC) Services & Facilities
+   
+   All users have the responsibility to use the ACCC (Academic Computing
+   and Communications Center) computing services in an efficient,
+   ethical, and legal manner. Users of the ACCC computer facilities are
+   expected to abide by the following policies, which are intended to
+   preserve the utility and flexibility of the computer system, protect
+   the work of students, staff, and faculty, and preserve the right to
+   access networks to which the University is connected.
+   
+   You will be assigned an ACCC computer account to access ACCC computer
+   facilities. The University reserves the right to access your account
+   and the system to the extent necessary to investigate security
+   breaches or other infractions of these rules. Your own password will
+   allow access to your account and you may not allow any other person to
+   use your account for any reason. In addition, it is your
+   responsibility to protect your account from unauthorized use by
+   changing passwords periodically and using passwords that are not
+   easily guessed.
+   
+   Identify yourself clearly and accurately in electronic communications.
+   Concealing or misrepresenting your name or affiliation to mask
+   irresponsible or offensive behavior is a serious abuse. Using
+   identifiers of other individuals as your own constitutes fraud.
+   
+   You are expected to take proper care of the equipment in ACCC
+   facilities. Eating, drinking, and smoking are not allowed in UIC labs
+   (i.e., food and beverages are not allowed). Report any malfunction to
+   the consultant on duty or send e-mail to consult@uic.edu. Do not
+   attempt to move, repair, reconfigure, modify, or attach external
+   devices to the systems. In addition, individual ACCC computer
+   laboratories can post additional operational rules and restrictions
+   that are considered part of the ACCC computer policy. You are
+   responsible for reading and following these rules.
+   
+   Accept limitations or restrictions on computing resources, such as
+   storage space, time limits, or amount of resources consumed, when
+   asked to do so by the system administrators. Such restrictions are
+   designed to ensure fair access for all users. You are expected to use
+   computing resources in a responsible and efficient manner consistent
+   with the instructional, research, and administrative goals of the
+   University.
+   
+   Accept responsibility for your own work by learning appropriate uses
+   of software to maintain the integrity of what you create. Keep
+   archives and backup copies of important work; learn and properly use
+   the features for securing or sharing access to your files on any
+   computers you use.
+   
+   While great effort is made to keep the contents of what you create,
+   store, and send to be seen only by those to whom you intend or give
+   permission, the University cannot and does not guarantee the security
+   of electronic files on its computer systems. These systems can
+   sometimes be breached by someone determined to do so. Additionally, as
+   specified above, the University reserves the right to access its
+   computer systems, including your account, if it deems it appropriate.
+   
+   You are expected to refrain from engaging in deliberate wasteful
+   practices such as multi-user dungeons (MUDs), sending chain letters
+   through electronic mail, printing unnecessary output, printing
+   multiple copies of files, performing unnecessary computations,
+   generating excessive network traffic, or unnecessarily holding public
+   PCs or dial-up phone lines for long periods of time when others are
+   waiting for these resources. Academic work always has priority over
+   other authorized uses.
+   
+   You are expected to refrain from installing or using unauthorized
+   software, and in particular, software that creates security risks on
+   University computer facilities. Other programs may be restricted by
+   the departmental system administrators and will be announced through
+   appropriate channels.
+   
+   Unauthorized transferring of copyrighted materials to or from the ACCC
+   computer system without express consent of the owner is a violation of
+   federal law. In addition, use of the Internet for commercial gain,
+   profit, or advertisement is not allowed from UIC.
+   
+   Use of electronic mail and other network communications facilities to
+   harass, offend, or annoy other users of the network is forbidden. All
+   users need to be aware that obscene, defamatory, or any other material
+   which violates University policy on non-discrimination will not be
+   tolerated at UIC. The University reserves the right to take whatever
+   action it sees as appropriate to prevent, correct, or discipline
+   behavior that violates this policy.
+   
+   Any attempt to circumvent system security, guess other passwords, or
+   in any way gain unauthorized access to local or network resources is
+   forbidden. Distributing passwords or otherwise attempting to evade,
+   disable, or "crack" passwords or other security provisions threatens
+   the work of many others and is therefore grounds for immediate
+   suspension of your privileges. You may not develop programs or use any
+   mechanisms to alter or avoid accounting for the use of computing
+   services or to employ means by which the facilities and systems are
+   used anonymously or by means of an alias.
+   
+   Access to and utilization of the resources of ACCC computing services
+   is a privilege and NOT a right; they can be withdrawn or curtailed
+   forthwith and without notice if there is a reason to believe that the
+   user has or may have violated this policy or applicable law.
+   Additionally, violation of this policy can result in further
+   discipline under the appropriate procedures extant at UIC or by civil
+   or criminal prosecution. All users, as a condition of their access to
+   or utilization of ACCC computing services, agree to cooperate in every
+   way with the Computer Center in an investigation of alleged
+   improprieties or abuse of this privilege and waive any right of
+   confidentiality. Failure to cooperate fully with the Computer Center
+   shall be considered a violation of policy.
+   
+   The ACCC will investigate apparent or alleged violations of these
+   guidelines. The Academic Computing and Communications Center also
+   reserves the right to immediately suspend user privileges for
+   potential violations of these guidelines to the extent necessary to
+   protect the security and integrity of the ACCC computer system. When
+   appropriate, at the discretion of the ACCC, cases of apparent abuse
+   will be reported to the Vice Chancellor of Student Affairs (student
+   cases), to the Assistant Vice President for Human Resources (academic
+   professional and support staff cases), or to the Provost (faculty
+   cases). These respective offices are responsible for determining any
+   further disciplinary actions.
+   
+   Issues concerning these guidelines, or allegations of harassment or
+   other irresponsible use of computing resources, should be brought to
+   the attention of the Academic Computing and Communications Center by
+   sending electronic mail to consult@uic.edu.
+</textarea>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="accept" value="yes" required> I agree to abide by the ACCC policy
+    </label>
+  </div>
+
+  <br><button type="submit" class="btn btn-primary btn-lg">Continue</button>
+
+
+  </div>
+</div>
+
+
+
+</form>
+
+	
+
+</div>
+
+ <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <p>
+          &copy; University of Illinois Board of Trustees |
+          <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
+        </p>
+	2018-11-21 12:25:15      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; Tanya &lt; TWiki</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Tanya/WebStatistics?_T=2018-11-21" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Tanya/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Tanya/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#549703;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#549703;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('http://www.cs.uic.edu/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#549703" />&nbsp;<a href="/bin/view/Tanya/WebHome">Tanya Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/Tanya/WebStatistics" title='Topic revision: 380 (2017-03-21 - 23:00:59)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-21, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Tanya.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/Tanya/WebStatistics?t=1542826603' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/Tanya/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_Tanya_Web"></a> Statistics for Tanya Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/Tanya/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/Tanya/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/Tanya/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/Tanya/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/Tanya/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/Tanya/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 785<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 158&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />104&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;86&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 681<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 157&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;65&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Tanya/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Tanya/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 449<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 80&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />46&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />45&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />38&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />37&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />28&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />23&nbsp;<a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />22&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />21&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />19&nbsp;<a href="/bin/view/Tanya/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 416<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 57&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />51&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />46&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />40&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />33&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />28&nbsp;<a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a><br />22&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />20&nbsp;<a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a><br />19&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />18&nbsp;<a href="/bin/view/Tanya/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 501<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 111&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;69&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;25&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;22&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;20&nbsp;<a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;17&nbsp;<a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 653<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 194&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;25&nbsp;<a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;22&nbsp;<a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 146<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 55&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />22&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />10&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;7&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/Tanya/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 326<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 61&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />51&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />30&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />28&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />20&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />19&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />17&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />16&nbsp;<a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />13&nbsp;<a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a><br />12&nbsp;<a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 817<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 130&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />100&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;99&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;72&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Tanya/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 794<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 212&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;95&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;82&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Tanya/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 665<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 206&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />119&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;23&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 720<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 149&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;93&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;85&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 608<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 104&nbsp;<a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;69&nbsp;<a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 702 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;92 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;83 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;81 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;36 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;34 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;32 <a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a><br />&nbsp;32 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;31 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;31 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;30 <a href="/bin/view/Tanya/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 746 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 101 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;70 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;62 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;50 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;40 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;40 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;38 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;37 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;37 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;37 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;35 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 264 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;55 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;38 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;14 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;13 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;12 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;11 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;10 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 879 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 254 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;97 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;93 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;70 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;48 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;47 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;37 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;34 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;32 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;27 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;24 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 632 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 145 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;79 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;75 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;54 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;45 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;32 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;27 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;22 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;19 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 904 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 316 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;91 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;76 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;75 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;44 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;44 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;35 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;32 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;30 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 673 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 189 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;95 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;63 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;39 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;37 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;29 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;27 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;26 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;17 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 948 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 356 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />109 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;72 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;72 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;30 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;30 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;26 <a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 756 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 259 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;74 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;57 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;40 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;36 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;29 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;26 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;25 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;22 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1148 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 290 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />133 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />132 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;86 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;80 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;68 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;41 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;38 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;37 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;36 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 885 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 182 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />135 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;75 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;69 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;60 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;49 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;46 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;43 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;42 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;39 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;38 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1429 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 287 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />226 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />177 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />128 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />114 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;55 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;51 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;48 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;48 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;38 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1684 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 538 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />139 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />122 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />116 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />104 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;87 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;66 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;61 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;58 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;52 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;49 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 551 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 137 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;55 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;49 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;48 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;47 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;34 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;27 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;19 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;19 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;17 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 537 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 132 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;82 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;47 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;32 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;27 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;22 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;21 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;21 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;17 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 114 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;27 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;13 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;11 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;8 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;7 <a href="/bin/view/Tanya/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;6 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;5 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1269 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 248 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />208 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />182 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />112 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />105 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;62 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;50 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;32 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;30 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a><br />&nbsp;30 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 700 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 159 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;76 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;65 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;52 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;50 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;43 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;30 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;29 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;25 <a href="/bin/view/Tanya/Research" class="twikiLink">Research</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 463 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 126 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;34 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;30 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;21 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;19 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;18 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;17 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 906 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 262 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;86 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;70 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;68 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;56 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;44 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;38 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;36 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;35 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;32 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;32 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 548 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 159 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;51 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;38 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;37 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;33 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;27 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;22 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;22 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;21 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;19 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 609 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 194 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;85 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;63 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;42 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;28 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;21 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;18 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;15 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;15 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 655 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 135 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />108 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;67 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;50 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;44 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;29 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;29 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;26 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;22 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;19 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 236 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;39 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;30 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;19 <a href="/bin/view/Tanya/Teaching" class="twikiLink">Teaching</a><br />&nbsp;14 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;13 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;11 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;11 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;11 <a href="/bin/view/Tanya/KenyaCourse" class="twikiLink">KenyaCourse</a><br />&nbsp;10 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 567 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 117 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;79 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;44 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;40 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;39 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;39 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;31 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;31 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;25 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;16 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 569 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 140 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;59 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;51 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;47 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;36 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;34 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;31 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;25 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;19 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;18 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 381 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;79 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;53 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;32 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;21 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;21 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;16 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;12 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;11 <a href="/bin/view/Tanya/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 446 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;91 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;72 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;33 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;31 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;31 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;30 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;26 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;18 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;12 <a href="/bin/view/Tanya/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 289 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;56 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;54 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;26 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;21 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;20 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;19 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;17 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;12 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;10 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;6 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 310 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;71 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;43 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;22 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;22 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;22 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;19 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;17 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;16 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;15 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;13 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 325 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;73 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;68 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;25 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;24 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;23 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;17 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;16 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;13 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;13 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;11 <a href="/bin/view/Tanya/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 368 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 126 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;47 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;25 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;20 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;18 <a href="/bin/view/Tanya/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;16 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;15 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;14 <a href="/bin/view/Tanya/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;11 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;10 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> May 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1 twikiLast"> 238 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLast"> 19 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> &nbsp;62 <a href="/bin/view/Tanya/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;45 <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;19 <a href="/bin/view/Tanya/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;14 <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;5 <a href="/bin/view/Tanya/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;5 <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Tanya/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Tanya/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Tanya/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Tanya/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Tanya/Publications" class="twikiLink">Publications</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;17 Main.tanyabw<br />&nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=Tanya.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/Tanya" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Tanya/WebStatistics?t=1542826605' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Tanya/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Tanya/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Tanya/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r380&nbsp;<a rel="nofollow" href="/bin/rdiff/Tanya/WebStatistics?rev1=380;rev2=379">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Tanya/WebStatistics?rev=379">r379</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Tanya/WebStatistics?rev1=379;rev2=378">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Tanya/WebStatistics?rev=378">r378</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Tanya/WebStatistics?rev1=378;rev2=377">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Tanya/WebStatistics?rev=377">r377</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Tanya/WebStatistics?rev1=377;rev2=376">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Tanya/WebStatistics?rev=376">r376</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Tanya/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the Tanya Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Tanya/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Tanya/WebStatistics?t=1542826605;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Tanya/WebStatistics?template=oopsmore&amp;param1=380&amp;param2=380' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r380 - 2017-03-21 - 23:00:59 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Tanya.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> Tanya</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="http://compbio.cs.uic.edu/" target="_top">Research</a>
+</li> <li> <a href="http://compbio.cs.uic.edu/~tanya/research/pubs.html" target="_top">Publications</a>
+</li> <li> <a href="http://compbio.cs.uic.edu/~tanya/teaching/index.html" target="_top">Teaching</a>
+</li> <li> <a href="http://compbio.cs.uic.edu/~tanya/personal/index.html" target="_top">Personal</a>
+</li> <li> 
+</li> <li> 
+</li> <li> <a href="/bin/view/Tanya/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<p />
+<a href="/bin/edit/Tanya.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Tanya/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/Tanya/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Tanya Web</a></strong>
+</li> <li> <a href="/bin/view/Tanya/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Tanya/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Tanya/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Tanya/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/Tanya/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/Tanya/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Tanya/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Tanya/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

@@ -1,0 +1,147 @@
+<!-- saved from url=(0058)http://www.cs.uic.edu/~liub/diagnosticDM/diagnosticDM.html -->
+<html><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head>
+<meta name="allow-search" content="YES">
+<meta name="searchtitle" content="lifelong learning, lifelong machine learning, data mining, big data
+[Bing Liu, Zhiyuan Chen, machine learning, topic model, LDA, LTM, AMC] by webmaster@cs.uic.edu">
+<meta name="keywords" content="Lifelong Learning, Lifelong Topic Model, Big Data, Topic Model, Knowledge-based Topic Model, Data Mining, Text Mining">
+<meta name="description" content="Lifelong Machine Learning and Big Data">
+<meta name="page-type" content="Lifelong Machine Learning and Big Data">
+<meta name="revisit-after" content="14 days">
+<meta name="audience" content="All">
+<meta name="author" content="liub">
+<meta name="abstract" content="Lifelong Machine Learning and Big Data">
+<!--<base target="Main">--><base href="." target="Main">
+<title> Lifelong Machine Learning Tutorial</title>
+</head><body bgcolor="#f5f5f5">
+
+<h1> <center> Lifelong Machine Learning in the Big Data Era - Tutorial at <a href="http://ijcai-15.org/index.php/tutorials-schedule" target="_blank">IJCAI 2015</a></center></h1>
+<h2> <center><a href="http://www.cs.uic.edu/~zchen/" target="_blank">Zhiyuan Chen</a> and <a href="http://www.cs.uic.edu/~liub/" href="_blank">Bing Liu</a></center></h2>
+<b><span style="font-size:15pt"><font color=#ff0000>New book</font>: <a href="http://www.morganclaypoolpublishers.com/catalog_Orig/product_info.php?products_id=988">Lifelong Machine Learning</a>, Morgan & Claypool publishers, 145 pages, November 2016.</span><b><br/>
+<br>
+<b><span style="font-size:15pt"><font color="red">A newer tutorial at KDD-2016</font>: <a href="http://www.cs.uic.edu/~liub/Lifelong-Machine-Learning-Tutorial-KDD-2016.pdf">Lifelong Machine Learning Tutorial</a>, (Title: lifelong machine learning and computer reading the Web), by Zhiyuan Chen, Estevam Hruschka, and Bing Liu on August 13, 2016, San Francisco, USA.</span><b><br/>
+
+<p>
+<b><span style="font-size:15pt"><a href="http://www.cs.uic.edu/~liub/Lifelong-Learning-tutorial-slides.pdf">IJCAI-2015 Tutorial Slides</a></span> --- (<a href="http://www.cs.uic.edu/~liub/lifelong-learning.html">My Lifelong Learning Research Page</a>) </b><br/>
+</p>
+<p>
+This tutorial covers the important problem and existing techniques of <i>lifelong machine learning</i> (or <i>lifelong learning</i>) and discusses opportunities and challenges of big data for lifelong machine learning. The tutorial has been given at the 24th International Joint Conference on Artificial Intelligence (<a href="http://ijcai-15.org/" target="_blank">IJCAI 2015</a>), July 25-31, 2015, Buenos Aires, Argentina.
+</p>
+
+<p>
+<b><span style="font-size:18pt">Description</span></b><br/><br/>
+Lifelong machine learning (LML) aims to design and develop computational systems and algorithms that learn as humans do, i.e., retaining the results learned in the past, abstracting knowledge from them, and using the knowledge to help future learning and problem solving. The rationale is that when faced with a new situation, we humans use our previous experience and knowledge to help deal with and learn from the new situation. We learn and accumulate knowledge continuously. It is essential to incorporate this capability in an AI system to make it versatile, holistic, and intelligent. Current research in lifelong learning is still in its infancy. Through this tutorial we would like to introduce the existing techniques and to encourage researchers to work on this problem. We also want to highlight the tremendous opportunities offered by big data to make major progresses in lifelong learning and in AI. 
+</p>
+
+<p>
+<b><span style="font-size:18pt">Lifelong Learning vs. Transfer Learning vs. Multitask Learning</span></b> <br/><br/>
+In the tutorial, several people asked about the differences of transfer learning, multitask learning, and lifelong learning. The descriptions of these concepts in the literature are quite confusing as they are closely related and overlap. In a paper about lifelong learning, the authors may propose a technique that is actually for multitask learning or transfer learning. Let me give my view. But first, let me state the general definitions given in the existing literature based on my understanding. 
+</p>
+<ol>
+<li><b>Single Task Learning</b>: Giving a set of learning tasks, t1 , t2 , …, 
+t(n), learn each task independently. This is the most commonly used machine learning paradigm in practice. 
+<li><b>Multitask Learning</b>: Giving a set of learning tasks, t1 , t2 , …, t(n), co-learn all tasks simultaneously. In other words, the learner optimizes the learning/performance across all of the n tasks through some shared knowledge. This may also be called batch multitask learning. Online multitask learning is more like lifelong learning (see below). 
+<li><b>Transfer Learning (or Domain Adaptation)</b>: Giving a set of source domains/tasks t1, t2, …, t(n-1) and the target domain/task t(n), 
+the goal is to learn well for t(n) by transferring some shared knowledge from t1, t2, …, t(n-1) to t(n). Although this definition is quite general, almost the entire literature on transfer learning is about supervised transfer learning and the number of source domains is only one (i.e., n=2). It also assumes that there are labeled training data for the source domain and few or no labeled examples in the target domain/task, but there are a large amount of unlabeled data in t(n). Note that the goal of transfer learning is to learn well only for the target task. Learning of the source task(s) is irrelevant. 
+
+<li><b>Lifelong Learning</b>: The learner has performed learning on a sequence of tasks, from t1 to t(n-1). When faced with the nth task, it uses the relevant knowledge gained in the past n-1 tasks to help learning for the nth task. Based on this definition, lifelong learning is similar to the general transfer learning involving multiple source domains or tasks. 
+However, some researchers have a narrower definition of lifelong learning. They regard it as the learning process that aims to learn well on the future task t(n) without seeing any future task data so far. This means that the system should generate some prior knowledge from the past observed tasks to help new/future task learning without observing any information from the future task t(n). The future task learning simply uses the knowledge. This definition makes lifelong learning different from both transfer learning and multitask learning. It is different from transfer learning because transfer learning identifies prior knowledge using the target/future task labeled and unlabeled data. It is different from multitask learning because lifelong learning does not jointly optimize the learning of the other tasks, which multitask learning does. 
+</ol>
+<p>
+</p>
+<p>
+<b>My View on Lifelong Learning</b>: I like the more general definition 
+of lifelong learning above. The relevant prior knowledge may be generated 
+from the past n-1 tasks with 
+or without considering the nth task data. But I would like to stress the 
+importance of <b><i>big data</i></b> and the <b><i>growth of the number
+of tasks</i></b> for lifelong learning. That is, for lifelong learning 
+to be meaningful, the number of past tasks must be large (i.e., n – 1 
+should be large) and growing so that a large amount of knowledge can be 
+accumulated. The future task can just find and use any relevant pieces 
+of knowledge learned in the past to help learning the new task t(n).  
+In this way, the learning becomes truly lifelong and 
+autonomous. When n = 2, it is the mainstream 
+transfer learning or domain adaptation, which cannot be called lifelong 
+learning because it does not have a sequence of past tasks and thus 
+not lifelong. Also the human user has to manually identify two 
+tasks that are very similar to each other in order to perform 
+meaningful transfer. Based on this view, multitask learning is not 
+lifelong learning either because lifelong leanring does not jointly 
+optimize all new and past tasks. 
+</p>
+
+<p>
+<b><span style="font-size:18pt">Date and Place</span></b> <br/><br/>
+Date: July 25 (Afternoon), 2015. <br/>
+Place: IJCAI'15, Room 438 in the New Building of Facultad de Ciencias Económicas.
+</p>
+
+<!--
+<p>
+<b><span style="font-size:18pt">Outline</span></b> <br/>
+
+<ol type="1" style="margin-top:0">
+
+<li>
+Motivation
+<ol type="a" style="margin-top:0">
+<li> Traditional One-Shot Learning </li>
+<li> Definition of Lifelong Machine Learning </li>
+</ol>
+</li>
+
+<li>
+Components of Lifelong Machine Learning
+<ol type="a" style="margin-top:0">
+<li> Past Information Store </li>
+<li> Knowledge Base </li>
+<li> Knowledge Miner </li>
+<li> Knowledge-Based Learner </li>
+</ol>
+</li>
+
+<li>
+Categorizing Existing Work
+<ol type="a" style="margin-top:0">
+<li> Transfer Learning </li>
+<li> Multi-Task Learning </li>
+<li> Never-Ending Learning </li>
+<li> Self-Taught Learning </li>
+</ol>
+</li>
+
+<li>
+Unsupervised Lifelong Machine Learning
+<ol type="a" style="margin-top:0">
+<li> Lifelong Topic Modeling </li>
+</ol>
+</li>
+
+<li>
+Opportunities and Challenges of LML with Big Data
+<ol type="a" style="margin-top:0">
+<li> Opportunities of big data </li>
+<li> Knowledge extraction from big data </li>
+<li> Scalability and efficiency </li>
+</ol>
+</li>
+
+<li>
+Summary
+</li>
+
+</ol>
+</p>
+-->
+
+<p>
+<b><span style="font-size:18pt">Target Audience</span></b><br/><br/>
+Researchers, graduate students, and practitioners who are interested in machine learning, big data and Artificial Intelligence. The tutorial will particularly benefit people who intend to develop machine learning techniques and applications that can keep improving themselves after seeing more and diverse data in order to achieve “real” intelligence.
+</p>
+
+<p>
+<b><span style="font-size:18pt">Prerequisite Knowledge</span></b><br/><br/>
+Basic knowledge of machine learning or data mining.
+</p>
+
+</body></html>

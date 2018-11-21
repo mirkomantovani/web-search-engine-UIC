@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0 Win">
+  <TITLE>Introduction to Make</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2><CENTER>A Brief Introduction to the use of &quot;<I>make</I>&quot;</CENTER></H2>
+
+<H3>General Purpose &amp; Usefulness</H3>
+
+<UL>
+  <LI>The &quot;<I>make</I>&quot; utility is a general purpose
+  &quot;command generator&quot;, that can be used to automate many
+  repetitive tasks.
+  <LI>The most common use of &quot;<I>make</I>&quot; is to compile
+  and link computer code into executable programs, particularly
+  when there are multiple files involved and/or if the commands
+  required to build the programs are complicated. In this case
+  <I>make</I> has the ability to determine which file(s) are out
+  of date, and to re-compile and re-link only those files that
+  require updating, including all necessary compiler options and
+  libraries.
+  <LI><I>make</I> can also be used for other tasks, such as cleaning
+  directories, assembling libraries, updating files, checking calendars,
+  etc.
+</UL>
+
+<H3><I>make</I> Configuration Files</H3>
+
+<P>At the heart of <I>make</I> lies one or more configuration
+files, which specify what file(s) are required to build a specified
+target, and what commands must be executed to build that target.
+These configuration files lie in one of three locations:</P>
+
+<UL>
+  <LI>System default files, contain default information for <I>make</I>
+  to use when no other information is available. This can often
+  be sufficient if all source code is in a single file and no special
+  options are required.
+  <LI>&quot;makefile&quot; or &quot;Makefile&quot; - These files
+  can be written by the user with an ordinary text editor, to provide
+  specific configuration information for a particular project.
+  These files are normally kept in the same directory as the source
+  code files for the project being worked on.
+</UL>
+
+<H3>Basic makefile Syntax</H3>
+
+<P>A makefile consists of a series of one or more &quot;targets&quot;,
+which are the desired products of running <I>make</I>. For each
+target there is a list of dependencies and one or more command
+lines necessary for building the desired target. The syntax is
+as follows:</P>
+
+<BLOCKQUOTE>
+  <P><FONT FACE="Courier New">target : dependencies<BR CLEAR="ALL">&lt;
+  TAB &gt;command line(s) to build the target<BR CLEAR="ALL">&lt;
+  TAB &gt;command line(s) to build the target, ...</FONT></P>
+</BLOCKQUOTE>
+
+<P>Note that the lines containing the necessary commands must
+begin with tabs, or else <I>make</I> will not work.</P>
+
+<H3>Examples</H3>
+
+<P>The following makefile contains information for creating &quot;myprog&quot;
+from 3 input files:</P>
+
+<BLOCKQUOTE>
+  <P><FONT FACE="Courier New">myprog : myfile1.c myfile2.c myfile.h<BR
+  CLEAR="ALL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cc -o myprog
+  myfile1.c myfile2.c</FONT></P>
+</BLOCKQUOTE>
+
+<P>In this example <I>make</I> will check to see if any of the
+three dependencies have changed since the last time &quot;myprog&quot;
+was created, and will rebuild myprog using the <FONT FACE="Courier New">cc</FONT>
+command line if necessary.</P>
+
+<H3>Macros</H3>
+
+<H3>Internal Macros</H3>
+
+<H3>Priorities</H3>
+
+<H3>Suffix Rules</H3>
+
+<H3>Further Reading</H3>
+
+<P>For further information regarding make, the following text
+is highly reccomended:</P>
+
+<UL>
+  <LI>Oram, Andrew and Steve Talbott, &quot;Managing Projects with
+  make&quot;, O'Reilly &amp; Associates, Sebastapol, CA, www.oreilly.com,
+  1991.
+</UL>
+
+</BODY>
+</HTML>

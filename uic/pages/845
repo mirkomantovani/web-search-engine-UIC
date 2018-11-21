@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Office of the Dean of Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/site.css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css"> 
+    
+    <!--royalslider CSS-->
+    <link href="assets/royalslider/royalslider.css" rel="stylesheet">
+ 	<link href="assets/royalslider/skins/default/rs-default.css" rel="stylesheet">
+   <link href="assets/royalslider/skins/minimal-white/rs-minimal-white.css" rel="stylesheet">
+     <!-- slider JS files -->    
+	<script  src="royalslider/jquery-1.8.3.min.js"></script>
+	<script src="royalslider/jquery.royalslider.min.js"></script>
+    <script src="assets/royalslider/jquery.easing-1.3.js"> </script>
+   
+<style>
+.error{
+border: 1px solid #F00000;
+}
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}
+
+<!-- slider css -->
+
+  #video-gallery {
+width: 100%;
+color: #FFF;
+}
+
+.videoGallery .rsCloseVideoBtn {
+  display: none;
+} 
+/* Styling thumbnails */
+.videoGallery h5 {
+  margin: 0;
+}
+.videoGallery p {
+  color: #ddd;
+  font-size: 13px;
+}
+.videoGallery .rsTmb {
+  padding: 20px;
+}
+
+.videoGallery .rsThumbs .rsThumb {
+  width: 940px;
+  height: 80px;
+  border-bottom: 1px solid #2E2E2E;
+}
+.videoGallery .rsThumbs.rsThumbsVer {
+  width: 220px;
+  padding: 0;
+}
+.videoGallery .rsThumb:hover {
+  background: #000;
+}
+.videoGallery .rsThumb.rsNavSelected {
+  background-color: #18bc9c;
+  border-bottom: 1px solid #009E56;
+}
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+  background: #202020;
+}
+.sampleBlock {
+  left: 3%; 
+  top: 1%; 
+  width: 100%;
+  max-width: 400px;
+  color: #FFF;
+  font-weight:bold;
+   background: #000;
+  background: rgba(0,0,0,0.75);
+  padding:7px 10px 10px 10px;
+}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .videoGallery .rsTmb {
+    padding: 6px 8px;
+  }
+  .videoGallery h5 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .videoGallery .rsThumbs.rsThumbsVer {
+    width: 100px;
+    padding: 0;
+  }
+  .videoGallery .rsThumbs .rsThumb {
+    width: 100px;
+    height: 47px;
+  }
+  .videoGallery .rsTmb p {
+    display: none;
+  }
+  .videoGallery .rsOverflow,
+  .royalSlider.videoGallery {
+    height: 300px !important;
+  }
+  .sampleBlock {
+    font-size: 14px;
+  }
+}
+<!-- Block Text Slider -->
+#slider-with-blocks-1 {
+  width: 100%;
+  height: 100%;
+}
+.rsContent {
+  color: #FFF;
+  font-size: 24px;
+  line-height: 32px;
+  float: left;
+}
+
+.bContainer {
+  position: relative;
+}
+.rsABlock {
+  left: 30px;
+	top: 280px;
+	position: absolute;
+	z-index: 15;
+	
+}
+
+.rsBBlock {
+  position: relative;
+  display: block;
+  left: auto;
+  top: auto;
+}
+.blockHeadline {
+  font-size: 42px;
+  line-height: 50px;
+}
+.blockSubHeadline {
+  font-size: 32px;
+  line-height: 40px
+}
+.txtCent {
+  text-align: center; 
+  width: 100%; 
+}
+.slide1 {
+  background: #f06b50;
+}
+.slide1 .bContainer {
+	top: 30px;
+}
+.slide2 {
+    background: #ffbc11;
+    color:#000;
+}
+.slide2 .bContainer {
+  top: 20px;
+}
+.slide2 .txtCent {
+  line-height: 44px;
+}
+.slide2 .blockHeadline {
+   line-height: 66px;
+}
+.slide3 {
+    background: #45aab8;
+    color:#FFF;
+}
+.slide3 .bContainer {
+   top: 24px;
+}
+.slide3 span {
+  line-height: 44px;
+}
+.slide4 .bContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  top: 24px;
+}
+.photoCopy {
+  position: absolute;
+  line-height: 24px;
+  font-size: 12px;
+  background: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0px 10px;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  top: auto;
+  border-radius: 2px;
+  z-index: 25;
+}
+.photoCopy a {
+  color: #FFF;
+}
+.palmImg {
+  left: 0;
+  top: auto;
+  bottom: -60px;
+  position: absolute;
+}
+@media screen and (min-width: 0px) and (max-width: 960px) { 
+  .rsContent {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .blockHeadline {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 26px;
+    line-height: 32px
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 500px) { 
+  .royalSlider,
+  .rsOverflow {
+    height: 200px !important;
+  }
+  .rsContent {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .blockHeadline {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 22px;
+    line-height: 32px
+  }
+}
+
+.label {
+  margin-right: 5px;
+}
+</style>
+
+</head>
+<body>
+  
+<div id="skip"><a href="#content">Skip to Main Content</a></div> 
+<div class="container header_container">
+<div id="header">
+<div id="header_logo">
+<div id="header_logo_left"><a href="http://www.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uic_logo','','img/banner-UIC.png',1)"><img src="img/banner-UIC.png" alt="link to UIC home page" id="uic_logo"/></a><a href="http://vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ovcsa_logo','','img/banner-OVCSA2.png',1)"><img src="img/banner-OVCSA2.png" alt="link to OVCSA home page" id="ovcsa_logo" width="200" height="40"/></a></div>
+<div id="header_logo_right"><a href="http://www.uic.edu" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uofi_logo','','img/banner-UniversityofIlli2.png',1)"><img src="img/banner-UniversityofIlli2.png" alt="link to UIC" id="uofi_logo"/></a></div>
+</div>
+<div class="clearfloat"></div>
+</div>
+<div class="triangle_left"></div>
+<div class="triangle_right"></div>
+</div>
+<!-- title -->   
+<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 style="padding-left:12px"><strong>OFFICE OF THE DEAN OF STUDENTS</strong></h1>
+          </div>         
+        </div>
+      </div>
+</div>
+<div class="container" id="navbar_container">
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">    
+            <div class="bs-example">
+              <div class="navbar navbar-default" id="nav_bar">
+                   <div class="container">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                         <a class="navbar-brand" href="index.shtml">Home</a>
+                      </div>
+                      <div class="navbar-collapse collapse navbar-responsive-collapse">
+                         <ul class="nav navbar-nav">
+                          <li><a href="about.shtml">About Us</a></li>    
+                          <li><a href="services.shtml">Students</a></li>     
+                          <li><a href="units.shtml">Faculty & Staff</a></li>
+                          <li><a href="contact.shtml">Contact Us</a></li>            
+						  <li><a href="needhelp.shtml">Need Help?</a></li> 
+                        </ul>
+                        <form class="navbar-form navbar-right" id="cse-search-box" action="search.shtml">
+                        <input type="hidden" value="003292673167871140938:_ftumhdite0" name="cx" />
+                        <input type="hidden" value="FORID:11" name="cof" />
+                        <input type="hidden" value="UTF-8" name="ie" />                        
+                        <input type="text"  id="search"  name="q" class="form-control col-lg-8" placeholder="Search">     
+                        </form>   
+	</div><!-- /.nav-collapse -->
+                  </div><!-- /.container -->
+                  </div><!-- /.navbar -->
+             
+            </div><!-- /example -->
+          </div>
+        </div>
+      </div>
+    <!-- end of Navbar-->
+</div>
+    
+                           
+<!--main container-->
+<div class="container">
+<div class="Flexible-container">         
+<img src="img/dos_sls.jpg" alt="About Dean Of Students" class="img-responsive">
+</div>
+<br />
+<div class="row">
+<a tabindex="-1" name="content"></a>
+<div class="col-lg-9">
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="h3">LATEST DEVELOPMENT ON DACA</h3>
+</div>
+<div class="panel-body">
+  <b style="color: #002060;">
+  <p>AS OF (1/10/18)</p>
+
+  <p>On January 9, 2018, a federal judge in California temporarily blocked the current White House administration’s decision last September to rescind the Deferred Action for Childhood Arrivals (DACA) program.  DACA was started by the Obama administration in 2012 to give young undocumented immigrants protection from deportation and the ability to work legally in the U.S.  This most recent order by the Ninth Circuit judge states that the administration must resume accepting DACA renewal applications, although it does not need to accept new ones from first-time applicants.  The latest ruling gives DACA recipients a new window, albeit a temporary one, to renew their status.  </p>
+
+  <p>
+    UIC Student Legal Services (SLS) is committed to helping ALL current UIC students with legal issues, including those who are personally affected by the ongoing DACA developments.  Since last November, SLS has hired two immigration attorneys to help students with such matters.  Any current student who wants to discuss the ramifications of this latest development should contact SLS to schedule an appointment.
+  </p>
+
+  <p>To make an appointment with a SLS attorney, please call 312-996-9214 or email akowal@uic.edu.  For more information on SLS, visit <a href="https://dos.uic.edu/studentlegalservices.shtml">https://dos.uic.edu/studentlegalservices.shtml.</a></p>
+  </b>
+
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="h3">STUDENT LEGAL SERVICES</h3>
+</div>
+<div class="panel-body">
+<p>
+<p>
+UIC’s Student Legal Services (SLS) is a full-service law office dedicated to providing legal solutions for currently enrolled students.  SLS offers advice and representation on a wide variety of legal matters, including:
+<ul>
+<li>Landlord-Tenant Matters</li>
+<li>Expungement of Records</li>
+<li>Family Law</li>
+<li>Some Criminal Matters</li>
+<li>Traffic Issues</li>
+<li>Orders of Protection</li>
+<li>Employment Agreements</li>
+</ul>
+
+Our service is free for currently-registered students, because it is paid for with Student Fees.
+If you have a legal concern, make an appointment to come speak with us.  We assure you that your communication with us will be completely confidential.  
+</p><br>
+<h4><u>SCHEDULE AN APPOINTMENT</u></h4>
+<p>To make an appointment to visit Student Legal Services, please call 312-996-9214 and speak with a representative.  If you get voicemail, please leave a clear message, making sure to leave your full name, student ID number, best number to reach you, your UIC email address, and a brief description of your legal issue.  We will do our best to call you back with minimal delay, usually within 24-48 hours.  
+Before you visit, please download the Agreement for Legal Services, carefully read, sign, and date it.  Please fill out the Student Intake Form and bring it with you.  You will also need to bring in your current Student ID card.<br>
+
+<h5>WHAT YOU NEED TO BRING</h5>
+<ol>
+<li>Signed Agreement for Legal Services </li>
+<li>Completed Student Intake Form </li>
+<li>Your Student ID card </li>
+<li>Documents relevant to your legal issue </li>
+</ol>
+Our time is valuable, just like yours.  If you miss an appointment without informing us in advance, you may be suspended from using our services for a semester.  If you are more than 15 minutes late to a scheduled appointment without informing us in advance, you will have to reschedule your appointment.
+</p>
+<p><strong><h3><font color="blue">For information regarding the UIC Student Legal Services Undergraduate Legal Internship program, please click on the links below:</font></h3></strong></p>
+<p><strong><font color="red">The deadline for the internship is Wednesday, November 21st, 2018 at 5:00 pm</font></strong></p>
+<ul>
+<li><a href="docs/information sheet SLS Internship 2019.pdf" target="_blank">Information Sheet</a></li>
+<li><a href="docs/SLS Undergraduate Internship Application 2018.pdf" target="_blank">SLS Internship Application</a></li>
+<!-- <li><a href="docs/SLS Internship Application revised.pdf">Internship Application</a></li> -->
+</ul>
+</div>
+</div>
+
+</div>
+<div class="col-lg-3">
+<div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="studentlegalservices.shtml">Student Legal Services</a>
+<a class="list-group-item" href="docs/Driving in Illinois.pdf">Information for International Students</a>
+<a class="list-group-item" href="slstopics.shtml">Hot Topics</a>
+<a class="list-group-item" href="slsresources.shtml">SLS Resources</a>
+<a class="list-group-item" href="slsfaq.shtml">SLS FAQ</a>
+<a class="list-group-item" href="contactsls.shtml">Contact SLS</a>
+</div>
+     
+<div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="about.shtml">Other Services</a>
+<a class="list-group-item " href="studentconductprocess.shtml">Student Conduct Process</a>
+<a class="list-group-item" href="studentadvocacyservices.shtml">Student Advocacy Services</a>
+<a class="list-group-item" href="studentombudsservices.shtml">Student Ombuds Services</a>
+<a class="list-group-item" href="studentlegalservices.shtml">Student Legal Services</a>
+<a class="list-group-item" href="studentveteranaffairs.shtml">Student Veteran Affairs</a>
+<a class="list-group-item" href="studentgovernanceadvising.shtml">Student Governance Advising</a>
+<a class="list-group-item" href="religiousworkersassociation.shtml">Religious Workers Association</a>
+<a class="list-group-item" href="policiesandprocedures.shtml">Policies & Procedures</a>
+</div> 
+     	
+</div>  
+</div>
+</div><!-- end of main container-->
+<!--footer-->
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="container footer_container">  
+<div class="triangle_left_footer"></div>
+<div class="triangle_right_footer"></div> 
+<div id="footer-wrap">
+<div class="content-wrap-spacer"></div>
+<div class="row">
+<div class="col-lg-4" style="color:#00000; padding-top: 10px; padding-bottom:10px;text-align:center;" > 
+Student Services Building (SSB)<br>
+1200 West Harrison St,<br>
+3030 SSB (MC 318)<br>
+Chicago, IL 60607<br><br>
+
+<small><i class="fa fa-phone"></i> Phone: 312-996-4857 <br>
+<i class="fa fa-print"></i> Fax: 312-413-3716 
+</small>
+</div>
+   		
+<div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px; text-align: center;" >
+      
+<a href="http://vcsa.uic.edu">OVCSA</a>
+|
+<a href="http://www.uic.edu">UIC</a>
+|
+<a href="sitemap.shtml">Site Map</a>
+|
+<a href="needhelp.shtml">Need Help?</a>
+ <p style="color:#3498DB; font-size:11px; line-height:1;"><br>Copyright © 2018 The Board of Trustees of the University of Illinois | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a> </p>
+</p> 
+        
+        </div>        
+        <div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px;">   
+         
+             <a href="http://vcsa.uic.edu"><img src="img/banner-OVCSA-white3.png" class="img-responsive" alt="OVCSA"></a> 
+            
+        </div>
+        
+    </div>
+</div>
+  
+</div>
+<div class="row">
+          <div class="col-lg-12">
+         </div>
+        </div>
+
+<script>
+//vravic2 added this script for valdiation of message textarea
+   $( "#submitbutton" ).click(function(event) {
+	  if($("#textarea").val()=='')
+	  {
+		$("#textarea").addClass("error");
+		event.preventDefault();
+	  }
+	});
+	
+   </script>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54652433-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+<!--footer-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>  
+    
+    
+    <!-- script and styling for sticky nav bar-->
+<script>
+$(document).ready(function() {
+  
+  $(window).scroll(function () {
+     // console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 180) {
+      $('#nav_bar').addClass('navbar-fixed');
+	  $('#navbar_container').removeClass('container');
+    }
+    if ($(window).scrollTop() < 181) {
+      $('#nav_bar').removeClass('navbar-fixed');
+	  $('#navbar_container').addClass('container');
+    }
+  });
+});
+</script>
+<!--switch images-->
+<script type="text/javascript"> 
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+} 
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+  </body>
+</html>

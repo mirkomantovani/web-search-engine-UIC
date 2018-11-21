@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset=" utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title> PoliceBikeRegistration- University of Illinois at Chicago </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Basic Styles -->
+    <link href="/BikeRegistration/content/smartadmin?v=JYuKEfZADscCzFeyWJDaGT1g7E3J6eB8NPzR-LrBtsw1" rel="stylesheet"/>
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="/BikeRegistration/content/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/BikeRegistration/content/img/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- GOOGLE FONT -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+    
+    <link rel="apple-touch-icon" href="/BikeRegistration/content/img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/BikeRegistration/content/img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/BikeRegistration/content/img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/BikeRegistration/content/img/splash/touch-icon-ipad-retina.png">
+
+
+    <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Startup image for web apps -->
+    <link rel="apple-touch-startup-image" href="/BikeRegistration/content/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="/BikeRegistration/content/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="/BikeRegistration/content/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+    <link href="/BikeRegistration/Content/css/jquery-ui.css" rel="stylesheet" />
+    <script src="/BikeRegistration/Scripts/libs/jquery-2.1.1.min.js"></script>
+    <script src="/BikeRegistration/Scripts/libs/jquery-ui-1.10.3.min.js"></script>
+    <script src="/BikeRegistration/Scripts/jquery.blockUI.js"></script>
+
+</head>
+<body>
+
+<header id="header" style="background-image: url('/BikeRegistration/Content/Images/pd/header.png'); background-size: cover">
+    <div id="logo-group">
+        <span id="logo" style="margin-top:0px"></span>
+    </div>
+
+    <section id="top-right">
+            <div class="pull-right">
+                <!-- collapse menu button -->
+<div id="hide-menu" class="btn-header pull-right hidden-lg hidden-md visible-sm-block visible-xs-block hidden">
+    <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+</div>
+<!-- end collapse menu -->
+<!-- #MOBILE -->
+<!-- Top menu profile link : this shows only when top menu is active -->
+<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+    <li class="">
+    <li>
+        <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+    </li>
+
+</ul>
+<!-- logout button -->
+            </div>
+    </section>
+</header>
+    <!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS vriables -->
+<aside id="left-panel">
+
+    <!-- User info -->
+ 
+    <!-- end user info -->
+    <!-- NAVIGATION : This navigation is also responsive
+
+    To make this navigation dynamic please make sure to link the node
+    (the reference to the nav > ul) after page load. Or the navigation
+    will not initialize.
+    -->
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+        Please note that these links work a bit different than
+        traditional href="" links. See documentation for details.
+        -->
+
+        <ul>
+
+            <li class="active" style="margin-top:5%">
+                <a href="/bikeregistration/"><i class="fa fa-plus" aria-hidden="true"></i> <span class="menu-item-parent">New Bike Registration</span></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="aside-footer">
+        <img src="/BikeRegistration/Content/Images/logo.png" />
+    </div>
+</aside>
+<!-- END NAVIGATION -->
+    
+    <div id="main" role="main">
+        
+        
+        
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="/BikeRegistration/Scripts/jquery.blockUI.js"></script>
+<style type="text/css">
+    #serialNumModal .modal-dialog {
+        width: 90%;
+    }
+</style>
+
+<div class="row" style="margin-left:1%; background-color:white">
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4" style="margin-top:1%">
+        <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-plus"></i> New Registration</h1>
+    </div>
+</div>
+
+<div id="ribbon">
+    <ol class="breadcrumb"></ol>
+</div>
+
+
+<div id="content">
+    <div id="dialog-message" title="Registration Status">
+        <p id="reg_status">
+        </p>
+    </div>
+    <article class="col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="col col-md-12">
+                    <div class="well">
+                        <p class="text-primary">
+                            Please answer all listed questions as accurately as possible. All gathered information will be maintained by UIC Police and will assist in any efforts of identifying your property if stolen. Enter a series of 9s for any unknown information.
+                            <ol>
+                                <li>Remember to always secure your bike in well lit and well traveled areas with a hardened steel u-lock NO CABLE LOCKS.</li>
+                                <li>Secure your front as well as rear wheels to the frame when securing your bike. <a id="lockingTechnique" data-toggle="modal" href="#lockingTechniqueModal">Click here</a> to know more about locking techniques. </li>
+                            </ol>
+                            The above tips may not guarantee that your bike wont be stolen but will make it less attractive to an offender.<br/>
+                            
+                            Any questions please email Officer Canizales at <a href="mailto:Canizale@uic.edu" target="_top">Canizale@uic.edu</a>.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="modal fade" id="lockingTechniqueModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title"><label class="text-primary">Locking Techniques</label></h3>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/BikeRegistration/Content/Images/LockingTechnique.jpg" style="width:80%; height:70%" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="serialNumModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title"><label class="text-primary">Locating your serial number</label></h3>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/BikeRegistration/Content/Images/BikeSerialNum.jpg" style="width:80%; height:70%"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="jarviswidget jarviswidget-sortable" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+            <div>
+                <div class="widget-body no-padding">
+                    <form class="smart-form" id="reg_form" novalidate="novalidate">
+                        <header>
+                            <strong>New User Information</strong>
+                        </header>
+                        <fieldset>
+                            <section>
+                                <label class="label" id="lbl_fname">First Name <font color="red">*</font></label>
+                                <label class="input">
+                                    <input Required="true" id="fname" name="fname" type="text" value="" />
+                                    <label class="control-label" id="err_fname" style="display:none; color:red">First Name is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_lname">Last Name <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="lname" name="lname" type="text" value="" />
+                                    <label class="control-label" id="err_lname" style="display:none; color:red">Last Name is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_gender">Gender <font color="red">*</font></label>
+                                <input id="gender" name="gender" type="radio" value="M" />Male&nbsp;
+                                <input id="gender" name="gender" type="radio" value="F" />Female
+                                <label class="control-label" id="err_gender" style="display:none; color:red">Gender is required</label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_usertype">User Type <font color="red">*</font></label>
+                                <input id="userType" name="userType" type="radio" value="F" />Faculty/Staff&nbsp;
+                                <input id="userType" name="userType" type="radio" value="S" />Student&nbsp;
+                                <input id="userType" name="userType" type="radio" value="O" />Other&nbsp;
+                                <label class="control-label" id="err_gender" style="display:none; color:red">User Type is required</label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_dlIcardNum">Drivers license or I-Card # <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="dlIcardNum" name="dlIcardNum" type="text" value="" />
+                                    <label class="control-label" id="err_dlIcardNum" style="display:none; color:red">Drivers license or I-Card # is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_addressOne">Address 1 <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="addressOne" name="addressOne" type="text" value="" />
+                                    <label class="control-label" id="err_addressOne" style="display:none; color:red">Address 1 is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label">Address 2</label>
+                                <label class="input">
+                                    <input id="addressTwo" name="addressTwo" type="text" value="" />
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_city">City <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="city" name="city" type="text" value="" />
+                                    <label class="control-label" id="err_city" style="display:none; color:red">City is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_state">State <font color="red">*</font> </label>
+                                <label class="input">
+                                    <input id="state" name="state" type="text" value="" />
+                                    <label class="control-label" id="err_state" style="display:none; color:red">State is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_zip">Zip <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="zip" name="zip" type="text" value="" />
+                                    <label class="control-label" id="err_zip" style="display:none; color:red">Zip is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_phone">Phone <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="phone" name="phone" type="text" value="" />
+                                    <label class="control-label" id="err_phone" style="display:none; color:red">Phone is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_altPhone">Alternate Phone</label>
+                                <label class="input">
+                                    <input id="altPhone" name="altPhone" type="text" value="" />
+                                    <label class="control-label" id="err_alt_phone" style="display:none; color:red">Alternate Phone is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_email">Email Address <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="email" name="email" type="text" value="" />
+                                    <label class="control-label" id="err_email" style="display:none; color:red">Email is required</label>
+                                </label>
+                            </section>
+                        </fieldset>
+                        <header>
+                            <strong>Bike Information</strong>
+                        </header>
+                        <fieldset>
+                            <section>
+                                <label class="label" id="lbl_bikeSerialNum">Serial Number <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="bikeSerialNum" name="bikeSerialNum" type="text" value="" />
+                                    <div class="note">
+                                        <strong><a id="serialNum" data-toggle="modal" href="#serialNumModal">Click here</a> to know more about identifying serial number. <b style="color:red">Note that the serial number is important for tracking purposes. Make sure to enter a valid Serial Number</b></strong>
+                                    </div>
+                                    <label class="control-label" id="err_bikeSerialNum" style="display:none; color:red">Serial Number is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_manufacturer">Manufacturer <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="manufacturer" name="manufacturer" type="text" value="" />
+                                    <label class="control-label" id="err_manufacturer" style="display:none; color:red">Manufacturer is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_bikeModel">Model <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="bikeModel" name="bikeModel" type="text" value="" />
+                                    <label class="control-label" id="err_bikeModel" style="display:none; color:red">Bike Model is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_style">Style <font color="red">*</font></label>
+                                <input id="style" name="style" type="hidden" value="" />
+                                <label class="input">
+                                    <select id="selStyle" name="selStyle" class="form-control">
+                                        <option value="Folding">Folding</option>
+                                        <option value="Mountain">Mountain</option>
+                                        <option value="Road">Road</option>
+                                        <option value="Hybrid">Hybrid</option>
+                                        <option value="BMX">BMX</option>
+                                        <option value="Recumbent">Recumbent</option>
+                                        <option value="Beach Cruiser">Beach Cruiser</option>
+                                        <option value="Fixie(Single Gear)">Fixie(Single Gear)</option>
+                                        <option value="Fixie(Single Gear)">Fixie(Single Gear)</option>
+                                        <option value="Low Rider">Low Rider</option>
+                                        <option value="Other">Other</option>
+                                        <option value="Touring">Touring</option>
+                                    </select>
+                                    <label class="control-label" id="err_style" style="display:none; color:red">Style is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_color">Color <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="color" name="color" type="text" value="" />
+                                    <label class="control-label" id="err_color" style="display:none; color:red">Color is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_shopName">Name of shop purchased from <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="shopName" name="shopName" type="text" value="" />
+                                    <label class="control-label" id="err_shopName" style="display:none; color:red">Shop purchased from is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_approxValue">Approximate $ Value <font color="red">*</font></label>
+                                <label class="input">
+                                    <input id="approxValue" name="approxValue" type="text" value="" />
+                                    <label class="control-label" id="err_approxValue" style="display:none; color:red">Approx. Value is required</label>
+                                </label>
+                            </section>
+
+                            <section>
+                                <label class="label" id="lbl_approxValue">Photo of bike (Optional)</label>
+                                <label for="file" class="input input-file">
+                                    <div class="button"><input type="file" name="optAttach" id="optAttach" onchange="this.parentNode.nextSibling.value = this.value">Browse</div><input type="text" readonly="">
+                                </label>
+                                
+                                
+                            </section>
+
+                            <section>
+                                <label class="label">LEAVE BLANK (UIC TAG #)</label>
+                                <label class="input">
+                                    <input id="uicTag" name="uicTag" type="text" value="" />
+                                </label>
+                            </section>
+                        </fieldset>
+                        <footer style="background-color:white; margin-bottom:1%">
+                            <button type="button" class="btn btn-primary" onclick="submitRegistration()" id="btnSubmit">Submit</button>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+        </div>
+</article>
+</div>
+
+<script type="text/javascript">
+    function prepareDialog(val)
+    {
+        document.getElementById('reg_status').innerHTML = val;
+        $("#dialog-message").dialog({ autoOpen: false });
+        $("#dialog-message").dialog("open");
+
+    }
+
+    function resetFormFieldClasses()
+    {
+        $('#lbl_fname').removeClass('has-error');
+        $('#err_fname').attr('style', 'display:none');
+
+        $('#lbl_lname').removeClass('has-error');
+        $('#err_lname').attr('style', 'display:none');
+
+        $('#lbl_gender').removeClass('has-error');
+        $('#err_gender').attr('style', 'display:none');
+
+        $('#lbl_dlIcardNum').removeClass('has-error');
+        $('#err_dlIcardNum').attr('style', 'display:none');
+
+        $('#lbl_addressOne').removeClass('has-error');
+        $('#err_addressOne').attr('style', 'display:none');
+
+        $('#lbl_city').removeClass('has-error');
+        $('#err_city').attr('style', 'display:none');
+
+        $('#lbl_state').removeClass('has-error');
+        $('#err_state').attr('style', 'display:none');
+
+        $('#lbl_zip').removeClass('has-error');
+        $('#err_zip').attr('style', 'display:none');
+
+        $('#lbl_phone').removeClass('has-error');
+        $('#err_phone').attr('style', 'display:none');
+
+        $('#lbl_email').removeClass('has-error');
+        $('#err_email').attr('style', 'display:none');
+
+        $('#lbl_bikeSerialNum').removeClass('has-error');
+        $('#err_bikeSerialNum').attr('style', 'display:none');
+
+        $('#lbl_manufacturer').removeClass('has-error');
+        $('#err_manufacturer').attr('style', 'display:none');
+
+        $('#lbl_bikeModel').removeClass('has-error');
+        $('#err_bikeModel').attr('style', 'display:none');
+
+        $('#lbl_style').removeClass('has-error');
+        $('#err_style').attr('style', 'display:none');
+
+        $('#lbl_color').removeClass('has-error');
+        $('#err_color').attr('style', 'display:none');
+
+        $('#lbl_shopName').removeClass('has-error');
+        $('#err_shopName').attr('style', 'display:none');
+
+        $('#lbl_shopName').removeClass('has-error');
+        $('#err_shopName').attr('style', 'display:none');
+    }
+
+    function isFormValidated() {
+        resetFormFieldClasses();
+        var validated = true;
+
+
+        if ($('#fname').val() == '') {
+            $('#lbl_fname').addClass('has-error');
+            $('#err_fname').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#lname').val() == '') {
+            $('#lbl_lname').addClass('has-error');
+            $('#err_lname').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#gender').val() == '') {
+            $('#lbl_gender').addClass('has-error');
+            $('#err_gender').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#dlIcardNum').val() == '') {
+            $('#lbl_dlIcardNum').addClass('has-error');
+            $('#err_dlIcardNum').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#addressOne').val() == '') {
+            $('#lbl_addressOne').addClass('has-error');
+            $('#err_addressOne').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#city').val() == '') {
+            $('#lbl_city').addClass('has-error');
+            $('#err_city').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#state').val() == '') {
+            $('#lbl_state').addClass('has-error');
+            $('#err_state').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#zip').val() == '') {
+            $('#lbl_zip').addClass('has-error');
+            $('#err_zip').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#phone').val() == '') {
+            $('#lbl_phone').addClass('has-error');
+            $('#err_phone').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#email').val() == '') {
+            $('#lbl_email').addClass('has-error');
+            $('#err_email').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#bikeSerialNum').val() == '') {
+            $('#lbl_bikeSerialNum').addClass('has-error');
+            $('#err_bikeSerialNum').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#manufacturer').val() == '') {
+            $('#lbl_manufacturer').addClass('has-error');
+            $('#err_manufacturer').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#bikeModel').val() == '') {
+            $('#lbl_bikeModel').addClass('has-error');
+            $('#err_bikeModel').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#selStyle').val() == '') {
+            $('#lbl_style').addClass('has-error');
+            $('#err_style').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#color').val() == '') {
+            $('#lbl_color').addClass('has-error');
+            $('#err_color').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#shopName').val() == '') {
+            $('#lbl_shopName').addClass('has-error');
+            $('#err_shopName').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        if ($('#approxValue').val() == '') {
+            $('#lbl_approxValue').addClass('has-error');
+            $('#err_approxValue').attr('style', 'display:block; color:red');
+            validated = false;
+        }
+
+        return validated;
+    }
+
+    function submitRegistration()
+    {
+        var valid = isFormValidated();
+        if (valid) {
+            document.getElementById('style').value = document.getElementById('selStyle').value;
+            var allForms = $('#reg_form').serialize();
+
+            $.blockUI({
+                message: '<div>Please wait...</div>'
+            });
+
+            $.ajax({
+                url: "/BikeRegistration/Home/Register", type: "POST", dataType: "json",
+                data: allForms,
+                success: function (data) {
+                    $.unblockUI();
+                    if (data !== 'ERROR') {
+                        var optionalAttachment = $("#optAttach").get(0);
+                        var files = optionalAttachment.files;
+
+                        if (files.length > 0)
+                        {
+                            var fileData = new FormData();
+
+                            // Looping over all files and add it to FormData object
+                            for (var i = 0; i < files.length; i++) {
+                                fileData.append(files[i].name, files[i]);
+                            }
+
+                            fileData.append('filename', data);
+
+                            $.ajax({
+                                url: "/BikeRegistration/Home/UploadAttachment", type: "POST", contentType: false, processData: false,
+                            data: fileData,
+                            success: function (data) {
+                                if(data === 'SUCCESS')
+                                {
+                                    window.location = '/BikeRegistration/Home/Success';
+                                }
+                                else {
+                                    prepareDialog("There was an error uploading your attachment. Your registration is saved. Please contact System Adminstrator to upload the attachment");
+                                }
+                            }
+                        });
+                        } else {
+                            window.location = '/BikeRegistration/Home/Success';
+                        }
+                    } else {
+                        prepareDialog("There was an error while registering. Please try again or contact System Adminstrator");
+                    }
+                }
+            });
+        }
+    }
+</script>
+
+
+
+
+    </div>
+
+<div class="page-footer">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <span class="txt-color-white">University of Illinois at Chicago © 2018</span>
+        </div>
+    </div>
+</div>
+<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+Note: These tiles are completely responsive,
+you can add as many as you like
+-->
+<div id="shortcut">
+    <ul>
+        <li>
+            <a href="/bikeregistration/home/inbox" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+        </li>
+        <li>
+            <a href="/bikeregistration/home/calendar" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+        </li>
+        <li>
+            <a href="/bikeregistration/home/googlemap" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+        </li>
+        <li>
+            <a href="/bikeregistration/misc/invoice" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+        </li>
+        <li>
+            <a href="/bikeregistration/appviews/gallery" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+        </li>
+        <li>
+            <a href="/bikeregistration/appviews/profile" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+        </li>
+    </ul>
+</div>
+<!-- END SHORTCUT AREA -->
+
+<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+<script> if (!window.jQuery) { document.write('<script src="/BikeRegistration/scripts/libs/jquery-2.1.1.min.js"><\/script>'); } </script>
+<script> if (!window.jQuery.ui) { document.write('<script src="/BikeRegistration/scripts/libs/jquery-ui-1.10.3.min.js"><\/script>'); } </script>
+
+<!-- IMPORTANT: SmartAdmin Core -->
+<script src="/BikeRegistration/scripts/smartadmin?v=IlXkuE-oHzN__rXdZzA27QcKIq_FknT2kVth0puKyJY1"></script>
+
+
+
+<!-- Voice command : plugin -->
+<script src="/BikeRegistration/scripts/speech/voicecommand.min.js"></script>
+
+<!-- SmartChat UI : plugin -->
+<script src="/BikeRegistration/scripts/smart-chat?v=IZ5lEhh90fTUVIFmSkk1c_frn_O4ZyYewEewS7_43fw1"></script>
+
+
+<!-- DataTables : plugin -->
+<script src="/BikeRegistration/scripts/datatables?v=vGnAwRAO6PMZ4E54-rMkZ8aZBEUpb0nuXPlbhmJJBhY1"></script>
+
+
+<!-- jQGrid : plugin -->
+<script src="/BikeRegistration/scripts/jq-grid?v=L1AX-xnLavbn458ZXeThzE16tCbNkQbEayEkP5xOs6A1"></script>
+
+
+<!-- Forms : plugin -->
+<script src="/BikeRegistration/scripts/forms?v=tagOowOv9G_o7dXkvkWzD9plfcMgv9nBUvHJYqW2gv01"></script>
+
+
+<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip, Morris, Sparkline, EasyPie -->
+<script src="/BikeRegistration/scripts/charts?v=Kk5yXqT6l0l9ETfUXsg5BOLU9evbG15tqhJtGyPLCG01"></script>
+
+
+<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
+<script src="/BikeRegistration/scripts/vector-map?v=j8-En9p1I4BbLDx30_T8UMV1Q2hB6WWJ0X4qxWDWBxw1"></script>
+
+
+<!-- Full Calendar -->
+<script src="/BikeRegistration/scripts/full-calendar?v=rEqjV2sUQDaHH0-x-oBzEou5-7ftLbqaDPE9YEAmnrI1"></script>
+
+
+<!-- DO NOT REMOVE : GLOBAL FUNCTIONS! -->
+<script>
+    $(document).ready(function () {
+        pageSetUp();
+        drawBreadCrumb();
+    });
+</script>
+
+<!-- Your GOOGLE ANALYTICS CODE Below-->
+
+
+
+
+    <div class="modal fade" id="crOption" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Choose a type of Customer Request you would like to create</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="btn-group" data-toggle="buttons">
+                        <button type="button" class="btn btn-lg btn-primary" style="margin-right:10px" onclick="window.location.href = '/customerrequest/new'">Non-Billable Customer Request</button>
+                        <button type="button" class="btn btn-secondary btn-lg">Billable Customer Request</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

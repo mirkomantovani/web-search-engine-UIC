@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CS 594 - High Performance Visualization</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script type="text/javascript">
+    function UpdatePageSize () {
+        var container = document.getElementById ("all");
+        var container2 = document.getElementById ("menu");
+
+        var newHeight = container.offsetHeight - container2.offsetHeight ;
+        var newHeightString = newHeight.toString();
+
+        var newWidth = container.offsetWidth;
+        var newWidthString = newWidth.toString();
+
+        document.getElementById('otherID').setAttribute("height", newHeightString+"px;");
+        document.getElementById('otherID').setAttribute("width", newWidthString+"px;");
+
+       document.getElementById('innerID').setAttribute("height", newHeightString+"px;");
+        document.getElementById('innerID').setAttribute("width", newWidthString+"px;");
+  }      
+
+    function ChangeifiOS () {
+        var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+
+        if (iOS == true)
+          {
+            //iOS doesn't like scrolling iFrames so for now 
+            // open the iFrame pages as new pages
+
+             var anchors = document.getElementsByTagName('a');
+              for (var i = 0; i < anchors.length; i++) {
+                anchors[i].target = '_top';
+                }
+          }
+  }
+
+		window.onresize = function()
+			{
+  			UpdatePageSize();
+			}
+
+   </script>
+
+
+
+</head>
+
+<body id="all" onload="ChangeifiOS(); UpdatePageSize()" ontouchstart="" onmouseover="">
+
+<div id="menu">
+<nav>
+  <ul>
+  <li><a href="maininfo.html" target="otherName">CS 594</a></li>
+  <li><a href="syllabus.pdf" target="otherName">syllabus</a></li>
+  <li><a href="594grades.pdf" target="otherName">grades</a></li>
+  <li><a href="final.html" target="otherName">final</a></li>
+  <li><a href="http://www.evl.uic.edu/aej">andy</a></li>
+  <li><a href="http://www.evl.uic.edu">evl</a></li>
+  </ul>
+</nav>
+</div>
+
+
+
+<div class="innerpage" id="innerID">
+
+<!-- <div class="innerpage" style="-webkit-overflow-scrolling:touch;"> -->
+
+<!-- <object name="otherName" id="otherID" data="maininfo.html" type="text/html" width="0" height="0"></object> -->
+
+<object name="otherName" id="otherID" data="maininfo.html" width="0" height="0" type="text/html">
+    You should be seeing another page embedded here
+</object>
+
+</div>
+
+</body>
+
+</html>
+

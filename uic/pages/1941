@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>James Biagioni, Ph.D.</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Bits/JamesBiagioni?_T=2018-11-21" type="application/x-wiki" title="edit JamesBiagioni" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Bits/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Bits/JamesBiagioni"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css ');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- HTMLMETAkeywords --> 
+<meta name="keywords" content="James Biagioni,James P. Biagioni,TransitGenie,EasyTracker,BITS Networked Systems Laboratory,BITS Lab,Computer Science,University of Illinois at Chicago,UIC" />
+
+<!-- HTMLMETAdescription --> 
+<meta name="description" content="I received my B.S. in CS at UIC in 2006, and completed my Ph.D. in CS at the BITS Networked Systems Laboratory under Professor Jakob Eriksson in 2014." />
+
+<!-- TABLEPLUGIN_table1 --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#table1 {width:100%;}
+.twikiTable#table1 td {text-align:left;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <img alt="James Biagioni" src="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/JamesProfile_full_654px.jpg" id="bigPicture" />
+<p />
+<style type="text/css"> #caption a:link { color: #444444; text-decoration: none; border-style: none; } #caption a:visited { color: #444444; text-decoration: none; border-style: none; } #caption a:hover { color: #444444; text-decoration: none; border-style: none; } </style>
+<p />
+<div id=caption style="font-size: 14px; z-index:2; padding: 10px 20px 20px 20px ; background-color: #aaaaaa; color: #ffffff; opacity: 0.9; position: absolute; top: 340px; left: 10px; width: 260px; text-align: justify; vertical-align: text-bottom;">
+<p />
+<div style="text-transform: uppercase; font-size: 16px; font-weight: bold; padding-bottom: 15px; color: #000000;">James Biagioni, Ph.D.</div>
+I received my B.S. in CS at <a href="http://www.uic.edu/">UIC</a> in 2006, and completed my Ph.D. in CS at the <a href="http://www.cs.uic.edu/Bits/">BITS Networked Systems Laboratory</a> under <a href="http://www.cs.uic.edu/Jakob/">Professor Jakob Eriksson</a> in 2014. </div>
+<p />
+<h2><a name="News"></a> News </h2>
+In September of 2014 I joined Amazon Maps as a Software Engineer. From now on, you can find me at my permanent home on the web: <a href="http://biagioni.net/" target="_top">http://biagioni.net/</a>
+<!--
+I will be joining Amazon's Maps group as a Software Engineer starting in September 2014!
+I'm on the job market! (i.e., planning to graduate this spring) and actively seeking roles that will allow me to pursue a career as a researcher, where I can continue to work on the problem of inferring interesting and useful phenomena from sensor data, and its applications.
+-->
+<p />
+<h2><a name="Research_Interests"></a> Research Interests </h2>
+I enjoy working on problems that involve finding and extracting interesting phenomena from large collections of sensor data. More specifically, I have a keen interest in looking at how people and vehicles move through space, especially along transportation networks, and how we can leverage any latent patterns to solve practical problems, build useful applications, or learn interesting things.
+<p />
+<h2><a name="Publicity"></a> Publicity </h2> <ul>
+<li> <a href="http://www.youtube.com/watch?v=byJzKjCta3c" target="_top">Google Tech Talk on "Inferring Road Maps from GPS Traces"</a>. Google, Mar. 2013.
+</li> <li> <a href="http://www.cs.uic.edu/Main/NewsItem?audience=public&amp;ind=481" target="_top">Dean's Scholar Award for 2012-2013</a>. UIC Department of Computer Science, Apr. 2012.
+</li> <li> <a href="http://www.uic.edu/htbin/cgiwrap/bin/uicnews/articledetail.cgi?id=16328" target="_top">Spotlight on Student Research</a>. UIC News, Apr. 2012.
+</li> <li> <a href="http://matt-welsh.blogspot.com/2011/11/highlights-from-sensys-2011.html" target="_top">Highlights from SenSys 2011</a>. Volatile and Decentralized, Matt Welsh, Nov. 2011.
+</li> <li> <a href="http://www.cs.uic.edu/Main/NewsItem?audience=public&amp;ind=464" target="_top">"Best Presentation Award" at SenSys 2011</a>. UIC Department of Computer Science, Nov. 2011.
+</li> <li> <a href="http://www.engr.uic.edu/bin/view/COE/NewsCSJamesBiagioni" target="_top">"Best Presentation Award" at SenSys 2011</a>. UIC College of Engineering, Nov. 2011.
+</li> <li> <a href="http://www.uic.edu/htbin/cgiwrap/bin/uicnews/articledetail.cgi?id=15858" target="_top">People - Awards</a>. UIC News, Nov. 2011.
+</li></ul> 
+<p />
+<h2><a name="Curriculum_Vitae"></a> Curriculum Vitae </h2>
+Please download my current CV <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/james_biagioni_cv.pdf">here</a>.
+<p />
+<h2><a name="Publications"></a> Publications </h2>
+<style> .bibtex dt { display: none} </style>
+<h3><a name="2013"></a> 2013 </h3>
+<!-- BIBTEXPLUGIN BEGIN --><div class="bibtex"><dl>
+<dt>
+[<a name="BiagioniEtal13">BiagioniEtal13</a>]
+</dt>
+<dd>
+James Biagioni, A.B.M. Musa, and Jakob Eriksson.
+ Thrifty Tracking: Online GPS Tracking with Low Data Uplink Usage.
+ In <em>SIGSPATIAL GIS</em>, pages 506--509. ACM, 2013.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-gis13.pdf">paper</a>
+  ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-gis13-slides.pdf">slides</a> ] &nbsp; [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-gis13-video.mov">video</a> ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-gis13-poster.pdf">poster</a> ].
+</dd>
+<dt>
+[<a name="BiagioniKrumm13">BiagioniKrumm13</a>]
+</dt>
+<dd>
+James Biagioni and John Krumm.
+ Days of Our Lives: Assessing Day Similarity from Location Traces.
+ In <em>User Modeling, Adaptation, and Personalization</em>, volume 7899
+  of <em>Lecture Notes in Computer Science</em>, pages 89--101. Springer Berlin
+  Heidelberg, 2013.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-umap13.pdf">paper</a> ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-umap13-slides.pdf">slides</a> ].
+</dd>
+</dl></div><!-- BIBTEXPLUGIN END --><style type="text/css">@import url("https://www.cs.uic.edu/pub/TWiki/BibtexPlugin/style.css");</style>
+<p />
+<h3><a name="2012"></a> 2012 </h3>
+<!-- BIBTEXPLUGIN BEGIN --><div class="bibtex"><dl>
+<dt>
+[<a name="BiagioniEriksson12">BiagioniEriksson12</a>]
+</dt>
+<dd>
+James Biagioni and Jakob Eriksson.
+ Map Inference in the Face of Noise and Disparity.
+ In <em>SIGSPATIAL GIS</em>, pages 79--88. ACM, 2012.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-gis12.pdf">paper</a>
+  ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-gis12-slides.pdf">slides</a> ].
+</dd>
+<dt>
+[<a name="LiuEtal12">LiuEtal12</a>]
+</dt>
+<dd>
+Xuemei Liu, James Biagioni, Jakob Eriksson, Yin Wang, George Forman, and Yanmin
+  Zhu.
+ Mining Large-Scale, Sparse GPS Traces for Map Inference: Comparison
+  of Approaches.
+ In <em>KDD</em>, pages 669--677. ACM, 2012.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/liu-kdd12.pdf">paper</a> ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/liu-kdd12-slides.pdf">slides</a> ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/liu-kdd12-poster.pdf">poster</a> ].
+</dd>
+<dt>
+[<a name="BiagioniEriksson12a">BiagioniEriksson12a</a>]
+</dt>
+<dd>
+James Biagioni and Jakob Eriksson.
+ Inferring Road Maps from Global Positioning System Traces: Survey
+  and Comparative Evaluation.
+ <em>Transportation Research Record: Journal of the Transportation
+  Research Board, No. 2291</em>, pages 61--71, 2012.
+</dd>
+<dt>
+[<a name="BiagioniEriksson12b">BiagioniEriksson12b</a>]
+</dt>
+<dd>
+James Biagioni and Jakob Eriksson.
+ Inferring Road Maps from GPS Traces: Survey and Comparative
+  Evaluation.
+ In <em>91st Annual Meeting of the Transportation Research Board</em>,
+  2012.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-trb12.pdf">paper</a>
+  ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-trb12-slides.pdf">slides</a> ].
+</dd>
+</dl></div><!-- BIBTEXPLUGIN END --><style type="text/css">@import url("https://www.cs.uic.edu/pub/TWiki/BibtexPlugin/style.css");</style>
+<p />
+<h3><a name="2011"></a> 2011 </h3>
+<!-- BIBTEXPLUGIN BEGIN --><div class="bibtex"><dl>
+<dt>
+[<a name="BiagioniEtal11">BiagioniEtal11</a>]
+</dt>
+<dd>
+James Biagioni, Tomas Gerlich, Timothy Merrifield, and Jakob Eriksson.
+ EasyTracker: Automatic Transit Tracking, Mapping, and Arrival Time
+  Prediction Using Smartphones.
+ In <em>SenSys</em>, pages 68--81. ACM, 2011.
+ <b>Best presentation award.</b> [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-sensys11.pdf">paper</a> ] [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-sensys11-slides.pdf">slides</a> ].
+</dd>
+<dt>
+[<a name="GerlichEtal11">GerlichEtal11</a>]
+</dt>
+<dd>
+Tomas Gerlich, James Biagioni, Timothy Merrifield, and Jakob Eriksson.
+ Demo: Tracking Transit with EasyTracker.
+ In <em>SenSys</em>, pages 401--402. ACM, 2011.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/gerlich-sensys11-demo.pdf">paper</a> ].
+</dd>
+</dl></div><!-- BIBTEXPLUGIN END --><style type="text/css">@import url("https://www.cs.uic.edu/pub/TWiki/BibtexPlugin/style.css");</style>
+<p />
+<h3><a name="2010"></a> 2010 </h3>
+<!-- BIBTEXPLUGIN BEGIN --><div class="bibtex"><dl>
+<dt>
+[<a name="ThiagarajanEtal10">ThiagarajanEtal10</a>]
+</dt>
+<dd>
+Arvind Thiagarajan, James Biagioni, Tomas Gerlich, and Jakob Eriksson.
+ Cooperative Transit Tracking using Smart-phones.
+ In <em>SenSys</em>, pages 85--98. ACM, 2010.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/thiagarajan-sensys10.pdf">paper</a> ].
+</dd>
+</dl></div><!-- BIBTEXPLUGIN END --><style type="text/css">@import url("https://www.cs.uic.edu/pub/TWiki/BibtexPlugin/style.css");</style>
+<p />
+<h3><a name="2009"></a> 2009 </h3>
+<!-- BIBTEXPLUGIN BEGIN --><div class="bibtex"><dl>
+<dt>
+[<a name="BiagioniEtal09">BiagioniEtal09</a>]
+</dt>
+<dd>
+James Biagioni, Adrian Agresta, Tomas Gerlich, and Jakob Eriksson.
+ Demo Abstract: TransitGenie - A Context-Aware, Real-Time Transit
+  Navigator.
+ In <em>SenSys</em>, pages 329--330. ACM, 2009.
+ [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-sensys09-demo.pdf">paper</a> ].
+</dd>
+<dt>
+[<a name="BiagioniEtal09a">BiagioniEtal09a</a>]
+</dt>
+<dd>
+James Biagioni, Piotr Szczurek, Peter Nelson, and Abolfazl Mohammadian.
+ Tour-Based Mode Choice Modeling: Using an Ensemble of (Un-)
+  Conditional Data-Mining Classifiers.
+ In <em>88th Annual Meeting of the Transportation Research Board</em>,
+  2009.
+ 16 pages. [
+  <a href="http://www.cs.uic.edu/pub/Bits/JamesBiagioni/biagioni-trb09.pdf">paper</a>
+  ].
+</dd>
+</dl></div><!-- BIBTEXPLUGIN END --><style type="text/css">@import url("https://www.cs.uic.edu/pub/TWiki/BibtexPlugin/style.css");</style>
+<p />
+<p />
+<h2><a name="Contact_Information"></a> Contact Information </h2>
+<table width="100%" cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/Bits/JamesBiagioni?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Address</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/Bits/JamesBiagioni?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Phone</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLastCol"> <a rel="nofollow" href="/bin/view/Bits/JamesBiagioni?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Internet</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> University of Illinois at Chicago<br />Department of Computer Science<br />Room 1120 SEO (M/C 152)<br />Chicago, IL 60607 </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> Lab: (312) 413-2103 </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> Email: <a href="mailto&#58;jbiagi1&#64;uic&#46;edu">jbiagi1&#64;uic.edu</a> </td>
+		</tr></table>
+<p />
+<!-- <ul>
+<li> Set PAGETITLE = James Biagioni, Ph.D.
+</li></ul> 
+-->
+<!--  <ul>
+<li> Set NOAUTOLINK = on
+</li></ul> 
+-->
+<p />
+<p />
+<p />
+<p />
+<!--Start of Woopra Code -->
+<script type="text/javascript"> 
+function woopraReady(tracker){     
+	tracker.setDomain('cs.uic.edu');     
+	tracker.setIdleTimeout(300000);     
+	tracker.track();     
+	return false; 
+} 
+(function() {     
+	var wsc = document.createElement('script');     
+	wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';     
+	wsc.type = 'text/javascript';     
+	wsc.async = true;     
+	var ssc = document.getElementsByTagName('script')[0];     	ssc.parentNode.insertBefore(wsc, ssc); 
+})(); 
+</script> 
+<!-- End of Woopra Code --> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"> <ul>
+<li> <a href="/bin/view/Bits/WebHome" class="twikiCurrentWebHomeLink twikiLink">BITS Front Page</a> 
+</li> <li> <a href="/bin/view/Bits/Software" class="twikiLink">Software and Traces</a>
+</li></ul> 
+<p />
+<strong>Internal</strong> <ul>
+<li> <a href="/bin/view/Bits/Documentation" class="twikiLink">Documentation</a>
+</li> <li> <a href="/bin/view/Bits/Internal" class="twikiLink">Members Only</a>
+</li> <li> <a href="/bin/view/Bits/Templates" class="twikiLink">Templates</a>
+</li></ul> 
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Bits/JamesBiagioni">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p />
+<!-- <ul>
+<li> <strong><a href="/bin/view/Bits/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Bits Web</a></strong>
+</li> <li> <a href="/bin/view/Bits/WebCreateNewTopic?topicparent=JamesBiagioni" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Bits/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Bits/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Bits/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Bits/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Bits/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+<p />
+<hr />
+-->
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

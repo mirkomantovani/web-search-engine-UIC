@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Illinois Identity Provider Selection</title> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="Home Organisation, Discovery Service, WAYF, Shibboleth, Login, AAI">
+	<meta name="description" content="Choose your home organisation to authenticate">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" href="/discovery/DS/styles.css" type="text/css">
+	<link rel="stylesheet" href="/discovery/DS/ImprovedDropDown.css" type="text/css">
+	<script type="text/javascript" src="/wayf/js/jquery.js"></script>
+	<!--<script type="text/javascript" src="/wayf/js/improvedDropDown.js"></script>-->
+	<script type="text/javascript">
+	<!--
+	
+	// Prevent that WAYF is loaded in an IFRAME
+	function preventIframeEmbedding(){
+		if (top != self) {
+			top.location = self.location;
+		}
+	}
+	
+	// Set focus to submit button or drop down list
+	function setFocus(){
+		// Skip this if we cannot access the form elements
+		if (
+			!document.IdPList || 
+			!document.IdPList.Select
+			){
+			return;
+		}
+		
+		if (
+				document.IdPList.user_idp && 
+				document.IdPList.user_idp.selectedIndex == 0
+			){
+			// Set focus to select
+			document.IdPList.user_idp.focus();
+		} else {
+			// Set focus to submit button
+			document.IdPList.Select.focus();
+		}
+	}
+	
+	// Perform input validation on WAYF form
+	function checkForm(){
+		if(
+			document.IdPList.user_idp && 
+			document.IdPList.user_idp.selectedIndex == 0
+		){
+			alert(unescape('You must select an organisation.'));
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	// Init WAYF
+	function init(){
+		preventIframeEmbedding();
+		
+		setFocus();
+		
+		if (false){
+			
+			var searchText = 'Enter the name of the organisation you are affiliated with...';
+			$("#userIdPSelection:enabled option[value='-']").text(searchText);
+			
+			// Convert select element into improved drop down list
+			$("#userIdPSelection:enabled").improveDropDown({
+				iconPath:'https://discovery.illinois.edu/discovery/images/drop_icon.png',
+				noMatchesText: 'No organisation found for this search text',
+				noItemsText: 'No organisation available',
+				disableRemoteLogos: true			});
+		}
+	}
+	
+	// Call init function when DOM is ready
+	$(document).ready(init);
+	
+	-->
+	</script>
+</head>
+
+<body>
+
+<div id="pageWrapper">
+	
+	<header id="customheader" role="banner">
+		<img id="Image1" src="/wayf/images/illinois.gif" alt="Illinois logo"
+		style="border-width:0px;" />
+	</header>
+
+	<main id="maincontent" role="main">
+<!-- Body: Start -->
+
+<!-- Identity Provider Selection: Start -->
+        <h1>Select your Illinois Campus</h1>
+
+    <p class="text">
+
+    This service, <span class="serviceName">Web Services - Illinois.edu</span>,     supports multiple groups associated with the University of Illinois. Select your campus below to go to the appropriate login screen.
+    </p>
+
+    <div class="list">
+
+<form id="IdPList" name="IdPList" method="post" onSubmit="return checkForm()" action="/discovery/DS?entityID=https%3A%2F%2Fillinois.edu%2Fshibboleth&amp;return=https%3A%2F%2Fforms.uofi.uic.edu%2FShibboleth.sso%2FLogin%3FSAMLDS%3D1%26target%3Dss%253Amem%253A52772a2466eb23300482454d63c8d51a247a90f48bb43a072469526db49ea42e">
+	<fieldset class="no-border">
+        <legend><h2>Select your campus:</h2></legend>
+
+	<div id="userIdPSelection"> 
+	
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://shibboleth.uic.edu/shibboleth" id="https://shibboleth.uic.edu/shibboleth" data="uic.edu University of Illinois at Chicago" ><label for="https://shibboleth.uic.edu/shibboleth">University of Illinois at Chicago</label></p>
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://uisshibb1.uis.edu/idp/shibboleth" id="https://uisshibb1.uis.edu/idp/shibboleth" data="uis.edu University of Illinois at Springfield" ><label for="https://uisshibb1.uis.edu/idp/shibboleth">University of Illinois at Springfield</label></p>
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="urn:mace:incommon:uiuc.edu" id="urn:mace:incommon:uiuc.edu" data="uiuc.edu University of Illinois at Urbana-Champaign" ><label for="urn:mace:incommon:uiuc.edu">University of Illinois at Urbana-Champaign</label></p>	</div>
+	</fieldset>
+	<input type="submit" name="Select" accesskey="s" value="Select"> 
+				<!-- Value permanent must be a number which is equivalent to the days the cookie should be valid -->
+		<input type="checkbox" name="permanent" id="rememberPermanent" value="3650">
+		<label for="rememberPermanent">Remember my choice</label>
+		</form>
+	</div>
+
+<!-- Identity Provider Selection: End -->
+	
+</main>
+
+	<!-- Body: End -->
+	<footer id="footer" role="contentinfo">
+        <p class="text">
+Need assistance? Send email to <a href="mailto:consult@illinois.edu">consult@illinois.edu</a> with a description.
+        </p>
+	</footer><!-- #footer -->
+
+</div><!-- #pageWrapper -->
+
+</body>
+</html>
