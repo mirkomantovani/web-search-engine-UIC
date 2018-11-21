@@ -9,6 +9,8 @@ class LinkExtractor(HTMLParser):
         super().__init__()
         self.base_url = base_url
         self.page_url = page_url
+        self.exclude = (".docx", ".doc",  ".avi", ".mp4", ".jpg", ".jpeg", ".png", ".gif", ".GIF", ".pdf",
+                        ".gz", ".rar", ".tar", ".tgz", ".zip", ".exe")
         self.restrict_to_domain = restrict_to_domain
         self.domain = domain
         self.links = set()
@@ -19,14 +21,15 @@ class LinkExtractor(HTMLParser):
             for (attribute, value) in attrs:
                 if attribute == 'href':
                     url = parse.urljoin(self.base_url, value)
-                    # Stripping query string in link
-                    url = url.split('#')[0]
-                    url = url.split('?', maxsplit=1)[0]
-                    # Stripping trailing slashes
-                    url = url.rstrip('/')
-                    url = url.strip()
-                    if url and self.restrict_to_domain and self.is_in_domain(url):
-                        self.links.add(url)
+                    if not url.endswith(self.exclude):
+                        # Stripping query string in link
+                        url = url.split('#')[0]
+                        url = url.split('?', maxsplit=1)[0]
+                        # Stripping trailing slashes
+                        url = url.rstrip('/')
+                        url = url.strip()
+                        if url and self.restrict_to_domain and self.is_in_domain(url):
+                            self.links.add(url)
 
     def page_links(self):
         return self.links
