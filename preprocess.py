@@ -29,7 +29,7 @@ from nltk.stem import PorterStemmer
 
 class CustomTokenizer:
 
-    def __init__(self, n_pages=109, path_stopwords='stopwords.txt'):
+    def __init__(self, n_pages=10000, path_stopwords='stopwords.txt'):
         self.path_stopwords = path_stopwords
         self.inverted_index = {}
         self.FOLDER = 'uic'
