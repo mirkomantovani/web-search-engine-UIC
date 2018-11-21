@@ -68,7 +68,7 @@ class CustomTokenizer:
         doc_text = self.get_text_selectolax(doc_text)
         # print(code)
         if doc_text is None:
-            print(str(code)+' is none')
+            # print(str(code)+' is none')
             doc_text = 'none'
         tokens = self.tokenize(doc_text)
         # print(list(tokens))

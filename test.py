@@ -14,7 +14,7 @@ from selectolax.parser import HTMLParser
 import time
 from urllib.request import urlopen
 
-start_crawling()
+# start_crawling()
 
 import easygui
 
