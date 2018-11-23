@@ -16,6 +16,7 @@ start = time.time()
 print('Preprocessing '+str(N_PAGES)+' pages')
 tokenizer = CustomTokenizer(N_PAGES)
 web_g = tokenizer.preprocess_documents()
+docs_tokens = tokenizer.get_docs_tokens()
 
 prep = time.time()
 print('Total preprocessing time:')
@@ -53,6 +54,10 @@ with open('inverted_index_dict.pickle', 'wb') as handle:
 
 # storing doc lengths
 with open('doc_lengths_dict.pickle', 'wb') as handle:
+    pickle.dump(docs_length, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+# storing docs tokens for faster pseudo-relevance feedback
+with open('docs_tokens_dict.pickle', 'wb') as handle:
     pickle.dump(docs_length, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 end = time.time()

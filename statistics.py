@@ -18,11 +18,14 @@ class TfidfRanker:
         self.idf = self.compute_idf()
         self.use_cosine_sim = use_cosine_sim
         self.doc_length = docs_length
+        self.compute_all_tf_idf()
         # for code in range(self.n_pages):
         #     self.doc_length[code] = self.compute_doc_length(code, docs_tokens[code])
 
     def tf_idf(self, word, doc):
-        return self.inverted_index[word][doc] * self.idf[word]
+        # putting tfidf into inverted index, i should do it before storing inverted index!
+        self.inverted_index[word][doc] = self.inverted_index[word][doc] * self.idf[word]
+        return self.inverted_index[word][doc]
 
     def compute_idf(self):
         df = {}
@@ -87,3 +90,8 @@ class TfidfRanker:
         else:
             return rank_docs(self.cosine_similarities(query_tokens))
 
+    '''This method precomputes all tf idf and stores them in inverted index [word] [doc]'''
+    def compute_all_tf_idf(self):
+        for word in self.inverted_index:
+            for doc_key in self.inverted_index[word]:
+                self.inverted_index[word][doc_key] = self.tf_idf(word, doc_key)
