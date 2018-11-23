@@ -86,6 +86,7 @@ class TfidfRanker:
                                 for key in cosine_similarity}
         return cosine_page_rank_sim
 
+    '''Returns list of tuples (doc_code, similarirty) in descensding order of sim'''
     def retrieve_most_relevant(self, query_tokens, use_page_rank=False):
         if use_page_rank:
             return rank_docs(self.cosine_page_rank(query_tokens))

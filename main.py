@@ -30,7 +30,6 @@ def load_files():
         docs_length = pickle.load(handle)
     with open('page_ranks_dict.pickle', 'rb') as handle:
         page_ranks = pickle.load(handle)
-
     with open('docs_tokens_dict.pickle', 'rb') as handle:
         docs_tokens = pickle.load(handle)
 
