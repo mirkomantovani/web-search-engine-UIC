@@ -11,8 +11,10 @@ runs page rank, computes docs lengths, it then stores inverted index, page rank 
 '''
 PAGE_RANK_MAX_ITER = 100
 N_PAGES = 10000
+RESULTS_PER_PAGE = 10
 
 USE_PAGE_RANK = True
+USE_PSEUDO_RELEVANCE_FEEDBACK = True
 
 
 def load_files():
@@ -39,15 +41,24 @@ def new_query():
     if query is None:
         exit()
     print(query)
-    print(tokenizer.tokenize(query))
-    # i should store inverted index with already tfidf in it
-    best_ranked = tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), True)[:50]
-    pseudo_relevance_feedback = CustomPseudoRelevanceFeedback(inverted_index, best_ranked, docs_tokens)
-    context_words = pseudo_relevance_feedback.run_pseudo_relevance()
-    print(context_words)
-    choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), True)[:40],
+    query_tokens = tokenizer.tokenize(query)
+    print(query_tokens)
+    best_ranked = tf_idf_ranker.retrieve_most_relevant(query_tokens, USE_PAGE_RANK)[:50]
+
+    if USE_PSEUDO_RELEVANCE_FEEDBACK:
+        handle_pseudo_relevance_query(query_tokens, best_ranked)
+
+    choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), True)[:RESULTS_PER_PAGE],
                                        url_from_code)
     print(choice)
+
+
+def handle_pseudo_relevance_query(query_tokens, best_ranked):
+    pseudo_relevance_feedback = CustomPseudoRelevanceFeedback(inverted_index, best_ranked, docs_tokens)
+    # context_words = pseudo_relevance_feedback.run_pseudo_relevance()
+    pseudo_relevance_feedback.run_pseudo_relevance()
+    query_expansion_tokens = pseudo_relevance_feedback.get_query_expansion_tokens(query_tokens)
+    print(query_expansion_tokens)
 
 start = time.time()
 

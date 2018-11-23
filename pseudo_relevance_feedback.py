@@ -1,5 +1,9 @@
 import operator
 
+NUMBER_DOCS_EXPANSION = 30
+NUMBER_TOP_TOKENS = 10
+NUMBER_EXPANSION_TOKENS = 10
+
 
 def convert_list_tuples_to_dict(list_tuples):
     new_dict = {}
@@ -8,13 +12,12 @@ def convert_list_tuples_to_dict(list_tuples):
     return new_dict
 
 
-
 class CustomPseudoRelevanceFeedback:
 
     def __init__(self, inverted_index, top_docs, docs_tokens):
-        self.top_words_number = 10
-        self.expansion_tokens_number = 10
-        self.top_docs = top_docs
+        self.top_words_number = NUMBER_TOP_TOKENS
+        self.expansion_tokens_number = NUMBER_EXPANSION_TOKENS
+        self.top_docs = top_docs[:NUMBER_DOCS_EXPANSION]
         '''top_docs_list are the list of tuples (doc_code, sim) retrieved by the query'''
         self.inverted_index = inverted_index
         '''Inverted index is already with tf idf inside'''
@@ -43,8 +46,10 @@ class CustomPseudoRelevanceFeedback:
         return convert_list_tuples_to_dict(ranked_tokens[:self.top_words_number])
         # return ranked_tokens[:20]
 
-    def get_query_expansion_tokens(self, initial_query_tokens):
-        expansion_tokens = [token[0] for token in self.context_words[:self.expansion_tokens_number]]
+    def get_query_expansion_tokens(self, initial_query_tokens, expansion_length=-1):
+        if expansion_length <= 0:
+            expansion_length = self.expansion_tokens_number
+        expansion_tokens = [token[0] for token in self.context_words[:expansion_length]]
         for query_token in initial_query_tokens:
             if query_token in expansion_tokens:
                 expansion_tokens.remove(query_token)
