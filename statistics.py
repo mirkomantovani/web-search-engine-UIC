@@ -41,12 +41,14 @@ class TfidfRanker:
         # dictionary in which I'll sum up the similarities of each word of the query with each document in
         # which the word is present, key is the doc number,
         # value is the similarity between query and document
+        # UPDATED: I started to store tf idf in inverted index, no need of recompute them and wrong to do it now
+        # it was like this before: similarity[doc] = similarity.get(doc, 0) + self.tf_idf(word, doc) * wq
         similarity = {}
         for word in query:
             wq = self.idf.get(word, 0)
             if wq != 0:
                 for doc in self.inverted_index[word].keys():
-                    similarity[doc] = similarity.get(doc, 0) + self.tf_idf(word, doc) * wq
+                    similarity[doc] = similarity.get(doc, 0) + self.inverted_index[word][doc] * wq
         return similarity
 
     def compute_lengths(self, docs_tokens):
@@ -86,7 +88,7 @@ class TfidfRanker:
                                 for key in cosine_similarity}
         return cosine_page_rank_sim
 
-    '''Returns list of tuples (doc_code, similarirty) in descensding order of sim'''
+    '''Returns list of tuples (doc_code, similarity) in descending order of sim'''
     def retrieve_most_relevant(self, query_tokens, use_page_rank=False):
         if use_page_rank:
             return rank_docs(self.cosine_page_rank(query_tokens))

@@ -8,10 +8,12 @@ def convert_list_tuples_to_dict(list_tuples):
     return new_dict
 
 
+
 class CustomPseudoRelevanceFeedback:
 
     def __init__(self, inverted_index, top_docs, docs_tokens):
-        self.top_words_number = 20
+        self.top_words_number = 10
+        self.expansion_tokens_number = 10
         self.top_docs = top_docs
         '''top_docs_list are the list of tuples (doc_code, sim) retrieved by the query'''
         self.inverted_index = inverted_index
@@ -19,6 +21,7 @@ class CustomPseudoRelevanceFeedback:
         self.docs_tokens = docs_tokens
         '''the documents tokens (dict) to faster extract top tfidf words'''
         self.docs_highest_tfidf = {}
+        self.context_words = {}
 
     '''Runs the custom pseudo relevance feedback algorithm and returns an ordered list of tuples (token, 
     cumulativeTfidf) '''
@@ -35,10 +38,17 @@ class CustomPseudoRelevanceFeedback:
         for token in self.docs_tokens[doc_code]:
             ranked_tokens[token] = self.inverted_index[token][doc_code]
 
-        ranked_tokens = sorted(ranked_tokens.items(), key=operator.itemgetter(1))
+        ranked_tokens = sorted(ranked_tokens.items(), key=operator.itemgetter(1), reverse=True)
         # get top 20 for instance and return them
         return convert_list_tuples_to_dict(ranked_tokens[:self.top_words_number])
         # return ranked_tokens[:20]
+
+    def get_query_expansion_tokens(self, initial_query_tokens):
+        expansion_tokens = [token[0] for token in self.context_words[:self.expansion_tokens_number]]
+        for query_token in initial_query_tokens:
+            if query_token in expansion_tokens:
+                expansion_tokens.remove(query_token)
+        return expansion_tokens
 
     def get_context_words(self):
         unique_tokens = {}
@@ -50,9 +60,10 @@ class CustomPseudoRelevanceFeedback:
                     unique_tokens[token] = self.docs_highest_tfidf[doc_key][token]
 
         # ordering unique tokens based on cumulative tfidfs
-        unique_tokens = sorted(unique_tokens.items(), key=operator.itemgetter(1))
+        unique_tokens = sorted(unique_tokens.items(), key=operator.itemgetter(1), reverse=True)
         # probably i would wanna take into account also how many docs contributed to the final count but not too much
         #  because the most frequent words will always be the same (student etc.)
+        self.context_words = unique_tokens
         return unique_tokens
 
 
