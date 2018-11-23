@@ -55,7 +55,7 @@ with open('doc_lengths_dict.pickle', 'wb') as handle:
 
 # storing docs tokens for faster pseudo-relevance feedback
 with open('docs_tokens_dict.pickle', 'wb') as handle:
-    pickle.dump(docs_length, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    pickle.dump(docs_tokens, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 end = time.time()
 

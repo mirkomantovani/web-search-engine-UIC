@@ -20,11 +20,13 @@ class CustomPseudoRelevanceFeedback:
         '''the documents tokens (dict) to faster extract top tfidf words'''
         self.docs_highest_tfidf = {}
 
+    '''Runs the custom pseudo relevance feedback algorithm and returns an ordered list of tuples (token, 
+    cumulativeTfidf) '''
     def run_pseudo_relevance(self):
         for doc_code in self.top_docs:
             # doc_code[0] is the doc code
             self.docs_highest_tfidf[doc_code[0]] = self.extract_highest_tfidf_words(doc_code[0])
-        self.get_context_words()
+        return self.get_context_words()
 
     '''Extracts the words with highest tfidf in a doc with code doc_code and returns a dict of the
             self.top_words_number words '''
@@ -46,9 +48,11 @@ class CustomPseudoRelevanceFeedback:
                     unique_tokens[token] = unique_tokens[token] + self.docs_highest_tfidf[doc_key][token]
                 else:
                     unique_tokens[token] = self.docs_highest_tfidf[doc_key][token]
-        # order them
-        #     probably i would wanna take into account also how many docs contributed to the final count but not too much
-        #     because the most frequent words will always be the same (student etc.)
+
+        # ordering unique tokens based on cumulative tfidfs
+        unique_tokens = sorted(unique_tokens.items(), key=operator.itemgetter(1))
+        # probably i would wanna take into account also how many docs contributed to the final count but not too much
+        #  because the most frequent words will always be the same (student etc.)
         return unique_tokens
 
 

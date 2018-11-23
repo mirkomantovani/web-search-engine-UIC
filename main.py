@@ -3,7 +3,7 @@ from statistics import TfidfRanker
 import CustomGUI as gui
 import pickle
 import time
-import pseudo_relevance_feedback
+from pseudo_relevance_feedback import CustomPseudoRelevanceFeedback
 
 '''
 This script opens the locally downloaded pages from the crawler, preprocess them, builds inverted index and
@@ -42,7 +42,9 @@ def new_query():
     print(tokenizer.tokenize(query))
     # i should store inverted index with already tfidf in it
     best_ranked = tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), True)[:100]
-    # tfidf
+    pseudo_relevance_feedback = CustomPseudoRelevanceFeedback(inverted_index, best_ranked, docs_tokens)
+    context_words = pseudo_relevance_feedback.run_pseudo_relevance()
+    print(context_words)
     choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), True)[:10],
                                        url_from_code)
     print(choice)
@@ -60,6 +62,7 @@ e = time.time()
 print('Total preprocessing time:')
 print(str(e-end)+' seconds')
 
+# print(docs_tokens)
 
 while 1:
     new_query()
