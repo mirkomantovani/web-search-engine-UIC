@@ -11,14 +11,16 @@ class TfidfRanker:
 
     page_rank_multiplier = 20
 
-    def __init__(self, inverted_index, n_pages, page_ranks, docs_length={}, use_cosine_sim=True):
+    def __init__(self, inverted_index, n_pages, page_ranks, docs_length={}, inverted_already_tf_idf=False,
+                 use_cosine_sim=True):
         self.inverted_index = inverted_index
         self.n_pages = n_pages
         self.page_ranks = page_ranks
         self.idf = self.compute_idf()
         self.use_cosine_sim = use_cosine_sim
         self.doc_length = docs_length
-        self.compute_all_tf_idf()
+        if not inverted_already_tf_idf:
+            self.compute_all_tf_idf()
         # for code in range(self.n_pages):
         #     self.doc_length[code] = self.compute_doc_length(code, docs_tokens[code])
 

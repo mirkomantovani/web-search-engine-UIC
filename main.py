@@ -53,12 +53,13 @@ start = time.time()
 load_files()
 
 end = time.time()
-print(end-time)
+print(str(end-start)+' seconds')
 tokenizer = CustomTokenizer(N_PAGES)
-tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length)
+tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
 
 e = time.time()
-print(e-end)
+print('Total preprocessing time:')
+print(str(e-end)+' seconds')
 
 
 while 1:

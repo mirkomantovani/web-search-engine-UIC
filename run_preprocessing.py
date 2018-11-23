@@ -31,17 +31,14 @@ pr = time.time()
 print('Total page rank running time:')
 print(str(pr-prep)+' seconds')
 
-# print(page_ranks)
-print('Building inverted index')
 inverted_index = tokenizer.get_inverted_index()
 
-inv = time.time()
-print('Total inverted index building time:')
-print(str(inv-pr)+' seconds')
 
 print('Computing docs lengths')
 tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks)
 docs_length = tf_idf_ranker.compute_lengths(tokenizer.get_docs_tokens())
+# Taking the new inverted index with tf idf inside
+inverted_index = tf_idf_ranker.inverted_index
 
 print('Storing files')
 # storing page ranks
