@@ -1,5 +1,5 @@
 from preprocess import CustomTokenizer
-from statistics import TfidfRanker
+from statistics import TfidfRanker, add_page_rank_scores
 import CustomGUI as gui
 import pickle
 import time
@@ -12,8 +12,10 @@ runs page rank, computes docs lengths, it then stores inverted index, page rank 
 PAGE_RANK_MAX_ITER = 100
 N_PAGES = 10000
 RESULTS_PER_PAGE = 10
+MAX_RESULTS_TO_CONSIDER = 100
 
 USE_PAGE_RANK = True
+USE_PAGE_RANK_EARLY = False  # I decided not to let the user choose this mode
 USE_PSEUDO_RELEVANCE_FEEDBACK = True
 
 
@@ -43,22 +45,47 @@ def new_query():
     print(query)
     query_tokens = tokenizer.tokenize(query)
     print(query_tokens)
-    best_ranked = tf_idf_ranker.retrieve_most_relevant(query_tokens, USE_PAGE_RANK)[:50]
+
+    best_ranked = tf_idf_ranker.retrieve_most_relevant(query_tokens, USE_PAGE_RANK_EARLY)[:MAX_RESULTS_TO_CONSIDER]
 
     if USE_PSEUDO_RELEVANCE_FEEDBACK:
         handle_pseudo_relevance_query(query_tokens, best_ranked)
+    else:
+        handle_normal_query(query_tokens, best_ranked)
 
-    choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(tokenizer.tokenize(query), True)[:RESULTS_PER_PAGE],
-                                       url_from_code)
+    choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(query_tokens)
+                                       [:RESULTS_PER_PAGE], url_from_code)
     print(choice)
 
 
+def handle_normal_query(query_tokens, best_ranked):
+    # still have to apply page rank if user chose it
+    if USE_PAGE_RANK:
+        best_ranked = add_page_rank_scores(best_ranked, page_ranks)
+    handle_show_query(best_ranked, query_tokens, RESULTS_PER_PAGE)
+    choice = gui.display_query_results(best_ranked[:RESULTS_PER_PAGE], url_from_code, query_tokens)
+
+
 def handle_pseudo_relevance_query(query_tokens, best_ranked):
+    # remember to apply page rank to expanded query
     pseudo_relevance_feedback = CustomPseudoRelevanceFeedback(inverted_index, best_ranked, docs_tokens)
     # context_words = pseudo_relevance_feedback.run_pseudo_relevance()
     pseudo_relevance_feedback.run_pseudo_relevance()
     query_expansion_tokens = pseudo_relevance_feedback.get_query_expansion_tokens(query_tokens)
     print(query_expansion_tokens)
+
+
+def handle_show_query(best_ranked, query_tokens, n):
+    choice = gui.display_query_results(best_ranked[:n], url_from_code, query_tokens)
+
+    if choice == 'Show more results':
+        pass
+    else:
+        if choice is None:
+            pass
+        else:
+            pass
+
 
 start = time.time()
 
@@ -75,5 +102,11 @@ print(str(e-end)+' seconds')
 
 # print(docs_tokens)
 
+# def start_engine():
+    # setup_preferences()
+    # main_menu()
+
 while 1:
+    # start_engine()
+    # main_menu()
     new_query()

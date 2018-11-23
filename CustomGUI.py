@@ -12,9 +12,9 @@ def ask_query():
     return response
 
 
-def display_query_results(docs_list, url_from_code):
+def display_query_results(docs_list, url_from_code, query_tokens):
     # url_from_code = Crawler.get_url_from_code()
-    msg = "These are the results of your query:"
+    msg = "Preprocessed query: "+query_tokens+"\nThese are the results of your query:"
     title = "Query results"
     # print(url_from_code)
     url_list = [str(url_from_code[code[0]])+' '+str(code[1]) for code in docs_list]
