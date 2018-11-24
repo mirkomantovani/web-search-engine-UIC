@@ -125,13 +125,15 @@ def main_menu():
 
 
 def execute_function(main_menu_choice):
+    # print(main_menu_choice)
     switcher = {
-        'Setup search options': start_engine,
+        'Setup search options': on_start_menu,
         'New query': new_query,
         'Exit UIC web search engine': exit_program,
     }
     # Get the function from switcher dictionary
     func = switcher.get(main_menu_choice, lambda: "nothing")
+    # print(func)
     return func()
 
 
@@ -139,15 +141,27 @@ def exit_program():
     exit()
 
 
-def start_engine():
+def on_start_menu():
     setup_preferences()
     main_menu()
 
 
-load_files()
+def start_engine():
+    global tokenizer, tf_idf_ranker
 
-tokenizer = CustomTokenizer(N_PAGES)
-tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
+    load_files()
+    tokenizer = CustomTokenizer(N_PAGES)
+    tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
+
+    on_start_menu()
+
+
+start_engine()
+
+# load_files()
+#
+# tokenizer = CustomTokenizer(N_PAGES)
+# tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
 
 # print(docs_tokens)
 
