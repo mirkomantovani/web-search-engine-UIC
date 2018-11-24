@@ -1,5 +1,5 @@
 from preprocess import CustomTokenizer
-from statistics import TfidfRanker, add_page_rank_scores
+from statistics import TfidfRanker, add_page_rank_scores_and_reorder
 import CustomGUI as gui
 import pickle
 import time
@@ -14,7 +14,7 @@ N_PAGES = 10000
 RESULTS_PER_PAGE = 10
 MAX_RESULTS_TO_CONSIDER = 100
 
-USE_PAGE_RANK = True
+USE_PAGE_RANK = False
 USE_PAGE_RANK_EARLY = False  # I decided not to let the user choose this mode
 USE_PSEUDO_RELEVANCE_FEEDBACK = True
 
@@ -53,17 +53,17 @@ def new_query():
     else:
         handle_normal_query(query_tokens, best_ranked)
 
-    choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(query_tokens)
-                                       [:RESULTS_PER_PAGE], url_from_code)
-    print(choice)
+    # choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(query_tokens)
+    #                                    [:RESULTS_PER_PAGE], url_from_code)
+    # print(choice)
 
 
 def handle_normal_query(query_tokens, best_ranked):
     # still have to apply page rank if user chose it
     if USE_PAGE_RANK:
-        best_ranked = add_page_rank_scores(best_ranked, page_ranks)
+        best_ranked = add_page_rank_scores_and_reorder(best_ranked, page_ranks)
     handle_show_query(best_ranked, query_tokens, RESULTS_PER_PAGE)
-    choice = gui.display_query_results(best_ranked[:RESULTS_PER_PAGE], url_from_code, query_tokens)
+    # choice = gui.display_query_results(best_ranked[:RESULTS_PER_PAGE], url_from_code, query_tokens)
 
 
 def handle_pseudo_relevance_query(query_tokens, best_ranked):
@@ -72,6 +72,11 @@ def handle_pseudo_relevance_query(query_tokens, best_ranked):
     # context_words = pseudo_relevance_feedback.run_pseudo_relevance()
     pseudo_relevance_feedback.run_pseudo_relevance()
     query_expansion_tokens = pseudo_relevance_feedback.get_query_expansion_tokens(query_tokens)
+
+    best_ranked_expanded = tf_idf_ranker.retrieve_most_relevant_expanded(query_tokens,
+                                                                         query_expansion_tokens)[:MAX_RESULTS_TO_CONSIDER]
+    handle_show_query_expanded(best_ranked_expanded, query_tokens, query_expansion_tokens, RESULTS_PER_PAGE)
+
     print(query_expansion_tokens)
 
 
@@ -79,12 +84,24 @@ def handle_show_query(best_ranked, query_tokens, n):
     choice = gui.display_query_results(best_ranked[:n], url_from_code, query_tokens)
 
     if choice == 'Show more results':
-        pass
+        handle_show_query(best_ranked, query_tokens, n + RESULTS_PER_PAGE)
     else:
         if choice is None:
             pass
         else:
+            print(choice)
+
+
+def handle_show_query_expanded(best_ranked, query_tokens, query_expansion_tokens, n):
+    choice = gui.display_query_results_expanded(best_ranked[:n], url_from_code, query_tokens, query_expansion_tokens)
+
+    if choice == 'Show more results':
+        handle_show_query_expanded(best_ranked, query_tokens, query_expansion_tokens, n + RESULTS_PER_PAGE)
+    else:
+        if choice is None:
             pass
+        else:
+            print(choice)
 
 
 start = time.time()
@@ -92,19 +109,22 @@ start = time.time()
 load_files()
 
 end = time.time()
-print(str(end-start)+' seconds')
+print(str(end - start) + ' seconds')
 tokenizer = CustomTokenizer(N_PAGES)
 tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
 
 e = time.time()
 print('Total preprocessing time:')
-print(str(e-end)+' seconds')
+print(str(e - end) + ' seconds')
 
 # print(docs_tokens)
 
-# def start_engine():
-    # setup_preferences()
-    # main_menu()
+def start_engine():
+    setup_preferences()
+    main_menu(USE_PAGE_RANK, USE_PSEUDO_RELEVANCE_FEEDBACK)
+
+def main_menu():
+    choice = gui.display_main_menu()
 
 while 1:
     # start_engine()
