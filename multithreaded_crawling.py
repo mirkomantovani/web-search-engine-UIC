@@ -57,3 +57,6 @@ def crawl():
         print(str(len(queued_links)) + ' links in the queue')
         create_jobs()
 
+
+start_crawling()
+
