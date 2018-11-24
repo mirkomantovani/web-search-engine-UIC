@@ -1,3 +1,4 @@
+# Mirko Mantovani
 import easygui as eg
 
 
@@ -38,7 +39,7 @@ def display_main_menu(use_page_rank, use_pseudo_relevance_feedback):
     # image = "python_and_check_logo.gif"
     msg = "Settings \nUse page rank: " + str(use_page_rank) + "\nUse Context pseudo relevance feedback"\
           + str(use_pseudo_relevance_feedback) + "\n\nChoose your action"
-    title = "Main menu"
-    choices = ["Setup search options", "New query", "No opinion"]
+    title = "Main menu UIC web search engine"
+    choices = ["Setup search options", "New query", "Exit UIC web search engine"]
     choice = eg.buttonbox(msg, title, choices=choices)
 

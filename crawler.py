@@ -1,7 +1,6 @@
 # Mirko Mantovani
 from urllib.request import urlopen
 from link_extractor import LinkExtractor
-from domain_utils import *
 from crawling_utils import *
 import pickle
 

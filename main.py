@@ -1,3 +1,4 @@
+# Mirko Mantovani
 from preprocess import CustomTokenizer
 from statistics import TfidfRanker, add_page_rank_scores_and_reorder
 import CustomGUI as gui

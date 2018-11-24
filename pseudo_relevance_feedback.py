@@ -1,3 +1,5 @@
+# Mirko Mantovani
+
 import operator
 
 NUMBER_DOCS_EXPANSION = 30

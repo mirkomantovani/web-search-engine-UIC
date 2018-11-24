@@ -1,3 +1,4 @@
+# Mirko Mantovani
 import threading
 from queue import Queue
 from crawler import Crawler

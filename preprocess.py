@@ -1,3 +1,4 @@
+# Mirko Mantovani
 from selectolax.parser import HTMLParser
 import pickle
 from link_extractor import LinkExtractor
