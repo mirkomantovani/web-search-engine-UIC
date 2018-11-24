@@ -97,8 +97,11 @@ def handle_show_query(best_ranked, query_tokens, n):
         if choice is None:
             main_menu()
         else:
-            open_website(choice)
-            main_menu()
+            if choice == 'Auto expand query':
+                handle_pseudo_relevance_query(query_tokens, best_ranked)
+            else:
+                open_website(choice)
+                main_menu()
 
 
 def handle_show_query_expanded(best_ranked, query_tokens, query_expansion_tokens, n):

@@ -4,6 +4,7 @@ from collections import Counter
 import operator
 
 E_CONST = 0.5
+PAGE_RANK_MULTIPLIER = 20
 '''This E constant is the expansion multiplier, determines the weight of the expanded words in the query w.r.t
 the words of the query'''
 
@@ -16,7 +17,7 @@ def rank_docs(similarities):
 def add_page_rank_scores_and_reorder(best_ranked, page_ranks):
     best_dict = dict(best_ranked)
     for doc_code in best_dict:
-        best_dict[doc_code] = best_dict[doc_code] + page_ranks[doc_code]
+        best_dict[doc_code] = best_dict[doc_code] + page_ranks[doc_code] * PAGE_RANK_MULTIPLIER
     return rank_docs(best_dict)
 
 
