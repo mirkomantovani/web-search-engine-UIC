@@ -43,3 +43,9 @@ def display_main_menu(use_page_rank, use_pseudo_relevance_feedback):
     choices = ["Setup search options", "New query", "Exit UIC web search engine"]
     choice = eg.buttonbox(msg, title, choices=choices)
 
+
+def ask_preference(use_feature_text):
+    msg = "Do you want to "+use_feature_text+" feature in your future searches?"
+    title = "Setup Preference"
+    choice = eg.ynbox(msg, title)
+    return choice

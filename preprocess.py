@@ -8,25 +8,6 @@ import re
 import string
 from nltk.stem import PorterStemmer
 
-# start = time.time()
-# start_crawling()
-# end = time.time()
-#
-# print("dio cane finito al tempo: "+str(end-start))
-#
-# end = time.time()
-# http://dentistry.uic.edu/sites/default/files/IMCE/research/ResearchDay/CRDayAwards-2013.pdf
-# response = urlopen('https://www.cs.uic.edu/undergraduate-admissions/#1476482486945-df37d302-14b5')
-# response = urlopen('http://dentistry.uic.edu/sites/default/files/IMCE/research/ResearchDay/CRDayAwards-2013.pdf')
-# print(response.getheader('Content-Type'))
-# print(response.read().decode("utf-8"))
-
-# if 'text/html' in response.getheader('Content-Type'):
-#     html_bytes = response.read()
-#     html_string = html_bytes.decode("utf-8")
-# link_extractor = LinkExtractor(Crawler.base_url, page_url, True, Crawler.domain_name)
-# link_extractor.feed(html_string)
-
 
 class CustomTokenizer:
 
@@ -146,9 +127,6 @@ def replace_digits(st):
 def lesseq_two_letters(word):
     return len(word) <= 2
 
-# import operator
-# page_ranks = sorted(page_ranks.items(), key=operator.itemgetter(1))
-# print(page_ranks)
 
 
 

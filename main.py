@@ -5,10 +5,10 @@ import CustomGUI as gui
 import pickle
 import time
 from pseudo_relevance_feedback import CustomPseudoRelevanceFeedback
+import webbrowser
 
 '''
-This script opens the locally downloaded pages from the crawler, preprocess them, builds inverted index and
-runs page rank, computes docs lengths, it then stores inverted index, page rank and docs length with pickle
+This script 
 '''
 PAGE_RANK_MAX_ITER = 100
 N_PAGES = 10000
@@ -81,6 +81,10 @@ def handle_pseudo_relevance_query(query_tokens, best_ranked):
     print(query_expansion_tokens)
 
 
+def open_website(url):
+    webbrowser.open(url.split()[0], new=2, autoraise=True)
+
+
 def handle_show_query(best_ranked, query_tokens, n):
     choice = gui.display_query_results(best_ranked[:n], url_from_code, query_tokens)
 
@@ -88,9 +92,10 @@ def handle_show_query(best_ranked, query_tokens, n):
         handle_show_query(best_ranked, query_tokens, n + RESULTS_PER_PAGE)
     else:
         if choice is None:
-            pass
+            main_menu()
         else:
-            print(choice)
+            open_website(choice)
+            main_menu()
 
 
 def handle_show_query_expanded(best_ranked, query_tokens, query_expansion_tokens, n):
@@ -100,34 +105,53 @@ def handle_show_query_expanded(best_ranked, query_tokens, query_expansion_tokens
         handle_show_query_expanded(best_ranked, query_tokens, query_expansion_tokens, n + RESULTS_PER_PAGE)
     else:
         if choice is None:
-            pass
+            main_menu()
         else:
-            print(choice)
+            open_website(choice)
+            main_menu()
 
 
-start = time.time()
+def setup_preferences():
+    global USE_PAGE_RANK, USE_PSEUDO_RELEVANCE_FEEDBACK
+    choice = gui.ask_preference('use Page Rank')
+    USE_PAGE_RANK = choice
+    choice = gui.ask_preference('use Context Pseudo Relevance feedback')
+    USE_PSEUDO_RELEVANCE_FEEDBACK = choice
 
-load_files()
 
-end = time.time()
-print(str(end - start) + ' seconds')
-tokenizer = CustomTokenizer(N_PAGES)
-tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
+def main_menu():
+    choice = gui.display_main_menu(USE_PAGE_RANK, USE_PSEUDO_RELEVANCE_FEEDBACK)
+    execute_function(choice)
 
-e = time.time()
-print('Total preprocessing time:')
-print(str(e - end) + ' seconds')
 
-# print(docs_tokens)
+def execute_function(main_menu_choice):
+    switcher = {
+        'Setup search options': start_engine,
+        'New query': new_query,
+        'Exit UIC web search engine': exit_program,
+    }
+    # Get the function from switcher dictionary
+    func = switcher.get(main_menu_choice, lambda: "nothing")
+    return func()
+
+
+def exit_program():
+    exit()
+
 
 def start_engine():
     setup_preferences()
-    main_menu(USE_PAGE_RANK, USE_PSEUDO_RELEVANCE_FEEDBACK)
+    main_menu()
 
-def main_menu():
-    choice = gui.display_main_menu()
 
-while 1:
-    # start_engine()
-    # main_menu()
-    new_query()
+load_files()
+
+tokenizer = CustomTokenizer(N_PAGES)
+tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
+
+# print(docs_tokens)
+
+# while 1:
+#     # start_engine()
+#     # main_menu()
+#     new_query()

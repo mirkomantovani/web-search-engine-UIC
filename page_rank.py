@@ -14,10 +14,6 @@ class PageRank:
         return self.alpha * sum(previous_s[b]/word_graph.get_out_degree(b) for b in word_graph.get_pointing_to(a)) + \
                (1 - self.alpha)/word_graph.get_len()
 
-        # return self.alpha * sum(word_graph.get_edge(j, i) / sum(word_graph.get_edge(j, k)
-        #                                                         for k in word_graph.graph[j]) * previous_s[j]
-        #                         for j in word_graph.graph[i]) + (1 - self.alpha) * p[i]
-
     def page_rank(self, word_graph, max_iterations):
 
         p = {}
