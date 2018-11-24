@@ -76,6 +76,9 @@ def handle_pseudo_relevance_query(query_tokens, best_ranked):
 
     best_ranked_expanded = tf_idf_ranker.retrieve_most_relevant_expanded(query_tokens,
                                                                          query_expansion_tokens)[:MAX_RESULTS_TO_CONSIDER]
+
+    if USE_PAGE_RANK:
+        best_ranked_expanded = add_page_rank_scores_and_reorder(best_ranked_expanded, page_ranks)
     handle_show_query_expanded(best_ranked_expanded, query_tokens, query_expansion_tokens, RESULTS_PER_PAGE)
 
     print(query_expansion_tokens)
