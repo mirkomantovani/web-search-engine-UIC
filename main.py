@@ -154,3 +154,25 @@ def start_engine():
 
 
 start_engine()
+# load_files()
+
+# for i in range(4401, 4437):
+#     url_from_code[i] = url_from_code[i+5600]
+#
+# new = {}
+# for i in code_from_url:
+#
+#     if 10037 > code_from_url[i] > 10000:
+#         new[code_from_url[i]-5600] = i
+#         print(i)
+#         print(code_from_url[i])
+#         print(code_from_url[i]-5600)
+#         print(new[code_from_url[i]-5600])
+#     else:
+#         new[i] = code_from_url[i]
+#
+# with open('code_from_url_dict.pickle', 'wb') as handle:
+#     pickle.dump(new, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#
+# with open('url_from_code_dict.pickle', 'wb') as handle:
+#     pickle.dump(url_from_code, handle, protocol=pickle.HIGHEST_PROTOCOL)
