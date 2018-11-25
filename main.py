@@ -8,13 +8,14 @@ from pseudo_relevance_feedback import CustomPseudoRelevanceFeedback
 import webbrowser
 
 '''
-This script 
+This script is the main program of this project, by running it the user is displayed a GUI where he can choose some
+settings and start running his queries and seeing the results
 '''
-PAGE_RANK_MAX_ITER = 100
 N_PAGES = 10000
 RESULTS_PER_PAGE = 10
 MAX_RESULTS_TO_CONSIDER = 100
 
+# Default values overridden on application start when the users sets his preferences
 USE_PAGE_RANK = False
 USE_PAGE_RANK_EARLY = False  # I decided not to let the user choose this mode
 USE_PSEUDO_RELEVANCE_FEEDBACK = True
@@ -43,9 +44,9 @@ def new_query():
     query = gui.ask_query()
     if query is None:
         exit()
-    print(query)
+    # print(query)
     query_tokens = tokenizer.tokenize(query)
-    print(query_tokens)
+    # print(query_tokens)
 
     best_ranked = tf_idf_ranker.retrieve_most_relevant(query_tokens, USE_PAGE_RANK_EARLY)[:MAX_RESULTS_TO_CONSIDER]
 
@@ -54,23 +55,15 @@ def new_query():
     else:
         handle_normal_query(query_tokens, best_ranked)
 
-    # choice = gui.display_query_results(tf_idf_ranker.retrieve_most_relevant(query_tokens)
-    #                                    [:RESULTS_PER_PAGE], url_from_code)
-    # print(choice)
-
 
 def handle_normal_query(query_tokens, best_ranked):
-    # still have to apply page rank if user chose it
     if USE_PAGE_RANK:
         best_ranked = add_page_rank_scores_and_reorder(best_ranked, page_ranks)
     handle_show_query(best_ranked, query_tokens, RESULTS_PER_PAGE)
-    # choice = gui.display_query_results(best_ranked[:RESULTS_PER_PAGE], url_from_code, query_tokens)
 
 
 def handle_pseudo_relevance_query(query_tokens, best_ranked):
-    # remember to apply page rank to expanded query
     pseudo_relevance_feedback = CustomPseudoRelevanceFeedback(inverted_index, best_ranked, docs_tokens)
-    # context_words = pseudo_relevance_feedback.run_pseudo_relevance()
     pseudo_relevance_feedback.run_pseudo_relevance()
     query_expansion_tokens = pseudo_relevance_feedback.get_query_expansion_tokens(query_tokens)
 
@@ -81,7 +74,7 @@ def handle_pseudo_relevance_query(query_tokens, best_ranked):
         best_ranked_expanded = add_page_rank_scores_and_reorder(best_ranked_expanded, page_ranks)
     handle_show_query_expanded(best_ranked_expanded, query_tokens, query_expansion_tokens, RESULTS_PER_PAGE)
 
-    print(query_expansion_tokens)
+    # print(query_expansion_tokens)
 
 
 def open_website(url):
@@ -131,7 +124,6 @@ def main_menu():
 
 
 def execute_function(main_menu_choice):
-    # print(main_menu_choice)
     switcher = {
         'Setup search options': on_start_menu,
         'New query': new_query,
@@ -139,7 +131,6 @@ def execute_function(main_menu_choice):
     }
     # Get the function from switcher dictionary
     func = switcher.get(main_menu_choice, lambda: "nothing")
-    # print(func)
     return func()
 
 
@@ -163,15 +154,3 @@ def start_engine():
 
 
 start_engine()
-
-# load_files()
-#
-# tokenizer = CustomTokenizer(N_PAGES)
-# tf_idf_ranker = TfidfRanker(inverted_index, N_PAGES, page_ranks, docs_length, True)
-
-# print(docs_tokens)
-
-# while 1:
-#     # start_engine()
-#     # main_menu()
-#     new_query()
