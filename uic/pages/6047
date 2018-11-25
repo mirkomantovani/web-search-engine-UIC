@@ -1,159 +1,249 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> HomeworkSchedule &lt; CS450fall09 &lt; TWiki</title>
 
-<title>UIC Student Affairs Technology - SATech</title>
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS450fall09/HomeworkSchedule?_T=2018-11-25" type="application/x-wiki" title="edit HomeworkSchedule" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS450fall09/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS450fall09/HomeworkSchedule"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- Google Analytics Snippet -->
 
- <!-- Custom CSS -->
-<link rel="stylesheet" href="css/custom.css">
+<script type="text/javascript">
 
- <!-- Font Awesome -->
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-
-<!--twitter feed-->
-<script type="text/javascript" src="js/twitterfeed.js"></script>
-<script type="text/javascript" src="js/twitterfeed2.js"></script>
-<link href="css/twitter-styles.css" rel="stylesheet" type="text/css" />
-
-</head>
-
-<body>
-
-<div id="wrapper-bg-twitter">
-	<div class="container header-twitter">
- 		<div class="row">
-  			<div class="col-sm-12">
-		   	<div id="twitter-feed2"></div>
-			</div>
-		</div>
-	</div>
-</div> <!--end of wraper-bg-twitter-->
-
-
-<div id="wrapper-bg-header">
-	<div class="container header-logos">
- 		<div class="row">
-  			<div class="col-sm-6">
-		    <a href="//www.uic.edu" class="no-outline"><img src="images/banner-UIC.png" alt="link to UIC home page" id="uic-logo"/></a><a href="http://vcsa.uic.edu" class="no-outline"><img src="images/banner-OVCSA2.png" alt="link to OVCSA home page" id="ovcsa-logo" width="200" height="auto"/></a>
-  			</div>
-  			<div class="col-sm-6" align="right">
-		    <a href="http://www.uic.edu" target="_blank" class="no-outline"><img src="images/banner-UniversityofIlli2.png" alt="link to UIC" id="uofi-logo" width="150px" height="auto"/></a>
-			</div>
-		</div>
-	</div>
-</div> <!--end of wraper-bg-header-->
-
-<div class="wrapper-bg">
-<div class="container header-casit">
- <div class="row">
-  <div class="col-sm-12">
-    <a href="index.shtml" class="no-outline"><img src="images/satech_logo_2017.png" alt="link to Home" width="250px" height="auto"/></a>
-  </div>
-</div>
-</div>
-
-<div class="container">
-<div class="row">
-<div class="col-sm-12">
- <img src="images/Banner_2015.png" alt="students with computer" width="870px" height="auto"/>
-</div>
-</div>
-	<div class="row main-content">
-		<div class="col-sm-3">
-
-        <a role="button" class="btn btn-primary btn-md btn-block" href="https://cas.uic.edu/it/service.shtml"><i class="fa fa-ticket"></i> Submit Ticket</a>       <br>
-        <a role="button" class="btn btn-primary btn-md btn-block" href="https://cas.uic.edu/it/it_onboarding/index.shtml"><i class="fa fa-user-plus"></i> New Employee</a>	<br>
-        <a role="button" class="btn btn-primary btn-md btn-block" href="https://cas.uic.edu/it/purchasing.shtml"><i class="fa fa-shopping-cart"></i> Purchase Equipment</a>	<br>
-        	<ul class="list-group">
-        		<li class="list-group-item"><a href="https://cas.uic.edu/it/service.shtml">Submit Ticket</a></li>
-       			<li class="list-group-item"><a href="https://cas.uic.edu/it/purchasing.shtml">Purchase Equipment</a></li>
-                <li class="list-group-item"><a href="https://cas.uic.edu/it/loaner.shtml">Loaner Equipment</a></li>
-                <li class="list-group-item"><a href="https://cas.uic.edu/it/it_onboarding/index.shtml">New Employee</a></li>
-                <li class="list-group-item"><a href="https://cas.uic.edu/it/terminated_employee.shtml">Terminated Employee</a></li>
-                <li class="list-group-item"><a href="https://cas.uic.edu/it/education.shtml">Education</a></li>
-                <li class="list-group-item"><a href="https://illinois.edu/fb/sec/3125310">Feedback</a></li>
-      		</ul>
-
-        <div class="form-group">
-        <form id="searchform" action="search.shtml">
-        <table id="search_table">
-        <tr><td>
-        <input type="hidden" name="cx" value="003292673167871140938:tpqkc9da11k" />
-        <input type="hidden" name="cof" value="FORID:10" />
-        <input type="hidden" name="ie" value="UTF-8" />
-        <label class="hidden" for="query_text">Search</label><input type="text" id="query_text"  class="form-control"/></td>
-        <td>&nbsp;<span class="glyphicon glyphicon-search"></span></td>
-        </tr>
-        </table>
-        </form>
-        <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
-        </div>
-
-
-		</div>
-
-
-
-        <div class="col-sm-6">
-        <h1 class="hidden">Campus Auxiliary Services - IT</h1>
-   		<h2 class="text-capitalize">Terminated Employee</h2>
-        <p class="content">
-        When an employee is terminated or moves to another unit, their access is <strong>not</strong> revoked automatically.  Units are responsible for requesting that access be removed in a timely fashion.<br /><br />
-
-        Please use the <a href="http://cas.uic.edu/hr/onlineservices.shtml"> HR Ticketing System </a> to notify HR of employee termination.
-
-        </p>
-
-
-		</div>
-        <div class="col-sm-3">
-        	<div class="panel panel-info">
-        	<div class="panel-heading twitter-heading"><img src="images/satech_logo_2017.png" alt="link to Home" width="75px" height="auto"/><img src="images/twitter-bird.png" width="45px;" height="auto" style="float:right;"></div>
-   			<div id="twitter-feed" class="panel-body"></div>
-            <div class="panel-footer"><a href="https://twitter.com/_jasonm_" class="small"><img src="images/twitter-bird-light.png" alt="twitter" width="20px" height="auto"/> Follow us on twitter</a></div>
-            </div>
-
-		</div>
-	</div>
-</div>
-
-
-<div class="container footer">
-<div class="row">
-<div class="col-sm-8">
-<p><a href=" http://vcsa.uic.edu">Student Affairs</a> | <a href="http://www.uic.edu">UIC</a> | <a href="mailto:satech@uic.edu">Webmaster</a></p>
-<p>Copyright © 2018 The Board of Trustees of the University of Illinois | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a> </p>
-</p></div>
-<div class="col-sm-4"><a href=" http://vcsa.uic.edu"><img src="images/banner-OVCSA2.png" alt="link to OVCSA home page" id="ovcsa_logo" width="250" height="auto"/></div>
-</div>
-</div>
-
-<!--google analytics-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-40969558-1', 'auto');
-  ga('send', 'pageview');
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
 </script>
 
-</div> <!-- end of wrapper-bg -->
-
-</body>
-</html>
-
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS450fall09/WebHome">CS450fall09 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS450fall09/Homeworks" class="twikiLink">Homeworks</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS450fall09/HomeworkSchedule" title='Topic revision: 2 (2009-09-09 - 04:12:13)'>HomeworkSchedule</a> <span class='patternRevInfo'>(2009-09-09, Main.jakob)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS450fall09/HomeworkSchedule?t=1543179638' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS450fall09/HomeworkSchedule' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Homework_and_exam_schedule"></a> Homework and exam schedule </h1>
+<p />
+These are the tentative due dates for homeworks, as well as midterm (in class) exam dates.
+<p /> <ul>
+<li> 8/31 - Homework 0
+</li> <li> 9/8 - Homework 1 (one day later due to labor day)
+</li> <li> 9/14 - Homework 2
+</li> <li> 9/21 - Homework 3
+</li> <li> 9/28 - Homework 4
+</li> <li> 10/2 - <strong>Midterm 1</strong>
+</li> <li> 10/12 - Homework 5 (no homework due week after midterm)
+</li> <li> 10/19 - Homework 6
+</li> <li> 10/26 - Homework 7
+</li> <li> 11/2 - Homework 8
+</li> <li> 11/6 -<strong> Midterm 2</strong>
+</li> <li> 11/16 - Homework 9 (no homework due week after midterm)
+</li></ul> 
+Due dates liable to change (postponement only). Finals date is not yet scheduled. </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS450fall09/HomeworkSchedule?t=1543179638' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS450fall09/HomeworkSchedule' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450fall09/HomeworkSchedule?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS450fall09/HomeworkSchedule?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r2&nbsp;<a rel="nofollow" href="/bin/rdiff/CS450fall09/HomeworkSchedule?rev1=2;rev2=1">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS450fall09/HomeworkSchedule?rev=1">r1</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450fall09/HomeworkSchedule?template=backlinksweb' rel='nofollow' title='Search the CS450fall09 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450fall09/HomeworkSchedule?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS450fall09/HomeworkSchedule?t=1543179638;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450fall09/HomeworkSchedule?template=oopsmore&amp;param1=2&amp;param2=2' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r2 - 2009-09-09 - 04:12:13 - Main.jakob</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS450fall09/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS450fall09</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS450fall09/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS450fall09/LectureNotes" class="twikiLink">Lecture Notes</a>
+</li> <li> -<span style="color: #0000ff"> <a href="/bin/view/CS450fall09/References" class="twikiLink">References</a></span>
+</li> <li> <a href="/bin/view/CS450fall09/Homeworks" class="twikiLink">Homeworks</a>
+</li> <li> - <a href="/bin/view/CS450fall09/Subversion" class="twikiLink">Subversion</a>
+</li> <li> - <a href="/bin/view/CS450fall09/VMWare" class="twikiLink">VMWare</a>
+</li> <li> - <a href="/bin/view/CS450fall09/HomeworkSchedule" class="twikiCurrentTopicLink twikiLink">schedule</a>
+</li> <li> - <a href="/bin/view/CS450fall09/HomeworkHints" class="twikiLink">hints</a>
+</li> <li> <a href="http://listserv.uic.edu/htbin/wa?A0=CS450" target="_top">list archives</a>
+</li> <li> <a href="/bin/view/CS450fall09/FrequentlyAskedQuestions" class="twikiLink">FAQ</a>
+</li> <li> <a href="/bin/view/CS450fall09/ERF2054Map" class="twikiLink">ERF2054 map</a>
+</li></ul> 
+<p />
+<a href="/bin/edit/CS450fall09.WebLeftBar" target="_top">[edit this</a>]
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS450fall09/HomeworkSchedule">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS450fall09/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS450fall09 Web</a></strong>
+</li> <li> <a href="/bin/view/CS450fall09/WebCreateNewTopic?topicparent=HomeworkSchedule" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS450fall09/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS450fall09/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS450fall09/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS450fall09/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS450fall09/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS450fall09/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS450fall09/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

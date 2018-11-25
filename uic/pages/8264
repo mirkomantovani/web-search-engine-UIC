@@ -4,10 +4,10 @@
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
 <link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-  <title>TWiki - QuerySearch</title>
+  <title>TWiki - VarENDSECTION</title>
 
 <link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/QuerySearch?_T=2018-11-21" type="application/x-wiki" title="edit QuerySearch" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/VarENDSECTION?_T=2018-11-25" type="application/x-wiki" title="edit VarENDSECTION" />
 <link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
 <meta name="SCRIPTURLPATH" content="/bin" />
 <meta name="SCRIPTSUFFIX" content="" />
@@ -16,7 +16,7 @@
 <meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
 <meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
-<base href="https://www.cs.uic.edu/bin/view/TWiki/QuerySearch"></base>
+<base href="https://www.cs.uic.edu/bin/view/TWiki/VarENDSECTION"></base>
 <!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
@@ -120,273 +120,24 @@ pre {
 <div id="patternWrapper"><div id="patternOuter">
 <div id="patternFloatWrap">
 <div id="patternMain"><div id="patternClearHeaderCenter"></div>
-<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> 
-<h1><a name="Query_Search"></a> Query Search </h1>
-<p />
-Query searches help you search the contents of forms attached to your topics, as well as the values of other meta-data attached to the topic. Using query searches you can search: <ol>
-<li> The fields of forms
-</li> <li> Parent relationships
-</li> <li> File attachment information (but <strong>not</strong> the attached files themselves)
-</li></ol> 
-<p />
-Query searches are defined using a simple SQL-like query language. The language consists of <em>field specifiers</em> and <em>constants</em> joined with <em>operators</em>.
-<p />
-<div class="twikiToc"><span class="twikiTocTitle">On this page:</span> <ul>
-<li> <a href="#Field_specifiers"> Field specifiers</a>
-</li> <li> <a href="#Constants"> Constants</a>
-</li> <li> <a href="#Operators"> Operators</a>
-</li> <li> <a href="#Putting_it_all_together"> Putting it all together</a>
-</li> <li> <a href="#Gotcha"> Gotcha</a>
-</li> <li> <a href="#Examples"> Examples</a> <ul>
-<li> <a href="#Query_examples"> Query examples</a>
-</li> <li> <a href="#Search_examples"> Search examples</a>
-</li></ul> 
-</li></ul> 
-</div>
-<p />
-<h2><a name="Field_specifiers"></a> Field specifiers </h2>
-<p />
-You use field specifiers to say what value from the topic you are interested
-in.
-<p />
-All meta-data in a topic is referenced according to a simple plan.
-<p /> <ul>
-<li> <code>name</code> - name of the topic
-</li> <li> <code>topictitle</code> - title of the topic
-</li> <li> <code>web</code> - name of the web the topic is within
-</li> <li> <code>text</code> - the body text of the topic
-</li> <li> <code>META:FILEATTACHMENT</code> <ul>
-<li> <code>arraysize</code>
-</li> <li> <em>for each attachment</em> <ul>
-<li> <code>name</code>
-</li> <li> <code>attr</code>
-</li> <li> <code>path</code>
-</li> <li> <code>size</code>
-</li> <li> <code>user</code>
-</li> <li> <code>rev</code>
-</li> <li> <code>date</code>
-</li> <li> <code>comment</code>
-</li></ul> 
-</li></ul> 
-</li> <li> <code>META:TOPICPARENT</code> <ul>
-<li> <code>name</code>
-</li></ul> 
-</li> <li> <code>META:TOPICINFO</code> <ul>
-<li> <code>author</code>
-</li> <li> <code>date</code>
-</li> <li> <code>format</code>
-</li> <li> <code>rev</code> - topic revision (<code>12</code>) to match <code>%REVINFO{'$rev'}%</code> and <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a> <code>$rev</code>
-</li> <li> <code>version</code> - internal Store topic version (<code>1.12</code> for rcs based Stores)
-</li></ul> 
-</li> <li> <code>META:TOPICMOVED</code> <ul>
-<li> <code>by</code>
-</li> <li> <code>date</code>
-</li> <li> <code>from</code>
-</li> <li> <code>to</code>
-</li></ul> 
-</li> <li> <code>META:FORM</code> - the main form of the topic <ul>
-<li> <code>name</code> (known as the <em>formname</em>)
-</li></ul> 
-</li> <li> <code>META:FIELD</code> - the fields in the form. <ul>
-<li> <code>arraysize</code>
-</li> <li> <em>for each field in the form</em> <ul>
-<li> <code>name</code>
-</li> <li> <code>title</code>
-</li> <li> <code>value</code>
-</li></ul> 
-</li></ul> 
-</li> <li> <code>META:PREFERENCE</code> <ul>
-<li> <code>arraysize</code>
-</li> <li> <em>for each preference in the topic</em> <ul>
-<li> <code>name</code>
-</li> <li> <code>value</code>
-</li></ul> 
-</li></ul> 
-</li></ul> 
-<p />
-See <a href="/bin/view/TWiki/TWikiMetaData" class="twikiLink">TWikiMetaData</a> for details of what all these entries mean.
-<p />
-Most things at the top level of the plan - <code>META:TOPICPARENT</code>, <code>META:TOPICINFO</code> etc - are <em>structures</em> which are indexed by <em>keys</em>. For example, <code>META:TOPICINFO</code> has 4 entries, which are indexed by the keys <code>author</code>, <code>date</code>, <code>format</code> and <code>version</code>. <code>META:FILEATTACHMENT</code>, <code>META:FIELD</code> and <code>META:PREFERENCE</code> are all <em>arrays</em>, which means they can have any number of records under them. Arrays are indexed by <em>numbers</em> - for example, the first entry in the <code>META:FIELD</code> array is entry 0. The field specifier <code>arraysize</code> returns the number of items in an array, for example, <code>attachments.arraysize</code> returns the number of attachments.
-<p />
-It's a bit clumsy having to type <code>META:FILEATTACHMENT</code> every time you want to refer to the array of attachments in a topic, so there are some predefined aliases that make it a bit less typing: <ul>
-<li> <code>attachments</code> means the same as <code>META:FILEATTACHMENT</code>
-</li> <li> <code>info</code> means the same as <code>META:TOPICINFO</code>
-</li> <li> <code>parent</code> means the same as <code>META:TOPICPARENT</code>
-</li> <li> <code>moved</code> means the same as <code>META:TOPICMOVED</code>
-</li> <li> <code>form</code> means the same as <code>META:FORM</code>
-</li> <li> <code>fields</code> means the same as <code>META:FIELD</code>, You can also use the name of the form (the value of <code>form.name</code> e.g. <code>PersonForm</code>)
-</li> <li> <code>preferences</code> means the same as <code>META:PREFERENCE</code>
-</li></ul> 
-<p />
-This plan is referenced using a simple syntax:
-<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/QuerySearch?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Syntax</font></a> </th>
-			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/QuerySearch?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Means</font></a> </th>
-			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/QuerySearch?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Examples</font></a> </th>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>X</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> refers to the field named <code>X</code>. </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> <code>info</code>, <code>META:TOPICMOVED</code>, <code>attachments</code>, <code>name</code>. </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>X.Y</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> refers to the entry with the key <code>Y</code> in the structure named <code>X</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> <code>info.date</code>, <code>moved.by</code>, <code>META:TOPICPARENT.name</code>, <code>attachments.arraysize</code> </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>X[<i>query</i>]</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> refers to all the elements of the array <code>X</code> that match <em>query</em>. If <i>query</i> is of the form <code>name='Y'</code> then you can use the same <code>X.Y</code> syntax as is used for accessing structures. </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> <code>attachments[size&gt;1024]</code>, <code>DocumentForm[name!='Summary' AND value~'top secret'].value</code>, <code>DocumentForm.Summary</code> </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>X[N]</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> where <code>X</code> is an array and <code>N</code> is an integer number &gt;= 0, gets the Nth element of the array <code>X</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> <code>attachments[3]</code> </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>X/Y</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> accesses <code>Y</code> from the topic specified by the <em>value</em> of <code>X</code>. <code>X</code> must evaluate to a topic name </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> <code>parent.name/(form.name='ExampleForm')</code> will evaluate to true if (1) the topic has a parent, (2) the parent topic has the main form type <code>ExampleForm</code>. </td>
-		</tr></table>
-<p />
-Note: at some point TWiki may support multiple forms in the same topic. For this reason you are recommended <strong>not</strong> to use the <code>fields</code> shortcut when accessing form fields, but always use the name of the form instead.
-<p />
-There is a shortcut for accessing form fields. If you use the name of a field (for example, <code>LastName</code>) in the query without a . before it, that is taken to mean "the value of the field named this". This works if and only if the field name isn't the same as of the top level entry names or their aliases described above. For example, the following expressions will all evaluate to the same thing: <ul>
-<li> <code>PersonForm[name='Lastname'].value</code>
-</li> <li> <code>Lastname</code>
-</li> <li> <code>PersonForm.Lastname</code>
-</li></ul> 
-If <code>X</code> would conflict with the name of an entry or alias (e.g. it's <code>moved</code> or maybe <code>parent</code>), you can prepend the name of the form followed by a dot, as shown in the last example. 
-<p />
-<h2><a name="Constants"></a> Constants </h2>
-<p />
-You use constants for the values that you compare with fields. Constants are either strings, or numbers. Strings are always delimited by single-quotes (you can escape a quote using backslash). Numbers can be any integer or floating point number. Constants can be supplied by <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>, such as <code>'%TOPIC%'</code> representing the current topic name.
-<p />
-<h2><a name="Operators"></a> Operators </h2>
-<p />
-Field specifiers and constants are combined using <em>operators</em> to create queries.
-<table cellspacing="0" id="table2" cellpadding="0" class="twikiTable" rules="all" border="1">
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/QuerySearch?sortcol=0;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Operator</font></a> </th>
-			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/QuerySearch?sortcol=1;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Meaning</font></a> </th>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>=</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Left-hand side (LHS) exactly matches the value on the Right-hand side (RHS). Numbers and strings can be compared. </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>!=</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Inverse of <code>=</code>. </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>~</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> wildcard match ('*' will match any number of characters, '?' will match any single character e.g. "PersonForm.Surname ~ '*Smit?'") Note: Surname ~ 'Smith' is the same as Surname = 'Smith' </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>&lt;</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> LHS is less that RHS. If both sides are numbers, the order is numeric. Otherwise it is alphabetic (applies to all comparison operators) </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>&gt;</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> &gt; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>&gt;=</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> &ge; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>&lt;=</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> &le; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>lc(x)</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Converts x to lower case, Use for caseless comparisons. </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>uc(x)</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Converts x to UPPER CASE. Use for caseless comparisons. </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>d2n(x)</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Converts a date (expressed in <a href="/bin/view/TWiki/TimeSpecifications" class="twikiLink">one of the formats that TWiki can parse</a>) to a number of seconds since 1st Jan 1970. This is the format dates are stored in inside TWiki, and you have to convert a string date using <code>d2n</code> before you can compare it with - for example - the date an attachment was uploaded. Times without a timezone are assumed to be in server local time. If you have date fields in your forms, note that they are <strong>not</strong> stored in TWiki's internal format, but are stored as text strings. You should still use <code>d2n</code> to convert them to numbers for comparisons, though. </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>NOT</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Invert the result of the subquery </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>AND</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> Combine two subqueries </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>OR</code> </td>
-			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Combine two subqueries </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>()</code> </td>
-			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Bracketed subquery </td>
-		</tr></table>
-<p />
-<img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="IDEA!" title="IDEA!" width="16" height="16" border="0" /> The same operators are supported for <a href="/bin/view/TWiki/VarIF" class="twikiLink">%IF statements</a>.
-<p />
-<h2><a name="Putting_it_all_together"></a> Putting it all together </h2>
-<p />
-When a query is applied to a topic, the goal is to reduce to a TRUE or FALSE value that indicates whether the topic matches that query or not. If the query returns TRUE, then the topic is included in the search results.
-<p />
-A query matches if the query returns one or more values when it is applied to the topic. So if I have a very simple query, such as <code>"attachments"</code>, then this will return TRUE for all topics that have one or more attachments. If I write <code>"attachments[size&gt;1024 AND name ~ '*.gif']"</code> then it will return TRUE for all topics that have at least one attachment larger than 1024 bytes with a name ending in <code>.gif</code>.
-<p />
-<h2><a name="Gotcha"></a> Gotcha </h2>
-<p /> <ul>
-<li> Remember that in the query language, TWiki topic names are <em>constants</em>. You cannot write <code>Main.JohnSmith/UserForm.FirstName</code> because <code>Main.JohnSmith</code> will be interpreted as a form field name. If you want to refer to topics you <strong>must</strong> enclose the topic name in single quotes i.e. <code>'Main.JohnSmith'/UserForm.FirstName</code>
-</li></ul> 
-<p />
-<h2><a name="Examples"></a> Examples </h2>
-<p />
-<h3><a name="Query_examples"></a> Query examples </h3>
-<p /> <ul>
-<li> <code>attachments[name='purdey.gif']</code> - true if there is an attachment call <code>purdey.gif</code> on the topic
-</li> <li> <code>attachments[name~'*.gif'].arraysize &gt; 3</code> - true if there are at least 4 <code>.gif</code> files attached to the topic
-</li> <li> <code>(fields[name='Firstname'].value='Emma' OR fields[name='Firstname'].value='John') AND fields[name='Lastname'].value='Peel'</code> - true for 'Emma Peel' and 'John Peel' but <strong>not</strong> 'Robert Peel' or 'Emma Thompson'
-</li> <li> <code>(Firstname='Emma' OR Firstname='John') AND Lastname='Peel'</code> - shortcut form of the previous query
-</li> <li> <code>HistoryForm[name='Age'].value&gt;2</code> - true if the topic has a <code>HistoryForm</code>, and the form has a field called <code>Age</code> with a value &gt; 2
-</li> <li> <code>HistoryForm.Age &gt; 2</code> - shortcut for the previous query
-</li> <li> <code>preferences[name='FaveColor' AND value='Tangerine']</code> - true if the topic has the given preference setting and value
-</li> <li> <code>Person/(ClothesForm[name='Headgear'].value ~ '*Bowler*' AND attachments[name~'*hat.gif' AND date &lt; d2n('2007-01-01')])</code> - true if the form attached to the topic has a field called <code>Person</code> that has a value that is the name of a topic, and that topic contains the form <code>ClothesForm</code>, with a field called <code>Headgear</code>, and the value of that field contains the string <code>'Bowler'</code>, and the topic also has at least one attachment that has a name matching <code>*hat.gif</code> and a date before 1st Jan 2007. (Phew!)
-</li></ul> 
-<p />
-<h3><a name="Search_examples"></a> Search examples </h3>
-<p />
-Find all topics that are children of this topic in the current web
-<pre>
-&#37;SEARCH{&#34;parent.name &#61; &#39;&#37;TOPIC&#37;&#39;&#34; web&#61;&#34;&#37;WEB&#37;&#34; type&#61;&#34;query&#34;}&#37;
-</pre>
-Find all topics that have an attachment called 'grunge.gif'
-<pre>
-&#37;SEARCH{&#34;attachments&#91;name&#61;&#39;grunge.gif&#39;]&#34; type&#61;&#34;query&#34;}&#37;
-</pre>
-Find all topics that have form <code>ColorForm</code> where the form field 'Shades' is 'green' or 'yellow' but not 'brown'
-<pre>
-&#37;SEARCH{&#34;(lc(Shades)&#61;&#39;green&#39; OR lc(Shades)&#61;&#39;yellow&#39;) AND NOT(lc(Shades) ~ &#39;brown&#39;)&#34; type&#61;&#34;query&#34;}&#37;
-</pre>
-Find all topics that have PNG attachments that have been added since 26th March 2007
-<pre>
-&#37;SEARCH{&#34;attachments&#91;name ~ &#39;&#42;.png&#39; AND date &#62;&#61; d2n(&#39;2007-03-26&#39;)]&#34;}&#37;
-</pre>
-Find all topics that have a field 'Threat' set to 'Amber' and 'cold virus' somewhere in the topic text.
-<pre>
-&#37;SEARCH{&#34;Threat&#61;&#39;Amber&#39; AND text ~ &#39;&#42;cold virus&#42;&#39;&#34;}&#37;
-</pre>
-<p />
-<strong><em>Related Topics:</em></strong> <a href="/bin/view/TWiki/IfStatements" class="twikiLink">IfStatements</a>, <a href="/bin/view/TWiki/SearchHelp" class="twikiLink">SearchHelp</a>, <a href="/bin/view/TWiki/VarIF" class="twikiLink">VarIF</a>, <a href="/bin/view/TWiki/VarGET" class="twikiLink">VarGET</a>, <a href="/bin/view/TWiki/VarSET" class="twikiLink">VarSET</a>, <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">VarSEARCH</a>, <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>, <a href="http://twiki.org/cgi-bin/view/TWiki/QuerySearchPatternCookbook" target="_top" title="'TWiki.QuerySearchPatternCookbook' on TWiki.org" class="interwikiLink">TWiki:TWiki.QuerySearchPatternCookbook</a> </div><!-- /patternTopic-->
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <a name="VarENDSECTION"></a>
+<h3><a name="ENDSECTION_name_marks_the_end_of"></a> ENDSECTION{"name"} -- marks the end of a named section within a topic </h3> <ul>
+<li> Syntax: <code>%ENDSECTION{"name"}%</code>
+</li> <li> Syntax: <code>%ENDSECTION{type="include"}%</code>
+</li> <li> Syntax: <code>%ENDSECTION{type="templateonly"}%</code>
+</li> <li> Syntax: <code>%ENDSECTION{type="expandvariables"}%</code>
+</li> <li> Supported parameter:        <table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">     		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/VarENDSECTION?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Parameter:</font></a> </th>			<th bgcolor="#687684" valign="top" class="twikiTableCol1 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/VarENDSECTION?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description:</font></a> </th>		</tr>     		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>"name"</code> </td>			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> Name of the section. </td>		</tr>		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>type="..."</code> </td>			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Type of the section being terminated; supported types <code>"section"</code>, <code>"include"</code>, <code>"templateonly"</code>, <code>"expandvariables"</code> </td>		</tr>     </table>
+</li> <li> If the <code>STARTSECTION</code> is named, the corresponding <code>ENDSECTION</code> must also be named with the same name. If the <code>STARTSECTION</code> specifies a type, then the corresponding <code>ENDSECTION</code> must also specify the same type. If the section is unnamed, <code>ENDSECTION</code> will match with the nearest unnamed <code>%STARTSECTION%</code> <strong>of the same type</strong> above it. 
+</li> <li> Category: <a href="/bin/view/TWiki/DevelopmentVariables" class="twikiLink">DevelopmentVariables</a>, <a href="/bin/view/TWiki/WorkflowAndAutomationVariables" class="twikiLink">WorkflowAndAutomationVariables</a>
+</li> <li> Related: <a href="/bin/view/TWiki/VarENDSECTION" class="twikiCurrentTopicLink twikiLink">ENDSECTION</a>, <a href="/bin/view/TWiki/VarINCLUDE" class="twikiLink">INCLUDE</a>, <a href="/bin/view/TWiki/VarSTARTINCLUDE" class="twikiLink">STARTINCLUDE</a>, <a href="/bin/view/TWiki/VarSTARTSECTION" class="twikiLink">STARTSECTION</a>, <a href="/bin/view/TWiki/VarSTOPINCLUDE" class="twikiLink">STOPINCLUDE</a>
+</li></ul>  </div><!-- /patternTopic-->
 <div class="twikiContentFooter"></div></div><!-- /patternContent-->
 <a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
 </div><!-- /patternMainContents-->
 </div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
 <div id="patternLeftBarContents">
 <div class="patternLeftBarPersonal">
-<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/QuerySearch">Log In</a> </li></ul>
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/VarENDSECTION">Log In</a> </li></ul>
 </div><!--/patternLeftBarPersonal-->
 <p /> <ul>
 <li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
@@ -406,7 +157,7 @@ Find all topics that have a field 'Threat' set to 'Amber' and 'cold virus' somew
 </li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
 </li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
 </li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
-</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiCurrentTopicLink twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
 </li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
 </li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
 </li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>

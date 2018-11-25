@@ -1,27 +1,82 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-            </head>
-    <body onload="document.forms[0].submit()">
-        <noscript>
-            <p>
-                <strong>Note:</strong> Since your browser does not support JavaScript,
-                you must press the Continue button once to proceed.
-            </p>
-        </noscript>
-        
-        <form action="https&#x3a;&#x2f;&#x2f;portal.housing.uic.edu&#x2f;Shibboleth.sso&#x2f;SAML2&#x2f;POST" method="post">
-            <div>
-                <input type="hidden" name="RelayState" value="ss&#x3a;mem&#x3a;ef72757ef8e35a70bb8ca3441c7e76e767ef50442ac53fc6c66b678743c44fa1"/>                
-                                
-                <input type="hidden" name="SAMLResponse" value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNhbWwycDpSZXNwb25zZSBEZXN0aW5hdGlvbj0iaHR0cHM6Ly9wb3J0YWwuaG91c2luZy51aWMuZWR1L1NoaWJib2xldGguc3NvL1NBTUwyL1BPU1QiIElEPSJfN2UwNTlkZTYyOGIxNDI5ZTg2OGUxMTZhY2M3M2YwYjgiIEluUmVzcG9uc2VUbz0iX2VmNzRjZjVhZjQwOGVjNmM1OGQ1MDRjODNiYTE1ODFkIiBJc3N1ZUluc3RhbnQ9IjIwMTgtMTEtMjFUMTg6NTA6MjcuOTYzWiIgVmVyc2lvbj0iMi4wIiB4bWxuczpzYW1sMnA9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpwcm90b2NvbCI+PHNhbWwyOklzc3VlciB4bWxuczpzYW1sMj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFzc2VydGlvbiI+aHR0cHM6Ly9zaGliYm9sZXRoLnVpYy5lZHUvc2hpYmJvbGV0aDwvc2FtbDI6SXNzdWVyPjxkczpTaWduYXR1cmUgeG1sbnM6ZHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPgo8ZHM6U2lnbmVkSW5mbz4KPGRzOkNhbm9uaWNhbGl6YXRpb25NZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiLz4KPGRzOlNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiLz4KPGRzOlJlZmVyZW5jZSBVUkk9IiNfN2UwNTlkZTYyOGIxNDI5ZTg2OGUxMTZhY2M3M2YwYjgiPgo8ZHM6VHJhbnNmb3Jtcz4KPGRzOlRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIi8+CjxkczpUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiLz4KPC9kczpUcmFuc2Zvcm1zPgo8ZHM6RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2Ii8+CjxkczpEaWdlc3RWYWx1ZT5QNGhjeUNiNGQ4VHpFaXVHK2dyc0ZZYmVqTk1KK2VCTTh6TWJFK0VmVzBjPTwvZHM6RGlnZXN0VmFsdWU+CjwvZHM6UmVmZXJlbmNlPgo8L2RzOlNpZ25lZEluZm8+CjxkczpTaWduYXR1cmVWYWx1ZT4KRmtySVlDV3Z5dDlCZWxBRWcxM2w1ck4yM0JmZHB3NURRVENBdXd5TVZOaEFjMkR4Mm5xRStrYlFLYXBwYWVaem1UZzB4ZXc4SWxuZwoxb0RYNU44NWF6MERrQzB5UmxVd0JsVUpGVWNnSk9odldRS25TYWJ3cmRaMVNlRkZkRFNNcDZKdXJFeUtoS3h3RHg2Mm5WNWFSR2ZECnhNYlRSNmtyb2swWUdZcGpTM200VHhaVW5YYUhORDc0R0hTSWZkdThQZGtxSmEwQTQ0QkdLVHV4b3ltMG0zTSs0MFRuZjZmWUt1K2oKSE5KWkVoS3FzSWt4eDlEOUluZDQwei9NME45azVkZjN5c1VHaW9wWWZ2N2NSTktDNDZKOGMyUlI1VjNkeStXMVR2RmRFVHRYRERNawpubUlKNGVEeHVxVG9LMzdCL0V2QXdPY3hOZmx6VnJnaVNMMHdMZz09CjwvZHM6U2lnbmF0dXJlVmFsdWU+CjxkczpLZXlJbmZvPjxkczpYNTA5RGF0YT48ZHM6WDUwOUNlcnRpZmljYXRlPk1JSURPekNDQWlPZ0F3SUJBZ0lKQU1uaDFLc2FjdlVlTUEwR0NTcUdTSWIzRFFFQkJRVUFNQjB4R3pBWkJnTlZCQU1URW5Ob2FXSmkKYjJ4bGRHZ3VkV2xqTG1Wa2RUQWVGdzB4TVRBM01UZ3hOalF6TkRkYUZ3MHlNVEEzTVRVeE5qUXpORGRhTUIweEd6QVpCZ05WQkFNVApFbk5vYVdKaWIyeGxkR2d1ZFdsakxtVmtkVENDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFLL0xBOWVpCm9TUHFYK2lwZG1OTXlaZXJqeVBoUFdCaWVtNGZwaU9HbkJpdWE3NnBHdnZ1amhsYVBuV1QzWWZ3RldMcEtLdVB0MG5CZ2s4U0M5UFQKbFAyb3ViVnFGOUZJRkE1T1VIdEFqM25ya1hOQ3U2N0hMemFXOENsR3dDd2RJbUNjVG5YWGhwMWM4aVZjUmpwMnIrRGN4allIcFhMeQpUM284OEJtV25HSlg4ZkNvOGd0blZ1a2M2WHYrSitnU09GUm1DbnZia0JrZWlBTE5uM2xrSmdkdmRKaEFIRStPY1JnMTRrRW10My9tCnhPRU5Wb3VSTWk1MDVlejRoTUg0aVIzZnZEM3crMXJHS3RyTllDQnJ2YWdxVVNaMmZCRjNrNnRHVFFmek5zd29HaVNyTEFrck1aK04KOHFqa0MvaGRRTmo0dDQ4dUt6RVVZdmNrYTd4NXEyc0NBd0VBQWFOK01Id3dIUVlEVlIwT0JCWUVGUENtejBqeW1Gc2tjMmJleUZUTQpHWjhGN0VSVk1FMEdBMVVkSXdSR01FU0FGUENtejBqeW1Gc2tjMmJleUZUTUdaOEY3RVJWb1NHa0h6QWRNUnN3R1FZRFZRUURFeEp6CmFHbGlZbTlzWlhSb0xuVnBZeTVsWkhXQ0NRREo0ZFNyR25MMUhqQU1CZ05WSFJNRUJUQURBUUgvTUEwR0NTcUdTSWIzRFFFQkJRVUEKQTRJQkFRQllXcmJqWUMrYmZ3YjFnUENjaGkwdmlsNXg5MmF2SUpqUXYvQU9JVDV4cDl2bWc2a200MjlLWEQ1Qm9JMzJ0ZjdpU2dtdwpPbGx4dExHTEU4ajdFS1p3Y1ZjbTNKWW81UElWeldYOHlJMnEyVXBVWktGcnlvUy9LRlVvb2xETjFiTlFSbnJMZU8xUHd5N2k5M0g4Cm1uTEdCYS9TMCtwY2pFaXRLZEMrVkdFdytpK1pWVkJDWk1zeWdnekxLOEtJckpQckk3dk5GZmxkNmE5RFlrR1VLNTltd1V3ZlZVMXMKeVVrMEVodDI1Yk5hNHdLa1dHZjRPWVY4M3gzNnhXTXlOMll5OWZ2bFVIek0xM0hkRUZ2ZlB5dEoyejF3cERVVlphR0o1TFdiMTNjUwpwVFoyeUV5bGxyUlc4d2U5UGFvYWM4anNFaitsNGE2UHliTjF0dHgvUjA4ajwvZHM6WDUwOUNlcnRpZmljYXRlPjwvZHM6WDUwOURhdGE+PC9kczpLZXlJbmZvPjwvZHM6U2lnbmF0dXJlPjxzYW1sMnA6U3RhdHVzPjxzYW1sMnA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpSZXF1ZXN0ZXIiPjxzYW1sMnA6U3RhdHVzQ29kZSBWYWx1ZT0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnN0YXR1czpBdXRobkZhaWxlZCIvPjwvc2FtbDJwOlN0YXR1c0NvZGU+PHNhbWwycDpTdGF0dXNNZXNzYWdlPkFuIGVycm9yIG9jY3VycmVkLjwvc2FtbDJwOlN0YXR1c01lc3NhZ2U+PC9zYW1sMnA6U3RhdHVzPjwvc2FtbDJwOlJlc3BvbnNlPg=="/>                
-            </div>
-            <noscript>
-                <div>
-                    <input type="submit" value="Continue"/>
-                </div>
-            </noscript>
-        </form>
-            </body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>UIC Bluestem ID Server</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bluestem/assets/styles/login.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+
+  <div class="jumbotron" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 logo"> </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 login-alert">
+      <div class="alert alert-danger" role="alert">
+        <h1>Invalid Referral to UIC WWW Identification Service</h1>
+
+        <p class="lead">Please configure your browser to accept cookies and try again.</p>
+
+        <p>
+          You arrived at this service someway other than by
+          referral from an authorized server, perhaps by
+          typing in a URL, or returning to a previous
+          authentication page.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+ <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+	<p>
+	  &copy; University of Illinois Board of Trustees |
+          <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
+	</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/bluestem/assets/js/jquery.placeholder.min.js"></script>
+<script>
+	$(function() {
+	// Invoke placeholder plugin
+	$('input').placeholder(); 
+	});
+</script>
+<script>
+  $('#disable-on-click').on('click', function(){
+    $('#disable-on-click').attr("disabled", true);
+  	$("#login-form").submit()
+  });
+</script>
+  </body>
 </html>
+

@@ -7,11 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UIC Account Portal</title>
+
+    <title>UIC Bluestem ID Server</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/htdocs/assets/styles/account-portal.css">
+    <link rel="stylesheet" href="/bluestem/assets/styles/login.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,143 +31,52 @@
   </div>
 
 
-
-
 <div class="container" role="main">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 login-alert">
+      <div class="alert alert-danger" role="alert">
+        <h1>Invalid Referral to UIC WWW Identification Service</h1>
 
+        <p class="lead">Please configure your browser to accept cookies and try again.</p>
 
-<div class="row">
-  <div class="col-md-8 col-md-offset-2 jumbotron app-main">
-  <h1>
-    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-    UIC Account Portal
-  </h1>
-  <p>
-    Activate your UIC netID, create accounts, manage passwords and
-    email, voicemail and SMS notifications.
-  </p>
+        <p>
+          You arrived at this service someway other than by
+          referral from an authorized server, perhaps by
+          typing in a URL, or returning to a previous
+          authentication page.
+        </p>
 
+      </div>
+    </div>
   </div>
-</div>
-
-
-
-<div class="row app-menu">
-  <div class="col-md-2 col-md-offset-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/token/manage?dispatch=activate_panel">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-        NetID activation</a>
-    </h3>
-    <p>
-      Activate your UIC netID to access campus network, computer labs,
-      printing, library resources, email and Blackboard.
-    </p>
-  </div>
-
-  <div class="col-md-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/auth/manage?dispatch=maildrop_panel">
-        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-        Email</a>
-    </h3>
-    <p>
-      Manage UIC email routing for your netID, or create a UIC email account
-      to use with your UIC email address.
-    </p>
-  </div>
-
-  <div class="col-md-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/token/manage?dispatch=cr_panel">
-        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-        Passwords</a>
-    </h3>
-    <p>
-      Change your password, set up password recovery or reset your password
-      using emergency email or challenge/response.
-    </p>
-  </div>
-
-  <div class="col-md-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/auth/manage?dispatch=set_sms_panel">
-        <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-        Emergency SMS</a>
-    </h3>
-    <p>
-      Sign up or renew your subscription to receive emergency campus
-      notifications via text message.
-    </p>
-  </div>
-</div>
-
-
-<div class="row app-menu">
-  <div class="col-md-2 col-md-offset-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/token/manage?dispatch=acct_panel">
-        <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
-        Accounts</a>
-    </h3>
-    <p>
-      Create UIC email, calendar and web accounts. Collaborate with others
-      using GoogleApps.
-    </p>
-  </div>
-
-  <div class="col-md-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/auth/manage?dispatch=info_panel">
-        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
-        Notifications</a>
-    </h3>
-    <p>
-      Subscribe to Massmail and UIC Announce notifications or update your
-      subscription preferences.
-    </p>
-  </div>
-
-  <div class="col-md-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/auth/manage?dispatch=softphone">
-        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-        Voicemail</a>
-    </h3>
-    <p>
-      Listen to voicemail messages, delete messages, select
-      greetings and update notification preferences.
-    </p>
-  </div>
-
-  <div class="col-md-2">
-    <h3>
-      <a href="https://accountportal.uic.edu/auth/manage?dispatch=mysql">
-        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-        MySQL</a>
-    </h3>
-    <p>
-      Manage user accounts of your MySQL databases. Add or remove users,
-      and change MySQL account passwords.
-    </p>
-  </div>
-</div>
-
-
 </div>
 
  <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-2">
-        <p>
-          &copy; University of Illinois Board of Trustees |
-          <a target=_new href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
-        </p>
+	<p>
+	  &copy; University of Illinois Board of Trustees |
+          <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
+	</p>
       </div>
     </div>
   </div>
 </footer>
-
-</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/bluestem/assets/js/jquery.placeholder.min.js"></script>
+<script>
+	$(function() {
+	// Invoke placeholder plugin
+	$('input').placeholder(); 
+	});
+</script>
+<script>
+  $('#disable-on-click').on('click', function(){
+    $('#disable-on-click').attr("disabled", true);
+  	$("#login-form").submit()
+  });
+</script>
+  </body>
 </html>
+

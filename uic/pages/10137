@@ -1,611 +1,747 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; CS340 &lt; TWiki</title>
 
-<title>Biomarker higher in binge drinkers | UIC Today</title>
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/style.css" />
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/css/style.min.css" />
-    
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://today.uic.edu/feed" />
-
-<link rel="shortcut icon" href="https://today.uic.edu/wp-content/themes/uictoday/favicon.ico" />
-
-
-
-<link rel='dns-prefetch' href='//s.w.org' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/today.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS340/WebStatistics?_T=2018-11-25" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS340/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS340/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
 }
 </style>
-<link rel='stylesheet' id='events-manager-css'  href='https://today.uic.edu/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.95' type='text/css' media='all' />
-<link rel='stylesheet' id='ssp-frontend-player-css'  href='https://today.uic.edu/wp-content/plugins/seriously-simple-podcasting/assets/css/player.css?ver=1.19.14' type='text/css' media='all' />
-<link rel='stylesheet' id='qcsld-fa-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-rwd-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style-rwd.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-embed-form-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/css/embed-form.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='wow-icons-fa-css'  href='https://today.uic.edu/wp-content/plugins/wow-icons//assets/fontawesome/font-awesome.min.css?ver=2.0.1' type='text/css' media='all' />
-<link rel='stylesheet' id='upw_theme_standard-css'  href='https://today.uic.edu/wp-content/plugins/ultimate-posts-widget/css/upw-theme-standard.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='tablepress-default-css'  href='https://today.uic.edu/wp-content/tablepress-combined.min.css?ver=26' type='text/css' media='all' />
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-a11y.min.js?ver=4.9.8'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var EM = {"ajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"mm\/dd\/yy","ui_css":"https:\/\/today.uic.edu\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.95'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/directory-script.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/js/embed-form.js?ver=4.9.8'></script>
-<link rel='https://api.w.org/' href='https://today.uic.edu/wp-json/' />
-<link rel='prev' title='How I got my internship' href='https://today.uic.edu/how-i-got-my-internship' />
-<link rel='next' title='Harrison, Halsted streets closed over weekend for construction' href='https://today.uic.edu/harrison-halsted-streets-closed-over-weekend-for-construction' />
-<link rel="canonical" href="https://today.uic.edu/biomarker-higher-in-binge-drinkers" />
-<link rel='shortlink' href='https://today.uic.edu/?p=39545' />
-<link rel="alternate" type="application/json+oembed" href="https://today.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftoday.uic.edu%2Fbiomarker-higher-in-binge-drinkers" />
-<link rel="alternate" type="text/xml+oembed" href="https://today.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftoday.uic.edu%2Fbiomarker-higher-in-binge-drinkers&#038;format=xml" />
-    <style type="text/css" media="screen">
-      div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
-        text-decoration: none;
-        border: none;
-      }
-    </style>
-           <style type="text/css" media="screen">
-          div.printfriendly {
-            margin: 0px 0px 0px 0px;
-            position: relative;
-            z-index: 1000;
-          }
-          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
-            font-size: 14px;
-            color: #55750C;
-            vertical-align: bottom;
-          }
-          .printfriendly a {
-            box-shadow:none;
-          }
-          .printfriendly a:hover {
-            cursor: pointer;
-          }
-          .printfriendly a img  {
-            border: none;
-            padding:0;
-            margin-right: 6px;
-            box-shadow: none;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-          }
-          .printfriendly a span{
-            vertical-align: bottom;
-          }
-          .pf-alignleft {
-            float: left;
-          }
-          .pf-alignright {
-            float: right;
-          }
-          div.pf-aligncenter {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-          }
-        </style>
-        <style type="text/css" media="print">
-          .printfriendly {
-            display: none;
-          }
-        </style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://today.uic.edu/feed/podcast" />
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
 
 <script type="text/javascript">
-           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-         </script><script type="text/javascript">
-	           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-	         </script>
-<!-- Put the following javascript before the closing </head> tag. -->
 
-<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
   (function() {
-    var cx = '009511351313755808885:xdz07yl93pe';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
 </script>
 
+<!-- /Google Analytics Snippet -->
 </head>
-
-<body role="document" class="post-template-default single single-post postid-39545 single-format-standard">
-
-
-<div id="skip" role="complementary">
-<a href="#the_content">Skip to main content</a></div>
-
-
-
-<div id="header" role="banner">
-
-
-
-
-         		<div id="header-background">
-
-
-
-<!-- removed color wash for now.
-
-			<div class="color-wash">
-            <img src="" alt="   ">
-            </div>
-
-            -->
-
-
-
-            <div class="uic-type-wrapper">
-
-
-            <div class="last-update-timestamp">
-            	Updated: Nov 21, 2018 at 10:21 AM
-            </div><!--  last-update-timestamp   -->
-
-
-            <div class="uic-type-treatment">
-
-  			<div class="_mark">
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->
-
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-
-			</div><!--  uic-type-treatment   -->
-
-
-
-            <!-- Put search box here -->
-<div class="search-box" aria-label="Search U I C today">
-    <form role="search" method="get" action="https://today.uic.edu/">
-     
-        <input type="text" id="s" name="s" aria-label="Search" size="25" value="" placeholder="Search">
-
-<button type="submit" value="Submit" style="border: 0;
-clip: rect( 1px, 1px, 1px, 1px );
-clip-path: inset( 50% );
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal;">
-Submit
-</button>
-
-    </form>
-    
-    
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS340/WebHome">CS340 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS340/WebStatistics" title='Topic revision: 501 (2017-03-22 - 12:08:49)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-22, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS340.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS340/WebStatistics?t=1543180652' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS340/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_CS340_Web"></a> Statistics for CS340 Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS340/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS340/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS340/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS340/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS340/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS340/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3038<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 365&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />242&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />204&nbsp;<a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />164&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />122&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />107&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />101&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;85&nbsp;<a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;80&nbsp;<a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/CS340/S12Demo9" class="twikiLink">S12Demo9</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1225<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 232&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS340/FortuneServer" class="twikiLink">FortuneServer</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1484<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 142&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;84&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;79&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;68&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;61&nbsp;<a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;&nbsp;52&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1148<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 141&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />123&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />116&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;75&nbsp;<a href="/bin/view/CS340/FortuneServer" class="twikiLink">FortuneServer</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/CS340/Demo11" class="twikiLink">Demo11</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1126<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 149&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;88&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;72&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/CS340/FortuneServer" class="twikiLink">FortuneServer</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/CS340/Demo11" class="twikiLink">Demo11</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1751<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 267&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />144&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;90&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;65&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/CS340/FortuneServer" class="twikiLink">FortuneServer</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 440<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 65&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />37&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />33&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />26&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />23&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />22&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />21&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />17&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />11&nbsp;<a href="/bin/view/CS340/MinGW" class="twikiLink">MinGW</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1224<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 210&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />168&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/CS340/Project5s12" class="twikiLink">Project5s12</a><br />&nbsp;&nbsp;28&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;&nbsp;25&nbsp;<a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2853<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 258&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />236&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />117&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />112&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />111&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />109&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />103&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />101&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;99&nbsp;<a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;93&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2080<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 189&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;99&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;88&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;85&nbsp;<a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;74&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-04 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 165<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 24&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />17&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />11&nbsp;<a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />10&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;8&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/CS340/EchoServer" class="twikiLink">EchoServer</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1624<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 500&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;65&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;52&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2146<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 206&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />196&nbsp;<a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />143&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />130&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />125&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />121&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;82&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;80&nbsp;<a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;70&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 229<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 54&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />17&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />14&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;7&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;7&nbsp;<a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;&nbsp;6&nbsp;<a href="/bin/view/CS340/Demo5S13" class="twikiLink">Demo5S13</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/CS340/MinGW" class="twikiLink">MinGW</a><br />&nbsp;&nbsp;5&nbsp;<a href="/bin/view/CS340/S12Demo9" class="twikiLink">S12Demo9</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1009<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 90&nbsp;<a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />76&nbsp;<a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />62&nbsp;<a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />57&nbsp;<a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />36&nbsp;<a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />35&nbsp;<a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />32&nbsp;<a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />31&nbsp;<a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />30&nbsp;<a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />28&nbsp;<a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1746 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 109 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />104 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;81 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;64 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;55 <a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;49 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;48 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;47 <a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;45 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;44 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;43 <a href="/bin/view/CS340/Project5s12" class="twikiLink">Project5s12</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1966 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 152 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />145 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />109 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;75 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;63 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;60 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;60 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;60 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;58 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;52 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;50 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2638 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 164 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />156 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />112 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;96 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;93 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;90 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;79 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;74 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;73 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;70 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;69 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1718 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 158 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;92 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;83 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;73 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;72 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;70 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;70 <a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;65 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;62 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;61 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;57 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2596 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 229 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />208 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />159 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />156 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />143 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />138 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />130 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />121 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />121 <a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;75 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;61 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1226 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;74 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;68 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;62 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;58 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;54 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;52 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;41 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;38 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;37 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;37 <a href="/bin/view/CS340/AssignmentsS13" class="twikiLink">AssignmentsS13</a><br />&nbsp;34 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 252 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />156 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />139 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />107 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />100 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;96 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;94 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;84 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;78 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;77 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;76 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1998 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 183 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />142 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;84 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;77 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;68 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;67 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;66 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;65 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;57 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;55 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;52 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1949 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 160 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;99 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;82 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;74 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;69 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;64 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;62 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;60 <a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;59 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;58 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;52 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2282 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 407 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />113 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />101 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;94 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;74 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;74 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;62 <a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;59 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;58 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;56 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1717 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 128 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />111 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;69 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;68 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;65 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;54 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;52 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;52 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;51 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;51 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;46 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2310 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 274 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />149 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;91 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;89 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;78 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;78 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;75 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;63 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;60 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;55 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;52 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1339 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 116 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;64 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;51 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;44 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;44 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;42 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;42 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;40 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;40 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;38 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;37 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1239 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;81 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;81 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;64 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;48 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;46 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;39 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;35 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;33 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;33 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;31 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;30 <a href="/bin/view/CS340/EchoServer" class="twikiLink">EchoServer</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3381 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 214 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />205 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />185 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />164 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />158 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />145 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />128 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />121 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;98 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;89 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;82 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 13545 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1576 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />1091 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />964 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />915 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />899 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />809 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />410 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />394 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a><br />383 <a href="/bin/view/CS340/Project2s12" class="twikiLink">Project2s12</a><br />322 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />307 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 19481 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 2086 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />1845 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />1303 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />1111 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />1052 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />945 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />724 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />601 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a><br />544 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />533 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />433 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 14254 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1466 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />990 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />848 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />777 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />754 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />742 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />672 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />423 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a><br />402 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />369 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />348 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 18755 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 2177 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />1650 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />1343 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />1271 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />1107 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />990 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />868 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />613 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a><br />475 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />423 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />395 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 10461 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1063 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />969 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />889 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />873 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />671 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />550 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />539 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />387 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a><br />330 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />284 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />206 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 4726 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 836 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />592 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />364 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />287 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />251 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />242 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />229 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />118 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />113 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />109 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;80 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1628 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 240 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />163 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />117 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />102 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;97 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;92 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;59 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;50 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;48 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;35 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;30 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1665 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 221 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />149 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />139 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;96 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;93 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;64 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;64 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;38 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;38 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;35 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;33 <a href="/bin/view/CS340/AssignmentsS13" class="twikiLink">AssignmentsS13</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2326 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 207 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />205 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />158 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />132 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />113 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;81 <a href="/bin/view/CS340/AssignmentsS13" class="twikiLink">AssignmentsS13</a><br />&nbsp;77 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;75 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;60 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;59 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />&nbsp;58 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 7390 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 866 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />522 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />379 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />288 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />284 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />259 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />244 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />218 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />212 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />204 <a href="/bin/view/CS340/AssignmentsS13" class="twikiLink">AssignmentsS13</a><br />202 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 564 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;67 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;51 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;42 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;28 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;23 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;22 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;21 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;20 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;19 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;18 <a href="/bin/view/CS340/FortuneServer" class="twikiLink">FortuneServer</a><br />&nbsp;16 <a href="/bin/view/CS340/S12Demo7" class="twikiLink">S12Demo7</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2691 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 443 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />175 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />151 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />147 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />123 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;86 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;85 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;62 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;61 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;56 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;50 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3332 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 311 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />202 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />154 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />151 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />146 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />143 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />128 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />120 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;79 <a href="/bin/view/CS340/S12Demo8" class="twikiLink">S12Demo8</a><br />&nbsp;77 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;76 <a href="/bin/view/CS340/S12Demo7" class="twikiLink">S12Demo7</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1812 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 189 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;92 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;91 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;84 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;80 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;65 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;57 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;56 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;55 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a><br />&nbsp;46 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;45 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1503 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 226 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;97 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;79 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />&nbsp;67 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;64 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;51 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;46 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;44 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;40 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;37 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />&nbsp;32 <a href="/bin/view/CS340/S12Demo7" class="twikiLink">S12Demo7</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 6630 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 662 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />539 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />394 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />293 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />244 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />188 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />167 <a href="/bin/view/CS340/S12Demo9" class="twikiLink">S12Demo9</a><br />157 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a><br />153 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />145 <a href="/bin/view/CS340/S12Demo8" class="twikiLink">S12Demo8</a><br />136 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 6930 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 797 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />394 <a href="/bin/view/CS340/AssignmentsS13" class="twikiLink">AssignmentsS13</a><br />388 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />285 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />273 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />268 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />147 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />125 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />117 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />114 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a><br />114 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 5574 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 666 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />273 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />265 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />243 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />196 <a href="/bin/view/CS340/AssignmentsS13" class="twikiLink">AssignmentsS13</a><br />170 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a><br />143 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />141 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />137 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />129 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />118 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4403 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 579 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />421 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />405 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />230 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />138 <a href="/bin/view/CS340/S12Demo9" class="twikiLink">S12Demo9</a><br />137 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />128 <a href="/bin/view/CS340/LecturesS13" class="twikiLink">LecturesS13</a><br />&nbsp;92 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;81 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;72 <a href="/bin/view/CS340/S12Demo3" class="twikiLink">S12Demo3</a><br />&nbsp;64 <a href="/bin/view/CS340/S12Demo4" class="twikiLink">S12Demo4</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 7017 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 586 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />586 <a href="/bin/view/CS340/Spring2013" class="twikiLink">Spring2013</a><br />418 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />347 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />216 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />213 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />208 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a><br />193 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />178 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />168 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a><br />168 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 8086 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1211 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />596 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />340 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />296 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />272 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />265 <a href="/bin/view/CS340/Demo11" class="twikiLink">Demo11</a><br />250 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a><br />246 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />229 <a href="/bin/view/CS340/FortuneClient" class="twikiLink">FortuneClient</a><br />222 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />216 <a href="/bin/view/CS340/EchoClient" class="twikiLink">EchoClient</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1952 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 267 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />174 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />172 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />166 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />158 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />100 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;66 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;53 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;41 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;32 <a href="/bin/view/CS340/Project2s12" class="twikiLink">Project2s12</a><br />&nbsp;32 <a href="/bin/view/CS340/EchoServer" class="twikiLink">EchoServer</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2407 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 545 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />180 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;97 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;92 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;89 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;69 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;59 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;53 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;52 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;51 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;46 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 745 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 177 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;43 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;41 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;40 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;33 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;20 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;19 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />&nbsp;18 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;18 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;18 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;15 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1879 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 408 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />112 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;94 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;85 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;73 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;63 <a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;58 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;55 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;47 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;45 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;44 <a href="/bin/view/CS340/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1298 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 200 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;82 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;69 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;58 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;54 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />&nbsp;41 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;35 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;34 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;32 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;31 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;31 <a href="/bin/view/CS340/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2760 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 175 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />161 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />127 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />118 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />103 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />&nbsp;76 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;75 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;49 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;48 <a href="/bin/view/CS340/CombinedCS" class="twikiLink">CombinedCS</a><br />&nbsp;45 <a href="/bin/view/CS340/S12Demo7" class="twikiLink">S12Demo7</a><br />&nbsp;44 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 7198 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 901 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />338 <a href="/bin/view/CS340/Project5s12" class="twikiLink">Project5s12</a><br />298 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />237 <a href="/bin/view/CS340/Project4s12" class="twikiLink">Project4s12</a><br />212 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />120 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />101 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;99 <a href="/bin/view/CS340/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;99 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;76 <a href="/bin/view/CS340/FortuneServer2" class="twikiLink">FortuneServer2</a><br />&nbsp;69 <a href="/bin/view/CS340/S12Demo6" class="twikiLink">S12Demo6</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 6976 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 884 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />507 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />478 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />283 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />194 <a href="/bin/view/CS340/Project4s12" class="twikiLink">Project4s12</a><br />143 <a href="/bin/view/CS340/QtExamplesS12" class="twikiLink">QtExamplesS12</a><br />137 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />117 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />105 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />102 <a href="/bin/view/CS340/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;90 <a href="/bin/view/CS340/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 5161 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 790 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />395 <a href="/bin/view/CS340/Project2s12" class="twikiLink">Project2s12</a><br />316 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />256 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />172 <a href="/bin/view/CS340/Project3s12" class="twikiLink">Project3s12</a><br />155 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />115 <a href="/bin/view/CS340/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;88 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;67 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;67 <a href="/bin/view/CS340/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;61 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 4665 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 601 <a href="/bin/view/CS340/Spring2012" class="twikiLink">Spring2012</a><br />485 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />447 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />329 <a href="/bin/view/CS340/Project1" class="twikiLink">Project1</a><br />189 <a href="/bin/view/CS340/Homeworks" class="twikiLink">Homeworks</a><br />147 <a href="/bin/view/CS340/Lectures" class="twikiLink">Lectures</a><br />&nbsp;95 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;87 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;76 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;74 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;65 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Dec 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1 twikiLast"> 872 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLast"> 1 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> 334 <a href="/bin/view/CS340/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />101 <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;62 <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;61 <a href="/bin/view/CS340/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/CS340/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;44 <a href="/bin/view/CS340/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;44 <a href="/bin/view/CS340/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;39 <a href="/bin/view/CS340/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;38 <a href="/bin/view/CS340/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;36 <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;29 <a href="/bin/view/CS340/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS340.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/CS340" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS340/WebStatistics?t=1543180652' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS340/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS340/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS340/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r501&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/WebStatistics?rev1=501;rev2=500">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/WebStatistics?rev=500">r500</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/WebStatistics?rev1=500;rev2=499">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/WebStatistics?rev=499">r499</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/WebStatistics?rev1=499;rev2=498">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/WebStatistics?rev=498">r498</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS340/WebStatistics?rev1=498;rev2=497">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS340/WebStatistics?rev=497">r497</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS340/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the CS340 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS340/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS340/WebStatistics?t=1543180652;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS340/WebStatistics?template=oopsmore&amp;param1=501&amp;param2=501' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r501 - 2017-03-22 - 12:08:49 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS340.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS340</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS340/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS340/Spring2013" class="twikiLink">Main Page: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS340/LecturesS13" class="twikiLink">Lecture Notes: Spring 13</a>
+</li> <li> <a href="/bin/view/CS340/Spring2013#Assignments" class="twikiAnchorLink">Assignments: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS340/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li></ul> 
+<a href="/bin/edit/CS340.WebLeftBar" target="_top">[edit this menu</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS340/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS340/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS340 Web</a></strong>
+</li> <li> <a href="/bin/view/CS340/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS340/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS340/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS340/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS340/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS340/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS340/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS340/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-
-
-
-<!-- End search box code -->
-
-
-
-			</div><!--  uic-type-wrapper    -->
-
-
-		</div><!--  header-background   -->
-
-
-
-
-
-		<div id="main_nav" role="navigation" aria-label="Site">
-	  	 	<div class="main_nav_container"><ul id="menu-main_nav" class="menu"><li id="menu-item-57546"><a href="https://today.uic.edu/campus-news">Campus News</a></li>
-<li id="menu-item-57547"><a href="https://today.uic.edu/academics-research">Academics &#038; Research</a></li>
-<li id="menu-item-57548"><a href="https://today.uic.edu/events">Events</a></li>
-<li id="menu-item-67603"><a href="https://today.uic.edu/resources">Resources</a>
-<ul class="sub-menu">
-	<li id="menu-item-67604"><a href="https://today.uic.edu/resources/current-students">Current Student Resources</a></li>
-	<li id="menu-item-67605"><a href="https://today.uic.edu/resources/faculty-staff">Faculty &#038; Staff Resources</a></li>
-	<li id="menu-item-70617"><a href="https://today.uic.edu/campus-news/campus-newspaper">Campus Newspaper &#038; Archives</a></li>
-</ul>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
 </li>
-<li id="menu-item-57549"><a href="https://today.uic.edu/contact">Contact</a>
-<ul class="sub-menu">
-	<li id="menu-item-57551"><a href="https://today.uic.edu/contact/communicating-on-campus">Communicating On Campus</a></li>
-	<li id="menu-item-57552"><a href="https://today.uic.edu/contact/communicating-on-campus/sending-massmails-dddh">Sending Announcements / DDDH</a></li>
-	<li id="menu-item-57550"><a href="https://today.uic.edu/contact/social-media-directory">UIC Social Media Directory</a></li>
 </ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
 </li>
-</ul></div>	    </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-		</div>
-
-
-
-
-
-
-
-
- <div id="container" role="main" aria-label="Main content" class="clearfix">
-
-
-<a name="the_content" id="the_content" tabindex="-1" aria-label="Main content area"></a>
-
-
-
-
-<div id="content">
-
-		<div id="single_right_sidebar"> <!-- creates social sharing links -->
-			<div class="single_rightBar_widgets connect">
-					<a href="http://www.facebook.com/sharer/sharer.php?u=https://today.uic.edu/biomarker-higher-in-binge-drinkers&amp;t=Biomarker higher in binge drinkers">
-						<img src="/wp-content/themes/uictoday/images/icon-facebook-link.svg" alt="Facebook"/>
-					</a>
-					<a href="http://twitter.com/home/?status=Biomarker higher in binge drinkers - https://today.uic.edu/biomarker-higher-in-binge-drinkers" title="Tweet this!">
-						<img src="/wp-content/themes/uictoday/images/icon-twitter-link.svg" alt="Twitter"/>
-					</a>
-					<a href="http://www.linkedin.com/shareArticle?mini=true&amp;title=Biomarker higher in binge drinkers&amp;url=https://today.uic.edu/biomarker-higher-in-binge-drinkers" title="Share on LinkedIn">
-						<img src="/wp-content/themes/uictoday/images/icon-linkedin-link.svg" alt="LinkedIn"/>
-					</a>
-					<a href="http://www.tumblr.com/share/link?url=https://today.uic.edu/biomarker-higher-in-binge-drinkers">
-						<img src="/wp-content/themes/uictoday/images/icon-tumblr-link.svg" alt="Tumblr"/>
-					</a>
-					<a href="mailto:?Subject=Biomarker higher in binge drinkers&Body=https://today.uic.edu/biomarker-higher-in-binge-drinkers">
-						<img src="/wp-content/themes/uictoday/images/icon-cta-envelope.svg" alt="email"/>
-					</a>
-			</div>
-		</div>
-
-<!--		<div class="labels">
-										</div>  -->
-
-		<div class="article clearfix">
-			<h1>Biomarker higher in binge drinkers</h1>
-
-			<p class="author-date">
-				July 23, 2015			</p>
-
-			<div class="pf-content"><p>A biomarker found in the blood of alcohol users is significantly higher in binge drinkers than in those who consume alcohol moderately, according to a <a title="Alcohol and Alcoholism" href="http://alcalc.oxfordjournals.org/content/early/2015/06/07/alcalc.agv049" target="_blank">study</a> by researchers at the University of Illinois at Chicago. The biomarker, called phosphatidylethanol (PEth), could be used to screen young adults for harmful or heavy drinking such as binge drinking.<a href="http://news.uic.edu/files/2015/07/da-drink-1510187.jpg"><img class="alignright size-medium wp-image-39532" alt="alcohol" src="http://news.uic.edu/files/2015/07/da-drink-1510187-387x258.jpg" width="387" height="258" srcset="https://today.uic.edu/files/2015/07/da-drink-1510187-387x258.jpg 387w, https://today.uic.edu/files/2015/07/da-drink-1510187-590x393.jpg 590w, https://today.uic.edu/files/2015/07/da-drink-1510187-150x100.jpg 150w, https://today.uic.edu/files/2015/07/da-drink-1510187-200x133.jpg 200w, https://today.uic.edu/files/2015/07/da-drink-1510187-250x166.jpg 250w, https://today.uic.edu/files/2015/07/da-drink-1510187-600x400.jpg 600w, https://today.uic.edu/files/2015/07/da-drink-1510187-500x333.jpg 500w, https://today.uic.edu/files/2015/07/da-drink-1510187-300x200.jpg 300w" sizes="(max-width: 387px) 100vw, 387px" /></a></p>
-<p>Having performed extensive research on alcohol and its effects on health throughout her career, Mariann Piano, professor and head of the department of biobehavioral health science in the UIC College of Nursing, knew PEth is a biomarker associated with alcohol consumption, but it had never been measured in young adults.</p>
-<p>“Binge drinking is pervasive on college campuses and among young adults,” Piano said. “More alarming, though, is the regularity of binge drinking episodes: one in five students report three or more binge drinking episodes in the prior two weeks.”</p>
-<p>The National Institute on Alcohol Abuse and Alcoholism defines binge drinking as a pattern of drinking that brings a person’s blood alcohol concentration to 0.08 or above. This typically occurs when men consume five or more drinks in about two hours. For women, it’s consuming four or more drinks in the same time period.</p>
-<p>Piano and co-investigator Shane Phillips, associate professor of physical therapy, measured PEth in blood samples from student participants at two large Midwestern university campuses. Participants were part of a larger ongoing study examining the cardiovascular effects of binge drinking.</p>
-<p>Participants completed a 10-question self-assessment survey to determine their drinking patterns. After the questionnaires were reviewed, the subjects were divided into three groups: abstainers, moderate drinkers and binge drinkers.</p>
-<p>Abstainers had not had more than one drink per month in the past two to three years. For men, moderate drinking was defined as consuming three drinks or less per sitting one to two times per week in the past five years. For women, the number of drinks was two. Binge drinkers must have had at least two episodes of heavy drinking in one sitting in the last month.</p>
-<p>The majority of participants were Caucasian females. The majority of moderate and binge drinkers were Caucasian, while abstainers were predominantly Asian.</p>
-<p>Following the self-assessment, blood was drawn from each participant to measure blood alcohol levels and PEth. Five blood spots were placed on cards to be dried and measured against the whole blood samples in an off-site drug testing laboratory.</p>
-<p>“We discovered a significant correlation between PEth levels in both the whole blood and dried blood samples and the number of times subjects consumed four to five drinks in one sitting within the last 30 days,” Piano said.</p>
-<p>The PEth levels in the blood also positively correlated with the self-assessment survey scores, Piano said.</p>
-<p>“Using a biomarker of heavy alcohol consumption such as PEth along with self-reporting could provide an objective measure for use in research, screening and treatment of hazardous alcohol use among young adults,” she said.</p>
-<p>Piano and Phillips were assisted by Stephanie Tiwari, department of biobehavioral health science, and Lauren Nevoral in the department of physical therapy, both of UIC. The research, published in the journal Alcohol and Alcoholism, was funded through an Ignite Proposal Development Grant from UIC’s Office of the Vice Chancellor for Research.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
 </div>
-			<p class="author-date">
-													<div class="rightBar_widgets">
-						<h2>Contact</h2>
-						<p>
-							<span class="bold"><a href="https://today.uic.edu/author/samhos" title="Posts by Sam Hostettler" rel="author">Sam Hostettler</a></span><br />
-							312-355-2522<br />
-							<a href="mailto:samhos@uic.edu">samhos@uic.edu</a><br />
-														<a href="http://twitter.com/samhosuic">twitter.com/samhosuic</a>
-						</p>
-					</div>
-							</p>
-			</div>
-
-			<div id="tag-area">
-				<p class="tag-label">Categories</p>
-																<p>
-							<a href="https://today.uic.edu/category/category-research" rel="category tag">Research</a>						</p>
-									</p>
-
-													<p class="tag-label">Topics</p>
-					<p><a href="https://today.uic.edu/tag/alcohol" rel="tag">alcohol</a>, <a href="https://today.uic.edu/tag/binge-drinking" rel="tag">binge drinking</a>, <a href="https://today.uic.edu/tag/biomarker" rel="tag">biomarker</a>, <a href="https://today.uic.edu/tag/blood" rel="tag">blood</a></p>
-							</div>
-		
-
-			
-</div>
-
-<!-- Need 2 closing divs before footer to close divs from page header include -->
-	</div>
-    
-</div>    
-  
-
-<div class="clearThis">&nbsp;</div>
-
-
-
-
-
-    
-
-    <footer id="footer" class="footer u-dark-region" role="contentinfo">
-
-
-  <div class="footer-contact">
-    <div class="l-full">
-
-
-            <div class="uic-type-wrapper-footer">
-
-            <div class="uic-type-treatment-footer">
-            
-  			<div class="_mark"> 
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->   
-            
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-            
-			</div><!--  uic-type-treatment-footer   -->
-
-
-			</div><!--  uic-type-wrapper-footer    -->
- 
-
-
-  <div class="_contact">
-  
-  
-    <h2>Contact</h2>
-    
-    
-		<div class="site-address">Office of Public and Government Affairs <br />
-		601 S. Morgan St., 1320 UH, Chicago, IL 60607</div>
-      
-      
-		<div class="site-email"><a href="mailto:uictoday@uic.edu">uictoday@uic.edu</a></div>
-        
-        
-		<div aria-label="Social Media Accounts" class="_social" role="navigation">
-			<h2 class="assistive-text">Social Media Accounts</h2> 
-  			<ul class="site-social-links">
-            <li><a href="https://www.facebook.com/uicnews "><img src="/wp-content/themes/uictoday/images/social-media-icons/facebook.png" alt="Facebook"></a></li>
-            <li><a href="https://instagram.com/thisisuic/"><img src="/wp-content/themes/uictoday/images/social-media-icons/instagram.png" alt="Instagram"></a></li>
-            <li><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today"><img src="/wp-content/themes/uictoday/images/social-media-icons/rss.png" alt="RSS feed"></a></li>
-            <li><a href="https://uicscience.tumblr.com/"><img src="/wp-content/themes/uictoday/images/social-media-icons/tumblr.png" alt="tumblr"></a></li>
-            <li><a href="https://twitter.com/UICnews"><img src="/wp-content/themes/uictoday/images/social-media-icons/twitter.png" alt="Twitter"></a></li>
-            <li><a href="https://www.youtube.com/user/uicmedia"><img src="/wp-content/themes/uictoday/images/social-media-icons/youtube.png" alt="YouTube"></a></li>
-            <li><a href="https://today.uic.edu/contact/social-media-directory"><img src="/wp-content/themes/uictoday/images/social-media-icons/directory.png" alt="Social media directory"></a></li>
-            </ul>
-            
-            
-		</div>        
-        
-        
-  </div>
-
-    
-
-       
-
-
-   
-
-
-
-
-
-		<div id="quicklinks_footer" role="navigation" aria-label="Quick Links" >
-			<div id="quicklinks_footer_container">
-	  	 	<div class="menu-footer-quicklinks-container"><ul id="menu-footer-quicklinks" class="menu"><li id="menu-item-57564"><a href="/news-release/news-release/">For the Media</a></li>
-<li id="menu-item-57555"><a href="https://today.uic.edu/experts-guide">Experts Guide</a></li>
-<li id="menu-item-57556"><a href="https://today.uic.edu/campus-news/campus-newspaper/advertising">Advertise in UIC News</a></li>
-<li id="menu-item-57577"><a href="https://today.uic.edu/contact/communicating-on-campus/submit-announcements">Submit Announcements</a></li>
-<li id="menu-item-57578"><a href="https://today.uic.edu/submit-an-event">Submit an Event</a></li>
-<li id="menu-item-67562"><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today">Subscribe to UIC Today</a></li>
-</ul></div>        	</div>
-	    </div>      
-
-
-</div>
-
-    
-    </div>
-  </div>
-
-
-
-
-<div class="footer-wrapper-uic-menu-legal">
-
-
-  <div class="footer-uic-menu">
-    <div class="ll-full">
-
-      <div role="navigation" aria-label="UIC.edu Links" >
-  <h2 class="assistive-text">UIC.edu links</h2>
-  <ul class="uic-footer-menu">
-    <li><a href="http://uic.edu/">UIC.edu</a></li>
-    <li><a href="http://catalog.uic.edu/ucat/academic-calendar/">Academic Calendar</a></li>
-    <li><a href="http://uicflames.com/">Athletics</a></li>
-    <li><a href="http://www.uic.edu/apps/departments-az/search">Campus Directory</a></li>
-    <li><a href="http://disabilityresources.uic.edu/">Disability Resources</a></li>
-    <li><a href="http://emergency.uic.edu/">Emergency Information</a></li>
-    <li><a href="http://events.uic.edu/">Event Calendar</a></li>
-    <li><a href="http://uic.edu/about/job-opportunities">Job Openings</a></li>
-    <li><a href="http://library.uic.edu/">Library</a></li>
-    <li><a href="http://maps.uic.edu/">Maps</a></li>
-    <li><a href="http://hospital.uillinois.edu/">UI Health</a></li>
-    <li><a href="http://dos.uic.edu/studentveteranaffairs.shtml">Veterans Affairs</a></li>
-  </ul>
-</div>
-
-    </div><!--  ll-full   -->
-    
-    <div class="m-full">
-    <img src="/wp-content/themes/uictoday/images/uihealth.png" alt="UI Health and UIC co-branded logo">
-    </div><!--  m-full   -->
-    
-  </div><!--  footer-uic-menu   --> 
-
-
-
-
-  <div class="footer-legal">
-    <div class="l-full">
-
-      <div class="site-copyright">
-  &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span>
-  <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
-</div>
-
-<div class="campuses" role="navigation" aria-label="University of Illinois campus web sites">
-  <h2 class="assistive-text">Campuses</h2>
-  <ul class="campuses-list">
-    <li><a href="https://uillinois.edu/">University of Illinois System</a></li>
-    <li><a href="https://illinois.edu/">Urbana-Champaign</a></li>
-    <li><a href="https://uis.edu/">Springfield</a></li>
-  </ul>
-</div>
-
-    </div>
-
-
-
-</div><!--  footer-wrapper-uic-menu-legal   --> 
-    
-    
-  </div>
-
-</footer>
-
-
-
-
-
-</div>
-
-
-			<style type="text/css">
-				.ssp-wave wave wave{
-					background: #28c0e1 !important;
-				}
-			</style>
-		<script type="text/javascript">
-  document.write(unescape("%3Cscript src='//www.uic.edu/inc/emergency/alert.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-      <script type="text/javascript">
-
-          var pfHeaderImgUrl = '';
-          var pfHeaderTagline = '';
-          var pfdisableClickToDel = '0';
-          var pfImagesSize = 'full-size';
-          var pfImageDisplayStyle = 'right';
-          var pfDisableEmail = '0';
-          var pfDisablePDF = '0';
-          var pfDisablePrint = '0';
-          var pfCustomCSS = '';
-          var pfPlatform = 'Wordpress';
-      (function() {
-            var e = document.createElement('script'); e.type="text/javascript";
-            e.src = 'https://cdn.printfriendly.com/printfriendly.js';
-            document.getElementsByTagName('head')[0].appendChild(e);
-        })();
-      </script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/packery.pkgd.js?ver=1.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
- 
-
-
-<!-- Google Analytics Code -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-20665772-1', 'auto');
-    
-        ga('create', 'UA-4402713-9', 'auto', 'todayTracker');
-    
-        ga('send', 'pageview');
-    
-        ga('todayTracker.send', 'pageview');
-      </script>
-
-</body>
-</html><!-- WP Fastest Cache file was created in 0.093670129776001 seconds, on 21-11-18 13:05:49 --><!-- need to refresh to see cached version -->
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

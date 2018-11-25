@@ -4,10 +4,10 @@
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
 <link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-<title> WebNotify &lt; Theys &lt; TWiki</title>
+<title> TermPaperS13 &lt; CS335 &lt; TWiki</title>
 
 <link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Theys/WebNotify?_T=2018-11-21" type="application/x-wiki" title="edit WebNotify" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS335/TermPaperS13?_T=2018-11-25" type="application/x-wiki" title="edit TermPaperS13" />
 <link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
 <meta name="SCRIPTURLPATH" content="/bin" />
 <meta name="SCRIPTSUFFIX" content="" />
@@ -15,8 +15,8 @@
 <meta name="TEXT_SEARCH" content="Search" />
 <meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
 <meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
-<meta name="robots" content="noindex" /><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Theys/WebRss" />
-<base href="https://www.cs.uic.edu/bin/oops/Theys/WebNotify"></base>
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS335/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS335/TermPaperS13"></base>
 <!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
@@ -29,8 +29,22 @@
 @import url('/pub/TWiki/TWikiTemplates/base.css');
 </style>
 <style type="text/css" media="all">
-
-
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
 </style>
 <style type="text/css" media="all">
 @import url('/pub/TWiki/PatternSkin/layout.css');
@@ -98,23 +112,196 @@ pre {
 
 <!-- /Google Analytics Snippet -->
 </head>
-<body class="patternNoViewPage patternOopsPage">
+<body class="patternViewPage">
 <a name="PageTop"></a>
 <div id="patternScreen">
 <div id="patternPageShadow">
 <div id="patternPage">
-<div id="patternOuter">
+<div id="patternWrapper"><div id="patternOuter">
 <div id="patternFloatWrap">
-<div id="patternMain">
-<div id="patternMainContents"><div class="patternSimpleLogo"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiLogos/T-logo-140x40-t.gif" border="0" alt="Home - this site is powered by TWiki(R)"/></div><div class="patternTopic"><h1 class="patternTemplateTitle"></h1> <a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Theys/WebNotify?t=1542826807' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Theys/WebNotify' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Theys/WebNotify?cover=print%25QUERYPARAMSTRING%25' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Theys/WebNotify?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: %REVISIONS%</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Theys/WebNotify?template=backlinksweb' rel='nofollow' title='Search the Theys Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Theys/WebNotify?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Theys/WebNotify?t=1542826808;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Theys/WebNotify?template=oopsmore&amp;param1=%MAXREV%&amp;param2=%CURRREV%' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--></div><!-- /patternTopic-->
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS335/WebHome">CS335 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS335/HomeS13" class="twikiLink">HomeS13</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS335/AssignmentsS13" class="twikiLink">AssignmentsS13</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS335/TermPaperS13" title='Topic revision: 2 (2013-04-01 - 19:32:03)'>TermPaperS13</a> <span class='patternRevInfo'>(2013-04-01, Main.troy)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS335/TermPaperS13?t=1543179949' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS335/TermPaperS13' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="CS_335_Computer_Ethics"></a> CS 335 - Computer Ethics </h1>
+<h2><a name="Term_Paper_Assignment_Requiremen"></a> Term Paper Assignment: Requirements, Guidelines, and Deadlines </h2>
+<hr />
+<h3><a name="Contents_of_this_page"></a> <a name="Contents_of_this_page"></a> <a name="PageTop" title="PageTop"></a>Contents of this page </h3>
+<p />
+<table width="100%" cellspacing="5" border="0"> <tbody> <tr valign="top"><td width="50%"> <a href="/bin/view/CS335/TermPaper#GuidelinesSpecs" class="twikiAnchorLink">Guidelines/specifications for the paper</a><br /> <a href="/bin/view/CS335/TermPaper#RemindersWarnings" class="twikiAnchorLink">Reminders and warnings</a><br /> <a href="/bin/view/CS335/TermPaper#TopicSubmit" class="twikiAnchorLink">Requirements for submitting your topic description</a><br /> <a href="/bin/view/CS335/TermPaper#InterviewTips" class="twikiAnchorLink">Tips for interviews</a><br /> </td> <td width="50%"> <a href="/bin/view/CS335/TermPaper#GradingCriteria" class="twikiAnchorLink">Grading criteria</a><br /> <a href="/bin/view/CS335/TermPaper#WritingRefs" class="twikiAnchorLink">References on writing</a><br /> <a href="/bin/view/CS335/TermPaper#DeadLines" class="twikiAnchorLink">Deadlines</a> </td> </tr></tbody></table> <strong>Possible topics</strong><br /> There are a million and one possible topics, and it seems as though each weeks' news brings us another dozen. If you are stuck, come talk and me, or see the <a target="_top" href="http://www-rohan.sdsu.edu/faculty/giftfire/index.html">web site of a book previously used for CS 335</a> (drilling down to term paper topic suggestions).
+<p />
+<h3><a name="Guidelines_specifications_for_th"></a> <a name="Guidelines_specifications_for_th"></a> <a name="GuidelinesSpecs" title="GuidelinesSpecs"></a><strong>Guidelines/specifications for the paper</strong> </h3>
+<p />
+Investigate the topic. Use articles and books, etc., for background. Your project must include background research and may include some activity, (e.g., an interview or a site visit).
+<p />
+Don't just report. Discuss pros and cons. Evaluate. Use your own words. Quote where appropriate. Give citations for facts and quotes. Discuss how your topic relates to material covered in the text and/or in class discussions.
+<p />
+The paper should be approximately 1500&ndash;3000 words, though you are welcome to go up to 4000+ if you wish to.
+<p />
+<strong>Outline for the paper</strong> (roughly) <ul>
+<li> Cover page with title and your name <em>and word count (not including references!)</em>
+</li> <li> Introduction/overview of topic and issues to be discussed
+</li> <li> Background, description, and/or history of the issue
+</li> <li> Issues, various points of view
+</li> <li> If applicable, results of interviews, observations, etc.
+</li> <li> Your comments or evaluation
+</li> <li> Summary
+</li> <li> List of references
+</li> <li> If applicable, appendix
+</li></ul> 
+Use information and/or quotes from your interview or site visit in the appropriate place(s) within your paper. The Appendix should contain the name, position, and company (or other relevant information) for the person(s) you interviewed or the places you visited. For interviews, include your list of questions and indicate if the interview was in person, by phone, or by e-mail. (In-person interviews are best, but may not be available for some topics.) Include the person's answers. (A summary is ok.) If you identify the person fully and quote extensively from the interview in the body of your paper you do not have to include the appendix. The Appendix does not count toward the word requirement.
+<p />
+The project is to be done during this course. Do not turn in a paper done earlier for another course or for your job.
+<p />
+<a href="/bin/view/CS335/TermPaper#PageTop" class="twikiAnchorLink">Return to top of page</a>
+<h3><a name="Reminders_and_warnings"></a> <a name="Reminders_and_warnings"></a> <strong><a name="RemindersWarnings" title="RemindersWarnings"></a>Reminders and warnings</strong> </h3>
+<p />
+Remember what this course is about. A few students have handed in papers that are purely factual or historic (e.g., a history of the Internet, a summary of computer technology used in the military). Such papers will not get high scores. You must include discussion of issues.
+<p />
+One of the most common problems with papers is poor organization. Write an outline. Organize your thoughts. You may use section headings to indicate the topic or purpose of sections of the paper.
+<p />
+Start early!
+<p />
+Use a variety of sources for information and arguments. If you use articles from the Web, give the URL and the organization sponsoring the site. There's a lot of junk and unsupported opinion on the Web. Pay attention to quality of your sources. (If your topic is covered in the text, do not use the text as a main source. Report in more depth and/or on newer or other aspects of the topic.)
+<p />
+Now and then, a student hands in a paper he or she did not write at all or in which large segments are copied from other sources. Please don't do this. It is dishonest, unfair to your fellow students, and unpleasant for both you and the instructor. You will definitely fail the course; you may be expelled from UIC. Write in your own words. Start early; talk to the instructor if you have problems.
+<p />
+<a href="/bin/view/CS335/TermPaper#PageTop" class="twikiAnchorLink">Return to top of page</a>
+<h3><a name="Requirements_for_submitting_your"></a> <a name="Requirements_for_submitting_your"></a> <a name="TopicSubmit" title="TopicSubmit"></a><strong>Requirements for submitting your topic description</strong> </h3>
+ <strong>(Due by Friday March 8th.)</strong>
+<p />
+Include a title and one or two paragraphs describing what you plan to do. Be specific if you can. Include at least one good reference you plan to use (e.g., a book, an article, a Web site).
+<p />
+There will be a limit on the number of students doing any single topic, so it will be good to have a second topic in mind in case you choose one that has too many people.
+<p />
+Post in Blackboard Forum.
+<p />
+<a href="/bin/view/CS335/TermPaper#PageTop" class="twikiAnchorLink">Return to top of page</a>
+<h4><a name="Tips_for_interviews"></a> <a name="Tips_for_interviews"></a> <a name="InterviewTips" title="InterviewTips"></a><strong>Tips for interviews</strong> </h4>
+<p />
+Many students have enjoyed doing an interview as part of researching this term paper. Use ingenuity in choosing and finding interviewees. Choose someone in a position to have special knowledge of the topic. Don't be afraid of asking well-known people, but be prepared for refusals.
+<p />
+Start early. It may take time to find someone, schedule the interviews, and do follow-up.
+<p />
+Plan; write up your questions in advance. Start with easy questions, getting general information. Ask about positive things before asking about problems. Take notes so you get details right.
+<p />
+Be polite. Identify yourself and your project. Thank the person.
+<p />
+<a href="/bin/view/CS335/TermPaper#PageTop" class="twikiAnchorLink">Return to top of page</a>
+<p />
+<h3><a name="Grading_criteria"></a> <a name="Grading_criteria"></a> <a name="GradingCriteria" title="GradingCriteria"></a><strong>Grading criteria</strong> </h3>
+<p />
+The term paper is worth 20+5 = 25% of the course grade (subject to minor changes). It will be graded 0-20. A few points will be based specifically on grammar and other mechanics.The additional five points will come from your critique of another student's paper (3-4) and submitting your topic on time (1-2).
+<p />
+Grading criteria include: background or history, presentation of issues and various points of view, optional interview or other activity, quality of argument and analysis (principles, examples, counterexamples), structure/organization, clarity of writing, sufficient references, sufficient length, and originality. You should define terms where necessary. Be sure to read and edit your final copy before handing it in.
+<p />
+<a href="/bin/view/CS335/TermPaper#PageTop" class="twikiAnchorLink">Return to top of page</a>
+<p />
+<h3><a name="References_on_writing_and_resear"></a> <a name="References_on_writing_and_resear"></a> <a name="WritingRefs" title="WritingRefs"></a><strong>References on writing and research</strong> </h3> <ul>
+<li> <a target="_top" href="http://owl.english.purdue.edu/">Purdue Online Writing Lab (OWL)</a> has a great collection of resources about writing, evaluating and citing sources, etc.
+</li> <li> Strunk and White, <em>The Elements of Style</em>. Also <a target="_top" href="http://www.bartleby.com/141/">available on line</a>.
+</li> <li> Joseph Williams and Gregory Colobmg, <em>Style: Lessons in Clarity and Grace</em>.
+</li> <li> Gordon Harvey, <em>Writing With Sources: A Guide for Students</em> (Hacket, 2nd e., 2008).
+</li></ul> 
+<a href="/bin/view/CS335/TermPaper#PageTop" class="twikiAnchorLink">Return to top of page</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS335/TermPaperS13?t=1543179949' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS335/TermPaperS13' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS335/TermPaperS13?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS335/TermPaperS13?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r2&nbsp;<a rel="nofollow" href="/bin/rdiff/CS335/TermPaperS13?rev1=2;rev2=1">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS335/TermPaperS13?rev=1">r1</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS335/TermPaperS13?template=backlinksweb' rel='nofollow' title='Search the CS335 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS335/TermPaperS13?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS335/TermPaperS13?t=1543179949;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS335/TermPaperS13?template=oopsmore&amp;param1=2&amp;param2=2' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r2 - 2013-04-01 - 19:32:03 - Main.troy</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
 </div><!-- /patternMainContents-->
-</div><!-- /patternMain-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS335/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS335</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="http://www.cs.uic.edu/bin/view/CS335/HomeS13" target="_top">CS 335 Home: Spring 2013</a>
+</li> <li> <a href="https://www.cs.uic.edu/pub/CS335/WebHome/syl335s13.pdf" target="_top">Syllabus: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS335/KeyDatesSpring2013" class="twikiLink">Key Dates: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS335/AssignmentsS13" class="twikiLink">Assignments: Spring 2013</a>
+</li> <li> <a href="/bin/view/CS335/LectureNotesS13" class="twikiLink">Notes: Spring 2013</a>
+</li></ul> 
+<a href="/bin/edit/CS335.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS335/TermPaperS13">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS335/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS335 Web</a></strong>
+</li> <li> <a href="/bin/view/CS335/WebCreateNewTopic?topicparent=TermPaperS13" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS335/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS335/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS335/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS335/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS335/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS335/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS335/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
 </div><!-- /patternFloatWrap-->
 <div class="clear">&nbsp;</div>
-</div><!-- /patternOuter--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
 <td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
 <td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
 </div><!-- /patternPage-->
 </div><!-- /patternPageShadow-->
 </div><!-- /patternScreen-->
 </body></html>
+<p />

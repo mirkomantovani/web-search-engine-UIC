@@ -1,362 +1,596 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>UIC Guest Wireless Self-Service</title>
-<!--
-<link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.8.16.custom.css">
--->
-<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script src="//www.uic.edu/apps/security/js/jquery.maskedinput.min.js" type="text/javascript"></script>
-<script src="//www.uic.edu/apps/security/js/guest.js" type="text/javascript"></script>
+<title>pain | UIC Today</title>
 
-<style type="text/css">
+<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/style.css" />
 
-body{
-	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
-	font-size:12px;
+<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/css/style.min.css" />
+    
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://today.uic.edu/feed" />
 
-}
-
-/* Header */
-#header-wrapper {	height: 50px;}
-
-#header {width: 1200px;	margin: 0 auto;	padding: 0px 0px 0px 40px}
-
-/* Page */
-#page {	width: 980px;	margin: 0 auto;	padding: 0px 0px 0px 0px;}
+<link rel="shortcut icon" href="https://today.uic.edu/wp-content/themes/uictoday/favicon.ico" />
 
 
-/* Content */
-#content {	float: left;	width: 450px;	padding: 0px 0px 0px 0px;}
 
-/* Sidebar */
-#sidebar {	float: right;	width: 280px;	margin: 40px 10px;	padding: 0px 10px 0px 0px;	 }
-
-#wireless_form {
-		position:			relative;
-		width:				720px;
-		margin:				0 auto;
-		padding:			0;
-
-}
-
-fieldset {
-	background:#EEEEEE; 
-	padding:10px; 
-	border:1px solid #fff; 
-	border-color:#fff #666661 #666661 #fff; 
-	margin-bottom:36px; width:560px;
-	margin-top:46px;
-	}
-input, textarea, select {
-	font:12px/12px Arial, Helvetica, sans-serif; 
-	padding:0;
-	}
-fieldset.action {
-	background:#F6F0E8; 
-	border-color:#e5e5e5 #797c80 #797c80 #e5e5e5; 
-	margin-top:-20px;
-	}
-legend {
-	background:#878787; 
-	color:#fff; 
-	font:17px/21px Calibri, Arial, Helvetica, sans-serif; 
-	padding:0 10px; 
-	margin:-26px 0 0 -11px; 
-	font-weight:bold; 
-	border:1px solid #fff; 
-	border-color:#e5e5c3 #505014 #505014 #e5e5c3;
-	}
-
-label{
-	display: block;
-	color: #000000;
-	font-weight: bold;
-	line-height: 1.4em;
-        padding:3px 0px;
-}
-
-
-label.required {
-		background: transparent url(required.gif) no-repeat center right;
-}
-	
-
-#wireless_form input{
-	width: 220px;
-	padding: 5px;
-	color: #000;
-	font-family: Arial,  Verdana, Helvetica, sans-serif;
-	font-size: 11px;
-	border: 1px solid #cecece;
-}
-#wireless_form input.error{
-	background: #f8dbdb;
-	border-color: #e77776;
-}
-
-#wireless_form select{
-	border-color: #282828;
-        margin-bottom:10px;
-        margin-top:0px;
-}
-
-#wireless_form div span{
-	margin-left: 10px;
-	color: #333333;
-	font-size: 11px;
-	font-style: italic;
-}
-#wireless_form div span.error{
-	color: #e46c6e;
-}
-
-
-p.small {
-
-        font-size: 9px;
-	}
-	
-button {
-	clear:both;
-	float: center;
-	width:125px;
-	height:31px;
-	background:#686868;
-	text-align:center;
-	line-height:31px;
-	color:#FFFFFF;
-	font:17px/21px Calibri, Arial, Helvetica, sans-serif;
-	font-weight:bold;
-	}
-
-#wireless_form button:hover{
-	background: #B8B8B8;
-}
-
-
-#error{
-	margin-bottom: 20px;
-	border: 1px solid #efefef;
-}
-
-#content h1 {	height: 28px;font-size: 1.5em;}
-
-form.wireless_form label.error, .error {
-	/* remove the next line when you have trouble in IE6 with labels in list */
-	color: red;
-	font-style: italic
-}
-
-div#signupResult {display:none;
-                  font-size:16px;
-                  }
-#sidebar li{ 
-	  margin:0 0 1em 0; 
-font-size: 1.2em; 
-	  } 
-ul.link {list-style-type:circle;
-           margin:10px;
-}
-#footer p { margin: 0; padding: 10px 0px 0px 0px; text-align: center;line-height: normal;
-        font-size: 10px;color: #585858;text-shadow:0 2px 3px rgba(0, 0, 0, 0.5); }
-
-.error {
-    text-align: center;
-    color: red;
-	font-size:1.5em;
-	font-weight:bold;
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="UIC Today &raquo; pain Tag Feed" href="https://today.uic.edu/tag/pain/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/today.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
 }
 </style>
+<link rel='stylesheet' id='events-manager-css'  href='https://today.uic.edu/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.95' type='text/css' media='all' />
+<link rel='stylesheet' id='ssp-frontend-player-css'  href='https://today.uic.edu/wp-content/plugins/seriously-simple-podcasting/assets/css/player.css?ver=1.19.14' type='text/css' media='all' />
+<link rel='stylesheet' id='qcsld-fa-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='qcopd-custom-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='qcopd-custom-rwd-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style-rwd.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='qcopd-embed-form-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/css/embed-form.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wow-icons-fa-css'  href='https://today.uic.edu/wp-content/plugins/wow-icons//assets/fontawesome/font-awesome.min.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='upw_theme_standard-css'  href='https://today.uic.edu/wp-content/plugins/ultimate-posts-widget/css/upw-theme-standard.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://today.uic.edu/wp-content/tablepress-combined.min.css?ver=26' type='text/css' media='all' />
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-a11y.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"mm\/dd\/yy","ui_css":"https:\/\/today.uic.edu\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.95'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/directory-script.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/js/embed-form.js?ver=4.9.8'></script>
+<link rel='https://api.w.org/' href='https://today.uic.edu/wp-json/' />
+    <style type="text/css" media="screen">
+      div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
+        text-decoration: none;
+        border: none;
+      }
+    </style>
+           <style type="text/css" media="screen">
+          div.printfriendly {
+            margin: 0px 0px 0px 0px;
+            position: relative;
+            z-index: 1000;
+          }
+          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
+            font-size: 14px;
+            color: #55750C;
+            vertical-align: bottom;
+          }
+          .printfriendly a {
+            box-shadow:none;
+          }
+          .printfriendly a:hover {
+            cursor: pointer;
+          }
+          .printfriendly a img  {
+            border: none;
+            padding:0;
+            margin-right: 6px;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+          }
+          .printfriendly a span{
+            vertical-align: bottom;
+          }
+          .pf-alignleft {
+            float: left;
+          }
+          .pf-alignright {
+            float: right;
+          }
+          div.pf-aligncenter {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+          }
+        </style>
+        <style type="text/css" media="print">
+          .printfriendly {
+            display: none;
+          }
+        </style>
+
+<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://today.uic.edu/feed/podcast" />
+
+<script type="text/javascript">
+           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
+         </script><script type="text/javascript">
+	           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
+	         </script>
+<!-- Put the following javascript before the closing </head> tag. -->
+
+<script>
+  (function() {
+    var cx = '009511351313755808885:xdz07yl93pe';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
 
 </head>
-<body>
 
-<div id="header-wrapper">	
-	<div id="header">		
-		<div id="logo">				
-		<table border="0" cellspacing="0" cellpadding="0" width="900">     
-		<tr>	
-			<td height="42" bgcolor="#666699" rowspan="2" style="padding: 0;"><a target="_top" href="//www.uic.edu/depts/accc/home/"><img border="0" vspace="0" hspace="0" height="42" width="100" src="//www.uic.edu/depts/accc/logos/ACCC-button.png" alt="ACCC Home Page" /></a></td>
-			<td nowrap="nowrap" height="24" bgcolor="#F4F5F3" align="center" colspan="8" 	    style="font-weight: bold; color: #666699; font-variant: small-caps; font-family: arial,helvetica,sans-serif; font-size: 1.2em;">	    	    Academic	    Computing <span style="font-variant: normal; font-size: smaller;">and</span>	    Communications	    Center	</td>	
-			<td colspan="2">&nbsp;</td>   
-		 </tr>    
-		 <tr>	
-		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/ACCTS.html"><img border="0" hspace="0" vspace="0" width="67" height="18" src="//www.uic.edu/depts/accc/logos/acct.png" alt="Accounts / Passwords" /></a>	</td> 	
-  		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/EMAIL.html"><img border="0" hspace="0" vspace="0" width="49" height="18" src="//www.uic.edu/depts/accc/logos/email.png" alt="Email" /></a>	</td> 	
-		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/FACIL.html"><img border="0" hspace="0" vspace="0" width="79" height="18" src="//www.uic.edu/depts/accc/logos/facil.png" alt="Labs / Classrooms" /></a>	</td> 	
-		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/TELECOM.html"><img border="0" hspace="0" vspace="0" width="61" height="18" src="//www.uic.edu/depts/accc/logos/telecom.png" alt="Telecom" /></a>	</td> 	
-                     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/NETWORK.html"><img border="0" hspace="0" vspace="0" width="61" height="18" src="//www.uic.edu/depts/accc/logos/network.png" alt="Network" /></a>	</td> 	
-		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/SECURITY.html"><img border="0" hspace="0" vspace="0" width="61" height="18" src="//www.uic.edu/depts/accc/logos/security.png" alt="Security" /></a>	</td> 	
-		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/SOFTWARE.html"><img border="0" hspace="0" vspace="0" width="67" height="18" src="//www.uic.edu/depts/accc/logos/software.png" alt="Software" /></a>	</td> 	
-		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/SERVICES.html"><img border="0" hspace="0" vspace="0" width="67" height="18" src="//www.uic.edu/depts/accc/logos/services.png" alt="Computing and Network Services" /></a> 	</td>	
-                     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/EDUCATION.html"> <img border="0" hspace="0" vspace="0" width="73" height="18" src="//www.uic.edu/depts/accc/logos/ed.png" alt="Education / Teaching" /></a>	</td>	
-		     <td align="center" bgcolor="#666699" >	    <a target="_top" href="//www.uic.edu/depts/accc/home/HELP.html"><img border="0" hspace="0" vspace="0" width="43" height="18" src="//www.uic.edu/depts/accc/logos/help.png" alt="Getting Help" /></a>	</td>   
-               </tr>   
-               <tr>	
-                     <td colspan="11">&nbsp;</td>    
-               </tr>
-               </table>					</div>	</div>	</div>	
+<body role="document" class="archive tag tag-pain tag-1597">
 
-<!-- end #header -->	
 
-<div id="page">	
-<div id="content">
-<h1>UIC Guest Wireless Account Request via SMS</h1>
+<div id="skip" role="complementary">
+<a href="#the_content">Skip to main content</a></div>
 
-<div id="signupResult" >
 
-<p>Connecting to UIC-Guest is simple. Simply connect to the UIC-Guest wireless SSID. Once you are connected, open a web browser to any destination (e.g. www.uic.edu) and a web page will appear requesting your login credentials. Enter your UIC-Guest username and password and click Submit.</p>
+
+<div id="header" role="banner">
+
+
+
+
+         		<div id="header-background">
+
+
+
+<!-- removed color wash for now.
+
+			<div class="color-wash">
+            <img src="" alt="   ">
+            </div>
+
+            -->
+
+
+
+            <div class="uic-type-wrapper">
+
+
+            <div class="last-update-timestamp">
+            	Updated: Nov 21, 2018 at 10:21 AM
+            </div><!--  last-update-timestamp   -->
+
+
+            <div class="uic-type-treatment">
+
+  			<div class="_mark">
+    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
+ 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
+ 			<title>UIC Logo</title>
+ 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
+ <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
+</svg>
+</a>
+  			</div><!--  _mark   -->
+
+  			<div class="_text">
+    		<a href="/">
+        	  Today
+      		  </a>
+ 			</div><!--  _text   -->
+
+
+			</div><!--  uic-type-treatment   -->
+
+
+
+            <!-- Put search box here -->
+<div class="search-box" aria-label="Search U I C today">
+    <form role="search" method="get" action="https://today.uic.edu/">
+     
+        <input type="text" id="s" name="s" aria-label="Search" size="25" value="" placeholder="Search">
+
+<button type="submit" value="Submit" style="border: 0;
+clip: rect( 1px, 1px, 1px, 1px );
+clip-path: inset( 50% );
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+word-wrap: normal;">
+Submit
+</button>
+
+    </form>
+    
+    
 </div>
 
-<form action="" method="post" id="wireless_form" name='wireless_form'>
 
 
-<fieldset id="personal">
-					<legend><span>Personal Details</span></legend>
-<p class='small'>Mandatory fields marked <em>*</em></p>
-<div><label for="firstname">First Name <em>*</em></label><input type="text" id="firstname"  name="firstname" />
-<span id="firstnameInfo">Your first name</span> </div>
-<div><label  for="lastname">Last Name <em>*</em></label><input type="text"  id="lastname" name="lastname" />
-<span id="lastnameInfo">Your last name</span> </div0>
-<p><label  for="email">Email Address </label><input type="text" id="email" name="email" /> 
-<span id="emailInfo">Valid E-mail please</span></p>
-<p><label for="phone">Cell Phone Number<em>*</em></label> 
-<input type="text" id="phone" name="phone" />
-<span id="phoneInfo">Valid Cell phone number please, you will need it to receive log in info!</span></p>
-</fieldset>
-<fieldset>
-<legend>Address</legend>
-<div><label  for="addr1">Street Address<em>*</em> </label><input type="text" id="addr1" name="addr1" /> 
-<span id="addr1Info">Your street address</span> 
-</div>
-<div><label for="addr2">Address Line 2 </label><input type="text" id="address2"  name="address2" /> </div>
-<div><label for="city">City <em>*</em></label><input type="text" id="city" name="city" />
-<span id="cityInfo">Your city</span>
-</div>
-<div><label for="state">State<em>*</em> </label>
-<select name="state" id="state">
-  <option value="">Select a State</option>
-  <option value='AK' >AK - Alaska</option>
-  <option value='AL' >AL - Alabama</option>
-  <option value='AR' >AR - Arkansas</option>
-  <option value='AZ' >AZ - Arizona</option>
-  <option value='CA' >CA - California</option>
-  <option value='CO' >CO - Colorado</option>
-  <option value='CT' >CT - Connecticut</option>
-  <option value='DC' >DC - District of Columbia</option>
-  <option value='DE' >DE - Delaware</option>
-  <option value='FL' >FL - Florida</option>
-  <option value='GA' >GA - Georgia</option>
-  <option value='HI' >HI - Hawaii</option>
-  <option value='IA' >IA - Iowa</option>
-  <option value='ID' >ID - Idaho</option>
-  <option value='IL' >IL - Illinois</option>
-  <option value='IN' >IN - Indiana</option>
-  <option value='KS' >KS - Kansas</option>
-  <option value='KY' >KY - Kentucky</option>
-  <option value='LA' >LA - Louisiana</option>
-  <option value='MA' >MA - Massachusetts</option>
-  <option value='MD' >MD - Maryland</option>
-  <option value='ME' >ME - Maine</option>
-  <option value='MI' >MI - Michigan</option>
-  <option value='MN' >MN - Minnesota</option>
-  <option value='MO' >MO - Missouri</option>
-  <option value='MS' >MS - Mississippi</option>
-  <option value='MT' >MT - Montana</option>
-  <option value='NC' >NC - North Carolina</option>
-  <option value='ND' >ND - North Dakota</option>
-  <option value='NE' >NE - Nebraska</option>
-  <option value='NH' >NH - New Hampshire</option>
-  <option value='NJ' >NJ - New Jersey</option>
-  <option value='NM' >NM - New Mexico</option>
-  <option value='NV' >NV - Nevada</option>
-  <option value='NY' >NY - New York</option>
-  <option value='OH' >OH - Ohio</option>
-  <option value='OK' >OK - Oklahoma</option>
-  <option value='OR' >OR - Oregon</option>
-  <option value='PA' >PA - Pennsylvania</option>
-  <option value='RI' >RI - Rhode Island</option>
-  <option value='SC' >SC - South Carolina</option>
-  <option value='SD' >SD - South Dakota</option>
-  <option value='TN' >TN - Tennessee</option>
-  <option value='TX' >TX - Texas</option>
-  <option value='UT' >UT - Utah</option>
-  <option value='VA' >VA - Virginia</option>
-  <option value='VT' >VT - Vermont</option>
-  <option value='WA' >WA - Washington</option>
-  <option value='WI' >WI - Wisconsin</option>
-  <option value='WV' >WV - West Virginia</option>
-</select>
-<span id="stateInfo">Your state</span> </div>
+<!-- End search box code -->
 
-<div><label for="zipcode" >Postal / Zip Code<em>*</em></label> <input type="text" id="zipcode" name="zipcode" /> 
-<span id="zipInfo">Your zipcode</span> </div>
-</fieldset>
 
-					
-<div id="dialog" title="Guest Wireless Policy">
-<h3>Introduction</h3>
 
-<p>Guest access to the UIC wireless network is provided as a service to visitors to the UIC campus. 
+			</div><!--  uic-type-wrapper    -->
 
-All persons requesting guest wireless access  must read and agree to these policies.
 
-Failure to abide by these policies will result in a loss of wireless network access. The use of guest wireless access for illegal purposes is prohibited and violators will be prosecuted to the fullest extent of the law.
+		</div><!--  header-background   -->
 
-<h3>Policies</h3>
-<ul><li>Members of the UIC community (students, faculty and staff) are prohibited from using guest credentials on their devices. Use of guest credential by UIC members  will result in the automatic removal of all wireless privileges.</li>
 
-      <li> A bandwidth usage limit of 4GB per day is in place for everyone that uses the wireless system. Exceeding the bandwidth usage limit will cause the account to be automatically suspended.</li> 
-      <li> All guests are responsible for the security of their machines. Any device exhibiting behavior indicative of being compromised will be automatically removed from the network.</li>
-      <li> Use of file-sharing/downloading programs by guest wireless users is specifically prohibited and will cause access to be terminated. To avoid termination of guest access, please make sure that all file-sharing programs are disabled. Guest accounts terminated for file-sharing will not be reactivated.</li>
-      <li> Attempts to circumvent security controls will result in the permanent loss of network access on campus.</li>
-<li>In addition, guest users of wireless are responsible for abiding by all other applicable ACCC policies, including:</li>
-</ul>                
-<ul class="link">       
-<li><a href="//www.uic.edu/depts/accc/policies/uicpol.html">Acceptable Use Policy</a>
-</li>
-<li>                
-<a href="//www.uic.edu/depts/accc/policies/wireless.html"> Usage Policy for UIC Wireless and Res-Net Networks</a>
-</li>
+
+
+
+		<div id="main_nav" role="navigation" aria-label="Site">
+	  	 	<div class="main_nav_container"><ul id="menu-main_nav" class="menu"><li id="menu-item-57546"><a href="https://today.uic.edu/campus-news">Campus News</a></li>
+<li id="menu-item-57547"><a href="https://today.uic.edu/academics-research">Academics &#038; Research</a></li>
+<li id="menu-item-57548"><a href="https://today.uic.edu/events">Events</a></li>
+<li id="menu-item-67603"><a href="https://today.uic.edu/resources">Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-67604"><a href="https://today.uic.edu/resources/current-students">Current Student Resources</a></li>
+	<li id="menu-item-67605"><a href="https://today.uic.edu/resources/faculty-staff">Faculty &#038; Staff Resources</a></li>
+	<li id="menu-item-70617"><a href="https://today.uic.edu/campus-news/campus-newspaper">Campus Newspaper &#038; Archives</a></li>
 </ul>
-<p>
-<input type="checkbox" id="checkbox">&nbsp;I have read and agree to abide by the UIC Guest Wireless policies
-</p>
-</div>
-
-<div>
-				
-<button type="submit" name="send" >sign up</button>
-			</div>
-
-</form>
-
-
-
-		<div style="clear: both;">&nbsp;</div>		
-</div>		<!-- end #content -->		
-<div id="sidebar">
-<ul>
-<li>This web page can be used to request a guest wireless account via SMS (standard text messaging rates apply)  for the UIC-Guest wireless system.  Please note that the text message must be sent to a real phone and this system will not work with the Google Voice text messaging system.</li>
-
-<li>All guest accounts created with this page expire in 48 hours after they are created. There is a limit of 5 guest accounts per semester per person (phone).</li>
-
-<li>All persons requesting guest accounts must accept and abide by the <a href="//accc.uic.edu/policy/guest-wireless">UIC Guest Wireless policy</a>.</li>
+</li>
+<li id="menu-item-57549"><a href="https://today.uic.edu/contact">Contact</a>
+<ul class="sub-menu">
+	<li id="menu-item-57551"><a href="https://today.uic.edu/contact/communicating-on-campus">Communicating On Campus</a></li>
+	<li id="menu-item-57552"><a href="https://today.uic.edu/contact/communicating-on-campus/sending-massmails-dddh">Sending Announcements / DDDH</a></li>
+	<li id="menu-item-57550"><a href="https://today.uic.edu/contact/social-media-directory">UIC Social Media Directory</a></li>
 </ul>
+</li>
+</ul></div>	    </div>
+        </div>
 
-		</div>		<!-- end #sidebar -->
-<div style="clear: both;">&nbsp;</div>	</div>	</div>	</div>	<!-- end #page -->	
 
-<div id="footer">
-<p>ACCC Security Office</p>
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+		</div>
+
+
+
+
+
+
+
+
+ <div id="container" role="main" aria-label="Main content" class="clearfix">
+
+
+<a name="the_content" id="the_content" tabindex="-1" aria-label="Main content area"></a>
+
+
+
+
+
+
+		    <h1>All pain</h1>
+	 
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2018/10/20181003-IMG_5489-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Lawrence A. Tabak" srcset="https://today.uic.edu/files/2018/10/20181003-IMG_5489-150x150.jpg 150w, https://today.uic.edu/files/2018/10/20181003-IMG_5489-160x160.jpg 160w, https://today.uic.edu/files/2018/10/20181003-IMG_5489-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">October 4, 2018</p>
+            <a href="https://today.uic.edu/nih-deputy-director-addresses-ways-to-combat-opioid-crisis"> NIH deputy director addresses ways to combat opioid crisis </a>
+            <p>NIH research initiative aims to combat public health crisis of opioid misuse </p>
+          </div>
+        </div>
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2017/10/acupuncture-2277444_1920-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="acupuncture" srcset="https://today.uic.edu/files/2017/10/acupuncture-2277444_1920-150x150.jpg 150w, https://today.uic.edu/files/2017/10/acupuncture-2277444_1920-160x160.jpg 160w, https://today.uic.edu/files/2017/10/acupuncture-2277444_1920-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">October 11, 2017</p>
+            <a href="https://today.uic.edu/acupuncture-could-ease-womens-vulvar-pain"> Acupuncture could ease women&#8217;s vulvar pain </a>
+            <p>Health care professionals don&#8217;t know how to treat vulvodynia</p>
+          </div>
+        </div>
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2014/09/pulmonary_hypertension-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="x-ray of Pulmonary Hypertension" srcset="https://today.uic.edu/files/2014/09/pulmonary_hypertension-150x150.jpg 150w, https://today.uic.edu/files/2014/09/pulmonary_hypertension-100x100.jpg 100w, https://today.uic.edu/files/2014/09/pulmonary_hypertension-200x200.jpg 200w, https://today.uic.edu/files/2014/09/pulmonary_hypertension-160x160.jpg 160w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">October 13, 2015</p>
+            <a href="https://today.uic.edu/lung-cancer-patients-receive-more-radiation-than-recommended"> Lung cancer patients receive more radiation than recommended </a>
+            <p>Unnecessary treatments mean increased cost, needless hospital trips</p>
+          </div>
+        </div>
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2015/02/depression-rejection-brain-f-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2015/02/depression-rejection-brain-f-150x150.jpg 150w, https://today.uic.edu/files/2015/02/depression-rejection-brain-f-100x100.jpg 100w, https://today.uic.edu/files/2015/02/depression-rejection-brain-f-200x200.jpg 200w, https://today.uic.edu/files/2015/02/depression-rejection-brain-f-125x125.jpg 125w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">February 27, 2015</p>
+            <a href="https://today.uic.edu/heightened-social-pain-in-depression-tied-to-pain-perception"> Heightened social pain in depression tied to pain perception </a>
+            <p>Physical, emotional pain colored by neurochemical mechanism</p>
+          </div>
+        </div>
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2013/11/comfort-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="holding hands" srcset="https://today.uic.edu/files/2013/11/comfort-150x150.jpg 150w, https://today.uic.edu/files/2013/11/comfort-160x160.jpg 160w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">November 26, 2013</p>
+            <a href="https://today.uic.edu/analyzing-pain-in-dying-cancer-patients"> Research seeks to ease pain in dying cancer patients </a>
+            <p>Computer app allows hospice patients to report symptoms</p>
+          </div>
+        </div>
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2013/05/Triniece-Pearson-e1369059504576-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Triniece Pearson" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">May 22, 2013</p>
+            <a href="https://today.uic.edu/eight-uic-students-named-schweitzer-fellows"> Seven UIC students named Schweitzer Fellows </a>
+            <p>Underserved communities to benefit from year-long service learning programs</p>
+          </div>
+        </div>
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2013/10/cancer-and-pain-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="IV taped to hand" srcset="https://today.uic.edu/files/2013/10/cancer-and-pain-150x150.jpg 150w, https://today.uic.edu/files/2013/10/cancer-and-pain-160x160.jpg 160w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">February 12, 2013</p>
+            <a href="https://today.uic.edu/pinpointing-pain"> Pinpointing pain </a>
+            <p>Diana Wilkie can’t alleviate all the suffering in people’s lives, but she’s working to reduce their physical pain.</p>
+          </div>
+        </div>
+            <div class='news-release'>
+          <div class="listing-thumb">
+            <img width="150" height="150" src="https://today.uic.edu/files/2012/12/nakedmolerat2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Hands holding naked mole-rat" srcset="https://today.uic.edu/files/2012/12/nakedmolerat2-150x150.jpg 150w, https://today.uic.edu/files/2012/12/nakedmolerat2-160x160.jpg 160w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
+          <div class='news-release-info clearfix'>
+            <p class="date grayed">December 5, 2012</p>
+            <a href="https://today.uic.edu/evolution-of-naked-mole-rats-may-offer-clues-to-pain-relief"> Evolution of naked mole-rats may offer clues to pain relief </a>
+            <p>Naked mole-rats evolved to thrive in an acidic environment that other mammals, including humans, would find intolerable. How these rodents adapted to this environment may offer clues to pain relief for humans and other animals, UIC researchers say.</p>
+          </div>
+        </div>
+        
+    <!-- Creates paginated archive pages -->
+    
+     <div class="archivepaged">
+           </div>
+  
+
+<!-- Need 2 closing divs before footer to close divs from page header include -->
+	</div>
+    
+</div>    
+
+<div class="clearThis">&nbsp;</div>
+
+
+
+
+
+    
+
+    <footer id="footer" class="footer u-dark-region" role="contentinfo">
+
+
+  <div class="footer-contact">
+    <div class="l-full">
+
+
+            <div class="uic-type-wrapper-footer">
+
+            <div class="uic-type-treatment-footer">
+            
+  			<div class="_mark"> 
+    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
+ 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
+ 			<title>UIC Logo</title>
+ 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
+ <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
+</svg>
+</a>
+  			</div><!--  _mark   -->   
+            
+  			<div class="_text">
+    		<a href="/">
+        	  Today
+      		  </a>
+ 			</div><!--  _text   -->
+
+            
+			</div><!--  uic-type-treatment-footer   -->
+
+
+			</div><!--  uic-type-wrapper-footer    -->
+ 
+
+
+  <div class="_contact">
+  
+  
+    <h2>Contact</h2>
+    
+    
+		<div class="site-address">Office of Public and Government Affairs <br />
+		601 S. Morgan St., 1320 UH, Chicago, IL 60607</div>
+      
+      
+		<div class="site-email"><a href="mailto:uictoday@uic.edu">uictoday@uic.edu</a></div>
+        
+        
+		<div aria-label="Social Media Accounts" class="_social" role="navigation">
+			<h2 class="assistive-text">Social Media Accounts</h2> 
+  			<ul class="site-social-links">
+            <li><a href="https://www.facebook.com/uicnews "><img src="/wp-content/themes/uictoday/images/social-media-icons/facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://instagram.com/thisisuic/"><img src="/wp-content/themes/uictoday/images/social-media-icons/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today"><img src="/wp-content/themes/uictoday/images/social-media-icons/rss.png" alt="RSS feed"></a></li>
+            <li><a href="https://uicscience.tumblr.com/"><img src="/wp-content/themes/uictoday/images/social-media-icons/tumblr.png" alt="tumblr"></a></li>
+            <li><a href="https://twitter.com/UICnews"><img src="/wp-content/themes/uictoday/images/social-media-icons/twitter.png" alt="Twitter"></a></li>
+            <li><a href="https://www.youtube.com/user/uicmedia"><img src="/wp-content/themes/uictoday/images/social-media-icons/youtube.png" alt="YouTube"></a></li>
+            <li><a href="https://today.uic.edu/contact/social-media-directory"><img src="/wp-content/themes/uictoday/images/social-media-icons/directory.png" alt="Social media directory"></a></li>
+            </ul>
+            
+            
+		</div>        
+        
+        
+  </div>
+
+    
+
+       
+
+
+   
+
+
+
+
+
+		<div id="quicklinks_footer" role="navigation" aria-label="Quick Links" >
+			<div id="quicklinks_footer_container">
+	  	 	<div class="menu-footer-quicklinks-container"><ul id="menu-footer-quicklinks" class="menu"><li id="menu-item-57564"><a href="/news-release/news-release/">For the Media</a></li>
+<li id="menu-item-57555"><a href="https://today.uic.edu/experts-guide">Experts Guide</a></li>
+<li id="menu-item-57556"><a href="https://today.uic.edu/campus-news/campus-newspaper/advertising">Advertise in UIC News</a></li>
+<li id="menu-item-57577"><a href="https://today.uic.edu/contact/communicating-on-campus/submit-announcements">Submit Announcements</a></li>
+<li id="menu-item-57578"><a href="https://today.uic.edu/submit-an-event">Submit an Event</a></li>
+<li id="menu-item-67562"><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today">Subscribe to UIC Today</a></li>
+</ul></div>        	</div>
+	    </div>      
+
+
 </div>
+
+    
+    </div>
+  </div>
+
+
+
+
+<div class="footer-wrapper-uic-menu-legal">
+
+
+  <div class="footer-uic-menu">
+    <div class="ll-full">
+
+      <div role="navigation" aria-label="UIC.edu Links" >
+  <h2 class="assistive-text">UIC.edu links</h2>
+  <ul class="uic-footer-menu">
+    <li><a href="http://uic.edu/">UIC.edu</a></li>
+    <li><a href="http://catalog.uic.edu/ucat/academic-calendar/">Academic Calendar</a></li>
+    <li><a href="http://uicflames.com/">Athletics</a></li>
+    <li><a href="http://www.uic.edu/apps/departments-az/search">Campus Directory</a></li>
+    <li><a href="http://disabilityresources.uic.edu/">Disability Resources</a></li>
+    <li><a href="http://emergency.uic.edu/">Emergency Information</a></li>
+    <li><a href="http://events.uic.edu/">Event Calendar</a></li>
+    <li><a href="http://uic.edu/about/job-opportunities">Job Openings</a></li>
+    <li><a href="http://library.uic.edu/">Library</a></li>
+    <li><a href="http://maps.uic.edu/">Maps</a></li>
+    <li><a href="http://hospital.uillinois.edu/">UI Health</a></li>
+    <li><a href="http://dos.uic.edu/studentveteranaffairs.shtml">Veterans Affairs</a></li>
+  </ul>
+</div>
+
+    </div><!--  ll-full   -->
+    
+    <div class="m-full">
+    <img src="/wp-content/themes/uictoday/images/uihealth.png" alt="UI Health and UIC co-branded logo">
+    </div><!--  m-full   -->
+    
+  </div><!--  footer-uic-menu   --> 
+
+
+
+
+  <div class="footer-legal">
+    <div class="l-full">
+
+      <div class="site-copyright">
+  &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span>
+  <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
+</div>
+
+<div class="campuses" role="navigation" aria-label="University of Illinois campus web sites">
+  <h2 class="assistive-text">Campuses</h2>
+  <ul class="campuses-list">
+    <li><a href="https://uillinois.edu/">University of Illinois System</a></li>
+    <li><a href="https://illinois.edu/">Urbana-Champaign</a></li>
+    <li><a href="https://uis.edu/">Springfield</a></li>
+  </ul>
+</div>
+
+    </div>
+
+
+
+</div><!--  footer-wrapper-uic-menu-legal   --> 
+    
+    
+  </div>
+
+</footer>
+
+
+
+
+
+</div>
+
+
+			<style type="text/css">
+				.ssp-wave wave wave{
+					background: #28c0e1 !important;
+				}
+			</style>
+		<script type="text/javascript">
+  document.write(unescape("%3Cscript src='//www.uic.edu/inc/emergency/alert.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/packery.pkgd.js?ver=1.1'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+ 
+
+
+<!-- Google Analytics Code -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-20665772-1', 'auto');
+    
+        ga('create', 'UA-4402713-9', 'auto', 'todayTracker');
+    
+        ga('send', 'pageview');
+    
+        ga('todayTracker.send', 'pageview');
+      </script>
 
 </body>
-</html>
-
+</html><!-- WP Fastest Cache file was created in 0.12813711166382 seconds, on 21-11-18 12:48:15 -->

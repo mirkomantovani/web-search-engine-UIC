@@ -1,57 +1,486 @@
 
-
-<!DOCTYPE html>
-<html dir="ltr" class="" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
 <head>
-    <title>Sign in to your account</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta name="PageID" content="ConvergedSignIn" />
-    <meta name="SiteID" content="" />
-    <meta name="ReqLC" content="1033" />
-    <meta name="LocLC" content="en-US" />
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<link rel="stylesheet" href="http://www.cs.uic.edu/pub/TWiki/HeadlinesPlugin/style.css" type="text/css" media="all" />
+  <title>Leon Stenneth - WebHome</title>
 
-    <noscript>
-        <meta http-equiv="Refresh" content="0; URL=https://login.microsoftonline.com/jsdisabled" />
-    </noscript>
+<link rel="icon" href="http://www.uic.edu/favicon.png" type="image/x-icon" />
+<link rel="alternate" href="http://www.cs.uic.edu/bin/edit/PSYu/WebHome?_T=2011-09-25" type="application/x-wiki" title="edit WebHome" />
+<link rel="shortcut icon" href="http://www.uic.edu/favicon.png" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/PSYu/WebRss" />
+<base href="http://www.cs.uic.edu/bin/view/PSYu/WebHome"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("http://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='http://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="http://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="http://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="http://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="http://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
+.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
+.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <img width="156" alt="Leon O. Stenneth's photo" src="http://cs.uic.edu/~lstennet/leon_pic.jpg" height="136" />
+<h1><a name="Philip_S_Yu"></a> Leon O. Stenneth </h1>
+<hr />
+<p />
+<strong>PhD candidate and Fulbright Fellow</strong><br /> <a target="_blank" href="http://www.cs.uic.edu//">Department of Computer Science</a><br /> <a target="_blank" href="http://www.uic.edu/">University of Illinois, Chicago </a>
+<br><br><a><b>I defended my PhD thesis on October 4th 2013. The title is "Human activity detection using smartphones and maps"</b><a href="http://www.cs.uic.edu/~lstennet/defense.pptx"> [slides .pptx] </a><a href="http://www.cs.uic.edu/~lstennet/thesis.pdf">[thesis document .pdf]</a><br><a target="_blank" <br><br><a target="_blank" href = "http://lamda.nju.edu.cn/conf/sdm13/papers.html">Paper co-authored with Professor Philip Yu accepted to SIAM SDM 2013...</a><br> <a target="_blank" href = "http://www.igert.org/spotlights/2234"><a target="_blank" href = "http://www.igert.org/highlights/653">IGERT invention highlight...</a><br> <a target="_blank" href = "http://www.igert.org/spotlights/2234">news...</a><br><a target="_blank" href = "http://cs.uic.edu/~lstennet/resume-20-2012.pdf">RESUME...</a><br><br>
+<hr />
+<p />
+<h2><a name="Biographical_sketch"></a> Biographical sketch: </h2>
+I defended my PhD sucesfully on October 4th 2013. I was a PhD candidate and a Fulbright Fellow in the Department of Computer Science at the University of Illinois Chicago (UIC). I worked under the supervision of <a href="http://www.cs.uic.edu/~wolfson/"> Professor Ouri Wolfson </a> and <a href = "http://www.cs.uic.edu/PSYu/"> Professor Philip Yu </a>. Previously, I was also a research associate of the <a href = "http://www.cs.uic.edu/bin/view/Bits/WebHome">BITS Lab </a> headed by Professor Jakob Erikkson at the Chicago campus of the University of Illinois. <br><br>My PhD research was in two folds: (1) Context detection from mobile phone sensors which detects human activities from smartphones (2) Privacy-aware location based services. For my study at University of Illinois Chicago, I was awarded the <a href = "http://www.iie.org/fulbright">Fulbright Fellowship </a> by the United States Department of State. Before joinging UIC I was a student at the University of Westminster in London (Harrow Campus), here I studied for an MSc. For my study at the University of Westminster London I was awarded the European Union Fellowship. 
+I spent most of my early days in Jamaica where I did the BSc at the University of Technology (Kingston campus). <br><br>Currently, I am a full-time research scientist in the Connected Driving Division of Nokia (Chicago). My research roles are centered around (1) Traffic and Dynamic content, (2) Automtive experiences, software, & map updates, (3) Telematics sensor analytics, and (4) Autonomous driving and automotive cloud. <br><br>Previously at Nokia (Chicago) I worked on the real time transit project where we automated ways using supervised and unsupervised machine learning schemes to derive transit systems (routes, stops, schedules) from GPS traces obtained from traveler's mobile phones or automatic vehicle locators. Other components of real time transit that we are currently involved in are bus bunching, transit arrival time prediction, real time routing, and spatial and temporal deviation detection and prediction.Several patents and papers have been published based on this project. 
+<p />
+<p />
+<h2><a name="Contact"></a> Awards </h2>
+<p />
+ (-)   <a target="_blank" href = "http://www.cs.uic.edu/~lstennet/Group.jpg">2013 Nokia Inventor Oscars - Award for <b> most Enthusiastic Inventor</b><br /></a>
+ (-)	2013 IEEE MDM (Mobile Data Management) NSF doctoral travel award <br />
+ (-)   2013 SIAM SDM (Statistical Data Mining) doctoral travel award <br />
+ (-)   2012 SIAM SDM (Statistical Data Mining) doctoral travel scholarship<br />
+ (-)	Chevron International Student Scholarship 2011</strong><br />
+ (-)	Richard Tapia Diversity Fellowship 2011 </strong><br />
+ (-)	Univerity of Illinois Student Presenters award 2010 </strong><br />
+ (-)	<b>Fulbright Fellowship 2008</b> </strong><br />
+ (-)	European Union Fellowship 2004 </strong><br />
+ (-)   University of Technology honor roll award 2000-2003</strong><br /> 
+ (-)	University of Technology Foundation Scholarship 1999-2003</strong><br /> 
+ (-)	BCR Bookstore scholarship, University of Technology 2002
+<p />
+<p />
+<h2><a name="Contact"></a> Selected Publications </h2>
+<p />
+<Strong><u>Selected Journal Entries</u></Strong><br><br>
+Mitigating location privacy breaches on mobile phones by homogenizing motion sensors. 
+<br><i><b> IEEE Transactions on Mobile Computing 2013 (under review) </i></b>
+<b><br>Leon Stenneth </b><br><br>
+
+Activity recognition from smartphone sensor traces and geospatial knowledge. 
+<br><i><b>Springer Distributed and Parallel Databases 2013 (under review) </i></b><br>
+<b>Leon Stenneth</b>, Ouri Wolfson, Philip Yu, Bo Xu <br><br>
+
+Mobile Systems Privacy. "MobiPriv" A Robust K-Anonymous System For snapsot and continious querying location based systems. 
+<i><b><br>Transactions on Data Privacy 2011 </i></b><br>
+<b>Leon Stenneth</b>, Philip S. Yu, Ouri Wolfson <br><br>
+
+
+<br>
+<Strong><u>Selected Conferences</u></Strong><br><br>
+Spatio-temporal matching under data uncertainty.  
+<b><br>Proceedings of the 30th IEEE International Conference on Data Engineering 2014 (ICDE 2014) [under review] </b>
+<br>Daneil Ayala, Ouri Wolfson, <b>Leon Stenneth </b>, Bashkar Dasgupta, Jane Lin<br><br>
+
+BATE: Bus arrival time estimation.  
+<b><br>Proceedings of the 30th IEEE International Conference on Data Engineering 2014 (ICDE 2014) [under review]</b> 
+<br><b>Leon Stenneth </b>, Philip S. Yu<br><br>
+
+Real-time street parking availability estimation. <a href = "http://www.cs.uic.edu/~lstennet/mdm-2013-final_leon.pdf"> [pdf],</a> <a href = "http://www.cs.uic.edu/~lstennet/Real time parking availability estimation.pptx"> [ppt]</a> <i><b><br>Proceedings of the 13th IEEE MDM 2013</i></b><br> JAVA implemenation of the proposed algorithms are <a href = "http://www.cs.uic.edu/~lstennet/ParkingEstimation.zip"> available here...</a>, additionally the data set is available <a href = "https://www.dropbox.com/s/t8hvouac960iokr/sfpark.zip"> here in dropbox...</a>
+<br>Bo Xu, Ouri Wolfson, Jie Yang, <b>Leon Stenneth </b>, Philip S. Yu, Peter C. Nelson<br><br>
+
+Monitoring and mining GPS traces in transit space. <a href = "http://www.cs.uic.edu/~lstennet/sdm13-final.pdf"> [pdf]</a><i><b><br>Proceedings of the SIAM International Conference on data mining (SDM) 2013</i></b><br> <a href = "https://www.dropbox.com/s/anvl8rcjjudd73s/training%20data%20set.csv"> data set available here in dropbox</a> 
+<b><br>Leon Stenneth</b>, Philip Yu<br><br>
+
+An Empirical Study of Data Race Detector Tools. <br><i> <b> Proceedings of the 25th IEEE Chinese International Conference on Control and Decision 2013 </i></b><br>
+Jalal Alowibdi,<b> Leon Stenneth</b><br><br>
+
+Automated transportation transfer detection using GPS enabled smartphones. <a href = "http://www.cs.uic.edu/~lstennet/IEEE ITSC.pdf"> [pdf]</a><br><i> <b> Proceedings of the 15th IEEE International Intelligent Transportation Systems Conference (ITSC) 2012 </i></b><br>
+<b>Leon Stenneth</b>, Kenville Thompson, Jalal Alowibdi, Waldin Stone<br><br>
+
+Detecting human activities from smartphones and maps (Poster).<br> <i><b>SIAM SDM 2012 </i></b><br>
+<b>Leon Stenneth</b><br><br>
+
+PhonePark:Street parking using mobile phones. <a href = "https://www.researchgate.net/publication/225303972_PhonePark_Street_Parking_using_mobile_phones"> [pdf]</a><br><i><b> Proceedings of the 12th IEEE Mobile Data Management (MDM) 2012</i></b><br>
+<b>Leon Stenneth</b>, Ouri Wolfson, Philip S. Yu, Bo Xu<br><br>
+
+Transportation mode detection from mobile phones and GIS information. <a href = "http://www.cs.uic.edu/~lstennet/acm_gis_2011.pdf"> [pdf] , </a> <a href = "http://www.cs.uic.edu/~lstennet/slides.pptx"> [ppt]</a> <br><i><b> Proceedings of the 19th ACM SIGSPATIAL GIS 2011</i></b><br>
+<b>Leon Stenneth</b>, Ouri Wolfson, Philip S. Yu, Bo Xu. For the data set, please send me an email at lstenneth@gmail.com, lstenn2@uic.edu<br><br>
+
+Privacy-Aware Mobile locations based systems. <a href = "http://www.academia.edu/2798568/Privacy-aware_mobile_location-based_systems"> [pdf]</a><br><i><b>Proceedings of the 13th ACM UbiComp 2011 (MLBS) </i></b><br>
+<b>Leon Stenneth</b>, Philip S. Yu<br><br>
+
+Reducing Travel Time by Incident Reporting via CrowdSourcing. <a href = "http://citeseerx.ist.psu.edu/viewdoc/summary;jsessionid=FA64D1CAE7D5DA60B7814D4B1B8DE1C1?doi=10.1.1.217.7927"> [pdf]</a><br><i><b>Proceedings of the 12th International Conference on Internet
+Computing (ICOMP) 2011</i></b><br>
+<b>Leon Stenneth</b>, Waldin Stone, Jalal Alowibdi<br><br>
+
+Mobile  Systems Location Privacy:  "MobiPriv" A Robust K Anonymous System. <a href = "http://www.academia.edu/371401/Mobile_Systems_Location_Privacy_MobiPriv_A_Robust_K-Anonymous_System"> [pdf]</a><br><i><b>Proceedings of the 6th IEEE International Conference on Wireless and  Mobile Computing,  Networking and  Communications (WiMob) 2010</i></b><br>
+<b>Leon Stenneth</b>, Philip Yu, Ouri Wolfson.<br><br>
+
+Global privacy and transportation mode homogeneity anonymization in location based mobile systems with continuous queries. <a href = "http://www.academia.edu/371404/Global_Privacy_and_Transportation_Mode_Homogeneity_Anonymization_in_Location_Based_Mobile_Systems_with_Continuous_Queries"> [pdf]</a><br> <i><b>Proceedings of the 6th IEEE Intemational Conference on  Collaborative Computing: Networking, Applications and Worksharing (CollaborateCom), 2010</i></b><br>
+<b>Leon Stenneth</b>, Philip Yu. <br><br>
+
+An Application of Intelligent Adaptive Agents Over Wireless Networks. <br><i><b>Proceedings of the International Conference on Information and Communications Technology Research, 2009</i></b><br>
+<b>Leon Stenneth</b>, Waldin Stone<br><br>
+
+A Peer Based Model for 2D Multiplayer Gaming. <br><i><b>Proceedings of the 4th International Conference on Internet Technologies and Applications (ITA 05)</i></b><br>
+<b>Leon Stenneth</b>, Richard Pyne<br><br>
+
+
+<br>
+<Strong><u>Selected Workshops</u></Strong><br><br>
+Supporting Privacy and Auditing in Cloud Computing Systems, 2013. <br>
+<b>Proceedings of the 1st IEEE International Workshop on Cloud Security Auditing  2013</b><br>
+Tyrone Grandison, Sean Thorpe, <b>Leon Stenneth</b> 
+
+<h2><a name="Contact"></a> Patents published or pending </h2>
+<p />
+Automated street parking payment of a autonomous/driverless car <br> 
+<b>Inventor:</b>  <b> Leon Stenneth </b> and Gavril Giurgiu
+<br>
+<p />
+<p />
+
+<p />
+Software system and methods for transforming probe data across transportation modes. US serial # 14/039393  <br> 
+<b>Inventor:</b>  <b> Leon Stenneth </b>
+<br>
+<p />
+<p />
+Turn restriction determination.US serial# 14/015185<br> 
+<b>Inventor:</b>  <b> Leon Stenneth </b>
+<br>
+<p />
+<p />
+System and methods for matching transit vehicles to trips in a real time transit tracking environment.US serial # 14/012329<br> 
+<b>Inventors:</b> <b> Leon Stenneth </b>
+<br>
+<p />
+<p />
+System and method for advanced selection of a resource among available resources.<br> 
+<b>Inventors:</b>  Ouri Wolfson, <b> Leon Stenneth </b>,Philip Yu, and Bo Xu
+<br>
+<p />
+<p />
+Systems and methods for location proof beyond location positioning US serial# 13/951740<br> 
+<b>Inventor: </b> Leon Stenneth
+<br>
+<p />
+<p />
+Systems and methods for automated street parking payment detection using mobile device and a map US serial# 13/915230<br> 
+<b>Inventor: </b> Leon Stenneth
+<br>
+<p />
+<p/>
+Vehicle arrival prediction US serial# 13/849012<br> 
+<b>Inventors: </b> Leon Stenneth, Leo Modica
+<br>
+<p />
+<p/>
+Structure access characteristics determined from mobile unit data. US serial# 13/784120<br> 
+<b>Inventors: </b> Leon Stenneth, Leo Modica
+<br>
+<p />
+<p/>
+Systems and methods for activity classification, 2012 - [US serial# 61/720,815] <a href = "http://www.igert.org/highlights/653">highlight</a> <br>
+<b>Inventors: </b> Leon Stenneth, Ouri Wolfson, Philip Yu, and Bo Xu<br>
+<p />
+<p />
+Methods and apparatus for transit mapping,  2012 - US serial# 13/780901 <br>
+<b>Inventors: </b> Leon Stenneth, Leo Modica<br>
+<p />
+<p />
+Methods and apparatus for deriving spatial properties of bus stops and traffic controls,  2012 - US Serial # 13/872439<br>
+<b>Inventors: </b> Leon Stenneth, Leo Modica<br>
+<p />
+<p />
+Real-time vehicle spacing control,  2012 - US serial# 13/739709 <br>
+<b>Inventors: </b> Leon Stenneth, Leo Modica
+<br>
+<p />
+<p />
+Deviation detection in mobile transit systems,  2012 - US serial# 13/739560 <br>
+<b>Inventors: </b> Leon Stenneth, Leo Modica
+<br>
+<p />
+<p />
+Methods and apparatus for transit mapping, 2012 - US serial# 13/781188 <br>
+<b>Inventors: </b> Leon Stenneth, Leo Modica<br>
+<p />
+<p />
+
+<h2><a name="Contact"></a> Reviewer for </h2>
+<p />
+<b>Scientific Journals</b>
+<br>IEEE Transactions on Human-Machine Systems<br />
+IEEE Transactions on Parallel and Distributed Systems<br />
+Intelligent Transportation and Urban Planning<br />
+Elsevier Pervasive and Mobile Computing<br />
+
+<br><b>Conferences</b>
+<br>IEEE MDM 2013<br />
+ACM SIGSPATIAL 2013<br />
+ACM RACS 2013<br />
+Applied Computing 2013 <br />
+ACM UBICOMP 2013<br />
+IEEE MDM 2012<br />
+ACM SIGSPATIAL 2012<br />
+ACM RACS 2012<br />
+Applied Computing 2012 <br />
+VLDB 2012 <br />
+ACM UBICOMP 2012<br />
+SMART 2012<br />
+30th IEEE Symposium on Reliable Distributed Systems (SRDS 2011)<br />
+CIKM 2011<br />
+IEEE MDM 2009, 2010, 2011<br />
+ACM GIS 2009, 2010, 2011<br />
+COLLOBORATE COM 2010, 2011<br />
+12th Symposium on spaital and temporal databases 2011<br />
+Wireless Applications and Computing (WAC) 2011 <br />
+9th IEEE Consumer Communications and Networking Conference - Emerging Consumer Technologies<br />
+Applied Computing 2011<br />
+10th IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks 2009<br />
+2 Chapters in the Handbook of Peer-to-Peer Networking <br />
+<p />
+
+<br><h2><a href = "http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/s/Stenneth:Leon.html">DBLP List </a>
+<br><br><a href = "http://scholar.google.com/citations?user=2nuS5hwAAAAJ&hl=en">Google Scholar List </a></h2>
+<h2><a name="Contact"></a> Contact </h2>
+<p />
+<strong>851 S. Morgan St., Rm 120 SEO, Chicago, IL 60607 </strong><br /> <em>e-mail:</em> <a href="mailto&#58;lstennet&#64;cs&#46;uic&#46;edu">lstennet&#64;cs.uic.edu, lstenn2@uic.edu, lstenneth@gmail.com (preferred)</a>
+<p />
+mobile: (312) 772 - 8380, 312-772-8429 <br> SKYPE: lstenneth<br /> </div><!-- /patternTopic-->
+
+
+<h2><a name="Contact"></a> MSc students co-supervised </h2>
+<p />
+Pavan Kumar Reddy (Univeristy of Illinois at Chicago)
+<br>Navyatha Bondugula (Univeristy of Illinois at Chicago)
+<br>Vijay Bhojwani (Univeristy of Illinois at Chicago)
+<p />
+
+
+<h2><a name="Contact"></a> Friends </h2>
+<p />
+<a href = "http://www.cs.uic.edu/~jalowibd/">Jalal Alowibdi</a>
+<br>Waldin Stone
+<p />
+
+
+
+<div class="twikiContentFooter"></div><div class="twikiAttachments">
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited"></span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited"></span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
+<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/PSYu/?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/PSYu/?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/PSYu/?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/PSYu/?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/PSYu/?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/PSYu/?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/PSYu/?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/png.gif" width="16" height="16" alt="Png" title="Png" border="0" /><span class="twikiHidden">png</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/PSYu/WebHome/jakob_eriksson_small.png">jakob_eriksson_small.png</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/PSYu/WebHome?filename=jakob_eriksson_small.png;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 19.5&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2009-05-20 - 18:13</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <a href="/bin/view/Main/TWikiAdminUser" class="twikiLink">TWikiAdminUser</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"> <ul>
+<li> <a href="http://www.cs.uic.edu/~lstennet/resume-20-2012.pdf" class="twikiLink">Research</a>
+</li> <li> <a href="http://www.cs.uic.edu/~lstennet/publications.html" class="">Publications</a>
+</li> <li> <a href="http://www.cs.uic.edu/~lstennet/work.html" class="">Work Experience</a>
+</li> <li> <a href="http://cs.uic.edu/~lstennet/resume-20-2012.pdf" class="">Resume</a>
+</li> <li> <a href="http://www.cs.uic.edu/~lstennet/resume-09-2011.pdf" class="">Scholarships/Awards</a>
+</li> <li> <a href="http://www.cs.uic.edu/~lstennet/resume-09-2011.pdf" class="">Projects</a>
+</li></ul> 
+<div class="patternLeftBarPersonal">
+</div><!--/patternLeftBarPersonal--> <ul>
+
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div  id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap"><area shape="rect" alt="" title="" coords="144,20,317,74" href="http://www.cs.uic.edu" target="" /><area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target="" /><area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target="" /></map>
+<img src="http://www.cs.uic.edu/pub/cslogo_ds.png" border="0" alt="Powered by Computer Science" style="border:none;" usemap="#logomap"/></div>
+<p />
+<div style="position: relative; margin-left: 650px; margin-top: 0px">
+<form name="quickSearchForm" method="get" action="http://www.google.com/search"><input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value="" /><input type="hidden"  name="sitesearch" value="cs.uic.edu" />
+</form>
+</div>
+<p />
+<div id="menuContainer" style="position:absolute; left: 342px; top: 58px; width: 640px; z-index: 2; overflow: visible;">
+<div id="navMenu">
+  <ul>
+   <li> <a href="http://cs.uic.edu/~lstenneth/research">RESEARCH</a>
+  <ul>
     
-        <link rel="shortcut icon" href="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico" />
+  </ul>
+  </li>
+  </ul>
+  <ul>
+   <li> <a href="http://www.cs.uic.edu/~lstennet/publications.html">PUBLICATIONS</a>
+  <ul>
     
-    <meta name="robots" content="none" />
-
-<script type="text/javascript">//<![CDATA[
-$Config={"fShowPersistentCookiesWarning":false,"urlMsaLogout":"https://login.live.com/logout.srf?iframed_by=https%3a%2f%2flogin.microsoftonline.com","urlUxPreviewOptOut":"https://login.microsoftonline.com/common/uxpreview/optout","showCantAccessAccountLink":true,"fShowAsyncTileLoad":true,"iBindProvider":0,"urlFeatureAnnouncementBlogPost":"https://aka.ms/AA1edlw","fCollapseExcessLinks":true,"fShowLoginV2PreviewLink":true,"fEnableShowResendCode":true,"iShowResendCodeDelay":90000,"sSMSCtryPhoneData":"AF~Afghanistan~93!!!AX~Åland Islands~358!!!AL~Albania~355!!!DZ~Algeria~213!!!AS~American Samoa~1!!!AD~Andorra~376!!!AO~Angola~244!!!AI~Anguilla~1!!!AG~Antigua and Barbuda~1!!!AR~Argentina~54!!!AM~Armenia~374!!!AW~Aruba~297!!!AC~Ascension Island~247!!!AU~Australia~61!!!AT~Austria~43!!!AZ~Azerbaijan~994!!!BS~Bahamas~1!!!BH~Bahrain~973!!!BD~Bangladesh~880!!!BB~Barbados~1!!!BY~Belarus~375!!!BE~Belgium~32!!!BZ~Belize~501!!!BJ~Benin~229!!!BM~Bermuda~1!!!BT~Bhutan~975!!!BO~Bolivia~591!!!BQ~Bonaire~599!!!BA~Bosnia and Herzegovina~387!!!BW~Botswana~267!!!BR~Brazil~55!!!IO~British Indian Ocean Territory~246!!!VG~British Virgin Islands~1!!!BN~Brunei~673!!!BG~Bulgaria~359!!!BF~Burkina Faso~226!!!BI~Burundi~257!!!CV~Cabo Verde~238!!!KH~Cambodia~855!!!CM~Cameroon~237!!!CA~Canada~1!!!KY~Cayman Islands~1!!!CF~Central African Republic~236!!!TD~Chad~235!!!CL~Chile~56!!!CN~China~86!!!CX~Christmas Island~61!!!CC~Cocos (Keeling) Islands~61!!!CO~Colombia~57!!!KM~Comoros~269!!!CG~Congo~242!!!CD~Congo (DRC)~243!!!CK~Cook Islands~682!!!CR~Costa Rica~506!!!CI~Côte d\u0027Ivoire~225!!!HR~Croatia~385!!!CU~Cuba~53!!!CW~Curaçao~599!!!CY~Cyprus~357!!!CZ~Czechia~420!!!DK~Denmark~45!!!DJ~Djibouti~253!!!DM~Dominica~1!!!DO~Dominican Republic~1!!!EC~Ecuador~593!!!EG~Egypt~20!!!SV~El Salvador~503!!!GQ~Equatorial Guinea~240!!!ER~Eritrea~291!!!EE~Estonia~372!!!ET~Ethiopia~251!!!FK~Falkland Islands~500!!!FO~Faroe Islands~298!!!FJ~Fiji~679!!!FI~Finland~358!!!FR~France~33!!!GF~French Guiana~594!!!PF~French Polynesia~689!!!GA~Gabon~241!!!GM~Gambia~220!!!GE~Georgia~995!!!DE~Germany~49!!!GH~Ghana~233!!!GI~Gibraltar~350!!!GR~Greece~30!!!GL~Greenland~299!!!GD~Grenada~1!!!GP~Guadeloupe~590!!!GU~Guam~1!!!GT~Guatemala~502!!!GG~Guernsey~44!!!GN~Guinea~224!!!GW~Guinea-Bissau~245!!!GY~Guyana~592!!!HT~Haiti~509!!!HN~Honduras~504!!!HK~Hong Kong SAR~852!!!HU~Hungary~36!!!IS~Iceland~354!!!IN~India~91!!!ID~Indonesia~62!!!IR~Iran~98!!!IQ~Iraq~964!!!IE~Ireland~353!!!IM~Isle of Man~44!!!IL~Israel~972!!!IT~Italy~39!!!JM~Jamaica~1!!!JP~Japan~81!!!JE~Jersey~44!!!JO~Jordan~962!!!KZ~Kazakhstan~7!!!KE~Kenya~254!!!KI~Kiribati~686!!!KR~Korea~82!!!KW~Kuwait~965!!!KG~Kyrgyzstan~996!!!LA~Laos~856!!!LV~Latvia~371!!!LB~Lebanon~961!!!LS~Lesotho~266!!!LR~Liberia~231!!!LY~Libya~218!!!LI~Liechtenstein~423!!!LT~Lithuania~370!!!LU~Luxembourg~352!!!MO~Macao SAR~853!!!MK~Macedonia, Former Yugoslav Republic of~389!!!MG~Madagascar~261!!!MW~Malawi~265!!!MY~Malaysia~60!!!MV~Maldives~960!!!ML~Mali~223!!!MT~Malta~356!!!MH~Marshall Islands~692!!!MQ~Martinique~596!!!MR~Mauritania~222!!!MU~Mauritius~230!!!YT~Mayotte~262!!!MX~Mexico~52!!!FM~Micronesia~691!!!MD~Moldova~373!!!MC~Monaco~377!!!MN~Mongolia~976!!!ME~Montenegro~382!!!MS~Montserrat~1!!!MA~Morocco~212!!!MZ~Mozambique~258!!!MM~Myanmar~95!!!NA~Namibia~264!!!NR~Nauru~674!!!NP~Nepal~977!!!NL~Netherlands~31!!!NC~New Caledonia~687!!!NZ~New Zealand~64!!!NI~Nicaragua~505!!!NE~Niger~227!!!NG~Nigeria~234!!!NU~Niue~683!!!NF~Norfolk Island~672!!!KP~North Korea~850!!!MP~Northern Mariana Islands~1!!!NO~Norway~47!!!OM~Oman~968!!!PK~Pakistan~92!!!PW~Palau~680!!!PS~Palestinian Authority~970!!!PA~Panama~507!!!PG~Papua New Guinea~675!!!PY~Paraguay~595!!!PE~Peru~51!!!PH~Philippines~63!!!PL~Poland~48!!!PT~Portugal~351!!!PR~Puerto Rico~1!!!QA~Qatar~974!!!RE~Réunion~262!!!RO~Romania~40!!!RU~Russia~7!!!RW~Rwanda~250!!!BL~Saint Barthélemy~590!!!KN~Saint Kitts and Nevis~1!!!LC~Saint Lucia~1!!!MF~Saint Martin~590!!!PM~Saint Pierre and Miquelon~508!!!VC~Saint Vincent and the Grenadines~1!!!WS~Samoa~685!!!SM~San Marino~378!!!ST~São Tomé and Príncipe~239!!!SA~Saudi Arabia~966!!!SN~Senegal~221!!!RS~Serbia~381!!!SC~Seychelles~248!!!SL~Sierra Leone~232!!!SG~Singapore~65!!!SX~Sint Maarten~1!!!SK~Slovakia~421!!!SI~Slovenia~386!!!SB~Solomon Islands~677!!!SO~Somalia~252!!!ZA~South Africa~27!!!SS~South Sudan~211!!!ES~Spain~34!!!LK~Sri Lanka~94!!!SH~St Helena, Ascension, and Tristan da Cunha~290!!!SD~Sudan~249!!!SR~Suriname~597!!!SJ~Svalbard~47!!!SZ~Swaziland~268!!!SE~Sweden~46!!!CH~Switzerland~41!!!SY~Syria~963!!!TW~Taiwan~886!!!TJ~Tajikistan~992!!!TZ~Tanzania~255!!!TH~Thailand~66!!!TL~Timor-Leste~670!!!TG~Togo~228!!!TK~Tokelau~690!!!TO~Tonga~676!!!TT~Trinidad and Tobago~1!!!TA~Tristan da Cunha~290!!!TN~Tunisia~216!!!TR~Turkey~90!!!TM~Turkmenistan~993!!!TC~Turks and Caicos Islands~1!!!TV~Tuvalu~688!!!VI~U.S. Virgin Islands~1!!!UG~Uganda~256!!!UA~Ukraine~380!!!AE~United Arab Emirates~971!!!GB~United Kingdom~44!!!US~United States~1!!!UY~Uruguay~598!!!UZ~Uzbekistan~998!!!VU~Vanuatu~678!!!VA~Vatican City~39!!!VE~Venezuela~58!!!VN~Vietnam~84!!!WF~Wallis and Futuna~681!!!YE~Yemen~967!!!ZM~Zambia~260!!!ZW~Zimbabwe~263","fUseInlinePhoneNumber":true,"urlSessionState":"https://login.microsoftonline.com/common/DeviceCodeStatus","urlResetPassword":"https://passwordreset.microsoftonline.com/?ru=https%3a%2f%2flogin.microsoftonline.com%2fcommon%2freprocess%3fctx%3drQIIAYWSPW_TYBSF66QJKgMghGBDIDEhJbEd4ziRiuQmaeJ82I0_-5oBOf6I7dh-Xft1EywxsaAu7Vh1ZAF1YGBClF_QqWLkD5QRMTGSiIWNMzy60jm6utK5T4tElWg9wf-KrqxZwR2HqJj2evpHyd2bdx7cPyXufTjqHqlfjx8-v3h9jj12EYrTVq0WwwQZQRU6jmfaVROGtcCILC-afcawKwz7gWFnhZIdVRTpvJDSdbrBUCRJ4yRDEc1GA6_y8rwuyOqczydIDwEBJBzXtS410nZ9IJtI17jF2AcL3h9TQANL3h8EuqaQ-srjSaWut3EcyKA-kufPxtpqh6-Q41AN9c54Ichd8nvhtsBmyCXXgImX278KWw5MwpcxTNFZ8RsmxHbEWW0YRbaJquuYHSHPNJAHo70ExnaCPDvd5sVEzVyKC1IDqkQ-4dNsGsz6fl0eojaYG3VkJJSf5vsyJxmS6ARNbzSkGJwOufYwmbEA7BqidIAUge00LCfrxbGu5uJU7LP8YLEjTkbDuRWKHWZOS6m01GcGLaKpKeiHDUOOB3EqLZjMtyLR7YoVMgchw0g9bh-SA7zXzHpWGKrLtuu7Soh_KpZXRYQwuizeWt0fedajOIGOF9hXm9jvTexdadVpfH1xfjy65t5U3hdOP77YuCzVVN6khwc1K3ckZ8bQPVY4VJI9wFjdfl_TB9arHXaZJx7uNtltqkWclLGTcvlnGXt7Y-PL1v8_4g81\u0026mkt=en-US\u0026hosted=0","urlMsaResetPassword":"https://account.live.com/password/reset?wreply=https%3a%2f%2flogin.microsoftonline.com%2fcommon%2freprocess%3fctx%3drQIIAYWSu2_TYBTF66QNagdAqIINFYkJycnnB44TqUhumibOw279rM2AXD9iO7Y_1_7SBEtMLKhLO1YdWUAdGJgQ5S_oVDH2HygjYmIkEQsbZ_jpSufo6krnPisTVaL5FPwVgy-IA88jcNtdTP8oe7B2_9HDM2L943H7WPt28vjF5ZsL7ImPUJo3a7UUZsiKqtDzAtut2jCuRVbiBMnoC4ZdY9gPDDsvrbgJrsoXpZyhmDpLkyQDSJYmGvU6qArKmBIVbSwUe8iMDcKQATD1Nj3Qd0JDsZGp89NhaEyFcEgbujETwl5k6ippzj2BVCmzBYChGNRAGT8f6vMdoUoOYy02t4dTUWmTN6V7IjdBPrkAzILC_VVa9WAWv0phjs7L3zExdRPeacEkcW1UXcTcBAW2hQKY7GYwdTMUuPmmIGXaxKf5KLegRhR7Qj45iEbdkFL6qGWMLQpZGR3mxb7Cy5YseVEjGPRpFjAx3-pnI84wdixJPkSqyG3XHW_SSVNTK6QDqcsJvemWtDfoj51Y2mbHjJzLM3NkMRI6sEXzqG4paS_N5Sk7CZ1E8tsSThZGzLJyh9-HZA90GpOOE8farOWHvhqDz-XKvIgYJlflu_P7k8DZSDPoBZF7vYz9Xsber8w7TW8vL04Gt_xb_EPp7NPLpauVmibYTP-w5hSe7I1YpsOJR2q2a7BOu9vVzZ7zeoubFVkA_Aa3STeJ0wp2Wqn8rGDv7ix9Xf3_R9ysrZOAYHGCwElig2CbNNUkKfMP0\u0026mkt=en-US","urlLogin":"https://login.microsoftonline.com/common/reprocess?ctx=rQIIAYWSPW_TYBSF66QJKgMghGBDIDEhJbEd4ziRiuQmaeJ82I0_-5oBOf6I7dh-Xft1EywxsaAu7Vh1ZAF1YGBClF_QqWLkD5QRMTGSiIWNMzy60jm6utK5T4tElWg9wf-KrqxZwR2HqJj2evpHyd2bdx7cPyXufTjqHqlfjx8-v3h9jj12EYrTVq0WwwQZQRU6jmfaVROGtcCILC-afcawKwz7gWFnhZIdVRTpvJDSdbrBUCRJ4yRDEc1GA6_y8rwuyOqczydIDwEBJBzXtS410nZ9IJtI17jF2AcL3h9TQANL3h8EuqaQ-srjSaWut3EcyKA-kufPxtpqh6-Q41AN9c54Ichd8nvhtsBmyCXXgImX278KWw5MwpcxTNFZ8RsmxHbEWW0YRbaJquuYHSHPNJAHo70ExnaCPDvd5sVEzVyKC1IDqkQ-4dNsGsz6fl0eojaYG3VkJJSf5vsyJxmS6ARNbzSkGJwOufYwmbEA7BqidIAUge00LCfrxbGu5uJU7LP8YLEjTkbDuRWKHWZOS6m01GcGLaKpKeiHDUOOB3EqLZjMtyLR7YoVMgchw0g9bh-SA7zXzHpWGKrLtuu7Soh_KpZXRYQwuizeWt0fedajOIGOF9hXm9jvTexdadVpfH1xfjy65t5U3hdOP77YuCzVVN6khwc1K3ckZ8bQPVY4VJI9wFjdfl_TB9arHXaZJx7uNtltqkWclLGTcvlnGXt7Y-PL1v8_4g81","urlSignUp":"https://login.live.com/oauth20_authorize.srf?response_type=code\u0026client_id=51483342-085c-4d86-bf88-cf50c7252078\u0026scope=openid+profile+email+offline_access\u0026response_mode=form_post\u0026redirect_uri=https%3a%2f%2flogin.microsoftonline.com%2fcommon%2ffederation%2foauth2\u0026state=rQIIAYVSu2_TYByskyaoHQChCjZUJCYkJ_5s4ziRiuSmaeI87NbP2gyV40dsx6_aXx5YYmJBXdqx6sgC6sDAhCh_QaeKsf9AGRETIwksbNxw-kl3Ov2ku2dFUAGNp9hfUOiSUcxxAGray-sfpA_W7z96eAY2Phy3jpWvJ49fXL4-R9YOA29qV8w4vECeuBAmWaNaTeIUGkEldhzP_KNVAyOyvGj0GUGuEeQ7gpwXSnaEyuJFIaMIqkaTOE5hOE2Ceq2GVThpTPCSMubyfaiHGtBEDNPVFtlXd31NMqGusrOBr804f0Bqqjbn_G6gqzKuLzQOlwm9iWGapBF9afx8oC4yfBkfhEqo7wxmvNTCbwr3eGYCXXxJcerl9s_CmhOn4WESZ_C8-A3hEztirWYcRbYJK0ubHUHPNKAXR3tpnNgp9OxsixNSZeKSbJAZsQLyfS6bDINRxyekHmxqY4OARkr6WX4gsaIhCk5Q9_o9ksaokG320hGjabuGIB5BmWd2apYzaSeJruTCUOgwXHe2Lez3e2MrFHboMSVm4lwfGZQAhyavT2uGlHSTTJzRE9-KBLcloHiuhTQtttmDGO9i7fqkbYWhMm-6viuH2KdieVFEGEdXxbuL_yPP2kzS2PEC-3oV-bWKvCst-k1uLy9O-rfsG_R94ezjy5WrUlXhTKp3VLVyR3RGNNVm-Kmc7mm01ep0VL1rvdpm5nnqYW6d2SIb4LSMnJbLP8rI2zsrX9b-v4ib9Q0cAzQKAIqDTUA3SKKBE_pv0\u0026estsfed=1\u0026uaid=31981617a814458a8a56bc8f1e3ebb7d\u0026signup=1\u0026lw=1\u0026fl=easi2\u0026fci=00000006-0000-0ff1-ce00-000000000000\u0026mkt=en-US","urlGetCredentialType":"https://login.microsoftonline.com/common/GetCredentialType?mkt=en-US","urlGetOneTimeCode":"https://login.microsoftonline.com/common/GetOneTimeCode","urlLogout":"https://login.microsoftonline.com/common/uxlogout","urlForget":"https://login.microsoftonline.com/forgetuser","urlDisambigRename":"https://go.microsoft.com/fwlink/p/?LinkID=733247","urlGoToAADError":"https://login.live.com/oauth20_authorize.srf?response_type=code\u0026client_id=51483342-085c-4d86-bf88-cf50c7252078\u0026scope=openid+profile+email+offline_access\u0026response_mode=form_post\u0026redirect_uri=https%3a%2f%2flogin.microsoftonline.com%2fcommon%2ffederation%2foauth2\u0026state=rQIIAYVSu2_TYByskyaoHQChCjZUJCYkJ_5s4ziRiuSmaeI87NbP2gyV40dsx6_aXx5YYmJBXdqx6sgC6sDAhCh_QaeKsf9AGRETIwksbNxw-kl3Ov2ku2dFUAGNp9hfUOiSUcxxAGray-sfpA_W7z96eAY2Phy3jpWvJ49fXL4-R9YOA29qV8w4vECeuBAmWaNaTeIUGkEldhzP_KNVAyOyvGj0GUGuEeQ7gpwXSnaEyuJFIaMIqkaTOE5hOE2Ceq2GVThpTPCSMubyfaiHGtBEDNPVFtlXd31NMqGusrOBr804f0Bqqjbn_G6gqzKuLzQOlwm9iWGapBF9afx8oC4yfBkfhEqo7wxmvNTCbwr3eGYCXXxJcerl9s_CmhOn4WESZ_C8-A3hEztirWYcRbYJK0ubHUHPNKAXR3tpnNgp9OxsixNSZeKSbJAZsQLyfS6bDINRxyekHmxqY4OARkr6WX4gsaIhCk5Q9_o9ksaokG320hGjabuGIB5BmWd2apYzaSeJruTCUOgwXHe2Lez3e2MrFHboMSVm4lwfGZQAhyavT2uGlHSTTJzRE9-KBLcloHiuhTQtttmDGO9i7fqkbYWhMm-6viuH2KdieVFEGEdXxbuL_yPP2kzS2PEC-3oV-bWKvCst-k1uLy9O-rfsG_R94ezjy5WrUlXhTKp3VLVyR3RGNNVm-Kmc7mm01ep0VL1rvdpm5nnqYW6d2SIb4LSMnJbLP8rI2zsrX9b-v4ib9Q0cAzQKAIqDTUA3SKKBE_pv0\u0026estsfed=1\u0026uaid=31981617a814458a8a56bc8f1e3ebb7d\u0026fci=00000006-0000-0ff1-ce00-000000000000\u0026mkt=en-US","urlDssoStatus":"https://login.microsoftonline.com/common/instrumentation/dssostatus","urlPIAEndAuth":"https://login.microsoftonline.com/common/PIA/EndAuth","fCBShowSignUp":true,"fKMSIEnabled":false,"iLoginMode":1,"fAllowPhoneSignIn":true,"fAllowPhoneInput":true,"fAllowSkypeNameLogin":true,"iMaxPollErrors":5,"iPollingTimeout":60,"srsSuccess":true,"fShowSwitchUser":true,"arrValErrs":["50058"],"sErrorCode":"50058","sErrTxt":"","sResetPasswordPrefillParam":"username","onPremPasswordValidationConfig":{"isUserRealmPrecheckEnabled":true},"fSwitchDisambig":true,"oCancelPostParams":{"error":"access_denied","error_subcode":"cancel","state":"OpenIdConnect.AuthenticationProperties%3dNRrVuh4IlsaoV1zQNsublgHj3TKtCYka3tar4jszXTISaSRfl9iLK4806mICKrgAYYFaRSqtUOAD7dfuGppZVzRbRHANJwBRQLKkdmRD8k6SsSxZga6RtbcOZv7aTpJpsSw8ujdnRhER-2zYm88SGIXo2J0G9uGdmmVxChjhUm0","add_account":null},"iAllowedIdentities":2,"iRemoteNgcPollingType":2,"isGlobalTenant":true,"fUseNewNoPasswordTypes":true,"iMaxStackForKnockoutAsyncComponents":10000,"strCopyrightTxt":"\u0026#169;2018 Microsoft","fShowButtons":true,"urlCdn":"https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/","urlFooterTOU":"https://www.microsoft.com/en-US/servicesagreement/","urlFooterPrivacy":"https://privacy.microsoft.com/en-US/privacystatement","urlPost":"/common/login","urlRefresh":"https://login.microsoftonline.com/common/reprocess?ctx=rQIIAYWSu2_TYBTF66QNagdAqIINFYkJycnnB44TqUhumibOw279rM2AXD9iO7Y_1_7SBEtMLKhLO1YdWUAdGJgQ5S_oVDH2HygjYmIkEQsbZ_jpSufo6krnPisTVaL5FPwVgy-IA88jcNtdTP8oe7B2_9HDM2L943H7WPt28vjF5ZsL7ImPUJo3a7UUZsiKqtDzAtut2jCuRVbiBMnoC4ZdY9gPDDsvrbgJrsoXpZyhmDpLkyQDSJYmGvU6qArKmBIVbSwUe8iMDcKQATD1Nj3Qd0JDsZGp89NhaEyFcEgbujETwl5k6ippzj2BVCmzBYChGNRAGT8f6vMdoUoOYy02t4dTUWmTN6V7IjdBPrkAzILC_VVa9WAWv0phjs7L3zExdRPeacEkcW1UXcTcBAW2hQKY7GYwdTMUuPmmIGXaxKf5KLegRhR7Qj45iEbdkFL6qGWMLQpZGR3mxb7Cy5YseVEjGPRpFjAx3-pnI84wdixJPkSqyG3XHW_SSVNTK6QDqcsJvemWtDfoj51Y2mbHjJzLM3NkMRI6sEXzqG4paS_N5Sk7CZ1E8tsSThZGzLJyh9-HZA90GpOOE8farOWHvhqDz-XKvIgYJlflu_P7k8DZSDPoBZF7vYz9Xsber8w7TW8vL04Gt_xb_EPp7NPLpauVmibYTP-w5hSe7I1YpsOJR2q2a7BOu9vVzZ7zeoubFVkA_Aa3STeJ0wp2Wqn8rGDv7ix9Xf3_R9ysrZOAYHGCwElig2CbNNUkKfMP0","urlCancel":"https://portal.office.com/landing","iPawnIcon":0,"iPollingInterval":1,"sPOST_Username":"","sFT":"AQABAAEAAAC5una0EUFgTIF8ElaxtWjTucXrjyO13qJAVVCIbZfxEFjCZIt6EH1-fem5qx40rE5Rpc1dua4g07qj9gqQkWzJwzSdyQNRYmWXwZzEGVCLS8S2URIguu-4q1acjLs0BRjmihicJdK21REBTUZ0hTWwcrrBWbtQG3HTOYAEOvsnkWaUWWkk_fu52o3UWkNr69fiYdIpRWdzSLc4XAp1pUGRoTzKY87aQtjg4iP7YFsv6Z-G-vNF1NAuAgTDUC5CWG-a025L_FhpJjEnsEW5wjbAcS6eVNcwmNe5_ly1HghaId3Pz-ITO6T5BEtRsakydCAEuWLsKYVVdie3IQzuMHtq16vht9790EJiErpDAw38Wq-4iHFQNclSt058em0vsTiUEslAZ-kYg120j_ScJTDMIAA","sFTName":"flowToken","sSessionIdentifierName":"code","sCtx":"rQIIAYWSPW_TYBSF66QJKgMghGBDIDEhJbEd4ziRiuQmaeJ82I0_-5oBOf6I7dh-Xft1EywxsaAu7Vh1ZAF1YGBClF_QqWLkD5QRMTGSiIWNMzy60jm6utK5T4tElWg9wf-KrqxZwR2HqJj2evpHyd2bdx7cPyXufTjqHqlfjx8-v3h9jj12EYrTVq0WwwQZQRU6jmfaVROGtcCILC-afcawKwz7gWFnhZIdVRTpvJDSdbrBUCRJ4yRDEc1GA6_y8rwuyOqczydIDwEBJBzXtS410nZ9IJtI17jF2AcL3h9TQANL3h8EuqaQ-srjSaWut3EcyKA-kufPxtpqh6-Q41AN9c54Ichd8nvhtsBmyCXXgImX278KWw5MwpcxTNFZ8RsmxHbEWW0YRbaJquuYHSHPNJAHo70ExnaCPDvd5sVEzVyKC1IDqkQ-4dNsGsz6fl0eojaYG3VkJJSf5vsyJxmS6ARNbzSkGJwOufYwmbEA7BqidIAUge00LCfrxbGu5uJU7LP8YLEjTkbDuRWKHWZOS6m01GcGLaKpKeiHDUOOB3EqLZjMtyLR7YoVMgchw0g9bh-SA7zXzHpWGKrLtuu7Soh_KpZXRYQwuizeWt0fedajOIGOF9hXm9jvTexdadVpfH1xfjy65t5U3hdOP77YuCzVVN6khwc1K3ckZ8bQPVY4VJI9wFjdfl_TB9arHXaZJx7uNtltqkWclLGTcvlnGXt7Y-PL1v8_4g81","iProductIcon":-1,"urlReportPageLoad":"https://login.microsoftonline.com/common/instrumentation/reportpageload?mkt=en-US","dynamicTenantBranding":null,"staticTenantBranding":null,"oAppCobranding":{},"iBackgroundImage":0,"arrSessions":[],"fUseConstantPolling":true,"fUseFlowTokenAsCanary":true,"fApplicationInsightsEnabled":false,"iApplicationInsightsEnabledPercentage":0,"fRepositionFooterButtons":true,"fUseTextOnlyIdentityBannerWithBack":true,"fUseSigninSubtitle":true,"urlSetDebugMode":"https://login.microsoftonline.com/common/debugmode","scid":1013,"hpgact":1800,"hpgid":1104,"pgid":"ConvergedSignIn","apiCanary":"AQABAAAAAAC5una0EUFgTIF8ElaxtWjTEFhRXazpxKnPsEryspGjkCCSdP23BfwARGn0xZ-QfpEI_iXUceZt1f3yzuNGwK-NVOu305QZSHJV_ODLP_o13C95J80dl4OpyEqIuQZhpJVaHKnH7VYuLt8_cfx_ukebGbWM-HxLqE3VF5bla1M5oyO_DWpzzXX9HPez2wrzd1T9Ve3eqg-zdMx4cOWkwNm9wCgLqsHHuF3EgYyaPtHxFSAA","canary":"VNc6Kq/dzfSfg86GAOvUrPY8dEHHWZJdyBAxzri0h9A=4:1","correlationId":"31981617-a814-458a-8a56-bc8f1e3ebb7d","sessionId":"aabbe770-4c8f-49e7-832d-a70298ae5b00","locale":{"mkt":"en-US","lcid":1033},"slMaxRetry":2,"slReportFailure":true,"strings":{"desktopsso":{"authenticatingmessage":"Trying to sign you in"}},"enums":{"ClientMetricsModes":{"None":0,"SubmitOnPost":1,"SubmitOnRedirect":2,"InstrumentPlt":4}},"urls":{"instr":{"pageload":"https://login.microsoftonline.com/common/instrumentation/reportpageload","dssostatus":"https://login.microsoftonline.com/common/instrumentation/dssostatus"}},"browser":{"ltr":1,"_Other":1,"Full":1,"RE_Other":1,"b":{"name":"Other","major":-1,"minor":-1},"os":{"name":"Unknown","version":""},"V":-1},"watson":{"url":"/common/handlers/watson","bundle":"https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/content/cdnbundles/watson.min_ha5nmujvhvceoh6ykhd_kq2.js","sbundle":"https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/content/cdnbundles/watsonsupport.min__amo-oemzzyr-n7ss4onkq2.js","fbundle":"https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/content/cdnbundles/frameworksupport.min_tvpky4iaapvkoihdjd090q2.js","resetErrorPeriod":5,"maxCorsErrors":-1,"maxInjectErrors":5,"maxErrors":10,"maxTotalErrors":3,"expSrcs":["https://secure.aadcdn.microsoftonline-p.com/ests/","https://auth1.gfx.ms/ests/","https://login.microsoftonline.com",".login.microsoftonline.com"],"envErrorRedirect":true,"envErrorUrl":"/common/handlers/enverror"},"loader":{"cdnRoots":["https://secure.aadcdn.microsoftonline-p.com/ests/","https://auth1.gfx.ms/ests/"]},"serverDetails":{"slc":"ProXXXXes","dc":"CHI","ri":"ESTXXXX_43","ver":{"v":[2,1,8358,18]},"rt":"2018-11-21T18:43:23","et":72},"country":"US","fBreakBrandingSigninString":true,"bsso":{"type":"none","reason":"Chrome: Pull suppressed as UseAgent did not meet required criteria, Other: Pull suppressed as UseAgent did not meet required criteria"},"urlNoCookies":"https://login.microsoftonline.com/cookiesdisabled"};
-//]]></script> 
-<script type="text/javascript">//<![CDATA[
-!function(){var e=window,r=e.$Debug=e.$Debug||{},n=e.$Config||{};if(!r.appendLog){var t=[],o=0;r.appendLog=function(e){var r=n.maxDebugLog||25,a=(new Date).toUTCString()+":"+e;t.push(o+":"+a),t.length>r&&t.shift(),o++},r.getLogs=function(){return t}}}(),function(){function e(e,r){function n(a){var i=e[a];return t-1>a?void(o.r[i]?n(a+1):o.when(i,function(){n(a+1)})):void r(i)}var t=e.length;n(0)}function r(e,r,a){function i(){var e=!!s.method,o=e?s.method:a[0],i=s.extraArgs||[],u=t.$WebWatson;try{var c=n(a,!e);if(i&&i.length>0)for(var l=i.length,d=0;l>d;d++)c.push(i[d]);o.apply(r,c)}catch(f){return void(u&&u.submitFromException&&u.submitFromException(f))}}var s=o.r&&o.r[e];return r=r?r:this,s&&(s.skipTimeout?i():t.setTimeout(i,0)),s}function n(e,r){return Array.prototype.slice.call(e,r?1:0)}var t=window;t.$Do||(t.$Do={q:[],r:[],removeItems:[],lock:0,o:[]});var o=t.$Do;o.when=function(n,t){function a(e){r(e,i,s)||o.q.push({id:e,c:i,a:s})}var i=0,s=[],u=1,c="function"==typeof t;c||(i=t,u=2);for(var l=u;l<arguments.length;l++)s.push(arguments[l]);n instanceof Array?e(n,a):a(n)},o.register=function(e,n,t){if(!o.r[e]){o.o.push(e);var a={};if(n&&(a.method=n),t&&(a.skipTimeout=t),arguments&&arguments.length>3){a.extraArgs=[];for(var i=3;i<arguments.length;i++)a.extraArgs.push(arguments[i])}o.r[e]=a,o.lock++;try{for(var s=0;s<o.q.length;s++){var u=o.q[s];u.id==e&&r(e,u.c,u.a)&&o.removeItems.push(u)}}catch(c){throw c}finally{if(o.lock--,0===o.lock){for(var l=0;l<o.removeItems.length;l++)for(var d=o.removeItems[l],f=0;f<o.q.length;f++)if(o.q[f]===d){o.q.splice(f,1);break}o.removeItems=[]}}}},o.unregister=function(e){o.r[e]&&delete o.r[e]}}(),function(){function e(e,r){var n=c.$Debug;n&&n.appendLog&&(r&&(e+=" '"+(r.src||r.href||"")+"'",e+=", id:"+(r.id||""),e+=", async:"+(r.async||""),e+=", defer:"+(r.defer||"")),n.appendLog(e))}function r(){var e=c.$Config||{},r=e.loader||{};return r.slReportFailure||e.slReportFailure||!1}function n(){var e=c.$Config||{},r=e.loader||{};return r.redirectToErrorPageOnLoadFailure||!1}function t(e){var r=e.indexOf("?"),n=r>-1?r:e.length;return n>f&&e.substr(n-f,f).toLowerCase()===d}function o(e,r,n){var o=t(e)?a(e):i(e);return r&&(o.id=r),"function"==typeof o.setAttribute&&(o.setAttribute("crossorigin","anonymous"),n&&"string"==typeof n&&o.setAttribute("integrity",n)),o}function a(e){var r=l.createElement("link");return r.rel="stylesheet",r.type="text/css",r.href=e,r}function i(e){var r=l.createElement("script");return r.type="text/javascript",r.src=e,r.defer=!1,r.async=!1,r}function s(e){var r=!0,n=e.src||e.href||"";if(n){if(t(n))try{e.sheet&&e.sheet.cssRules&&!e.sheet.cssRules.length&&(r=!1)}catch(o){}}else r=!1;return r}function u(){function r(e){if(!(u&&u.length>1))return e;for(var r=0;r<u.length;r++)if(e.startsWith(u[r]))return u[r+1<u.length?r+1:0]+e.substring(u[r].length);return e}function n(t,i,u){if(t<f.length){var c=f[t];if(!c||!c.srcPath)return void n(t+1,i,u);c.retry>0&&(c.srcPath=r(c.srcPath),c.origId||(c.origId=c.id),c.id=c.origId+"_Retry_"+c.retry);var g=o(c.srcPath,c.id,c.integrity),h=function(){return e("[$Loader]: "+(d.failMessage||"Failed"),g),c.retry<a?(c.retry++,void n(t,i,u)):void(u&&u())},v=function(){s(g)?(e("[$Loader]: "+(d.successMessage||"Loaded"),g),n(t+1,i,u)):h()};g.onload=v,g.onerror=h,g.onreadystatechange=function(){"loaded"===g.readyState?setTimeout(v,500):"complete"===g.readyState&&v()};var p=l.getElementsByTagName("head")[0];p.appendChild(g),e("[$Loader]: Loading '"+(c.srcPath||"")+"', id:"+(c.id||""))}else i&&i()}var t=c.$Config||{},a=t.slMaxRetry||2,i=t.loader||{},u=i.cdnRoots||[],d=this,f=[];d.retryOnError=!0,d.successMessage="Loaded",d.failMessage="Error",d.Add=function(e,r,n,t){e&&f.push({srcPath:e,id:r,retry:t||0,integrity:n})},d.AddLoaded=function(){},d.AddForReload=function(e){var r=e.src||e.href||"";d.Add(r,"AddForReload",e.integrity,1)},d.AddIf=function(e,r,n){e&&d.Add(r,n)},d.Load=function(e,r){n(0,e,r)}}var c=window,l=c.document,d=".css",f=d.length;u.On=function(e,r){if(!e)throw"The target element must be provided and cannot be null.";r?u.OnError(e):u.OnSuccess(e)},u.OnSuccess=function(t,o,a){var i=t.src||t.href||"",c=r(),l=n();if(!t)throw"The target element must be provided and cannot be null.";if(s(t)){e("[$Loader]: Loaded",t);var d=new u;d.failMessage="Reload Failed",d.successMessage="Reload Success",d.AddLoaded(t,o,a),d.Load(null,function(){if(c)throw"Unexpected state. resourceLoader.Load() failed despite initial load success. ['"+i+"']";l&&(document.location.href="/error.aspx?err=504")})}else u.OnError(t,o,a)},u.OnError=function(t,o,a){var i=t.src||t.href||"",s=r(),c=n();if(!t)throw"The target element must be provided and cannot be null.";e("[$Loader]: Failed",t);var l=new u;l.failMessage="Reload Failed",l.successMessage="Reload Success",l.AddForReload(t,o,a),l.Load(null,function(){if(s)throw"Failed to load external resource ['"+i+"']";c&&(document.location.href="/error.aspx?err=504")})},c.$Loader=u}(),function(){function e(){if(!$){var e=new v.$Loader;e.AddIf(!v.jQuery,y.sbundle,"WebWatson_DemandSupport"),y.sbundle=null,delete y.sbundle,e.AddIf(!v.$Api,y.fbundle,"WebWatson_DemandFramework"),y.fbundle=null,delete y.fbundle,e.Add(y.bundle,"WebWatson_DemandLoaded"),e.Load(r,n),$=!0}}function r(){if(v.$WebWatson){if(v.$WebWatson.isProxy)return void n();m.when("$WebWatson.full",function(){for(;b.length>0;){var e=b.shift();e&&v.$WebWatson[e.cmdName].apply(v.$WebWatson,e.args)}})}}function n(){var e=v.$WebWatson?v.$WebWatson.isProxy:!0;if(e){if(!w&&JSON){try{var r=new XMLHttpRequest;r.open("POST",y.url),r.setRequestHeader("Accept","application/json"),r.setRequestHeader("Content-Type","application/json; charset=UTF-8"),r.setRequestHeader("canary",p.apiCanary),r.setRequestHeader("client-request-id",p.correlationId),r.setRequestHeader("hpgid",p.hpgid||0),r.setRequestHeader("hpgact",p.hpgact||0);for(var n=-1,o=0;o<b.length;o++)if("submit"===b[o].cmdName){n=o;break}var a=b[n]?b[n].args||[]:[],i={sr:y.sr,ec:"Failed to load external resource [Core Watson files]",wec:55,idx:1,pn:p.pgid||"",sc:p.scid||0,hpg:p.hpgid||0,msg:"Failed to load external resource [Core Watson files]",url:a[1]||"",ln:0,ad:0,an:!1,cs:"",sd:p.serverDetails,ls:null,diag:h(y)};r.send(JSON.stringify(i))}catch(s){}w=!0}y.loadErrorUrl&&window.location.assign(y.loadErrorUrl)}t()}function t(){b=[],v.$WebWatson=null}function o(r){return function(){var n=arguments;b.push({cmdName:r,args:n}),e()}}function a(){var e=["foundException","resetException","submit"],r=this;r.isProxy=!0;for(var n=e.length,t=0;n>t;t++){var a=e[t];a&&(r[a]=o(a))}}function i(e,r,n,t,o,a,i){var s=v.event;a||(a=d(o||s,i?i+2:2)),v.$Debug&&v.$Debug.appendLog&&v.$Debug.appendLog("[WebWatson]:"+(e||"")+" in "+(r||"")+" @ "+(n||"??")),W.submit(e,r,n,t,o||s,a,i)}function s(e,r){return{signature:e,args:r,toString:function(){return this.signature}}}function u(e){for(var r=[],n=e.split("\n"),t=0;t<n.length;t++)r.push(s(n[t],[]));return r}function c(e){for(var r=[],n=e.split("\n"),t=0;t<n.length;t++){var o=s(n[t],[]);n[t+1]&&(o.signature+="@"+n[t+1],t++),r.push(o)}return r}function l(e){if(!e)return null;try{if(e.stack)return u(e.stack);if(e.error){if(e.error.stack)return u(e.error.stack)}else if(window.opera&&e.message)return c(e.message)}catch(r){}return null}function d(e,r){var n=[];try{for(var t=arguments.callee;r>0;)t=t?t.caller:t,r--;for(var o=0;t&&L>o;){var a="InvalidMethod()";try{a=t.toString()}catch(i){}var u=[],c=t.args||t.arguments;if(c)for(var d=0;d<c.length;d++)u[d]=c[d];n.push(s(a,u)),t=t.caller,o++}}catch(i){n.push(s(i.toString(),[]))}var f=l(e);return f&&(n.push(s("--- Error Event Stack -----------------",[])),n=n.concat(f)),n}function f(e){if(e)try{var r=/function (.{1,})\(/,n=r.exec(e.constructor.toString());return n&&n.length>1?n[1]:""}catch(t){}return""}function g(e){if(e)try{if("string"!=typeof e&&JSON&&JSON.stringify){var r=f(e),n=JSON.stringify(e);return n&&"{}"!==n||(e.error&&(e=e.error,r=f(e)),n=JSON.stringify(e),n&&"{}"!==n||(n=e.toString())),r+":"+n}}catch(t){}return""+(e||"")}function h(e){var r=[];try{if(jQuery?(r.push("jQuery v:"+jQuery().jquery),r.push(jQuery.easing?"jQuery.easing:"+JSON.stringify(jQuery.easing):"jQuery.easing is not defined")):r.push("jQuery is not defined"),e&&e.expectedVersion&&r.push("Expected jQuery v:"+e.expectedVersion),m){var n,t="";for(n=0;n<m.o.length;n++)t+=m.o[n]+";";for(r.push("$Do.o["+t+"]"),t="",n=0;n<m.q.length;n++)t+=m.q[n].id+";";r.push("$Do.q["+t+"]")}if(v.$Debug&&v.$Debug.getLogs){var o=v.$Debug.getLogs();o&&o.length>0&&(r=r.concat(o))}if(b)for(var a=0;a<b.length;a++){var i=b[a];if(i&&"submit"===i.cmdName)try{if(JSON&&JSON.stringify){var s=JSON.stringify(i);s&&r.push(s)}}catch(u){r.push(g(u))}}}catch(c){r.push(g(c))}return r}var v=window,p=v.$Config||{},y=p.watson,m=v.$Do;if(!v.$WebWatson&&y){var b=[],$=!1,w=!1,L=10,W=v.$WebWatson=new a;W.CB={},W._orgErrorHandler=v.onerror,v.onerror=i,W.errorHooked=!0,m.when("jQuery.version",function(e){y.expectedVersion=e}),m.register("$WebWatson")}}(),function(){function e(e,r){for(var n=r.split("."),t=n.length,o=0;t>o&&null!==e&&void 0!==e;)e=e[n[o++]];return e}function r(r){var n=null;return null===u&&(u=e(a,"Constants")),null!==u&&r&&(n=e(u,r)),null===n||void 0===n?"":n.toString()}function n(n){var t=null;return null===i&&(i=e(a,"$Config.strings")),null!==i&&n&&(t=e(i,n.toLowerCase())),(null===t||void 0===t)&&(t=r(n)),null===t||void 0===t?"":t.toString()}function t(e,r){var t=null;return e&&r&&r[e]&&(t=n("errors."+r[e])),t||(t=n("errors."+e)),t||(t=n("errors."+c)),t||(t=n(c)),t}function o(n){var t=null;return null===s&&(s=e(a,"$Config.urls")),null!==s&&n&&(t=e(s,n.toLowerCase())),(null===t||void 0===t)&&(t=r(n)),null===t||void 0===t?"":t.toString()}var a=window,i=null,s=null,u=null,c="GENERIC_ERROR";a.GetString=n,a.GetErrorString=t,a.GetUrl=o}(),function(){var e=window,r=e.$Config||{};e.$B=r.browser||{}}();
-
-//]]></script> 
-
-    <script type="text/javascript">
-        ServerData = $Config;
-    </script>
-
-
+  </ul>
+  </li>
+  </ul>
+  <ul>
+   <li> <a href="http://www.cs.uic.edu/~lstennet/work.html">EXPERIENCE</a>
+  <ul>
     
-<link crossorigin="anonymous" href="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/content/cdnbundles/converged.v2.login.min_b82b5b2o4zmoi2bapziquw2.css" rel="stylesheet" onerror='$Loader.On(this,true)' onload='$Loader.On(this)' integrity='sha384-o9wRZeKlSrxh2n80QJ81ZEodDcfaTapNsFsFjtdrx7Fbq0vlsIhr1TbMAHDE4TD4' />
+  </ul>
+  </li>
+  </ul>
+<p />
+ <ul>
+   <li> <a href="http://www.cs.uic.edu/~lstennet/resume-20-2012.pdf">RESUME</a>
+  <ul>
+   
+  </ul>
+  </li>
+  </ul>
+    <br class="clearFloat" />
+ </div> </div></div></div><!-- 
 
-<script crossorigin="anonymous" src="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/content/cdnbundles/oldconvergedlogin_pcore.min_lrmwfklc10ospwdlwqlxja2.js" onerror='$Loader.On(this,true)' onload='$Loader.On(this)' integrity='sha384-NkbOGzs0O/xLM+bHL8yP5ooKzDPGYXGSYmrHyhIvhGCuk0ugy93yEovF+QhsVx6v'></script>
-
-    <script crossorigin="anonymous" src="https://secure.aadcdn.microsoftonline-p.com/ests/2.1.8358.18/content/cdnbundles/convergedloginpaginatedstrings-en.min_1qfadwnxbvhum42sbbatna2.js" onerror='$Loader.On(this,true)' onload='$Loader.On(this)' integrity='sha384-YdKxOnW3iecnHdcnQ0gR63hWBZzAwLV/rkpmnnwkC0sgU4YyWNZ33FAeEb3PyB0T'></script>
-
-    
-
-
-</head>
-
-<body data-bind="defineGlobals: ServerData, bodyCssClass" class="cb" style="display: none">
-    <script type="text/javascript">//<![CDATA[
-!function(){var e=window,o=e.document,i=e.$Config||{};if(e.self===e.top)o&&o.body&&(o.body.style.display="block");else if(!i.allowFrame){var s=e.self.location.href,l=s.indexOf("#"),n=-1!==l,t=s.indexOf("?"),f=n?l:s.length,d=-1===t||n&&t>l?"?":"&";s=s.substr(0,f)+d+"iframe-request-id="+i.sessionId+s.substr(f),e.top.location=s}}();
-
-//]]></script>
-</body>
-</html>
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

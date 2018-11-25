@@ -1,639 +1,384 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> Homework7 &lt; CS450 &lt; TWiki</title>
 
-<title>engineering | UIC Today</title>
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/style.css" />
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/css/style.min.css" />
-    
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://today.uic.edu/feed" />
-
-<link rel="shortcut icon" href="https://today.uic.edu/wp-content/themes/uictoday/favicon.ico" />
-
-
-
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="UIC Today &raquo; engineering Tag Feed" href="https://today.uic.edu/tag/engineering/feed" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/today.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS450/Homework7?_T=2018-11-25" type="application/x-wiki" title="edit Homework7" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS450/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS450/Homework7"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
 }
 </style>
-<link rel='stylesheet' id='events-manager-css'  href='https://today.uic.edu/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.95' type='text/css' media='all' />
-<link rel='stylesheet' id='ssp-frontend-player-css'  href='https://today.uic.edu/wp-content/plugins/seriously-simple-podcasting/assets/css/player.css?ver=1.19.14' type='text/css' media='all' />
-<link rel='stylesheet' id='qcsld-fa-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-rwd-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style-rwd.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-embed-form-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/css/embed-form.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='wow-icons-fa-css'  href='https://today.uic.edu/wp-content/plugins/wow-icons//assets/fontawesome/font-awesome.min.css?ver=2.0.1' type='text/css' media='all' />
-<link rel='stylesheet' id='upw_theme_standard-css'  href='https://today.uic.edu/wp-content/plugins/ultimate-posts-widget/css/upw-theme-standard.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='tablepress-default-css'  href='https://today.uic.edu/wp-content/tablepress-combined.min.css?ver=26' type='text/css' media='all' />
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-a11y.min.js?ver=4.9.8'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var EM = {"ajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"mm\/dd\/yy","ui_css":"https:\/\/today.uic.edu\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.95'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/directory-script.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/js/embed-form.js?ver=4.9.8'></script>
-<link rel='https://api.w.org/' href='https://today.uic.edu/wp-json/' />
-    <style type="text/css" media="screen">
-      div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
-        text-decoration: none;
-        border: none;
-      }
-    </style>
-           <style type="text/css" media="screen">
-          div.printfriendly {
-            margin: 0px 0px 0px 0px;
-            position: relative;
-            z-index: 1000;
-          }
-          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
-            font-size: 14px;
-            color: #55750C;
-            vertical-align: bottom;
-          }
-          .printfriendly a {
-            box-shadow:none;
-          }
-          .printfriendly a:hover {
-            cursor: pointer;
-          }
-          .printfriendly a img  {
-            border: none;
-            padding:0;
-            margin-right: 6px;
-            box-shadow: none;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-          }
-          .printfriendly a span{
-            vertical-align: bottom;
-          }
-          .pf-alignleft {
-            float: left;
-          }
-          .pf-alignright {
-            float: right;
-          }
-          div.pf-aligncenter {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-          }
-        </style>
-        <style type="text/css" media="print">
-          .printfriendly {
-            display: none;
-          }
-        </style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://today.uic.edu/feed/podcast" />
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
 
 <script type="text/javascript">
-           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-         </script><script type="text/javascript">
-	           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-	         </script>
-<!-- Put the following javascript before the closing </head> tag. -->
 
-<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
   (function() {
-    var cx = '009511351313755808885:xdz07yl93pe';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
 </script>
 
+<!-- /Google Analytics Snippet -->
 </head>
-
-<body role="document" class="archive paged tag tag-engineering tag-2026 paged-2 tag-paged-2">
-
-
-<div id="skip" role="complementary">
-<a href="#the_content">Skip to main content</a></div>
-
-
-
-<div id="header" role="banner">
-
-
-
-
-         		<div id="header-background">
-
-
-
-<!-- removed color wash for now.
-
-			<div class="color-wash">
-            <img src="" alt="   ">
-            </div>
-
-            -->
-
-
-
-            <div class="uic-type-wrapper">
-
-
-            <div class="last-update-timestamp">
-            	Updated: Nov 21, 2018 at 10:21 AM
-            </div><!--  last-update-timestamp   -->
-
-
-            <div class="uic-type-treatment">
-
-  			<div class="_mark">
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->
-
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-
-			</div><!--  uic-type-treatment   -->
-
-
-
-            <!-- Put search box here -->
-<div class="search-box" aria-label="Search U I C today">
-    <form role="search" method="get" action="https://today.uic.edu/">
-     
-        <input type="text" id="s" name="s" aria-label="Search" size="25" value="" placeholder="Search">
-
-<button type="submit" value="Submit" style="border: 0;
-clip: rect( 1px, 1px, 1px, 1px );
-clip-path: inset( 50% );
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal;">
-Submit
-</button>
-
-    </form>
-    
-    
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS450/WebHome">CS450 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS450/Homework7" title='Topic revision: 2 (2013-04-06 - 00:56:55)'>Homework7</a> <span class='patternRevInfo'>(2013-04-06, Main.ckanich)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS450/Homework7?t=1543180073' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS450/Homework7' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Homework_7"></a> Homework 7 </h1>
+<p />
+In this assignment you will implement a fully functional Internet router that routes real network traffic. The goal is to give you hands-on experience as to how a router really works. Your router will receive raw Ethernet frames. It will process the packets just like a real router, then forward them to the correct outgoing interface. Your job is to create the forwarding logic so packets go to the correct interface.
+<p />
+Your router will route real packets from a emulated host (client) to two emulated application servers (http server 1/2) sitting behind your router. The application servers are each running an HTTP server. When you have finished the forwarding path of your router, you should be able to access these servers using regular client software. In addition, you should be able to ping and traceroute to and through a functioning Internet router. A sample routing topology is shown below:
+<p />
+<img width="325" alt="connection topo " src="https://github.com/mininet/mininet/wiki/images/sr_topo.png" title="topo" height="473" />
+<blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px"><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px"><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px"><blockquote style="margin: 0px 0px 0px 40px; border: none; padding: 0px">
+<p />
+</blockquote></blockquote></blockquote></blockquote>
+<p />
+The homework template is available at:
+<pre>
+svn://cs450.cs.uic.edu/pub/homeworks/hw7
+</pre>
+<p />
+<h2><a name="The_virtual_network_setup"></a> The virtual network setup </h2>
+ We still use Mininet to simulate the network topology. The detailed method to have mininet setup is on homework 5 webpage. Besides that, in the hw7 folder, you need to so the following configuration: 
+<h3><a name="Step_1_Environment_configuration"></a> Step 1: Environment configuration </h3>
+ <pre>
+./config.sh
+</pre>
+<p />
+<p />
+<h3><a name="Step_2_Test_the_connectivity_of"></a> Step 2: Test the connectivity of your simulated network </h3>
+<p />
+<pre>
+./run&#95;mininet.sh
+</pre> And you will see the following if it runs correctly: <pre>
+&#42;&#42;&#42; Shutting down stale SimpleHTTPServers  
+&#42;&#42;&#42; Shutting down stale webservers  
+server1 192.168.2.2
+server2 172.64.3.10
+client 10.0.1.100
+sw0-eth1 192.168.2.1
+sw0-eth2 172.64.3.1
+sw0-eth3 10.0.1.1
+&#42;&#42;&#42; Successfully loaded ip settings for hosts
+ {&#39;server1&#39;: &#39;192.168.2.2&#39;, &#39;sw0-eth3&#39;: &#39;10.0.1.1&#39;, &#39;sw0-eth1&#39;: &#39;192.168.2.1&#39;, &#39;sw0-eth2&#39;: &#39;172.64.3.1&#39;, &#39;client&#39;: &#39;10.0.1.100&#39;, &#39;server2&#39;: &#39;172.64.3.10&#39;}
+&#42;&#42;&#42; Creating network
+&#42;&#42;&#42; Creating network
+&#42;&#42;&#42; Adding controller
+&#42;&#42;&#42; Adding hosts:
+client server1 server2 
+&#42;&#42;&#42; Adding switches:
+sw0 
+&#42;&#42;&#42; Adding links:
+(client, sw0) (server1, sw0) (server2, sw0) 
+&#42;&#42;&#42; Configuring hosts
+client server1 server2 
+&#42;&#42;&#42; Starting controller
+&#42;&#42;&#42; Starting 1 switches
+sw0 
+&#42;&#42;&#42; setting default gateway of host server1
+server1 192.168.2.1
+&#42;&#42;&#42; setting default gateway of host server2
+server2 172.64.3.1
+&#42;&#42;&#42; setting default gateway of host client
+client 10.0.1.1
+&#42;&#42;&#42; Starting SimpleHTTPServer on host server1 
+&#42;&#42;&#42; Starting SimpleHTTPServer on host server2 
+&#42;&#42;&#42; Starting CLI:
+mininet&#62; 
+</pre>
+<p />
+<strong>Keep this terminal open, (Do not do ctrl-z)</strong>
+<p />
+Now you can test the connectivity. Run the binary file <pre>
+./sr&#95;solution
+</pre> And you will see <pre>
+Loading routing table from server, clear local routing table.
+Loading routing table
+---------------------------------------------
+Destination     Gateway         Mask    Iface
+10.0.1.100              10.0.1.100      255.255.255.255 eth3
+192.168.2.2             192.168.2.2     255.255.255.255 eth1
+172.64.3.10             172.64.3.10     255.255.255.255 eth2
+---------------------------------------------
+Client ubuntu connecting to Server localhost:8888
+Requesting topology 0
+successfully authenticated as ubuntu
+Loading routing table from server, clear local routing table.
+Loading routing table
+---------------------------------------------
+Destination     Gateway         Mask    Iface
+10.0.1.100              10.0.1.100      255.255.255.255 eth3
+192.168.2.2             192.168.2.2     255.255.255.255 eth1
+172.64.3.10             172.64.3.10     255.255.255.255 eth2
+---------------------------------------------
+Router interfaces:
+eth3    HWaddr86:05:70:7e:eb:56
+        inet addr 10.0.1.1
+eth2    HWaddrb2:9e:54:d8:9d:cd
+        inet addr 172.64.3.1
+eth1    HWaddr36:61:7c:4f:b6:7b
+        inet addr 192.168.2.1
+ &#60;-- Ready to process packets --&#62; 
+</pre> This sr_solution has the function that you need to finish. With sr_solution running, you can run ping, traceroute, wget correctly from the client xterm.  To run your own code, you will want to kill the sr_solution program, and run your own instead.
+<p />
+<h2><a name="Required_functionality"></a> Required functionality </h2>
+ If the router is functioning correctly, all of the following operations should work:
+<p /> <ul>
+<li> Pinging from the client to any of the router's interfaces (192.168.2.1, 172.64.3.1, 10.0.1.1).
+</li> <li> Tracerouting from the client to any of the router's interfaces
+</li> <li> Pinging from the client to any of the app servers (192.168.2.2, 172.64.3.10)
+</li> <li> Tracerouting from the client to any of the app servers
+</li> <li> Downloading a file using HTTP from one of the app servers The majority of the code which makes the router work is provided for you.
+</li></ul> 
+<p />
+<h2><a name="Rolling_your_own_router_using_mi"></a> Rolling your own router using mininet </h2>
+ You will be responsible for implementing important elements of several subsystems within the router. The function should be the same with sr_solution provided. All code must be added to sr_router.c and sr_router.h. You are responsible for implementing:
+<p />
+in sr_handlepacket():parse the provided ethernet frame, verify that it is valid and to this interface, and call handle_ip() or handle_arp() as needed.
+<p /> <ul>
+<li> in handle_arp(): handle incoming ARP requests by sending a reply if necessary.
+</li> <li> in handle_ip(): verify the validity of the IP header, handle packets destined for the router (only ICMP Ping must be handled, all data packets should receive an error response), and forward/drop packets NOT addressed to this router as appropriate.
+</li> <li> in rtable_find_route(): find the best route in the routing table, and return a pointer to that element in the linked list of routing table entries.
+</li> <li> in router_queue_ethernet_frame(): craft an outgoing ethernet packet based on the given payload, source, and destination, and send it out via sr_send_packet. in network_send_packet_from(): allocate a new IP packet, set its headers and payload correctly, and call router_send_ethernet_frame to send it along.
+</li> <li> in icmp_send(): allocate, fill, and send a new ICMP packet using network_send_packet or network_send_packet_from. If the src ip is null, you can use network_send_packet to set the src ip based on the routing decision for the destination.
+</li> <li> in handle_arpreq(), for waiting packet on a arp request, first check whether it has been timeout, if so, send icmp host unreachable ICMP packet to the source, then clear the request in arp cache; if not, send a new arp request and update the valid time and send times.
+</li></ul> 
+<p />
+<h2><a name="Detailing_with_protocol_headers"></a> Detailing with protocol headers </h2>
+ Within the sr framework you will be dealing directly with raw Ethernet packets. There are a number of resources which describe the protocol headers in detail, including Stevens UNP, www.networksorcery.com and the Internet RFC&rsquo;s for ARP (RFC826), IP (RFC791), and ICMP (RFC792). The stub code itself provides some data structures in sr_protocols.h which you may use to manipulate headers. There is no requirement that you use the provided data structures, you may prefer to write your own or use standard system includes.
+<p />
+<h2><a name="Simplifying_Assumption_requireme"></a> Simplifying Assumption/requirement </h2> <ul>
+<li> no IP Options
+</li> <li> noIP Fragmentation
+</li> <li> no IPv6 all
+</li> <li> non-ICMP messages sent directly to routers receive an 'ICMP Protocol Unreachable' message in reply.
+</li> <li> the only ICMP message you must reply to is ICMP Ping.
+</li> <li> all ARP packets must be for the Ethernet hardware type and IP protocol type.
+</li> <li> Only ARP Requests and ARP Replies are to be processed.
+</li></ul> 
+<p />
+<h2><a name="Debugging_tools"></a> Debugging tools </h2>
+ You can log the packets receives and generated by your SR program by using the "-l" parameter with your SR program. The file will be in pcap format, i.e., you can use wireshark or tcpdump to read it. <pre>
+./sr -l logname.pcap
+</pre>
+<p />
+You can use tcpdump to display the packets of the log file in a readable form:
+<pre> 
+tcpdump -r &#60; logfile &#62; -e -vvv -x
+</pre>
+<p />
+Besides SR, you can also use mininet to monitor the traffic goes in and out of the emulated nodes, i.e., router, server1 and server2. Take server1 as an example, to see the packets in and out of it, go to mininet CLI:
+<pre>
+mininet&#62; server1 sudo tcpdump -n -i server1-eth0
+</pre> or you can bring up a terminal inside server1 by <pre>
+mininet&#62; xterm server1
+</pre> then inside the newly popped xterm, <pre>
+sudo tcpdump -n -i server1-eth0</pre>
+There are also some debugging functions provided. In sr_utils.c there are several functions, like:
+<p /> <ul>
+<li> print_hdrs(uint8_t *buf, uint32_t length) - Prints out all possible headers starting from the Ethernet header in the packet
+</li> <li> print_addr_ip_int(uint32_t ip) - Prints out a formatted IP address from a uint32_t. Make sure you are passing the IP address in the correct byte ordering.
+</li></ul> 
+<p />
+To find more information, you can access <a href="https://github.com/mininet/mininet/wiki/Simple-Router" target="_top">https://github.com/mininet/mininet/wiki/Simple-Router</a>. But do not use the template code it provedes, it's not compatible with our mininet version. </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS450/Homework7?t=1543180074' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS450/Homework7' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450/Homework7?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS450/Homework7?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r2&nbsp;<a rel="nofollow" href="/bin/rdiff/CS450/Homework7?rev1=2;rev2=1">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS450/Homework7?rev=1">r1</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450/Homework7?template=backlinksweb' rel='nofollow' title='Search the CS450 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450/Homework7?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS450/Homework7?t=1543180074;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450/Homework7?template=oopsmore&amp;param1=2&amp;param2=2' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r2 - 2013-04-06 - 00:56:55 - Main.ckanich</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS450</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">CS450 Home</a>
+</li> <li> <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a>
+</li> <li> - <a href="/bin/view/CS450/UsingSubversion" class="twikiLink">Using Subversion</a>
+</li> <li> <a href="https://piazza.com/class#spring2013/cs450" target="_top">Discussion Forum</a>
+</li> <li> <a href="/bin/view/CS450/LectureNotes" class="twikiLink">Lecture Notes</a>
+</li></ul> 
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS450/Homework7">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS450 Web</a></strong>
+</li> <li> <a href="/bin/view/CS450/WebCreateNewTopic?topicparent=Homework7" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS450/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS450/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS450/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS450/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS450/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS450/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS450/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-
-
-
-<!-- End search box code -->
-
-
-
-			</div><!--  uic-type-wrapper    -->
-
-
-		</div><!--  header-background   -->
-
-
-
-
-
-		<div id="main_nav" role="navigation" aria-label="Site">
-	  	 	<div class="main_nav_container"><ul id="menu-main_nav" class="menu"><li id="menu-item-57546"><a href="https://today.uic.edu/campus-news">Campus News</a></li>
-<li id="menu-item-57547"><a href="https://today.uic.edu/academics-research">Academics &#038; Research</a></li>
-<li id="menu-item-57548"><a href="https://today.uic.edu/events">Events</a></li>
-<li id="menu-item-67603"><a href="https://today.uic.edu/resources">Resources</a>
-<ul class="sub-menu">
-	<li id="menu-item-67604"><a href="https://today.uic.edu/resources/current-students">Current Student Resources</a></li>
-	<li id="menu-item-67605"><a href="https://today.uic.edu/resources/faculty-staff">Faculty &#038; Staff Resources</a></li>
-	<li id="menu-item-70617"><a href="https://today.uic.edu/campus-news/campus-newspaper">Campus Newspaper &#038; Archives</a></li>
-</ul>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
 </li>
-<li id="menu-item-57549"><a href="https://today.uic.edu/contact">Contact</a>
-<ul class="sub-menu">
-	<li id="menu-item-57551"><a href="https://today.uic.edu/contact/communicating-on-campus">Communicating On Campus</a></li>
-	<li id="menu-item-57552"><a href="https://today.uic.edu/contact/communicating-on-campus/sending-massmails-dddh">Sending Announcements / DDDH</a></li>
-	<li id="menu-item-57550"><a href="https://today.uic.edu/contact/social-media-directory">UIC Social Media Directory</a></li>
 </ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
 </li>
-</ul></div>	    </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-		</div>
-
-
-
-
-
-
-
-
- <div id="container" role="main" aria-label="Main content" class="clearfix">
-
-
-<a name="the_content" id="the_content" tabindex="-1" aria-label="Main content area"></a>
-
-
-
-
-
-
-		    <h1>All engineering</h1>
-	 
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2018/04/Brezinski-Cropped-Bigger-Hi-Res-150x150.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2018/04/Brezinski-Cropped-Bigger-Hi-Res-150x150.png 150w, https://today.uic.edu/files/2018/04/Brezinski-Cropped-Bigger-Hi-Res-160x160.png 160w, https://today.uic.edu/files/2018/04/Brezinski-Cropped-Bigger-Hi-Res-45x45.png 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">April 10, 2018</p>
-            <a href="https://today.uic.edu/engineer-named-inaugural-fellow-of-the-combustion-institute"> Engineer named inaugural fellow of the Combustion Institute </a>
-            <p>Kenneth Brezinsky studies combustion chemistry in mechanical, industrial engineering department</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2018/03/EWH_Barak-2018-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2018/03/EWH_Barak-2018-150x150.jpg 150w, https://today.uic.edu/files/2018/03/EWH_Barak-2018-160x160.jpg 160w, https://today.uic.edu/files/2018/03/EWH_Barak-2018-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">April 3, 2018</p>
-            <a href="https://today.uic.edu/student-brings-leadership-to-engineering-world-health"> Student brings leadership to Engineering World Health </a>
-            <p>Barak Stoltz uses engineering knowledge to help people in Vietnam</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2018/03/soltanalian_ece_web-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2018/03/soltanalian_ece_web-150x150.jpg 150w, https://today.uic.edu/files/2018/03/soltanalian_ece_web-160x160.jpg 160w, https://today.uic.edu/files/2018/03/soltanalian_ece_web-200x200.jpg 200w, https://today.uic.edu/files/2018/03/soltanalian_ece_web-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">March 21, 2018</p>
-            <a href="https://today.uic.edu/engineer-receives-young-author-award"> Engineer receives young author award </a>
-            <p>Mojtaba Soltanalian honored by IEEE Signal Processing Society</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2018/03/mazumder-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2018/03/mazumder-150x150.jpg 150w, https://today.uic.edu/files/2018/03/mazumder-160x160.jpg 160w, https://today.uic.edu/files/2018/03/mazumder-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">March 21, 2018</p>
-            <a href="https://today.uic.edu/professor-awarded-1-m-for-universal-battery-supercharger-research"> Professor awarded $1 M for ‘universal battery supercharger’ research </a>
-            <p>Sudip Mazumder studying more efficient, reliable and affordable option</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2018/01/UIC_ECE_student-projects-for-nonprofits-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2018/01/UIC_ECE_student-projects-for-nonprofits-150x150.jpg 150w, https://today.uic.edu/files/2018/01/UIC_ECE_student-projects-for-nonprofits-160x160.jpg 160w, https://today.uic.edu/files/2018/01/UIC_ECE_student-projects-for-nonprofits-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">January 25, 2018</p>
-            <a href="https://today.uic.edu/engineering-students-use-senior-design-projects-to-help-community-organizations"> Engineering students use senior design projects to help community organizations </a>
-            <p>Students tackle challenges to solve real-world problems</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2017/11/2017.Pandey.Dilip17-F-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Dilip Pandey" srcset="https://today.uic.edu/files/2017/11/2017.Pandey.Dilip17-F-150x150.jpg 150w, https://today.uic.edu/files/2017/11/2017.Pandey.Dilip17-F-160x160.jpg 160w, https://today.uic.edu/files/2017/11/2017.Pandey.Dilip17-F-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">November 15, 2017</p>
-            <a href="https://today.uic.edu/east-meets-west-using-technology-to-help-epilepsy-patients"> East Meets West: Using technology to help epilepsy patients </a>
-            <p>Campus collaboration creates customized self-management program </p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2017/11/DSC_0025-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2017/11/DSC_0025-150x150.jpg 150w, https://today.uic.edu/files/2017/11/DSC_0025-160x160.jpg 160w, https://today.uic.edu/files/2017/11/DSC_0025-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">November 10, 2017</p>
-            <a href="https://today.uic.edu/professor-anand-and-collaborators-develop-new-way-to-create-nanoscale-emulsions"> Developing new way to create nanoscale emulsions </a>
-            <p>By David Staudacher Emulsions, or oil-water mixtures, are of common [&hellip;]</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2017/11/23116795_1850570514983182_268439803910166100_o-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2017/11/23116795_1850570514983182_268439803910166100_o-150x150.jpg 150w, https://today.uic.edu/files/2017/11/23116795_1850570514983182_268439803910166100_o-160x160.jpg 160w, https://today.uic.edu/files/2017/11/23116795_1850570514983182_268439803910166100_o-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">November 7, 2017</p>
-            <a href="https://today.uic.edu/engineers-kick-off-racing-season-with-second-place-finish"> Engineers kick off racing season with second place finish </a>
-            <p>Competitions contribute to students’ engineering skills</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2017/10/MilosLabWEB1-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2017/10/MilosLabWEB1-150x150.jpg 150w, https://today.uic.edu/files/2017/10/MilosLabWEB1-160x160.jpg 160w, https://today.uic.edu/files/2017/10/MilosLabWEB1-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">November 3, 2017</p>
-            <a href="https://today.uic.edu/engineers-teaching-robots-how-to-push-back"> Engineers teaching robots how to push back </a>
-            <p>Enabling robots to communicate, collaborate with people</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2017/10/CME-Alumnus_Panama-2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="https://today.uic.edu/files/2017/10/CME-Alumnus_Panama-2-150x150.jpg 150w, https://today.uic.edu/files/2017/10/CME-Alumnus_Panama-2-160x160.jpg 160w, https://today.uic.edu/files/2017/10/CME-Alumnus_Panama-2-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">October 30, 2017</p>
-            <a href="https://today.uic.edu/engineering-alumnus-helps-build-footbridge-in-panama"> Engineering alumnus helps build footbridge in Panama </a>
-            <p>By David Staudacher Embracing and partnering with the community is one [&hellip;]</p>
-          </div>
-        </div>
-        
-    <!-- Creates paginated archive pages -->
-    
-     <div class="archivepaged">
-      <a class="prev page-numbers" href="https://today.uic.edu/tag/engineering/page/1">&laquo; Previous</a>
-<a class='page-numbers' href='https://today.uic.edu/tag/engineering/page/1'>1</a>
-<span aria-current='page' class='page-numbers current'>2</span>
-<a class='page-numbers' href='https://today.uic.edu/tag/engineering/page/3'>3</a>
-<a class='page-numbers' href='https://today.uic.edu/tag/engineering/page/4'>4</a>
-<span class="page-numbers dots">&hellip;</span>
-<a class='page-numbers' href='https://today.uic.edu/tag/engineering/page/7'>7</a>
-<a class="next page-numbers" href="https://today.uic.edu/tag/engineering/page/3">Next &raquo;</a>     </div>
-  
-
-<!-- Need 2 closing divs before footer to close divs from page header include -->
-	</div>
-    
-</div>    
-
-<div class="clearThis">&nbsp;</div>
-
-
-
-
-
-    
-
-    <footer id="footer" class="footer u-dark-region" role="contentinfo">
-
-
-  <div class="footer-contact">
-    <div class="l-full">
-
-
-            <div class="uic-type-wrapper-footer">
-
-            <div class="uic-type-treatment-footer">
-            
-  			<div class="_mark"> 
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->   
-            
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-            
-			</div><!--  uic-type-treatment-footer   -->
-
-
-			</div><!--  uic-type-wrapper-footer    -->
- 
-
-
-  <div class="_contact">
-  
-  
-    <h2>Contact</h2>
-    
-    
-		<div class="site-address">Office of Public and Government Affairs <br />
-		601 S. Morgan St., 1320 UH, Chicago, IL 60607</div>
-      
-      
-		<div class="site-email"><a href="mailto:uictoday@uic.edu">uictoday@uic.edu</a></div>
-        
-        
-		<div aria-label="Social Media Accounts" class="_social" role="navigation">
-			<h2 class="assistive-text">Social Media Accounts</h2> 
-  			<ul class="site-social-links">
-            <li><a href="https://www.facebook.com/uicnews "><img src="/wp-content/themes/uictoday/images/social-media-icons/facebook.png" alt="Facebook"></a></li>
-            <li><a href="https://instagram.com/thisisuic/"><img src="/wp-content/themes/uictoday/images/social-media-icons/instagram.png" alt="Instagram"></a></li>
-            <li><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today"><img src="/wp-content/themes/uictoday/images/social-media-icons/rss.png" alt="RSS feed"></a></li>
-            <li><a href="https://uicscience.tumblr.com/"><img src="/wp-content/themes/uictoday/images/social-media-icons/tumblr.png" alt="tumblr"></a></li>
-            <li><a href="https://twitter.com/UICnews"><img src="/wp-content/themes/uictoday/images/social-media-icons/twitter.png" alt="Twitter"></a></li>
-            <li><a href="https://www.youtube.com/user/uicmedia"><img src="/wp-content/themes/uictoday/images/social-media-icons/youtube.png" alt="YouTube"></a></li>
-            <li><a href="https://today.uic.edu/contact/social-media-directory"><img src="/wp-content/themes/uictoday/images/social-media-icons/directory.png" alt="Social media directory"></a></li>
-            </ul>
-            
-            
-		</div>        
-        
-        
-  </div>
-
-    
-
-       
-
-
-   
-
-
-
-
-
-		<div id="quicklinks_footer" role="navigation" aria-label="Quick Links" >
-			<div id="quicklinks_footer_container">
-	  	 	<div class="menu-footer-quicklinks-container"><ul id="menu-footer-quicklinks" class="menu"><li id="menu-item-57564"><a href="/news-release/news-release/">For the Media</a></li>
-<li id="menu-item-57555"><a href="https://today.uic.edu/experts-guide">Experts Guide</a></li>
-<li id="menu-item-57556"><a href="https://today.uic.edu/campus-news/campus-newspaper/advertising">Advertise in UIC News</a></li>
-<li id="menu-item-57577"><a href="https://today.uic.edu/contact/communicating-on-campus/submit-announcements">Submit Announcements</a></li>
-<li id="menu-item-57578"><a href="https://today.uic.edu/submit-an-event">Submit an Event</a></li>
-<li id="menu-item-67562"><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today">Subscribe to UIC Today</a></li>
-</ul></div>        	</div>
-	    </div>      
-
-
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
 </div>
-
-    
-    </div>
-  </div>
-
-
-
-
-<div class="footer-wrapper-uic-menu-legal">
-
-
-  <div class="footer-uic-menu">
-    <div class="ll-full">
-
-      <div role="navigation" aria-label="UIC.edu Links" >
-  <h2 class="assistive-text">UIC.edu links</h2>
-  <ul class="uic-footer-menu">
-    <li><a href="http://uic.edu/">UIC.edu</a></li>
-    <li><a href="http://catalog.uic.edu/ucat/academic-calendar/">Academic Calendar</a></li>
-    <li><a href="http://uicflames.com/">Athletics</a></li>
-    <li><a href="http://www.uic.edu/apps/departments-az/search">Campus Directory</a></li>
-    <li><a href="http://disabilityresources.uic.edu/">Disability Resources</a></li>
-    <li><a href="http://emergency.uic.edu/">Emergency Information</a></li>
-    <li><a href="http://events.uic.edu/">Event Calendar</a></li>
-    <li><a href="http://uic.edu/about/job-opportunities">Job Openings</a></li>
-    <li><a href="http://library.uic.edu/">Library</a></li>
-    <li><a href="http://maps.uic.edu/">Maps</a></li>
-    <li><a href="http://hospital.uillinois.edu/">UI Health</a></li>
-    <li><a href="http://dos.uic.edu/studentveteranaffairs.shtml">Veterans Affairs</a></li>
-  </ul>
-</div>
-
-    </div><!--  ll-full   -->
-    
-    <div class="m-full">
-    <img src="/wp-content/themes/uictoday/images/uihealth.png" alt="UI Health and UIC co-branded logo">
-    </div><!--  m-full   -->
-    
-  </div><!--  footer-uic-menu   --> 
-
-
-
-
-  <div class="footer-legal">
-    <div class="l-full">
-
-      <div class="site-copyright">
-  &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span>
-  <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
-</div>
-
-<div class="campuses" role="navigation" aria-label="University of Illinois campus web sites">
-  <h2 class="assistive-text">Campuses</h2>
-  <ul class="campuses-list">
-    <li><a href="https://uillinois.edu/">University of Illinois System</a></li>
-    <li><a href="https://illinois.edu/">Urbana-Champaign</a></li>
-    <li><a href="https://uis.edu/">Springfield</a></li>
-  </ul>
-</div>
-
-    </div>
-
-
-
-</div><!--  footer-wrapper-uic-menu-legal   --> 
-    
-    
-  </div>
-
-</footer>
-
-
-
-
-
-</div>
-
-
-			<style type="text/css">
-				.ssp-wave wave wave{
-					background: #28c0e1 !important;
-				}
-			</style>
-		<script type="text/javascript">
-  document.write(unescape("%3Cscript src='//www.uic.edu/inc/emergency/alert.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-      <script type="text/javascript">
-
-          var pfHeaderImgUrl = '';
-          var pfHeaderTagline = '';
-          var pfdisableClickToDel = '0';
-          var pfImagesSize = 'full-size';
-          var pfImageDisplayStyle = 'right';
-          var pfDisableEmail = '0';
-          var pfDisablePDF = '0';
-          var pfDisablePrint = '0';
-          var pfCustomCSS = '';
-          var pfPlatform = 'Wordpress';
-      (function() {
-            var e = document.createElement('script'); e.type="text/javascript";
-            e.src = 'https://cdn.printfriendly.com/printfriendly.js';
-            document.getElementsByTagName('head')[0].appendChild(e);
-        })();
-      </script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/packery.pkgd.js?ver=1.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
- 
-
-
-<!-- Google Analytics Code -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-20665772-1', 'auto');
-    
-        ga('create', 'UA-4402713-9', 'auto', 'todayTracker');
-    
-        ga('send', 'pageview');
-    
-        ga('todayTracker.send', 'pageview');
-      </script>
-
-</body>
-</html><!-- WP Fastest Cache file was created in 0.11374092102051 seconds, on 21-11-18 12:57:47 --><!-- need to refresh to see cached version -->
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

@@ -1,433 +1,968 @@
+      <!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
+<head>
 
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>
-	EAES
-</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="geo.region" content="US-IL" /><meta name="geo.placename" content="Chicago" /><meta name="geo.position" content="41.874428;-87.651787" /><meta name="ICBM" content="41.874428, -87.651787" /><link rel="shortcut icon" href="//static.las.uic.edu/favicon.ico" /><link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/TreeView.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/Silk/TreeView.Silk.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><meta name="Generator" content="Sitefinity 10.1.6525.0 PU" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><script type="text/javascript">
-	(function() {var _rdDeviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;var _rdDeviceHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;var _rdOrientation = (window.width > window.height) ? 'landscape' : 'portrait';})();
-</script><link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nLMXN5cXNZxYRwRupbYa__sm3ToLx1hljBjJ8EBfxfEOvF7Va2q6ulT_6_HV4Tnqql16RIGEbvh9aPnoQdoGoxgLsZHjki8URL_XSx1sp-dw0&amp;t=636692118962391687&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%2c+Version%3d10.1.6525.0%2c+Culture%3dneutral%2c+PublicKeyToken%3db28c218413bdf563%3aen%3aeb177f10-254a-47f5-be2f-2f1c3f40d5ff%3a7a90d6a" type="text/css" rel="stylesheet" /><link href="/Sitefinity/Public/ResponsiveDesign/layout_transformations.css?pageDataId=8a05e38f-e0be-4046-a330-a9b36c709130&amp;pageSiteNode=74DF1A02-B315-46D4-A471-1EBC973FDDD1/0c6d85b0-9314-4b64-9fb2-d4ea3b04cce8/SitefinitySiteMap" type="text/css" rel="stylesheet" /><link href="/Sitefinity/WebsiteTemplates/LAS/App_Themes/EAES/global/eaes.css?v=636446293017180700" type="text/css" rel="stylesheet" /><meta name="description" content="This is the homepage for the Department of Earth and Environmental Sciences, University of Illinois at Chicago (UIC)." /><meta name="keywords" content="eaes, UIC, news, events" /></head>
-<body>
-    <form method="post" action="./" id="form1">
-<input type="hidden" name="ctl11_TSSM" id="ctl11_TSSM" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="PfJIbLC6ESk8LLfUBezLGBFGgyyyLY0eTxOcvMZ2k1Y6NldNCTkhqAChKmHjM2viRYtcXI9ZPim7c9y4XlCwLT6R5uvZSem5xzNLc1J7QK7YD4FiqzfTmTroy+krOrcgo+Lv59W9WfONDQlPePPHx7MwhcHZ6divPHmEJdTasifpFoqDF7g1fqsl/OVWs4k/ZsmHi9BVCQhHU3LkOtbE/2XADBhSHeTwX3loUWW6e8oEm7QOTSLIqD7mbtGYdKiuSu6llGIyPM545rzFkU/xBwErFglJQMtNSw0kFQxPubjJfyRh6npXqA89kWSDW77LeOg2cUbtsBzXoaXxtszhUFfS7X33bNa0VKDz2UUBi91f7TVy1yNX3KF+8r5YYYWiWGbd9dEehC4o+mRC1fFN10+XQwgZVo5LUCaXkcvEI/tfG4TBGK0VNaeqXv1wNRHK6Cl54A1nkPD6Oanpim+P76e0Arb3pli/1lMhxktJjQr1lRNVJBA05ScR85IOnXwCYmqeWzMCJ25ZV/qLypuLf6u1VyCaSTu8VvZplFwgFBQUncoF4HrKlxDeHYuI3rocuV0upmK1AgrOXnAseE5Tb8sXn1P4RzWvZDt3HG58V2Zaz3/2eLzQr1aN4Y7OcaGJm1H/7egQ0+AHh4IroxpxLIfKaSEy/pnNZ48v6950JiMbcLyQkrrdTjvSJ0LR4RH0Uz+qMEKfm0cAySWWXaRMjMdpjxoS3qzF0894pMe4EIBhvh4qSS0OuePXL9ugKyl+25l5ZlB7Q254WemjJCNeWA==" />
-
-
-<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/MicrosoftAjax.js" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-(window.Sys && Sys._Application && Sys.Observer)||document.write('<script type="text/javascript" src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yMn5oNsxBWCb1IMDCMvGvssuCeonh4GT7OEtDQsWXFjpkBivXnsg_W2gJwtUIAN8byBOCWEB_NgTSuuvSd4NFLYwhvPEJ_9_kh7YvsmPgLkPTDqXSgguyHH2ikDTblfXqJBIHfsYzb9ENcpmJUeVkPA1&t=545ba255"><\/script>');//]]>
-</script>
-
-<script src="//www.google.com/jsapi" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=lAcNKCSBPRb9dHiP3rTbP9Ec2BxONgqXRg72J2ErF7xjt8yLeKhW6upHJoJSIwlhOI630DX9Its3Ag-9InDSwbvVIQw_mJAjYaVGGs5SAWAw6M49UFI3GFrHAmWXbIBVib6kzjbucEZclvcXbNS_IG91DDSeyIn8LaOMD8rJZIQg1TCh0v3cxnqqMPdqAOaPlz9GOBr0WGvPsI-y9fenyg2&amp;t=fffffffff0f3ba09" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=8u3ngCqoRB16IXgFyG-fdknWge18qRUpL3tE4iosGdw5TCP9Vq32yU_8Ode_-WhBIpc4lSX8PUcbb0IhbdOcbldvNIzfYWhPiPN0Zyy7WZT2bJ705h1a8Uh_rG1o-duv0&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=pL5wgiwL1GpmyqMwhkDjFyXv4-Uod57FdZcARkptp15HhzFDJKSEW2hEXjKxAqJMjftdfn8djFobOT4-wMXzAU8Khc1OXWczYCjlTZrv1VWmWrckQ2AvtYvwtljEOnY77yP7PIiemWaSFl2g1lRosA2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=r5UL-hsNriOxS7UV4wWMiOYR27pzCwVNIICb3aHGI6z-XP2lwEoFTdCGdPMXZ6yxmCth6DnG1YYRyIpsTGgjdsjyPEZVVtoZQYcPJWEDojH-QYn4x-Ud39UupsZ5igxR-Z5g4oZYVLN7osKRg25rgoHqlDpAzfVKznEMqG_Q3lE1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=dnHi0nMgDDe1Bo6v1KTdpFqTltyLNQnHhIt74rPBqdOt11zwiap9frfyC_cbxMO5oa1PckGchtENFQWFXD0R1H3piQJFN4rF80Al4OfUF-7jDl-J8roeTubhsbrI3kDgt6P-xs9i7RsTnFtl6Aej7Q2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=KlfC4ae2T77svfC92c_tAcQDkcYJLr9HJqesU2PFN-yNLQ8FVi_AwWLMwhLFtVVPcow7mNWx7UDK4gxzretl30AjFcK-desdK_iyEeaFpEMRehojIohJfhkKPB_kAKd8TnLsdYUjbR0qiUn5okWBXw2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=oTWEP7ThC1yo24ooSsBTo80gt5QT4QzzmSf3vGJuG0MEllSaj72FM1y83kOBDcAfpcc0TE2uGYMt261NTTRPlXQ6nNgbg6hQGUdC5O7J_F2VMxRzhUZFZSvgVrMS0X8NngCu7leSEowKDnKqHuiDxSLg2ivvkc7uWaRgv6I4g_A1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=fXuWcQwzGDZIk7t9UCjetRzqEnt2zSWDMgBD2dcUCcX3nuS-r5i_MmcatRc622LLdos9urCpwwdjIZotud6C00Y43UtMJzx_seAHoW7vdrEw7oDq0SQY41L2U-YayyCHRiRpvnYhaVEN-kld2HMYGmk7C7n1ezMgPwVLhoSKHxU1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=v_I7_Ww9YDbzP79DTo1lX1Ts4gBXf5OS4sSJuj-7tQB4-Kv8VJbCDfh9QxISHEf2QW9QF3QjRbmzqLpyFPCe_85AyMxQ_nfLxHjthUFLmXFsETYI_Gp9RpIoBuWmp8rJN8EHhtrZpTanDDDuSLX94icFaxUEavVRv4QjPyIWD6I1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=b4-yKWFT9xWbIHhZk6DyHyiwXBGd-W--ckXNCSQ17NpyXjsQObTp9py5wOmxpws0cK6F54azFoKPp6ZFWZ8AjupiAdxJFKD_dTWKrJQM8aP3jP5AgCw-CKViPF6yU0GKQf2qJnlRMpTVJbplt3R-pA2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=rhuZTxOeKg7tLBV3R6FzUV4so58rlpgRTO38QPBnRtJsAQaBRZVmsTj4sYUHTrqgk5C9qlwjtNenbXRQ6QqzuxmDxWf82OYyFnxjUImYtkYKPHE_2BXu5okXOnuByyIcIdoda0_4VJLLjsyigYj-vf19kNUaW_MPuwkmgyoySM-ZOlIssG7f_y-BI9AcROU40&amp;t=4293c76a" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=75C6zhn_I2ZyGfX3QbVbDJnCyiDsoAXwpwTKxPNqFVdDW5RNsNbDyFyPq2BhLhGQ-Wp-D6It4l7CVJRiAlCPoH94v5Oo5pl6dLqoSfAMpOb9K-eYgavxmqGsKUiEBbC2eyaoXxqKKfpfe6yRsK6dTg2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=K_8jTsao3WxrqclMbxfB08KLjmA0ra-pxCPMlRiyIk3NhuXFYbecPQuEtVXlGZVEkXbHQwrCbvH0Itk_S_KNIykBk4wWfwZ2tEkAq6_yVAQRw3iCcSHmhRSggVWYnv5KmUXiaMcW3jIaTxvAYUoPA5v-G4NyqiYnjGzsU3nzAJ81&amp;t=4293c76a" type="text/javascript"></script>
-<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1F053B3E" />
-<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="U39pXKwIPYHgxhw6pC3pVZGGneoArYZeqc5C6nCiiCj51Wqa/H/hKn7rMINm6APJRIffSfbZL4gWn9iUYNXsB+sGexSlOnosCzMw5SqEmdkigKYG4sDx1YWPBC8EGRrnKh5rU1QsovdMb63O9h2/Wg==" />
-    
-	
-    <div id="wrapper">
-        <div class="container">
-            <div id="topNav" class="row">
-                <div id="topNavMenu" role="navigation">
-                    <ul role="menu">
-                        <li role="menuitem">
-                            <a title="go to UIC website" href="http://www.uic.edu" target="_blank">UIC</a></li>
-                        <li role="menuitem">
-                            <a title="go to LAS website" href="http://www.las.uic.edu" target="_blank">LAS</a></li>
-                    </ul>
-                    <span class="breadCrumbs">
-                        
-<div id="cphBreadCrumbs_T2A5F492A004">
-	<span id="cphBreadCrumbs_T2A5F492A004_ctl00_ctl00_BreadcrumbTrail"><span>EAES</span></span>
-</div>
-
-
-
-                    </span>
-                </div>
-                
-
-<div id="search" role="search">
-    <label id="lblSearchBox" for="searchTextBox">
-        Search</label>
-    <input name="ctl00$cphSearchBox$T3A5AEE12001$searchTextBox" type="text" id="searchTextBox" />
-    <input type="image" name="ctl00$cphSearchBox$T3A5AEE12001$searchButton" id="cphSearchBox_T3A5AEE12001_searchButton" title="submit this search" class="btnGo" src="//static.las.uic.edu/images/las-ui/btn-go.png" alt="Go" />
-</div>
-
-
-            </div>
-        </div>
-        <!-- end #topNav -->
-        <div class="container">
-            <header class="row bannerWrapper" role="banner">
-                <div class="fullwidth last banner">
-                    
-<div class='sfContentBlock'><h1><a href="/eaes" title="go to homepage"><img src="/images/default-source/layout/eaes-logo.png?sfvrsn=44cf7649_18" alt="Office of Information Technology" class="logo" /></a></h1>
-
-
-</div>
-                    <div id="bannerText">
-                        
-
-                    </div>
-                </div>
-                <div class="fullwidth last headerPhoto">
-                    
-<img id="cphBannerPhoto_C004_imageHolder" src="https://eaes.uic.edu/images/default-source/chemistry-banners/image2.jpg?sfvrsn=7f78397c_4" alt="Antarctica" />
-
-                </div>
-            </header>
-        </div>
-        <!-- end #header -->
-        <div class="container">
-            <div id="pageBody" class="row">
-                <div class="fullwidth last">
-                    <div class="row sideBG">
-                        <nav class="navw side_img" role="navigation">
-                            
-<div id="cphLeftNav_T2A5F492A005">
-	<div id="ctl00_cphLeftNav_T2A5F492A005_ctl00_ctl00_siteMapControl_verticaltree" class="RadTreeView RadTreeView_Silk">
-		<!-- 2017.2.621.40 --><ul class="rtUL rtLines">
-			<li class="rtLI rtFirst"><div class="rtTop">
-				<span class="rtSp"></span><a class="rtIn" href="eaes/home">Home</a>
-			</div></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/people">People</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI"><div class="rtTop">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/people/faculty">Faculty</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/people/staff">Staff</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/people/graduate-students">Graduate Students</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/people/adjunct-faculty">Adjunct Faculty</a>
-				</div></li><li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/people/emeritus-faculty">Emeritus Faculty</a>
-				</div></li>
-			</ul></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/graduate-study">Graduate Study</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI"><div class="rtTop">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/graduate-study/current-students">Current Students</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/graduate-study/current-students/forms-for-active-students">Forms</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/graduate-study/current-students/graduate-handbook">Graduate Handbook</a>
-					</div></li>
-				</ul></li><li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/graduate-study/prospective-students">Prospective Students</a>
-				</div></li>
-			</ul></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/undergraduate-study">Undergraduate Study</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI"><div class="rtTop">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/undergraduate-study/advising">Advising</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/advising/university-and-college-requirements">University and College Requirements </a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/advising/major">Major</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/advising/minor">Minor</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/advising/courses">Courses</a>
-					</div></li>
-				</ul></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/undergraduate-study/student-life-in-eaes">Student life in EAES</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/student-life-in-eaes/resources">Resources</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/student-life-in-eaes/seminars">Seminars</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/student-life-in-eaes/field-trips">Field Trips</a>
-					</div></li>
-				</ul></li><li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/undergraduate-study/careers">Careers</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/careers/career-opportunities">Career Opportunities </a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/careers/internships">Internships</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="eaes/undergraduate-study/careers/planning-for-graduate-school">Planning for Graduate School </a>
-					</div></li>
-				</ul></li>
-			</ul></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><a class="rtIn" href="eaes/courses">Courses</a>
-			</div></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><a class="rtIn" href="eaes/lab">Laboratories</a>
-			</div></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/seminars">Seminars</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI"><div class="rtTop">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/fall-2018-seminars">Fall 2018 Seminars</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/spring-2018-seminars">Spring 2018 Seminars</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/fall-2017-seminars">Fall 2017 Seminars</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/spring-2017-seminars">Spring 2017 Seminars</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/spring-2016-seminars">Spring 2016 Seminars</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/fall-2016-seminars">Fall 2016 Seminars</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/departmental-seminars">Spring 2015 Seminars</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/fall-2015-seminars">Fall 2015 Seminars</a>
-				</div></li><li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/seminars/fall-2014-seminars">Fall 2014 Seminars</a>
-				</div></li>
-			</ul></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="eaes/terra-society">Terra Society</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><a class="rtIn" href="eaes/terra-society/fall-2018-talks">Fall 2018 Talks</a>
-				</div></li>
-			</ul></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><a class="rtIn" href="eaes/calendar">Calendar</a>
-			</div></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><a class="rtIn" href="eaes/news">News</a>
-			</div></li><li class="rtLI rtLast"><div class="rtBot">
-				<span class="rtSp"></span><a class="rtIn" href="eaes/contact-us">Contact Us</a>
-			</div></li>
-		</ul><input id="ctl00_cphLeftNav_T2A5F492A005_ctl00_ctl00_siteMapControl_verticaltree_ClientState" name="ctl00_cphLeftNav_T2A5F492A005_ctl00_ctl00_siteMapControl_verticaltree_ClientState" type="hidden" />
-	</div>
-
-<script type="text/javascript">
-    function pageLoad() { var tree = $find("ctl00_cphLeftNav_T2A5F492A005_ctl00_ctl00_siteMapControl_verticaltree"); if (tree) { var location = window.location.pathname; location = location.substring(location.lastIndexOf('/') + 1); var currentNode = tree.findNodeByUrl(location); if (currentNode) { currentNode.set_selected(true); ExpandParent(currentNode); currentNode.set_expanded(true) } } } function CollapseSiblings(node) { var parent = node.get_parent(); var siblings = parent.get_nodes(); var siblingsCount = siblings.get_count(); for (var nodeIndex = 0; nodeIndex < siblingsCount; nodeIndex++) { var siblingNode = siblings.getNode(nodeIndex); if ((siblingNode != node) && (siblingNode.get_expanded())) { siblingNode.collapse(); return } } } function OnClientNodeExpanding(sender, args) { var node = args.get_node(); if (node.get_nodes().get_count()) { CollapseSiblings(node) } } function ExpandParent(node) { node = node.get_parent(); while (node != null) { if (node.expand) { node.expand() } node = node.get_parent() } }
-</script>
-
-
-</div>
-                        </nav>
-                        <div class="bodyw last copy">
-                            
-<div class="sf_cols">
-    <div class="sf_colsOut sf_2cols_1_67">
-        <div id="cphPageBody_TF8D4EED6001_Col00" class="sf_colsIn sf_2cols_1in_67"><div class='sfContentBlock'><h2>welcome to eaes</h2> <p>Earth and environmental scientists explore dynamic processes that occur from molecular to global scales and which, over geologic time, have shaped our planet as we know it today.&nbsp; Our understanding of Earth processes provides essential information on critical natural resources like water, air, and soil; the materials needed for innovative construction, manufacturing, and technology; and the framework for exploring other planets, moons, and beyond.&nbsp; Our environment &ndash; the Earth system we live in and depend on &ndash; is increasingly being altered by human activity, bringing a new and urgent dimension to the discipline.</p> <p>Careers in Earth and environmental science are many. The American Geosciences Institute predicts a serious shortage of trained workers, estimated at 135,000, in our field over the next decade.&nbsp; The U.S. Department of Labor - Bureau of Labor Statistics predicts a 16% increase in jobs in geoscience fields and a 15% increase in jobs in environmental science fields, higher than the overall average growth of 11% for all occupations in the United States.</p> <p>EaES faculty apply expertise in geochemistry, geobiology, and geophysics to study processes in the atmosphere, at Earth&rsquo;s surface, in Earth&rsquo;s interior, and on other planetary bodies. Our research involves field work around the globe, laboratory investigations on campus and at national facilities, and computational modeling. The research of our faculty and students is integrated into the classroom.<br /> <br />
-We invite you to explore our site to learn about the educational and research opportunities we offer to Bachelor of Science (BS), Master of Science (MS), and Doctor of Philosophy (PhD) students in Earth and Environmental Sciences.</p> <table border="2" bordercolor=" 6495ed" cellpadding="10" cellspacing="10" width="100%" height="30%"> <tbody> <tr> <td><span style="font-size: 9pt; color: #1e4269;">
-            The mission of the Department of Earth and Environmental Sciences is
-            </span> <ul><span style="font-size: 9pt; color: #1e4269;"> <li>to provide exceptional undergraduate and graduate education in basic and applied Earth and environmental science, </li> <li>to excel in research on geochemical, geobiological, and geophysical systems of Earth and other planets,</li> <li>to address challenges in environmental health and energy sources,</li> <li>to communicate how geoscience knowledge benefits the public in Chicago, Illinois, the nation, and the world.</li> </span></ul> </td> </tr> </tbody> </table>
-
-
-</div>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_2cols_2_33">
-        <div id="cphPageBody_TF8D4EED6001_Col01" class="sf_colsIn sf_2cols_2in_33">
-        <div class="list-title">
-            <h3 class="events-title">Calendar</h3>
-            <h4 class="more-link"><a id="ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_HyperLink1" title="go to calendar" href="eaes/calendar">+ (More)</a></h4>
-            <a id="ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_newsRSS" title="subscribe to RSS" href="Feeds/eaes-calendar"><img alt="rss icon" src="//static.las.uic.edu/images/vector-social-media-icons/24px/rss.png" class="rss-button"/></a>
-        </div>
         
-        <ul class="sfeventsList sfeventsListTitleCityDateContent">
-            
-        <li class="sfeventListItem">
-            <h3 class="sfeventTitle">
-                <a id="ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_DetailsViewHyperLink1" Title="view event details" href="eaes/calendar/2018/11/22/seminars/no-seminar-thanksgiving">NO SEMINAR-Thanksgiving </a>
-            </h3>
-            <div class="sfeventMetaInfo">
-                <div class="event-date">
-                    
-                    <strong>Date: </strong>
-					Nov 22, 2018
-                    
-                </div>
-                <div class="sfeventsSummary">
-                    
-                </div>
-            </div>
-            
-        </li>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
+                (window,document,'script','dataLayer','GTM-W2Q8D2K');
+    </script>
+    <!-- End Google Tag Manager -->
+
+        <title>
+                            Commuter Student Resource Center Closing at 4:00PM on Wed. Nov. 21 | Commuter and Off&#8209;Campus Programs | University of Illinois at Chicago
+                    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="https://csrc.uic.edu/xmlrpc.php" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link rel="stylesheet" href="https://csrc.uic.edu/wp-content/themes/uic-red/main.css?v=1540906708" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://csrc.uic.edu/wp-content/themes/uic-red/theinhardt.css?v=1540906708" type="text/css" media="all">
+
     
-        <li class="sfeventListItem">
-            <h3 class="sfeventTitle">
-                <a id="ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_DetailsViewHyperLink1" Title="view event details" href="eaes/calendar/2018/11/29/seminars/tba">Big Picture, Small Spots: In Situ Geochemistry Applied to Paleobiology and Paleoclimatology</a>
-            </h3>
-            <div class="sfeventMetaInfo">
-                <div class="event-date">
-                    
-                    <strong>Date: </strong>
-					Nov 29, 2018
-                    
-                </div>
-                <div class="sfeventsSummary">
-                    
-                </div>
-            </div>
-            
-        </li>
-    
-        </ul>
-    <input id="ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_ClientState" name="ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_ClientState" type="hidden" /><span id="ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList" style="display:none;"></span>
+<!-- Google Tag Manager for WordPress by DuracellTomi -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];//]]>	
+</script>
+<!-- End Google Tag Manager for WordPress by DuracellTomi -->
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://csrc.uic.edu/news-stories/commuter-student-resource-center-closing-at-400pm-on-wed-nov-21/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Commuter Student Resource Center Closing at 4:00PM on Wed. Nov. 21 - Commuter and Off&#8209;Campus Programs" />
+<meta property="og:url" content="https://csrc.uic.edu/news-stories/commuter-student-resource-center-closing-at-400pm-on-wed-nov-21/" />
+<meta property="og:site_name" content="Commuter and Off&#8209;Campus Programs" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Commuter Student Resource Center Closing at 4:00PM on Wed. Nov. 21 - Commuter and Off&#8209;Campus Programs" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/csrc.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=cc9894277b2a1c716141ab25511c2b33"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='tablepress-default-css'  href='https://csrc.uic.edu/wp-content/plugins/tablepress/css/default.min.css?ver=1.9' type='text/css' media='all' />
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js'></script>
+<script type='text/javascript' src='https://csrc.uic.edu/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.8.1'></script>
+<link rel='https://api.w.org/' href='https://csrc.uic.edu/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://csrc.uic.edu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://csrc.uic.edu/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://csrc.uic.edu/?p=550' />
+<link rel="alternate" type="application/json+oembed" href="https://csrc.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcsrc.uic.edu%2Fnews-stories%2Fcommuter-student-resource-center-closing-at-400pm-on-wed-nov-21%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://csrc.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcsrc.uic.edu%2Fnews-stories%2Fcommuter-student-resource-center-closing-at-400pm-on-wed-nov-21%2F&#038;format=xml" />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//csrc.uic.edu/?wordfence_lh=1&hid=3B8D472C0316C3DDAFA3D64AA692ED98');
+</script>
+<!-- Google Tag Manager for WordPress by DuracellTomi -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by DuracellTomi -->
+</head>
+      
+  <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2Q8D2K" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 
-<span></span>
-        <div class="list-title">
-	        <h3 class="news-title">News</h3>
-            <h4 class="more-link"><a id="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_morelink" title="go to news page" href="eaes/news">+ (More)</a></h4>
-            <a id="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_newsRSS" title="subscribe to RSS" href="Feeds/eaes-news"><img alt="rss icon" src="//static.las.uic.edu/images/vector-social-media-icons/24px/rss.png" class="rss-button"/></a>
+
+
+  <div class="l-page news-template-default single single-news postid-550 post-type--news  site-type-b theme--blue no-sidebar  ">
+
+
+    <!--[if lte IE 9]>
+<div class="browser-stripe u-dark-region">
+  <div class="l-full">
+      <h2>Your browser is unsupported</h2>
+      <p>We recommend using the latest version of IE11, Edge, Chrome, Firefox or Safari.</p>
+  </div>
+</div>
+<![endif]-->
+<div class="browser-stripe u-dark-region ie10">
+  <div class="l-full">
+      <h2>Your browser is unsupported</h2>
+      <p>We recommend using the latest version of IE11, Edge, Chrome, Firefox or Safari.</p>
+  </div>
+</div>
+    
+<header class="l-header" role="banner">
+
+  
+  <div class="header-navigation">
+
+  <div id="skip" class="skip-menu assistive-text">
+  <p>
+    Skip to
+    <span class="_main">
+    <a href="#article">the content of this page</a>,
+    </span>
+    <a class="_primary-menu" href="#menu-main">the main menu</a>,
+        <a class="_search" href="#google_translate_element">Google Translate</a>,
+    <a class="_search" href="#search">the site search form</a>
+    or go to the
+    <a class="_home" href="https://csrc.uic.edu">the site home page</a>.
+  </p>
+</div>
+
+  <div class="eyebrow-mobile-wrapper js-eyebrow-mobile">
+  <div class="eyebrow-mobile">
+    <a href="http://uic.edu" class="uic-logo-icon eyebrow-logo">
+ <svg aria-label="UIC.edu home" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
+ <title>UIC Logo</title>
+ <circle class="_circle" cx="27" cy="27" r="25" fill="none" />
+ <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#FFF" fill-rule="evenodd"/>
+</svg>
+</a>
+    <div class="site-title-eyebrow-mobile">
+      <a href="https://csrc.uic.edu">Commuter and Off&#8209;Campus Programs</a>
+    </div>
+    <button aria-label="Search the site" class="search-toggle-mobile js-search-toggle-mobile">
+      <span class="icon-search">
+        <span class="assistive-text">Search the site</span>
+      </span>
+    </button>
+    <button class="nav-header-toggle js-nav-header-toggle">
+      <span class="icon-menu">
+      Toggle Menu
+      </span>
+    </button>
+  </div>
+  <div class="search-input-container-mobile">
+    <div class="search-input-container-mobile__content">
+      <div class="search-title">
+        Search
+        <a class="search-close search-toggle-mobile">
+          <svg aria-label="Close search box" width="100%" height="100%" viewBox="0 0 22 22">
+            <use xlink:href="https://csrc.uic.edu/wp-content/themes/uic-red/images/svgs/svgs.svg#icon-close"></use>
+          </svg>
+        </a>
+      </div>
+      <form method="get" action="/search" role="search" aria-label="Search this site on your mobile device">
+        <input type="text" name="q" class="search-input-mobile" placeholder="Search..." tabindex="-1" aria-label="Search this site on your mobile device" disabled="">
+        <input type="submit" class="submit-button" name="search" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+  <a href="http://uic.edu" class="uic-logo-icon header-logo">
+ <svg aria-label="UIC.edu home" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
+ <title>UIC Logo</title>
+ <circle class="_circle" cx="27" cy="27" r="25" fill="none" />
+ <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#FFF" fill-rule="evenodd"/>
+</svg>
+</a>
+
+    <div class="l-full">
+      <div class="site-title-main ">
+        <a href="https://csrc.uic.edu">Commuter and Off&#8209;Campus Programs</a>
+      </div>
+      <nav class="header-menus js-header-menus " aria-label="Primary Navigation" role="navigation">
+
+  <div class="site-title-mobile-menu">
+    <a href="https://csrc.uic.edu">Commuter and Off&#8209;Campus Programs</a>
+  </div>
+
+  <h2 class="assistive-text">Google Translate</h2>
+  
+
+
+  <h2 class="assistive-text">Main Menu</h2>
+  <ul id="menu-main" class="menu menu-main" aria-label="Main Menu">
+      <li class="menu-main__first-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-12 menu-item-has-children">
+      <a
+        class="menu-main__first-link"
+        href="/about-us/"
+        target="_self">
+
+        About Us
+      </a>
+
+              <button class="menu-main__expand-item js-expand-item" role="button">
+          <svg class="menu-main__expand-icon" aria-label="Expand About Us menu" width="32" height="32" viewBox="0 0 32 32">
+            <title>Expand About Us menu</title>
+            <g fill="none" fill-rule="evenodd">
+              <ellipse class="menu-main__expand-circle" stroke-width="1" stroke="#001E62" fill="#001E62" cx="16" cy="16" rx="15.5" ry="15.5"></ellipse>
+              <path class="menu-main__expand-chevron" stroke-width="2" stroke="#fff" stroke-linecap="round" d="M12 18l4-4 4 4"></path>
+            </g>
+          </svg>
+        </button>
+
+        <div class="menu-main__submenus-container">
+          <ul class="menu-main__second-list">
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-263">
+                <a
+                  class="menu-main__second-link"
+                  href="/about-us/staff/"
+                  target="_self">
+
+                  Staff
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-76">
+                <a
+                  class="menu-main__second-link"
+                  href="/about-us/contact/"
+                  target="_self">
+
+                  Contact
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-303">
+                <a
+                  class="menu-main__second-link"
+                  href="/about-us/feedback/"
+                  target="_self">
+
+                  Feedback
+                </a>
+              </li>
+                      </ul>
+
+          <div class="menu-main__mega-menu-container">
+                      </div>
         </div>
+          </li>
+      <li class="menu-main__first-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-16 menu-item-has-children">
+      <a
+        class="menu-main__first-link"
+        href="/commuter-programs/"
+        target="_self">
+
+        Commuter Programs
+      </a>
+
+              <button class="menu-main__expand-item js-expand-item" role="button">
+          <svg class="menu-main__expand-icon" aria-label="Expand Commuter Programs menu" width="32" height="32" viewBox="0 0 32 32">
+            <title>Expand Commuter Programs menu</title>
+            <g fill="none" fill-rule="evenodd">
+              <ellipse class="menu-main__expand-circle" stroke-width="1" stroke="#001E62" fill="#001E62" cx="16" cy="16" rx="15.5" ry="15.5"></ellipse>
+              <path class="menu-main__expand-chevron" stroke-width="2" stroke="#fff" stroke-linecap="round" d="M12 18l4-4 4 4"></path>
+            </g>
+          </svg>
+        </button>
+
+        <div class="menu-main__submenus-container">
+          <ul class="menu-main__second-list">
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-100">
+                <a
+                  class="menu-main__second-link"
+                  href="/commuter-programs/facilities/"
+                  target="_self">
+
+                  Facilities
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-103">
+                <a
+                  class="menu-main__second-link"
+                  href="/commuter-programs/lockers/"
+                  target="_self">
+
+                  Lockers
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-102">
+                <a
+                  class="menu-main__second-link"
+                  href="/commuter-programs/transportation/"
+                  target="_self">
+
+                  Transportation
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-101">
+                <a
+                  class="menu-main__second-link"
+                  href="/commuter-programs/programs-and-events/"
+                  target="_self">
+
+                  Programs &amp; Events
+                </a>
+              </li>
+                      </ul>
+
+          <div class="menu-main__mega-menu-container">
+                      </div>
+        </div>
+          </li>
+      <li class="menu-main__first-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-19 menu-item-has-children">
+      <a
+        class="menu-main__first-link"
+        href="/off-campus-housing/"
+        target="_self">
+
+        Off-Campus Housing
+      </a>
+
+              <button class="menu-main__expand-item js-expand-item" role="button">
+          <svg class="menu-main__expand-icon" aria-label="Expand Off-Campus Housing menu" width="32" height="32" viewBox="0 0 32 32">
+            <title>Expand Off-Campus Housing menu</title>
+            <g fill="none" fill-rule="evenodd">
+              <ellipse class="menu-main__expand-circle" stroke-width="1" stroke="#001E62" fill="#001E62" cx="16" cy="16" rx="15.5" ry="15.5"></ellipse>
+              <path class="menu-main__expand-chevron" stroke-width="2" stroke="#fff" stroke-linecap="round" d="M12 18l4-4 4 4"></path>
+            </g>
+          </svg>
+        </button>
+
+        <div class="menu-main__submenus-container">
+          <ul class="menu-main__second-list">
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-464">
+                <a
+                  class="menu-main__second-link"
+                  href="/off-campus-housing/the-search-process-tips-and-steps/"
+                  target="_self">
+
+                  The Search Process – Tips and Steps
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-137">
+                <a
+                  class="menu-main__second-link"
+                  href="https://commuter.uic.edu/housing/"
+                  target="_blank">
+
+                  Off-Campus Housing Listings
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-124">
+                <a
+                  class="menu-main__second-link"
+                  href="/off-campus-housing/resources/"
+                  target="_self">
+
+                  Search Engine and Utilities Guide
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-268">
+                <a
+                  class="menu-main__second-link"
+                  href="/off-campus-housing/programs-resources/"
+                  target="_self">
+
+                  Programs &amp; Events
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-135">
+                <a
+                  class="menu-main__second-link"
+                  href="/off-campus-housing/tenant-advocacy/"
+                  target="_self">
+
+                  Tenant Advocacy Resources
+                </a>
+              </li>
+                      </ul>
+
+          <div class="menu-main__mega-menu-container">
+                      </div>
+        </div>
+          </li>
+      <li class="menu-main__first-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-286 menu-item-has-children">
+      <a
+        class="menu-main__first-link"
+        href="/resources/"
+        target="_self">
+
+        Resources
+      </a>
+
+              <button class="menu-main__expand-item js-expand-item" role="button">
+          <svg class="menu-main__expand-icon" aria-label="Expand Resources menu" width="32" height="32" viewBox="0 0 32 32">
+            <title>Expand Resources menu</title>
+            <g fill="none" fill-rule="evenodd">
+              <ellipse class="menu-main__expand-circle" stroke-width="1" stroke="#001E62" fill="#001E62" cx="16" cy="16" rx="15.5" ry="15.5"></ellipse>
+              <path class="menu-main__expand-chevron" stroke-width="2" stroke="#fff" stroke-linecap="round" d="M12 18l4-4 4 4"></path>
+            </g>
+          </svg>
+        </button>
+
+        <div class="menu-main__submenus-container">
+          <ul class="menu-main__second-list">
+                          <li class="menu-main__second-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-138">
+                <a
+                  class="menu-main__second-link"
+                  href="http://dining.uic.edu/mealplans.shtml"
+                  target="_blank">
+
+                  Dining Services
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-140">
+                <a
+                  class="menu-main__second-link"
+                  href="http://parking.uic.edu/"
+                  target="_blank">
+
+                  Parking Services
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-139">
+                <a
+                  class="menu-main__second-link"
+                  href="http://police.uic.edu/"
+                  target="_blank">
+
+                  Safety
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-141">
+                <a
+                  class="menu-main__second-link"
+                  href="http://studentemployment.uic.edu/"
+                  target="_blank">
+
+                  Student Employment
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-143">
+                <a
+                  class="menu-main__second-link"
+                  href="http://slce.uic.edu/"
+                  target="_blank">
+
+                  Student Leadership and Civic Engagement
+                </a>
+              </li>
+                          <li class="menu-main__second-item  menu-item menu-item-type-custom menu-item-object-custom menu-item-142">
+                <a
+                  class="menu-main__second-link"
+                  href="http://orgsync.com/login/university-of-illinois-at-chicago"
+                  target="_blank">
+
+                  UIC Connection
+                </a>
+              </li>
+                      </ul>
+
+          <div class="menu-main__mega-menu-container">
+                      </div>
+        </div>
+          </li>
+      <li class="menu-main__first-item  menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
+      <a
+        class="menu-main__first-link"
+        href="/faq/"
+        target="_self">
+
+        FAQ
+      </a>
+
+          </li>
+  </ul>
+
+  <div class="l-eyebrow">
+
+    <h2 class="assistive-text">Eyebrow menu</h2>
+    <ul id="menu-eyebrow" class="menu menu-eyebrow" aria-label="Eyebrow menu">
+            <li class="_item  menu-item menu-item-type-custom menu-item-object-custom menu-item-224">
+            <a href="http://slce.uic.edu" target="_blank">SLCE</a>
+        </li>
+            <li class="_item  menu-item menu-item-type-custom menu-item-object-custom menu-item-226">
+            <a href="http://dos.uic.edu/" target="_blank">Dean of Students</a>
+        </li>
+            <li class="_item  menu-item menu-item-type-custom menu-item-object-custom menu-item-519">
+            <a href="http://connect.uic.edu" target="_blank">UIC Connection</a>
+        </li>
+            <li class="_item  menu-item menu-item-type-custom menu-item-object-custom menu-item-225">
+            <a href="http://sa.uic.edu" target="_blank">Student Affairs</a>
+        </li>
+    </ul>
+
+    <h2 class="assistive-text">UIC menu</h2>
+    <ul class="menu-uic">
+  <li class="_item">
+    <a href="http://uic.edu">UIC.edu</a>
+  </li>
+  <li class="_item">
+    <a href="http://maps.uic.edu/">Campus Map</a>
+  </li>
+</ul>
+
+    <button aria-label="Search the site" id="search" class="search-toggle">
+      <span class="icon-search">
+        <span class="assistive-text">Search the site</span>
+      </span>
+    </button>
+
+    <div class="search-input-container">
+      <div class="search-input-container__form">
+        <form method="get" action="/search" role="search" aria-label="Search this site">
+          <input type="text" name="q" class="search-input" placeholder="Search..." tabindex="-1" aria-label="Search" disabled="">
+          <input type="submit" class="submit-button" name="search" value="Submit">
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+</nav>
+    </div>
+
+  </div>
+
+    
+    
+</header>
+
+    <main id="main" class="l-content-wrapper" role="main">
+
+
+      <div class="l-full">
+
+
+        <div class="l-content ">
+                    
+          <article class="post-type-news" id="article">
+            
+    <div class="intro-text">
+
+              <h1 class="_title post-title">Commuter Student Resource Center Closing at 4:00PM on Wed. Nov. 21</h1>
         
-        <ul class="sfnewsList sfnewsListTitleDateSummary">
-            
-      <li class="sfnewsListItem">
-            <h3 class="sfnewsTitle inline">
-                <a id="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_ctrl0_DetailsViewHyperLink1" Rel="tooltip" Title="" href="eaes/news/2018/10/30/kimberly-van-meter-joins-eaes-faculty">Kimberly Van Meter joins EaES Faculty</a>
-            </h3>
-            <div class="sfnewsSummary">
-                </div>
-            
-          </li>
-    
-      <li class="sfnewsListItem">
-            <h3 class="sfnewsTitle inline">
-                <a id="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_ctrl1_DetailsViewHyperLink1" Rel="tooltip" Title="" href="eaes/news/2018/10/23/d&#39;arcy-meyer-dombard-and-fabien-kenig-awarded-multi-year-nasa-astrobiology-institute-grant">D'Arcy Meyer-Dombard and Fabien Kenig Awarded Multi-Year NASA Astrobiology Institute Grant</a>
-            </h3>
-            <div class="sfnewsSummary">
-                </div>
-            
-          </li>
-    
-      <li class="sfnewsListItem">
-            <h3 class="sfnewsTitle inline">
-                <a id="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_ctrl2_DetailsViewHyperLink1" Rel="tooltip" Title="" href="eaes/news/2018/08/15/max-berkelhammer-wins-uic-silver-circle-teaching-award">Max Berkelhammer wins UIC Silver Circle Teaching Award</a>
-            </h3>
-            <div class="sfnewsSummary">
-                </div>
-            
-          </li>
-     
-        </ul>
-    <input id="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_ClientState" name="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_ClientState" type="hidden" /><span id="ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList" style="display:none;"></span>
-
-<span></span>
-            
-        </div>
+        <div class="post-meta">
+    <div class="post-date-line">
+            <span class="post-date">Posted on <strong>November 19, 2018</strong></span>
     </div>
-</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end #pageBody -->
-        <div class="container">
-            <footer role="contentinfo">
-                <div id="copyright" class="row">
-                    <div class="fullwidth last">
-                        
-<div class='sfContentBlock'><span class="copyrightText">&copy;2017 The Board of Trustees of the University of Illinois.</span>
-
-
-</div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-        <div class="container">
-            <div id="footer" class="row">
-                <div class="footerCol">
-                    
-<div class='sfContentBlock'><a href="https://www.las.uic.edu/giving/eaes" target="_blank" title="give to EAES"><img src="//static.las.uic.edu/images/giving/give-button-eaes.png" alt="Give to EAES logo" class="dark-shadow" /></a>
-
-
-</div>
-                </div>
-                <div class="footerCol">
-                    
-<div class='sfContentBlock'>Department of Earth &amp; Environmental Sciences<br />
-College of Liberal Arts and Sciences<br />
-845 West Taylor Street (SES/MC 186)<br />
-Chicago, IL 60607-7059<br />
-Tel (312) 996-3154
-
-
-</div>
-                </div>
-                <div class="footerGroup">
-                    <div class="footerCol">
-                        
-<div class='sfContentBlock'><a target="_blank" href="http://www.uic.edu" title="go to UIC website">UIC Home</a><br /> <a target="_blank" href="http://www.las.uic.edu" title="go to LAS website">LAS Home</a><br /> <a target="_blank" href="http://www.uic.edu/uic/search/" title="go to UIC directory search">Find People</a>
-
-
-</div>
-                    </div>
-                    <div class="footerCol">
-                        
-<div class='sfContentBlock'><a target="_blank" title="go to website" href="http://www.uic.edu/uic/studentlife/campus/emergency-information.shtml">Emergency Information</a><br /> <a target="_blank" title="go to website" href="http://tigger.uic.edu/home/wdw/accessweb/what.html">Accessibility</a><br /> <a target="_blank" title="go to website" href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a><br /> <a title="email LAS webmaster" href="mailto:laswebstaff@uic.edu">Webmaster</a>
-
-
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end #footer-->
-    </div>
+              </div>
     
+  
+      <p class="_subtitle">CSRC - Closing Early Nov. 21</p>
+  
+  <p>This is a notice to share that the Commuter Student Resource Center Closing at 4:00PM on Wed. Nov. 21. The center will be closed Thursday the 22nd and Friday the 23rd in conjunction with the University holiday calendar.</p>
 
-<script type="text/javascript">
-//<![CDATA[
-Telerik.Web.UI.RadTreeView._preInitialize("ctl00_cphLeftNav_T2A5F492A005_ctl00_ctl00_siteMapControl_verticaltree","0");//]]>
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-24550204-28', 'auto');
-  ga('send', 'pageview');
+</div>
 
+    <div class="components">
+  
+</div>
+
+    
+              </article>
+        </div>
+          
+
+
+      
+                       
+              
+                      
+      
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+
+
+
+
+   
+                       
+              
+                      
+      
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+
+
+
+
+   
+                       
+              
+                      
+      
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+
+
+
+
+   
+                       
+              
+                      
+      
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+
+
+
+
+   
+                       
+              
+                      
+      
+
+
+
+
+   
+
+
+
+
+
+                          </div>
+    </main>
+
+    
+        <footer id="footer" class="footer u-dark-region" role="contentinfo">
+
+  <div class="footer-contact">
+    <div class="l-full">
+
+          <div class="footer-contact__simple _grid-container">
+  <div class="_wordmark">
+    <div class="uic-type-treatment  uic-wordmark--footer">
+  <div class="_mark">
+    <a href="http://uic.edu" class="uic-logo-icon ">
+ <svg aria-label="UIC.edu home" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
+ <title>UIC Logo</title>
+ <circle class="_circle" cx="27" cy="27" r="25" fill="none" />
+ <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#FFF" fill-rule="evenodd"/>
+</svg>
+</a>
+  </div>
+  <div class="_text">
+    <a href="https://csrc.uic.edu">
+          Commuter and Off&#8209;Campus Programs
+        </a>
+  </div>
+</div>
+  </div>
+
+
+  <div class="_contact">
+    <h2>Contact</h2>
+    <div class="site-contact-container">    <div class="site-address">750 South Halsted St.. Suite 245, SCE Chicago, IL 60607</div>
+          <div class="site-email"><a href="mailto:commuter@uic.edu">commuter@uic.edu</a></div>
+</div>
+    <div class="site-contact-container">        </div>
+  </div>
+
+
+   <div aria-label="Social Media Accounts" class="_social">
+  <h2 class="assistive-text">Social Media Accounts</h2>
+  <ul class="site-social-links">
+        <li><a class="facebook" href="https://www.facebook.com/uiccsrc">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Facebook"><title>Facebook</title><path d="M17 26.7V15h3.2s.3-2 .4-4H17V8.3s.5-.9 1-.9h2.5c0-.6.2-2.4.3-4h-3.7c-5 0-4.9 3.9-4.9 4.5v3.2h-3v4h3.1v11.7H17z"/></svg>
+    </a></li>
+                <li><a class="twitter" href="https://twitter.com/UICCSRC">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Twitter"><title>Twitter</title><path d="M25.4 9.4c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.8-1.3-3-1.3-2.3 0-4.1 1.9-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.5-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2.1 2.8 3.9 2.9-1.4 1.1-3.2 1.8-5.1 1.8-.3 0-.7 0-1-.1 1.8 1.2 4 1.9 6.3 1.9 7.6 0 11.8-6.3 11.8-11.8v-.5c.9-.6 1.6-1.3 2.1-2.2z"/></svg>
+    </a></li>
+                  </ul>
+</div>
+
+</div>
+    
+    </div>
+  </div>
+
+  
+  <div class="footer-uic-menu">
+    <div class="l-full">
+
+      <div aria-label="UIC.edu Links">
+  <h2 class="assistive-text">UIC.edu links</h2>
+  <ul class="uic-footer-menu">
+    <li><strong><a href="https://uic.edu/">UIC.edu</a></strong></li>
+    <li><a href="https://catalog.uic.edu/ucat/academic-calendar/">Academic Calendar</a></li>
+    <li><a href="https://uicflames.com/">Athletics</a></li>
+    <li><a href="https://www.uic.edu/apps/departments-az/search">Campus Directory</a></li>
+    <li><a href="https://disabilityresources.uic.edu/">Disability Resources</a></li>
+    <li><a href="https://emergency.uic.edu/">Emergency Information</a></li>
+    <li><a href="http://www.uic.edu/htbin/eventcal/eventcal.fcgi">Event Calendar</a></li>
+    <li><a href="https://uic.edu/about/job-opportunities">Job Openings</a></li>
+    <li><a href="https://library.uic.edu/">Library</a></li>
+    <li><a href="https://maps.uic.edu/">Maps</a></li>
+    <li><a href="https://today.uic.edu/">UIC Today</a></li>
+    <li><a href="https://hospital.uillinois.edu/">UI Health</a></li>
+    <li><a href="https://dos.uic.edu/studentveteranaffairs.shtml">Veterans Affairs</a></li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  <div class="footer-legal">
+    <div class="l-full">
+
+      <div class="site-copyright">
+  &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span>
+  <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy Statement</a>
+</div>
+
+<div class="campuses" aria-label="Campuses">
+  <h2 class="assistive-text">Campuses</h2>
+  <ul class="campuses-list">
+    <li><a href="https://www.uillinois.edu/">University of Illinois System</a></li>
+    <li><a href="https://illinois.edu/">Urbana-Champaign</a></li>
+    <li><a href="https://www.uis.edu/">Springfield</a></li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+
+  
+</footer>
+
+	    </div>
+  <script type="text/javascript">
+  document.write(unescape("%3Cscript src='//www.uic.edu/inc/emergency/a.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
-<script type="text/javascript">
-//<![CDATA[
-;(function() {
-                        function loadHandler() {
-                            var hf = $get('ctl11_TSSM');
-                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
-                            hf.value += ';Telerik.Sitefinity.Resources, Version=10.1.6525.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:en:eb177f10-254a-47f5-be2f-2f1c3f40d5ff:7a90d6a';
-                            Sys.Application.remove_load(loadHandler);
-                        };
-                        Sys.Application.add_load(loadHandler);
-                    })();Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadTreeView, {"_skin":"Silk","_uniqueId":"ctl00$cphLeftNav$T2A5F492A005$ctl00$ctl00$siteMapControl_verticaltree","clientStateFieldID":"ctl00_cphLeftNav_T2A5F492A005_ctl00_ctl00_siteMapControl_verticaltree_ClientState","collapseAnimation":"{\"duration\":200}","expandAnimation":"{\"duration\":200}","nodeData":[{"value":"Home"},{"value":"People","items":[{"value":"Faculty"},{"value":"Staff"},{"value":"Graduate Students"},{"value":"Adjunct Faculty"},{"value":"Emeritus Faculty"}]},{"value":"Graduate Study","items":[{"value":"Current Students","items":[{"value":"Forms"},{"value":"Graduate Handbook"}]},{"value":"Prospective Students"}]},{"value":"Undergraduate Study","items":[{"value":"Advising","items":[{"value":"University and College Requirements "},{"value":"Major"},{"value":"Minor"},{"value":"Courses"}]},{"value":"Student life in EAES","items":[{"value":"Resources"},{"value":"Seminars"},{"value":"Field Trips"}]},{"value":"Careers","items":[{"value":"Career Opportunities "},{"value":"Internships"},{"value":"Planning for Graduate School "}]}]},{"value":"Courses"},{"value":"Laboratories"},{"value":"Seminars","items":[{"value":"Fall 2018 Seminars"},{"value":"Spring 2018 Seminars"},{"value":"Fall 2017 Seminars"},{"value":"Spring 2017 Seminars"},{"value":"Spring 2016 Seminars"},{"value":"Fall 2016 Seminars"},{"value":"Spring 2015 Seminars"},{"value":"Fall 2015 Seminars"},{"value":"Fall 2014 Seminars"}]},{"value":"Terra Society","items":[{"value":"Fall 2018 Talks"}]},{"value":"Calendar"},{"value":"News"},{"value":"Contact Us"}]}, {"nodeExpanding":OnClientNodeExpanding}, null, $get("ctl00_cphLeftNav_T2A5F492A005_ctl00_ctl00_siteMapControl_verticaltree"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphPageBody$C002$eventsFrontendList$ctl00$ctl00$eventsList","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_ItemsContainer","DataService":{}}},"_virtualItemCount":2,"clientStateFieldID":"ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList_ClientState","renderMode":1}, null, null, $get("ctl00_cphPageBody_C002_eventsFrontendList_ctl00_ctl00_eventsList"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Sitefinity.Web.UI.UserPreferences, {"_timeOffset":"-21600000","_userBrowserSettingsForCalculatingDates":true,"timeZoneDisplayName":"(UTC-06:00) Central Time (US \u0026 Canada)","timeZoneId":"Central Standard Time"}, null, null);
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphPageBody$C001$newsFrontendList$ctl00$ctl00$NewsList","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_ItemsContainer","DataService":{}}},"_virtualItemCount":3,"clientStateFieldID":"ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList_ClientState","renderMode":1}, null, null, $get("ctl00_cphPageBody_C001_newsFrontendList_ctl00_ctl00_NewsList"));
-});
-//]]>
-</script>
-</form>
-</body>
+
+<!-- Google Tag Manager (noscript) --><script type='text/javascript' src='https://csrc.uic.edu/wp-content/plugins/uic-red/js-admin/uic-publish-post-settings.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://csrc.uic.edu/wp-content/plugins/uic-red/js-admin/acf-field-group-toggle.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://csrc.uic.edu/wp-content/themes/uic-red/js/main.js?ver=1'></script>
+<script type='text/javascript' src='https://csrc.uic.edu/wp-includes/js/wp-embed.min.js?ver=cc9894277b2a1c716141ab25511c2b33'></script>
+
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-20665772-1', 'auto');
+    
+        ga('create', 'UA-54655537-6', 'auto', 'crscTracker');
+    
+        ga('send', 'pageview');
+    
+        ga('crscTracker.send', 'pageview');
+      </script>
+
+
+  
+    </body>
 </html>

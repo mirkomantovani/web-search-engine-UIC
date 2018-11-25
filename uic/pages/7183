@@ -1,573 +1,406 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
-  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:dc="http://purl.org/dc/terms/"
-  xmlns:foaf="http://xmlns.com/foaf/0.1/"
-  xmlns:og="http://ogp.me/ns#"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:sioc="http://rdfs.org/sioc/ns#"
-  xmlns:sioct="http://rdfs.org/sioc/types#"
-  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebChanges &lt; Kanich &lt; TWiki</title>
 
-<head profile="http://www.w3.org/1999/xhtml/vocab">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="up" href="/LTS" />
-<link rel="next" href="/service/blackboard/resources" />
-<link rel="prev" href="/service/learning-environments/student-response-systems" />
-<link rel="shortlink" href="/node/11" />
-<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
-<link rel="canonical" href="/service/learning-management-system" />
-  <title>Learning Management System | Academic Computing and Communications Center  </title>
-  <link type="text/css" rel="stylesheet" href="https://accc.uic.edu/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
-<link type="text/css" rel="stylesheet" href="https://accc.uic.edu/sites/default/files/css/css_C97MNtte-L48LG9bh-ZvFzSRgqR9x1gIfrvIDp9o6Y4.css" media="all" />
-<link type="text/css" rel="stylesheet" href="https://accc.uic.edu/sites/default/files/css/css_OsO2r3O_I2E-8-khV3NulWZIRJOw7aXphEVlJbgm2xI.css" media="all" />
-<link type="text/css" rel="stylesheet" href="https://accc.uic.edu/sites/default/files/css/css_Gi2KQBa4KQP-viS3Xs9utbwGTmqh2ceGxVSM10J8c9c.css" media="all" />
-<link type="text/css" rel="stylesheet" href="https://accc.uic.edu/sites/default/files/css/css_2THG1eGiBIizsWFeexsNe1iDifJ00QRS9uSd03rY9co.css" media="print" />
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Kanich/WebChanges?_T=2018-11-25" type="application/x-wiki" title="edit WebChanges" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Kanich/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Kanich/WebChanges"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-<!--[if lte IE 7]>
-<link type="text/css" rel="stylesheet" href="https://accc.uic.edu/sites/all/themes/acccbartik/css/ie.css?pi5mp1" media="all" />
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
 <![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-<!--[if IE 6]>
-<link type="text/css" rel="stylesheet" href="https://accc.uic.edu/sites/all/themes/acccbartik/css/ie6.css?pi5mp1" media="all" />
-<![endif]-->
-  <script type="text/javascript" src="https://accc.uic.edu/sites/default/files/js/js_vDrW3Ry_4gtSYaLsh77lWhWjIC6ml2QNkcfvfP5CVFs.js"></script>
-<script type="text/javascript" src="https://accc.uic.edu/sites/default/files/js/js_f_6-OzlFXjayKlsU5sJKLwjz7LFQvdIZDm-Mt6jKwyM.js"></script>
-<script type="text/javascript" src="https://accc.uic.edu/sites/default/files/js/js_9G1HmFpiIIAASGUsStD4Bs7yInEexthhfZpuiB7qGwQ.js"></script>
+<!-- Google Analytics Snippet -->
+
 <script type="text/javascript">
-<!--//--><![CDATA[//><!--
-(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://accc.uic.edu/sites/default/files/googleanalytics/analytics.js?pi5mp1","ga");ga("create", "UA-27751174-1", {"cookieDomain":"auto"});ga("send", "pageview");
-//--><!]]>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
-<script type="text/javascript" src="https://accc.uic.edu/sites/default/files/js/js_zsU7pE_En9PuEzx00IjN_iCxIwgABAiEwJNkh1iTG9k.js"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"acccbartik","theme_token":"KAYs1_aWJ3DfalWRrJ2fl3Y3omt1krvupZLbK_WUEg4","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/google_cse\/google_cse.js":1,"sites\/all\/modules\/ctools\/js\/jump-menu.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/google_cse\/google_cse.css":1,"sites\/all\/modules\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/shib_auth\/shib_auth.css":1,"sites\/all\/modules\/tagclouds\/tagclouds.css":1,"themes\/bartik\/css\/layout.css":1,"themes\/bartik\/css\/style.css":1,"sites\/all\/themes\/acccbartik\/css\/colors.css":1,"sites\/all\/themes\/acccbartik\/css\/acccbartik.css":1,"themes\/bartik\/css\/print.css":1,"sites\/all\/themes\/acccbartik\/css\/ie.css":1,"sites\/all\/themes\/acccbartik\/css\/ie6.css":1}},"googleCSE":{"cx":"007190388697399463499:niyo8zpomss","language":"","resultsWidth":600,"domain":"www.google.com","showWaterMark":true},"urlIsAjaxTrusted":{"\/service\/learning-management-system":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"field_group":{"div":"full"}});
-//--><!]]>
-</script>
+
+<!-- /Google Analytics Snippet -->
 </head>
-<body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-11 node-type-service-catalog-entry footer-columns" >
-  <div id="skip-link">
-    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
-    <a href="/service/learning-environments/accessibility" class="element-invisible element-focusable">Accessibility Resources</a>
-  </div>
-    <div id="page-wrapper"><div id="page">
-
-  <div id="header" class="without-secondary-menu"><div class="section clearfix">
-
-          <a href="/" title="Home" rel="home" id="logo">
-        <img src="https://accc.uic.edu/sites/default/files/logo-50.png" alt="Home" />
-      </a>
-    
-          <div id="name-and-slogan" class="element-invisible">
-
-                              <div id="site-name" class="element-invisible">
-              <strong>
-                <a href="/" title="Home" rel="home"><span>Academic Computing and Communications Center  </span></a>
-              </strong>
-            </div>
-                  
-        
-      </div> <!-- /#name-and-slogan -->
-    
-      <div class="region region-header">
-    <div id="block-search-form" class="block block-search">
-
-    
-  <div class="content">
-    <form class="google-cse" action="/service/learning-management-system" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
-      <h2 class="element-invisible">Search form</h2>
-    <div class="form-item form-type-textfield form-item-search-block-form">
-  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
- <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/Kanich/WebHome">Kanich Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/Kanich/WebChanges" title='Topic revision: 1 (2006-11-15 - 19:43:52)'>WebChanges</a> <span class='patternRevInfo'>(2006-11-15, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/Kanich/WebChanges?t=1543179887' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/Kanich/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Recent_Changes_in_Kanich_Web_ret"></a> Recent Changes in Kanich Web <span style="font-size: 50%">retrieved at 21:04 (GMT)</span> </h1>
+<p />
+<div id="searchTopNavWebChanges" style="margin-bottom: 1em; "></div>
+<!-- remove the format parameter to show absolute date instead if topic age -->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebStatistics"><b>WebStatistics</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebStatistics" title="2017-03-23 - 20:30" rel="nofollow">1 year ago</a> - r382 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Statistics for Kanich Web Month: Topic views: Topic saves: File uploads: Most popular topic views: Top contributors for topic save...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/Contact"><b>Contact</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ckanich?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="ckanich (this topic does not yet exist; you can create it)">ckanich</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/Contact" title="2017-01-24 - 16:10" rel="nofollow">1 year ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Contact Snail Mail Telephone Email University of Illinois at ChicagoDept. Computer ScienceRoom 1109 SEO (M/C 152)Chicago, IL 60607 Office: (312)...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebHome"><b>WebHome</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ckanich?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="ckanich (this topic does not yet exist; you can create it)">ckanich</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebHome" title="2017-01-24 - 16:10" rel="nofollow">1 year ago</a> - r20 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">var gaq gaq ; gaq.push( ` setAccount`, `UA 21532225 1` ); gaq.push( ` trackPageview` ); (function() { var ga document.createElement(`script`...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/Publications"><b>Publications</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ckanich?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="ckanich (this topic does not yet exist; you can create it)">ckanich</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/Publications" title="2012-09-21 - 22:37" rel="nofollow">6 years ago</a> - r4 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">var gaq gaq ; gaq.push( ` setAccount`, `UA 21532225 1` ); gaq.push( ` trackPageview` ); (function() { var ga document.createElement(`script`...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebLeftBar"><b>WebLeftBar</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ckanich?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="ckanich (this topic does not yet exist; you can create it)">ckanich</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebLeftBar" title="2012-08-23 - 23:10" rel="nofollow">6 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Research Teaching Publications Links Contact 1 Web Create New Topic Index Search Changes...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/Research"><b>Research</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ckanich?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="ckanich (this topic does not yet exist; you can create it)">ckanich</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/Research" title="2012-08-23 - 22:59" rel="nofollow">6 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Research</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/Teaching"><b>Teaching</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ckanich?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="ckanich (this topic does not yet exist; you can create it)">ckanich</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/Teaching" title="2012-08-23 - 22:59" rel="nofollow">6 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Teaching</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebPreferences"><b>WebPreferences</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebPreferences" title="2012-08-15 - 23:55" rel="nofollow">6 years ago</a> - r11 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Kanich Web Preferences The following settings are web preferences of the Kanich web. These preferences overwrite the site level preferences in . and...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/Links"><b>Links</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/Links" title="2009-05-20 - 20:24" rel="nofollow">9 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Links Any additional links go here.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebNotify"><b>WebNotify</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebNotify" title="2009-05-14 - 12:19" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">This is a subscription service to be automatically notified by e mail when topics change in this 1 web. This is a convenient service, so you do not have to come...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebTopicList"><b>WebTopicList</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebTopicList" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebSearchAdvanced"><b>WebSearchAdvanced</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebSearchAdvanced" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebSearch"><b>WebSearch</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebSearch" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebIndex"><b>WebIndex</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebIndex" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebChanges"><b>WebChanges</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebChanges" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebAtom"><b>WebAtom</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebAtom" title="2006-01-24 - 06:07" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">TWiki`s Kanich web The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebCreateNewTopic"><b>WebCreateNewTopic</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebCreateNewTopic" title="2005-11-08 - 06:37" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<div class="patternSearchResult">
+<div class="twikiTopRow">
+<div class="twikiLeft"><a href="/bin/view/Kanich/WebRss"><b>WebRss</b></a></div>
+<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
+<div class="twikiRight twikiSRRev" style="white-space:nowrap">
+<a href="/bin/rdiff/Kanich/WebRss" title="2005-03-28 - 09:40" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
+<!--/twikiTopRow-->
+<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">/Kanich The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
+</div><!--/patternSearchResult-->
+<p />
+<div id="searchBottomNavWebChanges" style="">
+<p />
+ &nbsp;
+<p />
 </div>
-<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-lGgsacacUtOUei2ePCPoWGIS8PSY_Uq_ItUKk5bbajg" />
-<input type="hidden" name="form_id" value="search_block_form" />
+<script type="text/javascript">
+  $('#searchTopNavWebChanges').hide(); $('#searchBottomNavWebChanges').hide();
+  $('#searchTopNavWebChanges').html("&nbsp; ");
+</script>
+<p />
+Show <a href='/bin/view/Kanich/WebChanges?limit=10' rel='nofollow'>10</a>&#44; <a href='/bin/view/Kanich/WebChanges?limit=20' rel='nofollow'>20</a>&#44; <b>50</b>&#44; <a href='/bin/view/Kanich/WebChanges?limit=100' rel='nofollow'>100</a>&#44; <a href='/bin/view/Kanich/WebChanges?limit=500' rel='nofollow'>500</a>&#44; <a href='/bin/view/Kanich/WebChanges?limit=1000' rel='nofollow'>1000</a> results per page, or <a href='/bin/view/Kanich/WebChanges?limit=all' rel='nofollow'>show all</a>.
+<p />
+<strong><em>Related topics:</em></strong> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> <a href="/bin/view/Kanich/WebRss" class="twikiLink">RSS feed</a>, <a href="/bin/view/Kanich/WebAtom" class="twikiLink">ATOM feed</a>, <a href="/bin/view/Kanich/WebNotify" class="twikiLink">WebNotify</a>, <a href="/bin/view/TWiki/SiteChanges" class="twikiLink">site changes</a>, <a href="/bin/view/TWiki/SiteMap" class="twikiLink">site map</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Kanich/WebChanges?t=1543179889' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Kanich/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Kanich/WebChanges?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Kanich/WebChanges?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r1</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Kanich/WebChanges?template=backlinksweb' rel='nofollow' title='Search the Kanich Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Kanich/WebChanges?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Kanich/WebChanges?t=1543179889;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Kanich/WebChanges?template=oopsmore&amp;param1=1&amp;param2=1' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r1 - 2006-11-15 - 19:43:52 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Kanich.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/Kanich/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> Kanich</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/Kanich/Research" class="twikiLink">Research</a>
+</li> <li> <a href="/bin/view/Kanich/Teaching" class="twikiLink">Teaching</a>
+</li> <li> <a href="/bin/view/Kanich/Publications" class="twikiLink">Publications</a>
+</li> <li> <a href="/bin/view/Kanich/Links" class="twikiLink">Links</a>
+</li> <li> 
+</li> <li> 
+</li> <li> <a href="/bin/view/Kanich/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<p />
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Kanich/WebChanges">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/Kanich/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Kanich Web</a></strong>
+</li> <li> <a href="/bin/view/Kanich/WebCreateNewTopic?topicparent=WebChanges" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Kanich/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Kanich/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Kanich/WebChanges" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/Kanich/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/Kanich/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Kanich/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Kanich/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-</div></form>  </div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
 </div>
-<div id="block-block-14" class="block block-block">
-
-    
-  <div class="content">
-    <iframe allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/follow_button.html?screen_name=uic_accc&show_count=false" style="width:115px; height:20px;"></iframe>  </div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
 </div>
-  </div>
-
-          <div id="main-menu" class="navigation">
-        <h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links clearfix"><li class="menu-227 first"><a href="/">Home</a></li>
-<li class="menu-4868"><a href="/news/all" title="">News</a></li>
-<li class="menu-9690"><a href="http://one.uic.edu" title="">ONE.UIC</a></li>
-<li class="menu-568"><a href="/service-status">Service Status</a></li>
-<li class="menu-2965 active-trail"><a href="/service/all" class="active-trail">Service Catalog</a></li>
-<li class="menu-4784"><a href="/answer/all" title="">Answers</a></li>
-<li class="menu-9670"><a href="http://accc.uic.edu/about" title="">About</a></li>
-<li class="menu-4776 last"><a href="/contact">Contact</a></li>
-</ul>      </div> <!-- /#main-menu -->
-    
-    
-  </div></div> <!-- /.section, /#header -->
-
-  
-  
-  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
-
-          <div id="breadcrumb"><h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a> » <a href="/service/all">Service Catalog</a></div></div>
-    
-          <div id="sidebar-first" class="column sidebar"><div class="section">
-          <div class="region region-sidebar-first">
-    <div id="block-book-navigation" class="block block-book">
-
-    <h2><a href="/policies" class="block-title-link"><a href="/LTS" class="book-title">Learning Technology Solutions</a></a></h2>
-  
-  <div class="content">
-    <ul class="menu clearfix"><li class="first collapsed"><a href="/service/collaboration-tools">Collaboration Tools</a></li>
-<li class="collapsed"><a href="/service/equipment-lending">Equipment Lending</a></li>
-<li class="leaf"><a href="/service/event-support-av">Event Support (Audio/Visual)</a></li>
-<li class="leaf"><a href="/service/learning-design-and-development">Learning Design and Development</a></li>
-<li class="collapsed"><a href="/service/learning-environments">Learning Environments</a></li>
-<li class="expanded active-trail"><a href="/service/learning-management-system" class="active-trail active">Learning Management System</a><ul class="menu clearfix"><li class="first collapsed"><a href="/service/blackboard/resources">Blackboard Help</a></li>
-<li class="collapsed"><a href="/service/blackboard/request-site">Blackboard Learn Course Site Requests</a></li>
-<li class="collapsed"><a href="/service/Blackboard/tools">Glossary of Tools</a></li>
-<li class="leaf"><a href="/service/blackboard/browsers">Recommended Browsers for Blackboard</a></li>
-<li class="leaf"><a href="/service/blackboard/course-archiving">Blackboard Course Archiving</a></li>
-<li class="last leaf"><a href="/service/learning-management-system/blackboard-ultra-pilot">Blackboard Ultra Pilot</a></li>
-</ul></li>
-<li class="collapsed"><a href="/service/lecture-capture">Lecture Capture</a></li>
-<li class="leaf"><a href="/service/media-conversion">Media Conversion</a></li>
-<li class="collapsed"><a href="/service/media-streaming">Media Streaming</a></li>
-<li class="collapsed"><a href="/service/multimedia-production">Multimedia Production</a></li>
-<li class="collapsed"><a href="/service/printing">Printing</a></li>
-<li class="last collapsed"><a href="/service/professional-development-training">Professional Development &amp; Training</a></li>
-</ul>  </div>
-</div>
-<div id="block-views-answers-block-4" class="block block-views">
-
-    <h2><a href="/answer/Learning%20Management%20System" class="block-title-link">Answers related to Learning Management System</a></h2>
-  
-  <div class="content">
-    <div class="view view-answers view-id-answers view-display-id-block_4 nocontent view-dom-id-f3ada081acdfb11056857b35d843423c">
-            <div class="view-header">
-      Displaying 15 of 33 answers    </div>
-  
-  
-  
-      <div class="view-content">
-      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-do-i-print-discussion-board-content-blackboard">How do I print discussion board content from Blackboard?</a></span>  </span></li>
-          <li class="views-row views-row-2 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-long-does-it-take-receive-safeassign-report">How long does it take to receive a SafeAssign report?</a></span>  </span></li>
-          <li class="views-row views-row-3 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/which-media-and-file-types-are-supported-blackboard">Which media and file types are supported in Blackboard?</a></span>  </span></li>
-          <li class="views-row views-row-4 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-do-i-add-students-blackboard-learn-course-site">How do I add students to a Blackboard Learn course site?</a></span>  </span></li>
-          <li class="views-row views-row-5 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-do-i-obtain-access-blackboard-non-uic-affiliates">How do I obtain access to Blackboard for non-UIC affiliates?</a></span>  </span></li>
-          <li class="views-row views-row-6 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-do-i-activate-secondary-blackboard-account">How do I activate a secondary Blackboard account?</a></span>  </span></li>
-          <li class="views-row views-row-7 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-do-i-add-files-my-blackboard-site">How do I add files to my Blackboard site?</a></span>  </span></li>
-          <li class="views-row views-row-8 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/copying-and-moving-materials-blackboard-learn">Copying and moving materials in Blackboard Learn</a></span>  </span></li>
-          <li class="views-row views-row-9 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/what-blackboard-learn-discussion-board">What is the Blackboard Learn discussion board?</a></span>  </span></li>
-          <li class="views-row views-row-10 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-do-i-remove-student-blackboard-course-enrollment-list">How do I remove a student from the Blackboard course enrollment list?</a></span>  </span></li>
-          <li class="views-row views-row-11 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/where-can-i-find-blackboard-instant-messenger-so-i-can-use-it">Where can I find Blackboard Instant Messenger so I can use it?</a></span>  </span></li>
-          <li class="views-row views-row-12 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-do-i-download-files-blackboard-learn">How do I download files in Blackboard Learn?</a></span>  </span></li>
-          <li class="views-row views-row-13 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/can-anyone-see-my-messages-blackboard-im-i-send-individual">Can anyone see my messages in Blackboard IM that I send to an individual?</a></span>  </span></li>
-          <li class="views-row views-row-14 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/error-blackboard-access-denied-your-account-access-system-no-longer-available">Error on Blackboard access denied - your account access to the system is no longer available.</a></span>  </span></li>
-          <li class="views-row views-row-15 views-row-odd views-row-last">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/answer/how-add-weighted-column-blackboard-gradebook">How to add weighted column in Blackboard gradebook</a></span>  </span></li>
-      </ul></div>    </div>
-  
-  
-  
-      
-<div class="more-link">
-  <a href="/answer/Learning%20Management%20System">
-    View more answers  </a>
-</div>
-  
-  
-  
-</div>  </div>
-</div>
-  </div>
-      </div></div> <!-- /.section, /#sidebar-first -->
-    
-    <div id="content" class="column"><div class="section">
-            <a id="main-content"></a>
-                    <h1 class="title" id="page-title">
-          Learning Management System        </h1>
-                          <div class="tabs">
-                  </div>
-                          <div class="region region-content">
-    <div class="ds-1col node node-service-catalog-entry node-full view-mode-full clearfix">
-
-  
-  <div class="field field-name-field-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item odd"><img typeof="foaf:Image" src="https://accc.uic.edu/sites/default/files/styles/medium/public/blackboard_learn-whitecrop.png?itok=SbmfIhCb" width="220" height="68" alt="Blackboard Learn Logo" title="Blackboard Learn Logo" /></div></div></div><div id="node-service-catalog-entry-full-group-borderwrap" class=" group-borderwrap field-group-div"><div class="field field-name-field-category field-type-taxonomy-term-reference field-label-inline clearfix inline-list"><strong class="field-label bold-label">Category:&nbsp;</strong><span class="field-items"><a href="/category/help" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Help</a>, <a href="/category/learning-tools" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Learning Tools</a></span></div><div class="field field-name-field-audience field-type-taxonomy-term-reference field-label-inline clearfix inline-list"><strong class="field-label bold-label">Audience:&nbsp;</strong><span class="field-items"><a href="/audience/faculty" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Faculty</a>, <a href="/audience/students" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Students</a>, <a href="/audience/external" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">External</a></span></div><div class="field field-name-field-launch field-type-link-field field-label-hidden"><div class="field-item odd first"><a href="http://uic.blackboard.com" target="_blank">Log in to Blackboard Learn</a></div><div class="field-item even"><a href="https://accc.uic.edu/service/blackboard/request-site">Request a Blackboard Learn Course Site</a></div><div class="field-item odd last"><a href="https://accc.uic.edu/service/training/LTS">Attend a Blackboard Learn Training Session</a></div></div></div><h2 class="field-label">Overview&nbsp;</h2><div class="field-items"><div class="field-item odd first last"><p>Blackboard Learn is a web application that allows the creation, administration, tracking, and delivery of digital content via course sites. This type of application is also referred to as a Learning Management System or LMS. At UIC, Blackboard Learn course sites are used in three main ways:</p>
-<ol><li>for the enhancement of face-to-face instruction,</li>
-<li>as an important component of content delivery for blended courses, and</li>
-<li>as a core element delivering and assessing learning in online courses. </li>
-</ol></div></div><h2 class="field-label">Features&nbsp;</h2><div class="field-items"><div class="field-item odd first last"><p>With Blackboard Learn, instructors can:</p>
-<ul><li><strong>Create or upload text, audio, video, and interactive content</strong> for students to access online. Content can be added using Blackboard Learn tools or using third party software that integrates with Blackboard. You should always <a href="https://en-us.help.blackboard.com/Learn/Instructor/Accessibility/Formatting_Accessible_Documents_Best_Practices">create content accessible</a> to all students. Below are the most common sources of content:
-<ul><li><strong>Text, audio, or video</strong> directly added into a content area using the Blackboard Learn <a href="http://ondemand.blackboard.com/r91/movies/bb91_tools_using_content_editor.htm">Content Editor tool</a>.</li>
-<li><strong>Screen capture</strong> and lecture capture content via <a href="/tag/lecture-capture">Echo360</a></li>
-<li><strong>Multimedia</strong> content via the Blackboard Learn <a href="http://youtu.be/MPVEJKGOuCw">Mashups tool</a></li>
-<li><strong>Interactive content</strong> using <a href="https://www.lynda.com/Captivate-tutorials/Captivate-9-Essential-Training/447238-2.html?org=uic.edu">Adobe Captivate 9</a> </li>
-<li><strong>Recorded webinar</strong> content using <a href="/service/blackboard-collaborate">Blackboard Collaborate</a></li>
-<li><strong>Slides, documents, quiz questions</strong>, and other resources from <a href="https://help.blackboard.com/en-us/Learn/9.1_2014_04/Student/050_Course_Content/060_Course_Cartridges">course cartridges</a> that publishers make available as part of textbooks</li>
-</ul></li>
-<li><strong>Communicate, interact, and collaborate with students</strong> via course announcements, email, discussion board threads, blog posts, wiki pages, and other <a href="https://help.blackboard.com/en-us/Learn/9.1_2014_04/Instructor/080_Collaboration/070_Collaboration_Tools">collaboration tools</a>.</li>
-<li><strong>Assess concept mastery</strong> through the use of <a href="http://help.blackboard.com/en-us/Learn/9.1_2014_04/Instructor/110_Tests_Surveys_Pools/010_Create_Tests_and_Surveys">tests</a>, <a href="https://help.blackboard.com/en-us/Learn/9.1_2014_04/Instructor/100_Assignments/010_Create_Assignments">assignments</a>, and other tools that enable instructors to record and assess students’ work in a variety of ways. A <a href="http://help.blackboard.com/en-us/Learn/9.1_2014_04/Instructor/120_Grade_Center">Grade Center</a> column is created automatically when an assessment is created, and grades are populated as instructors grade assignments. The Grade Center can be configured to <a href="https://www.youtube.com/watch?v=8U_7-Uz7I0U">export final grades</a> in the format required for the <a href="http://ossswebcs.admin.uillinois.edu/xe/xe_training_support.html">XE Faculty Grade</a> module.</li>
-</ul><p>Learn more about Blackboard by watching <a href="http://youtu.be/ZXsBE6UR_os">Why Blackboard</a> (video, 2:19).</p>
-<p><strong>Course site creation</strong></p>
-<p>The Learning Technology Solutions (LTS) group creates course sites for most CRN-related courses, as reflected in the course catalog 60 days prior to the start of every semester. Sites are made unavailable to students by default and instructors determine when to make their <a href="https://help.blackboard.com/en-us/Learn/9.1_2014_04/Instructor/050_Course_Customization/010_Course_Availability">courses available</a>. Course site shells are created without course menu items so that instructors can easily copy a course into the clean shell or add to it to suit their teaching preferences and needs.</p>
-<p>Instructors can <a href="/service/blackboard/request-site-copy">request content to be copied from a previous course site</a>, or they can copy the content by themselves from any course site that is listed under their teaching assignments. If an instructor does not have a course to copy, they can build a custom site by adding their own course menu items. View the video (2.59) "<a href="https://youtu.be/el6fMDAP86w" target="_blank">Working with the Clean Blackboard Course Shell"</a> for further instructions. In addition instructors can <a href="/service/blackboard/request-course-template-import" target="_self">request an exemplary course shell template</a> to be imported into their course site. This is a a pre-designed course site supplied by LTS based on best practices for online, blended and enhanced courses.</p>
-<p>In special situations, instructors may need to <a href="/service/blackboard/request-site-multiple-crn">request the merge of course sections</a>. Additionally, any staff from UIC can <a href="/service/blackboard/request-site-no-crn">request a Non-CRN related site</a>.</p>
-<p><strong>Faculty assignments and student enrollments</strong></p>
-<p>Student enrollments and faculty assignments are handled automatically by the system. We encourage instructors to wait 48 hours for new student enrollments to be reflected in their course sites. Adding students manually in courses should be handled with caution as, after the drop period, all student enrollments added manually may only be removed manually from courses that they have dropped.</p>
-<p><strong>Students</strong></p>
-<p>Whether you’re just beginning your first course with Blackboard Learn or have used it before and need a refresher, check out the <strong>Student Resources </strong>section located in the portal’s top menu after you have logged in. In the student organization, you will find valuable tips for working in your Blackboard course, checking your computer, frequently asked questions, and tutorials.</p>
-<p>Note that even though any UIC instructor may use Blackboard Learn, not all instructors develop a course site to make available to students. Contact your instructor if you expect to see a course site for a course that is not listed in your <strong>My Courses </strong>or <strong>My Courses Plus</strong> in Blackboard Learn.</p>
-<p><strong>Faculty</strong></p>
-<p>Visit the <strong>Faculty/Staff Resources</strong> section located in the top menu after you have logged in for useful information about how to use Blackboard Learn. You will find <a href="/service/blackboard/resources" title="Checklist for preparing your course for the semester">semester checklists</a>, tools tutorials, upcoming <a href="http://go.uic.edu/workshops" title="Blackboard Workshops">workshops</a>, and important information about <a href="/service/blackboard/request-site">procedures</a> regarding course copies, course availability, and managing your files.</p>
-</div></div><h2 class="field-label">Requirements&nbsp;</h2><div class="field-items"><div class="field-item odd first last"><p>To <a href="http://uic.blackboard.com/">access Blackboard Learn</a>, students, faculty and staff must use their <a href="/answer/how-do-i-activate-my-uic-NetID">UIC NetID</a> (do not append <em>@uic.edu</em> after the NetID) and <a href="/answer/how-do-i-change-my-password">common password</a>. Simply <a href="https://uic.blackboard.com/" title="Log in to Blackboard">log in</a> to <a href="http://uic.blackboard.com">uic.blackboard.com</a> and access your course sites.</p>
-<p><a href="/service/blackboard/browsers">Web browsers</a> used with Blackboard Learn must have Java and Javascript enabled, cookies and third-party cookies enabled, and pop-up blocker disabled. Firefox and Google Chrome are the recommended web browsers.</p>
-<p><strong>Blackboard Weekly Scheduled Maintenance Window</strong></p>
-<p>There is never a good time to have a major service like Blackboard taken down for necessary maintenance. However, regular maintenance procedures require that the system be taken offline. For this reason, <a href="http://uic.blackboard.com">Blackboard</a> Learn has a scheduled weekly maintenance window on Friday mornings from 1:00 am (CST) to 5:00 am (CST).  It is highly recommended that any online tests, quizzes, assignments, etc., take into consideration the weekly maintenance window.</p>
-</div></div><h2 class="field-label">Cost&nbsp;</h2><div class="field-items"><div class="field-item odd first last"><p>There is no charge for this service.</p>
-</div></div><h2 class="field-label">Support&nbsp;</h2><div class="field-items"><div class="field-item odd first last"><table border="1" cellpadding="1" cellspacing="1" style="width:100%"><tbody><tr><th scope="row" style="width:30%">Email</th>
-<td><a href="mailto:LTS@uic.edu">LTS@uic.edu</a></td>
-</tr><tr><th scope="row">Phone</th>
-<td>312-413-0003 Option 1</td>
-</tr><tr><th scope="row">In person</th>
-<td><a href="/LTS">Learning Technology Solutions Support Office</a></td>
-</tr></tbody></table><p> </p>
-</div></div><h2 class="field-label">Further Information&nbsp;</h2><div class="field-items"><div class="field-item odd first last"><h3>ACCC Service Level Agreement (SLA)</h3>
-<table border="1" cellpadding="1" cellspacing="1" style="width:100%"><tbody><tr><th scope="row">Service Request Fulfillment Time</th>
-<td>
-<p>Under 2 business days, unless in-person training/discussion is required, or escalation to the vendor is required.</p>
-</td>
-</tr><tr><th scope="row">Incident Resolution Time</th>
-<td>
-<p>Under 2 business days unless escalation to the vendor is required.</p>
-</td>
-</tr><tr><th scope="row">Service Availability</th>
-<td>24x7</td>
-</tr><tr><th scope="row">Maintenance Window(s)</th>
-<td>Weekly maintenance window: Friday, 1:00am - 5:00am<br />
-			​Approved ACCC maintenance window(s): <a href="/service-status">accc.uic.edu/service-status</a></td>
-</tr><tr><th scope="row">Service Notification Channel(s)</th>
-<td>ACCC News and Alerts: <a href="/news/all">accc.uic.edu/news/all</a><br />
-			Direct emails to campus users.<br />
-			LMS Login Page: <a href="http://uic.blackboard.com">uic.blackboard.com</a></td>
-</tr><tr><th scope="row">Reviewed to Ensure SLA Meets Business Requirements</th>
-<td>
-<p>Provisional SLA - Currently under IT Governance review.</p>
-</td>
-</tr><tr><th scope="row">Date Reviewed</th>
-<td>
-<p>Provisional SLA - Currently under IT Governance review.</p>
-</td>
-</tr></tbody></table></div></div><div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Tag:&nbsp;</div><div class="field-items"><div class="field-item odd"><a href="/tag/blackboard" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">blackboard</a></div></div></div></div>
-
-  </div>
-      
-    </div></div> <!-- /.section, /#content -->
-
-          <div id="sidebar-second" class="column sidebar"><div class="section">
-          <div class="region region-sidebar-second">
-    <div id="block-views-service-catalog-block-2" class="block block-views">
-
-    <h2><a href="/service/all" class="block-title-link">Service Catalog</a></h2>
-  
-  <div class="content">
-    <div class="view view-service-catalog view-id-service_catalog view-display-id-block_2 view-dom-id-3d3402ae079f2e1773142c0dca5d90bf">
-        
-  
-  
-      <div class="view-content">
-      <form action="/service/learning-management-system" method="post" id="ctools-jump-menu" accept-charset="UTF-8"><div><div class="container-inline"><div class="form-item form-type-select form-item-jump">
- <select class="ctools-jump-menu-select ctools-jump-menu-change form-select" id="edit-jump" name="jump"><option value="">Choose service</option><option value="f1c0fd1eb440653d41d9b934c81f2e1d::/service/acccell">  
-          ACCC Extended Laptop Loan (ACCCELL)  </option><option value="9fdd844bb8a1c40b07e178fc3338f2d5::/service/servicedesk">  
-          ACCC Service Desk  </option><option value="ecc409c51f10b0b63be5a6571ce81b96::/service/acccess-helpdesk">  
-          ACCCeSS Helpdesk  </option><option value="50ed3de763b430b8c1a48453b620db95::/service/active-directory">  
-          Active Directory  </option><option value="df59df48a9787f9562382ae3e0a8956a::/service/active-directory-desktop-advantage">  
-          Active Directory Desktop Advantage (ADDA)  </option><option value="5c3ffc71c191c3a86b18f5ae096390bf::/service/automatic-call-distribution">  
-          Automatic Call Distribution   </option><option value="4eacbcd9609818e1dfa88a75ecc17cbc::/service/backups">  
-          Backups  </option><option value="87649ed6cfbd7cbc975e368cd26d6514::/service/blackboard-collaborate">  
-          Blackboard Collaborate  </option><option value="921b1bf1fcf3d0855dd6266ddcf53043::/service/box">  
-          Box  </option><option value="19e3358c2add0b2367c4e5d43e3c3970::/service/c-stop">  
-          C-stop  </option><option value="4f276c8f111958c4dac723c36e9b71bf::/service/equipment-lending/classroom-equipment-lending">  
-          Classroom Equipment Lending  </option><option value="32bb00830993846ab986d00b0c8a5fd9::/service/classroom">  
-          Classrooms  </option><option value="6a34288ce1585e03b7513e4d47c45e49::/service/collaboration-tools">  
-          Collaboration Tools  </option><option value="0a0aef270d360aa126cf7e0a8ec2ad44::/service/colocation-server-hosting">  
-          Colocation Server Hosting  </option><option value="7adfc88989421c8fb40583511e051a57::/service/computer-labs">  
-          Computer Labs  </option><option value="09591e995510e42238e1dc9f88dfc73b::/service/conferencing">  
-          Conferencing  </option><option value="452d3d2303d0394dab6432f5545d5a87::/service/ceb">  
-          Corporate Executive Board  </option><option value="e8cf41609887f887d29e4506d1186cd8::/service/data-usage-monitoring">  
-          Data Usage Monitoring  </option><option value="0db9ba4d82994b1409130db6f35b35e9::/service/databases">  
-          Database Services  </option><option value="56a4f6ec101c46829e0ed4b821fb389b::/service/digital-signage">  
-          Digital Signage  </option><option value="bf219a4619b9e123df222a4a0b216309::/service/directory">  
-          Directory Services  </option><option value="54acba8c9baec915b09cb1b277e86bbf::/service/email-and-calendaring">  
-          Email and Calendaring  </option><option value="7a1a6698d0be8e706b08fdca9856113f::/service/encryption">  
-          Encryption  </option><option value="d85b23f87c8b939a2de49f757a885404::/service/endpoint-management">  
-          Endpoint Management  </option><option value="1c4c420556b8f4964ec821fbe1c91443::/service/equipment-lending">  
-          Equipment Lending  </option><option value="83b5c96a64686618a1c924de844cd427::/service/event-logging">  
-          Event Logging  </option><option value="05ba4c880395d2e8c112a88383097df8::/service/event-support-av">  
-          Event Support (Audio/Visual)  </option><option value="ec50ae47546b551fe93f9c6766d417e5::/service/events-calendar">  
-          Events Calendar  </option><option value="3aca9ee863caaca38338d91d2b67c153::/service/exchange">  
-          Exchange  </option><option value="497b750a7695989ec1caf7d829a1230a::/service/fact">  
-          Faculty Computer Trade-In (FaCT)  </option><option value="92d5cf8a0a3a88fe65d11d9731373ce3::/service/g-suite">  
-          G Suite (formerly Google Apps)  </option><option value="29fc87540c271b8863beac609c29b42e::/service/helpdesk">  
-          Helpdesk Services  </option><option value="592c5cb5e681f4ee30b09d7482663b5e::/service/high-performance-computing">  
-          High Performance Computing  </option><option value="915b2b821e2fe4e47ac34ed061a0d007::/service/identity-and-access-management">  
-          Identity and Access Management  </option><option value="fddc96fe1e22714e61db4345c78febad::/service/instant-messaging">  
-          Instant Messaging  </option><option value="f94278ec0e388291a8f3988411d314cc::/service/learning-design-and-development">  
-          Learning Design and Development  </option><option value="c6147deed44acd6ca048ad470afcbe33::/service/learning-environments">  
-          Learning Environments  </option><option value="3689d4a6c97c3fd4162a0506b8d959ef::/service/learning-management-system" selected="selected">  
-          Learning Management System  </option><option value="8936c111080f3aa031c861e4448efc99::/LTS">  
-          Learning Technology Solutions  </option><option value="4989923a8a910d2acbb7464d28c7f2a5::/service/lecture-capture">  
-          Lecture Capture  </option><option value="67919309615b8414e3dee04798b5804d::/service/listserv">  
-          Listserv  </option><option value="844e9859712145ab647f937e528f81af::/service/mass-and-emergency-communications">  
-          Mass and Emergency Communications  </option><option value="c27a9506dce9ed22050fde8417def8ba::/service/massmail">  
-          Massmail  </option><option value="c56c755a9fd9d903e460ed676a2b24c4::/service/media-conversion">  
-          Media Conversion  </option><option value="629ee8ca86679fcf902db74ce2a2713c::/service/media-streaming">  
-          Media Streaming  </option><option value="0309479d93b815bb68f2e1f76c34ae31::/service/microsoft-iis">  
-          Microsoft IIS  </option><option value="2570aee9c526595d90eee4ad00cfab22::/service/mobile-phones">  
-          Mobile Phones  </option><option value="9f78a633eded2f13a2cff2a1adec86be::/service/multimedia-production">  
-          Multimedia Production  </option><option value="6c9309bb3bef1869bab876a2b6a397e1::/service/network">  
-          Network  </option><option value="3929c91be987d9925911001ac035bbf9::/service/network-data-moves">  
-          Network Data Moves  </option><option value="c9237d508f18c48eb1b5aee02bcbc10a::/service/network-filters">  
-          Network Filters  </option><option value="49f2ff0aed27f04a3f6a872286a36325::/service/noc">  
-          Network Operations Center  </option><option value="0e52b94c317bdda083778dee5f3b9a1e::/service/network-scanning">  
-          Network Security Vulnerability Scanner  </option><option value="6353814f68b2cf28e760c96a641934ef::/service/office-365">  
-          Office 365  </option><option value="d5b5c084e9d92a32b23edb68c7c7273d::/service/onsite">  
-          On-Site Support  </option><option value="530322567e0527508f43f4a791e1d439::/service/oneuic">  
-          ONE.UIC  </option><option value="fe3bb70146b7ed2b8de88e9af6ebdea8::/service/phone">  
-          Phone Services  </option><option value="126e899c4dc7c6d320bc33149c8d4d52::/service/centrex">  
-          Phones (Centrex)  </option><option value="43877dcbe943b59254a0e0d0e1e27402::/service/printing">  
-          Printing  </option><option value="72cef4679afa528259f1d043126ad344::/service/professional-development-training">  
-          Professional Development &amp; Training  </option><option value="6d8f5e743e878146cd5b6b726879427e::/recharge-stations">  
-          Recharge Stations  </option><option value="ce97cf5eb2bbbab453b5c215228e5be3::/service/rt">  
-          Request Tracker (RT)  </option><option value="e00f51bddf0ac5346c133dc56dba5df3::/service/resident-hall-network-res-net">  
-          Resident Hall Network (Res-Net)  </option><option value="12a1b103043201b45b6dac657bda70ad::/service/resphone">  
-          ResPhone  </option><option value="7c3e92a65a50c6bde2ca6ecc4e72da19::/service/secure-computing-environment">  
-          Secure Computing Environment  </option><option value="3386c64ffcb94879c8ccf0adb1ec85a5::/service/security">  
-          Security  </option><option value="013c818ece3664f5d6072116f8e306dd::/service/sharepoint">  
-          SharePoint  </option><option value="b809113863ca89e6b9bb5e9615141730::/service/single-sign-on">  
-          Single Sign On  </option><option value="c062a95e54affe32842ed9edb5540c52::/service/ssl-certificates">  
-          SSL Certificates  </option><option value="b9c23de9594fad3398e10a7e9dcb48a9::/service/startel">  
-          StarTel  </option><option value="f1d6a17201647bf956b356d9138d44a3::/service/surveys">  
-          Surveys  </option><option value="f8eb511c09ac5ca794ff91c4150ca916::/service/telecom">  
-          Telecommunications   </option><option value="19591106fe22e0d6f02541823194b5d3::/service/uic-alert">  
-          UIC Alert  </option><option value="b1ecd866ebb0bf9028921ca37161dc98::/uicmobile">  
-          UIC Mobile   </option><option value="dec0719df1440c3ce11f38032e82ed99::/service/uicalendar">  
-          UICalendar  </option><option value="0fd8a02dd3a2acad6b6241ec8881d0f7::/service/vpn">  
-          Virtual Private Network (VPN)  </option><option value="ba6ae6defd250193141979db057dc5bb::/service/virtual-servers">  
-          Virtual Servers  </option><option value="be397f639d2f1d34bed945365117f4b3::/service/voicemail">  
-          Voicemail  </option><option value="528645dae420c32d525ca9b51f4bb329::/service/voip">  
-          VoIP  </option><option value="b4b33b22c32bfad584042a5866096f54::/service/web-services">  
-          Web Services  </option><option value="555a2c0af67b49f8eedcbcac9c82062a::/service/wiki">  
-          Wiki  </option><option value="d26ff2b332dda04f377761b3cc13e8a6::/service/uic-net">  
-          Wired Network  </option><option value="7b8b5252a137d17387b07d7470d684d6::/service/wireless">  
-          Wireless Network  </option></select>
-</div>
-<input class="ctools-jump-menu-button ctools-jump-menu-hide form-submit" type="submit" id="edit-go" name="op" value="Go" /></div><input type="hidden" name="form_build_id" value="form-FLwp9w_iaPvdUIx148hrPcKmscDvUGFHu-kzARzWdaY" />
-<input type="hidden" name="form_id" value="ctools_jump_menu" />
-</div></form>    </div>
-  
-  
-  
-  
-  
-  
-</div>  </div>
-</div>
-<div id="block-views-service-categories-block" class="block block-views">
-
-    <h2>Service Categories</h2>
-  
-  <div class="content">
-    <div class="view view-service-categories view-id-service_categories view-display-id-block view-dom-id-3d844bd45090d161feb1b6373b88e5bc">
-        
-  
-  
-      <div class="view-content">
-      <form action="/service/learning-management-system" method="post" id="ctools-jump-menu--2" accept-charset="UTF-8"><div><div class="container-inline"><div class="form-item form-type-select form-item-jump">
- <select class="ctools-jump-menu-select ctools-jump-menu-change form-select" id="edit-jump--2" name="jump"><option value="" selected="selected">Choose category</option><option value="0d6b0768f9fe01f93fc2f5863e2e1e1d::/category/accounts-and-passwords">  
-          Accounts and Passwords  </option><option value="cefded44a726cebc33c154a1ce92a03d::/category/business-tools">  
-          Business Tools  </option><option value="3352f6a597d71c0803f0598a0ec1fdf3::/category/email-calendar-and-communications">  
-          Email, Calendar and Communications  </option><option value="887ccd1368c395cef26dba3afa6ab41c::/category/facilities-and-equipment">  
-          Facilities and Equipment  </option><option value="94f5a3a65429b9ee9d785b9f208c942e::/category/help">  
-          Help  </option><option value="b25e1722bef36292c2cc478026b29cda::/category/learning-tools">  
-          Learning Tools  </option><option value="506986de589bcedec624d445b7c8fbe0::/category/networking">  
-          Networking  </option><option value="94638126b57cc939aff9257042a70663::/category/research">  
-          Research  </option><option value="af03098223978b67697bc3c4992ec42b::/category/security">  
-          Security  </option></select>
-</div>
-<input class="ctools-jump-menu-button ctools-jump-menu-hide form-submit" type="submit" id="edit-go--2" name="op" value="Go" /></div><input type="hidden" name="form_build_id" value="form-ByJAFJPg-NCCpDbOJwM0nX9DQ4Hi0f-4jFgKVnyeevg" />
-<input type="hidden" name="form_id" value="ctools_jump_menu" />
-</div></form>    </div>
-  
-  
-  
-  
-  
-  
-</div>  </div>
-</div>
-<div id="block-views-popular-block" class="block block-views">
-
-    <h2><a href="/popular/all" class="block-title-link">Popular Services</a></h2>
-  
-  <div class="content">
-    <div class="view view-popular view-id-popular view-display-id-block view-dom-id-bc76b5f0a84192c3ac53a02850965098">
-        
-  
-  
-      <div class="view-content">
-      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/learning-management-system">Learning Management System</a></span>  </span></li>
-          <li class="views-row views-row-2 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/g-suite">G Suite (formerly Google Apps)</a></span>  </span></li>
-          <li class="views-row views-row-3 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/exchange">Exchange</a></span>  </span></li>
-          <li class="views-row views-row-4 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/box">Box</a></span>  </span></li>
-          <li class="views-row views-row-5 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/lecture-capture">Lecture Capture</a></span>  </span></li>
-          <li class="views-row views-row-6 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/classroom">Classrooms</a></span>  </span></li>
-          <li class="views-row views-row-7 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/servicedesk">ACCC Service Desk</a></span>  </span></li>
-          <li class="views-row views-row-8 views-row-even">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/wireless">Wireless Network</a></span>  </span></li>
-          <li class="views-row views-row-9 views-row-odd">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/LTS">Learning Technology Solutions</a></span>  </span></li>
-          <li class="views-row views-row-10 views-row-even views-row-last">  
-  <span class="views-field views-field-title">        <span class="field-content"><a href="/service/telecom">Telecommunications </a></span>  </span></li>
-      </ul></div>    </div>
-  
-  
-  
-  
-  
-  
-</div>  </div>
-</div>
-  </div>
-      </div></div> <!-- /.section, /#sidebar-second -->
-    
-  </div></div> <!-- /#main, /#main-wrapper -->
-
-  
-  <div id="footer-wrapper"><div class="section">
-
-          <div id="footer-columns" class="clearfix">
-          <div class="region region-footer-firstcolumn">
-    <div id="block-menu-menu-footer-menu-1" class="block block-menu">
-
-    <h2>ACCC</h2>
-  
-  <div class="content">
-    <ul class="menu clearfix"><li class="first leaf"><a href="/about">About ACCC</a></li>
-<li class="leaf"><a href="/service/learning-environments/accessibility">Accessibility Resources</a></li>
-<li class="leaf"><a href="/job/all" title="Employment Opportunities">Jobs</a></li>
-<li class="leaf"><a href="/news/all" title="">News and Alerts</a></li>
-<li class="leaf"><a href="/policy/all">Policies and Guidelines</a></li>
-<li class="leaf"><a href="/service/telecom" title="">Telecom</a></li>
-<li class="leaf"><a href="/newsletters">ACCC Newsletter</a></li>
-<li class="last leaf"><a href="/reports">Reports</a></li>
-</ul>  </div>
-</div>
-  </div>
-          <div class="region region-footer-secondcolumn">
-    <div id="block-menu-menu-tools" class="block block-menu">
-
-    <h2>Quick Links</h2>
-  
-  <div class="content">
-    <ul class="menu clearfix"><li class="first leaf"><a href="/get-started">Get started</a></li>
-<li class="leaf"><a href="http://activatenetid.accc.uic.edu" title="Activate your UIC NetID">Activate UIC NetID</a></li>
-<li class="leaf"><a href="http://passwords.accc.uic.edu" title="Change password, reset forgotten password">Change password</a></li>
-<li class="leaf"><a href="http://accountportal.accc.uic.edu" title="Create ACCC-managed accounts">Create accounts</a></li>
-<li class="leaf"><a href="http://uic.blackboard.com" title="Log in to Blackboard Learn">Blackboard Learn</a></li>
-<li class="leaf"><a href="http://sms.accc.uic.edu" title="Subscribe to UIC emergency SMS notifications">Emergency SMS</a></li>
-<li class="leaf"><a href="http://gmail.uic.edu" title="">GoogleApps@UIC</a></li>
-<li class="leaf"><a href="http://emailforwarding.accc.uic.edu" title="Update netID@uic.edu email forwarding">Update email forwarding</a></li>
-<li class="last leaf"><a href="http://webmail.uic.edu" title="">Webmail</a></li>
-</ul>  </div>
-</div>
-  </div>
-          <div class="region region-footer-thirdcolumn">
-    <div id="block-menu-menu-locations" class="block block-menu">
-
-    <h2>Locations</h2>
-  
-  <div class="content">
-    <ul class="menu clearfix"><li class="first leaf"><a href="/service/acccess-helpdesk" title="">ACCCeSS Helpdesk</a></li>
-<li class="leaf"><a href="/service/servicedesk" title="">Client Services Office</a></li>
-<li class="collapsed"><a href="/LTS" title="">Learning Technology Solutions</a></li>
-<li class="last leaf"><a href="/service/noc" title="">Network Operations Center</a></li>
-</ul>  </div>
-</div>
-  </div>
-          <div class="region region-footer-fourthcolumn">
-    <div id="block-menu-menu-accc-liaison-resources" class="block block-menu">
-
-    <h2>Liaison Resources</h2>
-  
-  <div class="content">
-    <ul class="menu clearfix"><li class="first leaf"><a href="https://liaison.uic.edu" title="Liaison Manager Tool">Liaison Manager</a></li>
-<li class="leaf"><a href="http://wiki.uic.edu/ACCC/PbContacts/WebHome" title="Phonebook Contacts Wiki">Phonebook Contacts Wiki</a></li>
-<li class="leaf"><a href="http://wiki.uic.edu/ACCC/REACH/WebHome" title="REACH Wiki">REACH Wiki</a></li>
-<li class="last leaf"><a href="https://helpdesk.uic.edu" title="">RT Helpdesk</a></li>
-</ul>  </div>
-</div>
-<div id="block-menu-menu-website" class="block block-menu">
-
-    <h2>Website</h2>
-  
-  <div class="content">
-    <ul class="menu clearfix"><li class="first leaf"><a href="/contact/webmaster" title="">Contact the webmaster</a></li>
-<li class="last leaf"><a href="/sitemap" title="">Site map</a></li>
-</ul>  </div>
-</div>
-<div id="block-shib-auth-login-box" class="block block-shib-auth">
-
-    
-  <div class="content">
-    <div id="shib_login_url">
-  <a href="https://accc.uic.edu/Shibboleth.sso/Login?target=https%3A%2F%2Faccc.uic.edu%2F%3Fq%3Dshib_login%2Fnode%2F11">Log in</a>
-</div>
-  </div>
-</div>
-  </div>
-      </div> <!-- /#footer-columns -->
-    
-          <div id="footer" class="clearfix">
-          <div class="region region-footer">
-    <div id="block-block-3" class="block block-block">
-
-    
-  <div class="content">
-    <p><a href="http://www.uic.edu"><img alt="University of Illinois at Chicago" src="/sites/all/themes/acccbartik/images/uic-stacked-logo-180.png" style="float:left; height:136px; margin-right:1em; width:180px" /></a> © Copyright 2018 The Board of Trustees of the University of Illinois | <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a></p>
-  </div>
-</div>
-  </div>
-      </div> <!-- /#footer -->
-    
-  </div></div> <!-- /.section, /#footer-wrapper -->
-
-</div></div> <!-- /#page, /#page-wrapper -->
-  </body>
-</html>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

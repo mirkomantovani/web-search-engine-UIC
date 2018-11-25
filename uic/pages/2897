@@ -1,953 +1,357 @@
-<!DOCTYPE html lang="en" xml:lang="en" >
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-	<title>Forms | Office of the Vice Chancellor for Research</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="http://research.uic.edu/sites/all/themes/ovcr/images/favicon.ico" />
-	<link type="text/css" rel="stylesheet" href="http://research.uic.edu/sites/default/files/css/css_rEI_5cK_B9hB4So2yZUtr5weuEV3heuAllCDE6XsIkI.css" media="all" />
-<link type="text/css" rel="stylesheet" href="http://research.uic.edu/sites/default/files/css/css_-oPSuSJHNauALts1y3_N3QxwfWHc3U1jhfUJR06X8-Y.css" media="all" />
-<link type="text/css" rel="stylesheet" href="http://research.uic.edu/sites/default/files/css/css_XnAJD_USY6wx56jcUY1OaDDRXjbIe_qrbCCdfC9jW7E.css" media="all" />
-<link type="text/css" rel="stylesheet" href="http://research.uic.edu/sites/default/files/css/css_j4U0y7z1IeNwAgYKS7OUsS-fyvQvYVeQf123WkDc0fE.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="http://research.uic.edu/sites/default/files/css/css_Qz1aLFKF5Zy_Lbsa_4eVKnRn2b9zNU93RIUCRAreeAw.css" media="print" />
-	<script type="text/javascript" src="http://research.uic.edu/sites/default/files/js/js_v7z_ueNi9EIrZXPI8So7AkuzyXuKekr2jbdDptsM5Oc.js"></script>
-<script type="text/javascript" src="http://research.uic.edu/sites/default/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js"></script>
-<script type="text/javascript" src="http://research.uic.edu/sites/default/files/js/js_oBkXShuRqinry1KL5wJV6vinmQJUdZaoCOq3sGUQEak.js"></script>
-<script type="text/javascript" src="https://cdn.cookielaw.org/consent/f5cc0259-ebf9-460e-b628-c1d661e5d3b6.js"></script>
-<script type="text/javascript" src="http://research.uic.edu/sites/default/files/js/js_UFJoHMkAjD_34guVTqDwkL0nI1xiGCOAG4laRHEF8DU.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - WebTopicEditTemplate</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/WebTopicEditTemplate?_T=2018-11-25" type="application/x-wiki" title="edit WebTopicEditTemplate" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/WebTopicEditTemplate"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+@import url('/pub/Main/WebPreferences/mainweb.css');
+@import url('/pub/TWiki/WebPreferences/hideattachments.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
 <script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ovcr","theme_token":"7dXE00Z46K47BvhknYs5_Gmde5IyCoiAuPx1CfT21os","js":{"0":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/lightbox2\/js\/lightbox.js":1,"sites\/all\/modules\/contrib\/captcha\/captcha.js":1,"misc\/textarea.js":1,"https:\/\/cdn.cookielaw.org\/consent\/f5cc0259-ebf9-460e-b628-c1d661e5d3b6.js":1,"sites\/all\/themes\/ovcr\/js\/ovcr.js":1,"sites\/all\/themes\/ovcr\/js\/html5shiv.js":1,"sites\/all\/themes\/ovcr\/js\/jquery.hoverIntent.min.js":1,"sites\/all\/themes\/ovcr\/js\/jquery.icheck.min.js":1,"sites\/all\/themes\/ovcr\/js\/lightbox.min.js":1,"sites\/all\/themes\/ovcr\/js\/responsive-carousel.min.js":1,"sites\/all\/themes\/ovcr\/js\/responsive-carousel.keybd.js":1,"sites\/all\/themes\/ovcr\/js\/responsive-carousel.touch.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/lightbox2\/css\/lightbox_alt.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/shib_auth\/shib_auth.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/twocol\/twocol.css":1,"public:\/\/honeypot\/honeypot.css":1,"public:\/\/Content\/additional_comments.css":1,"sites\/all\/modules\/contrib\/contact_form_blocks\/contact_form_blocks.css":1,"sites\/all\/themes\/ovcr\/system.css":1,"sites\/all\/themes\/ovcr\/system.menus.css":1,"sites\/all\/themes\/ovcr\/system.theme.css":1,"sites\/all\/themes\/ovcr\/field_collection.theme.css":1,"sites\/all\/themes\/ovcr\/css\/default.scss":1,"sites\/all\/themes\/ovcr\/css\/responsive-carousel.css":1,"sites\/all\/themes\/ovcr\/css\/responsive-carousel.fade.css":1,"sites\/all\/themes\/ovcr\/css\/responsive-carousel.slide.css":1,"sites\/all\/themes\/ovcr\/css\/print.scss":1}},"lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)public:\/","default_image":"\/sites\/all\/modules\/contrib\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":0,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":1,"disable_resize":0,"disable_zoom":1,"force_show_nav":0,"show_caption":0,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\/kbd\u003E\u003C\/a\u003E to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":0,"slideshow_automatic_exit":0,"show_play_pause":1,"pause_on_next_click":0,"pause_on_previous_click":0,"loop_slides":0,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0,"useragent":"Python-urllib\/3.6"},"urlIsAjaxTrusted":{"\/post-award\/forms":true}});
-//--><!]]>
-</script>
 
-	<!--[if IE 8]>
-  	<link rel="stylesheet" type="text/css" href="/sites/all/themes/ovcr/css/ie8.css">
-  <![endif]-->
-</head>
-<body class="html not-front not-logged-in page-node page-node- page-node-7210 node-type-page one-sidebar sidebar-first">
-    <div class="header">
-  
-  <div class="eyebrow">
-    <button id="eyebrow-nav-header"><img src="/sites/all/themes/ovcr/images/tools-icon.png" data-close-path="/sites/all/themes/ovcr/images/menu-close-icon.png" class="menu-icon" alt="Tools" />Tools</button>
-    
-    <div>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-    
-<section class="block block-menu">
-  
-          <header>
-      <div>
-        <h1>Eyebrow Menu</h1>
-      </div>
-    </header>
-      
-  <div class="content">
-    <div>
-      <ul class="menu"><li class="first leaf"><a href="/forms" title="">Forms &amp; Contracts</a></li>
-<li class="leaf"><a href="/policies" title="">Policies</a></li>
-<li class="leaf"><a href="/education-training" title="">Education &amp; Training</a></li>
-<li class="leaf"><a href="/calendar/events" title="">Calendar</a></li>
-<li class="leaf"><a href="/im-looking" title="">I&#039;m looking for...</a></li>
-<li class="leaf"><a href="/directory" title="">Staff Directory</a></li>
-<li class="last leaf"><a href="/contact" title="">Contact Us</a></li>
-</ul>    </div>
-  </div>
-  
-</section>
-			
-          <div class="search block">
-        <script>
   (function() {
-    var cx = '003061607288591330416:k08oiictot4';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-  jQuery(function($){
-
-    $(window).load(function(){
-      // Google CSE
-      //alert($('.eyebrow .gsc-control-searchbox-only .gsc-input input[type=text]').val());
-      $('.eyebrow .gsc-control-searchbox-only .gsc-input input[type=text]').val("Search OVCR");
-      $('.eyebrow .gsc-control-searchbox-only .gsc-input input[type=text]').focusin(function() {
-        if($(this).val() == "Search OVCR") { // don't overwrite their query
-          $(this).val("");
-        }
-      });
-      $('.eyebrow .gsc-control-searchbox-only .gsc-input input[type=text]').blur(function() {
-        if($(this).val() == "") { // don't overwrite their query
-          $(this).val("Search OVCR");
-        }
-      });
-    });
-  });
-</script>
-<gcse:searchbox-only></gcse:searchbox-only>
-<style type='text/css'>
-  div.search.block {
-    width: 184px;
-  }
-  
-  @media screen and (max-width: 1191px) and (min-width: 785px) {
-    div.search.block {
-      width: 80px;
-    }
-
-    div.gsc-control-searchbox-only {
-        float: right;
-        width: 126px;
-    }
-  }
-
-  form.gsc-search-box {
-    padding: 0;
-  }
-
-  table.gsc-search-box td {
-    padding: 0 0.15em;
-  }
-
-  td.gsc-input {
-    background-color: #547ea4;
-  }
-
-  input.gsc-input {
-    background: none !important;
-    background-color: #547ea4 !important;
-    font-family: "Arial", helvetica, arial;
-    font-size: 0.9em;
-    font-style: italic;
-    color: white;
-    padding: 0.2em 0.3em;
-    margin-left: 0.5em;
-    border: none;
-  }
-
-  input.gsc-input:focus {
-      outline: -webkit-focus-ring-color auto 5px !important;
-  }
-
-  .gsc-input-box, .gsc-input-box:hover, .gsc-input-box:focus {
-    background-color: transparent;
-    border: none;
-  }
-
-  .gsc-input-box:hover, .gsc-input-box:focus {
-    border: 1px solid #fff;
-  }
-
-  .gsc-input-box tbody tr {
-    background-color: transparent;
-  }
-
-  td.gsc-search-button {
-    background-color: #547ea4;
-  }
-
-  input.gsc-search-button {
-    background: url("/sites/all/themes/ovcr/images/icon-search.png") no-repeat scroll 5px 0px #547ea4;
-    border-radius: 0;
-    min-width: 25px !important;
-    height: 20px;
-    position: relative;
-    padding: 0;
-    margin: 7px;
-    border: none;
-    color: transparent;
-    cursor: pointer;
-    text-indent: -9000px;
-    text-transform: capitalize;
-  }
-
-  input.gsc-search-button:hover, input.gsc-search-button:focus {
-    background: url("/sites/all/themes/ovcr/images/icon-search.png") no-repeat scroll 5px -20px #547ea4;
-  }
-
-  td.gsc-clear-button {
-      display: none;
-  }
-
-  .gsib_b {
-    display: none;
-  }
-</style>
-      </div>
-    
-    </div>
-  </div>
-  
-  <div class="identity">
-  
-    <p class="site-title">
-      <a class="uic" href="http://www.uic.edu/"><span>UIC</span></a>    
-      <a class="ovcr" href="/"><span>Office of the Vice Chancellor for Research</span></a>
-    </p>
-    
-  </div>
-  
-  <div class="navigation">
-  
-    
-<section class="block block-ovcr-navigation">
-  
-  
-  <div class="content">
-    <div>
-      
-<div class="main-menu">
-  <h2>Menu</h2>
-  <button id="main-menu-header"><img src="/sites/all/themes/ovcr/images/menu-icon.png" data-close-path="/sites/all/themes/ovcr/images/menu-close-icon.png" class="menu-icon" alt="Menu" />Menu</button>
-  <ul class="links">
-        <li class="">
-      <a href="/">Home</a>
-      <div class="no-panel">
-        
-                
-                
-      </div>
-    </li>
-        <li class="">
-      <a href="/funding">Funding Opportunities</a>
-      <div class="has-panel">
-        
-                <div class="submenu">
-        
-          <h2>Funding Opportunities</h2>
-
-          <ul>
-                        <li><a href="/funding/limited-submissions">Limited Submissions</a>
-</li>
-                        <li><a href="/funding/internal-seed-funding">Internal Funding</a>
-</li>
-                        <li><a href="/funding/external-funding">External Funding</a>
-</li>
-                        <li><a href="/funding/faculty-awards">Faculty Awards</a>
-</li>
-                        <li><a href="/funding/education-training">Education & Training</a>
-</li>
-                        <li><a href="/funding-opportunities/forms">Forms</a>
-</li>
-                        <li><a href="/funding/looking">I’m Looking for...</a>
-</li>
-                      </ul>
-          
-        </div>
-                
-                <div class="panel">
-        
-          
-<section class="block block-panels-mini">
-  
-  
-  <div class="content">
-    <div>
-      <div class="panel-display panel-2col clearfix" id="mini-panel-menu_412-2">
-  <div class="panel-panel panel-col-first">
-    <div class="inside">
-<section class="panel-pane pane-menu-tree pane-menu-funding-quick-links">
-  
-    <header>
-    <h1>Quick Links</h1>
-  </header>
-  
-  <div class="menu-block-wrapper menu-block-ctools-menu-funding-quick-links-3 menu-name-menu-funding-quick-links parent-mlid-menu-funding-quick-links-0 menu-level-1">
-  <ul class="menu"><li class="first leaf menu-mlid-2114"><a href="http://research.uic.edu/funding-opportunities/faculty-awards/researcher-year-awards" title="">Researcher and Scholar of the Year Awards</a></li>
-<li class="leaf menu-mlid-1130"><a href="/funding/limited-submissions" title="">Limited Submissions</a></li>
-<li class="leaf menu-mlid-1195"><a href="/funding-opportunities/forms" title="">Letter of Intent </a></li>
-<li class="leaf menu-mlid-4418"><a href="http://research.uic.edu/funding/external-funding" title="Identify and connect with funding opportunities and with other researchers — locally and globally.">Pivot-COS</a></li>
-<li class="last leaf menu-mlid-4401"><a href="http://research.uic.edu/lewis-burke-funding-announcements" title="">Lewis-Burke Updates (log in required)</a></li>
-</ul></div>
-
-  
-    
-</section>
-</div>
-  </div>
-
-  <div class="panel-panel panel-col-last">
-    <div class="inside">
-<section class="panel-pane pane-custom pane-5">
-  
-  
-  <p><strong>RESEARCH DEVELOPMENT SERVICES (RDS)</strong><br />
-312.996.4995</p>
-<p>310 Administrative Office Building - M/C 672<br />
-1737 West Polk Street<br />
-Chicago, Illinois 60612</p>
-<p><a href="/directory?display=unit&amp;unit=37&amp;first=&amp;last=&amp;search=1">Staff directory</a></p>
-
-  
-    
-</section>
-</div>
-  </div>
-</div>
-    </div>
-  </div>
-  
-</section>
-        
-        </div>
-                
-      </div>
-    </li>
-        <li class="">
-      <a href="/sponsored_programs">Sponsored Programs</a>
-      <div class="has-panel">
-        
-                <div class="submenu">
-        
-          <h2>Sponsored Programs</h2>
-
-          <ul>
-                        <li><a href="/sponsored_programs/preparing-proposal">Preparing a Proposal</a>
-</li>
-                        <li><a href="/sponsored_programs/award_contract">Award/Contract Processing & Acceptance</a>
-</li>
-                        <li><a href="/sponsored_programs/award-administration">Award Administration</a>
-</li>
-                        <li><a href="/sponsored_programs/award-closeout">Award Closeout</a>
-</li>
-                        <li><a href="/sponsored_programs/myresearchportal">myResearch Portal</a>
-</li>
-                        <li><a href="/sponsored-programs/forms-contract-templates/orsweb">ORSWeb</a>
-</li>
-                        <li><a href="/sponsored-programs/forms-contract-templates">Forms & Contract Templates</a>
-</li>
-                        <li><a href="/sponsored_programs/policies">Policies</a>
-</li>
-                        <li><a href="/sponsored_programs/education">Education & Training</a>
-</li>
-                        <li><a href="/sponsored-programs/omb-uniform-guidance">OMB Uniform Guidance</a>
-</li>
-                        <li><a href="/sponsored_programs/lookingfor">I'm Looking for...</a>
-</li>
-                        <li><a href="/sponsored-programs/find-contacts">Find Contacts</a>
-</li>
-                      </ul>
-          
-        </div>
-                
-                <div class="panel">
-        
-          
-<section class="block block-panels-mini">
-  
-  
-  <div class="content">
-    <div>
-      <div class="panel-display panel-2col clearfix" id="mini-panel-menu_413-2">
-  <div class="panel-panel panel-col-first">
-    <div class="inside">
-<section class="panel-pane pane-menu-tree pane-menu-sponsored-quick-links">
-  
-    <header>
-    <h1>Quick Links</h1>
-  </header>
-  
-  <div class="menu-block-wrapper menu-block-ctools-menu-sponsored-quick-links-3 menu-name-menu-sponsored-quick-links parent-mlid-menu-sponsored-quick-links-0 menu-level-1">
-  <ul class="menu"><li class="first leaf menu-mlid-3644"><a href="https://orsweb.ovcr.uic.edu" title="">ORSWeb</a></li>
-<li class="leaf menu-mlid-3633"><a href="https://myresearch.uillinois.edu/piPortal/" title=""> myResearch Portal version 2.0</a></li>
-<li class="leaf menu-mlid-1196"><a href="/sponsored-programs/forms-contract-templates" title="">Proposal Request Form (PAF)</a></li>
-<li class="leaf menu-mlid-1686"><a href="/sponsored_programs/preparing-proposal/developing-proposal/standard-institutional-information" title="">Standard Institutional Information </a></li>
-<li class="leaf menu-mlid-1684"><a href="/sponsored_programs/nih_commons_account_request" title="">NIH Commons Account Request Form</a></li>
-<li class="leaf menu-mlid-1685"><a href="/sponsored_programs/nsf_account_request" title="">NSF Account Request Form</a></li>
-<li class="leaf menu-mlid-1687"><a href="/sponsored-programs/award-administration/prior-approval-guidance/nih-prior-approval-request" title="">NIH Prior Approval Request</a></li>
-<li class="leaf menu-mlid-1151"><a href="/sponsored_programs/award/contract-processing-and-acceptance/negotiating-award/contract" title="">Negotiate the Award/Contract</a></li>
-<li class="leaf menu-mlid-2235"><a href="https://www.obfs.uillinois.edu/omb-uniform-guidance" title="">OMB Uniform Guidance</a></li>
-<li class="last leaf menu-mlid-2315"><a href="http://research.uic.edu/node/2920" title="">Individual Development Plans Policy</a></li>
-</ul></div>
-
-  
-    
-</section>
-</div>
-  </div>
-
-  <div class="panel-panel panel-col-last">
-    <div class="inside">
-<section class="panel-pane pane-custom pane-7">
-  
-  
-  <p><strong>OFFICE OF RESEARCH SERVICES (ORS)</strong><br />
-312.996.2862</p>
-<p>310 Administrative Office Building - M/C 672<br />
-1737 West Polk Street<br />
-Chicago, Illinois 60612</p>
-<p><a href="/directory?display=unit&amp;unit=33&amp;first=&amp;last=&amp;search=1">Staff directory</a></p>
-
-  
-    
-</section>
-</div>
-  </div>
-</div>
-    </div>
-  </div>
-  
-</section>
-        
-        </div>
-                
-      </div>
-    </li>
-        <li class="">
-      <a href="/gco" class="active">Post Award</a>
-      <div class="has-panel">
-        
-                <div class="submenu">
-        
-          <h2>Post Award</h2>
-
-          <ul>
-                        <li><a href="/post-award/federal-133-audit-reports">Federal A-133 Audit Reports</a>
-</li>
-                        <li><a href="/post-award/effort-reporting">Effort Reporting</a>
-</li>
-                        <li><a href="/post-award/essentials-post-award-administration">Essentials of Post-Award Administration</a>
-</li>
-                        <li><a href="/post-award/indirect-cost-rates-fa-fringe-benefits-tuition">Indirect Cost Rates (F&A)</a>
-</li>
-                        <li><a href="/post-award/monitoring-expenditures">Monitoring Expenditures</a>
-</li>
-                        <li><a href="/post-award/omb-uniform-guidance">OMB Uniform Guidance</a>
-</li>
-                        <li><a href="/post-award/sponsored-project-expenditures">Sponsored Project Expenditures</a>
-</li>
-                        <li><a href="/post-award/links-resources">Links & Resources</a>
-</li>
-                        <li><a href="/post-award/forms" class="active">Forms</a>
-</li>
-                        <li><a href="https://www.obfs.uillinois.edu/bfpp/section-16-grants-research-contracts/">Policies and Procedures</a>
-</li>
-                        <li><a href="/post-award/glossary">Glossary</a>
-</li>
-                        <li><a href="/post-award/job-aids-and-training-materials">Job Aids and Training Materials</a>
-</li>
-                        <li><a href="/post-award/uic-frequently-asked-questions">UIC Frequently Asked Questions</a>
-</li>
-                        <li><a href="/post-award/who-ask">Who To Ask</a>
-</li>
-                      </ul>
-          
-        </div>
-                
-                <div class="panel">
-        
-          
-<section class="block block-panels-mini">
-  
-  
-  <div class="content">
-    <div>
-      <div class="panel-display panel-2col clearfix" id="mini-panel-grants_and_contracts-1">
-  <div class="panel-panel panel-col-first">
-    <div class="inside">
-<section class="panel-pane pane-menu-tree pane-menu-quick-links-clinical-trials">
-  
-    <header>
-    <h1>Quick Links: GCO</h1>
-  </header>
-  
-  <div class="menu-block-wrapper menu-block-ctools-menu-quick-links-clinical-trials-2 menu-name-menu-quick-links-clinical-trials parent-mlid-0 menu-level-1">
-  <ul class="menu"><li class="first leaf menu-mlid-4517"><a href="http://research.uic.edu/post-award/indirect-cost-rates-fa-fringe-benefits-tuition" title="">Indirect Cost Rates</a></li>
-<li class="leaf menu-mlid-4524"><a href="http://research.uic.edu/post-award/uic-frequently-asked-questions" title="">FAQ</a></li>
-<li class="last leaf menu-mlid-4525"><a href="http://research.uic.edu/post-award/forms" title="">Forms</a></li>
-</ul></div>
-
-  
-    
-</section>
-</div>
-  </div>
-
-  <div class="panel-panel panel-col-last">
-    <div class="inside">
-<section class="panel-pane pane-custom pane-9">
-  
-  
-  <p><strong>GRANTS AND CONTRACTS OFFICE (GCO)</strong><br />
-312.996.3373</p>
-<p>809 South Marshfield Avenue<br />
-Marshfield Building, 5th Floor - MC-551<br />
-Chicago, IL 60612</p>
-<p><a href="http://research.uic.edu/directory?display=unit&amp;unit=68&amp;first=&amp;last=&amp;search=1">Staff directory</a></p>
-
-  
-    
-</section>
-</div>
-  </div>
-</div>
-    </div>
-  </div>
-  
-</section>
-        
-        </div>
-                
-      </div>
-    </li>
-        <li class="">
-      <a href="/compliance">Compliance</a>
-      <div class="has-panel">
-        
-                <div class="submenu">
-        
-          <h2>Compliance</h2>
-
-          <ul>
-                        <li><a href="/compliance/irb">Human Subjects & IRB</a>
-</li>
-                        <li><a href="/compliance/escro">ESCRO</a>
-</li>
-                        <li><a href="/compliance/acc">Animal Care & Use (ACC)</a>
-</li>
-                        <li><a href="/compliance/ibc">rDNA & Infectious Agents (IBC)</a>
-</li>
-                        <li><a href="/compliance/cs">Controlled Substances (CS)</a>
-</li>
-                        <li><a href="/compliance/research-integrity">Research Integrity</a>
-</li>
-                        <li><a href="/compliance/coi">Conflict of Commitment & Interest (COI)</a>
-</li>
-                        <li><a href="/compliance/export-controls">Export Controls</a>
-</li>
-                      </ul>
-          
-        </div>
-                
-                <div class="panel">
-        
-          
-<section class="block block-panels-mini">
-  
-  
-  <div class="content">
-    <div>
-      <div class="panel-display panel-2col clearfix" id="mini-panel-menu_449-2">
-  <div class="panel-panel panel-col-first">
-    <div class="inside">
-<section class="panel-pane pane-menu-tree pane-menu-compliance-quick-links">
-  
-    <header>
-    <h1>Quick Links</h1>
-  </header>
-  
-  <div class="menu-block-wrapper menu-block-ctools-menu-compliance-quick-links-3 menu-name-menu-compliance-quick-links parent-mlid-menu-compliance-quick-links-0 menu-level-1">
-  <ul class="menu"><li class="first leaf menu-mlid-486"><a href="/coi/report-non-university-activities-rnua" title="">Annual Report of Non-University Activities (RNUA)</a></li>
-<li class="leaf menu-mlid-3632"><a href="https://myresearch.uillinois.edu/myDisclosures/" title="">START myDisclosures</a></li>
-<li class="leaf menu-mlid-3622"><a href="http://research.uic.edu/compliance/human-subjects-irb/investigators-research-staff/submission/oprslive-beta" title="">OPRS Live (beta)</a></li>
-<li class="leaf menu-mlid-488"><a href="/compliance/human-subjects-irb/investigators-research-staff/submission/irb-submission-deadlines" title="">IRB Submission Deadlines &amp; Meeting Dates</a></li>
-<li class="leaf menu-mlid-491"><a href="/research-directory" title="">IRB Research Directory</a></li>
-<li class="leaf menu-mlid-1524"><a href="/compliance/animal-care-use-acc/meeting-deadlines" title="">ACC Meeting and Deadlings </a></li>
-<li class="leaf menu-mlid-1525"><a href="/node/924/institutional-biosafety-committee-ibc/meeting-deadlines" title="">IBC Meetings and Deadlines</a></li>
-<li class="last leaf menu-mlid-487"><a href="/coi/conflict-commitment-and-interest/public-health-services-phs-disclosure-training" title="">Significant Financial Interest-Disclosure &amp; Management Plan (SFI-DMP)</a></li>
-</ul></div>
-
-  
-    
-</section>
-</div>
-  </div>
-
-  <div class="panel-panel panel-col-last">
-    <div class="inside">
-<section class="panel-pane pane-custom pane-11">
-  
-  
-  <p><strong>OFFICE FOR THE PROTECTION OF RESEARCH SUBJECTS (OPRS)</strong><br />
-312.996.1711<br /><a href="/directory?display=unit&amp;unit=34&amp;first=&amp;last=&amp;search=1">Staff directory</a></p>
-<p><strong>OFFICE OF ANIMAL CARE &amp; INSTITUTIONAL BIOSAFETY (OACIB)</strong><br />
-312.996.1972</p>
-<p><strong>CONFLICT OF INTEREST (COI)</strong><br />
-312.996.4995<br /><a href="/directory?display=unit&amp;unit=36&amp;first=&amp;last=&amp;search=1">Staff directory</a></p>
-
-  
-    
-</section>
-</div>
-  </div>
-</div>
-    </div>
-  </div>
-  
-</section>
-        
-        </div>
-                
-      </div>
-    </li>
-        <li class="">
-      <a href="/resources">Resources</a>
-      <div class="no-panel">
-        
-                <div class="submenu">
-        
-          <h2>Resources</h2>
-
-          <ul>
-                        <li><a href="http://www.brl.uic.edu/">Biologic Resources Laboratory (BRL)</a>
-</li>
-                        <li><a href="http://www.rrc.uic.edu/">Research Resources Center (RRC)</a>
-</li>
-                        <li><a href="http://www.uic.edu/depts/envh/">Environmental Health and Safety Office (EHSO)</a>
-</li>
-                        <li><a href="http://otm.uic.edu/">Office of Technology Management (OTM)</a>
-</li>
-                        <li><a href="/ct">Clinical Trials</a>
-</li>
-                        <li><a href="http://www.uic.edu/depts/oaa/faculty/">Office of the Vice Provost for Faculty Affairs</a>
-</li>
-                        <li><a href="/about/centers-and-institutes/centers-and-institutes">Centers & Institutes</a>
-</li>
-                        <li><a href="https://uic.pure.elsevier.com/">UICollaboratory Research Profiles</a>
-</li>
-                        <li><a href="/resources/uic-postdoc-association/home">UIC Postdoc Association</a>
-</li>
-                      </ul>
-          
-        </div>
-                
-                
-      </div>
-    </li>
-        <li class="">
-      <a href="/about">About OVCR</a>
-      <div class="no-panel">
-        
-                <div class="submenu">
-        
-          <h2>About OVCR</h2>
-
-          <ul>
-                        <li><a href="/about/staff">Staff Profiles</a>
-</li>
-                        <li><a href="/news">News</a>
-</li>
-                        <li><a href="/about/ovcr-facts-figures">OVCR Facts & Figures</a>
-</li>
-                        <li><a href="/ird">Impact and Research Day</a>
-</li>
-                        <li><a href="/research-highlights">Research Highlights</a>
-</li>
-                        <li><a href="/about/featured-faculty">Featured Faculty</a>
-</li>
-                        <li><a href="/about-ovcr/ovcr-centers-and-institutes">OVCR Centers and Institutes</a>
-</li>
-                        <li><a href="http://dscc.uic.edu">Division of Specialized Care for Children </a>
-</li>
-                        <li><a href="/about-ovcr/ovcr-vision">OVCR Vision</a>
-</li>
-                      </ul>
-          
-        </div>
-                
-                
-      </div>
-    </li>
-      </ul>
-</div>
-
-    </div>
-  </div>
-  
-</section>
-  
-  </div>
-  
-</div>
-
-<div class="layout-outer content">
-  <div class="layout-inner">
-
-    <div class="layout-main main">
-      <div class="layout-header main-header">
-        
-        <button class="section-button">In this section</button>
-        
-                  
-            
-            <h1>
-                                Forms            </h1>
-          
-          
-                <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a> <span class="separator">></span> <a href="/gco" title="">Post Award</a> <span class="separator">></span> <a href="/post-award/forms" class="active">Forms</a></div>          
-        
-        
-        
-            
-      </div>
-
-      <div class="layout-content main-content">
-      
-<section class="block block-system">
-  
-  
-  <div class="content">
-    <div>
-      <article class="page node full">
-
-  
-  
-  <div class="content">
-    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Forms Related to Pre-award Sponsored Projects and Activities <a class="newWindow" href="http://research.uic.edu/sponsored_programs/preparing-proposal" target="_blank" title="Opens new window">(Office of Research Services)</a></p>
-<p><a class="MSWord" href="http://research.uic.edu/sites/default/files/form/gco/forms/Institutional-Organizational-Prior-Approval-Fo.doc" target="_blank" title="MS Word file, opens new window">Institutional / Organizational Prior Approval Form [IPAS /OPAS]</a> [updated: 4/8/05]</p>
-<p><a class="PDF" href="http://research.uic.edu/sites/default/files/form/gco/forms/Institutional-Organizational-Prior-Approval-Fo.pdf" target="_blank" title="PDF file, opens new window">Institutional / Organizational Prior Approval Form [IPAS /OPAS]</a> [updated: 4/8/05]</p>
-<h2>Forms Related to Sponsored Projects and Activities</h2>
-<p><a name="anticipation" id="anticipation"></a></p>
-<p><strong>All Campuses</strong></p>
-<ul><li>
-<p><a class="PDF js-simple-tooltip" href="https://obfs.uillinois.edu/common/pages/DisplayFile.aspx?itemId=94607" target="_blank" title="PDF file, opens new window">Form GC81: Cost Transfer Justification For Sponsored Projects</a> [updated: 2/2/15]</p>
-</li>
-<li>
-<p><a class="secureNewWindow" href="https://apps.obfs.uillinois.edu/GC70/index.cfm" target="_blank" title="Logon required, opens new window">GC70:Request to Establish an Anticipation Grant/Fund-Request to Use Expired or Overdrafted Grant/Fund</a></p>
-<p>First time users: The first time you attempt to log into the system for the online form, you will be prompted to fill out a request for access. Once this request has been approved and processed, you will be able to use the same link to log in and begin work.</p>
-<p>Additional information about the online system is available in the <a href="https://www.obfs.uillinois.edu/training/materials/grants/" target="_blank">Grants and Sponsored Training Materials</a> area.</p>
-</li>
-<li>
-<p><a href="http://www.obfs.uillinois.edu/training/materials/grants#gc70">GC70 Training Materials</a></p>
-</li>
-</ul></div></div></div>  </div>
-
-  
-</article>
-    </div>
-  </div>
-  
-</section>
-      </div>
-  
-      
-    </div>
-
-        <div class="layout-sidebar layout-sidebar-section sidebar section-sidebar">
-  
-      
-<section class="block block-ovcr-navigation">
-  
-          <a href="/gco">
-      <header>
-        <div>
-                    <h1>Post Award</h1>
-                  </div>
-      </header>
-    </a>
-      
-  <div class="content">
-    <div>
-      <ul class="menu"><li class="first leaf"><a href="/post-award/federal-133-audit-reports">Federal A-133 Audit Reports</a>
-</li><li class="leaf"><a href="/post-award/effort-reporting">Effort Reporting</a>
-</li><li class="expanded"><a href="/post-award/essentials-post-award-administration">Essentials of Post-Award Administration</a>
-<ul class="menu"><li class="first leaf"><a href="/post-award/essentials-post-award-administration/which-office-contact-ors-or-gco">Contact ORS or GCO?</a>
-</li><li class="leaf"><a href="/post-award/essentials-post-award-administration/contact-gco-staff">Contact GCO Staff</a>
-</li><li class="leaf"><a href="/post-award/essentials-post-award-administration/award-life-cycle">The Award Life Cycle</a>
-</li><li class="leaf"><a href="/post-award/essentials-post-award-administration/roles-responsibilities">Roles & Responsibilities</a>
-</li><li class="leaf"><a href="/post-award/essentials-post-award-administration/preparing-receive-award">Preparing to Receive an Award</a>
-</li><li class="leaf"><a href="/post-award/essentials-post-award-administration/receiving-award">Receiving an Award</a>
-</li><li class="leaf"><a href="/post-award/essentials-post-award-administration/managing-award">Managing an Award</a>
-</li><li class="leaf"><a href="/post-award/essentials-post-award-administration/closing-out-award">Closing Out an Award</a>
-</li><li class="last leaf"><a href="/post-award/essentials-post-award-administration/training-resources">Training Resources</a>
-</li></ul></li><li class="leaf"><a href="/post-award/indirect-cost-rates-fa-fringe-benefits-tuition">Indirect Cost Rates (F&A)</a>
-</li><li class="leaf"><a href="/post-award/monitoring-expenditures">Monitoring Expenditures</a>
-</li><li class="leaf"><a href="/post-award/omb-uniform-guidance">OMB Uniform Guidance</a>
-</li><li class="leaf"><a href="/post-award/sponsored-project-expenditures">Sponsored Project Expenditures</a>
-</li><li class="leaf"><a href="/post-award/links-resources">Links & Resources</a>
-</li><li class="leaf active-trail"><a href="/post-award/forms" class="active">Forms</a>
-</li><li class="leaf"><a href="https://www.obfs.uillinois.edu/bfpp/section-16-grants-research-contracts/">Policies and Procedures</a>
-</li><li class="leaf"><a href="/post-award/glossary">Glossary</a>
-</li><li class="leaf"><a href="/post-award/job-aids-and-training-materials">Job Aids and Training Materials</a>
-</li><li class="leaf"><a href="/post-award/uic-frequently-asked-questions">UIC Frequently Asked Questions</a>
-</li><li class="last expanded"><a href="/post-award/who-ask">Who To Ask</a>
-<ul class="menu"><li class="first last leaf"><a href="/post-award/who-ask/who-ask-types-questions">Who To Ask: Types of Questions</a>
-</li></ul></li></ul>    </div>
-  </div>
-  
-</section>
-      
-      
-      <div class="back-to-top-container clearfix"><button class="back-to-top">Back to top</button></div>
-
-    </div>
-      
-  </div>
-</div>
-
-
-
-
-<div class="footer">
-  
-  <div class="identity">
-  
-    <p class="site-title"><span>UIC Office of the Vice Chancellor for Research</span></p>
-    
-  </div>
-
-  <div class="content">
-    <div>
-
-    
-<section class="block block-block">
-  
-          <header>
-      <div>
-        <h1>OVCR Main Office</h1>
-      </div>
-    </header>
-      
-  <div class="content">
-    <div>
-      <p>310 Administrative Office Building (AOB)<br />
-MC 672<br />
-1737 West Polk Street<br />
-Chicago, IL 60612</p>
-<p><em>T</em> (312) 996-4995<br /><em>F</em> (312) 996-9598<br />
-ovcrweb@uic.edu</p>
-<p><em>Hours</em> M–F, 8:30am–5:00pm</p>
-<p><a href="/contact">Get Directions »</a><br /><a href="/directory">Staff Directory »</a></p>
-<p><img alt="" src="http://research.uic.edu/sites/all/themes/ovcr/images/ovcrlogored.png" style="float:left; height:124px; width:100px" /></p>
-    </div>
-  </div>
-  
-</section>
-
-<section class="block block-contact-form-blocks">
-  
-          <header>
-      <div>
-        <h1>Send Us a Message</h1>
-      </div>
-    </header>
-      
-  <div class="content">
-    <div>
-      <form class="user-info-from-cookie contact-form" action="/post-award/forms" method="post" id="contact-site-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
-  <label for="edit-name">Your name </label>
- <input type="text" id="edit-name" name="name" value="" size="60" maxlength="255" class="form-text" />
-</div>
-<div class="form-item form-type-textfield form-item-mail">
-  <label for="edit-mail">Your e-mail address </label>
- <input type="text" id="edit-mail" name="mail" value="" size="60" maxlength="255" class="form-text" />
-</div>
-<div class="form-item form-type-select form-item-cid">
-  <label for="edit-cid">Category <span class="form-required" title="This field is required.">*</span></label>
- <select id="edit-cid" name="cid" class="form-select required"><option value="3" selected="selected">OVCR/General</option><option value="5">COI</option><option value="7">CT</option><option value="6">OACIB</option><option value="2">OPRS</option><option value="1">ORS</option><option value="4">RDS</option><option value="8">RI</option></select>
-</div>
-<div class="form-item form-type-textarea form-item-message">
-  <label for="edit-message">Message <span class="form-required" title="This field is required.">*</span></label>
- <div class="form-textarea-wrapper resizable"><textarea id="edit-message" name="message" cols="60" rows="4" class="form-textarea required"></textarea></div>
-</div>
-<input type="hidden" name="form_build_id" value="form-u_ZKLtd5biHGmW4M3fzkKrI7p5CdexIZX8qaJDdqQY0" />
-<input type="hidden" name="form_id" value="contact_site_form" />
-<input type="hidden" name="honeypot_time" value="1542825164|cmTpEUuDcZkKmr4kcPzmoSYj7vlBmUKMNK-gKONfYwc" />
-<div class="edit-additional-comments-wrapper"><div class="form-item form-type-textfield form-item-additional-comments">
-  <label for="edit-additional-comments">additional comments </label>
- <input type="text" id="edit-additional-comments" name="additional_comments" value="" size="20" maxlength="128" class="form-text" />
-<div class="description">Type of Research</div>
-</div>
-</div><fieldset class="captcha form-wrapper"><legend><span class="fieldset-legend">CAPTCHA</span></legend><div class="fieldset-wrapper"><div class="fieldset-description">This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</div><input type="hidden" name="captcha_sid" value="1834210" />
-<input type="hidden" name="captcha_token" value="9c5111986524bb8809cf69ee417d82bd" />
-<img src="/image_captcha?sid=1834210&amp;ts=1542825164" width="180" height="60" alt="Image CAPTCHA" title="Image CAPTCHA" /><div class="form-item form-type-textfield form-item-captcha-response">
-  <label for="edit-captcha-response">What code is in the image? <span class="form-required" title="This field is required.">*</span></label>
- <input type="text" id="edit-captcha-response" name="captcha_response" value="" size="15" maxlength="128" class="form-text required" />
-<div class="description">Enter the characters shown in the image.</div>
-</div>
-</div></fieldset>
-<div class="office-textfield"><div class="form-item form-type-textfield form-item-office">
-  <label for="edit-office">Leave this field blank </label>
- <input autocomplete="off" type="text" id="edit-office" name="office" value="" size="20" maxlength="128" class="form-text" />
-</div>
-</div><div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Send message" class="form-submit" /></div></div></form>    </div>
-  </div>
-  
-</section>
-
-<section class="block block-menu-block">
-  
-          <header>
-      <div>
-        <h1>Offices/Units</h1>
-      </div>
-    </header>
-      
-  <div class="content">
-    <div>
-      <div class="menu-block-wrapper menu-block-2 menu-name-menu-offices-units parent-mlid-0 menu-level-1">
-  <div class="offices-units-menu"><div><a href="/sponsored_programs"><abbr title="Office of Research Services">ORS</abbr> Office of Research Services</a><a href="/compliance/irb"><abbr title="Office for the Protection of Research Subjects">OPRS</abbr> Office for the Protection of Research Subjects</a><a href="/compliance/coi"><abbr title="Conflict of Commitment &amp; Interest">COI</abbr> Conflict of Commitment & Interest</a><a href="/compliance/acc"><abbr title="Office of Animal Care &amp; Institutional Biosafety">OACIB</abbr> Office of Animal Care & Institutional Biosafety</a><a href="/funding"><abbr title="Research Development Services">RDS</abbr> Research Development Services</a></div><div><a href="/ct"><abbr title="Clinical Trials">CTO</abbr> Clinical Trials</a><a href="http://www.rrc.uic.edu/"><abbr title="Research Resources Center">RRC</abbr> Research Resources Center</a><a href="http://www.brl.uic.edu/"><abbr title="Biologic Resources Laboratory">BRL</abbr> Biologic Resources Laboratory</a><a href="/gco"><abbr title="Grants and Contracts">GCO</abbr> Grants and Contracts</a></div></div></div>
-    </div>
-  </div>
-  
-</section>
-
-<section class="block block-block">
-  
-  
-  <div class="content">
-    <div>
-      <p><a href="https://www.youtube.com/user/uicmedia"><img alt="" src="/sites/default/files/form/files/youtube.jpg" style="float:left; height:30px; margin:20px 30px; width:30px" /></a><a href="https://twitter.com/UIC_OVCR"><img alt="" src="/sites/default/files/form/files/twitter.jpg" style="float:left; height:30px; margin:20px 30px; width:30px" /></a></p>
-    </div>
-  </div>
-  
-</section>
-  
-    </div>
-  </div>
-  
-  <div class="fine-print">
-    <div>
-
-    
-<section class="block block-block">
-  
-  
-  <div class="content">
-    <div>
-      <p>© Copyright 2018 The Board of Trustees of the University of Illinois. Having problems accessing this site? Please contact the <a href="mailto:ovcrweb@uic.edu">webmaster</a>. | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy Policy</a></p>
-    </div>
-  </div>
-  
-</section>
-  
-    </div>
-  </div>
-
-</div>
-
-
-
-
-
-  <a class="optanon-show-settings optanon-show-settings-default">CookieSettings</a>
-					<style type="text/css">
-						.optanon-show-settings-popup-wrapper {
-							z-index: 10001;
-							position: absolute;
-						}						
-					</style>
-					<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-function OptanonWrapper() {}
-//--><!]]>
 </script>
 
-  <!-- This website was designed and built by Pixo <http://pixotech.com> -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-35369580-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-</html>
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Title"></a> Title </h1>
+<p />
+Article text.
+<p />
+-- <style> .userReportsSig { display: inline-block; white-space: nowrap; padding: 0 2px 0 0; border: 1px solid #e8e8eb; background-color: #f4f4fa; -moz-box-shadow: 1px 1px 2px #e8e8e8; -webkit-box-shadow: 1px 1px 2px #e8e8e8; box-shadow: 1px 1px 2px #e8e8e8; -moz-border-radius: 4px; border-radius: 4px; } .userReportsSig a:link { border: 0 none; } .userReportsSig img { vertical-align: middle; } .userReportsBubble { position: absolute; background-image: url(/pub/TWiki/UserReports/faded-bubble.png); background-repeat: no-repeat; margin-top: -57px; margin-left: -18px; width: 920px; height: 90px; z-index: -1; } </style><span class="userReportsSig"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=TWiki.WebTopicEditTemplate;nowysiwyg=0" rel="nofollow" title="TWiki&#32;Guest&#32;&#32;&#32;&#32;2018&#32;11&#32;25 (this topic does not yet exist; you can create it)"><img src="/pub/Main/UserProfileHeader/default-user-profile.jpg" height="24" alt="" /> TWiki Guest  - 2018-11-25</a></span> </span>
+<p />
+<h2><a name="Comments"></a> Comments </h2>
+<p />
+%COMMENT% </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/WebTopicEditTemplate">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

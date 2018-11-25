@@ -4,10 +4,10 @@
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
 <link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-  <title>TWiki - VarRENDERLIST</title>
+  <title>Bits/People - WebSearch</title>
 
 <link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/VarRENDERLIST?_T=2018-11-21" type="application/x-wiki" title="edit VarRENDERLIST" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Bits/People/WebSearch?_T=2018-11-25" type="application/x-wiki" title="edit WebSearch" />
 <link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
 <meta name="SCRIPTURLPATH" content="/bin" />
 <meta name="SCRIPTSUFFIX" content="" />
@@ -15,8 +15,8 @@
 <meta name="TEXT_SEARCH" content="Search" />
 <meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
 <meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
-<base href="https://www.cs.uic.edu/bin/view/TWiki/VarRENDERLIST"></base>
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Bits/People/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Bits/People/WebSearch"></base>
 <!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
@@ -56,12 +56,12 @@
 	.patternBookView .twikiTopRow,
 	.patternWebIndicator a img,
 	.patternWebIndicator a:hover img {
-		background-color:#FFD8AA;
+		background-color:#A0A0D0;
 	}
 	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
 	
 	.patternBookView {
-		border-color:#FFD8AA;
+		border-color:#A0A0D0;
 	}
 	.patternPreviewPage #patternMain {
 		/* uncomment to set the preview image */
@@ -69,8 +69,8 @@
 	}
 	
 </style><style type="text/css" media="all">
-@import url('/pub/Main/WebPreferences/mainweb.css');
-@import url('/pub/TWiki/WebPreferences/hideattachments.css');
+
+@import url('/pub/Main/WebPreferences/mainweb.css ');
 
 </style>
 <style type="text/css" media="all">
@@ -120,65 +120,76 @@ pre {
 <div id="patternWrapper"><div id="patternOuter">
 <div id="patternFloatWrap">
 <div id="patternMain"><div id="patternClearHeaderCenter"></div>
-<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <a name="VarRENDERLIST"></a>
-<h3><a name="RENDERLIST_render_bullet_lists_i"></a> RENDERLIST -- render bullet lists in a variety of formats </h3> <ul>
-<li> The <code>%RENDERLIST%</code> variable is handled by the <a href="/bin/view/TWiki/RenderListPlugin" class="twikiLink">RenderListPlugin</a>
-</li> <li> Syntax: <code>%RENDERLIST%</code>
-</li> <li> Syntax: <code>%RENDERLIST{ "org" focus="Sales.WestCoastTeam" }%</code>
-</li> <li> Example:<br />      <code>%RENDERLIST{ "org" }%</code> <br />      <code>&nbsp;&nbsp; * [[Eng.WebHome][Engineering]]</code> <br />      <code>&nbsp; &nbsp; &nbsp; * [[Eng.TechPubs][Tech Pubs]]</code> <br />      <code>&nbsp;&nbsp; * [[Sales.WestCoastTeam][Sales]]</code> <br />      <code>&nbsp; &nbsp; &nbsp; * [[Sales.EastCoastTeam][East Coast]]</code> <br />      <code>&nbsp; &nbsp; &nbsp; * [[Sales.WestCoastTeam][West Coast]]</code>
-</li> <li> Category: <a href="/bin/view/TWiki/FormattingAndRenderingVariables" class="twikiLink">FormattingAndRenderingVariables</a>
-</li> <li> Related: <a href="/bin/view/TWiki/RenderListPlugin" class="twikiLink">RenderListPlugin</a>
-</li></ul>  </div><!-- /patternTopic-->
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Web_Search"></a> Web Search </h1>
+<p />
+<p />
+<p />
+<p />
+<div id="searchTopNavWebSearch" style="margin-bottom: 1em; "></div>
+<p />
+<p />
+<div id="searchBottomNavWebSearch" style="">
+<p />
+ &nbsp;
+<p />
+</div>
+<script type="text/javascript">
+  $('#searchTopNavWebSearch').hide(); $('#searchBottomNavWebSearch').hide();
+  $('#searchTopNavWebSearch').html("&nbsp; ");
+</script>
+<p />
+<a name="twikiSearchForm"></a>
+<div class="twikiPageForm">
+<form id="twikiWebSearchForm" action="/bin/view/Bits/People/WebSearch">
+<table id="twikiSearchTable" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2" class="twikiFirstRow">
+  <input type="text" class="twikiInputField" name="search" value="" size="40" /> 
+  <input type="submit" class="twikiSubmit" value='Search' /><span class="twikiSmall">&nbsp;&nbsp;<a href='https://www.cs.uic.edu/bin/view/Bits/People/WebSearchAdvanced?search=;type=word;scope=;web=;nosearch='>Advanced search</a> | <a href="/bin/view/TWiki/SearchHelp" class="twikiLink">Help</a></span>
+<div class="twikiSmall" style="padding:1em 0 0 0;">TIP: to search for all topics that contain <code>"SOAP"</code>, <code>"WSDL"</code>, a literal <code>"web service"</code>, but not <code>"shampoo"</code>, write: <code>soap wsdl "web service" -shampoo</code></div>
+</td>
+</tr>
+<tr>
+<th class="twikiLast">Search where:</th>
+<td class="twikiLast">
+<input type="radio" class="twikiRadioButton" id="textbody" name="scope" value="text"  /><label for="textbody"> Text body</label>&nbsp;&nbsp;&nbsp;<input type="radio" class="twikiRadioButton" id="topictitle" name="scope" value="topic"  /><label for="topictitle"> Topic title</label>&nbsp;&nbsp;&nbsp;<input type="radio" class="twikiRadioButton" id="both" name="scope" value="all" checked="checked" /><label for="both"> Both body and title</label>
+<hr />
+<input type="checkbox" class="twikiCheckbox" id="web" name="web" value="all"  /><label for="web"> All public webs</label> <span class="twikiSmall">(otherwise search Bits/People Web only)</span>
+</td>
+</tr>
+</table>
+</form>
+</div>
+<p />
+<div class="twikiHelp">
+<strong>Other search options:</strong> <ul>
+<li> <img src="/pub/TWiki/TWikiDocGraphics/arrowright.gif" width="16" height="16" alt="Arrow right" title="Arrow right" border="0" /> If you already know the name of the topic, enter the name of the topic into the <a href="/bin/view/TWiki/JumpBox" class="twikiLink">Jump box</a> at the top
+</li> <li> <img src="/pub/TWiki/TWikiDocGraphics/indexlist.gif" width="16" height="16" alt="Index list" title="Index list" border="0" /> <a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=\.*">List all topics in the Bits/People web in alphabetical order</a> 
+</li> <li> <img src="/pub/TWiki/TWikiDocGraphics/filter.gif" width="16" height="16" alt="Filter" title="Filter" border="0" /> List topics that start with the letter: <a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ea">A</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Eb">B</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ec">C</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ed">D</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ee">E</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ef">F</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Eg">G</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Eh">H</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ei">I</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ej">J</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ek">K</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5El">L</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Em">M</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5En">N</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Eo">O</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ep">P</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Eq">Q</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Er">R</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Es">S</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Et">T</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Eu">U</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ev">V</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ew">W</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ex">X</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ey">Y</a><span class="twikiSeparator"> | </span><a href="/bin/search/Bits/People/?scope=topic&amp;regex=on&amp;search=%5Ez">Z</a>
+</li> <li> <img src="/pub/TWiki/TWikiDocGraphics/recentchanges.gif" width="16" height="16" alt="Recent changes" title="Recent changes" border="0" /> <a href="/bin/view/Bits/People/WebChanges" class="twikiLink">Recently changed topics</a>
+</li></ul> 
+</div> </div><!-- /patternTopic-->
 <div class="twikiContentFooter"></div></div><!-- /patternContent-->
 <a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
 </div><!-- /patternMainContents-->
 </div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
 <div id="patternLeftBarContents">
 <div class="patternLeftBarPersonal">
-<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/VarRENDERLIST">Log In</a> </li></ul>
-</div><!--/patternLeftBarPersonal-->
-<p /> <ul>
-<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
-</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
-</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
-</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
-</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
-</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
-</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
-</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
-</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
-</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+<ul><li class="patternLogIn"><a href="/bin/logon/Bits/People/WebSearch">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/Bits/People/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Bits/People Web</a></strong>
+</li> <li> <a href="/bin/view/Bits/People/WebCreateNewTopic?topicparent=WebSearch" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Bits/People/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Bits/People/WebSearch" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Bits/People/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/Bits/People/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/Bits/People/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Bits/People/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Bits/People/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
 </li></ul> 
-<p /> <ul>
-<li> <strong>User Reference</strong>
-</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
-</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
-</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
-</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
-</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
-</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
-</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
-</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
-</li></ul> 
-<p /> <ul>
-<li> <strong>Admin Trash/Maintenance</strong>
-</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
-</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
-</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
-</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
-</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
-</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
-</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
-</li></ul> 
-<p /> <ul>
-<li> <strong>Categories</strong>
-</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
-</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
-</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
-</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
-</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
-</li></ul> 
-<p /> <ul>
+<p />
+<hr />
+<!-- <ul>
 <li> <strong>Webs</strong>
 </li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
 </li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
@@ -282,6 +293,7 @@ pre {
 </li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
 </li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
 </li></ul> 
+-->
 </div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
 </div><!-- /patternFloatWrap-->
 <div class="clear">&nbsp;</div>

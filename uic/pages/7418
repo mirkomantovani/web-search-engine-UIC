@@ -1,348 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> GHC2009 &lt; CSGSA &lt; TWiki</title>
 
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>
-	Phi Beta Kappa at UIC
-</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="geo.region" content="US-IL" /><meta name="geo.placename" content="Chicago" /><meta name="geo.position" content="41.874428;-87.651787" /><meta name="ICBM" content="41.874428, -87.651787" /><meta name="google-site-verification" content="uOB1uNUby1pU8ARjouF-I4zgsmdHFvg4p4zZTwh8Y_g" /><meta name="twitter:site" content="@UICLAS" /><meta property="og:title" content="UIC College of Liberal Arts and Sciences" /><meta property="og:image" content="//static.las.uic.edu/images/logos/social.las.png" /><meta property="og:site_name" content="LAS" /><meta property="fb:admins" content="139752752710982" /><link rel="apple-touch-icon" href="//static.las.uic.edu/images/logos/social.las.png" /><link rel="apple-touch-icon-precomposed" href="//static.las.uic.edu/images/logos/social.las.png" /><link rel="shortcut icon" href="//static.las.uic.edu/favicon.ico" />
-    <!-- 1140px Grid styles for IE -->
-    <!--[if lte IE 9]><link rel="stylesheet" href="//static.las.uic.edu/css/1140grid/ie.min.css" type="text/css" media="screen" /><![endif]-->
-<link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/Menu.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/TreeView.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/Silk/TreeView.Silk.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><meta name="Generator" content="Sitefinity 10.1.6525.0 PU" /><link rel="canonical" href="https://www.las.uic.edu/students/current-undergraduate/academics/phi-beta-kappa" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><script type="text/javascript">
-	(function() {var _rdDeviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;var _rdDeviceHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;var _rdOrientation = (window.width > window.height) ? 'landscape' : 'portrait';})();
-</script><link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nHk3pXou44TS3aCy_bKmLFeK_zQWSvzkMhPsdDAOozT0Wg7GeDDAqVW-Mn5x-ChrrC3mjg6X9Q-30ygEuD53RfBBban8_br-sm9ozu0vwc5M0&amp;t=636692118962391687&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%2c+Version%3d10.1.6525.0%2c+Culture%3dneutral%2c+PublicKeyToken%3db28c218413bdf563%3aen%3aeb177f10-254a-47f5-be2f-2f1c3f40d5ff%3a7a90d6a" type="text/css" rel="stylesheet" /><link href="/Sitefinity/Public/ResponsiveDesign/layout_transformations.css?pageDataId=6726393b-ece1-4651-9eb9-fe433c3ac6c8&amp;pageSiteNode=C31BFD3E-89C5-4E0F-B5BE-B54E18834F1C/69423f3e-0b59-47ec-85d6-07bb6596bd96/SitefinitySiteMap" type="text/css" rel="stylesheet" /><link href="/Sitefinity/WebsiteTemplates/LAS/App_Themes/LAS_Home/global/style.css?v=636479935267518834" type="text/css" rel="stylesheet" /><meta name="description" content="Information on Phi Beta Kappa membership and election at the University of Illinois at Chicago (UIC)." /><meta name="keywords" content="UIC, LAS, College of Liberal Arts &amp; Sciences, graduation, senior, phi beta kappa, membership, election" /></head>
-<body>
-    <form method="post" action="./phi-beta-kappa" id="form1">
-<input type="hidden" name="ctl18_TSSM" id="ctl18_TSSM" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="pdlJ4f2KRtfmROrgbf5WdG0S19LgflULAEbjpHwguX70ZBU4BUQgWqIgqDMhNni766XIrfSmoU6e4BzeTEjLGNbhBjEXTEsG0OcQ+hke9AZqPomqk5fUILy0p3MYqQhqtGZ+ylJ0i0VnUvgomuVij4QUIb4X/0e7mlWEZVuPM9P99SM53e8tVZPA0jrVW4rfrULgXA137h485tz/ob/ZiNJ7EVku1xGlMVysx24vzzVPHK9AoNL9DvNwmbHCWrpzjXeSJO3qw4HS9E7Im1+UsuzBRSMh+zCEx0tYqyv20BWo7MJUXz3dqIqVIM+i4KzYmZXmBq/zitHC8HKqoTsq0fvdYhZI5PhT3lRar7HeEXsVZUBlCTgz9nyKsrXx33MK" />
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CSGSA/GHC2009?_T=2018-11-25" type="application/x-wiki" title="edit GHC2009" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<meta name="robots" content="noindex" /><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CSGSA/WebRss" />
+<base href="https://www.cs.uic.edu/bin/oops/CSGSA/GHC2009"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
 
 
-<script src="/WebResource.axd?d=znKi4Zzr2OLSbiIIbcBLP3V0BrYtrobXx9OzCmqYVWKSw35ZwYVdvvbm-w-H_lFCtU0_C1-_PY6H00W2iAxGvUqQGH9kJDECVEM_FBc_KB6zBqJt3TBdtQAhqmtyu9FZA0qmsmT32M83xSSDvqHSOSjhXAUu3Ab1b__SwyTYW0Fxx0Ph6I665ark3yrB7mN0f-Dlf878Nb8BNk2cplHzMwZCfW5BKxGqF7cHWVS_mEA1&amp;t=636428201040000000" type="text/javascript"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/MicrosoftAjax.js" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-(window.Sys && Sys._Application && Sys.Observer)||document.write('<script type="text/javascript" src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yIorSJlG6QR1MRagrDHi_KCKvtcgZGP5S-bLQ_eaw2MvyfybmCbEtlhWxO057YG6dg_DQYn3vW9MFxH2ueQIa6Os7ANwx0wG7bS9agsczBUkPNDO9TIYJPKcvs8_GDjTp2kRg1sUZOlkq9VYTFbCyDo1&t=545ba255"><\/script>');//]]>
-</script>
-
-<script src="//www.google.com/jsapi" type="text/javascript"></script>
-<script src="https://code.jquery.com/jquery-1.12.1.min.js" type="text/javascript"></script>
-<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=lAcNKCSBPRb9dHiP3rTbPxGqFOcIzMjLpnMI5E_ogQfBPnN22yF4r5CNji1-GWowC5QkWpDwsT8y7ZeSA07HCIm_4Snguvx_H2HV-lQYYsR-gdvBFCCaq_FvCBjth4WmuoRKctCtnpVtk73HdSAvrjlH0CCRChB8YIdfaCxfbgl4DhcCTtL6C3yFAxdCtysego9KHAbVoadmPyhizW0Pow2&amp;t=fffffffff0f3ba09" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=8u3ngCqoRB16IXgFyG-fdr5atD6KbUYoID5PhrQKVT6-TpmGqBsSwKyGjJuTIU3AM-jI08PvNYp7LqPdp01bwaU63FrV7k2jl1Y4HGNrGK8lM3pItCLASfaTXqcds6oV0&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=oTWEP7ThC1yo24ooSsBTowKPespmeDoTjht3N0NL27XWTVTTxvF_NN79YY_H9jgdzQWAI85ME-Us-mlmv-IwOGVaRwvxhEt6PObAyaW2P9hvqn5t4L6ZxF1wWB4IAQ8Nj2X3Z9TKfkfOE_T_8k6nvDobVQwoMnh3mDOpASHL6TM1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=pL5wgiwL1GpmyqMwhkDjFxm8dA8hrRXW5whWY03GTFX8_EDgPd5HISP0vADDf9zCj-Nb3TveEUbV-b3FVyMYIZD6hr9oS8bA_wSSLkebrPnkEvD7t8Sb9gqn6d4DRBOjAElOTiLDM_AO97BPIgtWIg2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=dnHi0nMgDDe1Bo6v1KTdpOS-eZYKEx2DB1Cjp9QqgL0xiHQTxPYDbKMXqg60Txy6sVsqZZC5kGL0ydVsNU6JUbi383vRPWx2aXhdaVfJFqgsU49C0OyEmj2OD3G35uVMxQ8NF2M7FzsjKGHypKAU2Q2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=XrZNnrOF01iHmBPR_JKjWPpFA402uY5gT8OsBqC5XcF4MQG7YZO0DI-63-RTSejdacMOwoLx6zZQa9e2upEV4aAVhsypkcmtURZc-wPn2Yobbe-VVMCQxphPY8MSaO2oDtXtKROU5I0yHnuLDhDq6z8pG22CZCcb6JZrM9N12ow1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=r5UL-hsNriOxS7UV4wWMiLH0c9raOO9WdoVuXinH4ffjIijEeVxh3k1kmTAtkfdE15T7V3pHCl3jsMZpqwBUvnF7vAzDVCiodN-zw-K8XktLUuIHMah_X39VOlydlqsi4ZqAmUPrmmOeeEJOUGWL4WJfTMh11Vu-yR248LdM5JU1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=U8OMYmPzb2LbIsKauUCqxpMst_gJDSi7n5Pbg943ZAY3ON2kTss8TwfKTsaa940FObGl_DC_1ZgWev_sV5daNz7CJ3wLuiXpYmiVAte0iodFGwfqRPTPNuuaNwsCn8LE8-oVTQ0Pz6r1zPBZnR1WOWpaG8znHEERQOJScsFeN7s1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=fXuWcQwzGDZIk7t9UCjetYSqq_9dvzMDsNJZbQDhuNbjOQM_fPslir4L_8HfjRFCQ7kGPfTKZGdFROeDCwBnB-oPsF3iQuS6Ye58XGVtCN6CDUd_4cUJJEUOb5wNcfOdd4dm3ku_SXf4maTkjadGW51mCfKX29p4bAn8VCG3chI1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=v_I7_Ww9YDbzP79DTo1lX8gxhRIlLFj11eFMlz2zoVVsqDNuUHbu39ODa4oAuqDQE8H9z8rR444qyKc0jrMVYj5bO4ZOUa_ZGQl346Z1QNleQpmwPftoeTWdD8jfge5P5lpuVV9HOpv8CyyZKa0tmzbv78yuWFapPgxFI1LeiT01&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=9dowQ_6VzeNwM20qhTZESxAi5UJD9Uk_IBi3r-oGG333XsIjgGGsWhgLkjGsd-F5SVkIxjJ4DBxbEBB8aw0FWdsA4wvgvHJsXM2wLhjdmmvzp9Jqo5DJNpJ-tuhuIRw8UKbqn21xWXi7V2tvDE53jQ2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=iPpd1bx4kMy75JHaw_kovoPQRCFxtW97R4kZt-NxIig-4aLGAsyySAJGZ8cbUdO22oQ4KUqK0pMOlhBJFhsGKMN854iovrlOnWhlwC-REmtJoEy45WPnVU0Ebfqav8fp1TQkH_kAP3AHixNw5KXBGA2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=zAy82fDGpRbFHnzzHoSBNBJdEbiI7S8lhg3zyNhgTgYuoD0zPUumGqupXZY0LJYiWqtoxNvvseF5HFr_Oz6THXNPjF7jQvG13guJulGDXYN01YHFdy2RIxzOTRzje-uTYaaGh-7BdLZhY-qz-u2ASQ2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=KlfC4ae2T77svfC92c_tAQMw1R14D9YQCv2BnDHi_LP4THZUjpQ-7CpelfqqCbHeKYMJEr4ssziOE1Ih-C0ADqUgD4ooz3kvfneqfy-mG53vDuio-iOyWvvmM4DLw4oOLerJIV1ofCsEF4eLnrAOmQ2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=b4-yKWFT9xWbIHhZk6DyHy4HlGpmhe1xCCPLDbTkFQ9bwYPju0uLCcZenChjFEPPaEWlkAJggI83jCidBVjN_aNlVM7m7z6tFmmw5vK-6xU7UuARre8DGFKqq1ZD1sOwzxR76uvb8aFt5aYaNT8O4A2&amp;t=154d5dcf" type="text/javascript"></script>
-<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F8606AF3" />
-<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="MIGBUgpJGQ7Qf9mGrpCNrc7D1SUSEPZe+YdLOS5CsmJAURNKb+N7Oe/sJo1mQfApMbKEpBwo/BkbG5msy7EinRmeOnz8suGhYnqe5VX8kBFDQgSUyJQ6QMjsSXmViI6ElorfPvi23njdNI906nKUpA==" />
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
 	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
 	
-	<div id="top_bar">
-		<div class="contentWrapper">
-			
-<div class="sf_cols ">
-    <div class="sf_colsOut sf_3cols_1_33 upper_left_navigation" style="width: 50%;">
-        <div id="cphTopBar_T22F12C67002_Col00" class="sf_colsIn sf_3cols_1in_33"><nav class='sfContentBlock'><ul> <li><a href="/about-las" title="read about the College">About LAS</a></li> <li><a href="/academic-units" title="view our academic units">Academic Units</a></li> <li><a href="/giving" class="no_hover_border"><img src="//static.las.uic.edu/images/giving/small-give-button-las-2014.png" alt="Give to LAS" style="vertical-align: middle;" /></a></li> </ul>
+</style><style type="text/css" media="all">
 
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
-</nav>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_2_34 middle_nav" style="width: 25%;">
-        <div id="cphTopBar_T22F12C67002_Col01" class="sf_colsIn sf_3cols_2in_34"><nav class='sfContentBlock'><ul> <li><a href="http://www.uic.edu" title="go to UIC homepage" target="_blank">UIC</a></li> <li><a href="/home" title="go to LAS homepage">LAS</a></li> <li><a href="http://www.uic.edu/htbin/ldap_search/index.pl" title="search UIC phone book" target="_blank">Find People</a></li> </ul>
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-
-</nav>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_3_33 search_box" style="width: 25%;">
-        <div id="cphTopBar_T22F12C67002_Col02" class="sf_colsIn sf_3cols_3in_33">
-<div id="search" role="search">
-    <label id="lblSearchBox" for="searchTextBox">
-        Search</label>
-    <input name="ctl00$cphTopBar$T22F12C67003$searchTextBox" type="text" id="searchTextBox" />
-    <input type="image" name="ctl00$cphTopBar$T22F12C67003$searchButton" id="cphTopBar_T22F12C67003_searchButton" title="submit this search" class="btnGo" src="//static.las.uic.edu/images/las-ui/btn-go.png" alt="Go" />
-</div>
-
-
-            
-        </div>
-    </div>
-</div>
-
-
-
-		</div>
-	</div>
-	<div class="contentWrapper">
-        <header role="banner">  
-            
-<div class="sf_cols">
-    <div class="sf_colsOut sf_2cols_1_50" style="width: 50%; ">
-        <div id="cphHeader_TD3846C92001_Col00" class="sf_colsIn sf_2cols_1in_50"><div class='sfContentBlock'><div class="logo_block"> <h1><a title="go to LAS homepage" href="/"><img src="//static.las.uic.edu/images/logos/logo-2015.png" alt="UIC College of Liberal Arts and Sciences logo" /></a></h1> </div>
-
-
-</div>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_2cols_2_50 division_navigation" style="width: 50%; ">
-        <div id="cphHeader_TD3846C92001_Col01" class="sf_colsIn sf_2cols_2in_50"><div id="cphHeader_TD3846C92007">
-	<div tabindex="0" id="ctl00_cphHeader_TD3846C92007_ctl00_ctl00_siteMapControl" class="RadMenu RadMenu_Default">
-		<!-- 2017.2.621.40 --><ul class="rmRootGroup rmHorizontal">
-			<li class="rmItem rmFirst"><a class="rmLink rmRootLink" href="../../../students"><span class="rmText">Students</span></a></li><li class="rmItem "><a class="rmLink rmRootLink" href="../../../faculty-staff"><span class="rmText">Faculty + Staff</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink" href="../../../alumni-friends"><span class="rmText">Alumni + Friends</span></a></li>
-		</ul><input id="ctl00_cphHeader_TD3846C92007_ctl00_ctl00_siteMapControl_ClientState" name="ctl00_cphHeader_TD3846C92007_ctl00_ctl00_siteMapControl_ClientState" type="hidden" />
-	</div>
-</div>            
-        </div>
-    </div>
-</div>
-        </header>
-        
-<div class="sf_cols main_block">
-    <div class="sf_colsOut sf_2cols_1_25 left_nav" style="width: 21%;">
-        <div id="cphPageBody_TD3846C92004_Col00" class="sf_colsIn sf_2cols_1in_25" style="margin: 0px; "><div id="cphPageBody_T7F1966A2004">
-	<div id="ctl00_cphPageBody_T7F1966A2004_ctl00_ctl00_siteMapControl_verticaltree" class="RadTreeView RadTreeView_Silk">
-		<ul class="rtUL rtLines">
-			<li class="rtLI rtFirst"><div class="rtTop">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="../../graduate">Graduate</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI"><div class="rtTop">
-					<span class="rtSp"></span><a class="rtIn" href="../../graduate/student-accolades">Student Accolades</a>
-				</div></li><li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><a class="rtIn" href="../../graduate/phdtravelaward">PhD Student Travel Award</a>
-				</div></li>
-			</ul></li><li class="rtLI"><div class="rtMid">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="../../current-undergraduate">Current Undergraduate</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI"><div class="rtTop">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="../student-affairs">Academic Advising</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="../student-affairs/departmental-advising">Departmental Advising</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="../student-affairs/pre-professional-advising">Preprofessional Advising</a>
-					</div></li>
-				</ul></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../academic-tutoring">Tutoring Resources</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../las-scholarships">Scholarships</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="../academics">Academics</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="degree-programs">Degree Programs</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="http://catalog.uic.edu/ucat/colleges-depts/liberal-arts-sciences/#b2">General Education</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="pre-professional-programs">Preprofessional Studies</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="minors">Minors</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="double-degrees">Double Degrees</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="differential-tuition-by-program">Differential Tuition by Program</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="academic-policies-procedures">Academic Policies & Procedures</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="calculators">Calculators</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="transfer-equivalency-tool">Transfer Equivalency Tool</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="lasuri">LASURI</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="phi-beta-kappa">Phi Beta Kappa</a>
-					</div></li>
-				</ul></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="https://career.las.uic.edu/">Career Development</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="https://career.las.uic.edu/explore-majors/">Exploring Majors</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="https://career.las.uic.edu/events-highlights/">Events & Programs</a>
-					</div></li><li class="rtLI"><div class="rtMid">
-						<span class="rtSp"></span><a class="rtIn" href="https://career.las.uic.edu/career-readiness/resources/">Resources</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="https://career.las.uic.edu/internship-program/">Internship Program</a>
-					</div></li>
-				</ul></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../intercollege-transfer">Intercollege Transfer</a>
-				</div></li><li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="../las-orientation">LAS Orientation</a>
-				</div><ul class="rtUL" style="display:none;">
-					<li class="rtLI"><div class="rtTop">
-						<span class="rtSp"></span><a class="rtIn" href="../las-orientation/first-year-orientation">First-Year Orientation</a>
-					</div></li><li class="rtLI rtLast"><div class="rtBot">
-						<span class="rtSp"></span><a class="rtIn" href="../las-orientation/transferorientation">Transfer/Readmit Orientation</a>
-					</div></li>
-				</ul></li>
-			</ul></li><li class="rtLI rtLast"><div class="rtBot">
-				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="../../../prospective">Prospective Undergraduate</a>
-			</div><ul class="rtUL" style="display:none;">
-				<li class="rtLI"><div class="rtTop">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/admissions">Admissions</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/scholarships-financial-aid-tuition">Scholarships, Financial Aid, Tuition</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/faculty">Faculty</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/student-support-advising">Student Support & Advising</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/student-life-housing">Student Life & Housing</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="https://prehealth.las.uic.edu/">Pre-Health</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/undergrad-research-opportunities">Undergrad Research Opportunities</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/special-programs">Special Programs</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/campus-chicago-resources">Campus & Chicago Resources</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/internships-careers">Internships & Careers</a>
-				</div></li><li class="rtLI"><div class="rtMid">
-					<span class="rtSp"></span><a class="rtIn" href="../../../prospective/visit-us">Visit Us</a>
-				</div></li><li class="rtLI rtLast"><div class="rtBot">
-					<span class="rtSp"></span><a class="rtIn" href="../../../study">Areas of Study</a>
-				</div></li>
-			</ul></li>
-		</ul><input id="ctl00_cphPageBody_T7F1966A2004_ctl00_ctl00_siteMapControl_verticaltree_ClientState" name="ctl00_cphPageBody_T7F1966A2004_ctl00_ctl00_siteMapControl_verticaltree_ClientState" type="hidden" />
-	</div>
+<!-- Google Analytics Snippet -->
 
 <script type="text/javascript">
-    function pageLoad() { var tree = $find("ctl00_cphPageBody_T7F1966A2004_ctl00_ctl00_siteMapControl_verticaltree"); if (tree) { var location = window.location.pathname; location = location.substring(location.lastIndexOf('/') + 1); var currentNode = tree.findNodeByUrl(location); if (currentNode) { currentNode.set_selected(true); ExpandParent(currentNode); currentNode.set_expanded(true) } } } function CollapseSiblings(node) { var parent = node.get_parent(); var siblings = parent.get_nodes(); var siblingsCount = siblings.get_count(); for (var nodeIndex = 0; nodeIndex < siblingsCount; nodeIndex++) { var siblingNode = siblings.getNode(nodeIndex); if ((siblingNode != node) && (siblingNode.get_expanded())) { siblingNode.collapse(); return } } } function OnClientNodeExpanding(sender, args) { var node = args.get_node(); if (node.get_nodes().get_count()) { CollapseSiblings(node) } } function ExpandParent(node) { node = node.get_parent(); while (node != null) { if (node.expand) { node.expand() } node = node.get_parent() } }
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
 
-
-</div>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_2cols_2_75 main_content" style="width: 79%;">
-        <div id="cphPageBody_TD3846C92004_Col01" class="sf_colsIn sf_2cols_2in_75" style="margin: 0px 40px 40px 12px; "><div class='sfContentBlock'><h2>Phi Beta Kappa</h2>
-<p>Founded in 1776, Phi Beta Kappa is the nation's oldest academic honor society, inviting into membership outstanding seniors who have attained a liberal arts education with demonstrated breadth and depth. The organization gets its name from the first letters of the Greek phrase &Phi;&iota;&lambda;&omicron;&sigma;&omicron;&phi;ί&alpha; &Beta;ί&omicron;&nu; &Kappa;&upsilon;&beta;&epsilon;&rho;ή&tau;&eta;&sigmaf; which in English means "Love of learning is the guide to life."</p>
-<p>Only 280 colleges or universities shelter a Phi Beta Kappa chapter. New chapters are awarded only after successful completion of a rigorous screening process. UIC's chapter, Iota of Illinois, was established in 1976.</p>
-<p>New student members of Phi Beta Kappa are elected by faculty and university staff who themselves are members.&nbsp; Elections at UIC occur once a year, usually during the week of spring break.&nbsp; Successful candidates are notified shortly afterward by mail, with letters sent to the students' address on record (usually their permanent home address).</p>
-<p>Membership selection is based on a number of factors, including (but not limited to):
-</p>
-<ul>
-    <li> A minimum GPA of 3.7 (on a 4.0 scale)</li>
-    <li>At least 90 degree credit hours earned, 60 or more of which were earned at UIC</li>
-    <li>At least 90 credit hours in liberal arts and sciences courses (as opposed to applied, professional and/or technical courses)</li>
-    <li>Completion of advanced-level courses beyond those in the declared major</li>
-    <li>Demonstration of successful coursework in a foreign language and in mathematics </li>
-</ul>
-<p>To become a member, a student elected to Phi Beta Kappa needs to respond to the invitation and participate in the initiation ceremony. A lifetime membership fee must be paid prior to initiation. Students who take the initiation oath are awarded membership certificates and may then order the society's official membership badge, a personalized Phi Beta Kappa key.</p>
-<p>The Phi Beta Kappa Society also, among other activities, publishes the award-winning quarterly <em>The American Scholar</em>, sponsors college visits and lectures by top scholars, and awards prizes to authors of outstanding new books on science and the humanities. Many Phi Beta Kappa graduates keep active through programs sponsored by associations of members located across the United States and abroad.</p>
-<p>For more information about Phi Beta Kappa in general, see the organization's national web site: <a href="http://www.pbk.org/">www.pbk.org</a></p>
-<p>For more information about becoming a member at UIC, contact your academic advisor, the chapter secretary or the chapter president.</p>
-<h4>Contact information:</h4>
-<p><span style="line-height: 1.5;"><strong>Dr. Constance Jeffrey</strong>,&nbsp;Chapter President
-<br />
-(312) 996-3168<br />
-<a href="mailto:cjeffery@uic.edu">cjeffery@uic.edu</a></span></p>
-
-
-</div>
-        
-        </div>
-    </div>
-</div>          
-    </div>
-	<div id="bottom_bar">
-		<div class="contentWrapper">
-			
-<div class="sf_cols">
-    <div class="sf_colsOut sf_3cols_1_33 footer_content" style="width: 45%;">
-        <div id="cphFooter_T22F12C67018_Col00" class="sf_colsIn sf_3cols_1in_33"><div class='sfContentBlock'>College of Liberal Arts and Sciences<br />
-601 South Morgan Street (MC 228)<br />
-Chicago, Illinois 60607<br /> <div class="social_media">
-Social:&nbsp;
-<ul class="footer_list"> <li><a title="find us on Facebook" target="_blank" href="http://www.facebook.com/UIC.LAS"><img alt="Facebook icon" src="//static.las.uic.edu/images/round-social-media-icons/48px/facebook.png" /></a></li> <li><a title="follow us on Twitter" target="_blank" href="https://twitter.com/#!/UICLAS"><img alt="Twitter icon" src="//static.las.uic.edu/images/round-social-media-icons/48px/twitter1.png" /></a></li> <li><a href="http://www.youtube.com/user/UICLibArtsSciences" title="watch our YouTube channel" target="_blank"><img src="//static.las.uic.edu/images/round-social-media-icons/48px/youtube2.png" alt="YouTube icon" /></a></li> <li><a href="http://instagram.com/uiclas" title="view us on Instagram" target="_blank"><img src="//static.las.uic.edu/images/round-social-media-icons/48px/instagram.png" alt="Instagram icon" /></a></li> </ul> </div> <div class="atlas_small"> <a href="http://atlas.las.uic.edu" target="_blank" title="go to AtLAS magazine"> <img src="//static.las.uic.edu/images/badges/atlas-mag-smbutton.png" alt="AtLAS magazine icon" /> </a> </div>
-
-
-</div>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_2_34 footer_content" style="width: 35%;">
-        <div id="cphFooter_T22F12C67018_Col01" class="sf_colsIn sf_3cols_2in_34"><div class='sfContentBlock'>Student Academic Affairs &amp; Advising:<br />
-Phone (312) 996-3366&nbsp;&nbsp;Fax (312) 413-8577<br /> <br />
-LAS Administration:<br />
-Phone (312) 413-2500&nbsp;&nbsp;Fax (312) 413-2511
-
-
-</div>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_3_33 footer_content" style="width: 20%;">
-        <div id="cphFooter_T22F12C67018_Col02" class="sf_colsIn sf_3cols_3in_33"><nav class='sfContentBlock'><a target="_blank" title="go to website" href="http://www.uic.edu/uic/studentlife/campus/emergency-information.shtml">Emergency Information</a><br /> <a target="_blank" title="go to website" href="http://accessweb.uic.edu/">Accessibility</a><br /> <a target="_blank" title="go to website" href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a><br /> <a title="email LAS webmaster" href="mailto:laswebstaff@uic.edu">Webmaster</a><br />
-
-
-</nav>
-            
-        </div>
-    </div>
-</div>
-            <footer role="contentinfo">
-                
-<div class='sfContentBlock copyright'>&copy;2018 The Board of Trustees of the University of Illinois.
-
-
-</div>
-            </footer>
-		</div>
-	</div>
-	
-	
-
-<script type="text/javascript">
-//<![CDATA[
-Telerik.Web.UI.RadTreeView._preInitialize("ctl00_cphPageBody_T7F1966A2004_ctl00_ctl00_siteMapControl_verticaltree","0");//]]>
-</script>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try{
-var pageTracker = _gat._getTracker("UA-24550204-1");
-pageTracker._trackPageview();
-} catch(err) {} 
-</script>
-
-<script type="text/javascript">
-//<![CDATA[
-;(function() {
-                        function loadHandler() {
-                            var hf = $get('ctl18_TSSM');
-                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
-                            hf.value += ';Telerik.Sitefinity.Resources, Version=10.1.6525.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:en:eb177f10-254a-47f5-be2f-2f1c3f40d5ff:7a90d6a';
-                            Sys.Application.remove_load(loadHandler);
-                        };
-                        Sys.Application.add_load(loadHandler);
-                    })();Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_skin":"Default","clientStateFieldID":"ctl00_cphHeader_TD3846C92007_ctl00_ctl00_siteMapControl_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"attributes":{"Sitefinity.PageGUID":"3374E93F-B2F1-4F54-A394-64B04F61A5CE"},"value":"Students","navigateUrl":"~/students"},{"attributes":{"Sitefinity.PageGUID":"96A01FA0-42F1-4C8C-AA8A-B2FAEF436021"},"value":"Faculty + Staff","navigateUrl":"~/faculty-staff"},{"attributes":{"Sitefinity.PageGUID":"7C386DAA-6849-4082-880A-779B5E850A93"},"value":"Alumni + Friends","navigateUrl":"~/alumni-friends"}]}, null, null, $get("ctl00_cphHeader_TD3846C92007_ctl00_ctl00_siteMapControl"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadTreeView, {"_skin":"Silk","_uniqueId":"ctl00$cphPageBody$T7F1966A2004$ctl00$ctl00$siteMapControl_verticaltree","clientStateFieldID":"ctl00_cphPageBody_T7F1966A2004_ctl00_ctl00_siteMapControl_verticaltree_ClientState","collapseAnimation":"{\"duration\":200}","expandAnimation":"{\"duration\":200}","nodeData":[{"value":"Graduate","items":[{"value":"Student Accolades"},{"value":"PhD Student Travel Award"}]},{"value":"Current Undergraduate","items":[{"value":"Academic Advising","items":[{"value":"Departmental Advising"},{"value":"Preprofessional Advising"}]},{"value":"Tutoring Resources"},{"value":"Scholarships"},{"value":"Academics","items":[{"value":"Degree Programs"},{"value":"General Education"},{"value":"Preprofessional Studies"},{"value":"Minors"},{"value":"Double Degrees"},{"value":"Differential Tuition by Program"},{"value":"Academic Policies \u0026 Procedures"},{"value":"Calculators"},{"value":"Transfer Equivalency Tool"},{"value":"LASURI"},{"value":"Phi Beta Kappa"}]},{"value":"Career Development","items":[{"value":"Exploring Majors"},{"value":"Events \u0026 Programs"},{"value":"Resources"},{"value":"Internship Program"}]},{"value":"Intercollege Transfer"},{"value":"LAS Orientation","items":[{"value":"First-Year Orientation"},{"value":"Transfer/Readmit Orientation"}]}]},{"value":"Prospective Undergraduate","items":[{"value":"Admissions"},{"value":"Scholarships, Financial Aid, Tuition"},{"value":"Faculty"},{"value":"Student Support \u0026 Advising"},{"value":"Student Life \u0026 Housing"},{"value":"Pre-Health"},{"value":"Undergrad Research Opportunities"},{"value":"Special Programs"},{"value":"Campus \u0026 Chicago Resources"},{"value":"Internships \u0026 Careers"},{"value":"Visit Us"},{"value":"Areas of Study"}]}]}, {"nodeExpanding":OnClientNodeExpanding}, null, $get("ctl00_cphPageBody_T7F1966A2004_ctl00_ctl00_siteMapControl_verticaltree"));
-});
-//]]>
-</script>
-</form>
-</body>
-</html>
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternNoViewPage patternOopsPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain">
+<div id="patternMainContents"><div class="patternSimpleLogo"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiLogos/T-logo-140x40-t.gif" border="0" alt="Home - this site is powered by TWiki(R)"/></div><div class="patternTopic"><h1 class="patternTemplateTitle"></h1> <a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CSGSA/GHC2009?t=1543179959' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CSGSA/GHC2009' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CSGSA/GHC2009?cover=print%25QUERYPARAMSTRING%25' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CSGSA/GHC2009?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: %REVISIONS%</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CSGSA/GHC2009?template=backlinksweb' rel='nofollow' title='Search the CSGSA Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CSGSA/GHC2009?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CSGSA/GHC2009?t=1543179959;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CSGSA/GHC2009?template=oopsmore&amp;param1=%MAXREV%&amp;param2=%CURRREV%' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--></div><!-- /patternTopic-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>

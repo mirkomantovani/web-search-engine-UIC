@@ -1,82 +1,347 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>
+	French and Francophone Studies - University of Illinois at Chicago - UIC
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="geo.region" content="US-IL" /><meta name="geo.placename" content="Chicago" /><meta name="geo.position" content="41.874428;-87.651787" /><meta name="ICBM" content="41.874428, -87.651787" /><link rel="shortcut icon" href="//static.las.uic.edu/favicon.ico" />
 
 
-    <title>UIC Bluestem ID Server</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bluestem/assets/styles/login.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/TreeView.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/Silk/TreeView.Silk.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><meta name="Generator" content="Sitefinity 10.1.6525.0 PU" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><script type="text/javascript">
+	(function() {var _rdDeviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;var _rdDeviceHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;var _rdOrientation = (window.width > window.height) ? 'landscape' : 'portrait';})();
+</script><link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nB4dQoR__2njNrbeMltVMUTSIe4SMet0fwQ2K8e65tuuUhrbcLGCEBYuea5ZRuOTHXDaVUnSc811SN7t2U4DynmRnRp1WH6OQwJ6tYqA0_350&amp;t=636692118962391687&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%2c+Version%3d10.1.6525.0%2c+Culture%3dneutral%2c+PublicKeyToken%3db28c218413bdf563%3aen%3aeb177f10-254a-47f5-be2f-2f1c3f40d5ff%3a7a90d6a" type="text/css" rel="stylesheet" /><link href="/Sitefinity/Public/ResponsiveDesign/layout_transformations.css?pageDataId=f64e57d5-925a-46d5-b3fc-c56637dfb798&amp;pageSiteNode=69950AA1-794C-40D3-8A18-9940F53B9DC2/74efec49-2811-46a7-bd0f-4f77dfd6fd0c/SitefinitySiteMap" type="text/css" rel="stylesheet" /><link href="/Sitefinity/WebsiteTemplates/LAS/App_Themes/French/global/french.css?v=636440277771590295" type="text/css" rel="stylesheet" /></head>
 <body>
-
-  <div class="jumbotron" role="banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-2 logo"> </div>
-      </div>
-    </div>
-  </div>
+    <form method="post" action="./french" id="form1">
+<input type="hidden" name="ctl11_TSSM" id="ctl11_TSSM" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="7FJuUop+FcUUrhHmhQ3dcfZG9FgAgNnUy7dfz1MgF0fnkqBaKv/r8eMRXf5QlFM6BoWoThjwRB6aZ0o1T0A4ytwIVpPkN5fXy/6lXab5yjS1cwSjljRaXKj2H/+a9tbnZff0XQ7myBChAnUzaeB0VvfsUhF4NF6soevXIoi/MjCEM+Sqqc7D1hf6BafgX1QnEyDLgN8zRzTm9ExHloFDglpbtj6CS6Y5yd5YrvzOdAhuR5yimIcoZbb22Ne2z9JrAFy+VppFA/VFGGv39x7nI0Nyhj4sh4Ki5wSTgt5NT+4QH/A403SaxDOHTRfSGPUlzXvonfqyUZnbKVicBC3mWxL/VUfqUncy1j2lVksOfo7lvFPf/yCcmLvaB/3votzDt80PCnlwfcu7qWuCKLXvmq0iREDcHR1s8c/HWdMo/ZCW4j9ByvwdYLwQvjFcxgjMwflO4/iAmiNHH+SkaQdZfL3WFZCa2fGgGxf1ht39nadtzJE6P0O1eccQGw5lAk3HNwJacHF3Ls9BIa41TCaYGUmBts+48+ienVjlqlKjQ4rIhJfuMIt9//zCekuhixHMjYmEwAfxw2ukc/fOKFN0RbdAV+hAjLE3u3xjyrpYX3TTWh7gfKs8Ou+z8jzTpYa1s45wohviSIvKjkc0+2vgEg==" />
 
 
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 login-alert">
-      <div class="alert alert-danger" role="alert">
-        <h1>Invalid Referral to UIC WWW Identification Service</h1>
+<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/MicrosoftAjax.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+(window.Sys && Sys._Application && Sys.Observer)||document.write('<script type="text/javascript" src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yBXneVBjtRKLWo3GMnZfrt3NMUBTVQe6V0OznSvMkOdcClaQnd0Hpb9syAT68mt9ra2mDCEI8MISr8Q-tt0zWEg1ZcOcMdYEmTVGTVslBRa92TLPM9SX7FVRpQ3ttSvOcTGNX5-zc5si8epot7xscsQ1&t=545ba255"><\/script>');//]]>
+</script>
 
-        <p class="lead">Please configure your browser to accept cookies and try again.</p>
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-1.12.1.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=lAcNKCSBPRb9dHiP3rTbPwyIu9BD-KR5ZMr4fWc4OH9p3EP28YpNrVTnho5ie3811Oj3jyq71-_DOWtmJx0dzH6fu-Mgk22kpZ_-7zqex0IlPYWiAOvobkmHsNnjBTwN-CPWpk14yI8UFV2cgOCBT2GwBkDGrRqShMex_Nqcsmz_8SWg6CV47GYsc2hvldQBc9RXSo3BCD88VD7tOaky_g2&amp;t=fffffffff0f3ba09" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=8u3ngCqoRB16IXgFyG-fdg4wrpB_dUApQxtLmeuwapyzARtsOsznqb62CYG1UtAyzcGHsEppM7rAXQQQDm6D35adaeRbXUnHqXOand5KPITHOro7J5M7TR3475pB5J2x0&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pL5wgiwL1GpmyqMwhkDjFwlZD7m2ZkypoNLOeiNvydTR66Av6vEKAMifOeGXNUTYTlXqjLuGDKkHxOW-smbOCz9Np8a5s-2vKgW8sTY-rAOfboIMTENRawGDPtiLSXjZYZR-YpIikLuARW55J4lNhw2&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=r5UL-hsNriOxS7UV4wWMiPKI0cVtjeer4LfK5osBhYoQzwguo1xmZnMoBNRKoEB3tNZ6CP-13TrvR-KIrNgFF8n4v1Kb5EcunRz-VhRQV_wvOYylgQYfymUmSvfzHV7fx9CeWPSZB3cdhP308cjpRFS8cC0-n1a4xEq57WRAG-k1&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dnHi0nMgDDe1Bo6v1KTdpAX6ZlGnDu3jfQMic7Shee10lJdce7V8YOfD8bEi-nl-Ez4jJfkXdc4jafUVsGlRLxGBS9SNBu_x9POlkGe4hmcQPX-DrAwIDDf5yzgAI2l5cxPM_O8ggPIHcIuNzcGkaA2&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=KlfC4ae2T77svfC92c_tAVNTlQX_2MXUQzuFoKqP73RucpdyjLNCnrsWSv8mVXjrxOK9l2RxlMARO_mGK6nh35TfPjqgiJsw0rjWLRbp7l80qmNd63A8gLuU4wBgS8uBau_EYCIvVEYeaIQ3C7TNOA2&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=oTWEP7ThC1yo24ooSsBTo1IgRWPVIkTwIGxyaV4L3tWXZticjz_9z_S8tTrRCoeQUw-4N2HDaogvadu5Bapc6KbHAdpvxWyub4Kmt73prYSHSlIC7F-51t4uCPYLW4_fqQT5fHeXny2K7yYp_Jid2Bl_KCd1K2AgiuzOKWieqq81&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=fXuWcQwzGDZIk7t9UCjetYHEy08RL9eZy2D97k_xI8FW3sqtNQkjbRZSoFrY5J8tyAlJ8CkoTTieb2RSeChos7kRYd7_P_4MAF3k35wO4-cgzokCiDsDMubLX4dWKu66rvn2jM6glpAvq0ivelT4R3lBr-j6F_51bIANZCOmg_o1&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=v_I7_Ww9YDbzP79DTo1lX0PvFMmHMDQ7p2RmKxR-OaDPj83usn2JXt7pHRfLuvKFIefXiOb-1XdBj8LF571rJnPId8K_xuUj35OsPWJ1r2nuTLcw0gCnuRi1qheHLrbxbvl2G_V3QixikcJzlyoYBti9aQS9Wjg2XoDnc5kuH7E1&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=b4-yKWFT9xWbIHhZk6DyH-bqhtOsacBVYjjKY1RdLe-Dx05CZPxz0gddemTdC8VF6SicVyErA1kUAQnNdj8Ee-3XGqT9EySouy3Ct33PQpJzP6zBp9wf95Eq8CECdYIRlGfl27KiYSnmO4R2j3Wb7A2&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=rhuZTxOeKg7tLBV3R6FzUS1XrtQorMvqUdIzf6Idz4pxanaRm3SFehSSqxWYDRmz24JgLvPa2plExbW05EaJ0IXnSzfk9XX5Q0ABxYfsxk7fPNsb8YK7KKDuAlw5wkxC16haMNAAWtF4LKLu87ON4a0HnY8iT-vIQeKN7LxgjepxoOTGcM6h_0p6VYJgHnen0&amp;t=4293c76a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=75C6zhn_I2ZyGfX3QbVbDCGwy852zj9WI3WbImh4XeI6BD327tYRGyDlZH9GcJvUrY4pUfn4idN3GHF331FQG3wZ7AX0MA8vYgXWmk50SUQN6M-y0KW9Nj5KYNuYcH1EGuBADw24TJClAOmNaG-t9Q2&amp;t=154d5dcf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=K_8jTsao3WxrqclMbxfB07Hw2XcWs2syCSLVZwTm-UxoO2_Zrdq2Ew_nsiJIrxhn_doFCVuIvL2EhML2QKQrhwQMNf8pFYYbZJTyoxAIxRC5xKiTDbopnvSQJnL2eA_GaDYLb8mE4Z6ZhYIx2Ywf55I961lWnHMG1xTFiJuoLWM1&amp;t=4293c76a" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="094CF4D4" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="h7uN55kkfx/Drr4xqujTC+oO5elAzhlTIFK4iv12GbBE+15CZ2mgfEl6IFHTJCftCLZ3cBCZUENZLu5et7vhKo6+u62s7IxS+JlcV9M4Cd9iXRFmnkl1SatbXVUuVIDKFxtfSgDdhDasXxVlOM/4bQ==" />
+    
+	
+    <div id="wrapper">
+        <div class="container">
+            <div id="topNav" class="row">
+                <div id="topNavMenu" role="navigation">
+                    <ul role="menu">
+                        <li role="menuitem">
+                            <a title="go to UIC website" href="http://www.uic.edu" target="_blank">UIC</a></li>
+                        <li role="menuitem">
+                            <a title="go to LAS website" href="http://www.las.uic.edu" target="_blank">LAS</a></li>
+                    </ul>
+                    <span class="breadCrumbs">
+                        
+<div id="cphBreadCrumbs_T594E1F76005">
+	<span id="cphBreadCrumbs_T594E1F76005_ctl00_ctl00_BreadcrumbTrail"><span><a title="This is the homepage for the School of Literatures, Cultural Studies and Lingustics (LCSL), University of Illinois at Chicago (UIC)." href="/lcsl">LCSL</a></span><span> &gt; </span><span>French</span></span>
+</div>
+                    </span>
+                </div>
+                
 
-        <p>
-          You arrived at this service someway other than by
-          referral from an authorized server, perhaps by
-          typing in a URL, or returning to a previous
-          authentication page.
-        </p>
-
-      </div>
-    </div>
-  </div>
+<div id="search" role="search">
+    <label id="lblSearchBox" for="searchTextBox">
+        Search</label>
+    <input name="ctl00$cphSearchBox$T594E1F76004$searchTextBox" type="text" id="searchTextBox" />
+    <input type="image" name="ctl00$cphSearchBox$T594E1F76004$searchButton" id="cphSearchBox_T594E1F76004_searchButton" title="submit this search" class="btnGo" src="//static.las.uic.edu/images/las-ui/btn-go.png" alt="Go" />
 </div>
 
- <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-2">
-	<p>
-	  &copy; University of Illinois Board of Trustees |
-          <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
-	</p>
-      </div>
-    </div>
-  </div>
-</footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="/bluestem/assets/js/jquery.placeholder.min.js"></script>
-<script>
-	$(function() {
-	// Invoke placeholder plugin
-	$('input').placeholder(); 
-	});
-</script>
-<script>
-  $('#disable-on-click').on('click', function(){
-    $('#disable-on-click').attr("disabled", true);
-  	$("#login-form").submit()
-  });
-</script>
-  </body>
-</html>
 
+            </div>
+        </div>
+        <!-- end #topNav -->
+        <div class="container">
+            <header class="row bannerWrapper" role="banner">
+                <div class="fullwidth last banner">
+                    
+<div class='logo'><a href="/french" title="go to home page"><img alt="French and Francophone Studies Logo" src="/images/layout/logo20C81DD126FD.png?sfvrsn=5f2a7b2_2" /></a>
+
+
+</div>
+                    <div id="bannerText">
+                        
+<div class='sfContentBlock'><h1>French and Francophone Studies</h1> <p>Etudiez le fran&ccedil;ais et le monde s'ouvre &agrave; vous: Study French and discover the world.</p>
+
+
+</div>
+                    </div>
+                </div>
+                <div class="fullwidth last headerPhoto">
+                    
+<img id="cphBannerPhoto_T6018B9F8002_imageHolder" src="https://lcsl.uic.edu/images/default-source/french-banners/biblio.jpg?sfvrsn=3c3e882f_6" alt="Biblio Banner" />
+
+                </div>
+            </header>
+        </div>
+        <!-- end #header -->
+        <div class="container">
+            <div id="pageBody" class="row">
+                <div class="fullwidth last">
+                    <div class="row sideBG">
+                        <nav class="navw side_img" role="navigation">
+                            
+<div class='sfContentBlock'><a href="http://lcsl.uic.edu/"><img width="180" height="40" alt="lcsl home button" style="border-radius: 10px; box-shadow: #333333 0px 0px 6px -2px; margin: 20px;" src="/images/default-source/layout/lcsl_home_button.tmb-thumbnail.jpg?sfvrsn=511f33a5_5" /></a>
+
+
+</div><div id="cphLeftNav_T594E1F76002">
+	<div id="ctl00_cphLeftNav_T594E1F76002_ctl00_ctl00_siteMapControl_verticaltree" class="RadTreeView RadTreeView_Silk">
+		<!-- 2017.2.621.40 --><ul class="rtUL rtLines">
+			<li class="rtLI rtFirst"><div class="rtTop">
+				<span class="rtSp"></span><a class="rtIn" href="french/home">Home</a>
+			</div></li><li class="rtLI"><div class="rtMid">
+				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="french/people">People</a>
+			</div><ul class="rtUL" style="display:none;">
+				<li class="rtLI"><div class="rtTop">
+					<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="french/people/faculty">Faculty</a>
+				</div><ul class="rtUL" style="display:none;">
+					<li class="rtLI"><div class="rtTop">
+						<span class="rtSp"></span><a class="rtIn" href="french/people/faculty/john-ireland">John Ireland</a>
+					</div></li><li class="rtLI"><div class="rtMid">
+						<span class="rtSp"></span><a class="rtIn" href="french/people/faculty/ellen-mcclure">Ellen McClure</a>
+					</div></li><li class="rtLI"><div class="rtMid">
+						<span class="rtSp"></span><a class="rtIn" href="french/people/faculty/margaret-miner">Margaret Miner</a>
+					</div></li><li class="rtLI"><div class="rtMid">
+						<span class="rtSp"></span><a class="rtIn" href="french/people/faculty/yann-robert">Yann Robert</a>
+					</div></li><li class="rtLI rtLast"><div class="rtBot">
+						<span class="rtSp"></span><a class="rtIn" href="french/people/faculty/elizabeth-dolly-weber">Elizabeth Dolly Weber</a>
+					</div></li>
+				</ul></li><li class="rtLI"><div class="rtMid">
+					<span class="rtSp"></span><a class="rtIn" href="french/people/administration">Administration</a>
+				</div></li><li class="rtLI rtLast"><div class="rtBot">
+					<span class="rtSp"></span><a class="rtIn" href="french/people/graduate-students">Graduate Students</a>
+				</div></li>
+			</ul></li><li class="rtLI"><div class="rtMid">
+				<span class="rtSp"></span><a class="rtIn" href="french/graduate-program-(ma)">Graduate Program (MA)</a>
+			</div></li><li class="rtLI"><div class="rtMid">
+				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="french/undergraduate-programs">Undergraduate Programs</a>
+			</div><ul class="rtUL" style="display:none;">
+				<li class="rtLI"><div class="rtTop">
+					<span class="rtSp"></span><a class="rtIn" href="french/undergraduate-programs/major-and-minor">Major and Minor</a>
+				</div></li><li class="rtLI"><div class="rtMid">
+					<span class="rtSp"></span><a class="rtIn" href="french/undergraduate-programs/teaching-of-french">Teaching of French</a>
+				</div></li><li class="rtLI"><div class="rtMid">
+					<span class="rtSp"></span><a class="rtIn" href="french/undergraduate-programs/why-french-">Why French?</a>
+				</div></li><li class="rtLI rtLast"><div class="rtBot">
+					<span class="rtSp"></span><a class="rtIn" href="french/undergraduate-programs/faqs">FAQs</a>
+				</div></li>
+			</ul></li><li class="rtLI"><div class="rtMid">
+				<span class="rtSp"></span><span class="rtPlus"></span><a class="rtIn" href="french/basic-language-program">Basic Language Program</a>
+			</div><ul class="rtUL" style="display:none;">
+				<li class="rtLI"><div class="rtTop">
+					<span class="rtSp"></span><a class="rtIn" href="french/basic-language-program/placement-test">Placement Test</a>
+				</div></li><li class="rtLI"><div class="rtMid">
+					<span class="rtSp"></span><a class="rtIn" href="french/basic-language-program/faqs">FAQs</a>
+				</div></li><li class="rtLI rtLast"><div class="rtBot">
+					<span class="rtSp"></span><a class="rtIn" href="french/basic-language-program/french-activities-and-links">French Activities and Links</a>
+				</div></li>
+			</ul></li><li class="rtLI"><div class="rtMid">
+				<span class="rtSp"></span><a class="rtIn" href="french/news">News</a>
+			</div></li><li class="rtLI rtLast"><div class="rtBot">
+				<span class="rtSp"></span><a class="rtIn" href="french/events">Events</a>
+			</div></li>
+		</ul><input id="ctl00_cphLeftNav_T594E1F76002_ctl00_ctl00_siteMapControl_verticaltree_ClientState" name="ctl00_cphLeftNav_T594E1F76002_ctl00_ctl00_siteMapControl_verticaltree_ClientState" type="hidden" />
+	</div>
+
+<script type="text/javascript">
+    function pageLoad() { var tree = $find("ctl00_cphLeftNav_T594E1F76002_ctl00_ctl00_siteMapControl_verticaltree"); if (tree) { var location = window.location.pathname; location = location.substring(location.lastIndexOf('/') + 1); var currentNode = tree.findNodeByUrl(location); if (currentNode) { currentNode.set_selected(true); ExpandParent(currentNode); currentNode.set_expanded(true) } } } function CollapseSiblings(node) { var parent = node.get_parent(); var siblings = parent.get_nodes(); var siblingsCount = siblings.get_count(); for (var nodeIndex = 0; nodeIndex < siblingsCount; nodeIndex++) { var siblingNode = siblings.getNode(nodeIndex); if ((siblingNode != node) && (siblingNode.get_expanded())) { siblingNode.collapse(); return } } } function OnClientNodeExpanding(sender, args) { var node = args.get_node(); if (node.get_nodes().get_count()) { CollapseSiblings(node) } } function ExpandParent(node) { node = node.get_parent(); while (node != null) { if (node.expand) { node.expand() } node = node.get_parent() } }
+</script>
+
+
+</div>
+                        </nav>
+                        <div class="bodyw last copy">
+                            
+<div class="sf_cols">
+    <div style="width: 68%;" class="sf_colsOut sf_2cols_1_50">
+        <div id="cphPageBody_T6018B9F8001_Col00" class="sf_colsIn sf_2cols_1in_50"><div class='sfContentBlock'><h2>ABOUT US</h2>
+<h3>Why study French?</h3>
+<iframe width="500" height="288" src="//www.youtube.com/embed/4lIQ63Qk0-U" frameborder="0"></iframe>
+<div style="text-align: left;">
+<h3>Meet our teachers</h3>
+<iframe width="500" height="288" src="https://www.youtube.com/embed/vFfGeZwrgo8" frameborder="0"></iframe> <br />
+<br />
+The Department of French and Francophone Studies is a member of&nbsp;<a href="http://lcsl.uic.edu/">the School of Literatures, Cultural Studies and Linguistics</a>.&nbsp;The School&nbsp;is comprised of six independent departments and four academic programs, creating a collaborative environment and offering the opportunity for interdisciplinary study.<br />
+&nbsp;<br />
+You may not know that French is the only language, other than English, spoken on five continents. Some of the 43 countries where French is spoken are Morocco, Switzerland, Vietnam, Senegal, Belgium, Mali, and Canada. French, along with English, is the official working language of many non-governmental organizations, including the International Red Cross, the United Nations, UNESCO, and NATO, not to mention the International Olympic Committee.</div>
+<br />
+Studying French gives students an advantage in applying to jobs in the service and hospitality industries (hotels, airlines, travel agencies) as well as jobs with companies doing business with Canada. Knowledge of French will also help you if you study history, art history, philosophy, biology, political science, or math.&nbsp;<span style="line-height: 1.5em; font-size: 1em;">Graduates of our program pursue many different paths upon completing their degree. We have placed students in graduate programs in French at universities such as the University of Chicago, Rutgers University, the University of California at Berkeley, and the University of Michigan. Our Teaching of French graduates are currently employed as high school French teachers in the Chicagoland area. Many of our students, upon graduation, also choose to teach English in France for a year under the assistantship program sponsored by the French embassy. Some of our students have joined the Peace Corps, which actively recruits students with knowledge of French to work in West African countries.<br />
+</span><br />
+French is a beautiful language with a rich history. We look forward to meeting you, and would be more than happy to answer any questions you may have about French at UIC.
+<br />
+<br />
+<iframe width="500" height="288" src="//www.youtube.com/embed/P2EqkvSQzJk" frameborder="0"></iframe><br />
+<style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Arial; color: #232323} span.s1 {text-decoration: underline ; color: #1255cc}
+</style>
+
+
+</div>
+            
+        </div>
+    </div>
+    <div style="width: 32%;" class="sf_colsOut sf_2cols_2_50">
+        <div id="cphPageBody_T6018B9F8001_Col01" class="sf_colsIn sf_2cols_2in_50">
+      <div class="list-title"><h3 class="news-title">News</h3>
+        <h4 class="more-link"><a id="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_morelink" title="go to news page" href="french/news">+ (More)</a></h4>
+        <a id="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_newsRSS" title="subscribe to RSS" href="Feeds/french-news"><img alt="rss icon" src="//static.las.uic.edu/images/vector-social-media-icons/24px/rss.png" class="rss-button"/></a>
+        </div>
+        
+        <ul class="sfnewsList sfnewsListTitleDateSummary">
+            
+      <li class="sfnewsListItem">
+            <h3 class="sfnewsTitle inline">
+                <a id="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_ctrl0_DetailsViewHyperLink1" Rel="tooltip" Title="" href="french/news/2018/11/19/two-french-ma-students-receive-chicago-consular-corps-scholarship-award">Two French MA Students receive Chicago Consular Corps Scholarship award</a>
+            </h3>
+            
+          </li>
+    
+      <li class="sfnewsListItem">
+            <h3 class="sfnewsTitle inline">
+                <a id="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_ctrl1_DetailsViewHyperLink1" Rel="tooltip" Title="" href="french/news/2018/11/06/grad-program-administrator-roc%C3%ADo-garc%C3%ADa-recieves-award-of-merit">LCSL Grad Program Administrator Rocío García recieves Award of Merit</a>
+            </h3>
+            
+          </li>
+    
+      <li class="sfnewsListItem">
+            <h3 class="sfnewsTitle inline">
+                <a id="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_ctrl2_DetailsViewHyperLink1" Rel="tooltip" Title="" href="french/news/2018/08/17/yann-robert-interviewed-for-newberry-library-podcast">Yann Robert interviewed for Newberry Library podcast</a>
+            </h3>
+            
+          </li>
+     
+        </ul>
+    <input id="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_ClientState" name="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_ClientState" type="hidden" /><span id="ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList" style="display:none;"></span>
+<span></span>
+
+
+<span></span>            
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end #pageBody -->
+        <div class="container">
+            <footer role="contentinfo">
+                <div id="copyright" class="row">
+                    <div class="fullwidth last">
+                        
+<div class='sfContentBlock'><span class="copyrightText">&copy;2017 The Board of Trustees of the University of Illinois.</span>
+
+
+</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="container">
+            <div id="footer" class="row">
+                <div class="footerCol">
+                    
+<div class='sfContentBlock'><a href="http://www.las.uic.edu/giving/lcsl" title="give to LCSL" target="_blank"><img src="//static.las.uic.edu/images/giving/give-button-lcsl.png" alt="Give to LCSL logo" /></a>
+
+
+</div>
+                </div>
+                <div class="footerCol">
+                    
+<div class='sfContentBlock'>Department of French and Francophone Studies<br />
+601 South Morgan Street (MC 315)<br />
+1722 University Hall <br />
+Chicago, IL 60607<br />
+Tel: (312) 996-5218 <br />
+Fax: (312) 413-1044
+
+
+</div>
+                </div>
+                <div class="footerGroup">
+                    <div class="footerCol">
+                        
+<div class='sfContentBlock'><a target="_blank" href="http://www.uic.edu" title="go to UIC website">UIC Home</a><br /> <a target="_blank" href="http://www.las.uic.edu" title="go to LAS website">LAS Home</a><br /> <a target="_blank" href="http://www.uic.edu/uic/search/" title="go to UIC directory search">Find People</a>
+
+
+</div>
+                    </div>
+                    <div class="footerCol">
+                        
+<div class='sfContentBlock'><a target="_blank" title="go to website" href="http://www.uic.edu/uic/studentlife/campus/emergency-information.shtml">Emergency Information</a><br /> <a target="_blank" title="go to website" href="http://accessweb.uic.edu">Accessibility</a><br /> <a target="_blank" title="go to website" href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a><br /> <a title="email LAS webmaster" href="mailto:laswebstaff@uic.edu">Webmaster</a>
+
+
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end #footer-->
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Telerik.Web.UI.RadTreeView._preInitialize("ctl00_cphLeftNav_T594E1F76002_ctl00_ctl00_siteMapControl_verticaltree","0");//]]>
+</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+var pageTracker = _gat._getTracker("UA-24550204-5");
+pageTracker._trackPageview();
+} catch(err) {} 
+</script>
+<script type="text/javascript">
+//<![CDATA[
+;(function() {
+                        function loadHandler() {
+                            var hf = $get('ctl11_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Sitefinity.Resources, Version=10.1.6525.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:en:eb177f10-254a-47f5-be2f-2f1c3f40d5ff:7a90d6a';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTreeView, {"_skin":"Silk","_uniqueId":"ctl00$cphLeftNav$T594E1F76002$ctl00$ctl00$siteMapControl_verticaltree","clientStateFieldID":"ctl00_cphLeftNav_T594E1F76002_ctl00_ctl00_siteMapControl_verticaltree_ClientState","collapseAnimation":"{\"duration\":200}","expandAnimation":"{\"duration\":200}","nodeData":[{"value":"Home"},{"value":"People","items":[{"value":"Faculty","items":[{"value":"John Ireland"},{"value":"Ellen McClure"},{"value":"Margaret Miner"},{"value":"Yann Robert"},{"value":"Elizabeth Dolly Weber"}]},{"value":"Administration"},{"value":"Graduate Students"}]},{"value":"Graduate Program (MA)"},{"value":"Undergraduate Programs","items":[{"value":"Major and Minor"},{"value":"Teaching of French"},{"value":"Why French?"},{"value":"FAQs"}]},{"value":"Basic Language Program","items":[{"value":"Placement Test"},{"value":"FAQs"},{"value":"French Activities and Links"}]},{"value":"News"},{"value":"Events"}]}, {"nodeExpanding":OnClientNodeExpanding}, null, $get("ctl00_cphLeftNav_T594E1F76002_ctl00_ctl00_siteMapControl_verticaltree"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphPageBody$C006$newsFrontendList$ctl00$ctl00$NewsList","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_ItemsContainer","DataService":{}}},"_virtualItemCount":3,"clientStateFieldID":"ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList_ClientState","renderMode":1}, null, null, $get("ctl00_cphPageBody_C006_newsFrontendList_ctl00_ctl00_NewsList"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Sitefinity.Web.UI.UserPreferences, {"_timeOffset":"-21600000","_userBrowserSettingsForCalculatingDates":true,"timeZoneDisplayName":"(UTC-06:00) Central Time (US \u0026 Canada)","timeZoneId":"Central Standard Time"}, null, null);
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

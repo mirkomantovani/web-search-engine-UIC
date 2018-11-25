@@ -1,270 +1,617 @@
-<!doctype html>
-<html xml:lang="en" lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Office of the Dean of Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/site.css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css"> 
+    
+    <!--royalslider CSS-->
+    <link href="assets/royalslider/royalslider.css" rel="stylesheet">
+ 	<link href="assets/royalslider/skins/default/rs-default.css" rel="stylesheet">
+   <link href="assets/royalslider/skins/minimal-white/rs-minimal-white.css" rel="stylesheet">
+     <!-- slider JS files -->    
+	<script  src="royalslider/jquery-1.8.3.min.js"></script>
+	<script src="royalslider/jquery.royalslider.min.js"></script>
+    <script src="assets/royalslider/jquery.easing-1.3.js"> </script>
+   
+<style>
+.error{
+border: 1px solid #F00000;
+}
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}
 
-<head>
-<title>Undergraduate Catalog &lt; University of Illinois at Chicago</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="search" type="application/opensearchdescription+xml"
-			href="/search/opensearch.xml" title="Catalog" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-<link href="/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-<link rel="stylesheet" type="text/css" href="/fonts/font-awesome/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/screen.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/css/handheld.css" media="only screen and (max-width: 767px)" />
-<link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/lfjs.js"></script>
-<script type="text/javascript" src="/js/lfjs_any.js"></script>
-<link rel="stylesheet" type="text/css" href="/js/lfjs.css" />
-<script type="text/javascript" src="/js/courseleaf.js"></script>
-<script type="text/javascript" src="/js/custom.js"></script>
+<!-- slider css -->
+
+  #video-gallery {
+width: 100%;
+color: #FFF;
+}
+
+.videoGallery .rsCloseVideoBtn {
+  display: none;
+} 
+/* Styling thumbnails */
+.videoGallery h5 {
+  margin: 0;
+}
+.videoGallery p {
+  color: #ddd;
+  font-size: 13px;
+}
+.videoGallery .rsTmb {
+  padding: 20px;
+}
+
+.videoGallery .rsThumbs .rsThumb {
+  width: 940px;
+  height: 80px;
+  border-bottom: 1px solid #2E2E2E;
+}
+.videoGallery .rsThumbs.rsThumbsVer {
+  width: 220px;
+  padding: 0;
+}
+.videoGallery .rsThumb:hover {
+  background: #000;
+}
+.videoGallery .rsThumb.rsNavSelected {
+  background-color: #18bc9c;
+  border-bottom: 1px solid #009E56;
+}
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+  background: #202020;
+}
+.sampleBlock {
+  left: 3%; 
+  top: 1%; 
+  width: 100%;
+  max-width: 400px;
+  color: #FFF;
+  font-weight:bold;
+   background: #000;
+  background: rgba(0,0,0,0.75);
+  padding:7px 10px 10px 10px;
+}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .videoGallery .rsTmb {
+    padding: 6px 8px;
+  }
+  .videoGallery h5 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .videoGallery .rsThumbs.rsThumbsVer {
+    width: 100px;
+    padding: 0;
+  }
+  .videoGallery .rsThumbs .rsThumb {
+    width: 100px;
+    height: 47px;
+  }
+  .videoGallery .rsTmb p {
+    display: none;
+  }
+  .videoGallery .rsOverflow,
+  .royalSlider.videoGallery {
+    height: 300px !important;
+  }
+  .sampleBlock {
+    font-size: 14px;
+  }
+}
+<!-- Block Text Slider -->
+#slider-with-blocks-1 {
+  width: 100%;
+  height: 100%;
+}
+.rsContent {
+  color: #FFF;
+  font-size: 24px;
+  line-height: 32px;
+  float: left;
+}
+
+.bContainer {
+  position: relative;
+}
+.rsABlock {
+  left: 30px;
+	top: 280px;
+	position: absolute;
+	z-index: 15;
+	
+}
+
+.rsBBlock {
+  position: relative;
+  display: block;
+  left: auto;
+  top: auto;
+}
+.blockHeadline {
+  font-size: 42px;
+  line-height: 50px;
+}
+.blockSubHeadline {
+  font-size: 32px;
+  line-height: 40px
+}
+.txtCent {
+  text-align: center; 
+  width: 100%; 
+}
+.slide1 {
+  background: #f06b50;
+}
+.slide1 .bContainer {
+	top: 30px;
+}
+.slide2 {
+    background: #ffbc11;
+    color:#000;
+}
+.slide2 .bContainer {
+  top: 20px;
+}
+.slide2 .txtCent {
+  line-height: 44px;
+}
+.slide2 .blockHeadline {
+   line-height: 66px;
+}
+.slide3 {
+    background: #45aab8;
+    color:#FFF;
+}
+.slide3 .bContainer {
+   top: 24px;
+}
+.slide3 span {
+  line-height: 44px;
+}
+.slide4 .bContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  top: 24px;
+}
+.photoCopy {
+  position: absolute;
+  line-height: 24px;
+  font-size: 12px;
+  background: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0px 10px;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  top: auto;
+  border-radius: 2px;
+  z-index: 25;
+}
+.photoCopy a {
+  color: #FFF;
+}
+.palmImg {
+  left: 0;
+  top: auto;
+  bottom: -60px;
+  position: absolute;
+}
+@media screen and (min-width: 0px) and (max-width: 960px) { 
+  .rsContent {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .blockHeadline {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 26px;
+    line-height: 32px
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 500px) { 
+  .royalSlider,
+  .rsOverflow {
+    height: 200px !important;
+  }
+  .rsContent {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .blockHeadline {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 22px;
+    line-height: 32px
+  }
+}
+
+.label {
+  margin-right: 5px;
+}
+</style>
 
 </head>
-
-
-
 <body>
-
-
-
-
-<!--htdig_noindex-->
-<div class="accessible noscript">
-    <div class="accessible-menu" role="navigation" aria-label="Accessible Navigation">
-		<ul>
-			<li><a href="#content" rel="section">Skip to Content</a></li>
-			<li><a href="/azindex/">AZ Index</a></li>
-			<li><a href="/">Catalog Home</a></li>
-			<li><a href="http://www.uic.edu">Institution Home</a></li>
-		</ul>
-	</div>
+  
+<div id="skip"><a href="#content">Skip to Main Content</a></div> 
+<div class="container header_container">
+<div id="header">
+<div id="header_logo">
+<div id="header_logo_left"><a href="http://www.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uic_logo','','img/banner-UIC.png',1)"><img src="img/banner-UIC.png" alt="link to UIC home page" id="uic_logo"/></a><a href="http://vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ovcsa_logo','','img/banner-OVCSA2.png',1)"><img src="img/banner-OVCSA2.png" alt="link to OVCSA home page" id="ovcsa_logo" width="200" height="40"/></a></div>
+<div id="header_logo_right"><a href="http://www.uic.edu" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uofi_logo','','img/banner-UniversityofIlli2.png',1)"><img src="img/banner-UniversityofIlli2.png" alt="link to UIC" id="uofi_logo"/></a></div>
 </div>
-<!--/htdig_noindex-->
-
-<!--htdig_noindex-->
-<div id="header" role="header">
-    <div class="wrap clearfix">
-        <li><a href="/"><h1>Academic Catalog</h1></a></li>
-        <div id="head-right">
-            <div id="search" role="search">
-			<form id="cl-search" action="/search/" class="clearfix">
-				<label for="name">Search Catalog</label>
-				<input type="text" name="search" size="25" placeholder="Search catalog..." class="searchbox" id="name" title="Search Catalog" />
-				<input type="submit" value="Search" class="submit" />
-<input type="hidden" name="fscaturl" value="/ucat" /><input type="hidden" name="gscaturl" value="/ucat" />			</form>
-            </div><!-- end #search -->
-        </div><!--end #head-right -->
-    </div><!--end .wrap -->
-</div><!-- end #header -->
-<!--/htdig_noindex-->
-
-<!--htdig_noindex-->
-<div id="navigation" class="clearfix" role="navigation" aria-label="Main Navigation">
-    <div class="wrap">
-        <ul>
-            <li><a href="/ucat/">Undergraduate Catalog</a></li>
-            <li><a href="/gcat">Graduate Catalog</a></li>
-            <li><a href="#" onclick="showPrintDialog(); return false;">Print / Download Options</a></li>
-            <li><a href="http://www.uic.edu">UIC Home</a></li>                        
-        </ul>  
-    </div><!--end .wrap -->
-</div><!--end #navigation -->
-<!--/htdig_noindex-->
-
-<!--htdig_noindex-->
-<div id="banner" role="banner">
-    <div class="wrap">
-        <div class="logo"><a href="http://www.uic.edu">The University of Illinois at Chicago</a></div>
-    </div><!--end .wrap -->
-</div><!--end #navigation -->
-<!--/htdig_noindex-->
-
-<div id="wrapper">
-
-    <div id="container" class="clearfix">
-        <div id="nav-col" role="complementary">
-            <div id="cl-menu-control" class="togglenav clearfix">
-                <a class="cl-menu-text" href="#">Catalog Navigation</a>
-                <a class="cl-menu-btn" href="#">Catalog Navigation</a>
-            </div><!--end #cl-menu-control-->
-            
-            <!-- Begin Regular Nav -->
-            <div id="cl-menu" role="navigation" aria-label="Secondary Navigation">
-<ul class="nav levelzero" id="/">
-	<li class="active isparent self"><a href="#" onclick="return false;">Undergraduate Catalog</a>
-	<ul class="nav levelone" id="/ucat/">
-		<li><a href="/ucat/academic-calendar/">Academic Calendar</a></li>
-		<li class="isparent"><a href="/ucat/the-university/">The University</a></li>
-		<li class="isparent"><a href="/ucat/admissions-registration-finances/">Admissions, Registration &amp;&#8203; Finances</a></li>
-		<li class="isparent"><a href="/ucat/degree-programs/">Degree Programs and Requirements</a></li>
-		<li class="isparent"><a href="/ucat/colleges-depts/">Colleges &amp;&#8203; Departments</a></li>
-		<li class="isparent"><a href="/ucat/course-descriptions/">Undergraduate Course Descriptions</a></li>
-		<li><a href="/ucat/archive-links/">Archive &amp;&#8203; Links</a></li>
-	</ul>
-	</li>
-	<li class="isparent"><a href="/gcat/">Graduate Catalog</a></li>
-	<li class="isparent"><a href="/all-course-descriptions/">All Course Descriptions</a></li>
+<div class="clearfloat"></div>
+</div>
+<div class="triangle_left"></div>
+<div class="triangle_right"></div>
+</div>
+<!-- title -->   
+<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 style="padding-left:12px"><strong>OFFICE OF THE DEAN OF STUDENTS</strong></h1>
+          </div>         
+        </div>
+      </div>
+</div>
+<div class="container" id="navbar_container">
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">    
+            <div class="bs-example">
+              <div class="navbar navbar-default" id="nav_bar">
+                   <div class="container">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                         <a class="navbar-brand" href="index.shtml">Home</a>
+                      </div>
+                      <div class="navbar-collapse collapse navbar-responsive-collapse">
+                         <ul class="nav navbar-nav">
+                          <li><a href="about.shtml">About Us</a></li>    
+                          <li><a href="services.shtml">Students</a></li>     
+                          <li><a href="units.shtml">Faculty & Staff</a></li>
+                          <li><a href="contact.shtml">Contact Us</a></li>            
+						  <li><a href="needhelp.shtml">Need Help?</a></li> 
+                        </ul>
+                        <form class="navbar-form navbar-right" id="cse-search-box" action="search.shtml">
+                        <input type="hidden" value="003292673167871140938:_ftumhdite0" name="cx" />
+                        <input type="hidden" value="FORID:11" name="cof" />
+                        <input type="hidden" value="UTF-8" name="ie" />                        
+                        <input type="text"  id="search"  name="q" class="form-control col-lg-8" placeholder="Search">     
+                        </form>   
+	</div><!-- /.nav-collapse -->
+                  </div><!-- /.container -->
+                  </div><!-- /.navbar -->
+             
+            </div><!-- /example -->
+          </div>
+        </div>
+      </div>
+    <!-- end of Navbar-->
+</div>
+    
+  
+<!--main container-->
+<div class="container">
+<div class="Flexible-container">         
+<img src="img/dos_forfaculty.jpg" alt="About Dean Of Students" class="img-responsive">
+</div>
+<br />
+<div class="row">
+<a tabindex="-1" name="content"></a>
+<div class="col-lg-12">
+<a name="1"></a>
+<div class="row">
+<div class="col-lg-12">
+<h3 style="padding-left:15px;">NEED HELP?</h3>
+</div></div>
+<div class="bs-example">
+<ul class="list-group">
+<li class="list-group-item">
+<a style="color:white;" href="#inclassroom">
+<span class="anchorlink">Having Problems in the Classroom?</span><span class="badge"><i class="fa fa-external-link"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#outclassroom">
+<span class="anchorlink">Having Problems outside the Classroom?</span><span class="badge"><i class="fa fa-external-link"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#concerned">
+<span class="anchorlink">Concerned About Yourself or Someone Else?</span><span class="badge"><i class="fa fa-external-link"></i> </span></a>
+</li>
 </ul>
-			   </div><!--end #cl-menu-->
-            <!-- End Nav -->
-        </div><!-- end #nav-col -->		    
-    		    
-        <div id="content-col">
-            <div id="content" role="main">
-
-<div id="breadcrumb" class="clearfix" role="navigation" aria-label="Breadcrumb Navigation">
-<ul><li><a href="/">Home</a><span class="crumbsep">/</span></li><li><span class="active">Undergraduate Catalog</span></li></ul>
-</div><!-- end #breadcrumb -->
-
-			<h1 class="page-title">Undergraduate Catalog</h1>
-
-
-
-<div id="textcontainer" class="tab_content" role="tabpanel">
-
-<div class="sidebar">
-	<div id="sidebar-contact">
-
-
-
-
-
-
-
-
-	</div>
 </div>
 
-<h2>How to Use the Online Catalog</h2>
-<p>The online catalog is a record of the 2017–2019 academic years. It is for informational purposes only and does not constitute a contract. The information was current at the time of publication. Faculty assignments and programs listed are subject to change, and individual departments and units should be consulted for further information. Courses listed in this publication are subject to revision without advance notice. Courses are not necessarily offered each term or each year. Individual departments or units should be consulted for information regarding regularity of course offerings. The catalog is online at <a href="http://catalog.uic.edu" target="_blank">http://catalog.uic.edu</a>.</p>
-<p>Volume 43, May 15, 2017</p>
-<p>Office of the Registrar (MC 003)<br/>
-University of Illinois at Chicago<br/>
-1200 West Harrison Street<br/>
-Chicago, Illinois 60607</p>
-<p>The online catalog includes a comprehensive list of <a href="/ucat/degree-programs/degree-minors/"><em>Degree Programs and Minors</em></a> by college. This list is a useful tool for exploring and understanding UIC's undergraduate academic programs and requirements.</p>
-<p>The online catalog is updated regularly as degree programs, courses, and requirements change. A list of program and requirement changes is located on the <a href="/ucat/degree-programs/program-updates/"><em>Program Changes and Updates</em></a><em> </em>page<em>.</em></p>
-<p>The archived versions of the <em>2017–2019 Undergraduate Catalog</em> and older catalogs are available in the <a href="/ucat/archive-links/"><em>Archive and Links</em></a> section.</p>
-<p>The online catalog is an academic planning tool for undergraduate students. The online catalog is divided into six major sections:</p>
+<a name="inclassroom"></a>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="h3">Having Problems in the Classroom?</h3>
+</div>
+<div class="panel-body">
+<strong>Keeping Up with Assignments</strong>
+<p>Academic resources are available at no cost to help you keep up with the demands of your classes.</p>
 <ul>
-	<li><a href="/ucat/the-university/">The University</a></li>
-	<li><a href="/ucat/admissions-registration-finances/">Admissions, Registration, and Finances</a></li>
-	<li><a href="/ucat/degree-programs/">Degree Programs and Requirements</a></li>
-	<li><a href="/ucat/colleges-depts/">Colleges and Departments</a></li>
-	<li><a href="/ucat/course-descriptions/">Course Descriptions</a></li>
-	<li><a href="/ucat/archive-links/">Archive and Links</a></li>
+<li><a href=" http://www.uic.edu/academics/student-support">Tutoring Services </a></li>
+<li><a href="http://writingcenter.webhost.uic.edu/">Writing Center </a></li>
+<li><a href="http://studentaffairs.uic.edu/trio/">TRIO (Academic Support Program) </a></li>
+<li><a href="http://chance.uic.edu/">CHANCE </a></li>
+<li><a href="http://studentaffairs.uic.edu/ace/">Academic Center for Excellence (ACE)</a></li>
+<li><a href="http://advising.uic.edu/">Undergraduate Success Center</a> </li>
+<li><a href="http://studentaffairs.uic.edu/aaan/">African American Academic Network (AAAN) </a></li>
+<li><a href=" http://drc.uic.edu">Disability Resource Center </a></li>
+<li><a href="https://lares.uic.edu/">Latin American Recruitment and Educational Services Center (LARES) </a></li>
+<li><a href="http://studentaffairs.uic.edu/nasp/">Native American Support Program </a></li>
+<li><a href="http://studentaffairs.uic.edu/ace/">Help with time management provided by ACE </a></li>
 </ul>
-<p>Each section of the online catalog provides information necessary for the academic planning process. A brief description of each section is provided below.</p>
-<h2>The University</h2>
-<p>The <a href="/ucat/the-university/"><em>University</em></a> section provides a helpful overview of the University of Illinois at Chicago.</p>
-<h2>Admissions, Registration, and Finances</h2>
-<p>The <a href="/ucat/admissions-registration-finances/"><em>Admissions, Registration, and Finances</em></a> section covers undergraduate admissions, enrollment and registration procedures, tuition and fees, and financial aid.</p>
-<h2>Degree Programs and Requirements</h2>
-<p>The <a href="/ucat/degree-programs/"><em>Degree Programs and Requirements</em></a> section lists all degree programs and minors available to undergraduate students. It also includes information on program and requirement changes, university degree requirements, grading, advising, and graduation. These topics help students define academic standards and track their progress toward degree completion.</p>
-<h2>Colleges and Departments</h2>
-<p>The <a href="/ucat/colleges-depts/"><em>Colleges and Departments</em></a> section describes all of UIC’s undergraduate degree programs and their requirements in detail. Students use this section of the catalog to ensure that they understand and meet all requirements for their degree program.</p>
-<h2>Course Descriptions</h2>
-<p>The <a href="/ucat/course-descriptions/"><em>Course Descriptions</em></a> section lists all the undergraduate courses at UIC. The course descriptions are arranged alphabetically by subject area. Each course description includes a rubric (subject area abbreviation), course number, course title, semester hours, prerequisites (if any), and course content.</p>
-<p>The catalog includes all undergraduate courses at UIC. However, not all courses are offered during a given semester. To determine which courses are being offered, students should consult the <em>Schedule of Classes</em> through <em>my.UIC</em> before registration begins.</p>
-<h2>Archive and Links</h2>
-<p>The <em><a href="/ucat/archive-links/">Archive and Links</a></em> section lists links to archived versions of catalogs and additional documents and websites that are useful in the academic planning process.</p>
-<h2>Nondiscrimination Statement</h2>
-<p>The commitment of the University of Illinois to the most fundamental principles of academic freedom, equality of opportunity, and human dignity requires that decisions involving students and employees be based on individual merit and be free from invidious discrimination in all its forms.</p>
-<p>The University of Illinois will not engage in discrimination or harassment against any person because of race, color, religion, sex, national origin, ancestry, age, marital status, disability, sexual orientation including gender identity, unfavorable discharge from the military or status as a protected veteran and will comply with all federal and state nondiscrimination, equal opportunity and affirmative action laws, orders, and regulations. The nondiscrimination policy applies to admissions, employment, access to and treatment in the University programs and activities.</p>
-<p>University complaint and grievance procedures provide employees and students with the means for the resolution of complaints that allege a violation of this Statement. Members of the public should direct their inquiries or complaints to the appropriate equal opportunity office.<br/>
-Policy Council</p>
-<p>Revised May 31, 2005</p>
-<h2>Chancellor’s Statement of Commitment to Persons with Disabilities</h2>
-<p>Guided by the belief that people with disabilities are assets to the University, UIC is committed to full inclusion and participation of people with disabilities in all aspects of University life. We seek to provide an academic, social, and physical environment that makes disabled people integral to the diversity of perspectives that is vital to an academic community.</p>
-<p>UIC supports the principles of universally accessible design, alternative communication formats, and the expression of disability community and pride. At all levels of the University, UIC promotes equal opportunity, fair treatment, and the elimination of barriers for qualified individuals with disabilities.</p>
-<h2>Office for Access and Equity</h2>
-<p>For additional information or assistance with the equal opportunity, affirmative action, and harassment policies and procedures of the University of Illinois at Chicago, please contact:</p>
-<p>Office for Access and Equity<br/>
-Title IX, ADA, and 504 Coordinator<br/>
-717 Marshfield Building (MC 602)<br/>
-809 South Marshfield Avenue<br/>
-Chicago, Illinois 60612-7207<br/>
-<a href="http://oae.uic.edu/" target="_blank">http://oae.uic.edu</a><br/>
-(312) 996-8670</p>
-<h2>Public Formal Grievance Procedures University of Illinois at Chicago</h2>
-<h3>I. Introduction</h3>
-<p>These procedures have been implemented to address complaints of discrimination on the basis of age and/or disability in any activity, policy, rule, standard, or method of administration that is related to the operation of University’s programs.</p>
-<h3>II. Eligibility</h3>
-<p>These procedures may be used by any member of the public who alleges age (Under the Age Discrimination Act) or disability (Under Title II of the Americans with Disabilities Act) discrimination on the basis of class. However, anyone who wishes to challenge a decision made about them by an agent of the University of Illinois at Chicago (UIC) in the course of their employment or enrollment at UIC must utilize the UIC Academic Grievance Procedures.</p>
-<h3>III. Definitions</h3>
-<p>A.<em> Grievance:</em> A written statement submitted by a Grievant identifying the activity, policy, rule, standard o method of administration he/she .</p>
-<p>B. <em>Grievant:</em> Any member of the public who submits a Grievance.</p>
-<p>C. <em>Grievance Officer:</em> The assigned investigator of the UIC Office of Access and Equity can be contacted at the address below:</p>
-<p>Office for Access and Equity (MC 602)<br/>
-809 South Marshfield Avenue, Room 718<br/>
-Chicago, IL 60612-7207<br/>
-(312) 996-8670 Fax (312) 413-0055<br/>
-<a href="http://oae.uic.edu/">http://oae.uic.edu</a></p>
-<p>D. <em>Appeals Officer:</em> The Associate Chancellor for Access and EQuity orhis/her designee.</p>
-<p>E. <em>Days:</em> Any reference to &quot;days&quot; herein shall refer to business days (excluding weekends and federal holidays).</p>
-<p>F. <em>Record:</em> The complete record of a Grievance will consist of the original Grievance and any supporting information or documentation submitted with that Grievance, the Grievance Officer’s findings, the Appeal (if any) and any additional information or documentation submitted with the Appeal, the Appeal Officer’s findings, and any communications and notices relative to the Grievance. The Record will be maintained for at least five (5) years following the final decision.</p>
-<h4>IV. Grievance Process</h4>
-<p><em>Filing of the Grievance:</em> The Grievant must file his/her Grievance with the Grievance Officer no later than ten (10) days after he/she becomes aware of the offending activity, policy, standard or method of administration.</p>
-<p><em>Investigation:</em> The Grievance Officer shall conduct an appropriate investigation of the issues raised in the Grievance. The Grievant shall be given an opportunity to submit any relevant evidence he/she may have to support the Grievance. Within fourteen days (14) of submission of the Grievance, the Grievance Officer shall issue his/her findings. In the event the Grievance Officer finds evidence of discrimination in the activity, policy, standard or method of administration, he/she shall make recommendations for change(s) and shall coordinate the efforts for change(s) with the department/unit/college whose activity, policy, standard or method of administration is at issue. Furthermore, in the event that the individual was adversely affected by a decision made pursuant to a discriminatory process, policy, activity, standard or method of administration, the individual will be given the opportunity for the decision to be reconsidered according to the revised process, policy, etc. In those cases where the Grievance Officer finds no evidence of discrimination, he/she shall send written notice of that finding to the Grievant within that 14-day time period. Said notice shall inform the Grievant of his/her right to appeal the finding to the Appeals Officer within five (5) days of receipt of the notice.</p>
-<p><em>Appeal:</em> An appeal of the Grievance Officer’s findings must be in writing and must state the basis for the appeal, providing any additional evidence or information that may support the Grievant’s claim of discrimination. The Appeals Officer shall review the Grievance Officer’s record and any information/evidence submitted with the Appeal and shall issue findings within ten (10) days of receipt of the appeal. In the event the Appeals Officer finds evidence of discrimination in the activity, policy, standard or method of administration, he/she shall make recommendations for changes. In those cases where the Appeals Officer finds no evidence of discrimination, he/she shall send written notice of that finding to the Grievant within that 10-day time period. There shall be no further levels of review or appeal beyond the Appeals Officer.</p>
-<p><em>Deviation from the Process:</em> Upon proof of extenuating circumstances, the Chancellor and only the Chancellor may approve a deviation from these procedures (e.g., extension of a deadline).</p>
-<p>Effective date of policy is September 1, 2005.</p></div><!--end #textcontainer -->
+<br>
 
 
+<strong>Difficulty with a Professor</strong>
 
-            </div> <!-- end #content -->
-        </div><!--end #content-col -->
-    </div><!-- end #container -->
-</div><!-- end #wrapper --> 
-
-<div id="footer" class="clearfix" role="contentinfo">
-    <div class="wrap">
-        <div id="foot-logo">
-            <a href="/">University of Illinois at Chicago</a>
-        </div><!-- end #foot-logo -->
-        
-        <p><a href="http://admissions.uic.edu/apply-now">Apply Online</a> | <a href="http://admissions.uic.edu/contact-admissions">Contact Admissions</a> | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy Statement</a><br />
-        Having problems accessing this site? <a href="mailto:ccmelby@uic.edu">Contact the Webmaster</a>.<br />
-        &copy; 2017-2018 The Board of Trustees of the University of Illinois</p>
-    </div>
-</div><!-- end #footer -->
-
-<a href="#header" id="totop">Back to Top</a>
-
-<div id="print-dialog" class="screen noscript">
-	<div class="print-header">
-		Print Options
-	</div>
-	<div class="print-body">
-		<div class="print-option">
-			<div class="option-head">
-				<a href="#" onclick="hidePrintDialog();window.print();return false;">Send Page to Printer</a>
-			</div>
-			<p>
-				<em>Print this page.</em>
-			</p>
-		</div>
+<ul>
+<li>Contact <a href="contactombuds.shtml">Ombuds Services </a> if you have concerns about a professor, class standards or related issues.</li>
+</ul>
+<br>
 
 
-<div class="print-option"><div class="option-head"><a href="ucat.pdf" target="_blank">Download PDF of this page</a></div><p><em>The PDF will include all information unique to this page.</em></p></div>
-<div class="print-option">
-			<div class="option-head">
-				<a href="/pdf/2017-2019_undergraduate.pdf">Download PDF of the entire Undergraduate Catalog</a>
-			</div>
-			<p>
-				<em>All pages in the campus catalog.</em>
-			</p>
-		</div>
+<strong>Grade Disagreements </strong>
+<ul>
+<li>View UIC’s Academic Grievance procedure <a href="http://policies.uic.edu/educational-policy/student-academic-grievance-policy">here </a>.</li>
+<li>Contact <a href="contactombuds.shtml">Ombuds Services</a> for assistance with filing an academic grievance, or with other concerns about your grade or grading policies.</li>
+</ul>
+<br>
 
-	</div>
-	
-	<div class="buttons clearfix">
-		<div class="cancel">
-			<a href="#" onclick="hidePrintDialog(); return false;">Cancel</a>
-		</div>
-	</div>
+<a href="needhelp.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+</div>
 </div>
 
-</body>
+<a name="outclassroom"></a>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="h3">Having Problems outside the Classroom?</h3>
+</div>
+<div class="panel-body">
+<a class="jump" id="complaintstudent" ></a>
+<ul>
+<li>Learn about <a href="http://www.uic.edu/life-at-uic">Balancing Life &amp; School </a></li>
+<li>Looking for daycare options? Learn about UIC’s <a href="http://childrenscenter.uic.edu/">Children’s Center</a></li>
+<li>Contact <a href="http://financialaid.uic.edu/">Financial Aid </a>  for questions on student loans, or request assistance from <a href="contactombuds.shtml">Ombuds Services</a> if you have unresolved issues with paying your tuition bill.</li>
+</ul><br>
+
+<strong>Other financial concerns?</strong> 
+<p>You’re not alone. Check out the below ideas for ways to make and save money.</p>
+<ul>
+<li>Consider getting a <a href="http://studentemployment.uic.edu/">student job </a></li>
+<li>Find out if you qualify for any <a href=" https://admissions.uic.edu/undergraduate/tuition-financial-aid">scholarship opportunities </a></li>
+<li>Did you know you could save up to $400 if you are eligible to have <a href="http://campuscare.uic.edu">CampusCare coverage waived? </a></li>
+</ul><br>
+
+<strong>Need housing?</strong>
+<ul>
+<li>Learn about <a href="http://www.housing.uic.edu/">on-campus housing </a></li>
+<li>Browse <a href="http://www.housing.uic.edu/offcampus/">off-campus housing </a>options . You might be interested in the <a href="http://www.automaticlofts.com/">Automatic Lofts </a> or <a href="http://lacasastudenthousing.org/">La Casa Student Housing</a> , which were developed specifically for students.</li>
+</ul>
+
+<p>Need proof of enrollment? Contact the <a href="http://registrar.uic.edu/current_students/">Office of the Registrar </a></p><br>
+
+<strong>Getting to and around Campus</strong>
+<ul>
+<li>Use the <a href="http://fmweb.fm.uic.edu/Trans/intracampus.aspx">Intracampus Bus Service</a> to easily get across campus. Check out the <a href="http://uic.doublemap.com/map/">UIC Shuttle Tracker app </a> to find out exactly when your bus will arrive.</li>
+<li>UIC has 43 on-campus <a href="https://parking.uic.edu/">parking </a> facilities and over 12,000 spots </li> 
+<li>Learn about <a href="http://drc.uic.edu">accessible transportation options</a> through the Office of Disability Resource Center.</li>
+<li>Call <a href="http://fmweb.fm.uic.edu/Trans/red_car.aspx">Red Car</a>  for a free and safe ride around campus between 11pm and 7am.</li>
+<li>Get across campus and around the city by renting a <a href="http://www.divvybikes.com/">Divvy bike</a> </li>
+<li>Get to campus and all around Chicago with the <a href="http://www.transitchicago.com/">CTA </a>.</li>
+<li>Pick up your CTA <a href="http://idcenter.uic.edu/upass.shtml">Ventra U-Pass </a> if you’re a full-time student.</li>
+<li>Travel to and from the suburbs with <a href="http://metrarail.com/metra/en/home.html">Metra </a></li>
+</ul><br>
+
+
+
+
+<strong>Looking to get involved and become more connected with others?</strong>
+<p>There are many exciting ways to become involved on and around campus.</p>
+<ul>
+<li>Take part in the <a href="http://vcsa.uic.edu/the-uic-experience/">UIC Experience</a> </li>
+<li>There are always special <a href="http://www.uic.edu/htbin/eventcal/eventcal.fcgi">events</a> happening </li>
+<li>UIC has over 400 <a href="http://campusprograms.uic.edu/index.shtml">student organizations</a> </li>
+<li>Check out <a href="http://www.uic.edu/life-at-uic">Student Government</a> </li>
+<li>Check out <a href="http://sldvs.uic.edu/">volunteer opportunities </a></li>
+<li>Cheer on the Flames at a <a href="http://www.uicflames.com/">sporting event</a> </li>
+<li>Become a conduct panelist with the Student Conduct Process. <a href="contactconduct.shtml">Contact Us</a> for more information.</li>
+</ul><br>
+<a href="needhelp.shtml" class="btn btn-primary btn-xs">Back to Top</a><br>
+</div>
+</div>
+
+<a name="concerned"></a>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="h3">Concerned about yourself or someone else?</h3>
+</div>
+<div class="panel-body">
+<div class="row">
+   	<div class="col-lg-6">
+		<div style="background-color:#3498DB; color:#FFFFFF; left:0; 
+        margin:15px auto 0; overflow:hidden; padding:2px 0 0 10px; text-transform:uppercase;">
+ 	    <h3 style="color:#FFFFFF; text-align: center;"> <i class="fa fa-bookmark"></i><strong> QUICK LINKS</strong></h3>
+        </div>
+        <div id="qlinks" style="box-shadow: 0 8px 6px -6px #000000;">
+        <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='http://www.uic.edu/depts/counseling/';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-download"></i></span> <span class="quickbutton">Counseling Center</span></button>
+        </div>
+        <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='http://www.uic.edu/depts/owa/advocacy.html';" style="width:100%" >
+                <span class="quickdown" ><i class="fa fa-download"></i></span> <span class="quickbutton">Campus Advocacy Network</span></button>
+        </div>
+        <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='http://www.uic.edu/depts/police/index.html';" style="width:100%" >
+                <span class="quickdown" ><i class="fa fa-download"></i></span> <span class="quickbutton">UIC Police</span></button>
+        </div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+	<p>A program called U & I Care has been developed to educate students about the importance of supporting each other, asking for personal assistance, and helping to identify concerning student behavior. Faculty and staff are also encouraged to participate in this community-wide effort. 
+	</p><p>Visit the <a href="uicare.shtml">U & I Care </a>page for information on a wide variety of topics including stress management, alcohol and drug use, and suicide, and learn more about the resources available to you.</p> 
+	</div>
+</div>
+<br><a href="needhelp.shtml" class="btn btn-primary btn-xs">Back to Top</a><br>
+</div>
+
+</div>
+</div>
+
+</div>
+</div><!-- end of main container-->
+<!--footer-->
+
+  <div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="container footer_container">  
+<div class="triangle_left_footer"></div>
+<div class="triangle_right_footer"></div> 
+<div id="footer-wrap">
+<div class="content-wrap-spacer"></div>
+<div class="row">
+<div class="col-lg-4" style="color:#00000; padding-top: 10px; padding-bottom:10px;text-align:center;" > 
+Student Services Building (SSB)<br>
+1200 West Harrison St,<br>
+3030 SSB (MC 318)<br>
+Chicago, IL 60607<br><br>
+
+<small><i class="fa fa-phone"></i> Phone: 312-996-4857 <br>
+<i class="fa fa-print"></i> Fax: 312-413-3716 
+</small>
+</div>
+   		
+<div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px; text-align: center;" >
+      
+<a href="http://vcsa.uic.edu">OVCSA</a>
+|
+<a href="http://www.uic.edu">UIC</a>
+|
+<a href="sitemap.shtml">Site Map</a>
+|
+<a href="needhelp.shtml">Need Help?</a>
+ <p style="color:#3498DB; font-size:11px; line-height:1;"><br>Copyright © 2018 The Board of Trustees of the University of Illinois | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a> </p>
+</p> 
+        
+        </div>        
+        <div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px;">   
+         
+             <a href="http://vcsa.uic.edu"><img src="img/banner-OVCSA-white3.png" class="img-responsive" alt="OVCSA"></a> 
+            
+        </div>
+        
+    </div>
+</div>
+  
+</div>
+<div class="row">
+          <div class="col-lg-12">
+         </div>
+        </div>
+
+<script>
+//vravic2 added this script for valdiation of message textarea
+   $( "#submitbutton" ).click(function(event) {
+	  if($("#textarea").val()=='')
+	  {
+		$("#textarea").addClass("error");
+		event.preventDefault();
+	  }
+	});
+	
+   </script>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54652433-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+<!--footer-->
+    
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>  
+    
+    
+    <!-- script and styling for sticky nav bar-->
+<script>
+$(document).ready(function() {
+  
+  $(window).scroll(function () {
+  
+     console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 180) {
+      $('#nav_bar').addClass('navbar-fixed');
+	  $('#navbar_container').removeClass('container');
+    }
+    if ($(window).scrollTop() < 181) {
+      $('#nav_bar').removeClass('navbar-fixed');
+	  $('#navbar_container').addClass('container');
+    }
+  });
+});
+</script>
+<!--switch images-->
+<script type="text/javascript"> 
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+} 
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+  </body>
 </html>
+

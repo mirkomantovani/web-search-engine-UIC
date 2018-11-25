@@ -1,631 +1,1057 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Radiology</title>
-    <link rel='dns-prefetch' href='//s.w.org' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/radiologynew.webhost.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.5"}};
-			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<!DOCTYPE html><html lang="en"><head><title>University of Illinois at Chicago</title><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#009BC1"><meta name="google-site-verification" content="x4bg-s_z2XTL2GQjjZyktPBd3ibAzFZfRQb2eUHRaVc"><style>body{ font-family: Theinhardt, Arial, sans-serif; }
+.body-text, .campus-reminders .reminder-text, .category-link-list .text-cell, .error-help, .text-input, .text-area, .number-input, .tel-input, .email-input, .form-help-text, .highlight .content-cell, .home-lists .home-list-blurb, .interior-page-intro .interior-page-text, .key-message-block .message-cell .text, .landing-page-intro .intro-text, .link-block .text, .link-list .text-cell, .text-block-with-inline-image .intro-row, .text-block-with-inline-image .text-and-image-row, .text-block-with-inline-image .link-list, .text-block-with-large-image .link-list, .topic-block-list .text-cell, .topic-block-list .topic-block-text-cell, .block-wysiwyg { color: rgb(54, 54, 54); font-size: 16px; font-weight: 400; line-height: 1.36; }
+.body-text p, .campus-reminders .reminder-text p, .category-link-list .text-cell p, .error-help p, .text-input p, .text-area p, .number-input p, .tel-input p, .email-input p, .form-help-text p, .highlight .content-cell p, .home-lists .home-list-blurb p, .interior-page-intro .interior-page-text p, .key-message-block .message-cell .text p, .landing-page-intro .intro-text p, .link-block .text p, .link-list .text-cell p, .text-block-with-inline-image .intro-row p, .text-block-with-inline-image .text-and-image-row p, .text-block-with-inline-image .link-list p, .text-block-with-large-image .link-list p, .topic-block-list .text-cell p, .topic-block-list .topic-block-text-cell p, .block-wysiwyg p { margin-bottom: 1em; }
+.ms-grid, .ms-row, [class*="col-"]{ box-sizing: border-box; }
+.ms-grid{ display: block; position: relative; width: 100%; margin-left: auto; margin-right: auto; max-width: 1400px; padding-left: 12px; padding-right: 12px; }
+.ms-grid.full{ max-width: none; padding-left: 0px; padding-right: 0px; width: 100%; overflow-x: hidden; }
+ .ms-grid.zero-margin .ms-row > [class*="col-"]{ padding-left: 0px; padding-right: 0px; }
+.ms-grid.zero-margin .ms-row{ margin-left: 0px; margin-right: 0px; }
+.ms-grid .ms-row{ -webkit-align-items: stretch; display: -webkit-flex; -webkit-flex-wrap: wrap; margin-left: -1vw; margin-right: -1vw; }
+.ms-grid .ms-row::after, .ms-grid [class*="col-"]::after{ content: ''; display: table; clear: both; }
+[class*="col-"]{ float: left; width: 100%; position: relative; margin: 0px; padding-left: 1vw; padding-right: 1vw; }
+@media screen and (min-width: 540px){
+.ms-grid{ padding-left: 24px; padding-right: 24px; }
 }
-</style>
-<link rel='stylesheet' id='contact-form-7-css'  href='https://radiologynew.webhost.uic.edu/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.7' type='text/css' media='all' />
-<link rel='stylesheet' id='mmenu-style-css'  href='https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/js/mmenu/css/jquery.mmenu.all.css?ver=4.7.5' type='text/css' media='all' />
-<link rel='stylesheet' id='main-css'  href='https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/css/styles.css?ver=4.7.5' type='text/css' media='all' />
-<link rel='stylesheet' id='overrides-css'  href='https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/css/overrides.css?ver=4.7.5' type='text/css' media='all' />
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='https://radiologynew.webhost.uic.edu/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://radiologynew.webhost.uic.edu/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://radiologynew.webhost.uic.edu/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.7.5" />
-<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://radiologynew.webhost.uic.edu"><link rel="htt://theeventscalendar.com" href="https://radiologynew.webhost.uic.edu/wp-json/tribe/events/v1/" /><link rel="icon" href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/cropped-Achieva_system_2-32x32.jpg" sizes="32x32" />
-<link rel="icon" href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/cropped-Achieva_system_2-192x192.jpg" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/cropped-Achieva_system_2-180x180.jpg" />
-<meta name="msapplication-TileImage" content="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/cropped-Achieva_system_2-270x270.jpg" />
-		<style type="text/css" id="wp-custom-css">
-			/*
-You can add your own CSS here.
-
-Click the help icon above to learn more.
-*/
-.col-md-3 {
-height: 100px;
-padding: 3px 15px;
-width: 30%;
+@media screen and (min-width: 768px){
+.ms-grid{ padding-left: 30px; padding-right: 30px; width: 100%; }
 }
-.col-md-9 {
-margin: auto;
-height: 110px;
-width: 100%;
+@media screen and (min-width: 2000px){
+.ms-grid .ms-row{ margin-left: -0.5vw; margin-right: -0.5vw; }
+.ms-grid .ms-row > [class*="col-"]{ padding-left: 0.5vw; padding-right: 0.5vw; }
 }
-
-
-#home__content__body *{
-background-color: #f2f2f2;
-font-size:14px;
-padding:0;
-align:left;
-border-collapse: collapse;
+@media screen and (min-width: 320px){
+.xs-col-1-2{ width: 50%; }
 }
-
-#footer__logo {
-align:left;
-border-collapse: collapse;
-width:35%;
-height:155px;
+@media screen and (min-width: 768px){
+.m-col-1-2{ width: 50%; }
 }
-
-#footer__menu{
-width:65%;
-
+@media screen and (min-width: 768px){
+.m-col-1-3{ width: 33.3333333333%; }
 }
-
-#footer__copyright {
-vertical-align:text-bottom;
-
+@media screen and (min-width: 768px){
+.m-col-2-push-1{ left: 50%; right: auto; }
+.m-col-2-pull-1{ right: 50%; left: auto; }
 }
-
-#menu-item-12233 > a, #menu-item-12234 > a {
-    word-wrap: break-word;
-    max-width: 60px;
+*{ border: 0px; box-sizing: border-box; margin: 0px; padding: 0px; }
+img{ vertical-align: bottom; }
+#home-page-title{ position: absolute; left: -999vw; }
+.ms-grid{ max-width: 1080px; }
+@media (max-width: 767px){
+.ms-grid{ padding-left: 20px; padding-right: 20px; overflow: hidden; }
 }
-
-.fa-info-circle {
-color: #f1f1f1!important;
+@media (max-width: 1084px) and (min-width: 768px){
+.ms-grid{ padding-left: 30px; padding-right: 30px; width: 100%; }
 }
-		</style>
-	    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.3/jquery.colorbox-min.js" type='text/javascript'></script>
-    <link rel='stylesheet' href='/wp-content/themes/radiology/js/colorbox/colorbox.css' />
-    <script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
-          </head>
-  <body class="home blog tribe-no-js">
-  <div id="page__wrapper">
-    <div style="position: absolute; right: 50px; top: 15px; color: white; z-index:999;">
-  <a href="/contact-us" style="color: white;">Contact Us</a> |
-          <a href="https://radiologynew.webhost.uic.edu/wp-login.php?redirect_to=%2F" style="color: white;">Login</a>
-     |<a href="/search" style="color: white;"><i class='fa fa-search'></i></a>
-</div>
-    <div id='mmenu-toggle'>
-      <a href="#mobile-menu" class="container"><i class="fa fa-bars"></i></a>
+@media (min-width: 1140px){
+.ms-grid{ padding-left: 0px; padding-right: 0px; }
+}
+.ms-grid.extra-wide-grid{ max-width: 1400px; }
+.promo-header{ color: rgb(54, 54, 54); font-size: 60px; font-weight: 900; line-height: 1; }
+body{ background-color: rgb(248, 248, 248); }
+.calls-to-action{ background-color: rgb(255, 255, 255); font-size: 16px; line-height: 20px; }
+.calls-to-action .call-to-action-row{ list-style: none; }
+.calls-to-action .calls-to-action-row-container{ margin: 0px auto; max-width: 1400px; padding: 0px; }
+@media (min-width: 1140px){
+.calls-to-action .calls-to-action-row-container{ padding: 0px; }
+}
+.calls-to-action .calls-to-action-group-container{ float: left; padding: 0px 0px 0px 20px; position: relative; width: 100%; }
+@media (min-width: 768px){
+.calls-to-action .calls-to-action-group-container{ width: 50%; }
+}
+.calls-to-action .calls-to-action-group-container [class*="col-"]{ padding-left: 0px; padding-right: 0px; }
+.calls-to-action .calls-to-action-group-container-again{ list-style: none; }
+@media (min-width: 768px){
+.calls-to-action .calls-to-action-group-container-again{ width: 100%; }
+}
+@media (min-width: 1140px){
+.calls-to-action .calls-to-action-group-container-again{ position: absolute; right: 0px; width: 540px; }
+}
+.calls-to-action .calls-to-action-reminder-container{ float: right; padding: 0px 20px; width: 100%; }
+@media (min-width: 768px){
+.calls-to-action .calls-to-action-reminder-container{ width: 50%; }
+}
+@media (max-width: 1400px) and (min-width: 768px){
+.calls-to-action .calls-to-action-reminder-container{ padding: 0px 30px; }
+}
+.calls-to-action .call-to-action{ display: -webkit-flex; -webkit-align-items: center; color: rgb(0, 127, 165); font-weight: 700; height: 80px; padding: 0px 10px 0px 0px; position: relative; text-decoration: none; }
+@media (min-width: 768px){
+.calls-to-action .call-to-action{ height: 80px; }
+}
+.calls-to-action .call-to-action .call-to-action-icon-container{ height: 30px; width: 30px; }
+.calls-to-action .call-to-action .call-to-action-icon-container::before{ border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; }
+.calls-to-action .call-to-action svg{ fill: #007fa5; position: relative; z-index: 1; }
+.calls-to-action .call-to-action .call-to-action-label{ margin-left: 10px; }
+.calls-to-action .reminders-container{ display: -webkit-flex; -webkit-align-items: center; font-weight: 700; height: 80px; }
+@media (min-width: 768px){
+.calls-to-action .reminders-container{ -webkit-flex-direction: row-reverse; }
+}
+@media (min-width: 1140px){
+.calls-to-action .reminders-container{ width: 540px; }
+}
+.calls-to-action .reminders-icon-container{ display: block; height: 30px; margin-right: 10px; width: 30px; }
+.calls-to-action .reminders-icon-container::before{ border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; border-color: rgb(213, 0, 50); }
+.calls-to-action .reminders{ fill: #d50032; height: 30px; width: 30px; }
+.calls-to-action .reminders-anchor{ color: rgb(213, 0, 50); display: -webkit-flex; line-height: 30px; position: relative; text-decoration: none; }
+@media (min-width: 768px){
+.calls-to-action .reminders-anchor{ float: right; padding-left: 10px; padding-right: 22px; }
+}
+.calls-to-action .anchor-point{ fill: #d50032; height: 8px; width: 12px; }
+@media (min-width: 768px){
+.calls-to-action .anchor-point{ position: absolute; right: 0px; top: 11px; }
+}
+.call-to-action-icon-container{ position: relative; }
+.call-to-action-icon-container::before{ -webkit-animation: 1s; border: 3px solid rgb(0, 127, 165); content: ''; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; }
+.reminders-icon-container{ position: relative; }
+.reminders-icon-container::before{ -webkit-animation: 1s; border: 3px solid rgb(0, 127, 165); content: ''; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; }
+.header{ position: relative; width: 100%; background-color: rgb(0, 0, 0); }
+.header-menu-bar{ position: relative; }
+.header--blue .header-menu-bar{ background-color: rgb(0, 127, 165); }
+@media (max-width: 1084px){
+.header--blue .navigation-primary .primary-nav-list .primary-list-item{ background-color: rgb(0, 127, 165); }
+}
+.header--blue .navigation-primary .primary-nav-list .expander, .header--blue .navigation-primary .primary-nav-list .menu-label-item{ background-color: rgb(0, 102, 132); }
+@media (max-width: 1084px){
+.header--blue .navigation-primary .primary-nav-list .primary-list-active-item > .primary-list-anchor{ background-color: rgb(0, 102, 132); }
+}
+@media (min-width: 1084px){
+.header--blue .navigation-eyebrow{ background-color: rgb(0, 127, 165); }
+}
+.header--blue .navigation-primary:not(.scrolled-after) .primary-nav-list .primary-second-tier-list{ border-color: rgb(0, 127, 165); }
+.header-content{ margin: 0px auto; max-width: 1400px; position: relative; }
+.header-background-image-container{ bottom: 0px; left: 0px; overflow: hidden; position: absolute; right: 0px; top: 0px; }
+.header-background-image{ background-size: cover; bottom: -5px; -webkit-filter: blur(5px); left: -5px; position: absolute; right: -5px; top: -5px; background-position: 50% 50%; background-repeat: no-repeat no-repeat; }
+.hero-image-container{ overflow: hidden; }
+.hero-image{ display: block; left: 50%; margin: 0px auto; position: relative; -webkit-transform: translateX(-50%); width: auto; height: 250px; }
+@media (min-width: 768px){
+.hero-image{ height: 600px; }
+}
+@media (max-width: 768px) and (min-width: 540px){
+.hero-image{ height: 600px; }
+}
+@media (min-width: 1084px){
+.hero-image{ max-height: none; }
+}
+.homepage-header-navigation .navigation-primary .circle-logo-container{ opacity: 0; }
+.key-message-block .promo-header{ font-size: 54px; line-height: 96%; margin-bottom: 14px; }
+@media (max-width: 1084px) and (min-width: 768px){
+.key-message-block .promo-header{ font-size: 48px; }
+}
+@media (max-width: 768px){
+.key-message-block .promo-header{ font-size: 36px; }
+}
+.key-message-block .message-cell{ padding: 20px 20px 40px; }
+@media (min-width: 768px){
+.key-message-block .message-cell{ max-height: 440px; padding: 14px 30px; }
+}
+@media (min-width: 1084px){
+.key-message-block .message-cell{ padding-top: 65px; padding-bottom: 50px; width: 540px; }
+}
+@media (min-width: 768px){
+.key-message-block .message-on-left{ display: -webkit-flex; -webkit-align-items: center; }
+}
+.key-message-block .message-on-left{ -webkit-justify-content: flex-end; }
+@media (min-width: 1140px){
+.key-message-block .message-on-left .message-cell{ float: right; padding-right: 50px; padding-left: 0px; }
+}
+.key-message-block .image{ background-color: transparent; background-size: cover; height: 224px; background-position: 50% 50%; background-repeat: no-repeat no-repeat; }
+@media (max-width: 768px) and (min-width: 540px){
+.key-message-block .image{ height: 378px; }
+}
+@media (min-width: 768px){
+.key-message-block .image{ height: 440px; }
+}
+.link-block-group .link-block-anchor { margin-top: 40px; }
+@media (min-width: 540px){
+.link-block-group .link-block-anchor { max-width: 50%; }
+}
+.link-block-group .link-block-anchor, .link-block-group .link-block-anchor:hover, .link-block-group .link-block-anchor:visited { color: rgb(54, 54, 54); text-decoration: none; }
+.link-block { padding-top: 1px; position: relative; }
+.link-block::before { background-color: rgb(213, 0, 50); content: ''; height: 1px; left: 0px; position: absolute; top: 1px; transition: all 0.4s; -webkit-transition: all 0.4s; width: 100%; }
+.link-block .subhead { margin: 15px 0px 4px; padding-right: 20px; position: relative; }
+.link-block .subhead .arrow { fill: #001e62; height: 10px; transition: all 0.3s cubic-bezier(0.7, 0.3, 0.75, 1.4); -webkit-transition: all 0.3s cubic-bezier(0.7, 0.3, 0.75, 1.4); position: absolute; right: 5px; top: calc(0.5em - 5px); width: 10px; }
+.link-block-anchor:hover, .link-block-anchor:focus { outline: none; }
+.link-block-anchor:hover .link-block::before, .link-block-anchor:focus .link-block::before { height: 3px; }
+.link-block-anchor:hover .arrow, .link-block-anchor:focus .arrow { -webkit-transform: translateX(5px); }
+.navigation-eyebrow{ height: 40px; }
+@media (min-width: 1084px){
+.navigation-eyebrow{ background-color: rgb(0, 127, 165); }
+}
+.navigation-eyebrow .navigation-eyebrow-inner{ margin: 0px auto; max-width: 1080px; position: relative; }
+.navigation-eyebrow .eyebrow-list{ display: -webkit-flex; color: rgb(255, 255, 255); font-size: 14px; font-weight: 400; -webkit-justify-content: space-between; list-style: none inside; margin: 0px auto; padding: 0px 20px; }
+@media (min-width: 1084px){
+.navigation-eyebrow .eyebrow-list{ padding: 0px 0px 0px 25%; }
+}
+.navigation-eyebrow .eyebrow-list-item{ display: none; line-height: 40px; height: 40px; }
+@media (min-width: 1084px){
+.navigation-eyebrow .eyebrow-list-item{ display: block; float: left; }
+}
+.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor{ overflow: hidden; position: relative; }
+.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor::before{ background-color: rgb(213, 0, 50); content: ' '; height: 2px; left: 0px; position: absolute; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out; width: 100%; }
+.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor::before{ bottom: 0px; -webkit-transform: translateY(100%); }
+.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor::before{ background-color: rgb(255, 255, 255); height: 4px; }
+.navigation-eyebrow .eyebrow-button{ -webkit-align-self: center; }
+.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor{ font-weight: 700; padding-left: 34px; padding-right: 20px; overflow: hidden; position: relative; }
+.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::before{ background-color: rgb(213, 0, 50); content: ' '; height: 2px; left: 0px; position: absolute; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out; width: 100%; }
+.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::before{ bottom: 0px; -webkit-transform: translateY(100%); }
+.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::before{ background-color: rgb(255, 255, 255); height: 4px; }
+.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::after{ content: '+'; left: 10px; position: absolute; text-align: center; top: 0px; width: 20px; }
+.navigation-eyebrow .eyebrow-list-anchor{ display: block; outline: none; }
+.navigation-eyebrow .eyebrow-list-anchor{ color: rgb(255, 255, 255); text-decoration: none; }
+.navigation-eyebrow .search-button-item{ display: block; height: 40px; position: absolute; top: 0px; right: 40px; width: 40px; z-index: 1; }
+@media (min-width: 1084px){
+.navigation-eyebrow .search-button-item{ height: 40px; position: relative; top: 0px; right: 0px; width: auto; }
+}
+.navigation-eyebrow .search-button{ background-color: transparent; cursor: pointer; height: 40px; transition: background-color 0.4s; -webkit-transition: background-color 0.4s; width: 40px; }
+.navigation-eyebrow .search-button .search-glass{ fill: #ffffff; height: 20px; margin: 10px; transition: fill 0.4s; -webkit-transition: fill 0.4s; width: 20px; }
+.navigation-eyebrow .search-input-container{ position: absolute; top: 0px; height: 40px; right: 42px; -webkit-transform: translateY(-100%); transition: all 0.4s; -webkit-transition: all 0.4s; width: 278px; z-index: 3; }
+@media (min-width: 1084px){
+.navigation-eyebrow .search-input-container{ height: 40px; right: 40px; }
+}
+.navigation-eyebrow .search-input-container form{ position: relative; width: 100%; height: 100%; }
+.navigation-eyebrow .search-input-container input[type="text"]{ color: rgb(149, 149, 149); height: 100%; padding: 0px 12px; font-size: 18px; width: 100%; }
+.navigation-eyebrow .search-input-container .submit-button{ -webkit-appearance: none; clip: rect(1px 1px 1px 1px); position: absolute !important; }
+.navigation-primary{ pointer-events: none; position: absolute; top: 0px; width: 100%; z-index: 2; }
+@media (min-width: 1084px){
+.navigation-primary{ pointer-events: auto; position: relative; }
+}
+.navigation-primary .navigation-primary-inner{ margin: 0px auto; max-width: 1080px; position: relative; min-height: 40px; }
+.navigation-primary .primary-nav-list{ display: -webkit-flex; -webkit-flex-wrap: wrap; -webkit-justify-content: space-between; line-height: 1; list-style: none inside; overflow: hidden; padding: 0px; position: absolute; right: 0px; transition: all 0.4s; -webkit-transition: all 0.4s; top: 0px; width: 260px; }
+@media (min-width: 1084px){
+.navigation-primary .primary-nav-list{ -webkit-flex-wrap: nowrap; left: 0px; margin: 0px auto; overflow: visible; padding-top: 0px; padding-right: 0px; padding-left: 25%; position: relative; transition: 0s; -webkit-transition: 0s; top: 0px; width: auto; }
+}
+.navigation-primary .primary-nav-list .primary-list-item{ background-color: rgb(0, 127, 165); color: rgb(255, 255, 255); font-size: 16px; font-weight: 700; letter-spacing: 0.06em; position: relative; text-transform: uppercase; width: 100%; background-position: initial initial; background-repeat: initial initial; }
+@media (min-width: 1084px){
+.navigation-primary .primary-nav-list .primary-list-item{ background-color: transparent; float: left; background-position: initial initial; background-repeat: initial initial; }
+}
+.navigation-primary .primary-nav-list .primary-list-anchor{ display: block; line-height: 1; }
+.navigation-primary .primary-nav-list .primary-list-anchor, .navigation-primary .primary-nav-list .primary-second-tier-list-anchor{ color: inherit; text-decoration: none; }
+.navigation-primary .primary-nav-list .primary-second-tier-list{ display: none; list-style: none inside; }
+.navigation-primary .primary-nav-list .primary-second-tier-list-item{ background-color: rgb(255, 255, 255); color: rgb(54, 54, 54); font-size: 14px; font-weight: 400; letter-spacing: normal; line-height: 1.25; text-transform: none; background-position: initial initial; background-repeat: initial initial; }
+.navigation-primary .primary-nav-list .primary-second-tier-list-item:last-child{ border-bottom-width: 0px; }
+.navigation-primary .primary-nav-list .primary-second-tier-list-item .primary-second-tier-list-anchor{ display: block; padding: 10px; }
+.navigation-primary .primary-nav-list .expander{ display: none; }
+@media (min-width: 1084px){
+.navigation-primary .primary-nav-list .primary-list-item{ padding: 0px; position: relative; width: auto; }
+.navigation-primary .primary-nav-list .primary-list-item.primary-list-active-item > .primary-list-anchor{ border-bottom-width: 8px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); padding-bottom: 12px; }
+.navigation-primary .primary-nav-list .primary-list-item > .primary-list-anchor{ display: block; outline: none; padding: 22px 0px; }
+.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor{ overflow: hidden; position: relative; }
+.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor::before{ background-color: rgb(213, 0, 50); content: ' '; height: 2px; left: 0px; position: absolute; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out; width: 100%; }
+.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor::before{ bottom: 0px; -webkit-transform: translateY(100%); }
+.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor::before{ background-color: rgb(255, 255, 255); bottom: 2px; height: 8px; -webkit-transform: translateY(135%); }
+.navigation-primary .primary-nav-list .primary-second-tier-list{ border-right-width: 2px; border-right-style: solid; border-right-color: rgb(0, 127, 165); border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(0, 127, 165); border-left-width: 2px; border-left-style: solid; border-left-color: rgb(0, 127, 165); display: block; opacity: 0; pointer-events: none; position: absolute; left: -2px; top: 60px; transition: opacity 0.4s; -webkit-transition: opacity 0.4s; width: 260px; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-last-child(1) .primary-second-tier-list, .navigation-primary .primary-nav-list .primary-list-item:nth-last-child(2) .primary-second-tier-list{ left: auto; right: -2px; }
+}
+@media (max-width: 1083px){
+.navigation-primary .primary-nav-list .expander{ background-color: rgb(39, 152, 182); display: block; height: 44px; position: absolute; top: 0px; right: 0px; width: 44px; }
+.navigation-primary .primary-nav-list .expander::before{ color: rgb(255, 255, 255); content: '+'; display: block; line-height: 44px; text-align: center; width: 100%; }
+.navigation-primary .primary-nav-list .primary-list-anchor{ line-height: 24px; padding: 10px 20px; }
+.navigation-primary .primary-nav-list .primary-list-active-item > .primary-list-anchor{ background-color: rgb(0, 102, 132); padding-left: 22px; position: relative; }
+.navigation-primary .primary-nav-list .primary-list-item{ min-height: 44px; -webkit-transform: translateX(260px); transition: all 0.33s; -webkit-transition: all 0.33s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+0){ transition: 0s; -webkit-transition: 0s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+1){ transition: 0.08s; -webkit-transition: 0.08s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+2){ transition: 0.16s; -webkit-transition: 0.16s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+3){ transition: 0.24s; -webkit-transition: 0.24s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+4){ transition: 0.32s; -webkit-transition: 0.32s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+5){ transition: 0.4s; -webkit-transition: 0.4s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+6){ transition: 0.48s; -webkit-transition: 0.48s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+7){ transition: 0.56s; -webkit-transition: 0.56s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+8){ transition: 0.64s; -webkit-transition: 0.64s; }
+.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+9){ transition: 0.72s; -webkit-transition: 0.72s; }
+}
+@media (max-width: 1083px){
+.navigation-primary .primary-nav-list{ pointer-events: none; }
+}
+.navigation-primary .primary-nav-list .menu-label-item{ background-color: rgb(39, 152, 182); color: rgb(255, 255, 255); font-size: 16px; font-weight: 700; height: 40px; letter-spacing: 0.06em; line-height: 40px; min-height: 40px; padding-top: 0px; padding-bottom: 0px; padding-left: 20px; position: relative; text-transform: uppercase; -webkit-transform: translateX(260px); transition: all 0.33s; -webkit-transition: all 0.33s; width: 100%; }
+@media (min-width: 1084px){
+.navigation-primary .primary-nav-list .menu-label-item{ display: none; }
+}
+.navigation-primary .primary-nav-list .menu-label{ opacity: 0; transition: opacity 0.45s 0.45s; -webkit-transition: opacity 0.45s 0.45s; }
+.navigation-primary .primary-nav-list .menu-toggle{ background-color: transparent; display: block; height: 40px; pointer-events: auto; position: absolute; top: 0px; right: 0px; width: 40px; z-index: 1; background-position: initial initial; background-repeat: initial initial; }
+.navigation-primary .primary-nav-list .menu-toggle > span{ position: absolute; left: -999vw; }
+.navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon{ background-color: rgb(255, 255, 255); height: 2px; margin-left: 9px; position: absolute; top: 20px; transition: all 300ms ease-out; -webkit-transition: all 300ms ease-out; width: 24px; left: 0px; background-position: initial initial; background-repeat: initial initial; }
+.navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon::after, .navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon::before{ content: ''; position: absolute; width: 100%; height: 100%; left: 0px; top: 6px; background-color: rgb(255, 255, 255); transition: all 300ms ease-out; -webkit-transition: all 300ms ease-out; background-position: initial initial; background-repeat: initial initial; }
+.navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon::before{ top: auto; bottom: 6px; }
+@media (min-width: 1083px){
+.navigation-primary .primary-nav-list .menu-toggle{ display: none; }
+}
+.navigation-primary .circle-logo-container{ height: 40px; left: 0px; opacity: 0; pointer-events: auto; position: absolute; -webkit-transform: translateY(-100px); top: 10px; width: 40px; z-index: 1; }
+@media (max-width: 1120px) and (min-width: 1080px){
+.navigation-primary .circle-logo-container{ left: 20px; }
+}
+.navigation-primary .circle-logo-container span{ -webkit-appearance: none; clip: rect(1px 1px 1px 1px); position: absolute !important; }
+@media (max-width: 1084px){
+.navigation-primary .circle-logo-container{ height: 32px; margin-left: 20px; opacity: 1; -webkit-transform: translateY(4px); top: 0px; width: 32px; }
+}
+.navigation-primary .circle-logo-container .circle-logo path{ fill: #ffffff; transition: all 0.5s; -webkit-transition: all 0.5s; }
+.navigation-primary .circle-logo-container a{ color: rgb(255, 255, 255); outline: none; }
+.navigation-primary .circle-logo-container .circle-logo{ -webkit-transform: rotate(-360deg); }
+.homepage-header-content .large-brand-mark-link{ display: block; left: 0px; max-width: 100%; padding: 0px; position: absolute; top: 0px; z-index: 1; height: 250px; }
+@media (min-width: 768px){
+.homepage-header-content .large-brand-mark-link{ height: 600px; }
+}
+@media (max-width: 768px) and (min-width: 540px){
+.homepage-header-content .large-brand-mark-link{ height: 600px; }
+}
+@media (min-width: 1084px){
+.homepage-header-content .large-brand-mark-link{ max-height: none; }
+}
+@media (min-width: 1084px){
+.homepage-header-content .large-brand-mark-link{ height: 320px; padding: 0px; top: -40px; width: 234px; }
+}
+@media (min-width: 1400px){
+.homepage-header-content .large-brand-mark-link{ left: 160px; }
+}
+.homepage-header-content .large-brand-mark-link span{ -webkit-appearance: none; clip: rect(1px 1px 1px 1px); color: rgb(255, 255, 255); position: absolute !important; }
+.homepage-header-content .large-brand-mark-link .large-brand-mark{ fill: #ffffff; height: calc(100% - 40px); max-width: 100%; margin: 20px; }
+@media (min-width: 1084px){
+.homepage-header-content .large-brand-mark-link .large-brand-mark{ height: auto; margin: 0px; }
+}/* Styles appended to the end of every critical path css stylesheet */
+.navigation-primary .primary-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.navigation-eyebrow .eyebrow-list {
+    display: flex;
+    justify-content: space-between;
+}
+.calls-to-action .call-to-action {
+    align-items: center;
+    display: flex;
+}
+.calls-to-action .reminders-container {
+    display: flex;
+}
+.calls-to-action .reminders-anchor {
+    display: flex;
+}</style></head><body><header class="header  header--blue" role="banner">
+    <div class="header-background-image-container">
+        <div class="header-background-image" aria-hidden="true" style="background-image: url(/_assets/3d7851c9e7cf5a6f32b2aea43ac49cff.jpg)"></div>
     </div>
-    <div id="header__wrapper">
-      <div id="header__container" class="container">
-        <div class='row'>
-          <div class='col-xs-12 col-sm-12 col-md-3'>
-            <div class="logo">
-              <a href="/"><img src='https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/09/logo-copy.png' /></a></div>
-          </div>
-          <div class='col-xs-12-col-sm-12 col-md-9' id='header-menu-wrapper'>
-            <div id="header__menu">
-              <div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-12166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12166"><a href="#" onclick="return false;" class="placeholder">About Us</a>
-<ul class="sub-menu">
-	<li id="menu-item-12167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12167"><a href="#" onclick="return false;" class="placeholder">Locations</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12204"><a href="https://hospital.uillinois.edu/">UI Health</a></li>
-		<li id="menu-item-12205" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12205"><a href="https://hospital.uillinois.edu/patients-and-visitors/locations-and-directions#Location_OutpatientCareCenter">Outpatient Care Center</a></li>
-		<li id="menu-item-12206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12206"><a href="https://radiologynew.webhost.uic.edu/about-us/locations/advanced-imaging-center/">Advanced Imaging Center</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12168"><a href="#" onclick="return false;" class="placeholder">Facilities and equipment</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12299" class="menu-item menu-item-type-post_type menu-item-object-equipment menu-item-12299"><a href="https://radiologynew.webhost.uic.edu/equipment/petct/">PET/CT</a></li>
-		<li id="menu-item-12300" class="menu-item menu-item-type-post_type menu-item-object-equipment menu-item-12300"><a href="https://radiologynew.webhost.uic.edu/equipment/3-0-tesla-mri-scanner/">3.0 Tesla MRI Scanner</a></li>
-		<li id="menu-item-12301" class="menu-item menu-item-type-post_type menu-item-object-equipment menu-item-12301"><a href="https://radiologynew.webhost.uic.edu/equipment/64-slice-ct-scanner/">64 Slice CT Scanner</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12169"><a href="#" onclick="return false;" class="placeholder">Personnel</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12170"><a href="https://radiologynew.webhost.uic.edu/radiology-personnel/faculty/">Faculty</a></li>
-		<li id="menu-item-12171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12171"><a href="#" onclick="return false;" class="placeholder">Residents</a>
-		<ul class="sub-menu">
-			<li id="menu-item-12172" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12172"><a href="https://radiologynew.webhost.uic.edu/radiology-personnel/residents/residents-current/">Current Residents</a></li>
-			<li id="menu-item-12173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12173"><a href="https://radiologynew.webhost.uic.edu/radiology-personnel/residents/residents-past/">Alumni</a></li>
-		</ul>
-</li>
-		<li id="menu-item-12174" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12174"><a href="#" onclick="return false;" class="placeholder">Fellows</a>
-		<ul class="sub-menu">
-			<li id="menu-item-12175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12175"><a href="https://radiologynew.webhost.uic.edu/radiology-personnel/fellows/fellows-current/">Current Fellows</a></li>
-			<li id="menu-item-12176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12176"><a href="https://radiologynew.webhost.uic.edu/radiology-personnel/fellows/fellows-past/">Alumni</a></li>
-		</ul>
-</li>
-	</ul>
-</li>
-	<li id="menu-item-12177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12177"><a href="#" onclick="return false;" class="placeholder">Contact Us</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12214"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/registration-tech-area/">Radiology Areas</a></li>
-		<li id="menu-item-12211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12211"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/hospital-floors/">Hospital Floors</a></li>
-		<li id="menu-item-12178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12178"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/administrative-office/">Radiology Administrative Offices</a></li>
-		<li id="menu-item-12210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12210"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/it-support/">IT Support</a></li>
-		<li id="menu-item-12209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12209"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/reading-rooms/">Radiology Reading Rooms</a></li>
-	</ul>
-</li>
-</ul>
-</li>
-<li id="menu-item-12184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12184"><a href="#" onclick="return false;" class="placeholder">Education</a>
-<ul class="sub-menu">
-	<li id="menu-item-12201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12201"><a href="https://radiologynew.webhost.uic.edu/residency-applicants/welcome/">Diagnostic Radiology Residency</a></li>
-	<li id="menu-item-12541" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12541"><a href="https://radiologynew.webhost.uic.edu/interventional-radiology/">Interventional Radiology-Diagnostic Radiology residency</a></li>
-	<li id="menu-item-12551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12551"><a href="https://radiologynew.webhost.uic.edu/radiology-residency-m-s-program/">Radiology Residency M.S. Program</a></li>
-	<li id="menu-item-12307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12307"><a href="https://radiologynew.webhost.uic.edu/diagnostic-radiology-medical-student-electives/">Diagnostic Radiology medical student electives</a></li>
-	<li id="menu-item-12545" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12545"><a href="https://radiologynew.webhost.uic.edu/interventional-radiology-medical-student-electives/">Interventional Radiology medical student electives</a></li>
-</ul>
-</li>
-<li id="menu-item-12191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12191"><a href="#" onclick="return false;" class="placeholder">Research</a>
-<ul class="sub-menu">
-	<li id="menu-item-12192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12192"><a href="https://radiologynew.webhost.uic.edu/clinical-research/">Clinical research</a></li>
-	<li id="menu-item-12193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12193"><a href="https://radiologynew.webhost.uic.edu/translational-research/">Translational research</a></li>
-	<li id="menu-item-12311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12311"><a href="https://chicago.medicine.uic.edu/departments/centers/center-magnetic-resonance-research/3t-program/">Center for Magnetic Resonance Research</a></li>
-	<li id="menu-item-12555" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12555"><a href="https://radiologynew.webhost.uic.edu/ir-fellowship-ms-program/">Interventional Radiology Research Fellowship M.S. Program</a></li>
-	<li id="menu-item-12809" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12809"><a href="https://radiologynew.webhost.uic.edu/incentive-award-program/">Incentive Award Program</a></li>
-	<li id="menu-item-12804" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12804"><a href="http://researchguides.uic.edu/ROAAP/roaapguidelines">Research Open Access Article Publishing (ROAAP) Fund</a></li>
-</ul>
-</li>
-<li id="menu-item-12216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12216"><a href="#" onclick="return false;" class="placeholder">For Patients</a>
-<ul class="sub-menu">
-	<li id="menu-item-12220" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12220"><a href="https://hospital.uillinois.edu/patients-and-visitors/health-insurance-information/accepted-insurance-plans">Accepted Health Plans</a></li>
-	<li id="menu-item-12221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12221"><a href="https://www.radiologyinfo.org/">About Radiology Procedures</a></li>
-</ul>
-</li>
-<li id="menu-item-12217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12217"><a href="#" onclick="return false;" class="placeholder">News &#038; Events</a>
-<ul class="sub-menu">
-	<li id="menu-item-12222" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12222"><a href="#" onclick="return false;" class="placeholder">Graduation Dinners</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12225" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12225"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2018-2/">2018</a></li>
-		<li id="menu-item-12224" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12224"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2017-2/">2017</a></li>
-		<li id="menu-item-12223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12223"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2016-2/">2016</a></li>
-		<li id="menu-item-12227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12227"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2015-2/">2015</a></li>
-		<li id="menu-item-12226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12226"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2014-2/">2014</a></li>
-		<li id="menu-item-12246" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12246"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2013-2/">2013</a></li>
-		<li id="menu-item-12245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12245"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2011-2/">2011</a></li>
-		<li id="menu-item-12244" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12244"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2010-2/">2010</a></li>
-		<li id="menu-item-12243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12243"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2009-2/">2009</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12253" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12253"><a href="#" onclick="return false;" class="placeholder">Departmental Events</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12247" class="menu-item menu-item-type-post_type menu-item-object-image_gallery menu-item-12247"><a href="https://radiologynew.webhost.uic.edu/image_gallery/rsna-2014/">RSNA 2014</a></li>
-		<li id="menu-item-12248" class="menu-item menu-item-type-post_type menu-item-object-image_gallery menu-item-12248"><a href="https://radiologynew.webhost.uic.edu/image_gallery/rsna-2015/">RSNA 2015</a></li>
-	</ul>
-</li>
-</ul>
-</li>
-<li id="menu-item-12617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12617"><a href="https://radiologynew.webhost.uic.edu/alumni/">Alumni</a></li>
-<li id="menu-item-12218" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12218"><a href="#" onclick="return false;" class="placeholder">Giving</a>
-<ul class="sub-menu">
-	<li id="menu-item-12297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12297"><a href="https://radiologynew.webhost.uic.edu/donations/">Donations</a></li>
-</ul>
-</li>
-<li id="menu-item-12328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12328"><a href="https://radiologynew.webhost.uic.edu/wp-login.php?redirect_to=%2F" class="intranet-login-link hide-submenu">Intranet</a>
-<ul class="sub-menu">
-	<li id="menu-item-12329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12329"><a href="#" onclick="return false;" class="placeholder">Clinical Schedules</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12237"><a href="http://www.amion.com/">Resident Schedule</a></li>
-		<li id="menu-item-12241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12241"><a href="https://radiologynew.webhost.uic.edu/facultystaff/schedules/call-schedule/">Call Schedule</a></li>
-		<li id="menu-item-12238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12238"><a href="https://radiologynew.webhost.uic.edu/facultystaff/schedules/attending-schedule/">Attending Schedule</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12330"><a href="#" onclick="return false;" class="placeholder">Lecture Schedules</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12232"><a href="https://radiologynew.webhost.uic.edu/facultystaff/noon-lecture-series/">Noon Lecture Series</a></li>
-		<li id="menu-item-12231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12231"><a href="https://radiologynew.webhost.uic.edu/facultystaff/didactic-lecture-series/">Didactic Lecture Series</a></li>
-		<li id="menu-item-12275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12275"><a href="https://radiologynew.webhost.uic.edu/education/medical-students/medical-student-lectures/">Medical Student Lectures</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12331"><a href="#" onclick="return false;" class="placeholder">Imaging Resources</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12332" class="menu-item menu-item-type-post_type menu-item-object-faq menu-item-12332"><a href="https://radiologynew.webhost.uic.edu/faq/call-questions-faq/">Call FAQ</a></li>
-		<li id="menu-item-12333" class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12333"><a href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/09/TechnologistCallForm.pdf" href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/09/TechnologistCallForm.pdf" target="_blank">Call Form</a></li>
-		<li id="menu-item-12337" class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12337"><a href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/11/ResidentPocketCard_v09.08.2016.pdf" href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/11/ResidentPocketCard_v09.08.2016.pdf" target="_blank">Resident&#8217;s Pocket Card</a></li>
-		<li id="menu-item-12336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12336"><a href="https://radiologynew.webhost.uic.edu/facultystaff/radiology-mrbody-protocols/">Radiology MR/BODY Protocols</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12567"><a href="#" onclick="return false;" class="placeholder">Policies and Procedures</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12667" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12667"><a href="http://radiologynew.webhost.uic.edu/wp-content/uploads/2018/10/Research-scholarly-activities.pdf">Policies</a></li>
-		<li id="menu-item-12640" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12640"><a href="http://radiologynew.webhost.uic.edu/wp-content/uploads/2018/10/Department-of-Radiology-PT-Criteria-10-22-2018.pdf">Promotion &#038; Tenure</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12291"><a href="#" onclick="return false;" class="placeholder">Consent Forms</a>
-	<ul class="sub-menu">
-		<li id="menu-item-12233" class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12233"><a href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/12/Consent_for_pregnant_patients_in_radiology_6-28-2012_es.pdf" href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/12/Consent_for_pregnant_patients_in_radiology_6-28-2012_es.pdf" target="_blank">Consent for Pregnant Patients in Radiology Form (es)</a></li>
-		<li id="menu-item-12234" class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12234"><a href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/12/Consent_for_pregnant_patients_in_radiology_6-10-2012_en.pdf" href="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/12/Consent_for_pregnant_patients_in_radiology_6-10-2012_en.pdf" target="_blank">Consent for Pregnant Patients in Radiology Form (en)</a></li>
-	</ul>
-</li>
-	<li id="menu-item-12775" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12775"><a href="https://radiologynew.webhost.uic.edu/faculty-meeting-minutes/">Faculty Meeting Minutes</a></li>
-	<li id="menu-item-12240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12240"><a href="https://radiologynew.webhost.uic.edu/facultystaff/request-time-off/">Request Time Off</a></li>
-</ul>
-</li>
-</ul></div>            </div><!-- end #header__menu -->
-          </div>
+        <div class="header-menu-bar homepage-header-navigation">
+        <nav class="navigation-eyebrow" role="navigation" aria-label="Eyebrow navigation">
+    <div class="navigation-eyebrow-inner">
+        <ul class="eyebrow-list">
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://maps.uic.edu/">Map</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://www.uic.edu/apps/departments-az/search">Directory</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="/about/contact-us">Contact Us</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://library.uic.edu/">Library</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://www.uicflames.com/">Athletics</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://oge.uic.edu/">International</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="https://today.uic.edu/resources/current-students">Current Students</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="https://today.uic.edu/resources/faculty-staff">Faculty and Staff</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://hospital.uillinois.edu/">UI Health</a></li>
+                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="https://give.uic.edu/">+ Give</a></li>
+                            <li class="eyebrow-list-item search-button-item">
+                    <button class="search-button" type="button">
+                        <svg class="search-glass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-label="Expand search box"><title>Expand search box</title><path d="M19.7 18.3l-5.9-5.9c1-1.3 1.6-2.9 1.6-4.7C15.4 3.5 12 0 7.7 0S0 3.4 0 7.7c0 4.2 3.4 7.7 7.7 7.7 1.8 0 3.4-.6 4.7-1.6l5.9 5.9c.2.2.4.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4zM2 7.7C2 4.6 4.6 2 7.7 2s5.7 2.6 5.7 5.7-2.5 5.7-5.7 5.7C4.6 13.4 2 10.8 2 7.7z"/></svg>
+                    </button>
+                </li>
+        </ul>
+        <div class="search-input-container">
+            <form method="get" action="/search" role="search">
+                <input type="text" name="q" class="search-input" placeholder="Search..." disabled tabindex="-1" aria-label="Search">
+                <input type="submit" class="submit-button" name="search" value="Submit">
+            </form>
         </div>
-      </div> <!-- end #header__container -->
-    </div> <!-- end #header__wrapper -->
-    <div id='page-main-content-wrapper'>
-      <div id="page">         <div id="page-without-sidebar-content">
-<div id="component-slideshow__wrapper">
-  <div class='container'><div class='row'><div class='col-xs-12'>
-    <div class='slideshow-outer'>
-      <div id="component-slideshow" >
-                          <div id="slide-arrow-left">
-            <img src="https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/images/slide-arrow-left.png" onclick='homepage_slideshow.stop_autoplay();homepage_slideshow.slide_right();'/>
-          </div>
-          <div id="slide-arrow-right">
-            <img src="https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/images/slide-arrow-right.png" onclick='homepage_slideshow.stop_autoplay();homepage_slideshow.slide_left();'/>
-          </div>
-                      	                <div class='homepage-slide homepage-slide-0' >
-              <div class='slide__content'>
-                <div class='slide-title'>
-                  About Radiology                </div>
-                <div class='slide-text'>
-                                  </div>
-                </div>
-              <div class='slide-image'>
-                <img src='https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/09/image8.jpg' />
-              </div>
-            </div>
-            	                          	                <div class='homepage-slide homepage-slide-1' >
-              <div class='slide__content'>
-                <div class='slide-title'>
-                  Research                </div>
-                <div class='slide-text'>
-                                  </div>
-                </div>
-              <div class='slide-image'>
-                <img src='https://radiologynew.webhost.uic.edu/wp-content/uploads/2018/06/research-banner-1.jpg' />
-              </div>
-            </div>
-            	                          	                <div class='homepage-slide homepage-slide-2' >
-              <div class='slide__content'>
-                <div class='slide-title'>
-                  Clinical Services                </div>
-                <div class='slide-text'>
-                                  </div>
-                </div>
-              <div class='slide-image'>
-                <img src='https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/09/slide1.jpg' />
-              </div>
-            </div>
-            	                          	                <div class='homepage-slide homepage-slide-3' >
-              <div class='slide__content'>
-                <div class='slide-title'>
-                  Education                </div>
-                <div class='slide-text'>
-                                  </div>
-                </div>
-              <div class='slide-image'>
-                <img src='https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/09/image6.jpg' />
-              </div>
-            </div>
-            	                          	                <div class='homepage-slide homepage-slide-4' >
-              <div class='slide__content'>
-                <div class='slide-title'>
-                  Faculty/Staff                </div>
-                <div class='slide-text'>
-                                  </div>
-                </div>
-              <div class='slide-image'>
-                <img src='https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/12/IMG_0919.jpg' />
-              </div>
-            </div>
-            	                          	                <div class='homepage-slide homepage-slide-5' >
-              <div class='slide__content'>
-                <div class='slide-title'>
-                  Personnel                </div>
-                <div class='slide-text'>
-                                  </div>
-                </div>
-              <div class='slide-image'>
-                <img src='https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/09/11071520865_0538141d02_k-e1487697366961.jpg' />
-              </div>
-            </div>
-            	              
-                      </div>
     </div>
-  </div></div></div>
+</nav>
+        <nav class="navigation-primary" role="navigation" aria-label="Primary navigation">
+    <div class="navigation-primary-inner">
+                <div class="circle-logo-container">
+            <a href="/">
+                <svg class="circle-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M36.5 17.3L33.1 19c-.3-1.3-1-2-2.3-2-1.7 0-2.5 1.4-2.5 3.6s.8 3.6 2.5 3.6c1.2 0 1.8-.6 2.2-1.6l3.5 1.3c-.9 2.1-2.8 3.5-5.8 3.5-4.1 0-6.5-2.8-6.5-6.8s2.5-6.8 6.6-6.8c3.2.1 5 1.8 5.7 3.5m-14.1 9.8h-3.9v-13h3.9v13zm-6.3-5.3c0 1.8-.2 2.7-.7 3.6-.9 1.4-3.2 2-5.2 2s-4.3-.6-5.2-2c-.5-.9-.7-1.8-.7-3.6v-7.7h3.9v7.8c0 .9.1 1.5.4 1.8.3.4.8.5 1.5.5s1.2-.2 1.5-.5c.3-.4.4-1 .4-1.8v-7.8h3.9v7.7zM40 20C40 9 31 0 20 0S0 9 0 20s9 20 20 20 20-9 20-20"/></svg>
+<span>University of Illinois at Chicago</span>            </a>
+        </div>
+                            <ul class="primary-nav-list">
+    <li><button class="menu-toggle" type="button" role="button" tabindex="-1">
+        <span class="menu-toggle-icon"></span>
+        <span>Expand menu</span>
+    </button></li>
+    <li class="menu-label-item"><span class="menu-label">Menu</span></li>
+            <li class="primary-list-item ">
+            <a class="primary-list-anchor" href="/admissions-aid">Admissions &#038; Aid</a>
+                            <ul class="primary-second-tier-list">
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/admissions-aid/visit-campus">Visit Campus</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/admissions-aid/paying-for-college">Paying for College</a></li>
+                                    </ul>
+                    </li>
+            <li class="primary-list-item ">
+            <a class="primary-list-anchor" href="/academics">Academics</a>
+                            <ul class="primary-second-tier-list">
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/academics/programs-of-study">Programs of Study</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/academics/colleges-schools">Colleges &#038; Schools</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/academics/student-support">Student Support</a></li>
+                                    </ul>
+                    </li>
+            <li class="primary-list-item ">
+            <a class="primary-list-anchor" href="/research">Research</a>
+                            <ul class="primary-second-tier-list">
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/research-impact">Research Impact</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/research-strengths">Research Strengths</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/resources-facilities">Resources &#038; Facilities</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/student-research">Student Research</a></li>
+                                    </ul>
+                    </li>
+            <li class="primary-list-item ">
+            <a class="primary-list-anchor" href="/life-at-uic">Life at UIC</a>
+                            <ul class="primary-second-tier-list">
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/life-at-uic/living-on-around-campus">Living On &#038; Around Campus</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/life-at-uic/campus-resources">Campus Resources</a></li>
+                                    </ul>
+                    </li>
+            <li class="primary-list-item ">
+            <a class="primary-list-anchor" href="/chicago">Chicago</a>
+                            <ul class="primary-second-tier-list">
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/chicago/exploring-chicago">Exploring Chicago</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/chicago/city-transportation">City Transportation</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/chicago/essential-chicago">Essential Chicago</a></li>
+                                    </ul>
+                    </li>
+            <li class="primary-list-item ">
+            <a class="primary-list-anchor" href="/alumni">Alumni</a>
+                    </li>
+            <li class="primary-list-item ">
+            <a class="primary-list-anchor" href="/about">About</a>
+                            <ul class="primary-second-tier-list">
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/visit-directions">Visit &#038; Directions</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/history">History</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/leadership">Leadership</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/public-media-resources">Public &#038; Media Resources</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/job-opportunities">Job Opportunities</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/contact-us">Contact Us</a></li>
+                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/acerca">Acerca de la UIC (en español)</a></li>
+                                    </ul>
+                    </li>
+    </ul>
+            </div>
+</nav>    </div>
+    <div class="header-content homepage-header-content ">
+                    <a href="/" class="large-brand-mark-link"><svg class="large-brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234 320.6"><path d="M229.1 289.7l-4.6 2.2c-.4-1.7-1.4-2.7-3.1-2.7-2.3 0-3.4 1.9-3.4 5s1.1 4.9 3.4 4.9c1.6 0 2.5-.8 3-2.2l4.8 1.7c-1.3 2.8-3.8 4.8-7.8 4.8-5.6 0-8.8-3.8-8.8-9.2 0-5.5 3.4-9.2 8.9-9.2 4.2 0 6.7 2.4 7.6 4.7m-19.2 13.4h-5.3v-17.8h5.3v17.8zm-8.5-7.3c0 2.5-.3 3.7-1 4.9-1.2 2-4.3 2.7-7.1 2.7-2.7 0-5.9-.8-7.1-2.7-.7-1.2-1-2.4-1-4.9v-10.5h5.3v10.6c0 1.2.2 2 .6 2.5.4.5 1.1.7 2.1.7s1.7-.2 2.1-.7c.4-.5.6-1.3.6-2.5v-10.6h5.3v10.5zm32.5-2.5c0-15-12.2-27.2-27.2-27.2s-27.2 12.2-27.2 27.2 12.2 27.2 27.2 27.2c15 .1 27.2-12.1 27.2-27.2M150 137.8c-4.1 0-6.6-1.6-6.6-4.6 0-2.9 2.5-4.5 6.6-4.5 4 0 6.5 1.5 6.5 4.5 0 3.1-2.4 4.6-6.5 4.6m0 7.2c7.3 0 12.2-4.4 12.2-11.7 0-7.4-4.8-11.7-12.2-11.7-7.4 0-12.2 4.6-12.2 11.7S142.6 145 150 145m0 27.7c7.8 0 12.2-4.4 12.2-10.4 0-2.8-.9-4.7-2-6h1.6v-6.1H148v11.4h5.4v-5.2c2 .2 3.5 1.6 3.5 4.3 0 3.5-2.7 4.9-6.9 4.9-4.1 0-6.6-1.6-6.6-4.7 0-2.3 1.3-3.7 3.7-4.3l-2.9-5.9c-3.1 1.2-6.3 4.5-6.3 10.1-.1 7.3 4.9 11.9 12.1 11.9m2.2 12.5v3.9l-4.8-1.4c-.9-.2-1.8-.4-2.3-.6l2.3-.6 4.8-1.3zm5.6 5.5v-7.1l3.9-1.2V175l-23.5 7.8v8.4l23.5 7.9v-7.3l-3.9-1.1zm-4.3 16.6c1.8.7 2.9 1.9 2.9 3.9 0 3-2.4 4.5-6.5 4.5s-6.6-1.5-6.6-4.5c0-2.2 1.3-3.5 3.6-4.1L144 201c-3.1 1.2-6.3 4.5-6.3 10.1 0 7.3 4.9 11.8 12.2 11.8 7.2 0 12.2-4.3 12.2-11.7 0-5.4-2.6-8.7-6.4-10.4l-2.2 6.5zm-15.2 27.6h23.5v-7.1h-23.5v7.1zm14.5 13.7h9v-7.1h-23.5v7.1h8.4v6.8h-8.4v7.1h23.5v-7.1h-9v-6.8zm.7 24.1c1.8.7 2.9 1.9 2.9 3.9 0 3-2.4 4.5-6.5 4.5s-6.6-1.5-6.6-4.5c0-2.2 1.3-3.5 3.6-4.1l-2.9-6.1c-3.1 1.2-6.3 4.5-6.3 10.1 0 7.3 4.9 11.8 12.2 11.8 7.2 0 12.2-4.3 12.2-11.7 0-5.4-2.6-8.7-6.4-10.4l-2.2 6.5zm-44.1-11.3v-5.9h17.8v-7.1h-17.8v-5.9h-5.7v18.9h5.7zm8.2 11.7v3.9l-4.8-1.4c-.9-.2-1.8-.4-2.3-.6l2.3-.6 4.8-1.3zm5.7 5.5v-7.1l3.9-1.2v-7.4l-23.5 7.8v8.4l23.5 7.9v-7.3l-3.9-1.1zM72.7 124.8c-1.5 1.2-4 4.7-4 10.3 0 5.8 3 9.7 7.4 9.7 4.7 0 6.7-3.6 7.5-8l.6-3.1c.3-1.8.5-2.9 1.7-2.9s1.9 1.3 1.9 3.6c0 2.8-1.3 5.4-3.5 7.2l3.8 4.3c1.9-1.3 5-5.2 5-11.4 0-6-2.4-10.4-7.8-10.4-4.4 0-6.2 2.9-7.1 7.5l-.7 3.5c-.3 1.9-.8 2.8-1.9 2.8-1.1 0-1.7-1.2-1.7-2.9 0-2.3 1-4.6 2.6-6.3l-3.8-3.9zm-3.6 32.9h23.5v-7.1H69.1v7.1zm11.8 21.9c-4.1 0-6.6-1.6-6.6-4.6 0-2.9 2.5-4.5 6.6-4.5 4 0 6.5 1.5 6.5 4.5-.1 3.1-2.5 4.6-6.5 4.6m0 7.2c7.3 0 12.2-4.4 12.2-11.7 0-7.4-4.8-11.7-12.2-11.7-7.4 0-12.2 4.6-12.2 11.7s4.8 11.7 12.2 11.7m-11.8 19.8v6.8h23.5v-7.1H87c-3.8 0-6.7.2-6.7.2s2.5-1.4 4.9-3l7.5-4.6v-6.8H69.1v7.1h5.4c3.5 0 6.4-.1 6.4-.1s-1.7 1-5 3.2l-6.8 4.3zm0 20.9h23.5v-7.1H69.1v7.1zm0 21.6h23.5v-16.4h-5.7v9.3H69.1v7.1zm0 21.7h23.5v-16.4h-5.7v9.3H69.1v7.1zm0 14.1h23.5v-7.1H69.1v7.1zM40.2 0h-5.6v17.8h23.5v-7.1h-8.9V1h-5.7v9.8h-3.3V0zm6.1 39.4c-4.1 0-6.6-1.6-6.6-4.6 0-2.9 2.5-4.5 6.6-4.5 4 0 6.5 1.5 6.5 4.5 0 3.1-2.4 4.6-6.5 4.6m0 7.2c7.3 0 12.2-4.4 12.2-11.7 0-7.4-4.8-11.7-12.2-11.7-7.4 0-12.2 4.6-12.2 11.7S39 46.6 46.3 46.6m3 18.8l-14.8-8.2v7.5l8.1 4-8.1 3.9v7.6l14.8-7.7H58v-7.1h-8.7zM40.2 102v-5.9H58V89H40.2v-5.9h-5.7V102h5.7zm-5.6 11.9h23.5v-7.1H34.6v7.1zm3.6 5.8c-1.5 1.2-4 4.7-4 10.3 0 5.8 3 9.7 7.4 9.7 4.7 0 6.7-3.6 7.5-8l.6-3.1c.3-1.8.5-2.9 1.7-2.9s1.9 1.3 1.9 3.6c0 2.8-1.3 5.4-3.5 7.2l3.8 4.3c1.9-1.3 5-5.2 5-11.4 0-6-2.4-10.4-7.8-10.4-4.4 0-6.2 2.9-7.1 7.5L43 130c-.3 1.9-.8 2.8-1.9 2.8s-1.7-1.2-1.7-2.9c0-2.3 1-4.6 2.6-6.3l-3.8-3.9zm1.7 38.6v-3.5c0-.9.1-1.6.4-2 .4-.6 1-.9 1.9-.9.9 0 1.5.3 1.9.9.3.4.4 1.1.4 2v3.5h-4.6zm18.2-6.8V144l-9 5.3c-.1-.3-.3-.7-.5-1-1.4-2.2-3.2-3.3-6.3-3.3-3.5 0-5.9 1.8-6.9 4.5-.5 1.3-.8 3-.8 5.6v10.2h23.5v-7.1h-8.2V156l8.2-4.5zm-17.9 20.6h-5.6v18h23.5v-18.7h-5.7v11.7h-3.5V173h-5.6v10.1h-3.1v-11zm6.7 33.3c1.7.4 3.5.8 3.5.8s-1.8.4-3.5.8l-12.3 3.3v7.4l23.5-7v-9l-23.5-7.1v7.5l12.3 3.3zM34.6 229h23.5v-7H34.6v7zm0 21.6v6.8h23.5v-7.1h-5.7c-3.8 0-6.7.2-6.7.2s2.5-1.4 4.9-3l7.5-4.6v-6.8H34.6v7.1H40c3.5 0 6.4-.1 6.4-.1s-1.7 1-5 3.2l-6.8 4.3zm23.9 23.9c0-3.6-1-7.8-3.6-9.3-1.6-.9-3.2-1.3-6.5-1.3H34.6v7.1h14c1.6 0 2.6.2 3.3.8.7.6 1 1.5 1 2.8 0 1.3-.3 2.2-1 2.8-.7.6-1.7.8-3.3.8h-14v7.1h13.9c3.3 0 4.9-.3 6.5-1.3 2.5-1.7 3.5-5.9 3.5-9.5M0 269.7v18.9h5.7v-5.9h17.8v-7.1H5.7v-5.9H0zm0-25.8v7.1h8.4v6.8H0v7h23.5v-7h-9V251h9v-7.1H0zm17.8-25.7v11.7h-3.5v-10.1H8.8v10.1H5.6v-11.1H0v18h23.5v-18.7h-5.7z"/></svg><span>The University of Illinois at Chicago</span></a>    <div class="hero-image-container">
+        <img class="hero-image" src="/_assets/3d7851c9e7cf5a6f32b2aea43ac49cff.jpg" alt="Hero Image">
+    </div>
+            </div>
+</header>
+<main>
+
+    <h1 id="home-page-title">The University of Illinois at Chicago</h1>
+
+    <div class="ms-grid zero-margin full">
+                    <aside class="calls-to-action" role="complementary" aria-label="Calls to Action">
+    <div class="calls-to-action-row-container">
+        <div class="ms-row call-to-action-row">
+            <div class="calls-to-action-group-container">
+                <ul class="calls-to-action-group-container-again">
+                                    <li class="xs-col-1-2 m-col-1-3">
+                        <a class="call-to-action" href="http://admissions.uic.edu/book-visit?utm_source=uic.edu&amp;utm_medium=website&amp;utm_campaign=general-2018&amp;utm_content=cta_button">
+                            <div class="call-to-action-icon-container" aria-hidden="true">
+                                    <svg class="book-a-visit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="14.1" r="5.6"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm7.9 20.2L20.8 34c-.2.3-.5.5-.8.5-.3 0-.6-.2-.8-.5l-7.1-13.8c-.9-1.5-1.4-3.2-1.4-5 0-5.1 4.2-9.3 9.3-9.3s9.3 4.2 9.3 9.3c0 1.8-.5 3.5-1.4 5z"/></svg>                            </div>
+                            <div class="call-to-action-label">Book a Visit</div>
+                        </a>
+                    </li>
+                                    <li class="xs-col-1-2 m-col-1-3">
+                        <a class="call-to-action" href="http://admissions.uic.edu/undergraduate/request-information?utm_source=uic.edu&amp;utm_medium=website&amp;utm_campaign=general-2017&amp;utm_content=cta_button">
+                            <div class="call-to-action-icon-container" aria-hidden="true">
+                                    <svg class="request-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M13.9 12.6h12.2v2H13.9zM13.9 21.1h12.2v2H13.9zM13.9 16.9h12.2v2H13.9zM13.9 25.4h12.2v2H13.9z"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm9.6 31.9H10.5V8.1h19.1v23.8z"/></svg>                            </div>
+                            <div class="call-to-action-label">Request info</div>
+                        </a>
+                    </li>
+                                    <li class="xs-col-1-2 m-col-1-3">
+                        <a class="call-to-action" href="http://admissions.uic.edu/apply-now?utm_source=uic.edu&amp;utm_medium=website&amp;utm_campaign=general-2017&amp;utm_content=cta_button">
+                            <div class="call-to-action-icon-container" aria-hidden="true">
+                                    <svg class="apply-now" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm-4.4 31.1l-9.8-9.8 3.9-3.9 5.9 5.9L29.1 9.9l3.9 3.9-17.4 17.3z"/></svg>                            </div>
+                            <div class="call-to-action-label">Apply now</div>
+                        </a>
+                    </li>
+                                </ul>
+            </div>
+            <div class="calls-to-action-reminder-container ">
+                <div class="reminders-container">
+        <a class="reminders-anchor scroll-to" href="#campus-reminders">
+        <span class="reminders-icon-container" aria-hidden="true"><svg class="reminders" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm10.7 26.1L21 27l2-2.5-10 1v6.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V11.1c-.6-.4-1-1-1-1.8 0-1.2.9-2.1 2.1-2.1s2.1.9 2.1 2.1c0 .7-.4 1.4-1 1.8v.5l10-1v1.6l7.6-.7.1 14.6z"/></svg></span>
+        <span>Reminders <svg class="anchor-point" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8"><path d="M6 8L.4 2.2C-.1 1.7-.1.9.4.4s1.3-.5 1.8 0l3.9 4 3.9-4c.5-.5 1.3-.5 1.8 0s.5 1.3 0 1.8L6 8z"/></svg></span>
+    </a>
 </div>
-
-
-<div id="component-call-to-action">
-                                        
-  </div>
-
-<div id="home__content__wrapper">
-  <div class='container'>
-    <div class='row' style="padding-top: 50px;">
-                                          <div id="home__content__content" class="col-xs-12 col-sm-6 col-md-8">
-              <div class='home-content-text-wrapper'>
-                <i class='fa fa-info-circle'></i><span id="home__content__title">Welcome from the Department head</span><br /><br />
-                <div id="home__content__body"><table style="padding: 0px; border-spacing: 0px; width: 803px;">
-<tbody>
-<tr style="padding: 0px; border-spacing: 0px; valign: top;">
-<td style="padding: 0px; border-spacing: 0px; width: 235.983px; valign: top;">
-<h1><img class="alignnone wp-image-12624 " src="http://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/Screen-Shot-2018-10-25-at-12.26.03-PM-e1541093330138-247x300.png" alt="" width="223" height="270" srcset="https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/Screen-Shot-2018-10-25-at-12.26.03-PM-e1541093330138-247x300.png 247w, https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/Screen-Shot-2018-10-25-at-12.26.03-PM-e1541093330138-300x364.png 300w, https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/Screen-Shot-2018-10-25-at-12.26.03-PM-e1541093330138-150x182.png 150w, https://radiologynew.webhost.uic.edu/wp-content/uploads/2016/10/Screen-Shot-2018-10-25-at-12.26.03-PM-e1541093330138.png 449w" sizes="(max-width: 223px) 100vw, 223px" /></h1>
-</td>
-<td style="padding: 0px; border-spacing: 0px; width: 559.017px; height: 360px;"><span class="s1">Welcome to the Department of Radiology at the University of Illinois at Chicago. Our threefold mission parallels that of the University of Illinois College of Medicine. Clinically, we strive to provide exceptional patient care throughout all fields of diagnostic and interventional radiology, incorporating the values of innovation, integrity, and inclusiveness. Educationally, our goal is to enhance the health of citizens of Illinois and the nation by respectfully teaching medical students, residents, and fellows. In addition, we are committed to supporting a culture of cutting-edge research in our efforts to advance medical care locally, regionally and nationally. </span></p>
-<p>Thank you for visiting our website.</p>
-<p>Sincerely,</p>
-<p><a href="https://radiologynew.webhost.uic.edu/personnel/bresler/">Michael Bresler, M.D.</a></p>
-<p>Interim Head</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-</div>
-              </div>
+            </div>
+        </div>
+    </div>
+</aside>
             </div>
 
-            <div id="home__content__video" class="col-xs-12 col-sm-6 col-md-4">
-              <div class='home-video-wrapper'>
-                <html>   <head>     <style>       .img1 {         border: 1px solid #ddd; /* Gray border */         border-radius: 4px;  /* Rounded border */         padding: 5px; /* Some padding */         width: 50px; /* Set a small width */         height:50px;         }  /* Add a hover effect (blue shadow) */       .img1:hover {         box-shadow: 0 0 2px 1px         rgba(0, 140, 186, 0.5);         }     </style>   </head>   <body>     <div style="margin-left: 50px;align:center;height: 500px">       <table style="border:1px solid black;height:480px;">         <tr style="color:white;width:80;background-color:#990000;height:20px;align:center" align="center">           <td>             <h3>News & Events</h3>           </td>         </tr>         <tr>           <td style="height:20px;padding:20px;" align="left">             <a href="http://radiologynew.webhost.uic.edu/wp-content/uploads/2018/11/RSNA-Evite_2018.jpg" target="_blank">               Join us in celebrating the 5th Annual Alumni Reception!<br>               Tuesday, November 27,2018             </a>           </td>         </tr>         <tr>           <td style="height:20px;padding:20px;" align="left" >             <a href="http://radiologynew.webhost.uic.edu/wp-content/uploads/2018/11/Insight-from-the-Leaders-invite.pdf" target="_blank">               Insight from the Leaders:A Panel Discussion<br>               Wednesday, December 12, 2018 (5 PM - 6 PM)             </a>           </td>         </tr>         <tr>           <td style="height:20px;padding:20px;" align="left" >             <a href="https://radiologynew.webhost.uic.edu/dr-gaba-appointed-as-the-director-of-director-of-medical-student-research-university-of-illinois-college-of-medicine/" target="_blank">             Dr. Gaba appointed as the Director of Medical Student Research, University of Illinois College of Medicine             </a>           </td>         </tr>       </table>     </div>   </body> </html>              </div>
+    <div class="ms-grid zero-margin extra-wide-grid full">
+                    <div class="key-message-block">
+            <div class="ms-row">
+            <div class="m-col-1-2 m-col-2-push-1" aria-hidden="true">
+                <div class="image" style="background-image: url(/_assets/9bf1014596f4a9a16bd219d29ad2f0fe.jpg)"></div>
             </div>
-                        </div>
-  </div>
-</div> <!-- end #home__content__wrapper -->
-        </div></div></div>
+            <div class="m-col-1-2 m-col-2-pull-1 message-on-left">
+                <div class="message-cell">
+                    <h2 class="promo-header">Chicago&#039;s Public Research University</h2>
+                    <div class="text">
+                        <p class="p1">Located in the heart of one of the world’s great cities, the University of Illinois at Chicago is a vital part of the educational, technological and cultural fabric of the region. As Chicago’s only public research university with 30,000 students, 15 colleges, a hospital and a health sciences system, UIC provides you access to excellence and opportunity.</p>
 
+                    </div>
+                    <ul class="message-button-list">
+                                                                            
+                                                    <li class="message-button-list-item"><a class="red-button" href="/academics" role="button">Academic programs</a></li>
+                                                    <li class="message-button-list-item"><a class="red-button" href="/research" role="button">More about research</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+            <div class="ms-row">
+            <div class="m-col-1-2 " aria-hidden="true">
+                <div class="image" style="background-image: url(/_assets/c6b3964952e160d68f5d33378cdbc200.jpg)"></div>
+            </div>
+            <div class="m-col-1-2 message-on-right">
+                <div class="message-cell">
+                    <h2 class="promo-header">Value Diversity</h2>
+                    <div class="text">
+                        <p>UIC is proud to be recognized as having one of the most ethnically and culturally rich college campuses in America. Our welcoming environment and diverse student body engender deeper learning and provide new perspectives on life. Come experience the strength of multiple voices, races, cultures, beliefs, identities, orientations and points of view.</p>
 
+                    </div>
+                    <ul class="message-button-list">
+                                                                            
+                                                    <li class="message-button-list-item"><a class="blue-button" href="/life-at-uic" role="button">Life on campus</a></li>
+                                                    <li class="message-button-list-item"><a class="blue-button" href="/chicago" role="button">Experience Chicago</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+            <div class="ms-row">
+            <div class="m-col-1-2 m-col-2-push-1" aria-hidden="true">
+                <div class="image" style="background-image: url(/_assets/fc1b4e9ca903147366b8f09d3a6d3beb.jpg)"></div>
+            </div>
+            <div class="m-col-1-2 m-col-2-pull-1 message-on-left">
+                <div class="message-cell">
+                    <h2 class="promo-header">Serve Others</h2>
+                    <div class="text">
+                        <p>All human advancement begins with an idea. Ideas change the world. And at UIC, ideas abound! Come join us. Come share your ideas.</p>
 
-    <div id="footer__wrapper">
-      <div id="footer__container" class="container">
-	<div class='row'>
-        	<div id="footer__logo" class='col-xs-12 col-md-3'>
-          		<a href="/"><img src="/wp-content/uploads/2016/09/logo-copy.png"></a>
-        	</div> <!-- end #footer__logo -->
+                    </div>
+                    <ul class="message-button-list">
+                                                                            
+                                                    <li class="message-button-list-item"><a class="green-button" href="http://economicimpact.uic.edu/" role="button">Our impact</a></li>
+                                                    <li class="message-button-list-item"><a class="green-button" href="http://sldvs.uic.edu/" role="button">Your impact</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>                <div class="super-gap-bottom">
+                            <section class="campus-grid" role="region" aria-label="Campus Grid">
+    <div class="ms-row">
+        <div class="m-col-1-2">
+                        <div class="campus-grid-slogan-cell campus-grid-double-height" >
+                <a href="http://ignite.uic.edu">
+                    <h1 class="campus-grid-slogan">
+                                                    <span class="block">IGNITE</span>
+                                                    <span class="block">The</span>
+                                                    <span class="block">Campaign </span>
+                                                    <span class="block">for UIC</span>
+                                            </h1>
+                    <div class="campus-grid-sub-slogan">
+                        We are <svg class="circle-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M36.5 17.3L33.1 19c-.3-1.3-1-2-2.3-2-1.7 0-2.5 1.4-2.5 3.6s.8 3.6 2.5 3.6c1.2 0 1.8-.6 2.2-1.6l3.5 1.3c-.9 2.1-2.8 3.5-5.8 3.5-4.1 0-6.5-2.8-6.5-6.8s2.5-6.8 6.6-6.8c3.2.1 5 1.8 5.7 3.5m-14.1 9.8h-3.9v-13h3.9v13zm-6.3-5.3c0 1.8-.2 2.7-.7 3.6-.9 1.4-3.2 2-5.2 2s-4.3-.6-5.2-2c-.5-.9-.7-1.8-.7-3.6v-7.7h3.9v7.8c0 .9.1 1.5.4 1.8.3.4.8.5 1.5.5s1.2-.2 1.5-.5c.3-.4.4-1 .4-1.8v-7.8h3.9v7.7zM40 20C40 9 31 0 20 0S0 9 0 20s9 20 20 20 20-9 20-20"/></svg>
+<span>University of Illinois at Chicago</span>                    </div>
+                </a>
+            </div>
+                    </div>
+        <div class="m-col-1-2">
+            <div class="ms-row">
+                <div class="s-col-1-2">
+                    <div class="campus-grid-single-height campus-grid-text-container athletics">
+                        <a href="https://uicflames.com/news/2018/5/30/mens-basketball-uic-basketball-excellence-fund-unveiled.aspx?path=general">
+                            <div class="ie-width-fix">
+                                UIC Basketball Excellence Fund unveiled
+                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="s-col-1-2">
+                    <div class="campus-grid-single-height">
+                        <a class="campus-grid-image-link" href="https://uicflames.com/news/2018/5/30/mens-basketball-uic-basketball-excellence-fund-unveiled.aspx?path=general">
+                            <img class="object-fit-cover" src="/_assets/f1198688f6d8b8f9f8ecce13e54b3667.jpg" alt="McClain-huddle">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-row">
+                <div class="m-col-1-1">
+                    <div class="campus-grid-single-height">
+                        <a class="campus-grid-image-link" href="http://today.uic.edu/all-star-advice-at-baseball-clinic">
+                            <img class="object-fit-cover" src="/_assets/1c4e4aa37705b72c0e3c2cb99abebcf9.jpg" alt="2018.CurtisGranderson009b">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ms-row">
+        <div class="s-col-1-2 m-col-1-4">
+            <div class="ms-row">
+                <div class="m-col-1-1">
+                    <div class="campus-grid-single-height campus-grid-text-container chicago">
+                        <a href="https://today.uic.edu/uic-2018-19-theater-season-offers-contemporary-takes-on-classic-plays">
+                            <div class="ie-width-fix">
+                                UIC theater season offers contemporary takes on classic plays
+                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="m-col-1-1">
+                    <div class="campus-grid-single-height">
+                        <a class="campus-grid-image-link" href="https://today.uic.edu/uic-2018-19-theater-season-offers-contemporary-takes-on-classic-plays">
+                            <img class="object-fit-cover" src="/_assets/c9ead863f3de5e126b6efaab1a8e89fb.jpg" alt="UIC_Social_Cover_Streetcar_1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s-col-1-2 m-col-1-4">
+            <div class="campus-grid-double-height culture">
+                <a class="campus-grid-image-link" href="http://www.uic.edu/life-at-uic">
+                    <img class="object-fit-cover" src="/_assets/14cc90072ba8cd1b838b825ba17a2a6d.jpg" alt="IMG_8509_new">
+                </a>
+            </div>
+        </div>
+        <div class="m-col-2-4">
+            <div class="ms-row">
+                <div class="s-col-1-2 s-col-2-push-1">
+                    <div class="campus-grid-single-height campus-grid-text-container academics">
+                        <a href="http://today.uic.edu/2018-fulbright-awardees">
+                            <div class="ie-width-fix">
+                                Meet UIC&#039;s 2018 Fulbright awardees
+                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="s-col-1-2 s-col-2-pull-1">
+                    <div class="campus-grid-single-height">
+                        <a class="campus-grid-image-link" href="http://today.uic.edu/2018-fulbright-awardees">
+                            <img class="object-fit-cover" src="/_assets/684922d291d826f6bfe81dceb6a5f485.jpg" alt="Kajal Sachdev">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-row">
+                <div class="s-col-1-2">
+                    <div class="campus-grid-single-height campus-grid-text-container miscellaneous">
+                        <a href="https://today.uic.edu/uic-earns-national-recognition-for-sustainability-efforts">
+                            <div class="ie-width-fix">
+                                UIC earns national recognition for sustainability efforts
+                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="s-col-1-2">
+                    <div class="campus-grid-single-height">
+                        <a class="campus-grid-image-link" href="https://today.uic.edu/uic-earns-national-recognition-for-sustainability-efforts">
+                            <img class="object-fit-cover" src="/_assets/ba5e6c155e2eea3f81aa29d9e1e28bff.jpg" alt="20170928-IMG_1209">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                                        <section class="calls-to-action-with-title" role="region" aria-labelledby="calls-to-action-with-title-header">
+    <h1 id="calls-to-action-with-title-header" class="calls-to-action-with-title-title">Take the Next Step</h1>
+    <div class="calls-to-action-with-title-anchor-container">
+            <a class="calls-to-action-with-title-anchor" href="http://admissions.uic.edu/visit-us">
+            <div class="calls-to-action-with-title-anchor-icon">    <svg class="book-a-visit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="14.1" r="5.6"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm7.9 20.2L20.8 34c-.2.3-.5.5-.8.5-.3 0-.6-.2-.8-.5l-7.1-13.8c-.9-1.5-1.4-3.2-1.4-5 0-5.1 4.2-9.3 9.3-9.3s9.3 4.2 9.3 9.3c0 1.8-.5 3.5-1.4 5z"/></svg></div>
+            <span class="calls-to-action-with-title-anchor-label">Book a visit</span>
+        </a>
+            <a class="calls-to-action-with-title-anchor" href="http://admissions.uic.edu/undergraduate/request-information">
+            <div class="calls-to-action-with-title-anchor-icon">    <svg class="request-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M13.9 12.6h12.2v2H13.9zM13.9 21.1h12.2v2H13.9zM13.9 16.9h12.2v2H13.9zM13.9 25.4h12.2v2H13.9z"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm9.6 31.9H10.5V8.1h19.1v23.8z"/></svg></div>
+            <span class="calls-to-action-with-title-anchor-label">Request info</span>
+        </a>
+            <a class="calls-to-action-with-title-anchor" href="http://admissions.uic.edu/apply-now">
+            <div class="calls-to-action-with-title-anchor-icon">    <svg class="apply-now" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm-4.4 31.1l-9.8-9.8 3.9-3.9 5.9 5.9L29.1 9.9l3.9 3.9-17.4 17.3z"/></svg></div>
+            <span class="calls-to-action-with-title-anchor-label">Apply now</span>
+        </a>
+            <a class="calls-to-action-with-title-anchor" href="/about/contact-us">
+            <div class="calls-to-action-with-title-anchor-icon">    <svg class="contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="31.4" r="1.3"/><path d="M25.6 8.5H14.4c-.2 0-.4.2-.4.4V29h12V8.9c0-.2-.2-.4-.4-.4z"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm8.2 31.1c0 1.4-1.2 2.6-2.6 2.6H14.4c-1.4 0-2.6-1.2-2.6-2.6V8.9c0-1.4 1.2-2.6 2.6-2.6h11.2c1.4 0 2.6 1.2 2.6 2.6v22.2z"/></svg></div>
+            <span class="calls-to-action-with-title-anchor-label">Contact us</span>
+        </a>
+        </div>
+</section>                    </div>
+    </div>
+    <div class="ms-grid">
+                    <div class="super-gap-bottom">
+                <section class="campus-reminders" id="campus-reminders" role="region" aria-label="Campus Reminders">
+    <h1 class="campus-reminders-header"><svg class="reminders" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm10.7 26.1L21 27l2-2.5-10 1v6.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V11.1c-.6-.4-1-1-1-1.8 0-1.2.9-2.1 2.1-2.1s2.1.9 2.1 2.1c0 .7-.4 1.4-1 1.8v.5l10-1v1.6l7.6-.7.1 14.6z"/></svg> Campus Reminders</h1>
+    <div class="reminders-flex">
+            </div>
+</section>            </div>
+                            <div class="component">
+                <aside class="home-lists" role="complementary" aria-label="News, Events, and Academic Dates">
+    <div class="ms-row">
+                    <div class="m-col-1-3 news-list">
+                <h1 class="home-list-header">News</h1>
+                <ul class="home-list">
+                                    <li class="home-list-item">
+                        <a class="home-list-item-anchor" href="https://today.uic.edu/nsf-grant-supports-center-to-develop-microfluidics-based-solutions">
+                                                        <h2 class="home-list-title">NSF grant supports center to develop microfluidics-based solutions</h2>
+                        </a>
+                    </li>
+                                    <li class="home-list-item">
+                        <a class="home-list-item-anchor" href="https://today.uic.edu/credit-union-1-and-uic-poised-to-strengthen-partnership-with-naming-rights-agreement">
+                                                        <h2 class="home-list-title">Credit Union 1 and UIC Poised to Strengthen Partnership with Naming Rights Agreement</h2>
+                        </a>
+                    </li>
+                                    <li class="home-list-item">
+                        <a class="home-list-item-anchor" href="https://today.uic.edu/parents-kids-actually-agree-about-confidential-medical-care">
+                                                        <h2 class="home-list-title">Parents, kids actually agree about confidential medical care</h2>
+                        </a>
+                    </li>
+                                    <li class="home-list-item">
+                        <a class="home-list-item-anchor" href="https://today.uic.edu/study-investigates-factors-behind-chicago-school-closure-decisions">
+                                                        <h2 class="home-list-title">Study investigates factors behind Chicago school closure decisions</h2>
+                        </a>
+                    </li>
+                                </ul>
+                <a class="button" href="https://today.uic.edu" role="button">More news</a>
+            </div>
+                            <div class="m-col-1-3 events-list">
+                <h1 class="home-list-header">Events</h1>
+                <ul class="home-list">
+                                            <li class="home-list-item">
+                            <a class="home-list-item-anchor" href="https://today.uic.edu/events/winter-clothing-drive-for-el-rescate">
+                                <time class="home-list-date" datetime=2018-11-19>November 19</time>
+                                <h2 class="home-list-title">Winter Clothing Drive for El Rescate</h2>
+                                <p class="home-list-blurb">Sponsored by the Gender and Sexuality Center and Latino Cultural Center</p>
+                            </a>
+                        </li>
+                                            <li class="home-list-item">
+                            <a class="home-list-item-anchor" href="https://today.uic.edu/events/thinking-of-death-to-be-alive-responses-and-reflections-art-exhibit-reception">
+                                <time class="home-list-date" datetime=2018-11-26>November 26</time>
+                                <h2 class="home-list-title">Thinking of Death to be Alive - Responses and Reflections Art Exhibit Reception</h2>
+                                <p class="home-list-blurb">Showcasing the work of 11 UIC graduate students </p>
+                            </a>
+                        </li>
+                                            <li class="home-list-item">
+                            <a class="home-list-item-anchor" href="https://today.uic.edu/events/regulation-of-proteostatsis-at-cellular-membranes-via-ubiquitylation">
+                                <time class="home-list-date" datetime=2018-11-27>November 27</time>
+                                <h2 class="home-list-title">Regulation of Proteostatsis at Cellular Membranes via Ubiquitylation</h2>
+                                <p class="home-list-blurb">Sponsored by the University of Illinois Cancer Center Cancer Biology Program</p>
+                            </a>
+                        </li>
+                                    </ul>
+                <a class="button" href="https://today.uic.edu/events" role="button">More events</a>
+            </div>
+                            <div class="m-col-1-3 academic-dates-list">
+                <h1 class="home-list-header">Academic Dates</h1>
+                <ul class="home-list">
+                                            <li class="home-list-item">
+                            <time class="home-list-date" datetime=2018-12-07>December 7</time>
+                            <h2 class="home-list-title">Fall semester 2018 instruction ends</h2>
+                        </li>
+                                            <li class="home-list-item">
+                            <time class="home-list-date" datetime=2018-12-10>December 10&ndash;14</time>
+                            <h2 class="home-list-title">Fall semester 2018 final examinations</h2>
+                        </li>
+                                            <li class="home-list-item">
+                            <time class="home-list-date" datetime=2018-12-14>December 14</time>
+                            <h2 class="home-list-title">Last day for Graduate College to receive certificates of approval for master’s and professional doctorate projects for fall term graduation</h2>
+                        </li>
+                                    </ul>
+                <a class="button" href="http://catalog.uic.edu/ucat/academic-calendar/#2017-2018" role="button">Academic calendar</a>
+            </div>
+            </div>
+</aside>
+            </div>
+            </div>
+</main>
 
-        	<div id="footer__menu" class='col-xs-12 col-md-9'>
-          		
-<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-11729" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-11729"><a href="/">Home</a></li>
-<li id="menu-item-11731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11731"><a href="https://radiologynew.webhost.uic.edu/events/">Events</a></li>
-<li id="menu-item-1072" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1072"><a href="http://hospital.uic.edu">UI Health</a></li>
-<li id="menu-item-3846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3846"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/">Phone Numbers</a></li>
-<li id="menu-item-3848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3848"><a href="https://radiologynew.webhost.uic.edu/teaching-files/">Teaching Files</a></li>
-<li id="menu-item-3847" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3847"><a href="https://radiologynew.webhost.uic.edu/facultystaff/request-time-off/">Request Time Off</a></li>
-<li id="menu-item-11732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11732"><a href="https://radiologynew.webhost.uic.edu/contact-us/">Contact Us</a></li>
-<li id="menu-item-11730" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11730"><a href="/login">Login</a></li>
-</ul></div>        	</div> <!-- end #footer__menu -->
-	</div>
-	<div class="row">
-        	<div id="footer__copyright" class='col-xs-12'>
-          		<div>
-  Copyright &copy; 2018 University of Illinois, Chicago.  Department of Radiology. All rights reserved.
-  | <a href="/privacy">Privacy Statement</a> | <a href="/grievance">Public Formal Grievance Procedures</a></br>
-</div>
-<div id="footer-visit">
-  Visit our four campus websites: <a href="https://www.uillinois.edu/campuses/chicago/">Chicago</a> | <a href="http://peoria.medicine.uic.edu/">Peoria</a> | <a href="https://www.uillinois.edu/campuses/Springfield/">Springfield</a> | <a href="https://www.uillinois.edu/campuses/UrbanaChampaign/">Urbana</a>
-</div>
-        	</div> <!-- end #footer__container -->
-
-      	</div>
-      </div> <!-- end #footer__container -->
-    </div> <!-- end #footer__wrapper -->
-
-  </div> <!-- end #page__wrapper -->
-
-
-  <nav id="mobile-menu">
-    <div class="menu-main-menu-container"><ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12166"><a href="#" onclick="return false;" class="placeholder">About Us</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12167"><a href="#" onclick="return false;" class="placeholder">Locations</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12204"><a href="https://hospital.uillinois.edu/">UI Health</a></li>
-		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12205"><a href="https://hospital.uillinois.edu/patients-and-visitors/locations-and-directions#Location_OutpatientCareCenter">Outpatient Care Center</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12206"><a href="https://radiologynew.webhost.uic.edu/about-us/locations/advanced-imaging-center/">Advanced Imaging Center</a></li>
-	</ul>
+<footer class="footer" role="contentinfo">
+    <div class="footer-content" style="background-image: url(/images/footer.jpg)">
+        <div class="ms-grid">
+            <div class="ms-row">
+                <div class="s-col-1-2 m-col-1-4 l-col-3-12 footer-brand-address">
+                                            <img class="footer-brand" src="/images/footer-brand-mark.svg" alt="The University of Illinois at Chicago" aria-hidden="true">
+                                        <div class="footer-address">
+                        <div><strong>1200 West Harrison St.</strong></div>
+                        <div>Chicago, Illinois 60607</div>
+                        <div>312-996-7000</div>
+                    </div>
+                </div>
+                <div role="navigation" class="s-col-1-2 m-col-1-4 l-col-2-12 l-col-12-push-4" aria-label="Tools">
+                    <h2 class="footer-list-title">Tools</h2>
+                    <ul class="footer-list">
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://uic.blackboard.com/">
+        Blackboard
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12168"><a href="#" onclick="return false;" class="placeholder">Facilities and equipment</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-equipment menu-item-12299"><a href="https://radiologynew.webhost.uic.edu/equipment/petct/">PET/CT</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-equipment menu-item-12300"><a href="https://radiologynew.webhost.uic.edu/equipment/3-0-tesla-mri-scanner/">3.0 Tesla MRI Scanner</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-equipment menu-item-12301"><a href="https://radiologynew.webhost.uic.edu/equipment/64-slice-ct-scanner/">64 Slice CT Scanner</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="https://accc.uic.edu/service/g-suite">
+        GoogleApps@UIC
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12169"><a href="#" onclick="return false;" class="placeholder">Personnel</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12170"><a href="https://radiologynew.webhost.uic.edu/radiology-personnel/faculty/">Faculty</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12171"><a href="#" onclick="return false;" class="placeholder">Residents</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12174"><a href="#" onclick="return false;" class="placeholder">Fellows</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="https://my.uic.edu/common/">
+        my UIC
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12177"><a href="#" onclick="return false;" class="placeholder">Contact Us</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12214"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/registration-tech-area/">Radiology Areas</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12211"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/hospital-floors/">Hospital Floors</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12178"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/administrative-office/">Radiology Administrative Offices</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12210"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/it-support/">IT Support</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12209"><a href="https://radiologynew.webhost.uic.edu/about-us/important-phone-numbers/reading-rooms/">Radiology Reading Rooms</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="https://www.hr.uillinois.edu/pay/">
+        My UI Info: Pay
+    </a>
 </li>
-</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="https://outlook.uic.edu">
+        UIC Outlook Online
+    </a>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12184"><a href="#" onclick="return false;" class="placeholder">Education</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12201"><a href="https://radiologynew.webhost.uic.edu/residency-applicants/welcome/">Diagnostic Radiology Residency</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12541"><a href="https://radiologynew.webhost.uic.edu/interventional-radiology/">Interventional Radiology-Diagnostic Radiology residency</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12551"><a href="https://radiologynew.webhost.uic.edu/radiology-residency-m-s-program/">Radiology Residency M.S. Program</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12307"><a href="https://radiologynew.webhost.uic.edu/diagnostic-radiology-medical-student-electives/">Diagnostic Radiology medical student electives</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12545"><a href="https://radiologynew.webhost.uic.edu/interventional-radiology-medical-student-electives/">Interventional Radiology medical student electives</a></li>
-</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://accc.uic.edu/service/uicalendar">
+        UICalendar
+    </a>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12191"><a href="#" onclick="return false;" class="placeholder">Research</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12192"><a href="https://radiologynew.webhost.uic.edu/clinical-research/">Clinical research</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12193"><a href="https://radiologynew.webhost.uic.edu/translational-research/">Translational research</a></li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12311"><a href="https://chicago.medicine.uic.edu/departments/centers/center-magnetic-resonance-research/3t-program/">Center for Magnetic Resonance Research</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12555"><a href="https://radiologynew.webhost.uic.edu/ir-fellowship-ms-program/">Interventional Radiology Research Fellowship M.S. Program</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12809"><a href="https://radiologynew.webhost.uic.edu/incentive-award-program/">Incentive Award Program</a></li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12804"><a href="http://researchguides.uic.edu/ROAAP/roaapguidelines">Research Open Access Article Publishing (ROAAP) Fund</a></li>
-</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="/about/contact-us">
+        Contact the webmaster
+    </a>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12216"><a href="#" onclick="return false;" class="placeholder">For Patients</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12220"><a href="https://hospital.uillinois.edu/patients-and-visitors/health-insurance-information/accepted-insurance-plans">Accepted Health Plans</a></li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12221"><a href="https://www.radiologyinfo.org/">About Radiology Procedures</a></li>
-</ul>
+                                            </ul>
+                </div>
+                <div role="navigation" class="s-col-1-2 m-col-1-4 l-col-2-12" aria-label="Resources">
+                    <h2 class="footer-list-title">Resources</h2>
+                    <ul class="footer-list">
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://catalog.uic.edu/ucat/academic-calendar/">
+        Academic Calendar
+    </a>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12217"><a href="#" onclick="return false;" class="placeholder">News &#038; Events</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12222"><a href="#" onclick="return false;" class="placeholder">Graduation Dinners</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12225"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2018-2/">2018</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12224"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2017-2/">2017</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12223"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2016-2/">2016</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12227"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2015-2/">2015</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12226"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2014-2/">2014</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12246"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2013-2/">2013</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12245"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2011-2/">2011</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12244"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2010-2/">2010</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12243"><a href="https://radiologynew.webhost.uic.edu/events/graduation-dinners/annual-pages/2009-2/">2009</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="https://today.uic.edu/resources/current-students">
+        Current Students
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12253"><a href="#" onclick="return false;" class="placeholder">Departmental Events</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-image_gallery menu-item-12247"><a href="https://radiologynew.webhost.uic.edu/image_gallery/rsna-2014/">RSNA 2014</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-image_gallery menu-item-12248"><a href="https://radiologynew.webhost.uic.edu/image_gallery/rsna-2015/">RSNA 2015</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://events.uic.edu">
+        Event Calendar
+    </a>
 </li>
-</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="https://today.uic.edu/resources/faculty-staff">
+        Faculty and Staff
+    </a>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12617"><a href="https://radiologynew.webhost.uic.edu/alumni/">Alumni</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12218"><a href="#" onclick="return false;" class="placeholder">Giving</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12297"><a href="https://radiologynew.webhost.uic.edu/donations/">Donations</a></li>
-</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://maps.uic.edu">
+        Maps
+    </a>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12328"><a href="#" onclick="return false;" class="placeholder">Intranet</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12329"><a href="#" onclick="return false;" class="placeholder">Clinical Schedules</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12237"><a href="http://www.amion.com/">Resident Schedule</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12241"><a href="https://radiologynew.webhost.uic.edu/facultystaff/schedules/call-schedule/">Call Schedule</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12238"><a href="https://radiologynew.webhost.uic.edu/facultystaff/schedules/attending-schedule/">Attending Schedule</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://today.uic.edu">
+        UIC Today
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12330"><a href="#" onclick="return false;" class="placeholder">Lecture Schedules</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12232"><a href="https://radiologynew.webhost.uic.edu/facultystaff/noon-lecture-series/">Noon Lecture Series</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12231"><a href="https://radiologynew.webhost.uic.edu/facultystaff/didactic-lecture-series/">Didactic Lecture Series</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12275"><a href="https://radiologynew.webhost.uic.edu/education/medical-students/medical-student-lectures/">Medical Student Lectures</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="/about/visit-directions">
+        Visit &#038; Directions
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12331"><a href="#" onclick="return false;" class="placeholder">Imaging Resources</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-faq menu-item-12332"><a href="https://radiologynew.webhost.uic.edu/faq/call-questions-faq/">Call FAQ</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12333"><a href="https://radiologynew.webhost.uic.edu/files/technologist-call-form/">Call Form</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12337"><a href="https://radiologynew.webhost.uic.edu/files/residents-pocket-card/">Resident&#8217;s Pocket Card</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12336"><a href="https://radiologynew.webhost.uic.edu/facultystaff/radiology-mrbody-protocols/">Radiology MR/BODY Protocols</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://clery.uic.edu/">
+        Clery Compliance
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12567"><a href="#" onclick="return false;" class="placeholder">Policies and Procedures</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12667"><a href="http://radiologynew.webhost.uic.edu/wp-content/uploads/2018/10/Research-scholarly-activities.pdf">Policies</a></li>
-		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12640"><a href="http://radiologynew.webhost.uic.edu/wp-content/uploads/2018/10/Department-of-Radiology-PT-Criteria-10-22-2018.pdf">Promotion &#038; Tenure</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://oae.uic.edu/UnlawfulDiscrimination/index.htm">
+        Nondiscrimination Policy
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12291"><a href="#" onclick="return false;" class="placeholder">Consent Forms</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12233"><a href="https://radiologynew.webhost.uic.edu/files/consent-for-pregnant-patients-in-radiology-form-es/">Consent for Pregnant Patients in Radiology Form (es)</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-files menu-item-12234"><a href="https://radiologynew.webhost.uic.edu/files/consent-for-pregnant-patients-in-radiology-form-en/">Consent for Pregnant Patients in Radiology Form (en)</a></li>
-	</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://oae.uic.edu/sexual-misconduct/">
+        Title IX: Sexual Misconduct
+    </a>
 </li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12775"><a href="https://radiologynew.webhost.uic.edu/faculty-meeting-minutes/">Faculty Meeting Minutes</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12240"><a href="https://radiologynew.webhost.uic.edu/facultystaff/request-time-off/">Request Time Off</a></li>
-</ul>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://financialaid.uic.edu/consumer-information/department-education-complaint-process/">
+        Student Information Disclosures
+    </a>
 </li>
-</ul></div>  </nav>
-  		<script>
-		( function ( body ) {
-			'use strict';
-			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
-		} )( document.body );
-		</script>
-		<script type='text/javascript'> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script><script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var _wpcf7 = {"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
-/* ]]> */
+                                            </ul>
+                </div>
+                <div role="navigation" class="s-col-1-2 m-col-1-4 l-col-2-12 l-col-12-pull-4" aria-label="Quick Links">
+                    <h2 class="footer-list-title">Quick Links</h2>
+                    <ul class="footer-list">
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://www.uicflames.com/">
+        Athletics
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://www.uic.edu/apps/departments-az/search">
+        Directory
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://disabilityresources.uic.edu/">
+        Disability Resources
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://emergency.uic.edu">
+        Emergency Information
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://oge.uic.edu/">
+        International
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="/about/job-opportunities">
+        Job Opportunities
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://library.uic.edu">
+        Library
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://www.uic.edu/depts/dos/studentveteranaffairs.shtml">
+        Veterans Affairs
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="http://hospital.uillinois.edu">
+        UI Health
+    </a>
+</li>
+                                                    <li class="footer-list-item">
+    <a class="footer-list-link" href="/about/acerca">
+        Acerca de la UIC (en español)
+    </a>
+</li>
+                                            </ul>
+                </div>
+                <div class="l-col-3-12">
+                    <div class="ms-row">
+                        <div role="navigation" class="s-col-1-2 l-col-1-1" aria-label="Calls to Action">
+                            <ul class="footer-button-list">
+            <li class="footer-button-item">
+            <a class="footer-button" href="http://admissions.uic.edu/visit-us" role="button">
+                Book a Visit
+            </a>
+        </li>
+            <li class="footer-button-item">
+            <a class="footer-button" href="http://admissions.uic.edu/undergraduate/request-information" role="button">
+                Request Info
+            </a>
+        </li>
+            <li class="footer-button-item">
+            <a class="footer-button" href="http://admissions.uic.edu/apply-now" role="button">
+                Apply Now
+            </a>
+        </li>
+            <li class="footer-button-item">
+            <a class="footer-button" href="https://give.uic.edu/" role="button">
+                Give
+            </a>
+        </li>
+            <li class="footer-button-item">
+            <a class="footer-button" href="http://advance.uic.edu/alumni-association/" role="button">
+                Join Alumni Association
+            </a>
+        </li>
+            <li class="footer-button-item">
+            <a class="footer-button" href="/about/contact-us" role="button">
+                Contact Us
+            </a>
+        </li>
+    </ul>                        </div>
+                        <div class="s-col-1-2 l-col-1-1 footer-social-icons-cell">
+                            <ul class="social-icons-list">
+            <li>
+            <a href="https://www.facebook.com/uic.edu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Facebook"><title>Facebook</title><path d="M17 26.7V15h3.2s.3-2 .4-4H17V8.3s.5-.9 1-.9h2.5c0-.6.2-2.4.3-4h-3.7c-5 0-4.9 3.9-4.9 4.5v3.2h-3v4h3.1v11.7H17z"/></svg>
+            </a>
+        </li>
+                <li>
+            <a href="https://twitter.com/thisisuic">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Tweeter"><title>Twitter</title><path d="M25.4 9.4c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.8-1.3-3-1.3-2.3 0-4.1 1.9-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.5-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2.1 2.8 3.9 2.9-1.4 1.1-3.2 1.8-5.1 1.8-.3 0-.7 0-1-.1 1.8 1.2 4 1.9 6.3 1.9 7.6 0 11.8-6.3 11.8-11.8v-.5c.9-.6 1.6-1.3 2.1-2.2z"/></svg>
+            </a>
+        </li>
+                <li>
+            <a href="https://instagram.com/uicamiridis/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Instagram"><title>Instagram</title><path fill="none" d="M15 18.8c2 0 3.6-1.6 3.6-3.6S17 11.5 15 11.5s-3.6 1.6-3.6 3.6 1.6 3.7 3.6 3.7z"/><path fill="none" d="M20 15.2c0 2.7-2.2 5-5 5s-5-2.2-5-5c0-.7.1-1.3.4-1.9H6.5V22c0 .9.7 1.6 1.6 1.6H22c.9 0 1.6-.7 1.6-1.6v-8.7h-3.9c.1.6.3 1.2.3 1.9z"/><path d="M21.9 5.1H11.5v5.8h-1.4V5.1H8.8v5.8H7.4V5.2c-1.3.2-2.3 1.4-2.3 2.9V22c0 1.6 1.3 3 3 3H22c1.6 0 3-1.3 3-3V8.1c-.1-1.7-1.4-3-3.1-3zm-2.6 3.4h2.4v2.4h-2.4V8.5zm-4.3 3c2 0 3.6 1.6 3.6 3.6S17 18.8 15 18.8s-3.6-1.6-3.6-3.6 1.6-3.7 3.6-3.7zm8.5 10.4c0 .9-.7 1.6-1.6 1.6H8.1c-.9 0-1.6-.7-1.6-1.6v-8.7h3.9c-.2.6-.4 1.2-.4 1.9 0 2.7 2.2 5 5 5s5-2.2 5-5c0-.7-.1-1.3-.4-1.9h3.9v8.7z"/></svg>
+            </a>
+        </li>
+                    <li>
+            <a href="https://www.youtube.com/user/thisisUIC">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Youtube"><title>YouTube</title><path d="M9.5 11.8h1.4V8.3l1.6-4.8h-1.4l-.9 3.3-.9-3.3H7.9l1.6 5M14.4 11.9c.6 0 1-.1 1.3-.4.3-.3.5-.7.5-1.2V7.1c0-.5-.2-.8-.5-1.1-.3-.3-.7-.4-1.3-.4-.6 0-1 .1-1.3.4-.3.3-.5.7-.5 1.1v3.2c0 .5.2.9.5 1.2.3.3.7.4 1.3.4zM13.9 7c0-.1 0-.2.1-.3.1-.1.2-.1.4-.1s.3 0 .4.1c.1.1.2.2.2.3v3.3c0 .2 0 .3-.1.4-.1.1-.2.1-.4.1s-.3 0-.4-.1c-.1-.1-.1-.2-.1-.4V7zM18 11.8c.2 0 .5-.1.7-.2.2-.1.5-.3.7-.6v.7h1.2V5.6h-1.2v4.6c-.1.1-.2.2-.4.3-.1.1-.3.1-.3.1-.1 0-.2 0-.2-.1-.1-.1-.1-.2-.1-.3V5.6h-1.2v5.1c0 .4.1.6.2.8.1.3.3.3.6.3zM20.7 19.3c-.2 0-.3 0-.4.2-.1.1-.1.3-.1.5v.6h1V20c0-.2 0-.4-.1-.5-.1-.1-.2-.2-.4-.2zM17 19.3c-.4-.1-.6.2-.6.2V23s.3.4.7.2c0 0 .2-.1.2-.5v-2.9c.1.1.2-.4-.3-.5z"/><path d="M23.1 14.9c-.9-.9-8.4-.9-8.4-.9s-7.6 0-8.5.9c-.9.9-.9 5.3-.9 5.4 0 0 0 4.5.9 5.4.9.9 8.5.9 8.5.9s7.6 0 8.5-.9c.9-.9.9-5.4.9-5.4 0-.1-.1-4.5-1-5.4zm-12.2 2.7H9.7V24H8.4v-6.4H7.2v-1.1H11v1.1zm3.6 6.4h-1.1v-.6c-.2.2-.4.4-.6.5-.2.1-.4.2-.6.2-.3 0-.4-.1-.6-.2-.1-.2-.2-.4-.2-.7v-4.6h1.1v4.3c0 .1 0 .2.1.3 0 .1.1.1.2.1s.2 0 .3-.1l.3-.3v-4.2h1.1V24zm4-1.1c0 .4-.1.7-.3.9-.2.2-.4.3-.7.3-.2 0-.4 0-.6-.1-.2-.1-.3-.2-.5-.4v.4h-1.1v-7.5h1.1v2.4c.1-.2.3-.3.5-.4.2-.1.3-.1.5-.1.3 0 .6.1.8.4.2.2.3.6.3 1v3.1zm3.8-1.5h-2.1v1c0 .3 0 .5.1.6.1.1.2.2.4.2s.3 0 .4-.1c.1-.1.1-.3.1-.6v-.3h1.1v.3c0 .6-.1 1-.4 1.3-.3.3-.7.4-1.2.4s-.9-.2-1.2-.5c-.3-.3-.4-.7-.4-1.3V20c0-.5.2-.9.5-1.2.3-.3.7-.5 1.2-.5s.9.1 1.2.4c.3.3.4.7.4 1.2v1.5z"/></svg>
+            </a>
+        </li>
+                    <li>
+            <a href="http://uicscience.tumblr.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Tumblr"><title>Tumblr</title><path d="M15.1 24.2c2.8.7 5.6-.9 5.6-.9v-3c-.8.9-2.6 1.1-3.9.7-1.2-.3-1.1-2-1.1-2v-5.7h4.4v-3h-4.4V5.6H13c-.3 5.1-3.8 5-3.8 5v2.7h2v6.8c.1 2.2 1.1 3.4 3.9 4.1z"/></svg>
+            </a>
+        </li>
+                        <li>
+            <a href="https://news.uic.edu/social-media-directory">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="More"><title>More links</title><path d="M15 5C9.5 5 5 9.5 5 15s4.5 10 10 10 10-4.5 10-10S20.5 5 15 5zm4.7 11H16v3.7h-2V16h-3.7v-2H14v-3.7h2V14h3.7v2z"/></svg>
+            </a>
+        </li>
+    </ul>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <div class="ms-grid">
+            <div class="ms-row">
+                <div class="l-col-1-2">
+                    &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span> <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
+                </div>
+                <div class="l-col-1-2 campuses">
+                                            <a href="http://www.uillinois.edu/">University of Illinois System</a> <span class="pipe-separator">|</span>
+                                            <a href="http://www.illinois.edu/">Urbana-Champaign</a> <span class="pipe-separator">|</span>
+                                            <a href="http://www.uis.edu/">Springfield</a> 
+                                    </div>
+            </div>
+        </div>
+    </div>
+  <a href="https://plus.google.com/+UicEdu" rel="publisher" hidden>UIC on Google+</a>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "http://www.uic.edu",
+  "logo": "/images/logo.png",
+  "contactPoint" : [
+    {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-312-996-7000",
+      "contactType" : "customer service"
+    },
+    {
+      "@type" : "ContactPoint",
+      "telephone" : "+1-312-355-0379",
+      "contactType" : "customer service",
+      "contactOption" : "HearingImpairedSupported"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1200 West Harrison Street",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "postalCode": "60607",
+    "addressCountry": "USA"
+  }
+}
 </script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.7'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/js/bootstrap.min.js?ver=4.7.5'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/js/mmenu/js/jquery.mmenu.all.min.js?ver=4.7.5'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/js/scripts.js?ver=4.7.5'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-content/themes/radiology/js/jquery.cookie.js?ver=4.7.5'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/wp-a11y.min.js?ver=4.7.5'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://radiologynew.webhost.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
-<script type="text/css" id="tmpl-tribe_customizer_css">.tribe-events-list .tribe-events-loop .tribe-event-featured,
-				.tribe-events-list #tribe-events-day.tribe-events-loop .tribe-event-featured,
-				.type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap,
-				.type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap:hover {
-					background-color: #0ea0d7;
-				}
-
-				#tribe-events-content table.tribe-events-calendar .type-tribe_events.tribe-event-featured {
-					background-color: #0ea0d7;
-				}
-
-				.tribe-events-list-widget .tribe-event-featured,
-				.tribe-events-venue-widget .tribe-event-featured,
-				.tribe-mini-calendar-list-wrapper .tribe-event-featured,
-				.tribe-events-adv-list-widget .tribe-event-featured .tribe-mini-calendar-event {
-					background-color: #0ea0d7;
-				}
-
-				.tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single {
-					background-color: rgba(14,160,215, .7 );
-					border-color: #0ea0d7;
-				}
-
-				.tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single:hover {
-					background-color: #0ea0d7;
-				}</script><style type="text/css" id="tribe_customizer_css">.tribe-events-list .tribe-events-loop .tribe-event-featured,
-				.tribe-events-list #tribe-events-day.tribe-events-loop .tribe-event-featured,
-				.type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap,
-				.type-tribe_events.tribe-events-photo-event.tribe-event-featured .tribe-events-photo-event-wrap:hover {
-					background-color: #0ea0d7;
-				}
-
-				#tribe-events-content table.tribe-events-calendar .type-tribe_events.tribe-event-featured {
-					background-color: #0ea0d7;
-				}
-
-				.tribe-events-list-widget .tribe-event-featured,
-				.tribe-events-venue-widget .tribe-event-featured,
-				.tribe-mini-calendar-list-wrapper .tribe-event-featured,
-				.tribe-events-adv-list-widget .tribe-event-featured .tribe-mini-calendar-event {
-					background-color: #0ea0d7;
-				}
-
-				.tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single {
-					background-color: rgba(14,160,215, .7 );
-					border-color: #0ea0d7;
-				}
-
-				.tribe-grid-body .tribe-event-featured.tribe-events-week-hourly-single:hover {
-					background-color: #0ea0d7;
-				}</style>  </body>
-</html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-20665772-1', 'auto');
+  ga('send', 'pageview');
+</script><link rel="stylesheet" property="stylesheet" href="/css/main.min.css" media="all"><script src="/js/concat/main.min.js"></script><script src="//www.uic.edu/inc/emergency/alert.js"></script></body></html>

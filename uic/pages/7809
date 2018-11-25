@@ -1,284 +1,378 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<head>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
-<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-<title> WebCreateNewTopic &lt; CS477 &lt; TWiki</title>
-
-<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS477/WebCreateNewTopic?_T=2018-11-21" type="application/x-wiki" title="edit WebCreateNewTopic" />
-<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<meta name="SCRIPTURLPATH" content="/bin" />
-<meta name="SCRIPTSUFFIX" content="" />
-<meta name="TEXT_JUMP" content="Jump" />
-<meta name="TEXT_SEARCH" content="Search" />
-<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
-<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS477/WebRss" />
-<base href="https://www.cs.uic.edu/bin/view/CS477/WebCreateNewTopic"></base>
-<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
-<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script><script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiString.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/unicode_chars.js"></script>
-<script type="text/javascript">
-//<![CDATA[
-function openTemplateWindow () {
-	var window = twiki.Window.openPopup(
-		"https://www.cs.uic.edu/bin/view/",
-			{
-	 			topic:"WebTemplateTopics",
-	 			web:"TWiki",
-	 			template:"viewplain",
-	 			attributes:"resizable=1,scrollbars=1,status=1,toolbar=1",
-	 			urlparams:"web=CS477"
-	 		}
-	 	);
-	return false;
-}
-function getQueryUrl() {
-	return "/bin/view/CS477/WebCreateNewTopic?;pickparent=1"
-}
-/* Localized texts */
-var TEXT_FEEDBACK_HEADER = "Topic will be named: ";
-/* Url params */
-var URL_PICK_PARENT = "";
-var URL_TEMPLATE = "";
-//]]>
-</script>
-<script type="text/javascript" src="/pub/TWiki/PatternSkin/webtopiccreator.js"></script>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/TWikiTemplates/base.css');
-</style>
-<style type="text/css" media="all">
-#patternTopBar,
-#patternClearHeaderCenter,
-#patternClearHeaderLeft,
-#patternClearHeaderRight,
-#patternTopBarContentsOuter,
-#patternTopBarContents {
-/*	height:64px; */ /* top bar height; make room for header columns */
-	overflow:hidden;
-}
-#patternOuter {
-	margin-left:14em;
-}
-#patternLeftBar {
-	width:14em;
-	margin-left:-14em;
-}
-</style>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/PatternSkin/layout.css');
-@import url('/pub/TWiki/PatternSkin/style.css');
-@import url('/pub/TWiki/PatternSkin/colors.css');
-</style>
-<style type="text/css" media="all">
-	/* Styles that are set using variables */
-	.patternBookView .twikiTopRow,
-	.patternWebIndicator a img,
-	.patternWebIndicator a:hover img {
-		background-color:#D0D0D0;
-	}
-	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
-	
-	.patternBookView {
-		border-color:#D0D0D0;
-	}
-	.patternPreviewPage #patternMain {
-		/* uncomment to set the preview image */
-		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
-	}
-	
-</style><style type="text/css" media="all">
-
-@import url('/pub/Main/WebPreferences/mainweb.css');
-
-</style>
-<style type="text/css" media="all">
-	@import url("/pub/TWiki/PatternSkin/print.css");
-</style>
-<!--[if IE]><style type="text/css" media="screen">
-pre {
-	overflow-x:auto;
-	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
-}
-</style>
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
 <![endif]-->
-<!--[if lte IE 6]> 
-<style type="text/css">
-#patternLeftBar {
-	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+			
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://acer.uic.edu/xmlrpc.php" />
+
+		<!--[if lt IE 9]>
+	<script src="https://acer.uic.edu/wp-content/themes/Divi/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<title>Research Network | ACER</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="ACER &raquo; Feed" href="https://acer.uic.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="ACER &raquo; Comments Feed" href="https://acer.uic.edu/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/acer.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<meta content="Divi v.3.0.35" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
 }
-</style><![endif]-->
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+</style>
+<link rel='stylesheet' id='add-search-to-menu-styles-css'  href='https://acer.uic.edu/wp-content/plugins/add-search-to-menu/public/css/add-search-to-menu.css?ver=3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://acer.uic.edu/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-fonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='et-gf-roboto-css'  href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&#038;subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-css'  href='https://acer.uic.edu/wp-content/themes/Divi/style.css?ver=3.0.35' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-css-css'  href='https://acer.uic.edu/wp-content/themes/Divi/epanel/shortcodes/css/shortcodes.css?ver=3.0.35' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-responsive-css-css'  href='https://acer.uic.edu/wp-content/themes/Divi/epanel/shortcodes/css/shortcodes_responsive.css?ver=3.0.35' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css'  href='https://acer.uic.edu/wp-content/themes/Divi/includes/builder/styles/magnific_popup.css?ver=3.0.35' type='text/css' media='all' />
+<script type='text/javascript' src='https://acer.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://acer.uic.edu/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://acer.uic.edu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://acer.uic.edu/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.3" />
+<link rel="canonical" href="https://acer.uic.edu/networking/research-network/" />
+<link rel='shortlink' href='https://acer.uic.edu/?p=119' />
+<link rel="alternate" type="application/json+oembed" href="https://acer.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Facer.uic.edu%2Fnetworking%2Fresearch-network%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://acer.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Facer.uic.edu%2Fnetworking%2Fresearch-network%2F&#038;format=xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />		<style id="theme-customizer-css">
+					@media only screen and ( min-width: 767px ) {
+				body, .et_pb_column_1_2 .et_quote_content blockquote cite, .et_pb_column_1_2 .et_link_content a.et_link_main_url, .et_pb_column_1_3 .et_quote_content blockquote cite, .et_pb_column_3_8 .et_quote_content blockquote cite, .et_pb_column_1_4 .et_quote_content blockquote cite, .et_pb_blog_grid .et_quote_content blockquote cite, .et_pb_column_1_3 .et_link_content a.et_link_main_url, .et_pb_column_3_8 .et_link_content a.et_link_main_url, .et_pb_column_1_4 .et_link_content a.et_link_main_url, .et_pb_blog_grid .et_link_content a.et_link_main_url, body .et_pb_bg_layout_light .et_pb_post p,  body .et_pb_bg_layout_dark .et_pb_post p { font-size: 15px; }
+				.et_pb_slide_content, .et_pb_best_value { font-size: 17px; }
+			}
+													.woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce-message, .woocommerce-error, .woocommerce-info { background: #4484ce !important; }
+			#et_search_icon:hover, .mobile_menu_bar:before, .mobile_menu_bar:after, .et_toggle_slide_menu:after, .et-social-icon a:hover, .et_pb_sum, .et_pb_pricing li a, .et_pb_pricing_table_button, .et_overlay:before, .entry-summary p.price ins, .woocommerce div.product span.price, .woocommerce-page div.product span.price, .woocommerce #content div.product span.price, .woocommerce-page #content div.product span.price, .woocommerce div.product p.price, .woocommerce-page div.product p.price, .woocommerce #content div.product p.price, .woocommerce-page #content div.product p.price, .et_pb_member_social_links a:hover, .woocommerce .star-rating span:before, .woocommerce-page .star-rating span:before, .et_pb_widget li a:hover, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active, .et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active, .et_pb_gallery .et_pb_gallery_pagination ul li a.active, .wp-pagenavi span.current, .wp-pagenavi a:hover, .nav-single a, .posted_in a { color: #4484ce; }
+			.et_pb_contact_submit, .et_password_protected_form .et_submit_button, .et_pb_bg_layout_light .et_pb_newsletter_button, .comment-reply-link, .form-submit .et_pb_button, .et_pb_bg_layout_light .et_pb_promo_button, .et_pb_bg_layout_light .et_pb_more_button, .woocommerce a.button.alt, .woocommerce-page a.button.alt, .woocommerce button.button.alt, .woocommerce-page button.button.alt, .woocommerce input.button.alt, .woocommerce-page input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce-page #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button { color: #4484ce; }
+			.footer-widget h4 { color: #4484ce; }
+			.et-search-form, .nav li ul, .et_mobile_menu, .footer-widget li:before, .et_pb_pricing li:before, blockquote { border-color: #4484ce; }
+			.et_pb_counter_amount, .et_pb_featured_table .et_pb_pricing_heading, .et_quote_content, .et_link_content, .et_audio_content, .et_pb_post_slider.et_pb_bg_layout_dark, .et_slide_in_menu_container { background-color: #4484ce; }
+									a { color: #4484ce; }
+											.nav li ul { border-color: #f9cf00; }
+							#top-header, #et-secondary-nav li ul { background-color: #ffffff; }
+																
+		
+							#main-footer { background-color: #000000; }
+											#main-footer .footer-widget h4 { color: #4484ce; }
+							.footer-widget li:before { border-color: #4484ce; }
+						#footer-widgets .footer-widget li:before { top: 9.75px; }#footer-bottom { background-color: rgba(79,79,79,0.32); }									body .et_pb_button,
+			.woocommerce a.button.alt, .woocommerce-page a.button.alt, .woocommerce button.button.alt, .woocommerce-page button.button.alt, .woocommerce input.button.alt, .woocommerce-page input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce-page #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page #content input.button.alt,
+			.woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce-message a.button.wc-forward
+			{
+													background: rgba(238,238,34,0);
+																											}
+			body.et_pb_button_helper_class .et_pb_button,
+			.woocommerce.et_pb_button_helper_class a.button.alt, .woocommerce-page.et_pb_button_helper_class a.button.alt, .woocommerce.et_pb_button_helper_class button.button.alt, .woocommerce-page.et_pb_button_helper_class button.button.alt, .woocommerce.et_pb_button_helper_class input.button.alt, .woocommerce-page.et_pb_button_helper_class input.button.alt, .woocommerce.et_pb_button_helper_class #respond input#submit.alt, .woocommerce-page.et_pb_button_helper_class #respond input#submit.alt, .woocommerce.et_pb_button_helper_class #content input.button.alt, .woocommerce-page.et_pb_button_helper_class #content input.button.alt,
+			.woocommerce.et_pb_button_helper_class a.button, .woocommerce-page.et_pb_button_helper_class a.button, .woocommerce.et_pb_button_helper_class button.button, .woocommerce-page.et_pb_button_helper_class button.button, .woocommerce.et_pb_button_helper_class input.button, .woocommerce-page.et_pb_button_helper_class input.button, .woocommerce.et_pb_button_helper_class #respond input#submit, .woocommerce-page.et_pb_button_helper_class #respond input#submit, .woocommerce.et_pb_button_helper_class #content input.button, .woocommerce-page.et_pb_button_helper_class #content input.button {
+							}
+						
+		
+																														
+		@media only screen and ( min-width: 981px ) {
+																															#logo { max-height: 70%; }
+				.et_pb_svg_logo #logo { height: 70%; }
+																			.et_header_style_centered.et_hide_primary_logo #main-header:not(.et-fixed-header) .logo_container, .et_header_style_centered.et_hide_fixed_logo #main-header.et-fixed-header .logo_container { height: 11.88px; }
+																.et-fixed-header#top-header, .et-fixed-header#top-header #et-secondary-nav li ul { background-color: #ffffff; }
+																		
+					}
+					@media only screen and ( min-width: 1350px) {
+				.et_pb_row { padding: 27px 0; }
+				.et_pb_section { padding: 54px 0; }
+				.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper { padding-top: 81px; }
+				.et_pb_section.et_pb_section_first { padding-top: inherit; }
+				.et_pb_fullwidth_section { padding: 0; }
+			}
+		
+		@media only screen and ( max-width: 980px ) {
+																				}
+		@media only screen and ( max-width: 767px ) {
+														}
+	</style>
 
-<!-- Google Analytics Snippet -->
+	
+					<style class="et_heading_font">
+				h1, h2, h3, h4, h5, h6 {
+					font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;				}
+				</style>
+							<style class="et_body_font">
+				body, input, textarea, select {
+					font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;				}
+				</style>
+			
+	
+	<style id="module-customizer-css">
+			</style>
 
-<script type="text/javascript">
+	<link rel="icon" href="https://acer.uic.edu/wp-content/uploads/2017/04/UIC_Circle_Mark_Red-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://acer.uic.edu/wp-content/uploads/2017/04/UIC_Circle_Mark_Red.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://acer.uic.edu/wp-content/uploads/2017/04/UIC_Circle_Mark_Red.png" />
+<meta name="msapplication-TileImage" content="https://acer.uic.edu/wp-content/uploads/2017/04/UIC_Circle_Mark_Red.png" />
+		<style type="text/css" id="wp-custom-css">
+			.et_pb_button {
+width: 100%;
+}
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-17081517-1']);
-  _gaq.push(['_setDomainName', 'none']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
+.entry-content .et_pb_text ul {
+padding-left: 40px !important;
+}
 
-  (function() {
-	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
-'.google-analytics.com/ga.js';
-	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+.et_pb_fullwidth_header {
+padding: 10px 0;
+}		</style>
+	</head>
+<body class="page-template-default page page-id-119 page-child parent-pageid-117 et_pb_button_helper_class et_fullwidth_secondary_nav et_non_fixed_nav et_show_nav et_cover_background et_secondary_nav_enabled et_secondary_nav_only_menu et_pb_gutter et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns2 et_header_style_left et_pb_pagebuilder_layout et_right_sidebar et_divi_theme unknown">
+	<div id="page-container">
 
+			<div id="top-header">
+			<div class="container clearfix">
+
+			
+				<div id="et-secondary-menu">
+				<ul id="et-secondary-nav" class="menu"><li class="astm-search-menu astm-search-menu default"><form role="search" method="get" id="searchform" class="searchform" action="https://acer.uic.edu/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form></li></ul>				</div> <!-- #et-secondary-menu -->
+
+			</div> <!-- .container -->
+		</div> <!-- #top-header -->
+	
+	
+		<header id="main-header" data-height-onload="66">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://acer.uic.edu/">
+						<img src="https://acer.uic.edu/wp-content/uploads/2017/03/OTH.ACER_.LT_.SM_.BLK-500-new.png" alt="ACER" id="logo" data-height-percentage="70" />
+					</a>
+				</div>
+				<div id="et-top-navigation" data-height="66" data-fixed-height="40">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-154"><a href="#">ABOUT</a>
+<ul class="sub-menu">
+	<li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a href="https://acer.uic.edu/about/about-acer/">About ACER</a></li>
+	<li id="menu-item-136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"><a href="https://acer.uic.edu/about/governance/">Governance</a></li>
+</ul>
+</li>
+<li id="menu-item-155" class="mega-menu menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-155"><a href="#">RESOURCES</a>
+<ul class="sub-menu">
+	<li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-137"><a href="https://acer.uic.edu/computing-resources/">COMPUTING</a>
+	<ul class="sub-menu">
+		<li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139"><a href="https://acer.uic.edu/computing-resources/high-performance-computing/">High Performance Computing</a></li>
+		<li id="menu-item-442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-442"><a href="https://acer.uic.edu/computing-resources/big-data/">Big Data</a></li>
+		<li id="menu-item-1399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1399"><a href="https://acer.uic.edu/computing-resources/data-analytics/">Data Analytics</a></li>
+		<li id="menu-item-557" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-557"><a href="https://acer.uic.edu/computing-resources/secure-research-environment/">Secure Computing Environment</a></li>
+		<li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a href="https://acer.uic.edu/computing-resources/national-resources-xsede/">National Resources – XSEDE</a></li>
+	</ul>
+</li>
+	<li id="menu-item-157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-157"><a href="#">STORAGE</a>
+	<ul class="sub-menu">
+		<li id="menu-item-152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152"><a href="https://acer.uic.edu/storage/high-performance-computing-storage/">High Performance Computing Storage</a></li>
+	</ul>
+</li>
+	<li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-156"><a href="#">NETWORKING</a>
+	<ul class="sub-menu">
+		<li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-119 current_page_item menu-item-145"><a href="https://acer.uic.edu/networking/research-network/">Research Network</a></li>
+	</ul>
+</li>
+	<li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-158"><a href="#">SERVICES</a>
+	<ul class="sub-menu">
+		<li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-148"><a href="https://acer.uic.edu/services/consultations/">Consultations</a></li>
+		<li id="menu-item-884" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-884"><a href="https://acer.uic.edu/services/tutorials/">Tutorials</a></li>
+		<li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://acer.uic.edu/services/workshops/">Workshops</a></li>
+		<li id="menu-item-149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-149"><a href="https://acer.uic.edu/services/software-resources/">Software Resources</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-434"><a href="#">POLICIES</a>
+<ul class="sub-menu">
+	<li id="menu-item-432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-432"><a href="https://acer.uic.edu/policies/acceptable-usage-policy/">Acceptable Usage Policy</a></li>
+	<li id="menu-item-422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422"><a href="https://acer.uic.edu/policies/maintenance-policy/">Maintenance Policy</a></li>
+	<li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-431"><a href="https://acer.uic.edu/policies/password-policy/">Password Policy</a></li>
+	<li id="menu-item-430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-430"><a href="https://acer.uic.edu/policies/scheduler-policy/">Scheduler Policy</a></li>
+</ul>
+</li>
+<li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="https://acer.uic.edu/news/">NEWS</a></li>
+<li id="menu-item-143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143"><a href="https://acer.uic.edu/contact/">CONTACT</a></li>
+<li id="menu-item-1032" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1032"><a href="https://acer.uic.edu/computing-resources/high-performance-computing/hpc-big-data-faq/">FAQ</a></li>
+</ul>						</nav>
+					
+					
+					
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+			<div class="et_search_outer">
+				<div class="container et_search_form_container">
+					<form role="search" method="get" class="et-search-form" action="https://acer.uic.edu/">
+					<input type="search" class="et-search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />					</form>
+					<span class="et_close_search_field"></span>
+				</div>
+			</div>
+		</header> <!-- #main-header -->
+
+		<div id="et-main-area">
+<div id="main-content">
+
+
+			
+				<article id="post-119" class="post-119 page type-page status-publish hentry">
+
+				
+					<div class="entry-content">
+					<div class="et_pb_section et_pb_inner_shadow et_pb_section_parallax et_pb_fullwidth_section  et_pb_section_0 et_pb_with_background et_section_regular">
+				
+				
+					
+					<section class="et_pb_fullwidth_header et_pb_module et_pb_bg_layout_dark et_pb_text_align_center  et_pb_fullwidth_header_0">
+				
+				<div class="et_pb_fullwidth_header_container center">
+					<div class="header-content-container center">
+					<div class="header-content">
+						
+						<h1>Research Network</h1>
+						
+						 
+						
+					</div>
+				</div>
+					
+				</div>
+				<div class="et_pb_fullwidth_header_overlay"></div>
+				<div class="et_pb_fullwidth_header_scroll"></div>
+			</section>
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section  et_pb_section_1 et_section_regular">
+				
+				
+					
+					<div class=" et_pb_row et_pb_row_0">
+				
+				
+				<div class="et_pb_column et_pb_column_2_3  et_pb_column_0">
+				
+				<div class="et_pb_module et_pb_space et_pb_divider et_pb_divider_0 et-hide-mobile"></div><div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left  et_pb_text_0">
+				
+<p>The foundations of the current campus research network (CRN) was established by the NSF INCUS grant. The networking requirements of the UIC Electronic Visualization Laboratory (EVL) helped UIC expand its bandwidth from basic Internet2 connectivity (via MREN to StarLight) to high-performance connectivity to regional, national and international research networks (via StarLight). This has enabled advanced research partnerships with University of Chicago, Northwestern University, and other research institutions and facilities. ACCC currently provides routing and on-campus network segmentation to existing researchers on campus at 10Gb and, thanks to INCUS, to a few laboratories, including EVL, at 40-100Gb. ACER collaborated with campus researchers recently to win a NSF $500,000 award to build/extend Science DMZ network at UIC and to extend high-performance networking (10Gb-40Gb) capabilities to more researchers on campus.</p>
+<p>For more information, please contact <a href="mailto:acer@uic.edu">acer@uic.edu</a></p>
+
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3  et_pb_column_1">
+				
+				<div class="et_pb_module et-waypoint et_pb_image et_pb_animation_off et_pb_image_0 et_always_center_on_mobile">
+				<img src="https://acer.uic.edu/wp-content/uploads/2016/11/sidebar-r-networking-new.jpg" alt="Server rack " />
+			
+			</div>
+			</div> <!-- .et_pb_column -->
+			</div> <!-- .et_pb_row -->
+				
+			</div> <!-- .et_pb_section -->
+					</div> <!-- .entry-content -->
+
+				
+				</article> <!-- .et_pb_post -->
+
+			
+
+</div> <!-- #main-content -->
+
+
+			<footer id="main-footer">
+				
+<div class="container">
+	<div id="footer-widgets" class="clearfix">
+	<div class="footer-widget"><div id="text-7" class="fwidget et_pb_widget widget_text">			<div class="textwidget"><center><a href="http://www.uic.edu"><img src="https://acer.uic.edu/wp-content/uploads/2017/04/OTH.ACER_.UIC_.EXTENDED.png" alt="UIC and ACER Logo" height="185" width="150" border="0"></a></center>
+
+</div>
+		</div> <!-- end .fwidget --></div> <!-- end .footer-widget -->	</div> <!-- #footer-widgets -->
+</div>	<!-- .container -->
+
+		
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<div id="footer-info">&copy; 2017 The Board of Trustees of the University of Illinois | <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a></div>					</div>	<!-- .container -->
+				</div>
+			</footer> <!-- #main-footer -->
+		</div> <!-- #et-main-area -->
+
+
+	</div> <!-- #page-container -->
+
+	<style type="text/css" id="et-builder-advanced-style">
+				
+.et_pb_image_0 { margin-left: 0; }
+.et_pb_divider_0:before { border-top-color: #f9cf00; border-top-width: 5px; }
+.et_pb_fullwidth_header_0.et_pb_fullwidth_header { background-color: #4484ce; background-image: url(https://acer.uic.edu/wp-content/uploads/2016/11/LandingPage-Header5.jpg); }
+.et_pb_fullwidth_header_0.et_pb_fullwidth_header .header-content h1 { font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;font-size: 40px; }
+.et_pb_section_0.et_pb_section { background-color:#4484ce !important; }
+			</style><style type="text/css" id="et-builder-page-custom-style">
+				 .et_pb_bg_layout_dark { color: #ffffff !important; } .page.et_pb_pagebuilder_layout #main-content { background-color: rgba(255,255,255,0); } .et_pb_section { background-color: #ffffff; }
+			</style><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27751174-10', 'auto');
+  ga('send', 'pageview');
+
+</script><script type='text/javascript' src='https://acer.uic.edu/wp-content/themes/Divi/includes/builder/scripts/frontend-builder-global-functions.js?ver=3.0.35'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
 </script>
-
-<!-- /Google Analytics Snippet -->
-</head>
-<body class="patternViewPage">
-<a name="PageTop"></a>
-<div id="patternScreen">
-<div id="patternPageShadow">
-<div id="patternPage">
-<div id="patternWrapper"><div id="patternOuter">
-<div id="patternFloatWrap">
-<div id="patternMain"><div id="patternClearHeaderCenter"></div>
-<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic">
-<h1><a name="Create_New_Topic_in_CS477_Web"></a> Create New Topic in CS477 Web </h1>
-<form name="newtopicform" id="newtopicform" action="/bin/edit/CS477/">
-<input type="hidden" name="onlynewtopic" value="on" />
-<input type="hidden" name="nowysiwyg" value="0" />
-<div class="twikiFormSteps">
-<div class="twikiFormStep">
-<h3><a name="Topic_name"></a> Topic name: </h3>
-<p>
-<input type="text" class="twikiInputField" name="topic" id="topic" size="40"   /> <span id="webTopicCreatorFeedback" class="twikiGrayText"><!--generated name will be put here--></span>
-</p><p><input type="checkbox" id="nonwikiword" name="nonwikiword" %NONWIKIWORDFLAG% /><label for="nonwikiword">Allow non WikiWord for the new topic name</label><br /> It's usually best to choose a <a target='WikiWord' class='twikiPopUp' href='/bin/view/TWiki/WikiWord' rel='nofollow'>WikiWord</a> for the new topic name, otherwise automatic linking may not work. Characters not allowed in topic names, such as spaces will automatically be removed.</p>
-</div><!--/twikiFormStep-->
-<div class="twikiFormStep">
-<h3><a name="Topic_parent"></a> Topic parent: </h3>
-<p>
-<input type='text' size='40' name='topicparent' class='twikiInputField' value='' />&nbsp;<a id='pickparent' href='/bin/view/CS477/WebCreateNewTopic?;pickparent=1'>Pick from a list</a>
-</p>
-</div><!--/twikiFormStep-->
-<div class="twikiFormStep">
-<h3><a name="Use_template"></a> Use template: </h3>
-<p>
-<select name="templatetopic" class="twikiSelect"><option value="">Default template</option></select> <a id="viewtemplates" href="https://www.cs.uic.edu/bin/view/TWiki/WebTemplateTopics?web=CS477">View templates</a> 
-</p>
-</div><!--/twikiFormStep-->
-<div class="twikiFormStep">
-<p>
-<input id="submit" type="submit" class="twikiSubmit" value='Create this topic' />
-</p>
-</div><!--/twikiFormStep-->
-</div><!--/twikiFormSteps-->
-</form>
-</div><!-- /patternTopic-->
-<div class="twikiContentFooter"></div></div><!-- /patternContent-->
-<p />
-</div><!-- /patternMainContents-->
-</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
-<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
-<li> <a href="/bin/view/CS477/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS477</a>
-</li></ul> 
-</div> <ul>
-<li> <a href="/bin/view/CS477/Syllabus" class="twikiLink">Syllabus</a>
-</li> <li> <a href="/bin/view/CS477/Homeworks" class="twikiLink">Homeworks</a>
-</li> <li> <a href="/bin/view/CS477/AdditionalMaterial" class="twikiLink">Readings</a>
-</li> <li> <a href="/bin/view/CS477/WebHome" class="twikiCurrentWebHomeLink twikiLink">Home</a>
-</li></ul> 
-<a href="/bin/edit/CS477.WebLeftBar" target="_top">[edit this menu</a>]
-<p />
-<hr />
-<div class="patternLeftBarPersonal">
-<ul><li class="patternLogIn"><a href="/bin/logon/CS477/WebCreateNewTopic">Log In</a> </li></ul>
-</div><!--/patternLeftBarPersonal-->
-<p /> <ul>
-<li> <strong><a href="/bin/view/CS477/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS477 Web</a></strong>
-</li> <li> <a href="/bin/view/CS477/WebCreateNewTopic?topicparent=WebCreateNewTopic" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
-</li> <li> <a href="/bin/view/CS477/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
-</li> <li> <a href="/bin/view/CS477/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
-</li> <li> <a href="/bin/view/CS477/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
-</li> <li> <a href="/bin/view/CS477/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
-</li> <li> <a href="/bin/view/CS477/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
-</li> <li> <a href="/bin/view/CS477/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
-</li> <li> <a href="/bin/view/CS477/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
-</li></ul> 
-<p />
-<hr />
-</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
-</div><!-- /patternFloatWrap-->
-<div class="clear">&nbsp;</div>
-</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
-<map id="logomap" name="logomap">
-	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
-	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
-	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
-</map>
-<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
-</div>
-<p />
-<div style="margin-left:650px; position:relative;">
-	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
-		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
-		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
-	</form>
-</div>
-<p />
-<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
-<div id="navMenu">
-<ul>
-<li> <a href="#">ABOUT US</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">ACADEMICS</a>
-	<ul>
-	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
-	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
-	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
-	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
-	<li><a href="/Main/Courses">Courses</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">RESEARCH</a>
-	<ul>
-	<li><a href="/Main/Research">Overview</a></li>
-	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
-	<li><a href="/Main/Research#Labs">Labs</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">PEOPLE</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
-	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
-	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
-	<li><a href="/Main/Students">Students</a></li>
-	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
-	</ul>
-</li>
-</ul>
-<br class="clearFloat"/>
-</div>
-</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
-<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
-<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
-</div><!-- /patternPage-->
-</div><!-- /patternPageShadow-->
-</div><!-- /patternScreen-->
-</body></html>
-<p />
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.7'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/themes/Divi/includes/builder/scripts/jquery.mobile.custom.min.js?ver=3.0.35'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/themes/Divi/js/custom.js?ver=3.0.35'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/themes/Divi/includes/builder/scripts/jquery.fitvids.js?ver=3.0.35'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/themes/Divi/includes/builder/scripts/waypoints.min.js?ver=3.0.35'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/themes/Divi/includes/builder/scripts/jquery.magnific-popup.js?ver=3.0.35'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_pb_custom = {"ajaxurl":"https:\/\/acer.uic.edu\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/acer.uic.edu\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/acer.uic.edu\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"d076ad38a3","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"0c9fa4a7f0","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","is_builder_plugin_used":"","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","is_ab_testing_active":"","page_id":"119","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-content/themes/Divi/includes/builder/scripts/frontend-builder-scripts.js?ver=3.0.35'></script>
+<script type='text/javascript' src='https://acer.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.3'></script>
+</body>
+</html>

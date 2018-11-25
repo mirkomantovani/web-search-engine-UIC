@@ -1,169 +1,138 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-<title>CS 340 - Sample C/C++ Code</title>
+	<title>Illinois Identity Provider Selection</title> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="Home Organisation, Discovery Service, WAYF, Shibboleth, Login, AAI">
+	<meta name="description" content="Choose your home organisation to authenticate">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" href="/discovery/DS/styles.css" type="text/css">
+	<link rel="stylesheet" href="/discovery/DS/ImprovedDropDown.css" type="text/css">
+	<script type="text/javascript" src="/wayf/js/jquery.js"></script>
+	<!--<script type="text/javascript" src="/wayf/js/improvedDropDown.js"></script>-->
+	<script type="text/javascript">
+	<!--
+	
+	// Prevent that WAYF is loaded in an IFRAME
+	function preventIframeEmbedding(){
+		if (top != self) {
+			top.location = self.location;
+		}
+	}
+	
+	// Set focus to submit button or drop down list
+	function setFocus(){
+		// Skip this if we cannot access the form elements
+		if (
+			!document.IdPList || 
+			!document.IdPList.Select
+			){
+			return;
+		}
+		
+		if (
+				document.IdPList.user_idp && 
+				document.IdPList.user_idp.selectedIndex == 0
+			){
+			// Set focus to select
+			document.IdPList.user_idp.focus();
+		} else {
+			// Set focus to submit button
+			document.IdPList.Select.focus();
+		}
+	}
+	
+	// Perform input validation on WAYF form
+	function checkForm(){
+		if(
+			document.IdPList.user_idp && 
+			document.IdPList.user_idp.selectedIndex == 0
+		){
+			alert(unescape('You must select an organisation.'));
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	// Init WAYF
+	function init(){
+		preventIframeEmbedding();
+		
+		setFocus();
+		
+		if (false){
+			
+			var searchText = 'Enter the name of the organisation you are affiliated with...';
+			$("#userIdPSelection:enabled option[value='-']").text(searchText);
+			
+			// Convert select element into improved drop down list
+			$("#userIdPSelection:enabled").improveDropDown({
+				iconPath:'https://discovery.illinois.edu/discovery/images/drop_icon.png',
+				noMatchesText: 'No organisation found for this search text',
+				noItemsText: 'No organisation available',
+				disableRemoteLogos: true			});
+		}
+	}
+	
+	// Call init function when DOM is ready
+	$(document).ready(init);
+	
+	-->
+	</script>
 </head>
 
 <body>
-<H2>CS 340 - Software Design</h2>
-<h3>Sample C/C++ Code</h3>
 
-<ul>
-<li>Reading/Writing Bit-by-Bit Examples
-<ul>
-<li><a href="getBit.cpp"> getBit.cpp</a>
-<li><a href="putBit.cpp"> putBit.cpp</a>
-</ul>
+<div id="pageWrapper">
+	
+	<header id="customheader" role="banner">
+		<img id="Image1" src="/wayf/images/illinois.gif" alt="Illinois logo"
+		style="border-width:0px;" />
+	</header>
 
-<p>
+	<main id="maincontent" role="main">
+<!-- Body: Start -->
 
+<!-- Identity Provider Selection: Start -->
+        <h1>Select your Illinois Campus</h1>
 
-<li><a href="clargs.c">clargs.c - Command Line Argument Example</a>
-<p>
-<li><a href="enumTest.cpp">enumTest.cpp - Enumerated Type Example</a>
-<p>
-<li><a href="multisource">Multiple Source Code File Example</a>
-<p>
-<li><a href="twoDArray.cpp">twoDArray.cpp - Dynamic 2D Array example</a>
+    <p class="text">
 
-<p>
-<li><a href="makefile">Sample makefile</a>
+    This service, <span class="serviceName">Web Services - Illinois.edu</span>,     supports multiple groups associated with the University of Illinois. Select your campus below to go to the appropriate login screen.
+    </p>
 
-<p>
-<li>Point Class Example - includes static member
-<ul>
+    <div class="list">
 
-<li>The first file is the header file for the string class:
-<a href="Point.h">Point.h</a>
-<li>The second file is the source code file for the string class:
-<a href="Point.cpp">Point.cpp</a>
-<li>The third file is the main file to test and use the string class:
-<a href="PointMain.cpp">PointMain.cpp</a>
-<li>The fourth file is the make file for the above three files:
-<a href="PointMake">PointMake</a>
-<br>
-To use the make file type:
-<pre>
-    make -f PointMake Point
+<form id="IdPList" name="IdPList" method="post" onSubmit="return checkForm()" action="/discovery/DS?entityID=https%3A%2F%2Fillinois.edu%2Fshibboleth&amp;return=https%3A%2F%2Fforms.uofi.uic.edu%2FShibboleth.sso%2FLogin%3FSAMLDS%3D1%26target%3Dss%253Amem%253A133e39ae1a2e9965dd8add4ced2a3145b10340048fee02133ed2434854c66043">
+	<fieldset class="no-border">
+        <legend><h2>Select your campus:</h2></legend>
 
-</pre>
-</ul>
-<p>
+	<div id="userIdPSelection"> 
+	
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://shibboleth.uic.edu/shibboleth" id="https://shibboleth.uic.edu/shibboleth" data="uic.edu University of Illinois at Chicago" ><label for="https://shibboleth.uic.edu/shibboleth">University of Illinois at Chicago</label></p>
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://uisshibb1.uis.edu/idp/shibboleth" id="https://uisshibb1.uis.edu/idp/shibboleth" data="uis.edu University of Illinois at Springfield" ><label for="https://uisshibb1.uis.edu/idp/shibboleth">University of Illinois at Springfield</label></p>
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="urn:mace:incommon:uiuc.edu" id="urn:mace:incommon:uiuc.edu" data="uiuc.edu University of Illinois at Urbana-Champaign" ><label for="urn:mace:incommon:uiuc.edu">University of Illinois at Urbana-Champaign</label></p>	</div>
+	</fieldset>
+	<input type="submit" name="Select" accesskey="s" value="Select"> 
+				<!-- Value permanent must be a number which is equivalent to the days the cookie should be valid -->
+		<input type="checkbox" name="permanent" id="rememberPermanent" value="3650">
+		<label for="rememberPermanent">Remember my choice</label>
+		</form>
+	</div>
 
-<li> Complex Class Example
-<ul>
-<li>
-The first file is the header file for the string class:
-<a href="Complex.h">Complex.h</a>
-<li>
-The second file is the source code file for the string class:
-<a href="Complex.cpp">Complex.cpp</a>
-<li>
-The third file is the main file to test and use the string class:
+<!-- Identity Provider Selection: End -->
+	
+</main>
 
-<a href="ComplexMain.cpp">ComplexMain.cpp</a>
-<li>
-The fourth file is the make file for the above three files:
-<a href="ComplexMake">ComplexMake</a>
-<br>
-To use the make file type:
-<pre>
-    make -f ComplexMake Complex
-</pre>
-</ul>
-<p>
+	<!-- Body: End -->
+	<footer id="footer" role="contentinfo">
+        <p class="text">
+Need assistance? Send email to <a href="mailto:consult@illinois.edu">consult@illinois.edu</a> with a description.
+        </p>
+	</footer><!-- #footer -->
 
-<li>String Class Example
-<ul>
+</div><!-- #pageWrapper -->
 
-<li>The first file is the header file for the string class:
-<a href="String.h">String.h</a>
-<li>The second file is the source code file for the string class:
-<a href="String.cpp">String.cpp</a>
-<li>The third file is the main file to test and use the string class:
-<a href="StringMain.cpp">StringMain.cpp</a>
-<li>The fourth file is the make file for the above three files:
-<a href="StringMake">StringMake</a>
-<br>To use the make file type:
-<pre>
-    make -f StringMake String
-</pre>
-
-</ul>
-<p>
-
-<li>Queue Class Example
-<ul>
-<li>The first file is the header file for the Queue class:
-<a href="Queue.h">Queue.h</a>
-<li>The second file is the source code file for the Queue class:
-<a href="Queue.cpp">Queue.cpp</a>
-<li>The third file is the main file to test and use the Queue class:
-<a href="QueueMain.cpp">QueueMain.cpp</a>
-<li>The fourth file is the make file for the above three files:
-<a href="QueueMake">QueueMake</a>
-
-<br>To use the make file type:
-<pre>
-    make -f QueueMake Queue
-</pre>
-</ul>
-<p>
-
-<li>Here are some STL Examples
-<ul>
-<li><a href="queuetest.cpp"> queuetest.cpp</a>
-<li><a href="stacktest.cpp"> stacktest.cpp</a>
-<li><a href="vectest.cpp"> vectest.cpp</a>
-<li><a href="maptest.cpp"> maptest.cpp</a>
-</ul>
-
-<p>
-<li>Here is a Pointer to Function Example: 
-   <a href="functionPointer.cpp">functionPointer.cpp</a>
-<p>
-<li>Here is a STL sort() example:
-   <a href="vector2.cpp">vector2.cpp</a>
-
-<p>
-<li>A Templated function example: 
-    <a href="templateExample.cpp">templateExample.cpp</a>
-
-<p>
-<li>C++ Inheritance and Polymorphism Examples
-<ul>
-<li><a href="derived.cpp">Simple Inheritance Example: derived.cpp</a>
-<li><a href="virtual.cpp">Simple Polymorphism Example: virtual.cpp</a>
-<li><a href="virtual2.cpp">Simple Polymorphism Example: virtual2.cpp</a>
-<li><a href="abstract.cpp">Polymorphism with abstract method: abstract.cpp</a>
-<li><a href="abstract2.cpp">Polymorphism with abstract method: abstract2.cpp</a>
-</ul>
-<p>
-These examples came from the following web pages:
-<ul>
-<li><a href="http://www.cplusplus.com/doc/tutorial/inheritance/">
-   http://www.cplusplus.com/doc/tutorial/inheritance/</a>
-<li><a href="http://www.cplusplus.com/doc/tutorial/polymorphism/">
-   http://www.cplusplus.com/doc/tutorial/polymorphism/</a>
-</ul>
-<p>
-<li>C++ Exceptions
-<ul>
-<li><a href="http://www.cplusplus.com/doc/tutorial/exceptions/">
-General C++ exception form: http://www.cplusplus.com/doc/tutorial/exceptions/</a>
-<li><a href="except1.cpp"> except1.cpp: Exception Code based from above web page</a>
-<p>
-<li><a href="http://www.cplusplus.com/reference/std/exception/exception/">
-The C++ exception class: http://www.cplusplus.com/reference/std/exception/exception/</a>
-<p>
-<li><a href="http://users.cis.fiu.edu/~weiss/phc++/code/exceptionDemo.cpp">
-Exception Demo from Weiss C++ book: http://users.cis.fiu.edu/~weiss/phc++/code/exceptionDemo.cpp</a>
-<li><a href="exceptionDemo1.cpp"> exceptionDemo1.cpp: Exception Code based from above web page</a>  Throwing int and double exceptions
-<li><a href="exceptionDemo2.cpp"> exceptionDemo2.cpp: Exception Code based from above web page</a>  
-Defining the Exception Classes as descripted
-</ul>
-
-<p>
-
-</ul>
 </body>
 </html>

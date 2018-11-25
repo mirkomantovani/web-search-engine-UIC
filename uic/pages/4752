@@ -1,629 +1,499 @@
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; CS201 &lt; TWiki</title>
 
-<!--[if IE 8]><html class="ie8 ie-all" lang="en-US"> <![endif]-->
-<!--[if IE 9]><html class="ie9 ie-all" lang="en-US"> <![endif]-->
-<!--[if IE 10]><html class="ie10 ie-all" lang="en-US"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en-US"><!--<![endif]-->
-
-    <head>
-        <meta charset="UTF-8">
-
-        <title>AAAN | Student Engagement</title>
-
-        
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Place favicon.ico and apple-touch-icon.png (72x72) in the root directory -->
-        <link rel="apple-touch-icon" href="//studentaffairs.uic.edu/aaan/wp-content/uploads/sites/2/2015/09/favicon_144.png">
-<link rel="apple-touch-icon" href="//studentaffairs.uic.edu/aaan/wp-content/uploads/sites/2/2015/09/favicon_114.png">
-<link rel="apple-touch-icon" href="//studentaffairs.uic.edu/aaan/wp-content/uploads/sites/2/2015/09/favicon_72.png">
-<link rel="shortcut icon" href="//studentaffairs.uic.edu/aaan/wp-content/uploads/sites/2/2015/09/favicon_16.png">
-
-        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-        <!-- HTML5 enabling script -->
-        <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-        
-
-<script type='text/javascript'>
-/* <![CDATA[*/
-var ishyoboy_fe_globals = {
- 	IYB_RESPONSIVE: true,
- 	IYB_BREAKINGPOINT: 768
- 	}; 
-/* ]]> */ 
- </script>
-
-<link rel="alternate" type="application/rss+xml" title="AAAN &raquo; Feed" href="http://studentaffairs.uic.edu/aaan/feed/" />
-<link rel="alternate" type="application/rss+xml" title="AAAN &raquo; Comments Feed" href="http://studentaffairs.uic.edu/aaan/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="AAAN &raquo; Student Engagement Comments Feed" href="http://studentaffairs.uic.edu/aaan/student-engagement/feed/" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/studentaffairs.uic.edu\/aaan\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.17"}};
-			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS201/WebStatistics?_T=2018-11-25" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS201/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS201/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
 }
 </style>
-<link rel='stylesheet' id='layerslider-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/plugins/LayerSlider/static/css/layerslider.css?ver=5.3.2' type='text/css' media='all' />
-<link rel='stylesheet' id='ls-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-<link rel='stylesheet' id='contact-form-7-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.3' type='text/css' media='all' />
-<link rel='stylesheet' id='ish-user-fontello-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp-child/ish-plugins/ishyoboy-shortcodes/fontello/css/entypo.css?ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='ish-fe-shortcodes-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/plugins/ishyoboy-multicorp-assets/ishyoboy-shortcodes/assets/frontend/css/shortcodes.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='rs-plugin-settings-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/plugins/revslider/rs-plugin/css/settings.css?ver=4.6.92' type='text/css' media='all' />
-<style id='rs-plugin-settings-inline-css' type='text/css'>
-.tp-caption.Twitter-Content a,.tp-caption.Twitter-Content a:visited{color:#0084B4 !important}.tp-caption.Twitter-Content a:hover{color:#0084B4 !important; text-decoration:underline !important}
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
 </style>
-<link rel='stylesheet' id='super-rss-reader-css-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/plugins/super-rss-reader/public/srr-css.css?ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='ish-fontello-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/css/ish-fontello.css?ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='ish-multicorp-styles-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp-child/style.css?ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='ish-tooltipster-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/css/plugins/tooltipster.css?ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='main-options-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/uploads/sites/2/multicorp_css/main-options.css?ver=49' type='text/css' media='all' />
-<link rel='stylesheet' id='main-options-2-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/uploads/sites/2/multicorp_css/main-options_2.css?ver=49' type='text/css' media='all' />
-<link rel='stylesheet' id='ish-fancybox-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/css/plugins/jquery.fancybox.css?ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='mediaelement-css'  href='http://studentaffairs.uic.edu/aaan/wp-includes/js/mediaelement/mediaelementplayer.min.css?ver=2.17.0' type='text/css' media='all' />
-<link rel='stylesheet' id='wp-mediaelement-css'  href='http://studentaffairs.uic.edu/aaan/wp-includes/js/mediaelement/wp-mediaelement.css?ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='multicorp-google-font-1-css'  href='http://fonts.googleapis.com/css?family=Raleway%3A300%2C300italic%2C400%2C400italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C500%2C&#038;subset=latin&#038;ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='multicorp-google-font-2-css'  href='http://fonts.googleapis.com/css?family=Montserrat%3A300%2C300italic%2C400%2C400italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2Cregular%2Cregular%2Cregular%2Cregular%2Cregular%2Cregular%2Cregular%2Cregular%2C&#038;subset=latin&#038;ver=4.3.17' type='text/css' media='all' />
-<link rel='stylesheet' id='js_composer_front-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/wpbakery/js_composer/assets/css/js_composer.css?ver=4.5.3' type='text/css' media='all' />
-<link rel='stylesheet' id='child-theme-css-css'  href='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp-child/child-theme.css?ver=4.3.17' type='text/css' media='all' />
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/LayerSlider/static/js/greensock.js?ver=1.11.8'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery.js?ver=5.3.2'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/LayerSlider/static/js/layerslider.transitions.js?ver=5.3.2'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min.js?ver=4.6.92'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?ver=4.6.92'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/super-rss-reader/public/srr-js.js?ver=4.3.17'></script>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://studentaffairs.uic.edu/aaan/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://studentaffairs.uic.edu/aaan/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.3.17" />
-<link rel='canonical' href='http://studentaffairs.uic.edu/aaan/student-engagement/' />
-<link rel='shortlink' href='http://studentaffairs.uic.edu/aaan/?p=2723' />
-		<script type="text/javascript">
-			jQuery(document).ready(function() {
-				// CUSTOM AJAX CONTENT LOADING FUNCTION
-				var ajaxRevslider = function(obj) {
-				
-					// obj.type : Post Type
-					// obj.id : ID of Content to Load
-					// obj.aspectratio : The Aspect Ratio of the Container / Media
-					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
-					
-					var content = "";
-
-					data = {};
-					
-					data.action = 'revslider_ajax_call_front';
-					data.client_action = 'get_slider_html';
-					data.token = 'f210bd27ce';
-					data.type = obj.type;
-					data.id = obj.id;
-					data.aspectratio = obj.aspectratio;
-					
-					// SYNC AJAX REQUEST
-					jQuery.ajax({
-						type:"post",
-						url:"http://studentaffairs.uic.edu/aaan/wp-admin/admin-ajax.php",
-						dataType: 'json',
-						data:data,
-						async:false,
-						success: function(ret, textStatus, XMLHttpRequest) {
-							if(ret.success == true)
-								content = ret.data;								
-						},
-						error: function(e) {
-							console.log(e);
-						}
-					});
-					
-					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
-					 return content;						 
-				};
-				
-				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
-				var ajaxRemoveRevslider = function(obj) {
-					return jQuery(obj.selector+" .rev_slider").revkill();
-				};
-
-				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
-				var extendessential = setInterval(function() {
-					if (jQuery.fn.tpessential != undefined) {
-						clearInterval(extendessential);
-						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') {
-							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});   
-							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
-							// func: the Function Name which is Called once the Item with the Post Type has been clicked
-							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
-							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
-						}
-					}
-				},30);
-			});
-		</script>
-		<style type="text/css">
-.ish-sidenav { padding-bottom: 22px; }
-
-.ish-ph-wp_tagline {
-    font-size: 0px;
-}
-
-.ish-ph-logo img {
-    max-height: 65px;
-}
-
-.ish-body{
-background-color: rgba(255, 255, 255, 0.1);
-}
-
-.ish-vc_row{
-background-color: rgba(255, 255, 255, 0.1);
-}
-
-.ish-vc_row_inner{
-background-color: rgba(255, 255, 255, 0.1);
-
-
-}
-
-.ish-wrapper-all{
-background-color: rgba(255, 255, 255, 0.1);
-}
-
-
-body {
-background-color: none 
-}
-
-h1 p, h2 p, h3 p, h4 p, h5 p, h6 p,
-.ish-h1 p, .ish-h2 p, .ish-h3 p, .ish-h4 p, .ish-h5 p, .ish-h6 p {
-	font-size: inherit;
-}
-
-			.ish-sticky-on .ish-wrapper-all .ish-part_header + .ish-part_tagline > .ish-row,
-			.ish-sticky-on .ish-wrapper-all .ish-part_header + .ish-part_breadcrumbs > .ish-row,
-			.ish-sticky-on .ish-wrapper-all .ish-part_header + .ish-part_content > .wpb_row:first-of-type,
-			.ish-sticky-on .ish-wrapper-all .ish-part_header + .ish-part_content > .ish-row:first-of-type {
-					padding-top: 100px !important;
-			}
-			.ish-sticky-on .ish-wrapper-all .ish-part_header + .ish-part_content > .wpb_row.ish-row-full:first-child .vc_col-sm-12:first-child > .wpb_wrapper > .ish-sc_slidable:first-child {
-					margin-top: -100px !important;
-			}</style>
-			<script type="text/javascript">
-				jQuery(document).ready(function($){
-					var thumbnails = jQuery("a:has(img)").not(".nolightbox").not(".openfancybox-image").filter( function() { return /\.(jpe?g|png|gif|bmp)$/i.test(jQuery(this).attr('href')) });
-
-					if ( thumbnails.length > 0){
-						thumbnails.addClass( 'openfancybox-image' ).attr( 'rel', 'fancybox-post-image-2723');
-					}
-				});
-			</script>
-		<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
-<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/wpbakery/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]--><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>        <!--[if IE 8]><link rel="stylesheet" href="http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/css/ie8.css"><![endif]-->
-
-    </head>
-
-
-
-    <body class="page page-id-2723 page-template-default ish-boxed ish-responsive_layout_on ish-sticky-on ish-header_bar-on wpb-js-composer js-comp-ver-4.5.3 vc_responsive">
-
-
-	    	        <script type="text/javascript">
-			    // Output the preloader HTML
-		        document.write('<div id="ish-site-preloader-holder" class="ish-site-preloader-holder">' +
-			    '<div class="ish-site-preloader-content">' +
-			    '<div class="ish-site-preloader"><div class="ish-loader"><div class="ish-flipper"><div class="ish-front"></div><div class="ish-back"></div></div></div></div>' +
-			    '<div class="ish-site-preloader-text">Loading...</div>' +
-			    '</div>' +
-			    '</div>');
-
-			    // Manually remove preloader window after 5 seconds in case JS Error blocks the onload event to be carried out succesfully
-		        setTimeout( function(){
-			        document.getElementById("ish-site-preloader-holder").style.display = 'none';
-		        } , 5000 );
-	    </script>
-	    
-        
-
-
-        <div class="ish-body">
-
-		    <!-- Expandable part section -->
-		    		    <!-- Expandable part section END -->
-
-
-		    <!-- Search bar -->
-		    <section class="ish-part_searchbar ish-a-search">
-			    <div>
-				    <form role="search" method="get" id="headersearchform" action="http://studentaffairs.uic.edu/aaan/">
-    <label>
-        <input type="text" value="" name="s" id="s" autocomplete="off" placeholder="Search ...">
-    </label>
-</form>
-
-<a href="#close" class="ish-ps-searchform_close ish-icon-cancel" title="Close Search (ESC)"></a>			    </div>
-		    </section>
-		    <!-- Search bar END -->
-
-
-		    <!-- Wrap whole page -->
-		    <div class="ish-wrapper-all">
-
-			    				    <!-- Top Header Bar Section -->
-				    <section class="ish-part_header_bar">
-					    <div class="ish-row ish-row-notfull">
-						    <div class="ish-row_inner">
-
-							    <div class="ish-hb-left ish-hb-social">
-								    <div class="ish-sc-element ish-sc_icon ish-simple ish-text-color2 ish-tooltip-color17 ish-tooltip-text-color4" style="" data-type="tooltip" title="Twitter"><a href="https://twitter.com/@UIClife
-" style="color: color2; background-color: ;" target="_blank"><span><span class="ish-icon-twitter"></span></span></a></div>
-
-<div class="ish-sc-element ish-sc_icon ish-simple ish-text-color2 ish-tooltip-color13 ish-tooltip-text-color4" style="" data-type="tooltip" title="Facebook"><a href="https://www.facebook.com/UIClife/" style="color: color2; background-color: ;" target="_blank"><span><span class="ish-icon-facebook"></span></span></a></div>
-
-<div class="ish-sc-element ish-sc_icon ish-simple ish-text-color2 ish-tooltip-color14 ish-tooltip-text-color4" style="" data-type="tooltip" title="Instagram"><a href="https://www.instagram.com/UIClife/" style="color: color2; background-color: ;" target="_blank"><span><span class="ish-icon-instagramm"></span></span></a></div>
-
-<div class="ish-sc-element ish-sc_icon ish-simple ish-text-color2 ish-tooltip-color13 ish-tooltip-text-color4" style="" data-type="tooltip" title="Youtube"><a href="
-https://www.youtube.com/user/UIClife" style="color: color2; background-color: ;" target="_blank"><span><span class="ish-icon-youtube"></span></span></a></div>
-
-<div class="ish-sc-element ish-sc_icon ish-simple ish-text-color2 ish-tooltip-color1 ish-tooltip-text-color4" style="" data-type="tooltip" title="Contact Us Today"><a href="//studentaffairs.uic.edu/aaan/contact/" style="color: color2; background-color: ;" target="_blank"><span><span class="ish-icon-email"></span></span></a></div>
-
-<span style="line-height:3.3em;padding-left:10px"> AAAN –  <a style="color: #975e15; text-decoration-line: none;" href="//vcsa.uic.edu">A Department Of Student Affairs </a></span>							    </div>
-
-							    <div class="ish-hb-right  ish-hb-menu">
-
-
-								    <!-- Main navigation -->
-								    <nav class="ish-top_nav_container">
-									    				<ul id="top_bar_nav" class="ish-top_nav"><li id="menu-item-3157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3157"><a href="http://excellence.uic.edu/on-course/">On Course eNewsletter</a></li>
-<li id="menu-item-2796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2796"><a href="http://studentaffairs.uic.edu/aaan/additional-resources/">Additional Resources</a></li>
-<li id="menu-item-2633" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2633"><a href="http://vcsa.uic.edu/the-uic-experience/">The UIC Experience</a></li>
-<li id="menu-item-3126" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3126"><a href="http://excellence.uic.edu/refer/">Refer a Student</a></li>
-</ul>
-									    <!-- Responsive Header Bar Navigation -->
-									    		<ul class="ish-phb-resp_nav ish-phb-hidden">
-			<!-- Resp menu button -->
-			<li class="ish-phb-resp_menu"><a href="#phb-respnav" class="ish-icon-menu"></a></li>
-
-
-			<!-- Cart button if enabled -->
-			
-			<!-- Language Selector button if enabled -->
-			
-			<!-- Expandable button if enabled -->
-			
-			<!-- Search button if enabled -->
-			
-		</ul>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
 	
-								    </nav>
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-							    </div>
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
-						    </div>
-					    </div>
-				    </section>
-				    <!-- Top Header Bar Section END -->
-			    
-		        <!-- Header part section -->
-			    <section class="ish-part_header">
-				    <div class="ish-row ish-row-notfull">
-					    <div class="ish-row_inner">
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
+<!-- Google Analytics Snippet -->
 
+<script type="text/javascript">
 
-						    <!-- Logo image / text -->
-														    <a class="ish-ph-logo ish-ph-logo_retina-yes" href="http://studentaffairs.uic.edu/aaan">
-								    <span>
-									    <img src="//studentaffairs.uic.edu/aaan/wp-content/uploads/sites/2/2015/08/AAAN.CTT_.LG_.BLK_.png" alt="AAAN" title="AAAN" />
-									</span>
-							    </a>
-						    
-						    <!-- Default WordPress tagline -->
-						    <span class="ish-ph-wp_tagline"><span>A Division Of Student Affairs</span></span>
-						    <!-- Main navigation -->
-						    <nav class="ish-ph-main_nav">
-							    				<ul id="mainnav" class="ish-ph-mn-main_nav ish-nt-regular"><li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2718"><a href="http://studentaffairs.uic.edu/aaan/about/">About</a>
-<ul class="sub-menu">
-	<li id="menu-item-2575" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2575"><a href="http://studentaffairs.uic.edu/aaan/the-team/">The Team</a></li>
-</ul>
-</li>
-<li id="menu-item-2755" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2755"><a href="http://studentaffairs.uic.edu/aaan/services/">Services</a>
-<ul class="sub-menu">
-	<li id="menu-item-2875" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2875"><a href="http://studentaffairs.uic.edu/aaan/services/#section_1">Advising and Student Development</a></li>
-	<li id="menu-item-2877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2877"><a href="http://studentaffairs.uic.edu/aaan/services/#section_2">Recruitment And Admission</a></li>
-	<li id="menu-item-2878" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2878"><a href="http://studentaffairs.uic.edu/aaan/learning-resource-center-aaan-tutoring/">Learning Resource Community</a></li>
-</ul>
-</li>
-<li id="menu-item-2731" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2723 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-2731"><a href="http://studentaffairs.uic.edu/aaan/student-engagement/">Student Engagement</a>
-<ul class="sub-menu">
-	<li id="menu-item-2699" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-2699"><a href="http://studentaffairs.uic.edu/aaan/student-engagement/#peer">Peer Mentoring</a></li>
-	<li id="menu-item-2700" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-2700"><a href="http://studentaffairs.uic.edu/aaan/student-engagement/#bmi">Black Male Initiative</a></li>
-	<li id="menu-item-2698" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-2698"><a href="http://studentaffairs.uic.edu/aaan/student-engagement/#w2w">Women to Women</a></li>
-	<li id="menu-item-3027" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-3027"><a href="http://studentaffairs.uic.edu/aaan/student-engagement/#Blacktech">Black Tech Scholars Program</a></li>
-</ul>
-</li>
-<li id="menu-item-2684" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2684"><a href="http://studentaffairs.uic.edu/aaan/life-after-college/">After College</a></li>
-<li id="menu-item-2687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2687"><a href="http://studentaffairs.uic.edu/aaan/contact/">Contact</a>
-<ul class="sub-menu">
-	<li id="menu-item-3131" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3131"><a href="http://emsenterprise.uic.edu/appointment/">Make an Appointment</a></li>
-</ul>
-</li>
-<li class="ish-ph-mn-search"><a href="#search" class="ish-icon-search"><span>Search</span></a></li></ul>
-							    <!-- Responsive or sidenav navigation -->
-							    		<ul class="ish-ph-mn-resp_nav ish-ph-mn-hidden">
-			<!-- Resp menu button -->
-							<li class="ish-ph-mn-resp_menu"><a href="#respnav" class="ish-icon-menu"></a></li>
-			
-			<!-- Search button if enabled -->
-							<li class="ish-ph-mn-search"><a href="#search" class="ish-icon-search"></a></li>
-			
-			<!-- Expandable button if enabled -->
-			
-			<!-- Cart button if enabled -->
-			
-			<!-- Language Selector button if enabled -->
-			
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-		</ul>
-		
-						    </nav>
-						</div>
-					</div>
-				</section>
-		        <!-- Header part section END -->
-<div class="ish-part_tagline ish-tagline_custom ish-tagline-colored"><div class="ish-overlay ish-default-tagline"></div><div class="ish-row ish-row-notfull"><div class="ish-row_inner"><div class="ish-pt-taglines-main"><div class="ish-pt-taglines-left"><div class="ish-pt-taglines-container"><h1>Student Engagement</h1><h2>Initiatives for Student Success</h2></div></div></div></div></div></div>
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-	<!-- Content part section -->
-	<section class="ish-part_content ish-without-sidebar">
-
-									<div class="wpb_row vc_row-fluid ish-row-notfull ish-resp-centered ish-color7 ish-row_notsection" style=""><div class="ish-vc_row_inner">
-	<div class="vc_col-sm-12 wpb_column column_container" style="">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element " style="">
-		<div class="wpb_wrapper">
-			<p>In our continuous pursuits of increasing enrollment, persistence, and graduation rates of African descent, AAAN&#8217;s Student Engagement unit utilizes effective practices that focus on implementing meaningful activities that are related to learning and personal development.  Our programmatic activities range in scope from pre-collegiate preparation to post-baccalaureate pursuits (i.e. career exploration, professional training, graduate and professional school, etc.).  We believe that the very act of being engaged adds to the foundation of skills and dispositions that are essential for thriving here at UIC but also living a productive life after college.</p>
-<ul>
-<li><strong>Leadership and Post College Success</strong> provides programming designed to inform and prepare upper class students of career and professional school opportunities as they move closer toward graduation from UIC. The goals of Leadership and Post College Success are to:</li>
-</ul>
-<ol>
-<li>Provide undergraduates with a comfortable place to explore their post-college interests.</li>
-<li>Assist in providing undergraduate students with the necessary tools and information for attainment of their long term educational goals; and</li>
-<li>Connect undergraduate students with various units and campus resources to facilitate their career and graduate school exploration.</li>
-</ol>
-<ul>
-<li><strong>College Transitions and Persistence</strong> assists new students in completing a smooth transition from their previous institution to UIC.  New students are assigned an academic advisor where they can assess the student&#8217;s academic as well as career interest. Additionally, AAAN staff participates in new student orientations and host campus visits for student groups and community organizations.</li>
-<li><strong>Academic Enrichment</strong> provides programming aimed at enhancing students’ academic prowess by pairing students with a peer tutor who will help the student overcome challenging course work.</li>
-</ul>
-
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-</div></div><div class="wpb_row vc_row-fluid ish-row-notfull ish-resp-centered ish-row_section" style=""><div class="ish-vc_row_inner">
-	<div class="vc_col-sm-12 wpb_column column_container" style="">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element " style="" id="peer">
-		<div class="wpb_wrapper">
-			
-		</div> 
-	</div> <h3 class="ish-sc-element ish-sc_headline ish-color5"><strong>Peers, Achieving, Community, Together (P.A.C.T.)  Mentoring Program</strong></h3>
-	<div class="wpb_text_column wpb_content_element  ish-left" style="">
-		<div class="wpb_wrapper">
-			<p><strong>The African American Academic Network (AAAN) P.A.C.T. Mentoring Program</strong> is designed to assist first year African American students with their transition process from high school to college and increase both retention and graduation rates. First Year students (mentees) will be paired with an upperclassmen student leader who will serve as a peer mentor. These leaders will provide their mentees with guidance and ample assistance navigating the University of Illinois at Chicago (UIC) community and support through academic enhancement, cultural exploration, transitional adjustment and leadership development.</p>
-<p><span id="more-2723"></span></p>
-<p>What do first year African American students gain from participating in the AAAN’s Peer Mentoring program?</p>
-<ul>
-<li>A strong sense of belonging</li>
-<li>Skills essential for overall student success and development</li>
-<li>Increased cultural awareness and confidence</li>
-<li>Opportunities to connect with campus resources and student services</li>
-<li>Strong relationships with students, faculty and staff</li>
-<li>Skills to help become successful both inside and outside of the classroom</li>
-</ul>
-<p>Student who decided to become a Peer Mentor will…</p>
-<ul>
-<li>Serve as a guide for prospective and current students</li>
-<li>Develop/enhance leadership capability/skills</li>
-<li>Positively impact UIC’s campus through student-centered service</li>
-</ul>
-
-		</div> 
-	</div> <a class="ish-sc-element ish-sc_button ish-small ish-text-color5 ish-border" href="http://studentaffairs.uic.edu/aaan/additional-resources/">Additional Resources</a>
-		</div> 
-	</div> 
-</div></div><div class="wpb_row vc_row-fluid ish-row-notfull ish-resp-centered ish-color7 ish-row_notsection" style=""><div class="ish-vc_row_inner">
-	<div class="vc_col-sm-12 wpb_column column_container" style="">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element " style="" id="bmi">
-		<div class="wpb_wrapper">
-			
-		</div> 
-	</div> <h3 class="ish-sc-element ish-sc_headline ish-color5"><strong>Black Male Initiative</strong></h3>
-	<div class="wpb_text_column wpb_content_element " style="">
-		<div class="wpb_wrapper">
-			<p><strong>The Black Male Initiative (BMI)</strong> is dedicated to supporting the African American male students of the University of Illinois at Chicago, BMI works holistically with students to create a supportive environment on campus where its participants will grow into fully engaged campus leaders and global contributors. The goal of BMI is the successful matriculation and graduation of its participants. BMI is committed to, invested in, and has an expectation of academic excellence for its participants. In its commitment to students’ academic, professional, and social development, BMI engages its students in:</p>
-<ul>
-<li>Networking</li>
-<li>Community Service</li>
-<li>Social Connections</li>
-<li>Academic and Professional Development</li>
-</ul>
-
-		</div> 
-	</div> <a class="ish-sc-element ish-sc_button ish-small ish-text-color5 ish-border" href="http://studentaffairs.uic.edu/aaan/additional-resources/">Additional Resources</a>
-		</div> 
-	</div> 
-</div></div><div class="wpb_row vc_row-fluid ish-row-notfull ish-resp-centered ish-row_section" style=""><div class="ish-vc_row_inner">
-	<div class="vc_col-sm-12 wpb_column column_container" style="">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element " style="" id="w2w">
-		<div class="wpb_wrapper">
-			
-		</div> 
-	</div> <h3 class="ish-sc-element ish-sc_headline ish-color5"><strong>Woman 2 Woman Empowerment</strong></h3>
-	<div class="wpb_text_column wpb_content_element  ish-left" style="">
-		<div class="wpb_wrapper">
-			<p><strong>The Woman 2 Woman Empowerment Initiative</strong> aims to assist in the development of female identified students through engagement in workshops and activities that address self-esteem, academics, social and personal development, leadership training, and building community. The goal of the Woman 2 Woman Empowerment Group is the successful transition, growth, and development for all of those who choose to participate in its programming.</p>
-
-		</div> 
-	</div> <a class="ish-sc-element ish-sc_button ish-small ish-text-color5 ish-border" href="http://studentaffairs.uic.edu/aaan/additional-resources/">Additional Resources</a>
-		</div> 
-	</div> 
-</div></div><div class="wpb_row vc_row-fluid ish-row-notfull ish-resp-centered ish-row_notsection" style=""><div class="ish-vc_row_inner">
-	<div class="vc_col-sm-12 wpb_column column_container" style="">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element " style="" id="Blacktech">
-		<div class="wpb_wrapper">
-			
-		</div> 
-	</div> <h3 class="ish-sc-element ish-sc_headline ish-color5"><strong>UIC Black Tech Scholars Program</strong></h3>
-	<div class="wpb_text_column wpb_content_element " style="">
-		<div class="wpb_wrapper">
-			<h4>Mission</h4>
-<p>The mission of the UIC Black Tech Scholars Program is to ensure professional and web development opportunities for African American undergraduate students in order to foster interest and representation in the technology industry.</p>
-<p>Scholars enrolled in this program will be provided preparation that involves a rigorous, content-rich business and web development curriculum and other social activities/events that emphasizes overall personal and professional growth. The curriculum and instruction will provide scholars with the opportunity to use and enhance their problem solving and critical thinking skills in the following areas:</p>
-<ol>
-<li>Various business functions as they apply to the lifecycle of a business and insight into their unique talents as it applies to the discipline of entrepreneurship</li>
-<li>HTML, Cascading Style Sheets (CSS) and JavaScript.</li>
-<li>Case projects that incorporates marketing campaign, web and mobile  development application.</li>
-</ol>
-<p>In addition to courses, scholars will have an opportunity to engage in the following activities:</p>
-<ol>
-<li>Connect directly and shadow executive staff or technological professionals from a private company that features innovative web, mobile, and enterprise application development.</li>
-<li>Attend and actively participate in a tech networking event.</li>
-<li>Engage in a case study project on building web, mobile, and enterprise applications.</li>
-<li>Present a case study project to partners and UIC key administrators.</li>
-<li>Participate in a community involvement project.</li>
-<li>Attend a forum on campus or engage with community partners to promote consciousness around the lack of diversity within the tech industry.</li>
-</ol>
-<p>Recognition of participation/completion of activities will be listed on transcript.</p>
-
-		</div> 
-	</div> <div class="ish-sc-element ish-sc_embed"><iframe width="1120" height="630" src="https://www.youtube.com/embed/464-SyYwHZw?feature=oembed&wmode=opaque" frameborder="0" allowfullscreen></iframe></div>
-		</div> 
-	</div> 
-</div></div>
-
-				
-
-					
-	</section>
-	<!-- Content part section END -->
-
-<!-- #content  END -->
-	            	                <!-- Footer part section -->
-	                <section class="ish-part_footer" id="ish-part_footer">
-
-			            			                <div class="ish-row ish-row-notfull">
-				                <div class="ish-row_inner">
-
-			                        					                					                <div id="text-2" class="ish-grid4 widget-1 widget widget_text"><div class="widget-title ish-sc-element ish-sc_text_separator ish-h6"><span class="ish-line ish-left"></span><span class="ish-icon ish-left"><span class="ish-icon-comment-1"></span></span><span class="ish-text">Contact AAAN</span><span class="ish-line ish-right"></span></div>			<div class="textwidget">Student Services Building<br/>
-1200 W Harrison Street, Suite 2800 (M/C 237)<br/>
-Chicago, IL 60607-7164<br/>
-<span class="ish-icon-phone"/> Phone: 312-996-5040<br/>
-<span class="ish-icon-print"/> Fax: 312-413-7907 <br/>
-<span class="ish-icon-email"/> E-Mail: <a href="mailto:aaan@uic.edu?Subject=Hello"target="_top">uicaaan@uic.edu</a><br/></div>
-		</div><div id="ishyoboy-twitter-widget-4" class="ish-grid4 widget-2 widget widget_ishyoboy-twitter-widget">            <div class="widget-title ish-sc-element ish-sc_text_separator ish-h6"><span class="ish-line ish-left"></span><span class="ish-icon ish-left"><span class="ish-icon-twitter"></span></span><span class="ish-text">Latest Tweets</span><span class="ish-line ish-right"></span></div>
-            <div class="tweets-2" data-username="aaan_uic" ></div>
-
-                            <a class="ish-button-small" href="https://twitter.com/aaan_uic">Follow us on Twitter</a>
-            
-        </div><div id="rss-4" class="ish-grid4 widget-3 widget widget_rss"><div class="widget-title ish-sc-element ish-sc_text_separator ish-h6"><span class="ish-line ish-left"></span><span class="ish-icon ish-left"><span class="ish-icon-rss"></span></span><span class="ish-text"><a class='rsswidget' href='http://cas.uic.edu/orgsync/events.php'><img style='border:0' width='14' height='14' src='http://studentaffairs.uic.edu/aaan/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='http://www.uic.edu/depts/aaan'>Upcoming Events</a></span><span class="ish-line ish-right"></span></div><ul><li>An error has occurred, which probably means the feed is down. Try again later.</li></ul></div>					            </div>
-		                    </div>
-			            
-		                			                <!-- Footer legals part section -->
-			                <div class="ish-row ish-row-notfull ish-footer-legals ish-resp-centered">
-				                <div class="ish-row_inner">
-
-					                <div class="ish-grid12 widget widget_text">
-						                <div class="ish-grid6 ish-left"><strong>AAAN</strong> - <a href="//vcsa.uic.edu">A Department Of Student Affairs</a></div>
-
-<div class="ish-grid6 ish-right">© Copyright 2018 The Board of Trustees of the University of Illinois ~ <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" title="Privacy Statement" target="new">Privacy Statement</a></div>					                </div>
-
-
-				                </div>
-			                </div>
-			                <!-- Footer legals part section END -->
-		                
-	                </section>
-	                <!-- Footer part section END -->
-	            
-
-
-			</div>
-			<!-- Wrap whole page - boxed / unboxed END -->
-
-
-	        <a href="#top" class="ish-back_to_top ish-smooth_scroll ish-icon-angle-double-up"></a>
-
-		</div>
-		<!-- ish-body END -->
-
-
-        <!--[if lte IE 8]><script src="http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/ie8.js"></script><![endif]-->
-
-
-                    <!-- TRACKING SCRIPT BEGIN -->
-            <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-54644918-1', 'auto');
-  ga('send', 'pageview');
-
-</script>            <!-- TRACKING SCRIPT END -->
-        
-        <script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-includes/js/comment-reply.min.js?ver=4.3.17'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var _wpcf7 = {"loaderUrl":"http:\/\/studentaffairs.uic.edu\/aaan\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
-/* ]]> */
 </script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.3'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/ishyoboy-multicorp-assets/ishyoboy-shortcodes/assets/frontend/js/ishyoboy-shortcodes.js?ver=1.0'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var php_array = {"admin_ajax":"http:\/\/studentaffairs.uic.edu\/aaan\/wp-admin\/admin-ajax.php"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/ishyoboy-multicorp-assets/ishyoboy-widgets/assets/frontend/js/widgets.js?ver=4.3.17'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/vendor/jquery.smoothscroll.min.js'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/vendor/packery.pkgd.min.js'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/vendor/imagesloaded.pkgd.min.js'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/vendor/jquery.scrollTo-1.4.3.1-min.js'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/vendor/jquery.fancybox.pack.js'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/vendor/ish_jquery.tooltipster.min.js'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/vendor/jquery.easing-1.3.pack.js'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var iyb_globals = {"admin_ajax":"http:\/\/studentaffairs.uic.edu\/aaan\/wp-admin\/admin-ajax.php","js_uri":"http:\/\/studentaffairs.uic.edu\/aaan\/wp-content\/themes\/multicorp\/assets\/frontend\/js","header_height":"100","sticky_height":"50","colors":{"color1":"#767676","color2":"#aeaeae","color3":"#e6e6e6","color4":"#ffffff","color5":"#975e15","color6":"#ebad28","color7":"#f9f9f9","color8":"#3c3a37","color9":"#edf6f7","color10":"#ffffff","color11":"#ffffff","color12":"#ffffff","color13":"#3b5998","color14":"#ea4c89","color15":"#1769ff","color16":"#d14836","color17":"#00aced","color18":"#cb2027","color19":"#ff6445","color20":"#ffffff"},"sidenav_width":"400px","page_width":"1240"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/assets/frontend/js/main.js'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/themes/multicorp/wpbakery/js_composer/assets/js/js_composer_front.js?ver=4.5.3'></script>
-<script type='text/javascript' src='http://studentaffairs.uic.edu/aaan/wp-content/plugins/ishyoboy-multicorp-assets/ishyoboy-widgets/assets/frontend/js/vendor/tweetMachine.js?ver=4.3.17'></script>
 
-		
-	</body>
-
-</html>
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS201/WebHome">CS201 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS201/WebStatistics" title='Topic revision: 264 (2017-03-21 - 23:00:52)'>WebStatistics</a> <span class='patternRevInfo'>(2017-03-21, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS201.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS201/WebStatistics?t=1543179323' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS201/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_CS201_Web"></a> Statistics for CS201 Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS201/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS201/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS201/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS201/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS201/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS201/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1193<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 182&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />171&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />155&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />135&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />100&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;&nbsp;94&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;68&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;67&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/CS201/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 945<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 251&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />112&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;86&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;65&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/CS201/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 690<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 137&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;92&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;&nbsp;74&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;23&nbsp;<a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;23&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 657<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 135&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />120&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;20&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 607<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 91&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />89&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />80&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />78&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />72&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />39&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />34&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />28&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />18&nbsp;<a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />16&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 806<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 143&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />128&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />110&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />101&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;86&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;25&nbsp;<a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;22&nbsp;<a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 281<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 87&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />51&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />24&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />19&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />15&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />13&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />12&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />11&nbsp;<a href="/bin/view/CS201/WebLeftBar" class="twikiLink">WebLeftBar</a><br />10&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;&nbsp;9&nbsp;<a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 416<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 116&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;22&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;19&nbsp;<a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;&nbsp;18&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1265<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 227&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />138&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />113&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />113&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;86&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;81&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;76&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;&nbsp;70&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 932<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 167&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;91&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;91&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 827<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 210&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />108&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;66&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 861<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 135&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;80&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;70&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;66&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;59&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;54&nbsp;<a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 708<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 147&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;75&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 511<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 104&nbsp;<a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 953 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 178 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;74 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;69 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;58 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;57 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;55 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;50 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;42 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;41 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;40 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;38 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 167 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;76 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;66 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;60 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;55 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;53 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;50 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;49 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;46 <a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a><br />&nbsp;44 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;42 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1158 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 175 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;82 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;70 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;70 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;66 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;66 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;63 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;62 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;54 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;51 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1150 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 193 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;76 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;75 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;72 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;71 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;69 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;69 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;66 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;66 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;65 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;63 <a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1863 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 265 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />164 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />152 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />145 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />137 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />134 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />133 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />127 <a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a><br />126 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;91 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;83 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 754 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;96 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;62 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;58 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;57 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;54 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;52 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;50 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;44 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;42 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;41 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;39 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1935 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 268 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />192 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />171 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />162 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />159 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />115 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />113 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;98 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;94 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;74 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;74 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1140 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 167 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />139 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;93 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;83 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;82 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;59 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;50 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;50 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;48 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;48 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;46 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1146 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 172 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />127 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;87 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;80 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;69 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;64 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;59 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;50 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;49 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;48 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1036 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 140 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />135 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;78 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;75 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;64 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;60 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;53 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;51 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;50 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;48 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;43 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 959 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 216 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;80 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;70 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;48 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;47 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;47 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;41 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />&nbsp;41 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;41 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;36 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1968 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 258 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />243 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />189 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />156 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />116 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;65 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;44 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;37 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;33 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;30 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;30 <a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">AdditionalMaterial</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3284 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 432 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />387 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />336 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />323 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />102 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;72 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;71 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;46 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;39 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;39 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;35 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 928 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 157 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />141 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />&nbsp;90 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;66 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;20 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;&nbsp;7 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;6 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;6 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;&nbsp;6 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;4 <a href="/bin/view/CS201/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;&nbsp;3 <a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2701 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 413 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />312 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />266 <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">AssignmentsF14</a><br />240 <a href="/bin/view/CS201/NotesF14" class="twikiLink">NotesF14</a><br />&nbsp;68 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;50 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;46 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;38 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;33 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;32 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1811 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 636 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />172 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />111 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />103 <a href="/bin/view/CS201/CS201F14" class="twikiLink">CS201F14</a><br />101 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;89 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;81 <a href="/bin/view/CS201/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;63 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;62 <a href="/bin/view/CS201/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;61 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;57 <a href="/bin/view/CS201/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Jul 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1 twikiLast"> 1016 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2 twikiLast"> 2 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4 twikiLast"> 452 <a href="/bin/view/CS201/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />117 <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;53 <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;49 <a href="/bin/view/CS201/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;47 <a href="/bin/view/CS201/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;46 <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;45 <a href="/bin/view/CS201/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;44 <a href="/bin/view/CS201/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;43 <a href="/bin/view/CS201/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;41 <a href="/bin/view/CS201/WebLeftBar" class="twikiLink">WebLeftBar</a><br />&nbsp;39 <a href="/bin/view/CS201/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;&nbsp;2 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/PhilBeltran?topicparent=CS201.WebStatistics;nowysiwyg=0" rel="nofollow" title="PhilBeltran (this topic does not yet exist; you can create it)">PhilBeltran</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/CS201" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS201/WebStatistics?t=1543179325' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS201/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS201/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS201/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r264&nbsp;<a rel="nofollow" href="/bin/rdiff/CS201/WebStatistics?rev1=264;rev2=263">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS201/WebStatistics?rev=263">r263</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS201/WebStatistics?rev1=263;rev2=262">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS201/WebStatistics?rev=262">r262</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS201/WebStatistics?rev1=262;rev2=261">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS201/WebStatistics?rev=261">r261</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS201/WebStatistics?rev1=261;rev2=260">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS201/WebStatistics?rev=260">r260</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS201/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the CS201 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS201/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS201/WebStatistics?t=1543179325;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS201/WebStatistics?template=oopsmore&amp;param1=264&amp;param2=264' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r264 - 2017-03-21 - 23:00:52 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS201.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS201</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS201/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS201/CS201F14" class="twikiLink">Fall 14 Web Page</a>
+</li> <li> <a href="/bin/view/CS201/NotesF14" class="twikiLink">Lecture Notes</a>
+</li> <li> <a href="/bin/view/CS201/AssignmentsF14" class="twikiLink">Homeworks</a>
+</li> <li> <a href="/bin/view/CS201/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li></ul> 
+<a href="/bin/edit/CS201.WebLeftBar" target="_top">[edit this menu</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS201/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS201/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS201 Web</a></strong>
+</li> <li> <a href="/bin/view/CS201/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS201/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS201/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS201/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS201/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS201/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS201/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS201/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

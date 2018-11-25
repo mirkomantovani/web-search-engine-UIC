@@ -1,314 +1,312 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-    <meta charset="utf-8" />
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" />
-    <meta name="author" />
-    
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebSearchAdvanced &lt; Advis &lt; TWiki</title>
 
-    <script >
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Advis/WebSearchAdvanced?_T=2018-11-25" type="application/x-wiki" title="edit WebSearchAdvanced" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Advis/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Advis/WebSearchAdvanced"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-    ga('create', 'UA-37143144-2', 'azurewebsites.net');
-    ga('send', 'pageview');
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
-    </script>
-    <script type="text/javascript">
-        var identity = null;
-        var appInsights=window.appInsights||function(config){
-            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
-        }({
-            instrumentationKey:"2de79e28-5a09-49ad-b2d7-797c060d1c4b"
-        });
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-        window.appInsights=appInsights;
-        if(identity){
-            appInsights.appUserId = identity.handle;
-            appInsights.accountId = identity.email;
-        }
-        appInsights.trackPageView();
-    </script>
-    
-    
+<!-- Google Analytics Snippet -->
 
 <script type="text/javascript">
-    window.DEBUG = false; 
-    window.DEBUGJS = false; 
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
 
-<link href="/_css/bootstrap?v=dZUqreyd9GkgHPOS6fB7bW0K9tN6GkdoLKxb47whY3k1" rel="stylesheet"/>
-
-<link href="/_css/bootstrap-overrides?v=kcQS0JsKEZnxSTxZd3mp_szSdrqyXjoIlAlkzHHKlAE1" rel="stylesheet"/>
-
-<link href="/_css/leadershape-core?v=p2FaUPAgPt_jBYUM7UqU6D5kJBd1zzNlJ42fWV_ACtA1" rel="stylesheet"/>
-
-<link href="/content/themes/base/jquery-ui-bundle?v=N5XIW7sSrrE_BgrKAPhLq6EZbw99Jq_8kdAM9ciWJlk1" rel="stylesheet"/>
-
-
-    <link href="/Content/leadershape.nolayout.css" rel="stylesheet" type="text/css" />
+<!-- /Google Analytics Snippet -->
 </head>
-<body>
-    
-    <div class="modal loadingModal hide fade" id="loadingModal" data-backdrop="static" data-keyboard="false">
-    <div class="modal-body">
-        <img src='/Content/Images/leadershape-logo-black.png' />
-        <br />
-        <img id="loadingImg" src="/Content/images/loader-black.gif" />
-        <br />
-        <h3 id="loadingMessage">Please Wait...</h3>
-    </div>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/Advis/WebHome">Advis Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/Advis/WebSearch" class="twikiLink">WebSearch</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/Advis/WebSearchAdvanced" title='Topic revision: 1 (2006-11-15 - 19:43:52)'>WebSearchAdvanced</a> <span class='patternRevInfo'>(2006-11-15, Main.TWikiContributor)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/Advis/WebSearchAdvanced?t=1543179813' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/Advis/WebSearchAdvanced' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Advanced_Search"></a> Advanced Search </h1>
+<p />
+<p />
+<p />
+<p />
+<div id="searchTopNavWebSearchAdvanced" style="margin-bottom: 1em; "></div>
+<p />
+<p />
+<div id="searchBottomNavWebSearchAdvanced" style="">
+<p />
+ &nbsp;
+<p />
 </div>
-
-    <!-- Main Content -->
-    <div id="content" class="container account">
-             
-        
-        
-
-
-
-<div class="row-fluid account-back" >
-    <div class="login-container span6" data-bind="with: loginViewModel">
-        
-
-<div class="row-fluid">
-    <h2>Sign In</h2>
-    <hr />
+<script type="text/javascript">
+  $('#searchTopNavWebSearchAdvanced').hide(); $('#searchBottomNavWebSearchAdvanced').hide();
+  $('#searchTopNavWebSearchAdvanced').html("&nbsp; ");
+</script>
+<p />
+<a name="twikiSearchForm"></a>
+<div class="twikiPageForm">
+<form id="twikiWebSearchForm" action="/bin/view/Advis/WebSearchAdvanced">
+<table id="twikiSearchTable" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2" class="twikiFirstRow">
+  <input class="twikiInputField" type="text" name="search" value="" size="40" /> 
+  <input type="submit" class="twikiSubmit" value='Search' /><span class="twikiSmall">&nbsp;&nbsp;<a href='https://www.cs.uic.edu/bin/view/Advis/WebSearch?search=;type=word;scope=;web=;nosearch='>Simple search</a> | <a href="/bin/view/TWiki/SearchHelp" class="twikiLink">Help</a></span>
+<div class="twikiSmall" style="padding:1em 0 0 0;">TIP: to search for all topics that contain <code>"SOAP"</code>, <code>"WSDL"</code>, a literal <code>"web service"</code>, but not <code>"shampoo"</code>, write: <code>soap wsdl "web service" -shampoo</code></div>
+</td>
+</tr>
+<tr>
+<th>Search where:</th>
+<td>
+<input type="radio" class="twikiRadioButton" id="textbody" name="scope" value="text"  /><label for="textbody"> Text body</label><br />
+<input type="radio" class="twikiRadioButton" id="topictitle" name="scope" value="topic"  /><label for="topictitle"> Topic title</label><br />
+<input type="radio" class="twikiRadioButton" id="both" name="scope" value="all" checked="checked" /><label for="both"> Both body and title</label>
+<hr />
+<input type="checkbox" class="twikiCheckbox" id="web" name="web" value="all"  /><label for="web"> All public webs</label> <span class="twikiSmall">(otherwise search Advis Web only)</span>
+</td>
+</tr>
+<tr>
+<th>Sort results by:</th>
+<td>
+<input type="radio" class="twikiRadioButton" id="topic" name="sort" value="topic" checked="checked" /><label for="topic"> Topic name</label><br />
+<input type="radio" class="twikiRadioButton" id="modified" name="sort" value="modified"  /><label for="modified"> Last modified time</label><br />
+<input type="radio" class="twikiRadioButton" id="editby" name="sort" value="editby"  /><label for="editby"> Last editor</label>
+<hr />
+<input type="checkbox" class="twikiCheckbox" name="reverse" id="reverse"  /><label for="reverse"> In reverse order</label>
+</td>
+</tr>
+<tr>
+<th>Make search:</th>
+<td><input type="checkbox" class="twikiCheckbox" id="casesensitive" name="casesensitive"  /><label for="casesensitive"> Case sensitive</label><br />
+<input type="checkbox" class="twikiCheckbox" id="regex" name="regex"  /><label for="regex"> Regular expression search</label> <span class="twikiSmall">(semicolon <code>;</code> for and) <a href="/bin/view/TWiki/RegularExpression" class="twikiLink">about regular expression search</a></span>
+</td>
+</tr>
+<tr>
+<th><b>Don't show:</b></th>
+<td><input type="checkbox" class="twikiCheckbox" id="nosearch" name="nosearch"  /><label for="nosearch"> Search string</label><br />
+<input type="checkbox" class="twikiCheckbox" id="nosummary" name="nosummary"  /><label for="nosummary"> Summaries</label><br />
+<input type="checkbox" class="twikiCheckbox" id="nototal" name="nototal"  /><label for="nototal"> Total matches</label>
+</td>
+</tr>
+<tr>
+<th>Do show:</th>
+<td><input type="checkbox" class="twikiCheckbox" id="bookview" name="bookview"  /><label for="bookview"> BookView</label> <span class="twikiSmall"><a href="/bin/view/TWiki/BookView" class="twikiLink">about BookView</a></span>
+</td>
+</tr>
+<tr>
+<th class="twikiLast">Limit results to:</th>
+<td class="twikiLast"><input type="text" class="twikiInputField" id="limit" name="limit" size="3" value="50" /><label for="limit"> Topics per web </label><span class="twikiSmall">(<code>all</code> to show all topics)</span>
+</td>
+</tr>
+</table>
+</form>
 </div>
-
-<div class="row-fluid">
-    <p class="instructions">Are you already an existing LeaderShape member?  Sign in below to visit your dashboard!</p>
+<p />
+<div class="twikiHelp">
+<strong>Other search options:</strong> <ul>
+<li> If you already know the name of the topic, enter the name of the topic into the <a href="/bin/view/TWiki/JumpBox" class="twikiLink">Jump box</a> at the top
+</li> <li> <a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=\.*">List all topics in the Advis web in alphabetical order</a>
+</li> <li> List topics that start with the letter: <a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ea">A</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Eb">B</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ec">C</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ed">D</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ee">E</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ef">F</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Eg">G</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Eh">H</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ei">I</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ej">J</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ek">K</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5El">L</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Em">M</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5En">N</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Eo">O</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ep">P</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Eq">Q</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Er">R</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Es">S</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Et">T</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Eu">U</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ev">V</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ew">W</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ex">X</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ey">Y</a><span class="twikiSeparator"> | </span><a href="/bin/search/Advis/?scope=topic&amp;regex=on&amp;search=%5Ez">Z</a>
+</li> <li> <a href="/bin/view/Advis/WebChanges" class="twikiLink">Recently changed topics</a>
+</li></ul> 
+</div> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Advis/WebSearchAdvanced?t=1543179814' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Advis/WebSearchAdvanced' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Advis/WebSearchAdvanced?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Advis/WebSearchAdvanced?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r1</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Advis/WebSearchAdvanced?template=backlinksweb' rel='nofollow' title='Search the Advis Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Advis/WebSearchAdvanced?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Advis/WebSearchAdvanced?t=1543179814;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Advis/WebSearchAdvanced?template=oopsmore&amp;param1=1&amp;param2=1' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r1 - 2006-11-15 - 19:43:52 - Main.TWikiContributor</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/Advis/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> Advis</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/Advis/People" class="twikiLink">People</a>
+</li> <li> <a href="/bin/view/Advis/Projects" class="twikiLink">Projects</a>
+</li> <li> <a href="/bin/view/Advis/Publications" class="twikiLink">Publications</a>
+</li> <li> <a href="/bin/view/Advis/Contact" class="twikiLink">Contact</a>
+</li> <li> <a href="/bin/view/Advis/Collaborations" class="twikiLink">Collaborations</a>
+</li> <li> <a href="/bin/view/Advis/Positions" class="twikiLink">Positions</a>
+</li></ul> 
+<p />
+<a href="/bin/edit/Advis.WebLeftBar" target="_top">[edit this</a>]
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Advis/WebSearchAdvanced">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> 
+<p />
+<!-- <ul>
+<li> <strong><a href="/bin/view/Advis/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Advis Web</a></strong>
+</li> <li> <a href="/bin/view/Advis/WebCreateNewTopic?topicparent=WebSearchAdvanced" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Advis/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Advis/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Advis/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/Advis/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/Advis/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Advis/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Advis/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+-->
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-
-<div class="row-fluid">
-<form action="/Account/Login?returnUrl=%2Fapplications%2Fapply%2F3753" class="form-horizontal span12" data-bind="submit: login_Click, validate: loginValidator" method="post">        <fieldset>
-            <legend></legend>
-            <div class="control-group">
-                <label class="control-label" for="Email">Email</label>
-                <div class="controls">
-                    <input class="input-large" data-val="true" data-val-required="The Email field is required." id="Email" name="Email" tabindex="99" type="email" value="" />
-                    <p class="help-block"><span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span></p>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="Password">Password</label>
-                <div class="controls">
-                    <input class="input-large" data-val="true" data-val-length="The Password must be at least 0 characters long." data-val-length-max="100" data-val-required="The Password field is required." id="Password" name="Password" tabindex="99" type="password" />
-                    <p class="help-block"><span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span></p>
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                    <label class="checkbox">
-                        <input class="checkbox" data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" tabindex="99" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
-                        &nbsp;Remember Me?
-                    </label>
-                    <p class="help-block"><span class="field-validation-valid" data-valmsg-for="RememberMe" data-valmsg-replace="true"></span></p>
-                </div>
-            </div>
-            <div class="control-group error" data-bind="visible: errorMessage">
-                <div class="controls">
-                    <p class="help-block" data-bind="text: errorMessage">
-                        <div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
-</ul></div>
-                    </p>
-                </div>
-            </div>
-        </fieldset>
-        <div class="control-group account-buttons">
-            <div class="controls">
-                <button type="submit" class="btn btn-login" tabindex="99">Sign In</button>
-                <a class="btn btn-forgot" href="/Account/ForgotPassword" tabindex="99">Forgot Password</a>
-            </div>
-        </div>
-</form></div>
-
-    </div>
-    <div class="register-container span6" data-bind="with: registerViewModel">
-        
-
-<div class="row-fluid">
-    <h2>Register</h2>
-    <hr />
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
 </div>
-
-<div class="row-fluid">
-    <p class="instructions">Ready to get started setting up your LeaderShape profile?  Simply fill in the information below to get started.</p>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
 </div>
-
-<div class="row-fluid">
-<form action="/Account/Register?returnUrl=%2Fapplications%2Fapply%2F3753" class="form-horizontal span12" data-bind="submit: register_Click, validate: registerValidator" method="post">            <fieldset>
-                <legend></legend>
-                <div class="control-group">
-                    <label class="control-label" for="Email">Email</label>
-                    <div class="controls">
-                        <input class="input-large" data-val="true" data-val-required="The Email field is required." id="Email" name="Email" tabindex="99" type="email" value="" />
-                        <p class="help-block"><span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="ConfirmEmail">Confirm Email</label>
-                    <div class="controls">
-                        <input class="input-large" data-val="true" data-val-equalto="The email addresses you&#39;ve entered do not match!" data-val-equalto-other="*.Email" data-val-required="The Confirm Email field is required." id="ConfirmEmail" name="ConfirmEmail" tabindex="99" type="email" value="" />
-                        <p class="help-block"><span class="field-validation-valid" data-valmsg-for="ConfirmEmail" data-valmsg-replace="true"></span></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="FirstName">First Name</label>
-                    <div class="controls">
-                        <input class="input-large" data-val="true" data-val-length="The field First Name must be a string with a maximum length of 64." data-val-length-max="64" data-val-required="The First Name field is required." id="FirstName" name="FirstName" tabindex="99" type="text" value="" />
-                        <p class="help-block"><span class="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true"></span></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="LastName">Last Name</label>
-                    <div class="controls">
-                        <input class="input-large" data-val="true" data-val-length="The field Last Name must be a string with a maximum length of 64." data-val-length-max="64" data-val-required="The Last Name field is required." id="LastName" name="LastName" tabindex="99" type="text" value="" />
-                        <p class="help-block"><span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="Password">Password</label>
-                    <div class="controls">
-                        <input class="input-large" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" tabindex="99" type="password" />
-                        <p class="help-block"><span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="ConfirmPassword">Confirm Password</label>
-                    <div class="controls">
-                        <input class="input-large" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" data-val-length="The Confirm Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" id="ConfirmPassword" name="ConfirmPassword" tabindex="99" type="password" />
-                        <p class="help-block"><span class="field-validation-valid" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span></p>
-                    </div>
-                </div>
-                <div class="control-group error" data-bind="visible: errorMessage">
-                    <div class="controls">
-                        <div class="validation-summary-valid error" data-valmsg-summary="true"><ul><li style="display:none"></li>
-</ul></div>
-                        <p class="help-block" data-bind="text: errorMessage">
-                        </p>
-                    </div>
-                </div>
-                <div class="control-group account-buttons">
-                    <div class="controls">
-                        <button type="submit" class="btn btn-login" tabindex="99">Register</button>
-                    </div>
-                </div>
-            </fieldset>
-</form></div>
-
-    </div>
-</div>
-
-    </div>
-    
-
-    
-    <!-- Message Box -->
-<div class="modal hide fade messageBox" id="messageBox" data-bind="with: instance" data-backdrop="static" data-keyboard="false">
-    <div class="modal-header">
-        <div class="row-fluid">
-            <div class="span11">
-                <h2 data-bind="text: header"></h2>
-            </div>
-            <div class="span1">
-                <button type="button" class="btn-48 pull-right" data-bind="css: $data.topIcon"></button>
-            </div>
-        </div>
-    </div>
-    <div class="modal-body">
-        <div class="row-fluid">
-            <div class="span12">
-                <p id="messageBoxMsg" data-bind="text: message"></p>
-                <div id="messageBoxHtml" data-bind="html: html"></div>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span12 messageButtons" data-bind="foreach: buttons">
-                <button tabindex="99" class="btn" data-bind="click: $parent.onButtonClick, css: icon">
-                    <span data-bind="text: name"></span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /Message Box -->
-    <!-- File Upload Modal -->
-<div class="modal hide fade fileUploadModal" id="fileUploadModal" data-backdrop="static" data-keyboard="false">
-  <div class="modal-header">
-    <h3 data-bind="text: header"></h3>
-  </div>
-  <div class="modal-body">
-    <form id="fileUploadForm" class="form-inline" method="post" data-bind="attr: { action: url }" enctype="multipart/form-data">
-        <div class="control-group info" data-bind="visible: messageVisible">
-            <div class="controls">
-                <p class="help-block" data-bind="text: message"></p>
-            </div>
-        </div>
-        <div class="control-group error" data-bind="visible: hasError">
-            <div class="controls">
-                <p class="help-block" data-bind="text: errorMessage"></p>
-            </div>
-        </div>
-        <div class="control-group" data-bind="validationElement: fileUpload">
-            <div class="controls">
-                <input type="file" id="file" class="input-xlarge" name="fileUpload" data-bind="value: fileUpload" 
-                                            style="position: absolute; left: -1000px;"/>
-                <div class="dummyfile">
-                    <a id="fileselectbutton" class="btn-upload">Choose...</a>
-                    <input id="filename" type="text" class="input disabled" name="filename">
-                </div>
-                <img id="loadingImg" src="/Content/images/loader-black.gif" data-bind="visible: isLoading" />
-                <p class="help-block" data-bind="validationMessage: fileUpload"></p>
-            </div>
-        </div>
-    </form>
-  </div>
-  <div class="modal-footer" style="text-align: center">
-    <button tabindex="99" class="btn-cancel" data-bind="click: cancel_Click">&nbsp;Cancel</button>
-    <button id="fileUploadSubmit" tabindex="98" class="btn-done" data-bind="click: upload, visible: !okVisible()">&nbsp;Upload</button>
-    <button tabindex="100" class="btn-done" data-bind="click: ok_Click, visible: okVisible">&nbsp;OK</button>
-  </div>
-</div>
-    
-
-    
-
-    
-    
-<script src="/_js/moment?v=6xd-iferxrDdUDAAk0nKarekKaUSMWZXS6YAAai8-0w1"></script>
-
-<script src="/_js/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
-
-<script src="/_js/amplify?v=PIkvAQtgsN8ryv6T9TsA9uArsmxZvyk2RivRRVbPOpI1"></script>
-
-<script src="/_js/jquery-ui?v=G3zUI26k8shDvs3PSo5GPkxFSWclClRdLVUnA01ZKc01"></script>
-
-<script src="/_js/knockout?v=IHDE7GTyvVA2zHy5gtiIfhqqnaVSzCpVx2iC87Ac_A01"></script>
-
-<script src="/_js/bootstrap?v=8IjO19BY-Q6KHFOgubBNWKI4ieRyj_o58kLVLPNunW81"></script>
-
-<script src="/_js/jqueryval?v=-lN_YLcSrfgByMUdCpLWgsWFnIsuVr43OX8EeQblXzQ1"></script>
-
-<script src="/_js/global?v=NvGpYlZFlH69DUuFOZCmK9bsQZxeTprYs7LozK08IOM1"></script>
-
-
-    
-    
-    
-    <script src="/_js/account/login?v=NZ1TUrLORqOULCbBqsmaCYC4VbZh5X0KwVN9zoeEGSg1"></script>
-
-
-    <script type="text/javascript">window.pageData = null;</script>
-    <script type="text/javascript">
-    $(function () {
-        ls.app.run(document.getElementById("content"));
-    });
-</script>       
-</body>
-</html>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

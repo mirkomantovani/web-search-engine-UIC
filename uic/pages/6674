@@ -1,396 +1,1166 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - TextFormattingRules</title>
 
-<html class="no-js" lang="en-US">
-
-	<head profile="http://gmpg.org/xfn/11">
-		
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-																		
-		<title>Circle Campus Opening | </title>
-				
-				 
-		<title>Circle Campus Opening &#8211; UIC ARCHIVES</title>
-<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="UIC ARCHIVES &raquo; Feed" href="https://uicarchives.library.uic.edu/feed/" />
-<link rel="alternate" type="application/rss+xml" title="UIC ARCHIVES &raquo; Comments Feed" href="https://uicarchives.library.uic.edu/comments/feed/" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/uicarchives.library.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/TextFormattingRules?_T=2018-11-25" type="application/x-wiki" title="edit TextFormattingRules" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/TextFormattingRules"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
 }
 </style>
-<link rel='stylesheet' id='foobox-free-min-css'  href='https://uicarchives.library.uic.edu/wp-content/plugins/foobox-image-lightbox/free/css/foobox.free.min.css?ver=1.2.24' type='text/css' media='all' />
-<link rel='stylesheet' id='foogallery-template-owl-carousel-css'  href='https://uicarchives.library.uic.edu/wp-content/plugins/foogallery-owl-carousel-template/css/gallery-owl-carousel.css?ver=1.2.18' type='text/css' media='all' />
-<link rel='stylesheet' id='mbpro-font-awesome-css'  href='https://uicarchives.library.uic.edu/wp-content/plugins/maxbuttons-pro/MaxButtons/assets/libraries/font-awesome/css/font-awesome.min.css?ver=6.28' type='text/css' media='all' />
-<link rel='stylesheet' id='chld_thm_cfg_parent-css'  href='https://uicarchives.library.uic.edu/wp-content/themes/fukasawa/style.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='fukasawa_googleFonts-css'  href='//fonts.googleapis.com/css?family=Lato%3A400%2C400italic%2C700%2C700italic&#038;ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='fukasawa_genericons-css'  href='https://uicarchives.library.uic.edu/wp-content/themes/fukusawachild4/genericons/genericons.css?ver=1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='fukasawa_style-css'  href='https://uicarchives.library.uic.edu/wp-content/themes/fukusawachild4/style.css?ver=1.0' type='text/css' media='all' />
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var mb_ajax = {"ajaxurl":"https:\/\/uicarchives.library.uic.edu\/wp-admin\/admin-ajax.php"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/plugins/maxbuttons-pro/MaxButtons/js/min/front.js?ver=6.28'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/plugins/foobox-image-lightbox/free/js/foobox.free.min.js?ver=1.2.24'></script>
-<link rel='https://api.w.org/' href='https://uicarchives.library.uic.edu/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://uicarchives.library.uic.edu/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://uicarchives.library.uic.edu/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.9.8" />
-<link rel="canonical" href="https://uicarchives.library.uic.edu/circlecampusopening" />
-<link rel='shortlink' href='https://uicarchives.library.uic.edu/?p=371' />
-<link rel="alternate" type="application/json+oembed" href="https://uicarchives.library.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fuicarchives.library.uic.edu%2Fcirclecampusopening" />
-<link rel="alternate" type="text/xml+oembed" href="https://uicarchives.library.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fuicarchives.library.uic.edu%2Fcirclecampusopening&#038;format=xml" />
-      
-	      <!-- Customizer CSS --> 
-	      
-	      <style type="text/css">
-	           body a { color:#cc0000; }	           body a:hover { color:#cc0000; }	           .main-menu .current-menu-item:before { color:#cc0000; }	           .main-menu .current_page_item:before { color:#cc0000; }	           .widget-content .textwidget a:hover { color:#cc0000; }	           .widget_fukasawa_recent_posts a:hover .title { color:#cc0000; }	           .widget_fukasawa_recent_comments a:hover .title { color:#cc0000; }	           .widget_archive li a:hover { color:#cc0000; }	           .widget_categories li a:hover { color:#cc0000; }	           .widget_meta li a:hover { color:#cc0000; }	           .widget_nav_menu li a:hover { color:#cc0000; }	           .widget_rss .widget-content ul a.rsswidget:hover { color:#cc0000; }	           #wp-calendar thead { color:#cc0000; }	           .widget_tag_cloud a:hover { background:#cc0000; }	           .search-button:hover .genericon { color:#cc0000; }	           .flex-direction-nav a:hover { background-color:#cc0000; }	           a.post-quote:hover { background:#cc0000; }	           .posts .post-title a:hover { color:#cc0000; }	           .post-content a { color:#cc0000; }	           .post-content a:hover { color:#cc0000; }	           .post-content a:hover { border-bottom-color:#cc0000; }	           .post-content blockquote:before { color:#cc0000; }	           .post-content fieldset legend { background:#cc0000; }	           .post-content input[type="submit"]:hover { background:#cc0000; }	           .post-content input[type="button"]:hover { background:#cc0000; }	           .post-content input[type="reset"]:hover { background:#cc0000; }	           .page-links a:hover { background:#cc0000; }	           .comments .pingbacks li a:hover { color:#cc0000; }	           .comment-header h4 a:hover { color:#cc0000; }	           .bypostauthor.commet .comment-header:before { background:#cc0000; }	           .form-submit #submit:hover { background-color:#cc0000; }	           
-	           .nav-toggle.active { background-color:#cc0000; }	           .mobile-menu .current-menu-item:before { color:#cc0000; }	           .mobile-menu .current_page_item:before { color:#cc0000; }	           
-	           body#tinymce.wp-editor a { color:#cc0000; }	           body#tinymce.wp-editor a:hover { color:#cc0000; }	           body#tinymce.wp-editor fieldset legend { background:#cc0000; }	           body#tinymce.wp-editor blockquote:before { color:#cc0000; }	      </style> 
-	      
-	      <!--/Customizer CSS-->
-	      
-      		<style type="text/css" id="wp-custom-css">
-			.main-menu:before, .widgets:before, .widget + .widget:before, .credits:before {height:0px; 
-}
-
-
-body.single-te_announcements .timeline-express-tax-container
-{
-	display:none;
-}		</style>
-		
-	</head>
-	
-	<body class="page-template-default page page-id-371 page-child parent-pageid-555 wp-is-not-mobile">
-	
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-59136025-1', 'auto');
-	  ga('send', 'pageview');
-	</script>
-	
-		<div class="mobile-navigation">
-	
-			<ul class="mobile-menu">
-						
-				<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-40"><a href="https://uicarchives.library.uic.edu/">UIC ARCHIVES | Exhibits (home)</a>
-<ul class="sub-menu">
-	<li id="menu-item-3230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3230"><a href="https://uicarchives.library.uic.edu/uic-history">UIC: History</a></li>
-	<li id="menu-item-3089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3089"><a href="https://uicarchives.library.uic.edu/timelines/">Timelines: UIC History</a></li>
-	<li id="menu-item-3401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3401"><a href="https://uicarchives.library.uic.edu/historic-netsch-campus/">Historic Netsch Campus*</a></li>
-	<li id="menu-item-2843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2843"><a href="https://uicarchives.library.uic.edu/circle-yearbooks">The Circle Yearbooks</a></li>
-	<li id="menu-item-594" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-594"><a href="https://uicarchives.library.uic.edu/circle-campus/">The Circle Campus</a>
-	<ul class="sub-menu">
-		<li id="menu-item-1443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1443"><a href="https://uicarchives.library.uic.edu/circle-design">Circle Campus Design</a></li>
-		<li id="menu-item-1031" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1031"><a href="https://uicarchives.library.uic.edu/circlecampusconstruction">Circle Campus Construction</a></li>
-		<li id="menu-item-599" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-371 current_page_item menu-item-599"><a href="https://uicarchives.library.uic.edu/circlecampusopening">Circle Campus Opening</a></li>
-		<li id="menu-item-596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-596"><a href="https://uicarchives.library.uic.edu/circleforum">Great Court and Circle Forum</a></li>
-		<li id="menu-item-857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-857"><a href="https://uicarchives.library.uic.edu/excedras">Great Court Excedras</a></li>
-		<li id="menu-item-597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-597"><a href="https://uicarchives.library.uic.edu/elevatedwalkways">Circle Campus Elevated Walkways</a></li>
-		<li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-593"><a href="https://uicarchives.library.uic.edu/40-4Chair">40/4 Chair</a></li>
-		<li id="menu-item-1030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1030"><a href="https://uicarchives.library.uic.edu/the-netsch-campus/circle-campus-field-theory/">Circle Campus Field Theory</a></li>
-	</ul>
-</li>
-	<li id="menu-item-598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-598"><a href="https://uicarchives.library.uic.edu/circlestudentlife">Circle Campus Student Life</a></li>
-</ul>
-</li>
-<li id="menu-item-128" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128"><a href="https://uicarchives.library.uic.edu/about">About</a></li>
-				
-			 </ul>
-		 
-		</div> <!-- /mobile-navigation -->
-	
-		<div class="sidebar">
-		
-						
-		        <a class="blog-logo" href='https://uicarchives.library.uic.edu/' title='UIC ARCHIVES &mdash; Leveraging our past to inform the future (TM)' rel='home'>
-		        	<img src='https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/12/library-logo-horizontalcrop.png' alt='UIC ARCHIVES'>
-		        </a>
-		
-						
-			<a class="nav-toggle hidden" title="Click to view the navigation" href="#">
-			
-				<div class="bars">
-				
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
-					
-					<div class="clear"></div>
-				
-				</div>
-				
-				<p>
-					<span class="menu">Menu</span>
-					<span class="close">Close</span>
-				</p>
-			
-			</a>
-			
-			<ul class="main-menu">
-				
-				<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-40"><a href="https://uicarchives.library.uic.edu/">UIC ARCHIVES | Exhibits (home)</a>
-<ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3230"><a href="https://uicarchives.library.uic.edu/uic-history">UIC: History</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3089"><a href="https://uicarchives.library.uic.edu/timelines/">Timelines: UIC History</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3401"><a href="https://uicarchives.library.uic.edu/historic-netsch-campus/">Historic Netsch Campus*</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2843"><a href="https://uicarchives.library.uic.edu/circle-yearbooks">The Circle Yearbooks</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-594"><a href="https://uicarchives.library.uic.edu/circle-campus/">The Circle Campus</a>
-	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1443"><a href="https://uicarchives.library.uic.edu/circle-design">Circle Campus Design</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1031"><a href="https://uicarchives.library.uic.edu/circlecampusconstruction">Circle Campus Construction</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-371 current_page_item menu-item-599"><a href="https://uicarchives.library.uic.edu/circlecampusopening">Circle Campus Opening</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-596"><a href="https://uicarchives.library.uic.edu/circleforum">Great Court and Circle Forum</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-857"><a href="https://uicarchives.library.uic.edu/excedras">Great Court Excedras</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-597"><a href="https://uicarchives.library.uic.edu/elevatedwalkways">Circle Campus Elevated Walkways</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-593"><a href="https://uicarchives.library.uic.edu/40-4Chair">40/4 Chair</a></li>
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1030"><a href="https://uicarchives.library.uic.edu/the-netsch-campus/circle-campus-field-theory/">Circle Campus Field Theory</a></li>
-	</ul>
-</li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-598"><a href="https://uicarchives.library.uic.edu/circlestudentlife">Circle Campus Student Life</a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128"><a href="https://uicarchives.library.uic.edu/about">About</a></li>
-				
-			 </ul>
-			 
-			 <div class="widgets">
-			 
-			 	<div class="widget widget_search"><div class="widget-content"><form method="get" class="search-form" id="search-form" action="https://uicarchives.library.uic.edu/">
-	<input type="search" class="search-field" placeholder="Search form" name="s" id="s" /> 
-	<a id="searchsubmit" class="search-button" onclick="document.getElementById('search-form').submit(); return false;"><div class="genericon genericon-search"></div></a>
-</form></div><div class="clear"></div></div><div class="widget widget_text"><div class="widget-content">			<div class="textwidget"><a href="https://twitter.com/UICArchives" class="twitter-follow-button" data-show-count="false">Follow @UICArchives</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
-		</div><div class="clear"></div></div><div class="widget widget_text"><div class="widget-content">			<div class="textwidget">This site is brought to you by <a href="http://library.uic.edu/">UIC Library</a>
-<br>
-<br>
-<a href="http://library.uic.edu/home/about-us/contact-us">Contact Us</a>
-<br>
-<a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Web Privacy Notice</a>
-<br>
-Having problems accessing this site? <a href="http://library.uic.edu/home/user-support">Contact user support</a></div>
-		</div><div class="clear"></div></div>			 
-			 </div>
-			 
-			 <div class="credits">
-			 
-			 	<p>&copy; 2018The Board of Trustees of The University of Illinois</p>	 	
-			 </div>
-			
-			 <div class="clear"></div>
-							
-		</div> <!-- /sidebar -->
-	
-		<div class="wrapper" id="wrapper">
-
-<div class="content thin">		
-
-					
-	
-		<div class="post single post-371 page type-page status-publish hentry">
-		
-						
-			<div class="post-inner">
-												
-				<div class="post-header">
-																										
-					<h2 class="post-title">Circle Campus Opening</h2>
-															
-				</div> <!-- /post-header section -->
-				    
-			    <div class="post-content">
-			    
-			    	<h1></h1>
-
-<style>
-/*Used to keep captions inside the visible area*/
-#foogallery-gallery-493 .foo-item {
-	max-height: 150px;
-}
-	#foogallery-gallery-493.border-style-inset a::after {
-		box-shadow: inset 0 0 20px #000;
-		-moz-box-shadow: inset 0 0 20px #000;
-		-webkit-box-shadow: inset 0 0 calc(150px/4) rgba(0,0,0,0.8);
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
 	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+@import url('/pub/Main/WebPreferences/mainweb.css');
+@import url('/pub/TWiki/WebPreferences/hideattachments.css');
+
 </style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-<div id="foogallery-gallery-493" class="foogallery-container foogallery-owl-carousel foogallery-lightbox-foobox-free owl-carousel hover-effect-zoom  ">
-
-				<div class="foo-item" >
-			<a  href="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/01/UA_90_999_0313.jpg" data-caption-title="Governor Otto Kerner cutting one of three ribbons at opening ceremonies, 1965 Feb 22." data-caption-desc="Chancellor Parker (5th from left), Mayor Richard J. Daley, University President Henry, Governor Kerner (with scissors), Board of Trustees President Clement, Student Congress President Tony Podesta &lt;em&gt;&#039;61 NAVY PIER ATTENDEE, &#039;67 LAS&lt;/em&gt;.&nbsp; Two campus ROTC cadets hold the ribbon including Bill Hawes &lt;em&gt;&#039;68 ENG, MS &#039;69. ENG.&lt;/em&gt; (right).&nbsp; View: southeast on upper-level walkway through north side of Science &amp; Engineering Laboratories.&nbsp; University of Illinois at Chicago Circle.&nbsp; (086 UA 90-999 0313)&lt;BR&gt;See more about &lt;a href=&quot;https://uicarchives.library.uic.edu/circlecampusopening&quot;&gt;Circle Campus Opening&lt;/a&gt;." data-attachment-id="522"><img  src="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/cache/2015/01/UA_90_999_0313/614472573.jpg" alt="Ribbon Cutting-Daley; Kerner and Clement, 1965" width="150" height="150" /></a>			</div> 
-				<div class="foo-item" >
-			<a  href="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/01/UA_90_999_0307.jpg" data-caption-title="Board of Trustees President Howard Wheeler Clement cutting one of three ribbons at opening ceremonies, 1965 Feb 22." data-caption-desc="Mayor Richard J. Daley (2nd from left), Chancellor Parker, Governor Kerner, Board of Trustees President Clement (with scissors), University President Henry (behind), Student Congress President Tony Podesta &lt;em&gt;&#039;61 NAVY PIER ATTENDEE, &#039;67 LAS&lt;/em&gt;.&nbsp;  Two campus ROTC cadets hold the ribbon.&nbsp; View: south on upper-level walkway through north side of Science &amp; Engineering Laboratories.&nbsp; University of Illinois at Chicago Circle.&nbsp; (086 UA 90-999 0307)" data-attachment-id="915"><img  src="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/cache/2015/01/UA_90_999_0307/3079733700.jpg" alt="UICC Opening Ceremonies, Feb 22, 1965" width="150" height="150" /></a>			</div> 
-				<div class="foo-item" >
-			<a  href="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/01/UA_90_999_0308.jpg" data-caption-title="Mayor Richard J. Daley cutting one of three ribbons at opening ceremonies, 1965 Feb 22." data-caption-desc="Mayor Daley (4th from left with scissors), Chancellor Parker (behind), Governor Kerner, and Board of Trustees President Clement flanked by campus ROTC cadets and color guard.&nbsp; View: southeast on upper-level walkway at north side of Science &amp; Engineering Laboratories.&nbsp; University of Illinois at Chicago Circle.&nbsp; (086 UA 90-999 0308)" data-attachment-id="916"><img  src="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/cache/2015/01/UA_90_999_0308/1857098600.jpg" alt="Daley; Clement; Parker and Governor Otto Kerner, Feb 22, 1965" width="150" height="150" /></a>			</div> 
-				<div class="foo-item" >
-			<a  href="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/01/UA_90_999_0305.jpg" data-caption-title="Mayor Richard J. Daley speaks at Circle campus opening ceremony, 1965 Feb 22." data-caption-desc="Mayor Daley flanked by ROTC cadets and color guard, including Bill Hawes &lt;em&gt;&#039;68 ENG, MS &#039;69. ENG&lt;/em&gt; (2nd from right).&nbsp;  View: southeast on upper-level walkway through north side of Science &amp; Engineering Laboratories.&nbsp; University of Illinois at Chicago Circle.&nbsp;  (086 UA 90-999 0305)" data-attachment-id="914"><img  src="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/cache/2015/01/UA_90_999_0305/4122216121.jpg" alt="Mayor Daley remarks 1965" width="150" height="150" /></a>			</div> 
-				<div class="foo-item" >
-			<a  href="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/01/UA_90_999_0312.jpg" data-caption-title="Student Congress President Podesta speaks, Circle campus opening ceremonies, 1965 Feb 22." data-caption-desc="Tony Podesta &lt;em&gt;&#039;61 NAVY PIER ATTENDEE, &#039;67 LAS&lt;/em&gt; at podium  flanked by members of campus ROTC.&nbsp; View: south on upper-level walkway through north side of Science &amp; Engineering Laboratories.&nbsp;  University of Illinois at Chicago Circle.&nbsp; (086 UA 90-999 0312)" data-attachment-id="917"><img  src="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/cache/2015/01/UA_90_999_0312/3892976611.jpg" alt="Student representative, Feb 22, 1965" width="150" height="150" /></a>			</div> 
-				<div class="foo-item" >
-			<a  href="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/01/Cabanban_Chicago_Circle.jpg" data-caption-title="&lt;em&gt;Chicago Illini&lt;/em&gt; edition previewing the opening of Circle campus, 1965 Feb 1." data-caption-desc="Photograph: Orlando Cabanban.&lt;br&gt;(086 Cabanban Chicago_Circle)" data-attachment-id="913"><img  src="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/cache/2015/01/Cabanban_Chicago_Circle/2164904160.jpg" alt="Chicago Circle Campus opening day-Chicago Illini" width="150" height="150" /></a>			</div> 
-	</div>
-
-<script>
-/* The Owl Initialization Script
-/* The first lines conditionally show the slide animation */
-jQuery(function($){
-	var $galleryContainer = $( '#foogallery-gallery-493' );
-	var $containerID = '#foogallery-gallery-493';
-
-	$(document).on('keydown', function( event ) { //attach event listener
-			if (event.keyCode == 37) {
-				$galleryContainer.trigger('prev.owl')
-			}
-			if (event.keyCode == 39) {
-				$galleryContainer.trigger('next.owl')
-			}
-
-	});
-
-	$galleryContainer.owlCarousel({
-				items: 3,
-			nav:false,
-			margin: 10,
-			loop:true,
-			autoplay: false,
-			autoplaySpeed: 1000,
-			smartSpeed:250,
-			navSpeed: 1250,
-			navText: ['prev', 'next'],
-			autoplayHoverPause: true,
-			lazyLoad: true,
-			autoWidth: 0	});
-});
-</script>
-<p>
-	<br />
-	It was only 16 degrees&nbsp;at 11 a.m. on February 22, 1965, for the opening of the University of Illinois at Chicago Circle (UICC) campus.&nbsp; ROTC cadets stretched three symbolic ribbons on the walkway leading into the north side of the Science and Engineering Laboratory in front of the various dignitaries on hand for the historic event.&nbsp; The dignitaries included Governor Otto Kerner, U of I Board of Trustees President Howard Clement, University President David Dodds Henry, Circle Chancellor Norman Parker, UICC Student Congress President Anthony Podesta, and, of course, Mayor Richard J. Daley.&nbsp; Kerner, Daley and Henry each cut one of the ceremonial ribbons to officially open the new campus.&nbsp;
-</p>
-<p>
-	No one was more proud than&nbsp;Mayor Daley.&nbsp; For nearly 30 years, he worked to realize the dream of establishing a public degree-granting state university in the heart of Chicago.&nbsp; &ldquo;Our world,&quot; he proclaimed, &quot;is becoming more and more urbanized.&nbsp; Of necessity, a university which truly seeks to meet the needs of society must be a part of urban life.&nbsp; Just as universities make great cities, so too, great cities make great universities &mdash; and the University of Illinois at Chicago Circle is destined to be one of the great universities of our nation.&rdquo;
-</p>
-<p>
-	Phase I construction continued on the campus and stretched into summer of 1965.&nbsp; At the opening, the only major work outstanding was the top five floors of University Hall.&nbsp; Other tasks to be completed included minor work, &ldquo;punch list&rdquo; items, and the replacement of the granite stairs north of the Lecture Center, which arrived cracked from the shipping docks.&nbsp;
-</p>
-<p>
-	For a time, Circle Campus was the fastest growing campus in the country.&nbsp; Enrollment started at around 5,000 students, grew to almost 8,500 by winter quarter, 1965-66, and then climbed to 17,500 by 1970-71 &mdash; an increase of 250 percent in just five years.
-</p>
-<p style="text-align: center">
-	&nbsp;
-</p>
-<p>
-	For more, see these UIC ARCHIVES collections:
-</p>
-<ul>
-<li>
-		<a href="http://django-prod.lib.uic.edu/archives/ua/search/086" target="_blank">086</a> Photograph Subject File
-	</li>
-<li>
-		<a href="http://django-prod.lib.uic.edu/archives/ua/search/055-00-01" target="_blank">055-00-01</a> <em>U of I Chicagoan</em> (alumni newspaper).&nbsp; Mar issue contains ceremony text.
-	</li>
-<li>
-		<a href="http://django-prod.lib.uic.edu/archives/ua/search/070-00-01" target="_blank">070-00-01</a><em> Chicago Illini</em> (student newspaper).&nbsp; 1965 Feb 1 issue contains written comments from four ribbon-cutting speakers and campus preview.&nbsp; 1965 Mar 1 issue includes ribbon-cutting coverage and conclusion of Student Congress President Anthony Podesta&rsquo;s remarks, which were not includes in their entirety in the <em>U of I Chicagoan</em>.
-	</li>
-<li>
-		<a href="http://django-prod.lib.uic.edu/archives/ua/search/003-21-02" target="_blank">003-21-02</a> Office of the UIC Historian &#8212; Research and Administrative Records
-	</li>
-</ul>
-<p style="text-align: center">
-	<span><a href="https://uicarchives.library.uic.edu/circlecampusconstruction/" title="Great Court and Circle Forum">&lt;Prev</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="https://uicarchives.library.uic.edu/circleforum" title="Great Court and Circle Forum">Next&gt;</a></span>
-</p>
-<div align="center">
-	<em><em><a href="http://library.uic.edu/home/collections/university-archives"><img alt="" src="https://uicarchives.library.uic.edu/wp-content/uploads/sites/10/2015/02/uicarchivesfooterlogo.png" style="border-width: 0px;border-style: solid" /></a> </em></em>
-</div>
-<p style="text-align: center">
-	<em><em><span style="font-size: 11.5px"><small>Copyright &copy; 2015 The Board of Trustees of the University of Illinois</small></span> </em></em>
-</p>
-<p style="text-align: center">
-	<span style="font-size: 11.5px"><small>This site is brought to you by <a href="http://library.uic.edu/">UIC Library</a></small></span>
-</p>
-<p style="text-align: center">
-	<a href="http://library.uic.edu/home/about-us/contact-us" style="font-size: 9.5833330154419px;line-height: 15.3333330154419px;text-align: center">Contact Us</a><span style="font-size: 9.5833330154419px;line-height: 15.3333330154419px;text-align: center">&nbsp; &nbsp;</span><a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm" style="font-size: 9.5833330154419px;line-height: 15.3333330154419px;text-align: center">Web Privacy Notice</a><span style="font-size: 9.5833330154419px;line-height: 15.3333330154419px;text-align: center">&nbsp; &nbsp;Having problems accessing this site?&nbsp;</span><a href="http://library.uic.edu/home/user-support" style="font-size: 9.5833330154419px;line-height: 15.3333330154419px;text-align: center">Contact user support</a></p>
-					
-			    				    
-			    </div>
-	
-			</div> <!-- /post-inner -->
-			
-					
-		</div> <!-- /post -->
-		
-	
-	<div class="clear"></div>
-	
-</div> <!-- /content -->
-								
-</div> <!-- /wrapper -->
+<!-- Google Analytics Snippet -->
 
 <script type="text/javascript">
-				var fonts_loaded =[];
-			</script><script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-includes/js/comment-reply.min.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/plugins/maxbuttons-pro/js/min/maxbuttons_fonts.js?ver=6.28'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/plugins/maxbuttons-pro/js/min/maxbuttons-pro-front.js?ver=6.28'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-includes/js/masonry.min.js?ver=3.3.2'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/themes/fukasawa/js/flexslider.min.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/themes/fukasawa/js/global.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=2.9.8'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://uicarchives.library.uic.edu/wp-content/plugins/foogallery-owl-carousel-template/js/gallery-owl-carousel.js?ver=1.2.18'></script>
-<script type="text/foobox">/* Run FooBox FREE (v1.2.24) */
-(function( FOOBOX, $, undefined ) {
-  FOOBOX.o = {wordpress: { enabled: true }, hideScrollbars:false, closeOnOverlayClick:false, showCount:false, excludes:'.fbx-link,.nofoobox,.nolightbox,a[href*="pinterest.com/pin/create/button/"]', affiliate : { enabled: false }, error: "Could not load the item"};
-  FOOBOX.init = function() {
-    $(".fbx-link").removeClass("fbx-link");
-    $(".foogallery-container.foogallery-lightbox-foobox, .foogallery-container.foogallery-lightbox-foobox-free, .foobox").foobox(FOOBOX.o);
-  };
-}( window.FOOBOX = window.FOOBOX || {}, FooBox.$ ));
 
-FooBox.ready(function() {
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-  jQuery("body").append("<span style=\"font-family:'foobox'; color:transparent; position:absolute; top:-1000em;\">f</span>");
-  FOOBOX.init();
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-});
-</script>				<script type="text/javascript">
-					if (window.addEventListener){
-						window.addEventListener("DOMContentLoaded", function() {
-							var arr = document.querySelectorAll("script[type='text/foobox']");
-							for (var x = 0; x < arr.length; x++) {
-								var script = document.createElement("script");
-								script.type = "text/javascript";
-								script.innerHTML = arr[x].innerHTML;
-								arr[x].parentNode.replaceChild(script, arr[x]);
-							}
-						});
-					} else {
-						console.log("FooBox does not support the current browser.");
-					}
-				</script>
-				<!--outbound links tracking for Google Analytics-->
-<script>!function(){var t=function(t,e){e?window.open(t,e):window.location.href=t},e=function(t,e,n){t.addEventListener?t.addEventListener(e,n):t.attachEvent(“on”+e,function(){n.call(t)})};if(document.getElementsByTagName)for(var n=document.getElementsByTagName(“a”),i=document.domain.split(“.”).reverse()[1]+”.”+document.domain.split(“.”).reverse()[0],a=0;a<n.length;a++){var o=”string”==typeof n[a].getAttribute(“href”)?n[a].getAttribute(“href”):””,r=o.match(i);(o.match(/^https?\:/i)&&!r||o.match(/^mailto\:/i))&&e(n[a],”click”,function(e){var n=this.getAttribute(“href”),i=”string”==typeof this.getAttribute(“target”)?this.getAttribute(“target”):””;console.log(“add event”,n),ga(“send”,”event”,”outbound”,”click”,n,{hitCallback:t(n,i)},{nonInteraction:1}),e.preventDefault()})}}();</script>
+</script>
 
-</body>
-</html>
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> 
+<h1><a name="TWiki_Text_Formatting"></a> TWiki Text Formatting </h1>
+<p />
+<em>These instructions are for contributors who prefer to use the Raw Edit over the default WYSIWYG editor.</em> Working in TWiki is as easy as typing in text. You don't need to know HTML, though you can use it if you prefer. Links to topics are created automatically when you enter <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a>. And TWiki shorthand gives you all the power of HTML with a simple coding system that takes no time to learn. It's all laid out below.
+<p />
+<div class="twikiToc"><span class="twikiTocTitle">On this page:</span> <ul>
+<li> <a href="#TWiki_Editing_Shorthand"> TWiki Editing Shorthand</a>
+</li> <li> <a href="#Using_HTML_CSS_and_JavaScript"> Using HTML, CSS and JavaScript</a>
+</li> <li> <a href="#Hyperlinks"> Hyperlinks</a> <ul>
+<li> <a href="#Internal_Links"> Internal Links</a>
+</li> <li> <a href="#External_Links"> External Links</a>
+</li></ul> 
+</li> <li> <a href="#TWiki_Variables"> TWiki Variables</a>
+</li> <li> <a href="#TWikiPlugin_Formatting_Extension"> TWikiPlugin Formatting Extensions</a>
+</li> <li> <a href="#Common_Editing_Errors"> Common Editing Errors</a>
+</li></ul> 
+</div>
+<p />
+<a name="TWikiShorthand"></a>
+<h2><a name="TWiki_Editing_Shorthand"></a> TWiki Editing Shorthand </h2>
+<p />
+<p />
+<style type='text/css' media='all'>
+/* Item7507: to avoid Chrome/Safari font baseline bug under some skins */
+table td img {
+    vertical-align: top;
+}
+</style>
+<table class="twikiTable" border="1" cellpadding="3" bgcolor="#ffffff">
+<tr bgcolor="#ffffff">
+<th width="50%" class="twikiFirstCol">
+ Formatting Command:
+</th>
+<th width="25%">
+ You write:
+</th>
+<th width="25%">
+ You get:
+</th>
+</tr>
+<tr valign="top">
+<td>
+<a name="TheParagraphs"></a>
+ <strong>Paragraphs:</strong> <br /> 
+ Blank lines will create new paragraphs.
+</td><td>
+<pre>
+1st paragraph
+
+2nd paragraph
+</pre>
+</td><td>
+<p />
+1st paragraph
+<p />
+2nd paragraph
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="TheHeadings"></a>
+ <strong>Headings:</strong> <br /> 
+Three or more dashes at the beginning of a line, followed by plus signs and the heading text. One plus creates a top level heading, two pluses a second level heading, etc. The maximum heading depth is 6.
+<p />
+<img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> You can create a table of contents with the <a href="/bin/view/TWiki/VarTOC" class="twikiLink">%TOC%</a> variable.
+<br />  <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> If you want to <strong>exclude</strong> a heading from the TOC, put <code>!!</code> after the <code>---+</code>.
+<br />  <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Empty headings are allowed and won't appear in the table of contents.
+</td><td>
+<pre>
+---++ Sushi
+---+++ Maguro
+---+++!! Not in TOC
+</pre>
+</td><td>
+<p />
+<h2>Sushi</h2>
+<h3>Maguro</h3>
+<h3>Not in TOC</h3>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="BoldText"></a>
+ <strong>Bold Text:</strong> <br /> 
+ Words get shown in <strong>bold</strong> by enclosing them in <code>*</code> asterisks.
+</td><td>
+<pre>
+&#42;Bold&#42;
+</pre>
+</td><td>
+<p />
+<strong>Bold</strong>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="ItalicText"></a>
+ <strong>Italic Text:</strong> <br /> 
+ Words get shown in <em>italic</em> by enclosing them in <code>_</code> underscores.
+</td><td>
+<pre>
+&#95;Italic&#95;
+</pre>
+</td><td>
+<p />
+<em>Italic</em>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="BoldItalic"></a>
+ <strong>Bold Italic:</strong> <br /> 
+ Words get shown in <strong><em>bold italic</em></strong> by enclosing them in <code>__</code> double-underscores.
+</td><td>
+<pre>
+&#95;&#95;Bold italic&#95;&#95;
+</pre>
+</td><td>
+<p />
+<strong><em>Bold italic</em></strong>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="FixedFont"></a>
+ <strong>Fixed Font:</strong> <br /> 
+ Words get shown in <code>fixed font</code> by enclosing them in <code>=</code> equal signs.
+</td><td>
+<pre>
+&#61;Fixed font&#61;
+</pre>
+</td><td>
+<p />
+<code>Fixed font</code>
+<p />
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="BoldFixedFont"></a>
+ <strong>Bold Fixed Font:</strong> <br /> 
+ Words get shown in <code><b>bold fixed font</b></code> by enclosing them in <code><b></b></code> double equal signs.
+</td><td>
+<pre>
+&#61;&#61;Bold fixed&#61;&#61;
+</pre>
+</td><td>
+<p />
+<code><b>Bold fixed</b></code>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> You can follow the closing bold, italic, or other (<code>* _ __ = ==</code>) indicator
+with normal punctuation, such as commas and full stops.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Make sure there is no space between the text and the indicators.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> All words enclosed by the indicators need to be on the same line.
+</td><td>
+<pre>
+&#95;This works&#95;,
+&#95;this does not &#95;
+&#95;this fails
+too&#95;
+</pre>
+</td><td>
+<p />
+<em>This works</em>, <br /> 
+_this does not _ <br /> 
+_this fails
+too_
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="HorizontalRule"></a>
+ <strong>Separator (Horizontal Rule):</strong> <br /> 
+Three or more three dashes at the beginning of a line..
+</td><td>
+<pre>
+-------
+</pre>
+</td><td>
+<p />
+<hr />
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="BulletedList"></a>
+ <strong>Bulleted List:</strong> <br /> 
+Multiple of three spaces, an asterisk, and another space.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" /> For all the list types, you can break a list item over several lines by indenting lines after the first one by <strong>at least 3 spaces</strong>.
+</td><td>
+<pre>
+   &#42; level 1
+      &#42; level 2
+   &#42; back on 1
+   &#42; A bullet
+     broken over
+     three lines
+   &#42; last bullet
+</pre>
+</td><td>
+<p /> <ul>
+<li> level 1 <ul>
+<li> level 2
+</li></ul> 
+</li> <li> back on 1
+</li> <li> A bullet     broken over     three lines
+</li> <li> last bullet
+</li></ul> 
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="IconList"></a>
+ <strong>Icon List:</strong> <br /> 
+Multiple of three spaces, an asterisk, text <code>icon:name</code> and another space.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" /> Use the <code>name</code> of any <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a> icon.
+</td><td>
+<pre>
+   &#42; icon:tip Icon list
+      &#42; icon:led-red Full
+      &#42; icon:led-green OK
+   &#42; icon:unchecked Item 1
+   &#42; icon:checked Item 2
+   &#42; icon:empty No bullet
+</pre>
+</td><td>
+<p /> <ul>
+<li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/tip.gif) no-repeat 0 .2em;"> Icon list <ul>
+<li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/led-red.gif) no-repeat 0 .2em;"> Full
+</li> <li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/led-green.gif) no-repeat 0 .2em;"> OK
+</li></ul> 
+</li> <li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/unchecked.gif) no-repeat 0 .2em;"> Item 1
+</li> <li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/checked.gif) no-repeat 0 .2em;"> Item 2
+</li> <li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/empty.gif) no-repeat 0 .2em;"> No bullet
+</li></ul> 
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="NumberedList"></a>
+ <strong>Numbered List:</strong> <br /> 
+ Multiple of three spaces, a type character, a dot, and another space. Several types are available besides a number:
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/TextFormattingRules?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Type</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/TextFormattingRules?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Generated Style</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/TextFormattingRules?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Sample Sequence</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 1. </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Arabic numerals </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> 1, 2, 3, 4... </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> A. </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Uppercase letters </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> A, B, C, D... </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> a. </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Lowercase letters </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> a, b, c, d... </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> I. </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Uppercase Roman Numerals </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> I, II, III, IV... </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> i. </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> Lowercase Roman Numerals </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> i, ii, iii, iv... </td>
+		</tr></table>
+</td><td>
+<pre>
+   1. Sushi
+   1. Dim Sum
+   1. Fondue
+
+   A. Sushi
+   A. Dim Sum
+   A. Fondue
+
+   i. Sushi
+   i. Dim Sum
+   i. Fondue
+</pre>
+</td><td>
+<p /> <ol>
+<li> Sushi
+</li> <li> Dim Sum
+</li> <li> Fondue
+</li></ol> 
+<p /> <ol>
+<li style="list-style-type: upper-alpha;"> Sushi
+</li> <li style="list-style-type: upper-alpha;"> Dim Sum
+</li> <li style="list-style-type: upper-alpha;"> Fondue
+</li></ol> 
+<p /> <ol>
+<li style="list-style-type: lower-roman;"> Sushi
+</li> <li style="list-style-type: lower-roman;"> Dim Sum
+</li> <li style="list-style-type: lower-roman;"> Fondue
+</li></ol> 
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="DefinitionList"></a>
+ <strong>Definition List:</strong> <br /> 
+ Three spaces, a dollar sign, the term, a colon, a space, followed by the definition.
+<p />
+ Deprecated syntax: Three spaces, the term with no spaces, a colon, a space, followed by the definition.
+</td><td>
+<pre>
+   $ Sushi: Japan
+   $ Dim Sum: S.F.
+</pre>
+</td><td>
+<p /> <dl>
+<dt> Sushi </dt><dd> Japan
+</dd> <dt> Dim Sum </dt><dd> S.F.
+</dd></dl> 
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="TheTable"></a>
+ <strong>Table:</strong> <br /> 
+Each row of the table is a line containing of one or more cells. Each cell starts and ends with a vertical bar '|'. Any spaces at the beginning of a line are ignored. <ul>
+<li> <code>| *bold* |</code> header cell with text in asterisks
+</li> <li> <code>| &nbsp; center-aligned &nbsp; |</code> cell with at least two, and equal number of spaces on either side
+</li> <li> <code>|&nbsp; &nbsp; &nbsp; right-aligned |</code> cell with more spaces on the left
+</li> <li> <code>| 2 colspan ||</code> and multi-span columns with multiple <tt>|</tt>'s right next to each other
+</li> <li> <code>|^|</code> cell with caret indicating follow-up row of multi-span rows
+</li> <li> You can split rows over multiple lines by putting a backslash <code>'\'</code> at the end of each line
+</li> <li> Contents of table cells wrap automatically as determined by the browser
+</li> <li> Use <code>%VBAR%</code> or <code>&amp;#124;</code> to add <code>&#124;</code> characters in tables.
+</li> <li> Use <code>%CARET%</code> or <code>&amp;#94;</code> to add <code>&#94;</code> characters in tables.
+</li></ul> 
+<img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> The <a href="/bin/view/TWiki/TablePlugin" class="twikiLink">TablePlugin</a> provides the <code>|^|</code> multiple-span row functionality and additional rendering features
+</td><td>
+<pre>
+&#124; &#42;L&#42; &#124; &#42;C&#42; &#124; &#42;R&#42; &#124;
+&#124; A2 &#124;  B2  &#124;  C2 &#124;
+&#124; A3 &#124;  B3  &#124;  C3 &#124;
+&#124; multi span &#124;&#124;&#124;
+&#124; A5-7 &#124;  5  &#124;  5 &#124;
+&#124;^&#124; six &#124; six &#124;
+&#124;^&#124; seven &#124; seven &#124;
+&#124; split\
+  &#124; over\
+  &#124; 3 lines &#124;
+&#124; A9 &#124;  B9  &#124;  C9 &#124;
+</pre>
+</td><td>
+<p />
+<table cellspacing="0" id="table2" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/TextFormattingRules?sortcol=0;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">L</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/TextFormattingRules?sortcol=1;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">C</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/TextFormattingRules?sortcol=2;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">R</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> A2 </td>
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol1"> B2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLastCol"> C2 </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> A3 </td>
+			<td bgcolor="#edf4f9" align="center" valign="top" class="twikiTableCol1"> B3 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2 twikiLastCol"> C3 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" colspan="3" valign="top" class="twikiFirstCol"> multi span </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" rowspan="3" valign="top" class="twikiTableCol0 twikiFirstCol"> A5-7 </td>
+			<td bgcolor="#edf4f9" align="center" valign="top" class="twikiTableCol1"> 5 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2 twikiLastCol"> 5 </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> six </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> six </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> seven </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2 twikiLastCol"> seven </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> split </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> over </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLastCol"> 3 lines </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> A9 </td>
+			<td bgcolor="#edf4f9" align="center" valign="top" class="twikiTableCol1 twikiLast"> B9 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2 twikiLastCol twikiLast"> C9 </td>
+		</tr></table>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="WikiWordLinks"></a>
+ <strong>WikiWord Links:</strong> <br /> 
+ CapitalizedWordsStuckTogether (or <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a>) will produce a link automatically if preceded by whitespace or parenthesis.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> If you want to link to a topic in a different web write <code>Otherweb.TopicName</code>.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> To link to a topic in a subweb write <code>Otherweb.Subweb.TopicName</code>.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" /> The link label excludes the name of the web, e.g. only the topic name is shown. As an exception, the name of the web is shown for the WebHome topic.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Dots <code>'.'</code> are used to separate webs and subwebs from topic names and therefore cannot be used in topic names.
+<p />
+It's generally a good idea to use the <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> %SYSTEMWEB% and %USERSWEB% instead of TWiki and Main.
+</td><td>
+<pre>
+WebStatistics
+
+Sandbox.WebNotify
+
+Sandbox.WebHome
+
+Sandbox.Subweb.TopicName
+</pre>
+</td><td>
+<p />
+<a href="/bin/view/TWiki/WebStatistics" class="twikiLink">WebStatistics</a>
+<p />
+<a href="/bin/view/Sandbox/WebNotify" class="twikiLink">WebNotify</a>
+<p />
+<a href="/bin/view/Sandbox/WebHome" class="twikiLink">Sandbox</a>
+<p />
+<a href="#MyAnchor" title="simulated link">TopicName</a>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="TheAnchors"></a>
+ <strong>Anchors:</strong> <br /> 
+ You can define a reference inside a TWiki topic (called an anchor name) and link to that. To <strong><em>define</em></strong> an anchor write <code>#AnchorName</code> at the beginning of a line. The anchor name must be a <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a> of no more than 32 characters. To <strong><em>link</em></strong> to an anchor name use the <code>[[MyTopic#MyAnchor]]</code> syntax. You can omit the topic name if you want to link within the same topic.
+</td><td>
+<pre>
+&#91;&#91;WikiWord#NotThere]]
+
+&#91;&#91;#MyAnchor]&#91;Jump]]
+
+#MyAnchor
+To here
+</pre>
+</td><td>
+<p />
+<a href="/bin/view/TWiki/WikiWord#NotThere" class="twikiAnchorLink">WikiWord#NotThere</a>
+<p />
+<a href="/bin/view/TWiki/TextFormattingRules#MyAnchor" class="twikiCurrentTopicLink twikiAnchorLink">Jump</a>
+<p />
+<a name="MyAnchor"></a>
+To here
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="ExternalLinks"></a>
+ <strong>External Links:</strong> <br /> 
+ URLs starting with <code>file</code>, <code>ftp</code>, <code>gopher</code>, <code>http</code>, <code>https</code>, <code>irc</code>, <code>mailto</code>, <code>news</code>, <code>nntp</code> and <code>telnet</code> are linked automatically if preceded by whitespace or parenthesis. External links are indicated with a trailing <img src="/pub/TWiki/TWikiDocGraphics/external-link.gif" width="13" height="12" alt="External link" title="External link" border="0" /> icon, and open up in a new browser tab or window; the behavior of both can be set in configure or preferences variables (see <a href="/bin/view/TWiki/TWikiExternalLinks" class="twikiLink">TWikiExternalLinks</a> for details). Links can be prevented with an <code>!</code> exclamation point prefix.
+</td><td>
+<pre>
+http://twiki.org
+
+https://google.com
+
+!http://escaped-link
+</pre>
+</td><td>
+<p />
+<a href="http://twiki.org" target="_top">http://twiki.org</a>
+<p />
+<a href="https://google.com" target="_top">https://google.com</a>
+<p />
+http://escaped-link
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="ForcedLinks"></a>
+<a name="HeRe"></a>
+ <strong>Forced Links:</strong> <br /> 
+ Use double square brackets to create forced links: Write <code>[[link]]</code> or <code>[[link][label]]</code> to force a link. Use the former for singleton words and if <a href="/bin/view/TWiki/TextFormattingRules#DisableLinks" class="twikiCurrentTopicLink twikiAnchorLink">automatic linking is disabled</a>. Use the latter one to specify a link label other than the link. For the link, you can use internal link references (e.g. <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a>) and URLs (e.g. http://TWiki.org/). 
+ <br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> URL parameters can follow a <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a>
+ <br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> Anchor names can be added to create a link to a specific place in a document.
+ <br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> To "escape" double square brackets that would otherwise make a link, prefix the leading left square bracket with an exclamation point.
+ <br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> The <a href="/bin/view/TWiki/VarTOPICTITLE" class="twikiLink">topic title</a> instead of the topic name is shown for <code>[[WikiWord]]</code> links if the SHOWTOPICTITLELINK preferences setting is enabled.
+</td><td>
+<pre>
+&#91;&#91;WikiWord]]
+
+&#91;&#91;WikiWord?name1&#61;value1;name2&#61;value2]]
+
+&#91;&#91;WikiWord#TheSyntax]]
+
+&#91;&#91;WikiWord?foo&#61;bar#TheSyntax]]
+
+&#91;&#91;WikiSyntax]&#91;wiki syntax]]
+
+&#91;&#91;http://gnu.org/]&#91;GNU]]
+
+&#91;&#91;Singleton]]
+
+escaped:
+!&#91;&#91;WikiSyntax]]
+</pre>
+</td><td>
+<p />
+<a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a>
+<p />
+<a href="/bin/view/TWiki/WikiWord#TheSyntax" class="twikiAnchorLink">WikiWord#TheSyntax</a>
+<p />
+<a href="/bin/view/TWiki/WikiSyntax" class="twikiLink">wiki syntax</a>
+<p />
+<a href="http://gnu.org/" target="_top">GNU</a>
+<p />
+<span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/TWiki/Singleton?topicparent=TWiki.TextFormattingRules;nowysiwyg=0" rel="nofollow" title="Singleton (this topic does not yet exist; you can create it)">Singleton</a></span>
+<p />
+escaped:
+[[WikiSyntax]]
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="TopicTitleLinks"></a>
+ <strong>Topic Title Links:</strong> <br /> 
+ Use double square brackets and a plus sign to create links with topic title: Write <code>[[+TopicName]]</code> or <code>[[+Web.TopicName]]</code> to show the <a href="/bin/view/TWiki/VarTOPICTITLE" class="twikiLink">topic title</a> instead of the topic name. The topic title is defined by the form field named "Title", the topic preferences setting named TITLE, or the topic name if neither exists.
+ <br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> An alternative syntax is <code>[[TopicName][$topictitle]]</code> or <code>[[Web.TopicName][$topictitle]]</code>.
+</td><td>
+<pre>
+&#91;&#91;+BugN1234]]
+
+&#91;&#91;+Bugs.BugN1234]]
+
+&#91;&#91;BugN1234]&#91;$topictitle]]
+</pre>
+</td><td>
+<p />
+<a href="/bin/view/TWiki/TWikiEditingShorthand" class="twikiLink">The sky is falling</a>
+<p />
+<a href="/bin/view/TWiki/TWikiEditingShorthand" class="twikiLink">The sky is falling</a>
+<p />
+<a href="/bin/view/TWiki/TWikiEditingShorthand" class="twikiLink">The sky is falling</a>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="PreventLink"></a>
+ <strong>Prevent a Link:</strong> <br /> 
+ Prevent a <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a> from being linked by prepending it with an exclamation point.
+</td><td>
+<pre>
+!SunOS
+</pre>
+</td><td>
+SunOS
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="DisableLinks"></a>
+ <strong>Disable Links:</strong> <br /> 
+ You can disable automatic linking of <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a> by surrounding text with <code>&lt;noautolink&gt;</code> and <code>&lt;/noautolink&gt;</code> tags.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" /> It is possible to turn off all auto-linking with a NOAUTOLINK preferences setting.
+</td><td>
+<pre>
+ &#60;noautolink&#62;
+ RedHat &#38; SuSE
+ &#60;/noautolink&#62;
+</pre>
+</td><td>
+<p />
+  RedHat &amp; SuSE
+ </td>
+</tr>
+<tr valign="top">
+<td>
+<a name="MailtoLinks"></a>
+ <strong>Mailto Links:</strong> <br /> 
+ E-mail addresses are linked automatically. To create e-mail links that have more descriptive link text, specify subject lines or message bodies, or omit the e-mail address, you can write <code>[[mailto:user@domain][descriptive text]]</code>.
+</td><td>
+<pre>
+a&#64;b.com
+
+&#91;&#91;mailto:a&#64;b.com]\
+&#91;Mail]]
+
+&#91;&#91;mailto:?subject&#61;\
+Hi]&#91;Hi]]
+</pre>
+</td><td>
+<p />
+<a href="mailto&#58;a&#64;b&#46;com">a&#64;b.com</a>
+<p />
+<a href="mailto&#58;a&#64;b&#46;com">Mail</a>
+<p />
+<a href="mailto&#58;&#63;subject&#61;Hi">Hi</a>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="TwitterLinks"></a>
+ <strong>Twitter Links:</strong> <br /> 
+ @twitter IDs are linked automatically. The link rule is defined by the <code>{Links}{TwitterUrlPattern}</code> configure setting.
+</td><td>
+<pre>
+&#64;twiki
+</pre>
+</td><td>
+<p />
+<a href="https://twitter.com/twiki" target="_top">@twiki</a>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="VerbatimText"></a>
+ <strong>Verbatim Text:</strong> <br /> 
+ Surround code excerpts and other formatted text with <code>&lt;verbatim&gt;</code> and <code>&lt;/verbatim&gt;</code> tags.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" /> The <code>verbatim</code> tag disables HTML code. Use <code>&lt;pre&gt;</code> and <code>&lt;/pre&gt;</code> tags instead if you want the HTML code within the tags to be interpreted.
+<br /> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Preferences variables (* Set NAME = value) are set within verbatim tags.
+</td><td>
+<pre>
+&#60;verbatim&#62;
+class CatAnimal {
+  void purr() {
+    &#60;code here&#62;
+  }
+}
+&#60;/verbatim&#62;
+</pre>
+</td><td>
+<pre>
+class CatAnimal {
+  void purr() {
+    &#60;code here&#62;
+  }
+}
+</pre>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="LiteralText"></a>
+ <strong>Literal Text:</strong> <br /> 
+ TWiki generates HTML code from TWiki shorthand.
+ <strong>Experts</strong> surround anything that must be output literally in the HTML code, without the application of
+ TWiki shorthand rules, with <code>&lt;literal&gt;..&lt;/literal&gt;</code> tags.
+ <br /> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Any HTML within literal tags <strong>must</strong> be well formed i.e. all tags must be properly closed before the end of the literal block.
+ <br /> <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="IDEA!" title="IDEA!" width="16" height="16" border="0" /> TWiki Variables are expanded within literal blocks.
+</td><td>
+<pre>
+&lt;literal&gt;
+| Not | A | Table |
+&lt;literal&gt;
+</pre>
+</td>
+<td>
+
+| Not | A | Table |
+
+</td>
+</tr>
+<tr valign="top">
+<td>
+<a name="ProtectedText"></a>
+ <strong>Protected Text:</strong> <br /> 
+ <strong>Experts</strong> protect text from mangling by WYSIWYG editors using
+ <code>&lt;sticky&gt;..&lt;/sticky&gt;</code> tags. Sticky tags don't have any effect on normal
+ topic display; they are only relevant when content has to be
+ protected from a WYSIWYG editor (usually because it isn't well-formed HTML, or because it
+ is HTML that WYSIWYG would normally filter out or modify). Protected
+ content appears as plain text in the WYSIWYG editor.
+</td><td>
+<pre>
+&lt;sticky&gt;
+&lt;div&gt;
+This div is required
+&lt;/div&gt;
+&lt;/sticky&gt;
+</pre>
+</td>
+<td>
+<sticky>
+<div>
+This div is required
+</div>
+</sticky>
+</td>
+</tr>
+</table>
+<p />
+<p />
+<h2><a name="Using_HTML_CSS_and_JavaScript"></a> Using HTML, CSS and JavaScript </h2>
+<p />
+<p />
+You can use most HTML tags in TWiki topics without a problem. This is useful where you want to add some content that is formatted in a way that is not supported using <a href="/bin/view/TWiki/TextFormattingRules#TWikiShorthand" class="twikiCurrentTopicLink twikiAnchorLink">TWiki shorthand</a>, for example, you can write <code>&lt;strike&gt;deleted text&lt;/strike&gt;</code> to get <strike>deleted text</strike>.
+<p />
+There are a few usability and technical considerations to keep in mind:
+<p /> <ul>
+<li> On collaboration pages, it's better <strong>not</strong> to use HTML, but to use TWiki shorthand instead - this keeps the text uncluttered and easy to edit using the plaintext editor.
+</li> <li> If you <em>must</em> use HTML, use <a href="http://www.w3.org/TR/xhtml1/" target="_top">XHTML 1.0 Transitional</a> syntax.
+</li> <li> Use <code>&lt;literal&gt;..&lt;/literal&gt;</code> tags around blocks of HTML to avoid accidental interpretation of TWiki shorthand within the HTML.
+</li> <li> <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" /> Script tags may be filtered out, at the discretion of your TWiki administrator.
+</li></ul> 
+<p />
+Recommendations when pasting HTML from other sources (using the plain-text editor):
+<p /> <ul>
+<li> Copy only text between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> tags.
+</li> <li> Remove all empty lines. TWiki inserts <code>&lt;p /&gt;</code> paragraph tags on empty lines, which causes problems if done between HTML tags that do not allow paragraph tags, like for example between table tags.
+</li> <li> Remove leading spaces. TWiki might interpret some text as lists.
+</li> <li> Do not span a tag over more than one line. TWiki requires that the opening and closing angle brackets - <code><b>&lt;...&gt;</b></code> - of a HTML tag are on the same line, or the tag will be broken.
+</li> <li> In your HTML editing program, save without hard line breaks on text wrap.
+</li></ul> 
+<p />
+When using a WYSIWYG editor, you can just copy-paste directly into the editor, and the content will be converted to TWiki shorthand automatically when you save.
+<p />
+It is also possible to add Cascading Style Sheets (<a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_top">CSS</a>) and <a href="http://en.wikipedia.org/wiki/JavaScript" target="_top">JavaScript</a> code to TWiki pages, which can be used to make TWiki application more interactive. To prevent TWiki from interpreting some text as markup, it can be enclosed in HTML-escaped <tt>&lt;pre&gt;</tt>-tags.
+<p />
+<table border="0" cellpadding="5" cellspacing="10">
+<tr bgcolor="#DDDDDD"><th valign="top">
+JavaScript Example:
+</th><th valign="top">
+CSS Example:
+<tr bgcolor="#EEEEEE"><td valign="top">
+<pre>
+&#60;!-- &#60;pre&#62; --&#62;
+&#60;script language&#61;&#34;javascript&#34;&#62;
+&#60;!--
+  // put your JavaScript code here
+//--&#62;
+&#60;/script&#62;
+&#60;!-- &#60;/pre&#62; --&#62;
+</pre>
+</td><td valign="top">
+<pre>
+&#60;!-- &#60;pre&#62; --&#62;
+&#60;style type&#61;&#34;text/css&#34;&#62;
+  /&#42; put your CSS code here &#42;/
+&#60;/style&#62;
+&#60;!-- &#60;/pre&#62; --&#62;
+</pre>
+</td></tr></table>
+<p />
+<p />
+<h2><a name="Hyperlinks"></a> Hyperlinks </h2>
+<p />
+Being able to create links without any special formatting is a core TWiki feature, made possible with <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a> and inline URLs.
+<p />
+<h3><a name="Internal_Links"></a> Internal Links </h3>
+<p /> <ul>
+<li> <a href="/bin/view/TWiki/GoodStyle" class="twikiLink">GoodStyle</a> is a <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a> that links to the GoodStyle topic located in the current web.
+</li></ul> 
+<p /> <ul>
+<li> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/TWiki/NotExistingYet?topicparent=TWiki.TextFormattingRules;nowysiwyg=0" rel="nofollow" title="NotExistingYet (this topic does not yet exist; you can create it)">NotExistingYet</a></span> is a topic waiting to be written because it is a red-link. Create the topic by clicking on the link. (Try clicking, but then, <strong>Cancel</strong> - creating the topic would wreck this example!)
+</li></ul> 
+<p />
+<h3><a name="External_Links"></a> External Links </h3>
+<p /> <ul>
+<li> <code>http://...</code>, <code>https://...</code>, <code>ftp://...</code>, <code>gopher://...</code>, <code>news://...</code>, <code>file://...</code>, <code>telnet://...</code> and <code>mailto:...@...</code> are linked automatically.
+</li></ul> 
+<p /> <ul>
+<li> Write <code>[[URL][label]]</code> to get an external link with a descriptive text for the link, such as <code>[[http://google.com/][Google home page]]</code> to get <a href="http://google.com/" target="_top">Google home page</a>.
+</li></ul> 
+<p /> <ul>
+<li> E-mail addresses like <code>name@domain.com</code> are linked automatically.
+</li></ul> 
+<p />
+<h2><a name="TWiki_Variables"></a> TWiki Variables </h2>
+<p />
+<p />
+TWiki Variables are names enclosed in percent signs that are that are expanded to some other text when the topic is displayed. For example, <code>%TOPIC%</code> is expanded to <a href="/bin/view/TWiki/TWikiVariablesQuickStart" class="twikiLink">TWikiVariablesQuickStart</a>. Some variables can take arguments in curly braces - for example, <code>%INCLUDE{"OtherTopic" arg="value"}%</code>.
+<p />
+Many TWiki variables are built-in, and others are predefined for your convenience. <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> describes how you can also define your own TWiki Variables at the entire site, individual web, or individual topic level. Variables are fully expanded <em>before</em> any of the TWiki text formatting rules are applied.
+<p />
+<strong>Commonly used variables:</strong>
+<p /> <ul>
+<li> <code>%TOC%</code> : Automatically generates a <a href="/bin/view/TWiki/VarTOC" class="twikiLink">table of contents</a> based on headings in a topic - see the top of this page for an example.
+</li> <li> <code>%WEB%</code> : The current web, is <b>TWiki</b>.
+</li> <li> <code>%TOPIC%</code> : The current topic name, is <b>TWikiVariablesQuickStart</b>.
+</li> <li> <code>%ATTACHURL%</code> : The attachment URL of the current topic. Example usage: If you attach a file to a topic you can refer to it as <code><b>%ATTACHURL%/image.gif</b></code> to show the URL of the file or the image in your text.
+</li> <li> <code>%INCLUDE{"SomeTopic"}%</code> : Server side include, <a href="/bin/view/TWiki/VarINCLUDE" class="twikiLink">includes another topic</a>. The current web is the default web. Example: <code><b>%INCLUDE{"TWiki.SiteMap"}%</b></code>
+</li> <li> <code>%SEARCH{"sushi"}%</code> : <a href="/bin/view/TWiki/VarSEARCH" class="twikiLink">Inline search</a> showing the search result embedded in a topic. <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a> gives you control over formatting, used to create web-based applications.
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">Documentation Graphics</a>: There are many graphics available to use in your topics. Use <code>%ICON{"help"}%</code>, <code>%ICON{"tip"}%</code>, and <code>%ICON{"warning"}%</code> to get: <img src="/pub/TWiki/TWikiDocGraphics/help.gif" alt="HELP" title="HELP" width="16" height="16" border="0" />, <img src="/pub/TWiki/TWikiDocGraphics/tip.gif" alt="TIP" title="TIP" width="16" height="16" border="0" />, and <img src="/pub/TWiki/TWikiDocGraphics/warning.gif" alt="ALERT!" title="ALERT!" width="16" height="16" border="0" />, respectively.
+</li> <li> <a href="/bin/view/TWiki/TWikiVariablesWizard" class="twikiLink">Use the TWiki Variables Wizard</a> to build your variables.
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">See all TWiki Variables</a>.
+</li></ul> 
+<p />
+<img src="/pub/TWiki/TWikiDocGraphics/tip.gif" width="16" height="16" alt="Tip, idea" title="Tip, idea" border="0" /> To "escape" a variable, prefix it with an exclamation mark. Write: <code>!%SOMEVARIABLE%</code> to get: &#37;SOMEVARIABLE%.
+<p />
+<p />
+<h2><a name="TWikiPlugin_Formatting_Extension"></a> TWikiPlugin Formatting Extensions </h2>
+<p />
+Plugins can extend the functionality of TWiki into many other areas. There are a huge number of TWiki plugins available from the <a href="http://twiki.org/cgi-bin/view/Plugins" target="_top">Plugins</a> web on TWiki.org.
+<p />
+Currently enabled plugins on this TWiki installation, as listed by <code>%PLUGINDESCRIPTIONS%</code>:
+<ul><li> <a href="/bin/view/TWiki/SpreadSheetPlugin" class="twikiLink">SpreadSheetPlugin</a> <span class="twikiGrayText twikiSmall">(2014-09-23, $Rev: 28087 (2014-10-05) $)</span>: Add spreadsheet calculation like <code>"$SUM( $ABOVE() )"</code> to TWiki tables or anywhere in topic text </li><li> <a href="/bin/view/TWiki/BackupRestorePlugin" class="twikiLink">BackupRestorePlugin</a> <span class="twikiGrayText twikiSmall">(2013-02-16, $Rev: 26767 (2014-10-05) $)</span>: Administrator utility to backup, restore and upgrade a TWiki site </li><li> <a href="/bin/view/TWiki/BibtexPlugin" class="twikiLink">BibtexPlugin</a> <span class="twikiGrayText twikiSmall">(1.6, $Rev: 19851 (2010-11-15) $)</span>: Embeds BibTeX entries in a TWiki page </li><li> <a href="/bin/view/TWiki/ColorPickerPlugin" class="twikiLink">ColorPickerPlugin</a> <span class="twikiGrayText twikiSmall">(2013-02-15, $Rev: 26769 (2014-10-05) $)</span>: Color picker, packaged for use in TWiki forms and TWiki applications </li><li> <a href="/bin/view/TWiki/CommentPlugin" class="twikiLink">CommentPlugin</a> <span class="twikiGrayText twikiSmall">(2013-02-10, $Rev: 26771 (2014-10-05) $)</span>: Quickly post comments to a page without an edit/preview/save cycle </li><li> <a href="/bin/view/TWiki/DatePickerPlugin" class="twikiLink">DatePickerPlugin</a> <span class="twikiGrayText twikiSmall">(2013-09-04, $Rev: 26773 (2014-10-05) $)</span>: Pop-up calendar with date picker, for use in TWiki forms, HTML forms and TWiki plugins </li><li> <a href="/bin/view/TWiki/EditTablePlugin" class="twikiLink">EditTablePlugin</a> <span class="twikiGrayText twikiSmall">(2013-12-03, $Rev: 26775 (2014-10-05) $)</span>: Edit TWiki tables using edit fields, date pickers and drop down boxes </li><li> <a href="/bin/view/TWiki/HeadlinesPlugin" class="twikiLink">HeadlinesPlugin</a> <span class="twikiGrayText twikiSmall">(2013-11-18, $Rev: 26779 (2014-10-05) $)</span>: Show headline news in TWiki pages based on RSS and ATOM news feeds from external sites </li><li> <a href="/bin/view/TWiki/HtmlMetaPlugin" class="twikiLink">HtmlMetaPlugin</a> <span class="twikiGrayText twikiSmall">(2010-11-09, $Rev: 19784 (2010-11-09) $)</span>: Insert HTML "meta name" entries into html header </li><li> <a href="/bin/view/TWiki/InterwikiPlugin" class="twikiLink">InterwikiPlugin</a> <span class="twikiGrayText twikiSmall">(2014-10-03, $Rev: 28176 (2014-10-05) $)</span>: Write <code><b>ExternalSite:Page</b></code> to link to a page on an external site based on aliases defined in a rules topic </li><li> <a href="/bin/view/TWiki/JQueryPlugin" class="twikiLink">JQueryPlugin</a> <span class="twikiGrayText twikiSmall">(2014-09-03, $Rev: 28041 (2014-10-05) $)</span>: jQuery JavaScript library for TWiki </li><li> <a href="/bin/view/TWiki/PreferencesPlugin" class="twikiLink">PreferencesPlugin</a> <span class="twikiGrayText twikiSmall">(2014-05-30, $Rev: 27577 (2014-10-05) $)</span>: Allows editing of preferences using fields predefined in a form </li><li> <a href="/bin/view/TWiki/SetGetPlugin" class="twikiLink">SetGetPlugin</a> <span class="twikiGrayText twikiSmall">(2013-01-28, $Rev: 26789 (2014-10-05) $)</span>: Set and get variables in topics, optionally persistently across topic views </li><li> <a href="/bin/view/TWiki/SlideShowPlugin" class="twikiLink">SlideShowPlugin</a> <span class="twikiGrayText twikiSmall">(2013-04-07, $Rev: 26791 (2014-10-05) $)</span>: Create web based presentations based on topics with headings. </li><li> <a href="/bin/view/TWiki/SmiliesPlugin" class="twikiLink">SmiliesPlugin</a> <span class="twikiGrayText twikiSmall">(2013-01-13, $Rev: 26793 (2014-10-05) $)</span>: Render smilies as icons, like <code>&nbsp;:-)&nbsp;</code> as <img src="https://www.cs.uic.edu/pub/TWiki/SmiliesPlugin/smile.gif" alt="smile" title="smile" border="0" /> or <code>&nbsp;:eek:&nbsp;</code> as <img src="https://www.cs.uic.edu/pub/TWiki/SmiliesPlugin/eek.gif" alt="eek!" title="eek!" border="0" /> </li><li> <a href="/bin/view/TWiki/TablePlugin" class="twikiLink">TablePlugin</a> <span class="twikiGrayText twikiSmall">(2014-01-21, $Rev: 26935 (2014-10-05) $)</span>: Control attributes of tables and sorting of table columns </li><li> <a href="/bin/view/TWiki/TagMePlugin" class="twikiLink">TagMePlugin</a> <span class="twikiGrayText twikiSmall">(2014-05-15, $Rev: 27386 (2014-10-05) $)</span>: Tag wiki content collectively or authoritatively to find content by keywords </li><li> <a href="/bin/view/TWiki/TinyMCEPlugin" class="twikiLink">TinyMCEPlugin</a> <span class="twikiGrayText twikiSmall">(2013-09-18, $Rev: 26799 (2014-10-05) $)</span>: Integration of the Tiny MCE WYSIWYG Editor </li><li> <a href="/bin/view/TWiki/TwistyPlugin" class="twikiLink">TwistyPlugin</a> <span class="twikiGrayText twikiSmall">(2013-03-22, $Rev: 26803 (2014-10-05) $)</span>: Twisty section JavaScript library to open/close content dynamically </li><li> <a href="/bin/view/TWiki/WatchlistPlugin" class="twikiLink">WatchlistPlugin</a> <span class="twikiGrayText twikiSmall">(2014-05-20, $Rev: 27429 (2014-10-05) $)</span>: Watch topics of interest and get notified of changes by e-mail </li><li> <a href="/bin/view/TWiki/WysiwygPlugin" class="twikiLink">WysiwygPlugin</a> <span class="twikiGrayText twikiSmall">(2013-09-18, $Rev: 27021 (2014-10-05) $)</span>: Translator framework for WYSIWYG editors </li></ul>
+<p />
+Check on current Plugin status and settings for this site in <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>.
+<p />
+<h2><a name="Common_Editing_Errors"></a> Common Editing Errors </h2>
+<p />
+TWiki formatting rules are fairly simple to use and quick to type. However, there are some things to watch out for, taken from the <a href="/bin/view/TWiki/TextFormattingFAQ" class="twikiLink">TextFormattingFAQ</a>:
+<p /> <ul>
+<li> <strong>Q:</strong> Text enclosed in angle brackets like <code>&lt;filename&gt;</code> is not displayed. How can I show it as it is? <ul>
+<li> <strong>A:</strong> The <code>'&lt;'</code> and <code>'&gt;'</code> characters have a special meaning in HTML, they define HTML tags. You need to escape them, so write <code>'&amp;lt;'</code> instead of <code>'&lt;'</code>, and <code>'&amp;gt;'</code> instead of <code>'&gt;'</code>. <br /> Example: Type <code>'prog &amp;lt;filename&amp;gt;'</code> to get <code>'prog &lt;filename&gt;'</code>.
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> <strong>Q:</strong> Why is the <code>'&amp;'</code> character sometimes not displayed? <ul>
+<li> <strong>A:</strong> The <code>'&amp;'</code> character has a special meaning in HTML, it starts a so-called character entity, e.g. <code>'&amp;copy;'</code> is the <code>&copy;</code> copyright character. You need to escape <code>'&amp;'</code> to see it as it is, so write <code>'&amp;amp;'</code> instead of <code>'&amp;'</code>. <br /> Example: Type <code>'This &amp;amp; that'</code> to get <code>'This &amp; that'</code>.
+</li></ul> 
+</li></ul> 
+<p />
+<strong><em>Related topics:</em></strong> <a href="/bin/view/TWiki/WikiSyntax" class="twikiLink">WikiSyntax</a>, <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWord</a>, <a href="/bin/view/TWiki/WikiNotation" class="twikiLink">WikiNotation</a>, <a href="/bin/view/TWiki/TextFormattingRules" class="twikiCurrentTopicLink twikiLink">TextFormattingRules</a>, <a href="/bin/view/TWiki/TWikiEditingShorthand" class="twikiLink">TWikiEditingShorthand</a>, <a href="/bin/view/TWiki/TWikiRenderingShortcut" class="twikiLink">TWikiRenderingShortcut</a>, <a href="/bin/view/TWiki/TWikiShorthand" class="twikiLink">TWikiShorthand</a>, <a href="/bin/view/TWiki/TWikiVariablesQuickStart" class="twikiLink">TWikiVariablesQuickStart</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/TextFormattingRules">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiCurrentTopicLink twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

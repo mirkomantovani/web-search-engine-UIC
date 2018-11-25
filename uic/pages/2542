@@ -1,440 +1,159 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<head>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
-<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-<title> WebPreferences &lt; Troy &lt; TWiki</title>
+<HEAD>
+<META NAME="allow-search" content="YES">
+<META NAME="searchtitle"  content="Web mining textbook, text book, data mining">
+<META NAME="keywords" CONTENT="Web mining, data mining, text mining">
+<META NAME="description" CONTENT="Web data mining techniques and algorithm">
+<META NAME="page-type" CONTENT="html page">
+<META NAME="revisit-after" CONTENT="14 days">
+<META NAME="audience" CONTENT="All">
+<META NAME="author" content="Bing Liu">
+<META NAME="abstract" CONTENT="Web mining textbook">
+<BASE TARGET="Main">
+<TITLE> Web Data Mining, book by Bing Liu </TITLE>
+<BODY bgcolor="#f5f5f5">
+<center><H1>Web Data Mining </H1> </center>
+<center><h2> Exploring Hyperlinks, Contents, and Usage Data<h2></center>
+<center> <h3><img border="0" src="http://www.cs.uic.edu/~liub/new.gif" width="45" height="20"> <a href="http://www.cs.uic.edu/~liub">Bing Liu</a>, 
+<font color=red>Second Edition</font>, July 2011 <br>
+First Edition, Dec 2006, Springer
+</h3> </center>
+<td width="49%" valign=top>
+<br>
+<table> <tr>
+<td width="15%" valign=top>
+<center><img width=200, height=250, align=top src="http://www.cs.uic.edu/~liub/book/Web-Data-Mining.jpg"></center>
+<center>Second Edition</center>
+<br><br>
+<center><img width=200, height=170, src="http://www.cs.uic.edu/~liub/web-mining/wdm_displayimage.jpeg"></center><br><br>
+<center>First Edition</center>
+</td>
+<td width="85%" vlign=top>
+Web mining aims to discover useful knowledge from
+Web hyperlinks, page content and usage log. Based on the primary 
+kind of data used in the mining process, Web mining tasks are categorized 
+into three main types: <i>Web structure mining</i>, <i>Web content mining</i> 
+and <i>Web usage mining</i>. This book consists of two parts. The first part covers the data mining and machine learning foundations, where all the essential algorithms of data mining and machine learning are presented. The second part covers the key topics of Web mining, where <i><b>Web crawling</b></i>, <i><b>search</b></i>, <i><b>social network analysis</b></i>, <i><b>structured data extraction</b></i>, <i><b>information integration</b></i>, <i><b>opinion mining and sentiment analysis</b></i>, <i><b>Web usage mining</b></i>, <i><b>query log mining</b></i>, <i><b>computational advertising</b></i>, and <i><b>recommender systems</b></i> are all treated in breadth and in depth (the SVD matrix factorization algorithm of Simon Funk used in Netflix Prize Contest is described in detail).
+</ul>
+<p><b>What is new in the second edition?</b> Most chapters have been updated. The major changes are in Chapter 11 and Chapter 12, which have been re-written and significantly expanded. When the first edition was written, opinion mining (Chapter 11) was still in its infancy. Since then, the research community has proposed many novel techniques to solve various aspects of the problem. To include the latest developments for the Web usage mining chapter (Chapter 12), the topics of recommender systems and collaborative filtering, query log mining, and computational advertising have been added. This new edition is thus considerably longer, from a total of 532 pages in the first edition to a total of 622 pages in this second edition. 
+<p> <b>Teaching and Learning</b>: Although the book is titled "Web Data 
+Mining", it also covers the key topics of data mining, information retrieval, 
+and text mining. Thus, it is suitable for a data mining course, 
+in which the students learn not only data mining, but also Web mining and text mining. The book is appropriate for advanced undergraduate students, graduate students, researchers and practioners in the field. 
+No prior knowledge of data mining or machine learning is assumed. 
 
-<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Troy/WebPreferences?_T=2018-11-21" type="application/x-wiki" title="edit WebPreferences" />
-<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<meta name="SCRIPTURLPATH" content="/bin" />
-<meta name="SCRIPTSUFFIX" content="" />
-<meta name="TEXT_JUMP" content="Jump" />
-<meta name="TEXT_SEARCH" content="Search" />
-<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
-<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Troy/WebRss" />
-<base href="https://www.cs.uic.edu/bin/view/Troy/WebPreferences"></base>
-<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
-<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/TWikiTemplates/base.css');
-</style>
-<style type="text/css" media="all">
-#patternTopBar,
-#patternClearHeaderCenter,
-#patternClearHeaderLeft,
-#patternClearHeaderRight,
-#patternTopBarContentsOuter,
-#patternTopBarContents {
-/*	height:64px; */ /* top bar height; make room for header columns */
-	overflow:hidden;
-}
-#patternOuter {
-	margin-left:14em;
-}
-#patternLeftBar {
-	width:14em;
-	margin-left:-14em;
-}
-</style>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/PatternSkin/layout.css');
-@import url('/pub/TWiki/PatternSkin/style.css');
-@import url('/pub/TWiki/PatternSkin/colors.css');
-</style>
-<style type="text/css" media="all">
-	/* Styles that are set using variables */
-	.patternBookView .twikiTopRow,
-	.patternWebIndicator a img,
-	.patternWebIndicator a:hover img {
-		background-color:#D0D0D0;
-	}
-	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
-	
-	.patternBookView {
-		border-color:#D0D0D0;
-	}
-	.patternPreviewPage #patternMain {
-		/* uncomment to set the preview image */
-		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
-	}
-	
-</style><style type="text/css" media="all">
+<br>
+<h3> Order the Second Edition </h3>
+<TABLE  BORDER=0 width="100%">
+<tr>
+<td width="49%" valign=top>
+<ul>
+<li>From <a href="http://www.amazon.com/Web-Data-Mining-Data-Centric-Applications/dp/3642194591/ref=sr_1_3?s=books&ie=UTF8&qid=1302988351&sr=1-3"> Amazon.com</a>
+<li>From <a href="http://www.springer.com/computer/database+management+%26+information+retrieval/book/978-3-642-19459-7">Springer</a>
+<li>Online version available from <a href="http://www.springerlink.com/content/978-3-642-19460-3#section=912389&page=1&locus=0">Springer</a>
+</ul>
+<td> <td width="2%">
+<td width="49%" valign=top>
+2011, 622 p., Hardcover <br>
+ISBN 978-3-642-19459-7
+</tr>
+</table>
 
-@import url('/pub/Main/WebPreferences/mainweb.css');
+<h3> Order the First Edition </h3>
+<TABLE  BORDER=0 width="100%">
+<tr>
+<td width="49%" valign=top>
+<ul>
+<li> From <a href="http://www.amazon.com/gp/product/3540378812?ie=UTF8&tag=univofilliatc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=3540378812">Amazon.com</a><img src="http://www.assoc-amazon.com/e/ir?t=univofilliatc-20&l=as2&o=1&a=3540378812" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />. 
+<li> From <a href="http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?z=y&endeca=1&isbn=3540378812&itm=6">Barnes&Noble</a>. 
+<li> From Springer (see the new edition above).
+</ul>
+<td> <td width="2%">
+<td width="49%" valign=top>
+2007, 532 p., Hardcover <br>
+ISBN-10: 3-540-37881-2 <br>
+ISBN-13: 978-3-540-37881-5<br>
+</tr>
+</table>
 
-</style>
-<style type="text/css" media="all">
-	@import url("/pub/TWiki/PatternSkin/print.css");
-</style>
-<!--[if IE]><style type="text/css" media="screen">
-pre {
-	overflow-x:auto;
-	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
-}
-</style>
-<![endif]-->
-<!--[if lte IE 6]> 
-<style type="text/css">
-#patternLeftBar {
-	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
-}
-</style><![endif]-->
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+<p> Here is a <a href="http://www.sigkdd.org/explorations/issues/10-2-2008-12/BookReview-WebDataMining.pdf"> <font color="red"><b>review</b></font> </a> of the book by <a href="http://louisville.edu/bucksforbrains/faculty/nasraoui">Prof. Olfa Nasraoui</a>, published in <i>SIGKDD Explorations</i>, Volume 10, Issue 2, 2009. (I found this on the Web). 
+<p>If you need an evaluation copy for teaching a course, please drop <a href="http://www.cs.uic.edu/~liub">me</a> an email. I can connect you to the publisher to get a copy. You can also get it from <a href="http://www.springer.com/978-3-642-19459-7">this page</a>.</td></tr>
+</td></tr>
+</table>
+<hr>
+<TABLE  BORDER=0 width="100%">
+<tr>
+<td width="49%" valign=top>
+<h2> Table of Contents (<a href="http://www.cs.uic.edu/~liub/book/Table-of-Contents-2nd-edition.pdf">Full Version</a>, Second Edition)</h2>
+<ol>
+<li> Introduction
+<li> Association Rules and Sequential Patterns
+<li> Supervised Learning
+<li> Unsupervised Learning
+<li> Partially Supervised Learning
+<li> Information Retrieval and Web Search
+<li> Social Network Analysis
+<li> Web Crawling
+<li> Structured Data Extraction: Wrapper Generation
+<li> Information Integration
+<li> Opinion Mining and Sentiment Anlaysis
+<Li> Web Usage Mining
+</ol>
+<p> Chapters 8 was written by <a href ="http://www.informatics.indiana.edu/fil/">Prof. Filippo Menczer</a>. Chapter 12 was mainly written by <a href="http://maya.cs.depaul.edu/~mobasher/">Prof. Bamshad Mobasher </a> and <a href="http://louisville.edu/speed/computer/people/faculty/nasraoui">Prof. Olfa Nasraoui</a> (second edition) except the recommender systems section for which they also helped. <a href="http://www.comp.nus.edu.sg/~leews/">Prof. Wee Sun Lee</a> helped a great deal in the writing of Chapter 5. They are all international experts in their fields. 
 
-<!-- Google Analytics Snippet -->
+<td width="2%"> 
+<td width="49%" valign=top>
+<h2> Lecture Slides </h2>
+<a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-06/CS583-association-sequential-patterns.ppt">Chapter 2</a>, 
+<a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-06/CS583-supervised-learning.ppt">Chapter 3</a>, 
+<a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-unsupervised-learning.ppt">Chapter 4</a>, 
+<a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-partially-supervised-learning.ppt">Chapter 5</a>, 
+<a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-07/CS583-info-retrieval.ppt">Chapter 6</a>, 
+<a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-link-analysis.ppt">Chapter 7</a>, 
+<br>
+<a href="http://informatics.indiana.edu/fil/Papers/WebCrawlingChapter.ppt">Chapter 8</a>,
+<a href="http://www.cs.uic.edu/~liub/teach/cs511-spring-06/CS511-data-extraction.ppt">Chapter 9</a>,
+<a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-07/CS583-information-integration.ppt">Chapter 10</a>,
+<a href="http://www.cs.uic.edu/~liub/FBS/Sentiment-Analysis-tutorial-AAAI-2011.pdf">Chapter 11</a>, <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-08/Web-usage-mining.ppt">Chapter 12</a>. 
+<br><br> 
+<h4>You may be interested in some talks below</h4>
+<ul>
+<li>ACM SIGKDD Inaugural Webcast: <a href="http://www.cs.uic.edu/~liub/WCM-Refs.html">Web Content Mining</a>
+<li> <a href="http://www.cs.uic.edu/~liub/WebContentMining.html">A tutorial given at WWW-05 and WISE-05</a>
+<li> New Book: <a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf">Sentiment Anlaysis and Opinion Mining</a>, Morgan & Claypool, 2012. 
+<li> Many talks on <a href="http://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">opinion mining and sentiment analysis</a> 
+<li> Of course, the book covers a lot more topics and algorithms, and also more up-to-date.  
+</ul>
+</tr></table>
+<h2> Errata List of the First Edition</h2> 
+<ul>
+<li> <a href="http://www.cs.uic.edu/~liub/book/errata-first-and-second-prints.pdf">Errata list of the first and second print</a>. 
+<ul>
+<li> Many thanks to Shenghua Bao, Brian Davison, Juliana Freire, Po-Hsiu Lin, Olfa Nasraoui, Suhyuk Park, Guillermo Vazquez, Clement Yu and Yuri Zelenkov.
+</ul>
+<li> Your comments and errata are appreciated. Please drop me an email if you have any. 
+</ul>
 
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-17081517-1']);
-  _gaq.push(['_setDomainName', 'none']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
-'.google-analytics.com/ga.js';
-	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2031920; 
+var sc_invisible=1; 
+var sc_partition=18; 
+var sc_security="1d4151a9"; 
+var sc_remove_link=1; 
 </script>
 
-<!-- /Google Analytics Snippet -->
-<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
-@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
-</style>
-<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
-<script type="text/javascript">
-// <![CDATA[
-var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
-document.write(styleText);
-// ]]>
-</script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script><noscript><img  src="http://c19.statcounter.com/counter.php?sc_project=2031920&amp;java=0&amp;security=1d4151a9&amp;invisible=1" alt="counter free hit unique web" border="0"> </noscript>
+<!-- End of StatCounter Code -->
 
-<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
-.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
-.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
-.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
-.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
-.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
-.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
-.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
-.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
-.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
-.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
-.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
-</style></head>
-<body class="patternViewPage">
-<a name="PageTop"></a>
-<div id="patternScreen">
-<div id="patternPageShadow">
-<div id="patternPage">
-<div id="patternWrapper"><div id="patternOuter">
-<div id="patternFloatWrap">
-<div id="patternMain"><div id="patternClearHeaderCenter"></div>
-<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/Troy/WebHome">Troy Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/Troy/WebPreferences" title='Topic revision: 12 (2009-05-31 - 18:28:03)'>WebPreferences</a> <span class='patternRevInfo'>(2009-05-31, Main.rdoma2)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/Troy/WebPreferences?t=1542825318' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/Troy/WebPreferences' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Troy_Web_Preferences"></a> Troy Web Preferences </h1>
-<p />
-The following settings are <strong><em>web preferences</em></strong> of the <a href="/bin/view/Troy/WebHome" class="twikiCurrentWebHomeLink twikiLink">Troy</a> web. These preferences overwrite the <strong><em>site-level preferences</em></strong> in <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWiki.TWikiPreferences</a> and <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span>, and can be overwritten by <strong><em>user preferences</em></strong> (your personal topic, eg: <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span> in the <a href="/bin/view/Main/WebHome" class="twikiLink">Main</a> web).
-<p />
-<div class="twikiToc"> <ul>
-<li> <a href="#Web_Preferences_Settings"> Web Preferences Settings</a>
-</li> <li> <a href="#Help_on_Preferences"> Help on Preferences</a>
-</li> <li> <a href="#Related_Topics"> Related Topics</a>
-</li> <li> <a href="#Rename_Move_or_Delete_this_Web"> Rename, Move or Delete this Web</a>
-</li></ul> 
-</div>
-<p />
-<h2><a name="Web_Preferences_Settings"></a> Web Preferences Settings </h2>
-<p />
-These settings override the defaults for this web only. See <a href="/bin/view/TWiki/TWikiPreferences#DefaultWebPreferences" class="twikiAnchorLink">full list of defaults with explanation</a>. Many of the settings below are commented out. Remove the # sign to enable a local customisation.
-<p /> <ul>
-<li> List of topics of the Troy web:  <ul>
-<li> #Set WEBTOPICLIST = <a href="/bin/view/Troy/WebChanges" class="twikiLink">Changes</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> <a href="/bin/view/Troy/WebIndex" class="twikiLink">Index</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> <a href="/bin/view/Troy/WebSearch" class="twikiLink">Search</a> <span class='twikiSeparator'>&nbsp;|&nbsp;</span> Go <input type="text" name="topic" size="16" />
-</li></ul> 
-</li></ul> 
-<p />
-<a name="D0D0D0"></a>
-<p /> <ul>
-<li> Web-specific background color: (Pick a lighter one of the <a href="/bin/view/TWiki/StandardColors" class="twikiLink">StandardColors</a>).  <ul>
-<li> Set WEBBGCOLOR = #D0D0D0
-</li> <li> <strong><em>Note:</em></strong> This setting is automatically configured when you create a web
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Image, URL and alternate tooltip text of web's logo.<br />  <strong><em>Note:</em></strong> Don't add your own local logos to the <a href="/bin/view/TWiki/TWikiLogos" class="twikiLink">TWikiLogos</a> topic; create your own logos topic instead.  <ul>
-<li> Set WEBLOGOIMG = /pub/Main/WebPreferences/logo.gif
-</li> <li> Set WEBLOGOURL = <a href="http://www.cs.uic.edu" target="_top">http://www.cs.uic.edu</a>
-</li> <li> #Set WEBLOGOALT = Stuff here
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Troy/PatternSkin?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="PatternSkin (this topic does not yet exist; you can create it)">PatternSkin</a></span> header settings  <ul>
-<li> Set WEBHEADERART = none
-</li> <li> #Set WEBHEADERBGCOLOR = #faf8f0
-</li> <li> Set USERSTYLEURL=/pub/Main/WebPreferences/mainweb.css
-</li></ul> 
-</li> <li> Set WEBCOPYRIGHT = Copyright 2009 The Board of Trustees of the University of Illinois
-</li></ul> 
-<p /> <ul>
-<li> List this web in the <a href="/bin/view/TWiki/SiteMap" class="twikiLink">SiteMap</a>. If you want the web listed, then set SITEMAPLIST to <code>on</code>, do not set NOSEARCHALL, and add the "what" and "use to..." description for the site map. Use links that include the name of the web, i.e. Troy.Topic links.<br />  <strong><em>Note:</em></strong> Unlike other variables, the setting of SITEMAPLIST is <strong>not</strong> inherited from parent webs. It has to be set in <strong>every</strong> web that is to be listed in the <a href="/bin/view/TWiki/SiteMap" class="twikiLink">SiteMap</a> <br />   <ul>
-<li> Set SITEMAPLIST = on
-</li> <li> Set SITEMAPWHAT = Web.Troy
-</li> <li> Set SITEMAPUSETO = ...collaborate on
-</li> <li> <strong><em>Note:</em></strong> Above settings are automatically configured when you create a web
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Exclude web from a <code>web="all"</code> search: (Set to <code>on</code> for hidden webs).  <ul>
-<li> Set NOSEARCHALL = 
-</li> <li> <strong><em>Note:</em></strong> This setting is automatically configured when you create a web
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Prevent automatic linking of <a href="/bin/view/TWiki/WikiWord" class="twikiLink">WikiWords</a> and acronyms (if set to <code>on</code>); link WikiWords (if empty); can be overwritten by web preferences:  <ul>
-<li> Set NOAUTOLINK = off
-</li> <li> <strong><em>Note:</em></strong> You can still use the <code>[[...][...]]</code> syntax to link topics if you disabled WikiWord linking. The <code>&lt;noautolink&gt; ... &lt;/noautolink&gt;</code> syntax can be used to prevents links within a block of text.
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Default template for <strong>new topics</strong> for this web:  <ul>
-<li> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Troy/WebTopicEditTemplate?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="WebTopicEditTemplate (this topic does not yet exist; you can create it)">WebTopicEditTemplate</a></span>: Default template for new topics in this web. (Site-level is used if topic does not exist)
-</li> <li> <a href="/bin/view/TWiki/WebTopicEditTemplate" class="twikiLink">TWiki.WebTopicEditTemplate</a>: Site-level default topic template
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Comma separated list of <strong>forms</strong> that can be attached to topics in this web. See <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWikiForms</a> for more information.  <ul>
-<li> Set WEBFORMS =
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Users or groups who <strong><em>are not</em></strong> / <strong><em>are</em></strong> allowed to <strong><em>view</em></strong> / <strong><em>change</em></strong> / <strong><em>rename</em></strong> topics in the Troy web: (See <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a>).  <ul>
-<li> Set DENYWEBVIEW = 
-</li> <li> Set ALLOWWEBVIEW = 
-</li> <li> Set DENYWEBCHANGE = 
-</li> <li> Set ALLOWWEBCHANGE = 
-</li> <li> Set DENYWEBRENAME = 
-</li> <li> Set ALLOWWEBRENAME = 
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Users or groups allowed to change or rename this WebPreferences topic: (e.g., <a href="/bin/view/Main/TWikiAdminGroup" class="twikiLink">TWikiAdminGroup</a>)  <ul>
-<li> Set ALLOWTOPICCHANGE = rdoma2
-</li> <li> Set ALLOWTOPICRENAME = nobody
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Web preferences that are <strong>not</strong> allowed to be overridden by sub-web, user or topic preferences:  <ul>
-<li> Set FINALPREFERENCES = NOSEARCHALL, ATTACHFILESIZELIMIT, WIKIWEBMASTER, WEBCOPYRIGHT, WEBTOPICLIST, DENYWEBVIEW, ALLOWWEBVIEW, DENYWEBCHANGE, ALLOWWEBCHANGE, DENYWEBRENAME, ALLOWWEBRENAME
-</li></ul> 
-</li></ul> 
-<p />
-<h2><a name="Help_on_Preferences"></a> Help on Preferences </h2> <ul>
-<li> A preference setting is defined by: <br /> <code>3 or 6 spaces * Set NAME = value</code> <br /> Example: <ul>
-<li> Set WEBBGCOLOR = #FFFFC0
-</li></ul> 
-</li> <li> A preferences setting can be disabled with a # sign. Remove the # sign to enable a local customization. Example:<br />  <ul>
-<li> #Set DENYWEBCHANGE = <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span>
-</li></ul> 
-</li> <li> Preferences are used as <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> by enclosing the name in percent signs. Example: <ul>
-<li> When you write variable <code>%WEBBGCOLOR%</code> , it gets expanded to <code>#D0D0D0</code>
-</li></ul> 
-</li> <li> The sequential order of the preference settings is significant. Define preferences that use other preferences first, i.e. set <code>WEBCOPYRIGHT</code> before <code>WIKIWEBMASTER</code> since <code>%WEBCOPYRIGHT%</code> uses the <code>%WIKIWEBMASTER%</code> variable.
-</li> <li> You can introduce your own preferences variables and use them in your topics and templates.
-</li></ul> 
-<p />
-<h2><a name="Related_Topics"></a> Related Topics </h2> <ul>
-<li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWiki.TWikiPreferences</a>, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiPreferences?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="TWikiPreferences (this topic does not yet exist; you can create it)">Main.TWikiPreferences</a></span> - site-level preferences
-</li> <li> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UserList?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="UserList (this topic does not yet exist; you can create it)">UserList</a></span> - list of user topics. User topics can have optional user preferences
-</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a> - list of common <code>%VARIABLES%</code>
-</li> <li> <a href="/bin/view/TWiki/TWikiAccessControl" class="twikiLink">TWikiAccessControl</a> - explains how to restrict access by users or groups
-</li></ul> 
-<p />
-<h2><a name="Rename_Move_or_Delete_this_Web"></a> Rename, Move or Delete this Web </h2>
-<div style='display: none;'> <ul>
-<li> <strong><em> Note: </em></strong> The Troy web cannot be renamed. See also: <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
-</li></ul> 
-</div>
-<div> <ul>
-<li class="twikiIconBullet" style="background: url(/pub/TWiki/TWikiDocGraphics/move.gif) no-repeat 0 .2em;"> <strong><a href='/bin/rename/Troy/WebPreferences?action=renameweb' rel='nofollow'>Rename/move/delete web...</a></strong>, looking for references in <em>all public webs</em>. See also: <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
-</li></ul> 
-</div> </div><!-- /patternTopic-->
-<div class="twikiContentFooter"></div><div class="twikiAttachments">
-<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
-<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/Troy/WebPreferences?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/Troy/WebPreferences?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/Troy/WebPreferences?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/Troy/WebPreferences?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/Troy/WebPreferences?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/Troy/WebPreferences?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/Troy/WebPreferences?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/css.gif" width="16" height="16" alt="Cascading Style Sheet file" title="Cascading Style Sheet file" border="0" /><span class="twikiHidden">css</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/Troy/WebPreferences/custom.css">custom.css</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/Troy/WebPreferences?filename=custom.css;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.4&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2009-05-15 - 05:33</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/bmp.gif" width="16" height="16" alt="Bitmap" title="Bitmap" border="0" /><span class="twikiHidden">ico</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/Troy/WebPreferences/favicon.ico">favicon.ico</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/Troy/WebPreferences?filename=favicon.ico;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.3&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2004-11-20 - 18:14</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> placeholder favicon </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/gif.gif" width="16" height="16" alt="GIF" title="GIF" border="0" /><span class="twikiHidden">GIF</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/Troy/WebPreferences/logo.GIF">logo.GIF</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/Troy/WebPreferences?filename=logo.GIF;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.2&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2009-05-14 - 23:16</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/gif.gif" width="16" height="16" alt="GIF" title="GIF" border="0" /><span class="twikiHidden">gif</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/Troy/WebPreferences/logo.gif">logo.gif</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/Troy/WebPreferences?filename=logo.gif;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 4.2&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2009-05-14 - 23:24</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=Troy.WebPreferences;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
-		</tr></table>
-</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
-<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/Troy/WebPreferences?t=1542825318' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/Troy/WebPreferences' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Troy/WebPreferences?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/Troy/WebPreferences?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r12&nbsp;<a rel="nofollow" href="/bin/rdiff/Troy/WebPreferences?rev1=12;rev2=11">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Troy/WebPreferences?rev=11">r11</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Troy/WebPreferences?rev1=11;rev2=10">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Troy/WebPreferences?rev=10">r10</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Troy/WebPreferences?rev1=10;rev2=9">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Troy/WebPreferences?rev=9">r9</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/Troy/WebPreferences?rev1=9;rev2=8">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/Troy/WebPreferences?rev=8">r8</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Troy/WebPreferences?template=backlinksweb' rel='nofollow' title='Search the Troy Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/Troy/WebPreferences?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/Troy/WebPreferences?t=1542825318;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/Troy/WebPreferences?template=oopsmore&amp;param1=12&amp;param2=12' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r12 - 2009-05-31 - 18:28:03 - Main.rdoma2</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
-</div><!-- /patternMainContents-->
-</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
-<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
-<li> <a href="/bin/view/Troy/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> Troy</a>
-</li></ul> 
-</div> <ul>
-<li> <a href="/bin/view/Troy/Teaching" class="twikiLink">Teaching</a>
-</li> <li> <a href="/bin/view/Troy/Education" class="twikiLink">Education</a>
-</li> <li> <a href="/bin/view/Troy/Links" class="twikiLink">Links</a>
-</li> <li> <a href="/bin/view/Troy/Contact" class="twikiLink">Contact</a>
-</li> <li> <a href="/bin/view/Troy/PreviousClasses" class="twikiLink">Previous Classes</a>
-</li></ul> 
-<p />
-<a href="/bin/edit/Troy.WebLeftBar" target="_top">[edit this</a>]
-<p />
-<div class="patternLeftBarPersonal">
-<ul><li class="patternLogIn"><a href="/bin/logon/Troy/WebPreferences">Log In</a> </li></ul>
-</div><!--/patternLeftBarPersonal--> <ul>
-<li> <strong><a href="/bin/view/Troy/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Troy Web</a></strong>
-</li> <li> <a href="/bin/view/Troy/WebCreateNewTopic?topicparent=WebPreferences" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
-</li> <li> <a href="/bin/view/Troy/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
-</li> <li> <a href="/bin/view/Troy/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
-</li> <li> <a href="/bin/view/Troy/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
-</li> <li> <a href="/bin/view/Troy/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
-</li> <li> <a href="/bin/view/Troy/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
-</li> <li> <a href="/bin/view/Troy/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
-</li> <li> <a href="/bin/view/Troy/WebPreferences" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
-</li></ul> 
-<p />
-<hr />
-</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
-</div><!-- /patternFloatWrap-->
-<div class="clear">&nbsp;</div>
-</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
-<map id="logomap" name="logomap">
-	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
-	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
-	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
-</map>
-<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
-</div>
-<p />
-<div style="margin-left:650px; position:relative;">
-	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
-		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
-		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
-	</form>
-</div>
-<p />
-<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
-<div id="navMenu">
-<ul>
-<li> <a href="#">ABOUT US</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">ACADEMICS</a>
-	<ul>
-	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
-	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
-	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
-	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
-	<li><a href="/Main/Courses">Courses</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">RESEARCH</a>
-	<ul>
-	<li><a href="/Main/Research">Overview</a></li>
-	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
-	<li><a href="/Main/Research#Labs">Labs</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">PEOPLE</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
-	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
-	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
-	<li><a href="/Main/Students">Students</a></li>
-	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
-	</ul>
-</li>
-</ul>
-<br class="clearFloat"/>
-</div>
-</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
-<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
-<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
-</div><!-- /patternPage-->
-</div><!-- /patternPageShadow-->
-</div><!-- /patternScreen-->
-</body></html>
-<p />
+<HR>
+<B>First Draft:</B> by <i>Bing Liu </i> on Oct 15, 2006. 
+<!--
+<script type="text/javascript" src="http://www.assoc-amazon.com/s/link-enhancer?tag=univofilliatc-20">
+</script>
+<noscript>
+    <img src="http://www.assoc-amazon.com/s/noscript?tag=univofilliatc-20" alt="" />
+</noscript>
+-->
+</BODY>
+</HTML>
+

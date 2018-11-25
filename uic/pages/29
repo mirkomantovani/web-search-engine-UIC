@@ -1,1061 +1,989 @@
-<!DOCTYPE html><html lang="en"><head><title>University of Illinois at Chicago</title><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#009BC1"><meta name="google-site-verification" content="x4bg-s_z2XTL2GQjjZyktPBd3ibAzFZfRQb2eUHRaVc"><style>body{ font-family: Theinhardt, Arial, sans-serif; }
-.body-text, .campus-reminders .reminder-text, .category-link-list .text-cell, .error-help, .text-input, .text-area, .number-input, .tel-input, .email-input, .form-help-text, .highlight .content-cell, .home-lists .home-list-blurb, .interior-page-intro .interior-page-text, .key-message-block .message-cell .text, .landing-page-intro .intro-text, .link-block .text, .link-list .text-cell, .text-block-with-inline-image .intro-row, .text-block-with-inline-image .text-and-image-row, .text-block-with-inline-image .link-list, .text-block-with-large-image .link-list, .topic-block-list .text-cell, .topic-block-list .topic-block-text-cell, .block-wysiwyg { color: rgb(54, 54, 54); font-size: 16px; font-weight: 400; line-height: 1.36; }
-.body-text p, .campus-reminders .reminder-text p, .category-link-list .text-cell p, .error-help p, .text-input p, .text-area p, .number-input p, .tel-input p, .email-input p, .form-help-text p, .highlight .content-cell p, .home-lists .home-list-blurb p, .interior-page-intro .interior-page-text p, .key-message-block .message-cell .text p, .landing-page-intro .intro-text p, .link-block .text p, .link-list .text-cell p, .text-block-with-inline-image .intro-row p, .text-block-with-inline-image .text-and-image-row p, .text-block-with-inline-image .link-list p, .text-block-with-large-image .link-list p, .topic-block-list .text-cell p, .topic-block-list .topic-block-text-cell p, .block-wysiwyg p { margin-bottom: 1em; }
-.ms-grid, .ms-row, [class*="col-"]{ box-sizing: border-box; }
-.ms-grid{ display: block; position: relative; width: 100%; margin-left: auto; margin-right: auto; max-width: 1400px; padding-left: 12px; padding-right: 12px; }
-.ms-grid.full{ max-width: none; padding-left: 0px; padding-right: 0px; width: 100%; overflow-x: hidden; }
- .ms-grid.zero-margin .ms-row > [class*="col-"]{ padding-left: 0px; padding-right: 0px; }
-.ms-grid.zero-margin .ms-row{ margin-left: 0px; margin-right: 0px; }
-.ms-grid .ms-row{ -webkit-align-items: stretch; display: -webkit-flex; -webkit-flex-wrap: wrap; margin-left: -1vw; margin-right: -1vw; }
-.ms-grid .ms-row::after, .ms-grid [class*="col-"]::after{ content: ''; display: table; clear: both; }
-[class*="col-"]{ float: left; width: 100%; position: relative; margin: 0px; padding-left: 1vw; padding-right: 1vw; }
-@media screen and (min-width: 540px){
-.ms-grid{ padding-left: 24px; padding-right: 24px; }
-}
-@media screen and (min-width: 768px){
-.ms-grid{ padding-left: 30px; padding-right: 30px; width: 100%; }
-}
-@media screen and (min-width: 2000px){
-.ms-grid .ms-row{ margin-left: -0.5vw; margin-right: -0.5vw; }
-.ms-grid .ms-row > [class*="col-"]{ padding-left: 0.5vw; padding-right: 0.5vw; }
-}
-@media screen and (min-width: 320px){
-.xs-col-1-2{ width: 50%; }
-}
-@media screen and (min-width: 768px){
-.m-col-1-2{ width: 50%; }
-}
-@media screen and (min-width: 768px){
-.m-col-1-3{ width: 33.3333333333%; }
-}
-@media screen and (min-width: 768px){
-.m-col-2-push-1{ left: 50%; right: auto; }
-.m-col-2-pull-1{ right: 50%; left: auto; }
-}
-*{ border: 0px; box-sizing: border-box; margin: 0px; padding: 0px; }
-img{ vertical-align: bottom; }
-#home-page-title{ position: absolute; left: -999vw; }
-.ms-grid{ max-width: 1080px; }
-@media (max-width: 767px){
-.ms-grid{ padding-left: 20px; padding-right: 20px; overflow: hidden; }
-}
-@media (max-width: 1084px) and (min-width: 768px){
-.ms-grid{ padding-left: 30px; padding-right: 30px; width: 100%; }
-}
-@media (min-width: 1140px){
-.ms-grid{ padding-left: 0px; padding-right: 0px; }
-}
-.ms-grid.extra-wide-grid{ max-width: 1400px; }
-.promo-header{ color: rgb(54, 54, 54); font-size: 60px; font-weight: 900; line-height: 1; }
-body{ background-color: rgb(248, 248, 248); }
-.calls-to-action{ background-color: rgb(255, 255, 255); font-size: 16px; line-height: 20px; }
-.calls-to-action .call-to-action-row{ list-style: none; }
-.calls-to-action .calls-to-action-row-container{ margin: 0px auto; max-width: 1400px; padding: 0px; }
-@media (min-width: 1140px){
-.calls-to-action .calls-to-action-row-container{ padding: 0px; }
-}
-.calls-to-action .calls-to-action-group-container{ float: left; padding: 0px 0px 0px 20px; position: relative; width: 100%; }
-@media (min-width: 768px){
-.calls-to-action .calls-to-action-group-container{ width: 50%; }
-}
-.calls-to-action .calls-to-action-group-container [class*="col-"]{ padding-left: 0px; padding-right: 0px; }
-.calls-to-action .calls-to-action-group-container-again{ list-style: none; }
-@media (min-width: 768px){
-.calls-to-action .calls-to-action-group-container-again{ width: 100%; }
-}
-@media (min-width: 1140px){
-.calls-to-action .calls-to-action-group-container-again{ position: absolute; right: 0px; width: 540px; }
-}
-.calls-to-action .calls-to-action-reminder-container{ float: right; padding: 0px 20px; width: 100%; }
-@media (min-width: 768px){
-.calls-to-action .calls-to-action-reminder-container{ width: 50%; }
-}
-@media (max-width: 1400px) and (min-width: 768px){
-.calls-to-action .calls-to-action-reminder-container{ padding: 0px 30px; }
-}
-.calls-to-action .call-to-action{ display: -webkit-flex; -webkit-align-items: center; color: rgb(0, 127, 165); font-weight: 700; height: 80px; padding: 0px 10px 0px 0px; position: relative; text-decoration: none; }
-@media (min-width: 768px){
-.calls-to-action .call-to-action{ height: 80px; }
-}
-.calls-to-action .call-to-action .call-to-action-icon-container{ height: 30px; width: 30px; }
-.calls-to-action .call-to-action .call-to-action-icon-container::before{ border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; }
-.calls-to-action .call-to-action svg{ fill: #007fa5; position: relative; z-index: 1; }
-.calls-to-action .call-to-action .call-to-action-label{ margin-left: 10px; }
-.calls-to-action .reminders-container{ display: -webkit-flex; -webkit-align-items: center; font-weight: 700; height: 80px; }
-@media (min-width: 768px){
-.calls-to-action .reminders-container{ -webkit-flex-direction: row-reverse; }
-}
-@media (min-width: 1140px){
-.calls-to-action .reminders-container{ width: 540px; }
-}
-.calls-to-action .reminders-icon-container{ display: block; height: 30px; margin-right: 10px; width: 30px; }
-.calls-to-action .reminders-icon-container::before{ border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; border-color: rgb(213, 0, 50); }
-.calls-to-action .reminders{ fill: #d50032; height: 30px; width: 30px; }
-.calls-to-action .reminders-anchor{ color: rgb(213, 0, 50); display: -webkit-flex; line-height: 30px; position: relative; text-decoration: none; }
-@media (min-width: 768px){
-.calls-to-action .reminders-anchor{ float: right; padding-left: 10px; padding-right: 22px; }
-}
-.calls-to-action .anchor-point{ fill: #d50032; height: 8px; width: 12px; }
-@media (min-width: 768px){
-.calls-to-action .anchor-point{ position: absolute; right: 0px; top: 11px; }
-}
-.call-to-action-icon-container{ position: relative; }
-.call-to-action-icon-container::before{ -webkit-animation: 1s; border: 3px solid rgb(0, 127, 165); content: ''; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; }
-.reminders-icon-container{ position: relative; }
-.reminders-icon-container::before{ -webkit-animation: 1s; border: 3px solid rgb(0, 127, 165); content: ''; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; }
-.header{ position: relative; width: 100%; background-color: rgb(0, 0, 0); }
-.header-menu-bar{ position: relative; }
-.header--blue .header-menu-bar{ background-color: rgb(0, 127, 165); }
-@media (max-width: 1084px){
-.header--blue .navigation-primary .primary-nav-list .primary-list-item{ background-color: rgb(0, 127, 165); }
-}
-.header--blue .navigation-primary .primary-nav-list .expander, .header--blue .navigation-primary .primary-nav-list .menu-label-item{ background-color: rgb(0, 102, 132); }
-@media (max-width: 1084px){
-.header--blue .navigation-primary .primary-nav-list .primary-list-active-item > .primary-list-anchor{ background-color: rgb(0, 102, 132); }
-}
-@media (min-width: 1084px){
-.header--blue .navigation-eyebrow{ background-color: rgb(0, 127, 165); }
-}
-.header--blue .navigation-primary:not(.scrolled-after) .primary-nav-list .primary-second-tier-list{ border-color: rgb(0, 127, 165); }
-.header-content{ margin: 0px auto; max-width: 1400px; position: relative; }
-.header-background-image-container{ bottom: 0px; left: 0px; overflow: hidden; position: absolute; right: 0px; top: 0px; }
-.header-background-image{ background-size: cover; bottom: -5px; -webkit-filter: blur(5px); left: -5px; position: absolute; right: -5px; top: -5px; background-position: 50% 50%; background-repeat: no-repeat no-repeat; }
-.hero-image-container{ overflow: hidden; }
-.hero-image{ display: block; left: 50%; margin: 0px auto; position: relative; -webkit-transform: translateX(-50%); width: auto; height: 250px; }
-@media (min-width: 768px){
-.hero-image{ height: 600px; }
-}
-@media (max-width: 768px) and (min-width: 540px){
-.hero-image{ height: 600px; }
-}
-@media (min-width: 1084px){
-.hero-image{ max-height: none; }
-}
-.homepage-header-navigation .navigation-primary .circle-logo-container{ opacity: 0; }
-.key-message-block .promo-header{ font-size: 54px; line-height: 96%; margin-bottom: 14px; }
-@media (max-width: 1084px) and (min-width: 768px){
-.key-message-block .promo-header{ font-size: 48px; }
-}
-@media (max-width: 768px){
-.key-message-block .promo-header{ font-size: 36px; }
-}
-.key-message-block .message-cell{ padding: 20px 20px 40px; }
-@media (min-width: 768px){
-.key-message-block .message-cell{ max-height: 440px; padding: 14px 30px; }
-}
-@media (min-width: 1084px){
-.key-message-block .message-cell{ padding-top: 65px; padding-bottom: 50px; width: 540px; }
-}
-@media (min-width: 768px){
-.key-message-block .message-on-left{ display: -webkit-flex; -webkit-align-items: center; }
-}
-.key-message-block .message-on-left{ -webkit-justify-content: flex-end; }
-@media (min-width: 1140px){
-.key-message-block .message-on-left .message-cell{ float: right; padding-right: 50px; padding-left: 0px; }
-}
-.key-message-block .image{ background-color: transparent; background-size: cover; height: 224px; background-position: 50% 50%; background-repeat: no-repeat no-repeat; }
-@media (max-width: 768px) and (min-width: 540px){
-.key-message-block .image{ height: 378px; }
-}
-@media (min-width: 768px){
-.key-message-block .image{ height: 440px; }
-}
-.link-block-group .link-block-anchor { margin-top: 40px; }
-@media (min-width: 540px){
-.link-block-group .link-block-anchor { max-width: 50%; }
-}
-.link-block-group .link-block-anchor, .link-block-group .link-block-anchor:hover, .link-block-group .link-block-anchor:visited { color: rgb(54, 54, 54); text-decoration: none; }
-.link-block { padding-top: 1px; position: relative; }
-.link-block::before { background-color: rgb(213, 0, 50); content: ''; height: 1px; left: 0px; position: absolute; top: 1px; transition: all 0.4s; -webkit-transition: all 0.4s; width: 100%; }
-.link-block .subhead { margin: 15px 0px 4px; padding-right: 20px; position: relative; }
-.link-block .subhead .arrow { fill: #001e62; height: 10px; transition: all 0.3s cubic-bezier(0.7, 0.3, 0.75, 1.4); -webkit-transition: all 0.3s cubic-bezier(0.7, 0.3, 0.75, 1.4); position: absolute; right: 5px; top: calc(0.5em - 5px); width: 10px; }
-.link-block-anchor:hover, .link-block-anchor:focus { outline: none; }
-.link-block-anchor:hover .link-block::before, .link-block-anchor:focus .link-block::before { height: 3px; }
-.link-block-anchor:hover .arrow, .link-block-anchor:focus .arrow { -webkit-transform: translateX(5px); }
-.navigation-eyebrow{ height: 40px; }
-@media (min-width: 1084px){
-.navigation-eyebrow{ background-color: rgb(0, 127, 165); }
-}
-.navigation-eyebrow .navigation-eyebrow-inner{ margin: 0px auto; max-width: 1080px; position: relative; }
-.navigation-eyebrow .eyebrow-list{ display: -webkit-flex; color: rgb(255, 255, 255); font-size: 14px; font-weight: 400; -webkit-justify-content: space-between; list-style: none inside; margin: 0px auto; padding: 0px 20px; }
-@media (min-width: 1084px){
-.navigation-eyebrow .eyebrow-list{ padding: 0px 0px 0px 25%; }
-}
-.navigation-eyebrow .eyebrow-list-item{ display: none; line-height: 40px; height: 40px; }
-@media (min-width: 1084px){
-.navigation-eyebrow .eyebrow-list-item{ display: block; float: left; }
-}
-.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor{ overflow: hidden; position: relative; }
-.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor::before{ background-color: rgb(213, 0, 50); content: ' '; height: 2px; left: 0px; position: absolute; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out; width: 100%; }
-.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor::before{ bottom: 0px; -webkit-transform: translateY(100%); }
-.navigation-eyebrow .eyebrow-list-item:not(.search-button-item):not(.eyebrow-button) .eyebrow-list-anchor::before{ background-color: rgb(255, 255, 255); height: 4px; }
-.navigation-eyebrow .eyebrow-button{ -webkit-align-self: center; }
-.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor{ font-weight: 700; padding-left: 34px; padding-right: 20px; overflow: hidden; position: relative; }
-.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::before{ background-color: rgb(213, 0, 50); content: ' '; height: 2px; left: 0px; position: absolute; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out; width: 100%; }
-.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::before{ bottom: 0px; -webkit-transform: translateY(100%); }
-.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::before{ background-color: rgb(255, 255, 255); height: 4px; }
-.navigation-eyebrow .eyebrow-button .eyebrow-list-anchor::after{ content: '+'; left: 10px; position: absolute; text-align: center; top: 0px; width: 20px; }
-.navigation-eyebrow .eyebrow-list-anchor{ display: block; outline: none; }
-.navigation-eyebrow .eyebrow-list-anchor{ color: rgb(255, 255, 255); text-decoration: none; }
-.navigation-eyebrow .search-button-item{ display: block; height: 40px; position: absolute; top: 0px; right: 40px; width: 40px; z-index: 1; }
-@media (min-width: 1084px){
-.navigation-eyebrow .search-button-item{ height: 40px; position: relative; top: 0px; right: 0px; width: auto; }
-}
-.navigation-eyebrow .search-button{ background-color: transparent; cursor: pointer; height: 40px; transition: background-color 0.4s; -webkit-transition: background-color 0.4s; width: 40px; }
-.navigation-eyebrow .search-button .search-glass{ fill: #ffffff; height: 20px; margin: 10px; transition: fill 0.4s; -webkit-transition: fill 0.4s; width: 20px; }
-.navigation-eyebrow .search-input-container{ position: absolute; top: 0px; height: 40px; right: 42px; -webkit-transform: translateY(-100%); transition: all 0.4s; -webkit-transition: all 0.4s; width: 278px; z-index: 3; }
-@media (min-width: 1084px){
-.navigation-eyebrow .search-input-container{ height: 40px; right: 40px; }
-}
-.navigation-eyebrow .search-input-container form{ position: relative; width: 100%; height: 100%; }
-.navigation-eyebrow .search-input-container input[type="text"]{ color: rgb(149, 149, 149); height: 100%; padding: 0px 12px; font-size: 18px; width: 100%; }
-.navigation-eyebrow .search-input-container .submit-button{ -webkit-appearance: none; clip: rect(1px 1px 1px 1px); position: absolute !important; }
-.navigation-primary{ pointer-events: none; position: absolute; top: 0px; width: 100%; z-index: 2; }
-@media (min-width: 1084px){
-.navigation-primary{ pointer-events: auto; position: relative; }
-}
-.navigation-primary .navigation-primary-inner{ margin: 0px auto; max-width: 1080px; position: relative; min-height: 40px; }
-.navigation-primary .primary-nav-list{ display: -webkit-flex; -webkit-flex-wrap: wrap; -webkit-justify-content: space-between; line-height: 1; list-style: none inside; overflow: hidden; padding: 0px; position: absolute; right: 0px; transition: all 0.4s; -webkit-transition: all 0.4s; top: 0px; width: 260px; }
-@media (min-width: 1084px){
-.navigation-primary .primary-nav-list{ -webkit-flex-wrap: nowrap; left: 0px; margin: 0px auto; overflow: visible; padding-top: 0px; padding-right: 0px; padding-left: 25%; position: relative; transition: 0s; -webkit-transition: 0s; top: 0px; width: auto; }
-}
-.navigation-primary .primary-nav-list .primary-list-item{ background-color: rgb(0, 127, 165); color: rgb(255, 255, 255); font-size: 16px; font-weight: 700; letter-spacing: 0.06em; position: relative; text-transform: uppercase; width: 100%; background-position: initial initial; background-repeat: initial initial; }
-@media (min-width: 1084px){
-.navigation-primary .primary-nav-list .primary-list-item{ background-color: transparent; float: left; background-position: initial initial; background-repeat: initial initial; }
-}
-.navigation-primary .primary-nav-list .primary-list-anchor{ display: block; line-height: 1; }
-.navigation-primary .primary-nav-list .primary-list-anchor, .navigation-primary .primary-nav-list .primary-second-tier-list-anchor{ color: inherit; text-decoration: none; }
-.navigation-primary .primary-nav-list .primary-second-tier-list{ display: none; list-style: none inside; }
-.navigation-primary .primary-nav-list .primary-second-tier-list-item{ background-color: rgb(255, 255, 255); color: rgb(54, 54, 54); font-size: 14px; font-weight: 400; letter-spacing: normal; line-height: 1.25; text-transform: none; background-position: initial initial; background-repeat: initial initial; }
-.navigation-primary .primary-nav-list .primary-second-tier-list-item:last-child{ border-bottom-width: 0px; }
-.navigation-primary .primary-nav-list .primary-second-tier-list-item .primary-second-tier-list-anchor{ display: block; padding: 10px; }
-.navigation-primary .primary-nav-list .expander{ display: none; }
-@media (min-width: 1084px){
-.navigation-primary .primary-nav-list .primary-list-item{ padding: 0px; position: relative; width: auto; }
-.navigation-primary .primary-nav-list .primary-list-item.primary-list-active-item > .primary-list-anchor{ border-bottom-width: 8px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); padding-bottom: 12px; }
-.navigation-primary .primary-nav-list .primary-list-item > .primary-list-anchor{ display: block; outline: none; padding: 22px 0px; }
-.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor{ overflow: hidden; position: relative; }
-.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor::before{ background-color: rgb(213, 0, 50); content: ' '; height: 2px; left: 0px; position: absolute; transition: all 0.35s ease-out; -webkit-transition: all 0.35s ease-out; width: 100%; }
-.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor::before{ bottom: 0px; -webkit-transform: translateY(100%); }
-.navigation-primary .primary-nav-list .primary-list-item:not(.primary-list-active-item) > .primary-list-anchor::before{ background-color: rgb(255, 255, 255); bottom: 2px; height: 8px; -webkit-transform: translateY(135%); }
-.navigation-primary .primary-nav-list .primary-second-tier-list{ border-right-width: 2px; border-right-style: solid; border-right-color: rgb(0, 127, 165); border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: rgb(0, 127, 165); border-left-width: 2px; border-left-style: solid; border-left-color: rgb(0, 127, 165); display: block; opacity: 0; pointer-events: none; position: absolute; left: -2px; top: 60px; transition: opacity 0.4s; -webkit-transition: opacity 0.4s; width: 260px; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-last-child(1) .primary-second-tier-list, .navigation-primary .primary-nav-list .primary-list-item:nth-last-child(2) .primary-second-tier-list{ left: auto; right: -2px; }
-}
-@media (max-width: 1083px){
-.navigation-primary .primary-nav-list .expander{ background-color: rgb(39, 152, 182); display: block; height: 44px; position: absolute; top: 0px; right: 0px; width: 44px; }
-.navigation-primary .primary-nav-list .expander::before{ color: rgb(255, 255, 255); content: '+'; display: block; line-height: 44px; text-align: center; width: 100%; }
-.navigation-primary .primary-nav-list .primary-list-anchor{ line-height: 24px; padding: 10px 20px; }
-.navigation-primary .primary-nav-list .primary-list-active-item > .primary-list-anchor{ background-color: rgb(0, 102, 132); padding-left: 22px; position: relative; }
-.navigation-primary .primary-nav-list .primary-list-item{ min-height: 44px; -webkit-transform: translateX(260px); transition: all 0.33s; -webkit-transition: all 0.33s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+0){ transition: 0s; -webkit-transition: 0s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+1){ transition: 0.08s; -webkit-transition: 0.08s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+2){ transition: 0.16s; -webkit-transition: 0.16s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+3){ transition: 0.24s; -webkit-transition: 0.24s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+4){ transition: 0.32s; -webkit-transition: 0.32s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+5){ transition: 0.4s; -webkit-transition: 0.4s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+6){ transition: 0.48s; -webkit-transition: 0.48s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+7){ transition: 0.56s; -webkit-transition: 0.56s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+8){ transition: 0.64s; -webkit-transition: 0.64s; }
-.navigation-primary .primary-nav-list .primary-list-item:nth-child(n+9){ transition: 0.72s; -webkit-transition: 0.72s; }
-}
-@media (max-width: 1083px){
-.navigation-primary .primary-nav-list{ pointer-events: none; }
-}
-.navigation-primary .primary-nav-list .menu-label-item{ background-color: rgb(39, 152, 182); color: rgb(255, 255, 255); font-size: 16px; font-weight: 700; height: 40px; letter-spacing: 0.06em; line-height: 40px; min-height: 40px; padding-top: 0px; padding-bottom: 0px; padding-left: 20px; position: relative; text-transform: uppercase; -webkit-transform: translateX(260px); transition: all 0.33s; -webkit-transition: all 0.33s; width: 100%; }
-@media (min-width: 1084px){
-.navigation-primary .primary-nav-list .menu-label-item{ display: none; }
-}
-.navigation-primary .primary-nav-list .menu-label{ opacity: 0; transition: opacity 0.45s 0.45s; -webkit-transition: opacity 0.45s 0.45s; }
-.navigation-primary .primary-nav-list .menu-toggle{ background-color: transparent; display: block; height: 40px; pointer-events: auto; position: absolute; top: 0px; right: 0px; width: 40px; z-index: 1; background-position: initial initial; background-repeat: initial initial; }
-.navigation-primary .primary-nav-list .menu-toggle > span{ position: absolute; left: -999vw; }
-.navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon{ background-color: rgb(255, 255, 255); height: 2px; margin-left: 9px; position: absolute; top: 20px; transition: all 300ms ease-out; -webkit-transition: all 300ms ease-out; width: 24px; left: 0px; background-position: initial initial; background-repeat: initial initial; }
-.navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon::after, .navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon::before{ content: ''; position: absolute; width: 100%; height: 100%; left: 0px; top: 6px; background-color: rgb(255, 255, 255); transition: all 300ms ease-out; -webkit-transition: all 300ms ease-out; background-position: initial initial; background-repeat: initial initial; }
-.navigation-primary .primary-nav-list .menu-toggle .menu-toggle-icon::before{ top: auto; bottom: 6px; }
-@media (min-width: 1083px){
-.navigation-primary .primary-nav-list .menu-toggle{ display: none; }
-}
-.navigation-primary .circle-logo-container{ height: 40px; left: 0px; opacity: 0; pointer-events: auto; position: absolute; -webkit-transform: translateY(-100px); top: 10px; width: 40px; z-index: 1; }
-@media (max-width: 1120px) and (min-width: 1080px){
-.navigation-primary .circle-logo-container{ left: 20px; }
-}
-.navigation-primary .circle-logo-container span{ -webkit-appearance: none; clip: rect(1px 1px 1px 1px); position: absolute !important; }
-@media (max-width: 1084px){
-.navigation-primary .circle-logo-container{ height: 32px; margin-left: 20px; opacity: 1; -webkit-transform: translateY(4px); top: 0px; width: 32px; }
-}
-.navigation-primary .circle-logo-container .circle-logo path{ fill: #ffffff; transition: all 0.5s; -webkit-transition: all 0.5s; }
-.navigation-primary .circle-logo-container a{ color: rgb(255, 255, 255); outline: none; }
-.navigation-primary .circle-logo-container .circle-logo{ -webkit-transform: rotate(-360deg); }
-.homepage-header-content .large-brand-mark-link{ display: block; left: 0px; max-width: 100%; padding: 0px; position: absolute; top: 0px; z-index: 1; height: 250px; }
-@media (min-width: 768px){
-.homepage-header-content .large-brand-mark-link{ height: 600px; }
-}
-@media (max-width: 768px) and (min-width: 540px){
-.homepage-header-content .large-brand-mark-link{ height: 600px; }
-}
-@media (min-width: 1084px){
-.homepage-header-content .large-brand-mark-link{ max-height: none; }
-}
-@media (min-width: 1084px){
-.homepage-header-content .large-brand-mark-link{ height: 320px; padding: 0px; top: -40px; width: 234px; }
-}
-@media (min-width: 1400px){
-.homepage-header-content .large-brand-mark-link{ left: 160px; }
-}
-.homepage-header-content .large-brand-mark-link span{ -webkit-appearance: none; clip: rect(1px 1px 1px 1px); color: rgb(255, 255, 255); position: absolute !important; }
-.homepage-header-content .large-brand-mark-link .large-brand-mark{ fill: #ffffff; height: calc(100% - 40px); max-width: 100%; margin: 20px; }
-@media (min-width: 1084px){
-.homepage-header-content .large-brand-mark-link .large-brand-mark{ height: auto; margin: 0px; }
-}/* Styles appended to the end of every critical path css stylesheet */
-.navigation-primary .primary-list {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-.navigation-eyebrow .eyebrow-list {
-    display: flex;
-    justify-content: space-between;
-}
-.calls-to-action .call-to-action {
-    align-items: center;
-    display: flex;
-}
-.calls-to-action .reminders-container {
-    display: flex;
-}
-.calls-to-action .reminders-anchor {
-    display: flex;
-}</style></head><body><header class="header  header--blue" role="banner">
-    <div class="header-background-image-container">
-        <div class="header-background-image" aria-hidden="true" style="background-image: url(/_assets/3d7851c9e7cf5a6f32b2aea43ac49cff.jpg)"></div>
-    </div>
-        <div class="header-menu-bar homepage-header-navigation">
-        <nav class="navigation-eyebrow" role="navigation" aria-label="Eyebrow navigation">
-    <div class="navigation-eyebrow-inner">
-        <ul class="eyebrow-list">
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://maps.uic.edu/">Map</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://www.uic.edu/apps/departments-az/search">Directory</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="/about/contact-us">Contact Us</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://library.uic.edu/">Library</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://www.uicflames.com/">Athletics</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://oge.uic.edu/">International</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="https://today.uic.edu/resources/current-students">Current Students</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="https://today.uic.edu/resources/faculty-staff">Faculty and Staff</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="http://hospital.uillinois.edu/">UI Health</a></li>
-                            <li class="eyebrow-list-item"><a class="eyebrow-list-anchor" href="https://give.uic.edu/">+ Give</a></li>
-                            <li class="eyebrow-list-item search-button-item">
-                    <button class="search-button" type="button">
-                        <svg class="search-glass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-label="Expand search box"><title>Expand search box</title><path d="M19.7 18.3l-5.9-5.9c1-1.3 1.6-2.9 1.6-4.7C15.4 3.5 12 0 7.7 0S0 3.4 0 7.7c0 4.2 3.4 7.7 7.7 7.7 1.8 0 3.4-.6 4.7-1.6l5.9 5.9c.2.2.4.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4zM2 7.7C2 4.6 4.6 2 7.7 2s5.7 2.6 5.7 5.7-2.5 5.7-5.7 5.7C4.6 13.4 2 10.8 2 7.7z"/></svg>
-                    </button>
-                </li>
-        </ul>
-        <div class="search-input-container">
-            <form method="get" action="/search" role="search">
-                <input type="text" name="q" class="search-input" placeholder="Search..." disabled tabindex="-1" aria-label="Search">
-                <input type="submit" class="submit-button" name="search" value="Submit">
-            </form>
-        </div>
-    </div>
-</nav>
-        <nav class="navigation-primary" role="navigation" aria-label="Primary navigation">
-    <div class="navigation-primary-inner">
-                <div class="circle-logo-container">
-            <a href="/">
-                <svg class="circle-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M36.5 17.3L33.1 19c-.3-1.3-1-2-2.3-2-1.7 0-2.5 1.4-2.5 3.6s.8 3.6 2.5 3.6c1.2 0 1.8-.6 2.2-1.6l3.5 1.3c-.9 2.1-2.8 3.5-5.8 3.5-4.1 0-6.5-2.8-6.5-6.8s2.5-6.8 6.6-6.8c3.2.1 5 1.8 5.7 3.5m-14.1 9.8h-3.9v-13h3.9v13zm-6.3-5.3c0 1.8-.2 2.7-.7 3.6-.9 1.4-3.2 2-5.2 2s-4.3-.6-5.2-2c-.5-.9-.7-1.8-.7-3.6v-7.7h3.9v7.8c0 .9.1 1.5.4 1.8.3.4.8.5 1.5.5s1.2-.2 1.5-.5c.3-.4.4-1 .4-1.8v-7.8h3.9v7.7zM40 20C40 9 31 0 20 0S0 9 0 20s9 20 20 20 20-9 20-20"/></svg>
-<span>University of Illinois at Chicago</span>            </a>
-        </div>
-                            <ul class="primary-nav-list">
-    <li><button class="menu-toggle" type="button" role="button" tabindex="-1">
-        <span class="menu-toggle-icon"></span>
-        <span>Expand menu</span>
-    </button></li>
-    <li class="menu-label-item"><span class="menu-label">Menu</span></li>
-            <li class="primary-list-item ">
-            <a class="primary-list-anchor" href="/admissions-aid">Admissions &#038; Aid</a>
-                            <ul class="primary-second-tier-list">
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/admissions-aid/visit-campus">Visit Campus</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/admissions-aid/paying-for-college">Paying for College</a></li>
-                                    </ul>
-                    </li>
-            <li class="primary-list-item ">
-            <a class="primary-list-anchor" href="/academics">Academics</a>
-                            <ul class="primary-second-tier-list">
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/academics/programs-of-study">Programs of Study</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/academics/colleges-schools">Colleges &#038; Schools</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/academics/student-support">Student Support</a></li>
-                                    </ul>
-                    </li>
-            <li class="primary-list-item ">
-            <a class="primary-list-anchor" href="/research">Research</a>
-                            <ul class="primary-second-tier-list">
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/research-impact">Research Impact</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/research-strengths">Research Strengths</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/resources-facilities">Resources &#038; Facilities</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/research/student-research">Student Research</a></li>
-                                    </ul>
-                    </li>
-            <li class="primary-list-item ">
-            <a class="primary-list-anchor" href="/life-at-uic">Life at UIC</a>
-                            <ul class="primary-second-tier-list">
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/life-at-uic/living-on-around-campus">Living On &#038; Around Campus</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/life-at-uic/campus-resources">Campus Resources</a></li>
-                                    </ul>
-                    </li>
-            <li class="primary-list-item ">
-            <a class="primary-list-anchor" href="/chicago">Chicago</a>
-                            <ul class="primary-second-tier-list">
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/chicago/exploring-chicago">Exploring Chicago</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/chicago/city-transportation">City Transportation</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/chicago/essential-chicago">Essential Chicago</a></li>
-                                    </ul>
-                    </li>
-            <li class="primary-list-item ">
-            <a class="primary-list-anchor" href="/alumni">Alumni</a>
-                    </li>
-            <li class="primary-list-item ">
-            <a class="primary-list-anchor" href="/about">About</a>
-                            <ul class="primary-second-tier-list">
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/visit-directions">Visit &#038; Directions</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/history">History</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/leadership">Leadership</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/public-media-resources">Public &#038; Media Resources</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/job-opportunities">Job Opportunities</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/contact-us">Contact Us</a></li>
-                                            <li class="primary-second-tier-list-item"><a class="primary-second-tier-list-anchor" href="/about/acerca">Acerca de la UIC (en español)</a></li>
-                                    </ul>
-                    </li>
-    </ul>
-            </div>
-</nav>    </div>
-    <div class="header-content homepage-header-content ">
-                    <a href="/" class="large-brand-mark-link"><svg class="large-brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234 320.6"><path d="M229.1 289.7l-4.6 2.2c-.4-1.7-1.4-2.7-3.1-2.7-2.3 0-3.4 1.9-3.4 5s1.1 4.9 3.4 4.9c1.6 0 2.5-.8 3-2.2l4.8 1.7c-1.3 2.8-3.8 4.8-7.8 4.8-5.6 0-8.8-3.8-8.8-9.2 0-5.5 3.4-9.2 8.9-9.2 4.2 0 6.7 2.4 7.6 4.7m-19.2 13.4h-5.3v-17.8h5.3v17.8zm-8.5-7.3c0 2.5-.3 3.7-1 4.9-1.2 2-4.3 2.7-7.1 2.7-2.7 0-5.9-.8-7.1-2.7-.7-1.2-1-2.4-1-4.9v-10.5h5.3v10.6c0 1.2.2 2 .6 2.5.4.5 1.1.7 2.1.7s1.7-.2 2.1-.7c.4-.5.6-1.3.6-2.5v-10.6h5.3v10.5zm32.5-2.5c0-15-12.2-27.2-27.2-27.2s-27.2 12.2-27.2 27.2 12.2 27.2 27.2 27.2c15 .1 27.2-12.1 27.2-27.2M150 137.8c-4.1 0-6.6-1.6-6.6-4.6 0-2.9 2.5-4.5 6.6-4.5 4 0 6.5 1.5 6.5 4.5 0 3.1-2.4 4.6-6.5 4.6m0 7.2c7.3 0 12.2-4.4 12.2-11.7 0-7.4-4.8-11.7-12.2-11.7-7.4 0-12.2 4.6-12.2 11.7S142.6 145 150 145m0 27.7c7.8 0 12.2-4.4 12.2-10.4 0-2.8-.9-4.7-2-6h1.6v-6.1H148v11.4h5.4v-5.2c2 .2 3.5 1.6 3.5 4.3 0 3.5-2.7 4.9-6.9 4.9-4.1 0-6.6-1.6-6.6-4.7 0-2.3 1.3-3.7 3.7-4.3l-2.9-5.9c-3.1 1.2-6.3 4.5-6.3 10.1-.1 7.3 4.9 11.9 12.1 11.9m2.2 12.5v3.9l-4.8-1.4c-.9-.2-1.8-.4-2.3-.6l2.3-.6 4.8-1.3zm5.6 5.5v-7.1l3.9-1.2V175l-23.5 7.8v8.4l23.5 7.9v-7.3l-3.9-1.1zm-4.3 16.6c1.8.7 2.9 1.9 2.9 3.9 0 3-2.4 4.5-6.5 4.5s-6.6-1.5-6.6-4.5c0-2.2 1.3-3.5 3.6-4.1L144 201c-3.1 1.2-6.3 4.5-6.3 10.1 0 7.3 4.9 11.8 12.2 11.8 7.2 0 12.2-4.3 12.2-11.7 0-5.4-2.6-8.7-6.4-10.4l-2.2 6.5zm-15.2 27.6h23.5v-7.1h-23.5v7.1zm14.5 13.7h9v-7.1h-23.5v7.1h8.4v6.8h-8.4v7.1h23.5v-7.1h-9v-6.8zm.7 24.1c1.8.7 2.9 1.9 2.9 3.9 0 3-2.4 4.5-6.5 4.5s-6.6-1.5-6.6-4.5c0-2.2 1.3-3.5 3.6-4.1l-2.9-6.1c-3.1 1.2-6.3 4.5-6.3 10.1 0 7.3 4.9 11.8 12.2 11.8 7.2 0 12.2-4.3 12.2-11.7 0-5.4-2.6-8.7-6.4-10.4l-2.2 6.5zm-44.1-11.3v-5.9h17.8v-7.1h-17.8v-5.9h-5.7v18.9h5.7zm8.2 11.7v3.9l-4.8-1.4c-.9-.2-1.8-.4-2.3-.6l2.3-.6 4.8-1.3zm5.7 5.5v-7.1l3.9-1.2v-7.4l-23.5 7.8v8.4l23.5 7.9v-7.3l-3.9-1.1zM72.7 124.8c-1.5 1.2-4 4.7-4 10.3 0 5.8 3 9.7 7.4 9.7 4.7 0 6.7-3.6 7.5-8l.6-3.1c.3-1.8.5-2.9 1.7-2.9s1.9 1.3 1.9 3.6c0 2.8-1.3 5.4-3.5 7.2l3.8 4.3c1.9-1.3 5-5.2 5-11.4 0-6-2.4-10.4-7.8-10.4-4.4 0-6.2 2.9-7.1 7.5l-.7 3.5c-.3 1.9-.8 2.8-1.9 2.8-1.1 0-1.7-1.2-1.7-2.9 0-2.3 1-4.6 2.6-6.3l-3.8-3.9zm-3.6 32.9h23.5v-7.1H69.1v7.1zm11.8 21.9c-4.1 0-6.6-1.6-6.6-4.6 0-2.9 2.5-4.5 6.6-4.5 4 0 6.5 1.5 6.5 4.5-.1 3.1-2.5 4.6-6.5 4.6m0 7.2c7.3 0 12.2-4.4 12.2-11.7 0-7.4-4.8-11.7-12.2-11.7-7.4 0-12.2 4.6-12.2 11.7s4.8 11.7 12.2 11.7m-11.8 19.8v6.8h23.5v-7.1H87c-3.8 0-6.7.2-6.7.2s2.5-1.4 4.9-3l7.5-4.6v-6.8H69.1v7.1h5.4c3.5 0 6.4-.1 6.4-.1s-1.7 1-5 3.2l-6.8 4.3zm0 20.9h23.5v-7.1H69.1v7.1zm0 21.6h23.5v-16.4h-5.7v9.3H69.1v7.1zm0 21.7h23.5v-16.4h-5.7v9.3H69.1v7.1zm0 14.1h23.5v-7.1H69.1v7.1zM40.2 0h-5.6v17.8h23.5v-7.1h-8.9V1h-5.7v9.8h-3.3V0zm6.1 39.4c-4.1 0-6.6-1.6-6.6-4.6 0-2.9 2.5-4.5 6.6-4.5 4 0 6.5 1.5 6.5 4.5 0 3.1-2.4 4.6-6.5 4.6m0 7.2c7.3 0 12.2-4.4 12.2-11.7 0-7.4-4.8-11.7-12.2-11.7-7.4 0-12.2 4.6-12.2 11.7S39 46.6 46.3 46.6m3 18.8l-14.8-8.2v7.5l8.1 4-8.1 3.9v7.6l14.8-7.7H58v-7.1h-8.7zM40.2 102v-5.9H58V89H40.2v-5.9h-5.7V102h5.7zm-5.6 11.9h23.5v-7.1H34.6v7.1zm3.6 5.8c-1.5 1.2-4 4.7-4 10.3 0 5.8 3 9.7 7.4 9.7 4.7 0 6.7-3.6 7.5-8l.6-3.1c.3-1.8.5-2.9 1.7-2.9s1.9 1.3 1.9 3.6c0 2.8-1.3 5.4-3.5 7.2l3.8 4.3c1.9-1.3 5-5.2 5-11.4 0-6-2.4-10.4-7.8-10.4-4.4 0-6.2 2.9-7.1 7.5L43 130c-.3 1.9-.8 2.8-1.9 2.8s-1.7-1.2-1.7-2.9c0-2.3 1-4.6 2.6-6.3l-3.8-3.9zm1.7 38.6v-3.5c0-.9.1-1.6.4-2 .4-.6 1-.9 1.9-.9.9 0 1.5.3 1.9.9.3.4.4 1.1.4 2v3.5h-4.6zm18.2-6.8V144l-9 5.3c-.1-.3-.3-.7-.5-1-1.4-2.2-3.2-3.3-6.3-3.3-3.5 0-5.9 1.8-6.9 4.5-.5 1.3-.8 3-.8 5.6v10.2h23.5v-7.1h-8.2V156l8.2-4.5zm-17.9 20.6h-5.6v18h23.5v-18.7h-5.7v11.7h-3.5V173h-5.6v10.1h-3.1v-11zm6.7 33.3c1.7.4 3.5.8 3.5.8s-1.8.4-3.5.8l-12.3 3.3v7.4l23.5-7v-9l-23.5-7.1v7.5l12.3 3.3zM34.6 229h23.5v-7H34.6v7zm0 21.6v6.8h23.5v-7.1h-5.7c-3.8 0-6.7.2-6.7.2s2.5-1.4 4.9-3l7.5-4.6v-6.8H34.6v7.1H40c3.5 0 6.4-.1 6.4-.1s-1.7 1-5 3.2l-6.8 4.3zm23.9 23.9c0-3.6-1-7.8-3.6-9.3-1.6-.9-3.2-1.3-6.5-1.3H34.6v7.1h14c1.6 0 2.6.2 3.3.8.7.6 1 1.5 1 2.8 0 1.3-.3 2.2-1 2.8-.7.6-1.7.8-3.3.8h-14v7.1h13.9c3.3 0 4.9-.3 6.5-1.3 2.5-1.7 3.5-5.9 3.5-9.5M0 269.7v18.9h5.7v-5.9h17.8v-7.1H5.7v-5.9H0zm0-25.8v7.1h8.4v6.8H0v7h23.5v-7h-9V251h9v-7.1H0zm17.8-25.7v11.7h-3.5v-10.1H8.8v10.1H5.6v-11.1H0v18h23.5v-18.7h-5.7z"/></svg><span>The University of Illinois at Chicago</span></a>    <div class="hero-image-container">
-        <img class="hero-image" src="/_assets/3d7851c9e7cf5a6f32b2aea43ac49cff.jpg" alt="Hero Image">
-    </div>
-            </div>
-</header>
-<main>
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="google-site-verification" content="yXKNQ2lFo7A1EP73rn8-hwx6hhpomVE63yWzSChVwu4" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="profile" href="http://gmpg.org/xfn/11"><link rel="pingback" href="https://www.cs.uic.edu/xmlrpc.php"><link type="text/css" media="all" href="https://www.cs.uic.edu/wp-content/cache/autoptimize/css/autoptimize_441509b1e3b6f2c7d9c3e6ade46eeb46.css" rel="stylesheet" /><link type="text/css" media="screen" href="https://www.cs.uic.edu/wp-content/cache/autoptimize/css/autoptimize_ca65868326b5b197438eb9411c7d8b4b.css" rel="stylesheet" /><title>EVL’s Lance Long recognized with UIC’s Award of Merit &#8211; UIC Computer Science</title><link sizes="16x16" href="/wp-content/uploads/2016/08/Favicon-iPad-Retina.png" rel="icon" /><link rel="icon" sizes="57x57" href="/wp-content/uploads/2016/08/Favicon-iPad-Retina.png" /><link rel="icon" sizes="114x114" href="/wp-content/uploads/2016/08/Favicon-iPad-Retina.png" /><link rel="icon" sizes="72x72" href="/wp-content/uploads/2016/08/Favicon-iPad-Retina.png" /><link rel="icon" sizes="144x144" href="/wp-content/uploads/2016/08/Favicon-iPad-Retina.png" /><link rel='dns-prefetch' href='//www.cs.uic.edu' /><link rel='dns-prefetch' href='//fonts.googleapis.com' /><link rel='dns-prefetch' href='//s.w.org' /><link rel="alternate" type="application/rss+xml" title="UIC Computer Science &raquo; Feed" href="https://www.cs.uic.edu/feed/" /><link rel="alternate" type="application/rss+xml" title="UIC Computer Science &raquo; Comments Feed" href="https://www.cs.uic.edu/comments/feed/" /> <script type="text/javascript">window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.cs.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);</script> <style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style><style id='rs-plugin-settings-inline-css' type='text/css'>#rs-demo-id {}</style><link rel='stylesheet' id='k2t-google-font-Roboto-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese' type='text/css' media='all' /> <script type='text/javascript' src='https://www.cs.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script> <link rel='https://api.w.org/' href='https://www.cs.uic.edu/wp-json/' /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.cs.uic.edu/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.cs.uic.edu/wp-includes/wlwmanifest.xml" /><link rel='prev' title='UIC’s PoliThinkers claim victory at BuiltWorlds Hackathon' href='https://www.cs.uic.edu/uics-polithinkers-claim-victory-at-builtworlds-hackathon/' /><link rel='next' title='Reaping the benefits of an internship experience' href='https://www.cs.uic.edu/reaping-the-benefits-of-an-internship-experience/' /><meta name="generator" content="WordPress 4.9.8" /><link rel="canonical" href="https://www.cs.uic.edu/evls-lance-long-recognized-with-uics-award-of-merit/" /><link rel='shortlink' href='https://www.cs.uic.edu/?p=2854' /><link rel="alternate" type="application/json+oembed" href="https://www.cs.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.cs.uic.edu%2Fevls-lance-long-recognized-with-uics-award-of-merit%2F" /><link rel="alternate" type="text/xml+oembed" href="https://www.cs.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.cs.uic.edu%2Fevls-lance-long-recognized-with-uics-award-of-merit%2F&#038;format=xml" /> <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-17081517-1', 'cs.uic.edu');ga('send', 'pageview');</script> <style>.k2t-wrap, .container { max-width: 1170px; }
+						
+						.widget #ld_course_info h4:after,
+						.k2t-gallery-heading .gallery-title:after,
+						.k2t-project-heading h2:before,
+						.k2t-project-heading h2:after,
+						.k2t-heading.has-border.two_dots .h:before,
+						.k2t-heading.has-border.two_dots .h:after,
+						.k2t-title-bar .main-title:after,
+						.widget-title:after{
+							display: none;
+						}
+					
+						.k2t-body{
+							background: ;
+						}
+					
+							.k2t-sidebar, .k2t-sidebar-sub { width:25% !important; }
+							.k2t-blog, .k2t-main {width:75% !important; }
+										#close-canvas, .shop-cart .cart-control span, .mc4wp-form input[type=submit], .k2t-btt:hover,.wpcf7 #commentform input[type="submit"],.k2t-button a,.k2t-header-top, blockquote:before, q:before, .k2t-blog .post-item .more-link, .k2t-blog .cat-icon,.k2t_widget_recent_event .join-event,.teacher-listing.classic.no-border .social a:hover i, article[class*="course-"] .more-link, .more-link, .k2t-searchbox .mark, .k2t-blog .post-item .more-link:hover, .k2t-navigation ul li span.current,.k2t-footer .widget.social-widget ul li a:hover,.k2t-header-mid .k2t-menu li ul > li.current-menu-ancestor > a, .single-post-k-event .event-link, .single-post-k-course .course-link,.k2t-gallery-heading .filter-list li:after,.k2t-related-course .related-thumb a i, .teacher-listing.classic.has-border i, .project-fields .project-link,.widget #wp-calendar td#today, .widget #wp-calendar caption, .event-classic-item .more-link, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce-page #payment #place_order:hover, .shop-cart .shop-item .buttons .button:hover, .woocommerce table.wishlist_table .add_to_cart_button, .woocommerce div.product .single_add_to_cart_button:hover, .woocommerce div.product .single_add_to_cart_button:focus, .woocommerce div.product .single_add_to_cart_button, .k2t-page-topnav ul.menu > li > a:before, .event-listing-masonry .masonry-item .read-more, .owl-dots > div.active, .owl-nav > div > i:hover, .vc_tta.vc_tta-style-outline.vc_tta-tabs .vc_tta-tabs-list .vc_tta-tab.vc_active a,.k2t-recent-event .event-info .read-more,.widget .tagcloud a:hover,button, input[type="button"], input[type="reset"], input[type="submit"],.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce-page #payment #place_order, .shop-cart .shop-item .buttons .button, .event-isotope-filter li:after,.widget_categories > ul > .cat-item > a:before,.error404, .error404 .k2t-body, .teacher-connect table th,.woocommerce .woocommerce-pagination ul.page-numbers li .page-numbers.current, .widget_product_categories > ul > .cat-item > a:before,.woocommerce .widget_price_filter .price_slider_wrapper .ui-state-default, .woocommerce .widget_price_filter .price_slider_wrapper .ui-slider-range,.single-product-image-wrap #nav li.active, .entry-box .widget_tag_cloud .tagcloud a:hover, .about-author, .form-submit #submit,.single-footer-nav, #bbpress-forums li.bbp-header, .course-isotope-filter li:after{
+					background: #f70202;
+				}
+				#commentform > p.focus input[type="text"], #commentform > p.focus input[type="email"],.k2t-footer .widget.social-widget ul li a:hover,
+				.entry-box .widget_tag_cloud .tagcloud a:hover,#commentform > p.focus textarea, .teacher-listing.classic.has-border i, .owl-nav > div > i:hover, .widget .tagcloud a:hover{
+					border-color: #f70202;
+				}
+				.widget-title > span{
+					border-color: ;
+				}
+				.k2t-iconbox.layout-4 .iconbox-icon i, .course-isotope-filter li, .b-medium-special.b-medium .k2t-blog .post-item header h2:hover a, .k2t-info .widget_nav_menu ul li a:hover, .k2t-page-topnav ul.menu > li.active > a, .k2t-btt,.event-isotope-filter li.active, .contact-info .vc_icon_element.vc_icon_element-outer .vc_icon_element-inner:hover .vc_icon_element-icon:before,.woocommerce .cart-collaterals .cart_totals table tr.order-total td, .woocommerce .b-action .cart-contents:hover,.b-action .yith-wcwl-add-to-wishlist a, .woocommerce-page .cart-collaterals .cart_totals table tr.order-total td, .k2t-gallery-heading .filter-list li.active, .k2t-gallery-heading .filter-list li:hover,.k2t-header-mid .k2t-menu > li.current-menu-item > a, .k2t-header-mid .k2t-menu > li.current-menu-parent > a, .k2t-header-mid .k2t-menu > li.current-menu-ancestor > a, .k2t-header-mid .search-box:hover,.k2t-heading.has-border.two_dots .h:before, .k2t-heading.has-border.two_dots .h:after,.widget ul li.current-cat a,.widget-title:after,.vc_toggle.vc_toggle_default .vc_toggle_title h4:hover, .k2t-footer .k2t-wrap .k2t-row > div a:hover{
+					color: #f70202 !important;
+				}
+				.k2t-header-mid .k2t-menu > li:hover a,
+				.k2t-header-mid .k2t-menu > li.current-menu-item > a, 
+				.k2t-header-mid .k2t-menu > li.current-menu-parent > a, 
+				.k2t-header-mid .k2t-menu > li.current-menu-ancestor > a,
+				.k2t-header-mid .k2t-menu > li > a:hover {
+					border-bottom-color: #f70202;
+				}
+				#commentform > p.focus input[type="text"],
+				#commentform > p.focus input[type="email"],
+				#commentform > p.focus textarea {
+					border-bottom: 3px solid #f70202;
+				}
 
-    <h1 id="home-page-title">The University of Illinois at Chicago</h1>
+				.k2t-gallery-shortcode .view .mask {
+					background: rgba(33, 150, 243, 0.95);
+				}
 
-    <div class="ms-grid zero-margin full">
-                    <aside class="calls-to-action" role="complementary" aria-label="Calls to Action">
-    <div class="calls-to-action-row-container">
-        <div class="ms-row call-to-action-row">
-            <div class="calls-to-action-group-container">
-                <ul class="calls-to-action-group-container-again">
-                                    <li class="xs-col-1-2 m-col-1-3">
-                        <a class="call-to-action" href="http://admissions.uic.edu/book-visit?utm_source=uic.edu&amp;utm_medium=website&amp;utm_campaign=general-2018&amp;utm_content=cta_button">
-                            <div class="call-to-action-icon-container" aria-hidden="true">
-                                    <svg class="book-a-visit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="14.1" r="5.6"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm7.9 20.2L20.8 34c-.2.3-.5.5-.8.5-.3 0-.6-.2-.8-.5l-7.1-13.8c-.9-1.5-1.4-3.2-1.4-5 0-5.1 4.2-9.3 9.3-9.3s9.3 4.2 9.3 9.3c0 1.8-.5 3.5-1.4 5z"/></svg>                            </div>
-                            <div class="call-to-action-label">Book a Visit</div>
-                        </a>
-                    </li>
-                                    <li class="xs-col-1-2 m-col-1-3">
-                        <a class="call-to-action" href="http://admissions.uic.edu/undergraduate/request-information?utm_source=uic.edu&amp;utm_medium=website&amp;utm_campaign=general-2017&amp;utm_content=cta_button">
-                            <div class="call-to-action-icon-container" aria-hidden="true">
-                                    <svg class="request-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M13.9 12.6h12.2v2H13.9zM13.9 21.1h12.2v2H13.9zM13.9 16.9h12.2v2H13.9zM13.9 25.4h12.2v2H13.9z"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm9.6 31.9H10.5V8.1h19.1v23.8z"/></svg>                            </div>
-                            <div class="call-to-action-label">Request info</div>
-                        </a>
-                    </li>
-                                    <li class="xs-col-1-2 m-col-1-3">
-                        <a class="call-to-action" href="http://admissions.uic.edu/apply-now?utm_source=uic.edu&amp;utm_medium=website&amp;utm_campaign=general-2017&amp;utm_content=cta_button">
-                            <div class="call-to-action-icon-container" aria-hidden="true">
-                                    <svg class="apply-now" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm-4.4 31.1l-9.8-9.8 3.9-3.9 5.9 5.9L29.1 9.9l3.9 3.9-17.4 17.3z"/></svg>                            </div>
-                            <div class="call-to-action-label">Apply now</div>
-                        </a>
-                    </li>
-                                </ul>
-            </div>
-            <div class="calls-to-action-reminder-container ">
-                <div class="reminders-container">
-        <a class="reminders-anchor scroll-to" href="#campus-reminders">
-        <span class="reminders-icon-container" aria-hidden="true"><svg class="reminders" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm10.7 26.1L21 27l2-2.5-10 1v6.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V11.1c-.6-.4-1-1-1-1.8 0-1.2.9-2.1 2.1-2.1s2.1.9 2.1 2.1c0 .7-.4 1.4-1 1.8v.5l10-1v1.6l7.6-.7.1 14.6z"/></svg></span>
-        <span>Reminders <svg class="anchor-point" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8"><path d="M6 8L.4 2.2C-.1 1.7-.1.9.4.4s1.3-.5 1.8 0l3.9 4 3.9-4c.5-.5 1.3-.5 1.8 0s.5 1.3 0 1.8L6 8z"/></svg></span>
-    </a>
-</div>
-            </div>
-        </div>
-    </div>
-</aside>
-            </div>
+				
+						.k2t-logo { margin-top: 15px;margin-left: 0px;margin-right: 0px;margin-bottom: 15px; }
+					
+						h1, h2, h3, h4, h1 *, h2 *, h3 *, h4 * { color: ; font-family: Roboto; }
+					
+						/*.k2t-footer .k2t-bottom, .k2t-footer .k2t-bottom * { background-color: #252545;color: ; }*/
+						.k2t-footer .widget { color: ; }
+					
+						body { font-family: Roboto; font-size: 14px; }
+					
+						.k2t-header-mid .k2t-menu, .k2t-header .k2t-menu .mega-container ul, .vertical-menu .k2t-header-mid .k2t-menu { font-family: Roboto; font-size: 16px; }
+					
+						.k2t-header-mid .k2t-menu > li > a { text-transform: uppercase; }
+					
+						.k2t-header-mid .k2t-menu > li > a { font-weight: 300; }
+					
+						h1 { font-size: 45px; }
+						h2 { font-size: 40px; }
+						h3 { font-size: 28px; }
+						h4 { font-size: 24px; }
+						h5 { font-size: 20px; }
+						h6 { font-size: 14px; }
+					
+						.k2t-header-mid .k2t-menu .sub-menu { font-size: 16px; }
+					/* resize header */
+.k2t-header-mid .k2t-menu > li > a {
+    line-height: 90px;
+}
 
-    <div class="ms-grid zero-margin extra-wide-grid full">
-                    <div class="key-message-block">
-            <div class="ms-row">
-            <div class="m-col-1-2 m-col-2-push-1" aria-hidden="true">
-                <div class="image" style="background-image: url(/_assets/9bf1014596f4a9a16bd219d29ad2f0fe.jpg)"></div>
-            </div>
-            <div class="m-col-1-2 m-col-2-pull-1 message-on-left">
-                <div class="message-cell">
-                    <h2 class="promo-header">Chicago&#039;s Public Research University</h2>
-                    <div class="text">
-                        <p class="p1">Located in the heart of one of the world’s great cities, the University of Illinois at Chicago is a vital part of the educational, technological and cultural fabric of the region. As Chicago’s only public research university with 30,000 students, 15 colleges, a hospital and a health sciences system, UIC provides you access to excellence and opportunity.</p>
+.k2t-header-top .element-editor {
+    padding: 6px 0;
+}
 
-                    </div>
-                    <ul class="message-button-list">
-                                                                            
-                                                    <li class="message-button-list-item"><a class="red-button" href="/academics" role="button">Academic programs</a></li>
-                                                    <li class="message-button-list-item"><a class="red-button" href="/research" role="button">More about research</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-            <div class="ms-row">
-            <div class="m-col-1-2 " aria-hidden="true">
-                <div class="image" style="background-image: url(/_assets/c6b3964952e160d68f5d33378cdbc200.jpg)"></div>
-            </div>
-            <div class="m-col-1-2 message-on-right">
-                <div class="message-cell">
-                    <h2 class="promo-header">Value Diversity</h2>
-                    <div class="text">
-                        <p>UIC is proud to be recognized as having one of the most ethnically and culturally rich college campuses in America. Our welcoming environment and diverse student body engender deeper learning and provide new perspectives on life. Come experience the strength of multiple voices, races, cultures, beliefs, identities, orientations and points of view.</p>
+.k2t-header-top .social li a,
+.k2t-header-bot .social li a {
+    padding: 6px 0;
+}
 
-                    </div>
-                    <ul class="message-button-list">
-                                                                            
-                                                    <li class="message-button-list-item"><a class="blue-button" href="/life-at-uic" role="button">Life on campus</a></li>
-                                                    <li class="message-button-list-item"><a class="blue-button" href="/chicago" role="button">Experience Chicago</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-            <div class="ms-row">
-            <div class="m-col-1-2 m-col-2-push-1" aria-hidden="true">
-                <div class="image" style="background-image: url(/_assets/fc1b4e9ca903147366b8f09d3a6d3beb.jpg)"></div>
-            </div>
-            <div class="m-col-1-2 m-col-2-pull-1 message-on-left">
-                <div class="message-cell">
-                    <h2 class="promo-header">Serve Others</h2>
-                    <div class="text">
-                        <p>All human advancement begins with an idea. Ideas change the world. And at UIC, ideas abound! Come join us. Come share your ideas.</p>
+.k2t-header-mid .k2t-menu li ul {
+    top: 90px;
+}
 
-                    </div>
-                    <ul class="message-button-list">
-                                                                            
-                                                    <li class="message-button-list-item"><a class="green-button" href="http://economicimpact.uic.edu/" role="button">Our impact</a></li>
-                                                    <li class="message-button-list-item"><a class="green-button" href="http://sldvs.uic.edu/" role="button">Your impact</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>                <div class="super-gap-bottom">
-                            <section class="campus-grid" role="region" aria-label="Campus Grid">
-    <div class="ms-row">
-        <div class="m-col-1-2">
-                        <div class="campus-grid-slogan-cell campus-grid-double-height" >
-                <a href="http://ignite.uic.edu">
-                    <h1 class="campus-grid-slogan">
-                                                    <span class="block">IGNITE</span>
-                                                    <span class="block">The</span>
-                                                    <span class="block">Campaign </span>
-                                                    <span class="block">for UIC</span>
-                                            </h1>
-                    <div class="campus-grid-sub-slogan">
-                        We are <svg class="circle-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M36.5 17.3L33.1 19c-.3-1.3-1-2-2.3-2-1.7 0-2.5 1.4-2.5 3.6s.8 3.6 2.5 3.6c1.2 0 1.8-.6 2.2-1.6l3.5 1.3c-.9 2.1-2.8 3.5-5.8 3.5-4.1 0-6.5-2.8-6.5-6.8s2.5-6.8 6.6-6.8c3.2.1 5 1.8 5.7 3.5m-14.1 9.8h-3.9v-13h3.9v13zm-6.3-5.3c0 1.8-.2 2.7-.7 3.6-.9 1.4-3.2 2-5.2 2s-4.3-.6-5.2-2c-.5-.9-.7-1.8-.7-3.6v-7.7h3.9v7.8c0 .9.1 1.5.4 1.8.3.4.8.5 1.5.5s1.2-.2 1.5-.5c.3-.4.4-1 .4-1.8v-7.8h3.9v7.7zM40 20C40 9 31 0 20 0S0 9 0 20s9 20 20 20 20-9 20-20"/></svg>
-<span>University of Illinois at Chicago</span>                    </div>
-                </a>
-            </div>
-                    </div>
-        <div class="m-col-1-2">
-            <div class="ms-row">
-                <div class="s-col-1-2">
-                    <div class="campus-grid-single-height campus-grid-text-container athletics">
-                        <a href="https://uicflames.com/news/2018/5/30/mens-basketball-uic-basketball-excellence-fund-unveiled.aspx?path=general">
-                            <div class="ie-width-fix">
-                                UIC Basketball Excellence Fund unveiled
-                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="s-col-1-2">
-                    <div class="campus-grid-single-height">
-                        <a class="campus-grid-image-link" href="https://uicflames.com/news/2018/5/30/mens-basketball-uic-basketball-excellence-fund-unveiled.aspx?path=general">
-                            <img class="object-fit-cover" src="/_assets/f1198688f6d8b8f9f8ecce13e54b3667.jpg" alt="McClain-huddle">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="ms-row">
-                <div class="m-col-1-1">
-                    <div class="campus-grid-single-height">
-                        <a class="campus-grid-image-link" href="http://today.uic.edu/all-star-advice-at-baseball-clinic">
-                            <img class="object-fit-cover" src="/_assets/1c4e4aa37705b72c0e3c2cb99abebcf9.jpg" alt="2018.CurtisGranderson009b">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ms-row">
-        <div class="s-col-1-2 m-col-1-4">
-            <div class="ms-row">
-                <div class="m-col-1-1">
-                    <div class="campus-grid-single-height campus-grid-text-container chicago">
-                        <a href="http://today.uic.edu/uic-students-run-health-wellness-program-for-chicago-schools">
-                            <div class="ie-width-fix">
-                                UIC students run health, wellness program for Chicago schools
-                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="m-col-1-1">
-                    <div class="campus-grid-single-height">
-                        <a class="campus-grid-image-link" href="http://today.uic.edu/uic-students-run-health-wellness-program-for-chicago-schools">
-                            <img class="object-fit-cover" src="/_assets/b264cb90bc9c7cb1cce66b955b4ee12c.jpg" alt="IMG_0737">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="s-col-1-2 m-col-1-4">
-            <div class="campus-grid-double-height culture">
-                <a class="campus-grid-image-link" href="http://diversity.uic.edu/">
-                    <img class="object-fit-cover" src="/_assets/f3be9a0a024173bcf7f731bf9bc6fa4c.jpg" alt="Inter-faith-UIC-philipines-b">
-                </a>
-            </div>
-        </div>
-        <div class="m-col-2-4">
-            <div class="ms-row">
-                <div class="s-col-1-2 s-col-2-push-1">
-                    <div class="campus-grid-single-height campus-grid-text-container academics">
-                        <a href="https://today.uic.edu/uics-chancellors-fellows-program-targets-stellar-illinois-students">
-                            <div class="ie-width-fix">
-                                Chancellor’s Fellows Program for stellar Illinois students
-                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="s-col-1-2 s-col-2-pull-1">
-                    <div class="campus-grid-single-height">
-                        <a class="campus-grid-image-link" href="https://today.uic.edu/uics-chancellors-fellows-program-targets-stellar-illinois-students">
-                            <img class="object-fit-cover" src="/_assets/86b1011968f8c0ed7e6074c731881003.jpg" alt="DG14_09_21_123.jpg">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="ms-row">
-                <div class="s-col-1-2">
-                    <div class="campus-grid-single-height campus-grid-text-container miscellaneous">
-                        <a href="https://today.uic.edu/uic-earns-national-recognition-for-sustainability-efforts">
-                            <div class="ie-width-fix">
-                                UIC earns national recognition for sustainability efforts
-                                <svg class="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/></svg>                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="s-col-1-2">
-                    <div class="campus-grid-single-height">
-                        <a class="campus-grid-image-link" href="https://today.uic.edu/uic-earns-national-recognition-for-sustainability-efforts">
-                            <img class="object-fit-cover" src="/_assets/ba5e6c155e2eea3f81aa29d9e1e28bff.jpg" alt="20170928-IMG_1209">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-                                        <section class="calls-to-action-with-title" role="region" aria-labelledby="calls-to-action-with-title-header">
-    <h1 id="calls-to-action-with-title-header" class="calls-to-action-with-title-title">Take the Next Step</h1>
-    <div class="calls-to-action-with-title-anchor-container">
-            <a class="calls-to-action-with-title-anchor" href="http://admissions.uic.edu/visit-us">
-            <div class="calls-to-action-with-title-anchor-icon">    <svg class="book-a-visit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="14.1" r="5.6"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm7.9 20.2L20.8 34c-.2.3-.5.5-.8.5-.3 0-.6-.2-.8-.5l-7.1-13.8c-.9-1.5-1.4-3.2-1.4-5 0-5.1 4.2-9.3 9.3-9.3s9.3 4.2 9.3 9.3c0 1.8-.5 3.5-1.4 5z"/></svg></div>
-            <span class="calls-to-action-with-title-anchor-label">Book a visit</span>
-        </a>
-            <a class="calls-to-action-with-title-anchor" href="http://admissions.uic.edu/undergraduate/request-information">
-            <div class="calls-to-action-with-title-anchor-icon">    <svg class="request-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M13.9 12.6h12.2v2H13.9zM13.9 21.1h12.2v2H13.9zM13.9 16.9h12.2v2H13.9zM13.9 25.4h12.2v2H13.9z"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm9.6 31.9H10.5V8.1h19.1v23.8z"/></svg></div>
-            <span class="calls-to-action-with-title-anchor-label">Request info</span>
-        </a>
-            <a class="calls-to-action-with-title-anchor" href="http://admissions.uic.edu/apply-now">
-            <div class="calls-to-action-with-title-anchor-icon">    <svg class="apply-now" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm-4.4 31.1l-9.8-9.8 3.9-3.9 5.9 5.9L29.1 9.9l3.9 3.9-17.4 17.3z"/></svg></div>
-            <span class="calls-to-action-with-title-anchor-label">Apply now</span>
-        </a>
-            <a class="calls-to-action-with-title-anchor" href="/about/contact-us">
-            <div class="calls-to-action-with-title-anchor-icon">    <svg class="contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="31.4" r="1.3"/><path d="M25.6 8.5H14.4c-.2 0-.4.2-.4.4V29h12V8.9c0-.2-.2-.4-.4-.4z"/><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm8.2 31.1c0 1.4-1.2 2.6-2.6 2.6H14.4c-1.4 0-2.6-1.2-2.6-2.6V8.9c0-1.4 1.2-2.6 2.6-2.6h11.2c1.4 0 2.6 1.2 2.6 2.6v22.2z"/></svg></div>
-            <span class="calls-to-action-with-title-anchor-label">Contact us</span>
-        </a>
-        </div>
-</section>                    </div>
-    </div>
-    <div class="ms-grid">
-                    <div class="super-gap-bottom">
-                <section class="campus-reminders" id="campus-reminders" role="region" aria-label="Campus Reminders">
-    <h1 class="campus-reminders-header"><svg class="reminders" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20 0C9 0 0 9 0 20s9 20 20 20 20-9 20-20S31 0 20 0zm10.7 26.1L21 27l2-2.5-10 1v6.2c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1V11.1c-.6-.4-1-1-1-1.8 0-1.2.9-2.1 2.1-2.1s2.1.9 2.1 2.1c0 .7-.4 1.4-1 1.8v.5l10-1v1.6l7.6-.7.1 14.6z"/></svg> Campus Reminders</h1>
-    <div class="reminders-flex">
-            </div>
-</section>            </div>
-                            <div class="component">
-                <aside class="home-lists" role="complementary" aria-label="News, Events, and Academic Dates">
-    <div class="ms-row">
-                    <div class="m-col-1-3 news-list">
-                <h1 class="home-list-header">News</h1>
-                <ul class="home-list">
-                                    <li class="home-list-item">
-                        <a class="home-list-item-anchor" href="https://today.uic.edu/nsf-grant-supports-center-to-develop-microfluidics-based-solutions">
-                                                        <h2 class="home-list-title">NSF grant supports center to develop microfluidics-based solutions</h2>
-                        </a>
-                    </li>
-                                    <li class="home-list-item">
-                        <a class="home-list-item-anchor" href="https://today.uic.edu/credit-union-1-and-uic-poised-to-strengthen-partnership-with-naming-rights-agreement">
-                                                        <h2 class="home-list-title">Credit Union 1 and UIC Poised to Strengthen Partnership with Naming Rights Agreement</h2>
-                        </a>
-                    </li>
-                                    <li class="home-list-item">
-                        <a class="home-list-item-anchor" href="https://today.uic.edu/parents-kids-actually-agree-about-confidential-medical-care">
-                                                        <h2 class="home-list-title">Parents, kids actually agree about confidential medical care</h2>
-                        </a>
-                    </li>
-                                    <li class="home-list-item">
-                        <a class="home-list-item-anchor" href="https://today.uic.edu/study-investigates-factors-behind-chicago-school-closure-decisions">
-                                                        <h2 class="home-list-title">Study investigates factors behind Chicago school closure decisions</h2>
-                        </a>
-                    </li>
-                                </ul>
-                <a class="button" href="https://today.uic.edu" role="button">More news</a>
-            </div>
-                            <div class="m-col-1-3 events-list">
-                <h1 class="home-list-header">Events</h1>
-                <ul class="home-list">
-                                            <li class="home-list-item">
-                            <a class="home-list-item-anchor" href="https://today.uic.edu/events/winter-clothing-drive-for-el-rescate">
-                                <time class="home-list-date" datetime=2018-11-19>November 19</time>
-                                <h2 class="home-list-title">Winter Clothing Drive for El Rescate</h2>
-                                <p class="home-list-blurb">Sponsored by the Gender and Sexuality Center and Latino Cultural Center</p>
-                            </a>
-                        </li>
-                                            <li class="home-list-item">
-                            <a class="home-list-item-anchor" href="https://today.uic.edu/events/ciudad-n-ana-maria-shu">
-                                <time class="home-list-date" datetime=2018-11-21>November 21</time>
-                                <h2 class="home-list-title">Ciudad Ñ: Ana María Shu</h2>
-                                <p class="home-list-blurb">Organized by students of the Department of Hispanic Literary and Cultural Studies</p>
-                            </a>
-                        </li>
-                                            <li class="home-list-item">
-                            <a class="home-list-item-anchor" href="https://today.uic.edu/events/thinking-of-death-to-be-alive-responses-and-reflections-art-exhibit-reception">
-                                <time class="home-list-date" datetime=2018-11-26>November 26</time>
-                                <h2 class="home-list-title">Thinking of Death to be Alive - Responses and Reflections Art Exhibit Reception</h2>
-                                <p class="home-list-blurb">Showcasing the work of 11 UIC graduate students </p>
-                            </a>
-                        </li>
-                                    </ul>
-                <a class="button" href="https://today.uic.edu/events" role="button">More events</a>
-            </div>
-                            <div class="m-col-1-3 academic-dates-list">
-                <h1 class="home-list-header">Academic Dates</h1>
-                <ul class="home-list">
-                                            <li class="home-list-item">
-                            <time class="home-list-date" datetime=2018-11-22>November 22&ndash;23</time>
-                            <h2 class="home-list-title">Thanksgiving holiday, no classes</h2>
-                        </li>
-                                            <li class="home-list-item">
-                            <time class="home-list-date" datetime=2018-12-07>December 7</time>
-                            <h2 class="home-list-title">Fall semester 2018 instruction ends</h2>
-                        </li>
-                                            <li class="home-list-item">
-                            <time class="home-list-date" datetime=2018-12-10>December 10&ndash;14</time>
-                            <h2 class="home-list-title">Fall semester 2018 final examinations</h2>
-                        </li>
-                                            <li class="home-list-item">
-                            <time class="home-list-date" datetime=2018-12-14>December 14</time>
-                            <h2 class="home-list-title">Last day for Graduate College to receive certificates of approval for master’s and professional doctorate projects for fall term graduation</h2>
-                        </li>
-                                    </ul>
-                <a class="button" href="http://catalog.uic.edu/ucat/academic-calendar/#2017-2018" role="button">Academic calendar</a>
-            </div>
-            </div>
-</aside>
-            </div>
-            </div>
-</main>
 
-<footer class="footer" role="contentinfo">
-    <div class="footer-content" style="background-image: url(/images/footer.jpg)">
-        <div class="ms-grid">
-            <div class="ms-row">
-                <div class="s-col-1-2 m-col-1-4 l-col-3-12 footer-brand-address">
-                                            <img class="footer-brand" src="/images/footer-brand-mark.svg" alt="The University of Illinois at Chicago" aria-hidden="true">
-                                        <div class="footer-address">
-                        <div><strong>1200 West Harrison St.</strong></div>
-                        <div>Chicago, Illinois 60607</div>
-                        <div>312-996-7000</div>
-                    </div>
-                </div>
-                <div role="navigation" class="s-col-1-2 m-col-1-4 l-col-2-12 l-col-12-push-4" aria-label="Tools">
-                    <h2 class="footer-list-title">Tools</h2>
-                    <ul class="footer-list">
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://uic.blackboard.com/">
-        Blackboard
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="https://accc.uic.edu/service/g-suite">
-        GoogleApps@UIC
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="https://my.uic.edu/common/">
-        my UIC
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="https://www.hr.uillinois.edu/pay/">
-        My UI Info: Pay
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="https://outlook.uic.edu">
-        UIC Outlook Online
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://accc.uic.edu/service/uicalendar">
-        UICalendar
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="/about/contact-us">
-        Contact the webmaster
-    </a>
-</li>
-                                            </ul>
-                </div>
-                <div role="navigation" class="s-col-1-2 m-col-1-4 l-col-2-12" aria-label="Resources">
-                    <h2 class="footer-list-title">Resources</h2>
-                    <ul class="footer-list">
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://catalog.uic.edu/ucat/academic-calendar/">
-        Academic Calendar
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="https://today.uic.edu/resources/current-students">
-        Current Students
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://events.uic.edu">
-        Event Calendar
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="https://today.uic.edu/resources/faculty-staff">
-        Faculty and Staff
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://maps.uic.edu">
-        Maps
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://today.uic.edu">
-        UIC Today
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="/about/visit-directions">
-        Visit &#038; Directions
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://clery.uic.edu/">
-        Clery Compliance
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://oae.uic.edu/UnlawfulDiscrimination/index.htm">
-        Nondiscrimination Policy
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://oae.uic.edu/sexual-misconduct/">
-        Title IX: Sexual Misconduct
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://financialaid.uic.edu/consumer-information/department-education-complaint-process/">
-        Student Information Disclosures
-    </a>
-</li>
-                                            </ul>
-                </div>
-                <div role="navigation" class="s-col-1-2 m-col-1-4 l-col-2-12 l-col-12-pull-4" aria-label="Quick Links">
-                    <h2 class="footer-list-title">Quick Links</h2>
-                    <ul class="footer-list">
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://www.uicflames.com/">
-        Athletics
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://www.uic.edu/apps/departments-az/search">
-        Directory
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://disabilityresources.uic.edu/">
-        Disability Resources
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://emergency.uic.edu">
-        Emergency Information
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://oge.uic.edu/">
-        International
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="/about/job-opportunities">
-        Job Opportunities
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://library.uic.edu">
-        Library
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://www.uic.edu/depts/dos/studentveteranaffairs.shtml">
-        Veterans Affairs
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="http://hospital.uillinois.edu">
-        UI Health
-    </a>
-</li>
-                                                    <li class="footer-list-item">
-    <a class="footer-list-link" href="/about/acerca">
-        Acerca de la UIC (en español)
-    </a>
-</li>
-                                            </ul>
-                </div>
-                <div class="l-col-3-12">
-                    <div class="ms-row">
-                        <div role="navigation" class="s-col-1-2 l-col-1-1" aria-label="Calls to Action">
-                            <ul class="footer-button-list">
-            <li class="footer-button-item">
-            <a class="footer-button" href="http://admissions.uic.edu/visit-us" role="button">
-                Book a Visit
-            </a>
-        </li>
-            <li class="footer-button-item">
-            <a class="footer-button" href="http://admissions.uic.edu/undergraduate/request-information" role="button">
-                Request Info
-            </a>
-        </li>
-            <li class="footer-button-item">
-            <a class="footer-button" href="http://admissions.uic.edu/apply-now" role="button">
-                Apply Now
-            </a>
-        </li>
-            <li class="footer-button-item">
-            <a class="footer-button" href="https://give.uic.edu/" role="button">
-                Give
-            </a>
-        </li>
-            <li class="footer-button-item">
-            <a class="footer-button" href="http://advance.uic.edu/alumni-association/" role="button">
-                Join Alumni Association
-            </a>
-        </li>
-            <li class="footer-button-item">
-            <a class="footer-button" href="/about/contact-us" role="button">
-                Contact Us
-            </a>
-        </li>
-    </ul>                        </div>
-                        <div class="s-col-1-2 l-col-1-1 footer-social-icons-cell">
-                            <ul class="social-icons-list">
-            <li>
-            <a href="https://www.facebook.com/uic.edu">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Facebook"><title>Facebook</title><path d="M17 26.7V15h3.2s.3-2 .4-4H17V8.3s.5-.9 1-.9h2.5c0-.6.2-2.4.3-4h-3.7c-5 0-4.9 3.9-4.9 4.5v3.2h-3v4h3.1v11.7H17z"/></svg>
-            </a>
-        </li>
-                <li>
-            <a href="https://twitter.com/thisisuic">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Tweeter"><title>Twitter</title><path d="M25.4 9.4c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.8-1.3-3-1.3-2.3 0-4.1 1.9-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.5-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2.1 2.8 3.9 2.9-1.4 1.1-3.2 1.8-5.1 1.8-.3 0-.7 0-1-.1 1.8 1.2 4 1.9 6.3 1.9 7.6 0 11.8-6.3 11.8-11.8v-.5c.9-.6 1.6-1.3 2.1-2.2z"/></svg>
-            </a>
-        </li>
-                <li>
-            <a href="https://instagram.com/uicamiridis/">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Instagram"><title>Instagram</title><path fill="none" d="M15 18.8c2 0 3.6-1.6 3.6-3.6S17 11.5 15 11.5s-3.6 1.6-3.6 3.6 1.6 3.7 3.6 3.7z"/><path fill="none" d="M20 15.2c0 2.7-2.2 5-5 5s-5-2.2-5-5c0-.7.1-1.3.4-1.9H6.5V22c0 .9.7 1.6 1.6 1.6H22c.9 0 1.6-.7 1.6-1.6v-8.7h-3.9c.1.6.3 1.2.3 1.9z"/><path d="M21.9 5.1H11.5v5.8h-1.4V5.1H8.8v5.8H7.4V5.2c-1.3.2-2.3 1.4-2.3 2.9V22c0 1.6 1.3 3 3 3H22c1.6 0 3-1.3 3-3V8.1c-.1-1.7-1.4-3-3.1-3zm-2.6 3.4h2.4v2.4h-2.4V8.5zm-4.3 3c2 0 3.6 1.6 3.6 3.6S17 18.8 15 18.8s-3.6-1.6-3.6-3.6 1.6-3.7 3.6-3.7zm8.5 10.4c0 .9-.7 1.6-1.6 1.6H8.1c-.9 0-1.6-.7-1.6-1.6v-8.7h3.9c-.2.6-.4 1.2-.4 1.9 0 2.7 2.2 5 5 5s5-2.2 5-5c0-.7-.1-1.3-.4-1.9h3.9v8.7z"/></svg>
-            </a>
-        </li>
-                    <li>
-            <a href="https://www.youtube.com/user/thisisUIC">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Youtube"><title>YouTube</title><path d="M9.5 11.8h1.4V8.3l1.6-4.8h-1.4l-.9 3.3-.9-3.3H7.9l1.6 5M14.4 11.9c.6 0 1-.1 1.3-.4.3-.3.5-.7.5-1.2V7.1c0-.5-.2-.8-.5-1.1-.3-.3-.7-.4-1.3-.4-.6 0-1 .1-1.3.4-.3.3-.5.7-.5 1.1v3.2c0 .5.2.9.5 1.2.3.3.7.4 1.3.4zM13.9 7c0-.1 0-.2.1-.3.1-.1.2-.1.4-.1s.3 0 .4.1c.1.1.2.2.2.3v3.3c0 .2 0 .3-.1.4-.1.1-.2.1-.4.1s-.3 0-.4-.1c-.1-.1-.1-.2-.1-.4V7zM18 11.8c.2 0 .5-.1.7-.2.2-.1.5-.3.7-.6v.7h1.2V5.6h-1.2v4.6c-.1.1-.2.2-.4.3-.1.1-.3.1-.3.1-.1 0-.2 0-.2-.1-.1-.1-.1-.2-.1-.3V5.6h-1.2v5.1c0 .4.1.6.2.8.1.3.3.3.6.3zM20.7 19.3c-.2 0-.3 0-.4.2-.1.1-.1.3-.1.5v.6h1V20c0-.2 0-.4-.1-.5-.1-.1-.2-.2-.4-.2zM17 19.3c-.4-.1-.6.2-.6.2V23s.3.4.7.2c0 0 .2-.1.2-.5v-2.9c.1.1.2-.4-.3-.5z"/><path d="M23.1 14.9c-.9-.9-8.4-.9-8.4-.9s-7.6 0-8.5.9c-.9.9-.9 5.3-.9 5.4 0 0 0 4.5.9 5.4.9.9 8.5.9 8.5.9s7.6 0 8.5-.9c.9-.9.9-5.4.9-5.4 0-.1-.1-4.5-1-5.4zm-12.2 2.7H9.7V24H8.4v-6.4H7.2v-1.1H11v1.1zm3.6 6.4h-1.1v-.6c-.2.2-.4.4-.6.5-.2.1-.4.2-.6.2-.3 0-.4-.1-.6-.2-.1-.2-.2-.4-.2-.7v-4.6h1.1v4.3c0 .1 0 .2.1.3 0 .1.1.1.2.1s.2 0 .3-.1l.3-.3v-4.2h1.1V24zm4-1.1c0 .4-.1.7-.3.9-.2.2-.4.3-.7.3-.2 0-.4 0-.6-.1-.2-.1-.3-.2-.5-.4v.4h-1.1v-7.5h1.1v2.4c.1-.2.3-.3.5-.4.2-.1.3-.1.5-.1.3 0 .6.1.8.4.2.2.3.6.3 1v3.1zm3.8-1.5h-2.1v1c0 .3 0 .5.1.6.1.1.2.2.4.2s.3 0 .4-.1c.1-.1.1-.3.1-.6v-.3h1.1v.3c0 .6-.1 1-.4 1.3-.3.3-.7.4-1.2.4s-.9-.2-1.2-.5c-.3-.3-.4-.7-.4-1.3V20c0-.5.2-.9.5-1.2.3-.3.7-.5 1.2-.5s.9.1 1.2.4c.3.3.4.7.4 1.2v1.5z"/></svg>
-            </a>
-        </li>
-                    <li>
-            <a href="http://uicscience.tumblr.com/">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="Tumblr"><title>Tumblr</title><path d="M15.1 24.2c2.8.7 5.6-.9 5.6-.9v-3c-.8.9-2.6 1.1-3.9.7-1.2-.3-1.1-2-1.1-2v-5.7h4.4v-3h-4.4V5.6H13c-.3 5.1-3.8 5-3.8 5v2.7h2v6.8c.1 2.2 1.1 3.4 3.9 4.1z"/></svg>
-            </a>
-        </li>
-                        <li>
-            <a href="https://news.uic.edu/social-media-directory">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" aria-label="More"><title>More links</title><path d="M15 5C9.5 5 5 9.5 5 15s4.5 10 10 10 10-4.5 10-10S20.5 5 15 5zm4.7 11H16v3.7h-2V16h-3.7v-2H14v-3.7h2V14h3.7v2z"/></svg>
-            </a>
-        </li>
-    </ul>                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-legal">
-        <div class="ms-grid">
-            <div class="ms-row">
-                <div class="l-col-1-2">
-                    &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span> <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
-                </div>
-                <div class="l-col-1-2 campuses">
-                                            <a href="http://www.uillinois.edu/">University of Illinois System</a> <span class="pipe-separator">|</span>
-                                            <a href="http://www.illinois.edu/">Urbana-Champaign</a> <span class="pipe-separator">|</span>
-                                            <a href="http://www.uis.edu/">Springfield</a> 
-                                    </div>
-            </div>
-        </div>
-    </div>
-  <a href="https://plus.google.com/+UicEdu" rel="publisher" hidden>UIC on Google+</a>
-</footer>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "url": "http://www.uic.edu",
-  "logo": "/images/logo.png",
-  "contactPoint" : [
-    {
-      "@type" : "ContactPoint",
-      "telephone" : "+1-312-996-7000",
-      "contactType" : "customer service"
-    },
-    {
-      "@type" : "ContactPoint",
-      "telephone" : "+1-312-355-0379",
-      "contactType" : "customer service",
-      "contactOption" : "HearingImpairedSupported"
+
+/* hide menu on left in mobile view */
+.cd-dropdown {
+    z-index: 2;
+}
+
+.article-loop {
+    z-index: 1;
+}
+
+.mobile-menu-wrap {
+    z-index: 101;
+}
+
+/*
+.k2t-menu-right {
+    display: none;
+}
+*/
+
+.btn-ripple {
+    cursor: default;
+}
+
+.sub-menu .btn-ripple {
+    cursor: pointer;
+}
+
+.wpcf7 .wpcf7-text,
+.wpcf7 textarea,
+.wpcf7 select {
+    border: 1px solid #DdDdDd;
+    background: #f9f9f9;
+    color: #222;
+}
+
+.wpcf7 form p {
+    margin-bottom: 15px;
+}
+
+.event-listing-masonry-wrapper .title {
+    padding-top: 0;
+}
+
+.search-results .entry-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.search-results .entry-summary {
+    margin-bottom: 30px;
+}
+
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+    background-color: #f70202;
+}
+
+.wpcf7 select {
+    text-indent: 5px;
+}
+
+select {
+    display: block;
+    width: 100%;
+    padding: 9px 15px;
+}
+
+.k2t-header-top,
+.k2t-header-top .social li a {
+    color: #EEE;
+}
+
+.k2t-header .k2t-header-top {
+    background-color: #F72020;
+}
+
+.k2t-header-mid .k2t-menu > li > a.btn-ripple {
+    color: #DDD;
+}
+/*
+#k2t_social-2 {
+    float: right;
+    margin-top: 0px;
+}
+*/
+.k2t-info .k2t-row div {
+    width: 100%;
+}
+
+.k2t-info .k2t-row .textwidget,
+.k2t-info .k2t-row > div > aside {
+    width: auto;
+    display: inline-block;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.social-widget > ul > li {
+    padding: 0;
+}
+
+.k2t-info {
+    padding: 20px 0;
+    box-shadow: 0px -5px 70px 30px #252545
+}
+
+/*.simcal-day {
+    min-height: 160px;
+}*/
+
+.wpcf7 input {
+    color: white;
+}
+
+
+.k2t-header-mid,
+.k2t-searchbox .mark {
+    background-color: rgba(20,27,75, 1);
+    
+}
+
+
+
+
+
+.k2t-logo img {
+    width: auto;
+    /*height: 70px; */
+    min-width: 180px;
+}
+
+.k2t-logo-m {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kt2-menu .k2t-menu-m {
+    width: 25%;
+}
+
+
+
+
+#click-menu {
+    display: none !important;
+}
+
+.home .k2t-title-bar {
+    display: none;
+}
+
+
+
+    
+.k2t-body > .k2t-title-bar {
+    padding: 20px 0 22px 0;
+}
+
+white {
+    color: white;
+}
+
+#menu-top-header a {
+    line-height: 110px;
+}
+
+#click-menu {
+    display: none !important;
+}
+
+@media only screen and (max-width: 991px) {
+    .k2t-header-mid {
+        height: auto;
     }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "1200 West Harrison Street",
-    "addressLocality": "Chicago",
-    "addressRegion": "IL",
-    "postalCode": "60607",
-    "addressCountry": "USA"
-  }
 }
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-20665772-1', 'auto');
-  ga('send', 'pageview');
-</script><link rel="stylesheet" property="stylesheet" href="/css/main.min.css" media="all"><script src="/js/concat/main.min.js"></script><script src="//www.uic.edu/inc/emergency/alert.js"></script></body></html>
+
+
+@media only screen and (max-width: 767px) {
+    .k2t-right-m .canvas-sidebar {
+        display: inline-block;
+    }
+    
+}
+
+/*
+@media only screen and (max-width: 991px) {
+
+    .k2t-header-mid {
+        height: 250px;
+    }
+}
+*/
+
+
+@media only screen and (max-width: 800px) {
+    
+    .k2t-header-m > .k2t-logo-m {
+        width: 50%;
+    }
+    
+    .k2t-header-m .k2t-menu-m,
+    .k2t-header-m .k2t-right-m {
+        width: 25%;
+    }
+
+    .k2t-right-m .canvas-sidebar {
+        display: none !important;
+    }
+
+
+    .k2t-right-m > div {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .mobile-menu-toggle {
+        top: 15px;
+    }
+    
+    .k2t-header-m {
+        background:rgba(20,27,75, 1) !important;
+        height: 75px;
+    }
+    
+    h1 {
+        font-size: 8vw;
+    }
+
+
+    
+}
+
+@media only screen and (max-width: 375px) {
+    .k2t-header-m > .k2t-logo-m {
+        width: 60%;
+    }
+    
+    .k2t-header-m .k2t-menu-m {
+        width: 20%;
+    }
+    
+    .k2t-header-m .k2t-right-m {
+        width: 20%;
+    }
+
+}
+
+
+blockquote {
+
+    font-family:'Roboto';
+    font-weight:400;
+    color: grey;
+}
+
+p {
+  font-size: 120%;
+  font-weight: 400;
+}
+
+
+
+
+
+.entry-summary,
+.entry-summary p {
+    font-size: 16.8px;
+    font-weight: 400;
+}
+
+
+h3 {
+    color: #192168;
+    font-weight: bold;
+    padding: 40px 0 0 0
+}
+
+h4 {
+    color: #192168;
+    
+}
+
+h1 {
+    color: #192168;
+    
+}
+
+.cbblue div{
+
+    height: 500px; 
+    border: 5px solid #192168;
+
+}
+
+
+.cbtred div{
+
+    background-color: #ef2b2d; 
+    height:30px;
+    width: 100%; 
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: block;
+}
+
+.cbred div{
+        
+    height: 500px; 
+    border: 5px solid #ef2b2d;
+
+}
+
+
+.cbtblue div{
+
+    background-color: #192168;
+    height:30px;
+    width: 100%; 
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: block;
+}
+
+/* not on bioe */
+.no-border,
+.no-border * {
+    border: none;
+}
+
+h4 {
+    font-weight: bold;
+    margin-bottom:10px;
+}
+
+.k2t-body li {
+/*  font-size: 120%;*/
+  font-weight: 400;
+} 
+
+.vc_tta-container .vc_tta.vc_general .vc_tta-panel-body {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+blockquote p,
+ol li,
+ul li {
+    font-size: 16.8px;
+}
+/*
+.cd-dropdown ul li,
+.cd-dropdown ul li span {
+	position: relative;
+	top: auto !important;
+	z-index: 1010;
+
+}
+
+.cd-dropdown ul,
+.cd-dropdown {
+    z-index: 90;
+}
+
+.k2t-footer,
+.k2t-bottom, 
+.k2t-bottom .k2t-wrap *,
+.k2t-info {
+    position: relative;
+    z-index: -1;
+}
+*/
+
+
+
+/* build float-clear
+.cd-dropdown:after
+*/
+/* fix menu flooding to right of page */
+.k2t-header-mid .k2t-menu > li:last-of-type .sub-menu {
+	right: 0;
+	left: auto;
+}
+
+.breadcrumb {
+    padding-top: 10px;
+}
+
+/* fix social menu in header on k-events pages */
+.k2t-header .k2t-header-top .social li {
+    margin: 0;
+    margin-left: 15px;
+}
+
+
+/* end not on bioe */
+
+
+
+/* category menu fix */
+.cd-dropdown ul li {
+    width: 100% !important;
+}
+
+.cd-dropdown ul {
+    width: 400px;
+    left: -110px;
+}
+
+.cd-dropdown li {
+    width: 100% !important;
+}
+
+.cd-dropdown ul li span {
+    line-height: 35px;
+}
+
+table {
+    font-size: 120% !important;
+    
+}
+
+@media only screen and (max-width: 375px) {
+    .cd-dropdown ul {
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* beautify menu color - July 12 - Added to CHE */
+.mobile-menu > li {
+    background: #AAA;
+}
+
+.mobile-menu .sub-menu {
+    background: #DDD;
+    color: black;
+}
+
+.mobile-menu .sub-menu a {
+    color: black;
+}
+
+.mobile-menu .sub-menu .sub-menu {
+    background: #EEE;
+}
+
+.mobile-menu > li > .sub-menu {
+    text-transform: none;
+}
+/* end */
+
+/* SITE SPECIFIC */
+.seminars .vc_column-inner .k2t-element-hover .title {
+    font-size: 100%;
+}
+
+.post-k-event .btn-ripple {
+    display: none;
+}
+
+/* changes from July on are below */
+
+/* standardize font size */
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.4rem;
+}
+
+p,
+blockquote p,
+ol li,
+ul li,
+blockquote,
+li p,
+table,
+table p,
+.k2t-body li {
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+}
+
+
+/* anchor tag is blue on hover - CME */
+.k2t-body a:hover,
+.k2t-body a:focus {
+    color: #192168;
+}
+
+
+/* change text color to be darker and more contrasty :D - July 7 */
+body,
+button,
+input,
+select,
+textarea {
+    color: #656565;
+}
+
+.wpcf7-textarea {
+    padding: 10px 15px;
+}
+
+
+/* not on bioe */
+
+/* beautify menu color - July 12 - Added to CHE */
+.mobile-menu > li {
+    background: #AAA;
+}
+
+.mobile-menu .sub-menu {
+    background: #DDD;
+    color: black;
+}
+
+.mobile-menu .sub-menu a {
+    color: black;
+}
+
+.mobile-menu .sub-menu .sub-menu {
+    background: #EEE;
+}
+
+.mobile-menu > li > .sub-menu * {
+    text-transform: initial;
+}
+
+
+/* hide sidebar when there should be no sidebar, and hide comments and author info - July 14 */
+.no-sidebar .k2t-sidebar,
+#comments,
+.about-author {
+    display: none;
+}
+
+/* remove "Launch" button in k-event listing - July 14 */
+.post-k-event .btn-ripple {
+    display: none;
+}
+
+
+
+
+/* helper class to remove borders in a table */
+.no-border,
+.no-border * {
+    border: none;
+}
+
+
+/* bold h4 text */
+h4 {
+    font-weight: bold;
+}
+
+
+/* make list item font more weighty */
+.k2t-body li {
+  font-weight: 400;
+}
+
+.vc_tta-container .vc_tta.vc_general .vc_tta-panel-body {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+
+/* fix menu dropdown overflowing to the right of the page - July 5 */
+.k2t-header-mid .k2t-menu > li:last-of-type .sub-menu {
+	right: 0;
+	left: auto;
+}
+
+.breadcrumb {
+    padding-top: 15px;
+}
+
+
+/* Bolded and lightened anchor font color - July 7 */
+.k2t-body a {
+	font-weight: bold;
+	color: #333;
+}
+
+.k2t-body a:hover,
+.k2t-body a:focus {
+	color: #192168;
+}
+
+
+/* category menu now displays full list - July 6 */
+.cd-dropdown ul li {
+    width: 100% !important;
+}
+
+.cd-dropdown ul {
+    width: 400px;
+    left: -110px;
+}
+
+.cd-dropdown li {
+    width: 100% !important;
+}
+
+.cd-dropdown ul li span {
+    line-height: 35px;
+}
+
+
+/* category menu fix: fix alignment on small screens */
+@media only screen and (max-width: 375px) {
+    .cd-dropdown ul {
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+/* add padding to vc_columns (such as the two columns on Prospective Students page) - added to CME */
+.vc_row > .vc_column_container > .vc_column-inner {
+    padding-right: 20px;
+}
+
+/* fix event masonry rounding error so 3 events fit on one line - July 14 */
+.event-listing-masonry.columns-3 .masonry-item {
+    width: 33.3333%;
+}
+
+@media (max-width: 800px) {
+    
+    .event-listing-masonry.columns-3 .masonry-item {
+        width: 100%;
+    }
+}
+
+/* UPDATED - add padding to page title bar at smaller screen widths */
+@media only screen and (max-width: 1230px) {
+    .k2t-title-bar .container {
+        padding: 0 15px;
+    }
+}
+
+/* line-height reduced in h4 header */
+h4 {
+    line-height: 1.4em;
+}
+
+/* Remove date in events with class no-date - July 21 */
+.no-date .masonry-item .event-meta .date {
+    visibility: hidden;
+}
+
+
+/* Decrease event meta font size where event title font size is also decreased - July 21 */
+.small-font .masonry-item .info,
+.small-font .masonry-item .info .date,
+.small-font .masonry-item .info .location {
+    font-size: 1.2rem;
+}
+
+.small-font .masonry-item .info .title {
+    font-size: 1.4rem;
+}
+
+
+/* remove hamburger menu button on the right - July 27 */
+#close-canvas {
+    display: none;
+}
+
+/* preserve background color on sticky header */
+.k2t-header .sticky {
+    background-color: rgba(20,27,75, 1);
+}
+
+/* fix hover items overlapping sticky header issue - Aug 1 */
+.k2t-element-hover:hover {
+    z-index: 998;
+}
+
+/* category menu fix - August 1 */
+.cd-dropdown ul li {
+    width: 100% !important;
+}
+
+.cd-dropdown ul {
+    width: 400px;
+    left: -110px;
+}
+
+.cd-dropdown li {
+    width: 100% !important;
+}
+
+.cd-dropdown ul li span {
+    line-height: 35px;
+}
+
+table {
+    font-size: 120% !important;
+}
+
+@media only screen and (max-width: 375px) {
+    .cd-dropdown ul {
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+/* add margin to list - Aug 1 */
+.k2t-main ol,
+.k2t-main ul {
+    margin-left: 20px;
+}
+
+/* remove list indent with class "no-indent" - Aug 10 */
+.k2t-main .no-indent,
+.cd-dropdown ul,
+.teacher_social ol,
+.teacher_social ul,
+.teacher-entry-meta ol,
+.teacher-entry-meta ul {
+    margin-left: 0;
+}
+
+
+/* set sub-sub-menu to appear at side of submenu - Aug 9 */
+.k2t-header-mid .k2t-menu > li:last-of-type .sub-menu .sub-menu {
+    left: -200px;
+}
+
+/* top margin - August 9 */
+h4 {
+    margin-top:30px;   
+}
+
+/* add super tag functionality because original theme didn't supply styles for basic HTML tag - August 10 */
+sup {
+    font-size: 1.2rem;
+    vertical-align: super;
+}
+
+
+/* add margin after a list - August 12 */
+.k2t-main ol,
+.k2t-main ul {
+    margin-bottom: 10px;
+}
+
+/* ensure that description is the same size whether wordpress decides to add paragraph tags or not - August 15 */
+.k2t-iconbox.layout-1 .iconbox-text .desc,
+.k2t-iconbox.layout-1 .iconbox-text .desc p {
+    color: #252525;
+    font-size: 32px;
+    line-height: 1.4em;
+}
+
+
+/* set footer menu size to 14px - August 15 */
+.k2t-footer ol li,
+.k2t-footer ul li {
+    font-size: 1.4rem;
+}   
+
+
+/* hide k-project categories - August 16 */
+.project .article-inner .category,
+.project .article-inner .content {
+    visibility: hidden;
+}
+
+
+/* hide teacher filter under screen width 575px - August 17 */
+@media screen and (max-width: 574px) {
+    .k2t-wrapper-teacher-filter {
+        display: none;
+    }
+}
+
+
+
+/* remove bottom padding ON CS SITE ONLY */
+.home .k2t-container .k2t-content {
+    padding-bottom: 0;
+}
+
+@media only screen and (max-width: 520px) {
+    table {
+        display: block;
+        overflow:auto
+    }
+}
+
+/* make button highlight - August 17 */
+.k2t-footer .btn-ripple {
+    cursor: pointer;
+}
+
+/* make button text white - August 17 */
+.button-default span {
+    color: white;
+}
+
+/*make menu bold Nov 29*/
+.k2t-header-mid .k2t-menu > li > a {
+    font-weight: 500;
+}
+
+/* remove excessive spacing between position and social icons on faculty page - May 18, 2017 */
+.teacher-listing 
+article 
+.position {
+    margin-bottom: 5px;
+}
+
+.teacher-listing 
+article 
+.social {
+    padding-top: 0;
+}
+
+/* prettify social icons - May 18, 2017 */
+.teacher-listing article .social a {
+    background: transparent !important;
+    color: #bbb !important;
+    font-size: 150% !important;
+}	
+				/* Primary color
+				------------------------------------------------- */</style><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/> <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://www.cs.uic.edu/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><meta name="generator" content="Powered by Slider Revolution 5.4.7.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." /><link rel="icon" href="https://www.cs.uic.edu/wp-content/uploads/2018/07/cropped-uic-dot-32x32.png" sizes="32x32" /><link rel="icon" href="https://www.cs.uic.edu/wp-content/uploads/2018/07/cropped-uic-dot-192x192.png" sizes="192x192" /><link rel="apple-touch-icon-precomposed" href="https://www.cs.uic.edu/wp-content/uploads/2018/07/cropped-uic-dot-180x180.png" /><meta name="msapplication-TileImage" content="https://www.cs.uic.edu/wp-content/uploads/2018/07/cropped-uic-dot-270x270.png" /> <script type="text/javascript">function setREVStartSize(e){									
+						try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+							if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+						}catch(d){console.log("Failure at Presize of Slider:"+d)}						
+					};</script> <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1541101578158{padding-top: 5px !important;padding-right: 10px !important;padding-bottom: 5px !important;padding-left: 10px !important;background-color: #ddc9c9 !important;}</style><noscript><style type="text/css">.wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head><body class="post-template-default single single-post postid-2854 single-format-quote offcanvas-type-default  offcanvas-right wpb-js-composer js-comp-ver-5.4.5 vc_responsive"><div class="k2t-container"><header class="k2t-header "><style></style><div class="k2t-header-top " style=""><div class="k2t-wrap"><div class="k2t-row"><div class="col-8"><div class="h-element element-editor " ><white> <font color="white"><a href="https://uic.edu" target="_blank"> <white><strong>University of Illinois at Chicago </strong></white></a> | <a href="http://engineering.uic.edu/" target="_blank"> <white><strong>College of Engineering </strong></white></a></font></div></div><div class="col-4"><ul  class="h-element social "><li class="facebook"><a target="_blank" href="https://www.facebook.com/engineering.uic"><i class="fa fa-facebook"></i></a></li><li class="twitter"><a target="_blank" href="http://twitter.com/UICEngineering"><i class="fa fa-twitter"></i></a></li><li class="youtube"><a target="_blank" href="http://www.youtube.com/user/UICengineering"><i class="fa fa-youtube"></i></a></li><li class="instagram"><a target="_blank" href="https://www.instagram.com/uicengineering/"><i class="fa fa-instagram"></i></a></li><li class="flickr"><a target="_blank" href="http://www.flickr.com/photos/uic_engineering/sets/"><i class="fa fa-flickr"></i></a></li></ul><div class="h-element element-editor " ><span style="padding-left:15px"> <a href="http://www.engineering.uic.edu/donate/" target="_blank"><strong><white>Make a Gift</a></white></strong></span></div></div></div></div></div><style></style><div class="k2t-header-mid  " style=""><div class="k2t-wrap"><div class="k2t-row"><div class="col-3"><div  class="h-element "> <a class="k2t-logo" rel="home" href="https://www.cs.uic.edu/"> <img src="https://www.cs.uic.edu/wp-content/uploads/2016/05/CompSci-01.png" alt="UIC Computer Science" /> </a></div></div><div class="col-9"><ul id="menu-main-menu" class="h-element k2t-menu "><li id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-79 children "><a     class="btn-ripple"><span class="k2t-title-menu">ADMISSIONS</span> <span class="caret"></span></a><ul class="sub-menu"><li id="menu-item-624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-624 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/undergraduate-admissions/" class="btn-ripple"><span class="k2t-title-menu">Undergraduate Admissions</span></a></li><li id="menu-item-2403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2403 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/visit-us-at-an-open-house/" class="btn-ripple"><span class="k2t-title-menu">Undergraduate Open House</span></a></li><li id="menu-item-625" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-625 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/graduate-admissions/" class="btn-ripple"><span class="k2t-title-menu">Graduate Admissions</span></a></li></ul></li><li id="menu-item-471" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-471 children "><a     class="btn-ripple"><span class="k2t-title-menu">ACADEMICS</span> <span class="caret"></span></a><ul class="sub-menu"><li id="menu-item-89" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/undergraduate-programs/" class="btn-ripple"><span class="k2t-title-menu">Undergraduate Programs</span></a></li><li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/graduate-programs/" class="btn-ripple"><span class="k2t-title-menu">Graduate Programs</span></a></li><li id="menu-item-1907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1907 k2t-dropdown-submenu"><a    href="https://catalog.uic.edu/ucat/colleges-depts/engineering/cs/joint-bs-ms/" class="btn-ripple"><span class="k2t-title-menu">Joint BS/MS Degree</span></a></li><li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/cs-minor/" class="btn-ripple"><span class="k2t-title-menu">CS Minor</span></a></li><li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/courses/" class="btn-ripple"><span class="k2t-title-menu">Courses</span></a></li><li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/scholarships/" class="btn-ripple"><span class="k2t-title-menu">Scholarships</span></a></li><li id="menu-item-2302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2302 k2t-dropdown-submenu"><a    href="http://ecc.uic.edu/computer-science/" class="btn-ripple"><span class="k2t-title-menu">Internships &#038; Jobs</span></a></li></ul></li><li id="menu-item-80" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-80 children "><a     class="btn-ripple"><span class="k2t-title-menu">RESEARCH</span> <span class="caret"></span></a><ul class="sub-menu"><li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/research-labs/" class="btn-ripple"><span class="k2t-title-menu">Research Labs</span></a></li><li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/by-research-area/" class="btn-ripple"><span class="k2t-title-menu">By Research Area</span></a></li></ul></li><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-81 children "><a     class="btn-ripple"><span class="k2t-title-menu">PEOPLE</span> <span class="caret"></span></a><ul class="sub-menu"><li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/faculty/" class="btn-ripple"><span class="k2t-title-menu">Faculty</span></a></li><li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/adjuncts/" class="btn-ripple"><span class="k2t-title-menu">Adjuncts</span></a></li><li id="menu-item-1360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1360 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/emeritus/" class="btn-ripple"><span class="k2t-title-menu">Emeritus Faculty</span></a></li><li id="menu-item-99" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/staff/" class="btn-ripple"><span class="k2t-title-menu">Staff</span></a></li><li id="menu-item-96" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/committees/" class="btn-ripple"><span class="k2t-title-menu">Committees</span></a></li></ul></li><li id="menu-item-82" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-82 children "><a     class="btn-ripple"><span class="k2t-title-menu">ABOUT US</span> <span class="caret"></span></a><ul class="sub-menu"><li id="menu-item-103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/our-department/" class="btn-ripple"><span class="k2t-title-menu">Our Department</span></a></li><li id="menu-item-2619" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2619 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/distinguished-lecturer-series/" class="btn-ripple"><span class="k2t-title-menu">Distinguished Lecturer Series</span></a></li><li id="menu-item-2094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/recent-news/" class="btn-ripple"><span class="k2t-title-menu">Recent News</span></a></li><li id="menu-item-342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-342 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/abet-accreditation-2/" class="btn-ripple"><span class="k2t-title-menu">ABET Accreditation</span></a></li><li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/employment/" class="btn-ripple"><span class="k2t-title-menu">Employment</span></a></li><li id="menu-item-940" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-940 k2t-dropdown-submenu"><a    href="http://engineering.uic.edu/donate/" class="btn-ripple"><span class="k2t-title-menu">Give to the Department</span></a></li><li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101 k2t-dropdown-submenu"><a    href="https://www.cs.uic.edu/contact-us/" class="btn-ripple"><span class="k2t-title-menu">Contact Us</span></a></li></ul></li></ul><div  class="h-element search-box "> <i class="zmdi zmdi-search"></i></div></div></div></div></div><div class="k2t-header-m"><div class="k2t-menu-m"> <a class="m-trigger mobile-menu-toggle"><span></span></a><div class="mobile-menu-wrap dark-div"> <a href="#" class="mobile-menu-toggle"><i class="fa fa-times-circle"></i></a><ul class="mobile-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-79 children"><a>ADMISSIONS</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-624"><a href="https://www.cs.uic.edu/undergraduate-admissions/">Undergraduate Admissions</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2403"><a href="https://www.cs.uic.edu/visit-us-at-an-open-house/">Undergraduate Open House</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-625"><a href="https://www.cs.uic.edu/graduate-admissions/">Graduate Admissions</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-471 children"><a>ACADEMICS</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89"><a href="https://www.cs.uic.edu/undergraduate-programs/">Undergraduate Programs</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><a href="https://www.cs.uic.edu/graduate-programs/">Graduate Programs</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1907"><a href="https://catalog.uic.edu/ucat/colleges-depts/engineering/cs/joint-bs-ms/">Joint BS/MS Degree</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="https://www.cs.uic.edu/cs-minor/">CS Minor</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://www.cs.uic.edu/courses/">Courses</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="https://www.cs.uic.edu/scholarships/">Scholarships</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2302"><a href="http://ecc.uic.edu/computer-science/">Internships &#038; Jobs</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-80 children"><a>RESEARCH</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a href="https://www.cs.uic.edu/research-labs/">Research Labs</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="https://www.cs.uic.edu/by-research-area/">By Research Area</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-81 children"><a>PEOPLE</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1360"><a href="https://www.cs.uic.edu/emeritus/">Emeritus Faculty</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99"><a href="https://www.cs.uic.edu/staff/">Staff</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="https://www.cs.uic.edu/committees/">Committees</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-82 children"><a>ABOUT US</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="https://www.cs.uic.edu/our-department/">Our Department</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2619"><a href="https://www.cs.uic.edu/distinguished-lecturer-series/">Distinguished Lecturer Series</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094"><a href="https://www.cs.uic.edu/recent-news/">Recent News</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-342"><a href="https://www.cs.uic.edu/abet-accreditation-2/">ABET Accreditation</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97"><a href="https://www.cs.uic.edu/employment/">Employment</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-940"><a href="http://engineering.uic.edu/donate/">Give to the Department</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="https://www.cs.uic.edu/contact-us/">Contact Us</a></li></ul></li></ul></div></div><div class="k2t-logo-m"> <a class="k2t-logo" rel="home" href="https://www.cs.uic.edu/"> <img src="https://www.cs.uic.edu/wp-content/uploads/2016/05/CompSci-01.png" alt="UIC Computer Science" /> </a></div><div class="k2t-right-m"><div class="search-box"> <i class="fa fa-search"></i></div><div class="canvas-sidebar"> <a onclick="javascript:return false;" class="open-sidebar" href="#"><span class="inner"></span></a></div></div></div></header><div class="k2t-body"><div class="k2t-title-bar " style="" ><div><div class="container k2t-wrap"><h1 class="main-title" style=""> EVL’s Lance Long recognized with UIC’s Award of Merit</h1><div class="main-excerpt"> <span class="entry-date"><i class="zmdi zmdi-calendar-note"></i>November 1, 2018</span></div></div></div><div><div class="container k2t-wrap breadcrumb"><ul class="k2t-breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#"><li typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="https://www.cs.uic.edu">Home</a></li><li typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="https://www.cs.uic.edu/category/recent-news/">Recent News</a></li><li class="current">EVL’s Lance Long recognized with UIC’s Award of Merit</li></ul></div></div></div><div  class="k2t-content right-sidebar"><div class="k2t-wrap"><main class="k2t-blog" role="main"><div id="main-col" class="post-2854 post type-post status-publish format-quote has-post-thumbnail hentry category-recent-news post_format-post-format-quote"><section class="entry-box k2t-element-hover"><div class="quote-wrapper"><div class="quote-inner"><div class="quote-content"><div class="quote"><a href="#"></a></div><p class="author"><a href=""></a></p></div></div></div><div class="entry-content"> <a href="<br /> <b>Notice</b>:  Undefined variable: cat_link in <b>/var/www/cs1.engr-dev.uic.edu/wp-content/themes/lincoln/content-single.php</b> on line <b>47</b><br /> " title="Recent News" class="cat-icon" style = "background-color : "> </a><div class="post-entry clearfix"><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div  class="wpb_single_image wpb_content_element vc_align_left"><figure class="wpb_wrapper vc_figure"><div class="vc_single_image-wrapper   vc_box_border_grey"><img width="1080" height="478" src="https://www.cs.uic.edu/wp-content/uploads/2018/11/lance-long.png" class="vc_single_image-img attachment-full" alt="" srcset="https://www.cs.uic.edu/wp-content/uploads/2018/11/lance-long.png 1080w, https://www.cs.uic.edu/wp-content/uploads/2018/11/lance-long-300x133.png 300w, https://www.cs.uic.edu/wp-content/uploads/2018/11/lance-long-768x340.png 768w, https://www.cs.uic.edu/wp-content/uploads/2018/11/lance-long-1024x453.png 1024w, https://www.cs.uic.edu/wp-content/uploads/2018/11/lance-long-700x310.png 700w" sizes="(max-width: 1080px) 100vw, 1080px" /></div></figure></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="wpb_text_column wpb_content_element " ><div class="wpb_wrapper"><p style="text-align: justify;">Lance Long, Senior Research Programmer for the Electronic Visualization Laboratory (EVL), which is part of the Computer Science (CS) department at the University of Illinois at Chicago (UIC), is a recipient of the 2018 UIC Award of Merit. This campus-wide honor annually recognizes Academic Professional and Civil Service employees who have demonstrated a commitment to excellence in all aspects of their work.</p><p style="text-align: justify;">Of the 30 awards being given this year, Long is one of two from the College of Engineering, representing the Computer Science department. Long started his career as a UIC Computer Science graduate student, who early on contributed to EVL&#8217;s successes and is now a dedicated staff member that retains the collective laboratory memory of how things were developed, while helping make new advancements.</p></div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="wpb_text_column wpb_content_element " ><div class="wpb_wrapper"><p style="text-align: justify;">The Merit Award recognizes Long&#8217;s service to the laboratory, the Computer Science department, and the campus. He is currently responsible for facilitating and expediting the design, development, acquisition and integration of EVL’s advanced visualization, computing and networking technologies. In addition, he assists with EVL tours and demonstrations for campus visitors and for student recruitment, supports interdisciplinary faculty and students who use EVL resources, and spends many hours assisting other campus units who want to replicate EVL&#8217;s technologies. In addition, he contributes to Federal grants, co-authors research papers, helps set up and demo EVL&#8217;s technologies at major conferences, and visits and consults with academic, government and industrial partners who use and/or license EVL&#8217;s technologies.</p><p style="text-align: justify;">It is an honor long overdue. Congratulations to Lance!</p></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="wpb_text_column wpb_content_element  vc_custom_1541101578158" ><div class="wpb_wrapper"><p><strong>UIC Employee Recognition Awards Ceremony </strong></p><p>Tuesday, November 6, 2018 |10:30 am &#8211; 12 pm</p><p>UIC Isadore and Sadie Dorin Forum</p></div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_btn3-container vc_btn3-center" > <a onmouseleave="this.style.borderColor='#1d1272'; this.style.backgroundColor='transparent'; this.style.color='#1d1272'" onmouseenter="this.style.borderColor='#1d1272'; this.style.backgroundColor='#1d1272'; this.style.color='#ffffff';" style="border-color:#1d1272; color:#1d1272;" class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline-custom vc_btn3-block" href="https://emails.uofi.uic.edu/newsletter/190970.html" title="" target="_blank">Employee Recognition Awards Info</a></div><div class="vc_btn3-container vc_btn3-center" > <a onmouseleave="this.style.borderColor='#1d1272'; this.style.backgroundColor='transparent'; this.style.color='#1d1272'" onmouseenter="this.style.borderColor='#1d1272'; this.style.backgroundColor='#1d1272'; this.style.color='#ffffff';" style="border-color:#1d1272; color:#1d1272;" class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline-custom vc_btn3-block" href="https://www.evl.uic.edu/entry.php?id=49" title="" target="_blank">View Lance's EVL Profile</a></div></div></div></div></div><p></p></div><div class="k2t-social-share"><ul class="social"><li> <a class="facebook" href="http://www.facebook.com/sharer.php?u=https://www.cs.uic.edu/evls-lance-long-recognized-with-uics-award-of-merit/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"> <i class="fa fa-facebook"></i> <span>Facebook</span> </a></li><li> <a class="twitter" href="https://twitter.com/share?url=https://www.cs.uic.edu/evls-lance-long-recognized-with-uics-award-of-merit/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"> <i class="fa fa-twitter"></i> <span>Twitter</span> </a></li><li> <a class="googleplus" href="https://plus.google.com/share?url=https://www.cs.uic.edu/evls-lance-long-recognized-with-uics-award-of-merit/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"> <i class="fa fa-google-plus"></i> <span>Google Plus</span> </a></li><li> <a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.cs.uic.edu%2Fevls-lance-long-recognized-with-uics-award-of-merit%2F&title=EVL%E2%80%99s+Lance+Long+recognized+with+UIC%E2%80%99s+Award+of+Merit" title="LinkedIn"> <i class="fa fa-linkedin"></i> <span>Linkedin</span> </a></li><li> <a class="tumblr" href="https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.cs.uic.edu%2Fevls-lance-long-recognized-with-uics-award-of-merit%2F&name=EVL%E2%80%99s+Lance+Long+recognized+with+UIC%E2%80%99s+Award+of+Merit" title="Tumblr"> <i class="fa fa-tumblr"></i> <span>Tumblr</span> </a></li><li> <a class="em" href="mailto:?subject=EVL’s Lance Long recognized with UIC’s Award of Merit&body= https://www.cs.uic.edu/evls-lance-long-recognized-with-uics-award-of-merit/"> <i class="fa fa-envelope"></i> <span>Email</span> </a></li></ul></div><div class="clearfix"> <span class="entry-comment"> <i class="zmdi zmdi-comment-alt-text"></i> <a href="https://www.cs.uic.edu/evls-lance-long-recognized-with-uics-award-of-merit/#respond">0</a> </span></div></div></section><div class="related-post"><h3>You may also like</h3><div class="related-post-wrap"><div class="post"> <a rel="external" href="https://www.cs.uic.edu/ms-student-awarded-twice-at-mit-energy-hack-2018/"> <img width="479" height="481" src="https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile.png" class="attachment-thumb_500x500 size-thumb_500x500 wp-post-image" alt="" srcset="https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile.png 479w, https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile-150x150.png 150w, https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile-300x300.png 300w, https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile-55x55.png 55w, https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile-80x80.png 80w, https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile-130x130.png 130w, https://www.cs.uic.edu/wp-content/uploads/2018/11/mit-energy-tile-100x100.png 100w" sizes="(max-width: 479px) 100vw, 479px" /> </a><h5><a href="https://www.cs.uic.edu/ms-student-awarded-twice-at-mit-energy-hack-2018/" rel="bookmark" title="MS student awarded twice at MIT Energy Hack 2018">MS student awarded twice at MIT Energy Hack 2018</a></h5></div><div class="post"> <a rel="external" href="https://www.cs.uic.edu/reaping-the-benefits-of-an-internship-experience/"> <img width="500" height="500" src="https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-500x500.png" class="attachment-thumb_500x500 size-thumb_500x500 wp-post-image" alt="" srcset="https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-500x500.png 500w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-150x150.png 150w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-600x600.png 600w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-55x55.png 55w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-80x80.png 80w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-130x130.png 130w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-414x414.png 414w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-100x100.png 100w, https://www.cs.uic.edu/wp-content/uploads/2018/11/google-macys-feature-image-435x435.png 435w" sizes="(max-width: 500px) 100vw, 500px" /> </a><h5><a href="https://www.cs.uic.edu/reaping-the-benefits-of-an-internship-experience/" rel="bookmark" title="Reaping the benefits of an internship experience">Reaping the benefits of an internship experience</a></h5></div><div class="post"> <a rel="external" href="https://www.cs.uic.edu/uics-polithinkers-claim-victory-at-builtworlds-hackathon/"> <img width="500" height="500" src="https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-500x500.png" class="attachment-thumb_500x500 size-thumb_500x500 wp-post-image" alt="" srcset="https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-500x500.png 500w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-150x150.png 150w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-300x300.png 300w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-768x768.png 768w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-600x600.png 600w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-700x700.png 700w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-55x55.png 55w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-80x80.png 80w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-130x130.png 130w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-414x414.png 414w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-100x100.png 100w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-435x435.png 435w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image-900x900.png 900w, https://www.cs.uic.edu/wp-content/uploads/2018/11/builtworlds-feature-image.png 928w" sizes="(max-width: 500px) 100vw, 500px" /> </a><h5><a href="https://www.cs.uic.edu/uics-polithinkers-claim-victory-at-builtworlds-hackathon/" rel="bookmark" title="UIC’s PoliThinkers claim victory at BuiltWorlds Hackathon">UIC’s PoliThinkers claim victory at BuiltWorlds Hackathon</a></h5></div></div></div><article class="about-author k2t-element-hover clearfix"> <img alt='' src='https://secure.gravatar.com/avatar/6873f7ccd3af9b3ac1cf2f8ec918d8b4?s=130&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6873f7ccd3af9b3ac1cf2f8ec918d8b4?s=260&#038;d=mm&#038;r=g 2x' class='avatar avatar-130 photo' height='130' width='130' /><h4>Tom Cicero</h4><p class="role"> <br /> <b>Notice</b>:  get_currentuserinfo is <strong>deprecated</strong> since version 4.5.0! Use wp_get_current_user() instead. in <b>/var/www/cs1.engr-dev.uic.edu/wp-includes/functions.php</b> on line <b>3853</b><br /></p><p class="description"></p></article><footer class="single-footer-nav"><div class="prev-post"> <a class="post btn-ripple" href="https://www.cs.uic.edu/reaping-the-benefits-of-an-internship-experience/" title="Reaping the benefits of an internship experience"> <span><i class="zmdi zmdi-arrow-left"></i>Previous</span> <span class="tt">Reaping the benefits of an internship experience</span> </a></div><div class="next-post"> <a class="post btn-ripple" href="https://www.cs.uic.edu/uics-polithinkers-claim-victory-at-builtworlds-hackathon/" title="UIC’s PoliThinkers claim victory at BuiltWorlds Hackathon"> <span>Next<i class="zmdi zmdi-arrow-right"></i></span> <span class="tt">UIC’s PoliThinkers claim victory at BuiltWorlds Hackathon<span> </a></div></footer></div></main><div class="k2t-sidebar" role="complementary"></div></div></div></div><footer class="k2t-footer"><div class="k2t-bottom" style="background-image:url(https://www.cs.uic.edu/wp-content/uploads/2016/07/footer_blue2-1024x549.jpg); background-color:#141b4b; background-position:center top;"><div class="k2t-wrap"><div class="k2t-row"><div class="col-3"></div><div class="col-3"><aside id="text-3" class="widget widget_text"><h4 class="widget-title"><span>Connect With Us</span></h4><div class="textwidget"></div></aside><aside id="k2t_social-2" class="widget social-widget"><ul><li class='twitter'><a target='_blank' href="http://twitter.com/UICEngineering"><i class='fa fa-twitter'></i></a></li><li class='facebook'><a target='_blank' href="https://www.facebook.com/engineering.uic"><i class='fa fa-facebook'></i></a></li><li class='instagram'><a target='_blank' href="https://www.instagram.com/uicengineering/"><i class='fa fa-instagram'></i></a></li><li class='youtube'><a target='_blank' href="http://www.youtube.com/user/UICengineering"><i class='fa fa-youtube-play'></i></a></li></ul></aside><aside id="text-4" class="widget widget_text"><div class="textwidget"><p style="font-size:14px;padding-top:10px"><a href="https://www.google.com/maps?ll=41.870771,-87.650455&z=19&t=m&hl=en-US&gl=US&mapclient=embed&cid=16882507767654082045" target="_blank"> Department of Computer Science <br> 851 S. Morgan (M/C 152)<br> Room 1120 SEO,
+Chicago, IL 60607</a></p> <span class="fa fa-envelope"> </span> <a href="mailto: info@cs.uic.edu" style="padding-left:10px;padding-right:10px"> info@cs.uic.edu</a> <br> <span class="fa fa-phone"> </span> <span style="padding-left:10px"> <a href="tel:312-996-3422">312-996-3422</a></span> <br> <span class="fa fa-fax"> </span> <span style="padding-left:10px">312-413-0024</span></div></aside></div><div class="col-3"><aside id="text-8" class="widget widget_text"><h4 class="widget-title"><span>Quick Links</span></h4><div class="textwidget"><p style="font-size:14px"><a href="/visit-us-at-an-open-house">Undergraduate Open House</a></p><p style="font-size:14px"><a href="/undergraduate-admissions">Undergraduate Admissions</a></p><p style="font-size:14px"><a href="/graduate-admissions">Graduate Admissions</a></p><p style="font-size:14px;"><a href="/scholarships">Scholarships</a></p><p style="font-size:14px;"><a href="/contact-us">Contact Us</a></p></div></aside></div><div class="col-3"><aside id="text-5" class="widget widget_text"><h4 class="widget-title"><span>Internal Links</span></h4><div class="textwidget"><p style="font-size:14px"><a href="https://www.cs.uic.edu/bin/view/Main/Forms">Forms</a></p><span style="position:absolute;visibility: collapse;"> <a href="http://zaymi-bistro.ru">займ на карту</a><a href="http://zaymi-bistro.ru">займ на карту срочно без отказа</a></span><p style="font-size:14px"><a href="/student-affairs">Student Affairs</a></p><p style="font-size:14px"><a href="/committees">Committees</a></p></div></aside><aside id="text-9" class="widget widget_text"><div class="textwidget"><p><div class="k2t-button button-default align-left"><a id="uoswnhXByH" style="" class="k2t-btn btn-ripple btn-small button-icon-right" href="http://engineering.uic.edu/donate/" target="_blank"><span class="button-text" style=""><span class="text">Make a Gift</span></span></a></div></p></div></aside><aside id="text-10" class="widget widget_text"><div class="textwidget"><p><a class="optanon-show-settings">CookieSettings</a></p></div></aside></div></div></div></div><div class="k2t-info" style="background-color:#252545; background-repeat:no-repeat; background-size:cover; background-position:center center;"><div class="container"><div class="k2t-row"><div class="col-6"> <span style="float:left"><a href="http://www.uic.edu/" target="_blank"> University of Illinois Chicago </a> | <a href="http://engineering.uic.edu/" target="_blank">College of Engineering</a></span> <span style="float:right">© Copyright 2016. The Board of Trustees of the University of Illinois | <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm" target="_blank" />Privacy Statement</a></span> <script src="https://cdn.cookielaw.org/consent/f5cc0259-ebf9-460e-b628-c1d661e5d3b6.js" type="text/javascript" charset="UTF-8"></div>
+																			<div class="col-6">
+															</div>
+											</div>
+				</div>
+			</div><!-- .k2t-info -->
+		
+	</footer><!-- .k2t-footer -->
+	</div><!-- .k2t-container -->
+
+<!-- Show Offcanvas sidebar -->
+	
+			<style>
+				#close-canvas {
+    background: #f72020;
+}
+			</style>
+			<div class="offcanvas-sidebar right-pos" style="">
+		<a id="close-canvas" onclick="javascript:return false;" class="open-sidebar k2t-element-hover btn-ripple" href="#"><span class="inner"></span></a>
+		<div class="k2t-sidebar">			
+					</div>
+	</div>
+<!-- End Show Offcanvas sidebar -->
+
+
+
+	<div class="k2t-searchbox">
+		<span class="k2t-searchbox-close"><i class="zmdi zmdi-close"></i></span>
+		<div class="mark"></div>
+		<form class="searchform" role="search" method="get" action="https://www.cs.uic.edu/" >
+			<input type="text" value="" name="s" id="s" placeholder="Type your keyword..." />
+			<button type="submit" value="" id="searchsubmit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+
+<a href="#" class="k2t-btt k2t-element-hover"><i class="zmdi zmdi-chevron-up"></i></a><script type='text/javascript'>
+
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.cs.uic.edu\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"jqueryUi":"1"};</script> <script type='text/javascript'>var mainParams = {"sticky_menu":"","smart_sticky":"0"};</script> <script type='text/javascript'>var simcal_default_calendar = {"ajax_url":"\/wp-admin\/admin-ajax.php","nonce":"0b6990027f","locale":"en_US","text_dir":"ltr","months":{"full":["January","February","March","April","May","June","July","August","September","October","November","December"],"short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"days":{"full":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]},"meridiem":{"AM":"AM","am":"am","PM":"PM","pm":"pm"}};</script> <script type='text/javascript'>jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});</script> <script type="text/javascript" defer src="https://www.cs.uic.edu/wp-content/cache/autoptimize/js/autoptimize_d92f76681b00ea32a4f19f0b0186b2fe.js"></script></body></html>

@@ -1,230 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - ColorPickerPlugin</title>
 
-<HTML>
-<!-- <BODY BGCOLOR="#AAAAAA" TEXT="#000000" LINK="#9690CC"> -->
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/ColorPickerPlugin?_T=2018-11-25" type="application/x-wiki" title="edit ColorPickerPlugin" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/ColorPickerPlugin"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+@import url('/pub/Main/WebPreferences/mainweb.css');
+@import url('/pub/TWiki/WebPreferences/hideattachments.css');
 
-<BODY BGCOLOR="#FFFFFF">
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-<HEAD> 
-<TITLE> CS 583 Spring 2015 </TITLE>
-</HEAD>
-<BODY>
-<H2>
-<center>
-CS 583 - Fall 2015
-</center>
-</H2> 
-<h1>
-<center>
-Data Mining and Text Mining
-</center>
-</H1>
+<!-- Google Analytics Snippet -->
 
-<H3> Course Objective </h3>
-<p>This course has three objectives. First, to provide students with a sound basis in data mining tasks and techniques. Second, to ensure that students are able to read, and critically evaluate data mining research papers. Third, to ensue that students are able to implement and to use some of the important data mining and text mining algorithms. 
+<script type="text/javascript">
 
-<h3> Think and Ask! </h3>
-<p> If you have questions about any topic or assignment, DO ASK me or 
-even your classmates for help, I am here to make the course 
-undersdood. DO NOT delay your questions. There is no such thing as a 
-stupid question. The only obstacle to learning is laziness. </p>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-</p> 
-<h3> General Information </h3> 
-<UL>
-<LI> Instructor: Bing Liu 
-<ul> 
-   <li> Email: <a href="http://www.cs.uic.edu/~liub"> Bing Liu</a>
-   <li> Tel: (312) 355 1318
-   <li> Office: SEO 931
-</ul>
-<li> Teaching Assistant:  Geli Fei
-  <ul>
-     <li> Email: gfei2@uic.edu
-     <li> Office: 
-     <li> Office Hours: 
-  </ul>
-<LI> Course Call Number: 30286
-<LI> Lecture time slots: 
-     <ul>
-       <li> 3:30-4:45pm  Tuesday & Thursday
-     </ul>
-<LI> Room: 216 TH
-<li> Office hours: 2:00pm-3:15pm, Tuesday & Thursday (or by appointment)
-</ul>
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-</UL>
+</script>
 
-<H3>Grading</H3>
-<UL>
-<li> Midterm: 25%
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TABLEPLUGIN_table5 --> <style type="text/css" media="all">
+.twikiTable#table5 {width:100%;}
+.twikiTable#table5 td.twikiTableCol0 {width:170;}
+.twikiTable#table5 th.twikiTableCol0 {width:170;}
+</style>
+<!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- COLORPICKERPLUGIN --> <script type="text/javascript" src="/pub/TWiki/ColorPickerPlugin/farbtastic.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/ColorPickerPlugin/farbtastic.css" type="text/css" media="all" />
+
+<!-- COLORPICKERPLUGIN_text_color -->  <script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $('#pickertext_color').farbtastic('#idtext_color');
+  });   
+ </script>
+
+<!-- TABLEPLUGIN_table6 --> <style type="text/css" media="all">
+.twikiTable#table6 {width:100%;}
+.twikiTable#table6 td.twikiTableCol0 {width:170;}
+.twikiTable#table6 th.twikiTableCol0 {width:170;}
+</style>
+<!-- TABLEPLUGIN_table4 --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#table4 {width:100%;}
+.twikiTable#table4 td.twikiTableCol0 {width:170;}
+.twikiTable#table4 th.twikiTableCol0 {width:170;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Color_Picker_Plugin"></a>  Color Picker Plugin </h1>
+<!--
+   Contributions to this plugin package are appreciated. Please update this page at
+   <a href="http://twiki.org/cgi-bin/view/Plugins/ColorPickerPlugin" target="_top">http://twiki.org/cgi-bin/view/Plugins/ColorPickerPlugin</a> or provide feedback at
+   <a href="http://twiki.org/cgi-bin/view/Plugins/ColorPickerPluginDev" target="_top">http://twiki.org/cgi-bin/view/Plugins/ColorPickerPluginDev</a>.
+   If you are a TWiki contributor please update the extension in the SVN repository.
+-->
+<sticky>
+<div style="float:right; background-color:#EBEEF0; margin:0 0 20px 20px; padding: 0 10px 0 10px;">
+<div class="twikiToc"><span class="twikiTocTitle">Page contents</span> <ul>
+<li> <a href="#Introduction"> Introduction</a>
+</li> <li> <a href="#Using_the_color_picker_in_TWikiF"> Using the color picker in TWikiForms</a>
+</li> <li> <a href="#Using_the_color_picker_in_an_HTM"> Using the color picker in an HTML form</a>
+</li> <li> <a href="#Using_the_color_picker_with_disa"> Using the color picker with disabled plugin</a>
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions</a>
+</li> <li> <a href="#Plugin_Info"> Plugin Info</a>
+</li></ul> 
+</div>
+</div>
+<img src="/pub/TWiki/ColorPickerPlugin/screenshot-edit.png" alt="screenshot-edit.png" width="201" height="227" style="float:right" />
+</sticky>
+Color picker for use in TWiki forms and TWiki applications
+<p />
+<h2><a name="Introduction"></a> Introduction </h2>
+<p />
+This TWiki plugin packages the <a href="http://acko.net/dev/farbtastic" target="_top">Farbtastic color picker</a>, which is a jQuery plugin developed by Steven Wittens of Acko.net. The package adds a color picker to TWiki forms and TWiki applications.
+<p />
+<h2><a name="Using_the_color_picker_in_TWikiF"></a> Using the color picker in TWikiForms </h2>
+<p />
+This package adds a <code>color</code> type to <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWikiForms</a>:
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Type</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Size</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Value</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <code>color</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> Single-line text box and a color picker to pick a color. The color can also be typed into the text box, such as <code>#123456</code>. </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLast"> Text box width in number of characters </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLastCol twikiLast"> Initial (default) color </td>
+		</tr></table>
+<p />
+Example form definition:
+<p />
+<table cellspacing="0" id="table2" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=0;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Name:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=1;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Type:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=2;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Size</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=3;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Values:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=4;table=2;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Tooltip message:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Background color </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLast"> color </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2 twikiLast"> 12 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLast"> &nbsp; </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLastCol twikiLast"> Select color </td>
+		</tr></table>
+<p />
+<h2><a name="Using_the_color_picker_in_an_HTM"></a> Using the color picker in an HTML form </h2>
+<p />
+You can also use the color picker directly in your HTML forms, without having to write any code. Just include this in the topic text:
+<pre>
+&#60;form action&#61;&#34;...&#34;&#62;
+&#37;COLORPICKER{ name&#61;&#34;text&#95;color&#34; size&#61;&#34;12&#34; value&#61;&#34;#123456&#34; class&#61;&#34;twikiInputField&#34; }&#37;
+&#60;form&#62;
+</pre>
+This will show an HTML input field named "text_color" and a color picker tied to it.
+<p />
+<p />
+           <table cellspacing="0" id="table3" cellpadding="0" class="twikiTable" rules="all" border="1">     
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=0;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Parameter</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=1;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Description</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=2;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Default</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3 twikiLastCol"> <a rel="nofollow" href="/bin/view/TWiki/ColorPickerPlugin?sortcol=3;table=3;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Example</font></a> </th>
+		</tr>     
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>name</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Name of input field </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> (required) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLastCol"> <code>name="text_color"</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>value</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> Initial color value, in hexadecimal notation for the combination of Red, Green, and Blue color values (RGB). </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> (none) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3 twikiLastCol"> <code>value="#0000ff"</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>size</code> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> Size of input field </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> (browser default) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3 twikiLastCol"> <code>size="12"</code> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> <code>class</code> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1"> CSS class of input field </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol2"> (none) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol3 twikiLastCol"> <code>class="twikiInputField"</code> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" colspan="4" valign="top" class="twikiFirstCol twikiLast"> Additional parameters can be supplied; they will be added to the HTML input field. </td>
+		</tr>     </table>
+<p />
+Test: (this only works if the ColorPickerPlugin is installed and enabled)
+<p />
+<form>
+<input type="text" name="text_color" value="#123456" size="12" class="twikiInputField" id="idtext_color" /> <div id="pickertext_color"> </div>
+</form>
+<p />
+<h2><a name="Using_the_color_picker_with_disa"></a> Using the color picker with disabled plugin </h2>
+<p />
+It is also possible to use the color picker in HTML forms with <em>disabled</em> ColorPickerPlugin:
+<p />
+<pre>
+&#37;INCLUDE{ &#34;&#37;SYSTEMWEB&#37;.ColorPickerPlugin&#34; section&#61;&#34;code&#34; }&#37;
+&#60;form action&#61;&#34;...&#34;&#62;
+&#37;INCLUDE{ &#34;&#37;SYSTEMWEB&#37;.ColorPickerPlugin&#34; section&#61;&#34;picker&#34; NAME&#61;&#34;demo&#95;color&#34; SIZE&#61;&#34;12&#34; VALUE&#61;&#34;#123456&#34; EXTRA&#61;&#34;class&#61;\&#34;twikiInputField\&#34;&#34; }&#37;
+&#60;/form&#62;
+</pre>
+This will show an HTML input field named "demo_color" and a color picker tied to it. The <code>"code"</code> section should be included once per topic, the <code>"picker"</code> section can be included as many times as needed. The <code>NAME</code> parameter is required; <code>SIZE</code>, <code>VALUE</code> and <code>EXTRA</code> parameters are optional. Use the <code>EXTRA</code> parameter to add additional parameters to the HTML input field.
+<p />
+Test: (this works only if the ColorPickerPlugin is installed and disabled)
+<p />
+<!--
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/ColorPickerPlugin/farbtastic.js"></script> <link rel="stylesheet" href="https://www.cs.uic.edu/pub/TWiki/ColorPickerPlugin/farbtastic.css" type="text/css" />
+<input type="text" id="%NAME%" name="%NAME%" value="#808080" size="12"  /> <div id="%NAME%picker"></div> <script type="text/javascript"> $(document).ready(function() { $('#%NAME%picker').farbtastic('#%NAME%'); }); </script>
+-->
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/ColorPickerPlugin/farbtastic.js"></script> <link rel="stylesheet" href="https://www.cs.uic.edu/pub/TWiki/ColorPickerPlugin/farbtastic.css" type="text/css" />
+<form>
+<input type="text" id="demo_color" name="demo_color" value="#ff6611" size="12" class="twikiInputField" /> <div id="demo_colorpicker"></div> <script type="text/javascript"> $(document).ready(function() { $('#demo_colorpicker').farbtastic('#demo_color'); }); </script>
+</form>
+<p />
+<h2><a name="Installation_Instructions"></a> Installation Instructions </h2>
+<p />
+This plugin is pre-installed. TWiki administrators can upgrade the plugin as needed on the TWiki server.
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="twistyIdTWikiColorPickerPlugin1show" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Show details <img alt="toggleopen.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleopen.gif" /> </span></a> </span> <span id="twistyIdTWikiColorPickerPlugin1hide" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Hide details <img alt="toggleclose.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleclose.gif" /> </span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="twistyIdTWikiColorPickerPlugin1toggle" class="twistyContent twikiMakeHidden twistyInited">
+<p /> <ul>
+<li> For an <strong><em>automated installation</em></strong>, run the <a href="https://www.cs.uic.edu/bin/configure" target="_top">configure</a> script and follow "Find More Extensions" in the in the <strong><em>Extensions</em></strong> section. <ul>
+<li> See the <a href="http://twiki.org/cgi-bin/view/Plugins/BuildContribInstallationSupplement" target="_top">installation supplement</a> on TWiki.org for more information.
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Or, follow these <strong><em>manual installation</em></strong> steps: <ul>
+<li> Download the ZIP file from the extension home on twiki.org (see below).
+</li> <li> Unzip <code><b>ColorPickerPlugin.zip</b></code> in your twiki installation directory.
+</li> <li> Set the ownership of the extracted directories and files to the webserver user.
+</li> <li> Install the dependencies (if any).
+</li></ul> 
+</li></ul> 
+<p /> <ul>
+<li> Plugin <strong><em>configuration and testing</em></strong>:  <ul>
+<li> Run the <a href="https://www.cs.uic.edu/bin/configure" target="_top">configure</a> script and enable the plugin in the <strong><em>Plugins</em></strong> section.
+</li> <li> Configure additional plugin settings in the <strong><em>Extensions</em></strong> section if needed.
+</li> <li> Test if the installation was successful using the examples provided.
+</li></ul> 
+</li></ul> 
+<p />
+</div></div> <!--/twistyPlugin-->
+<p />
+<h2><a name="Plugin_Info"></a> Plugin Info </h2>
+<p /> <ul>
+<li> Set SHORTDESCRIPTION = Color picker for use in TWiki forms and TWiki applications
+</li></ul> 
+<p />
+ <table width="100%" cellspacing="0" id="table4" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Author: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a>, <a href="http://twiki.org/" target="_top">TWiki.org</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Copyright: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> &copy; 2007 <a href="http://acko.net/about" target="_top">Steven Wittens</a>, Acko.net for Farbtastic jQuery plugin <br />  &copy; 2010-2013 <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> and <a href="http://twiki.org/cgi-bin/view/TWiki/TWikiContributor" target="_top" title="'TWiki.TWikiContributor' on TWiki.org" class="interwikiLink">TWiki:TWiki.TWikiContributor</a> for TWiki ColorPickerPlugin </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> License: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> GPL (<a href="http://www.gnu.org/copyleft/gpl.html" target="_top">GNU General Public License</a>) </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Dependencies: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="/bin/view/TWiki/JQueryPlugin" class="twikiLink">JQueryPlugin</a> (pre-installed) </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Version: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> 2013-02-15 </td>
+		</tr></table>
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="twistyIdTWikiColorPickerPlugin2show" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Show Change History <img alt="toggleopen.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleopen.gif" /></span></a> </span> <span id="twistyIdTWikiColorPickerPlugin2hide" class="twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><span class="twikiLinkLabel twikiUnvisited">Hide Change History <img alt="toggleclose.gif" src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/toggleclose.gif" /></span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="twistyIdTWikiColorPickerPlugin2toggle" class="twistyContent twikiMakeHidden twistyInited">
+<table width="100%" cellspacing="0" id="table5" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2013-02-15: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7148" target="_top" title="'Item7148' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7148</a>: Fix for color picker not working if initial value of TWiki forms field of type color is empty </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2013-01-09: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7091" target="_top" title="'Item7091' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7091</a>: Dependency clarification; use TWISTY for installation instructions </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2012-12-03: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item7020" target="_top" title="'Item7020' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item7020</a>: Add <a href="/bin/view/TWiki/VarCOLORPICKER" class="twikiLink">VarCOLORPICKER</a> with category; doc improvements </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2012-08-11: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6837" target="_top" title="'Item6837' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6837</a>: Doc fixes; updated installation instructions </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2011-06-11: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6725" target="_top" title="'Item6725' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6725</a>: Change global package variables from "use vars" to "our" </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2010-11-30: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6610" target="_top" title="'Item6610' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6610</a>: Rewrite ColorPickerContrib into ColorPickerPlugin </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2010-11-27: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6609" target="_top" title="'Item6609' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6609</a>: In <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWikiForms</a> type table, automatically list the <code>color</code> form field type defined in this contrib -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> 2010-11-26: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6606" target="_top" title="'Item6606' on the TWiki issue tracking site" class="interwikiLink">TWikibug:Item6606</a>: Complete rewrite of contrib using <a href="http://acko.net/dev/farbtastic" target="_top">Farbtastic color picker</a> -- <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main.PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main.PeterThoeny</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> 2006-10-27: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> Initial version of ColorPickerContrib by <a href="http://twiki.org/cgi-bin/view/Main/FlavioCurti" target="_top" title="'Main.FlavioCurti' on TWiki.org" class="interwikiLink">TWiki:Main.FlavioCurti</a> using Colorpicker by Norman Timmler (inlet media e.K., Hamburg, Germany) </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin-->
+<table width="100%" cellspacing="0" id="table6" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Home: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://TWiki.org/cgi-bin/view/Plugins/ColorPickerPlugin" target="_top">http://TWiki.org/cgi-bin/view/Plugins/ColorPickerPlugin</a> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td width="170" bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol0 twikiFirstCol"> Feedback: </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol1 twikiLastCol"> <a href="http://TWiki.org/cgi-bin/view/Plugins/ColorPickerPluginDev" target="_top">http://TWiki.org/cgi-bin/view/Plugins/ColorPickerPluginDev</a> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td width="170" bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Appraisal: </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1 twikiLastCol twikiLast"> <a href="http://TWiki.org/cgi-bin/view/Plugins/ColorPickerPluginAppraisal" target="_top">http://TWiki.org/cgi-bin/view/Plugins/ColorPickerPluginAppraisal</a> </td>
+		</tr></table>
+<p />
+<strong><em>Related Topics:</em></strong> <a href="/bin/view/TWiki/VarCOLORPICKER" class="twikiLink">VarCOLORPICKER</a>, <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>, <a href="/bin/view/TWiki/TWikiForms" class="twikiLink">TWikiForms</a>, <a href="/bin/view/TWiki/TWikiPlugins" class="twikiLink">TWikiPlugins</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/ColorPickerPlugin">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
 <ul>
-<li> Date and time: TBA
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
 </ul>
-<li> Final Exam: 40%
 <ul>
-<li> Date and Time: TBA
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
 </ul>
-<li> Projects: TBA
 <ul>
-<li> Project 1: TBA (15%)
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
 <ul>
-<li> Deadline: TBA
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
 </ul>
-<li> Project 2: TBA (20%)
-<ul>
-<li> Demo on: TBA
-<li> Report due: TBA
-</ul>
-</ul>
-</ul>
-<P>
-<H3>Prerequisites</H3>
-<UL>
-<li> Knowledge of probability and algorithms 
-<li> Any program language for projects
-</ul>
-<p>
-<H3> Teaching materials </H3> 
-<ul>
-<li> Required Textbook:
-<ul>
-<li><a href="http://www.cs.uic.edu/~liub/WebMiningBook.html"><b>Web data 
-Mining</b> - Exploring Hyperlinks, Contents and Usage Data</a>, By Bing Liu, Second Edition, Springer, July 2011, ISBN 978-3-642-19459-7 
-</ul>
-<li> References
-  <ul>
-  <li> Data mining: Concepts and Techniques, by Jiawei Han and Micheline Kamber, Morgan Kaufmann Publishers, ISBN 1-55860-489-8. 
-  <li> Principles of Data Mining, by David Hand, Heikki Mannila, Padhraic Smyth, The MIT Press, ISBN 0-262-08290-X. 
-  <li> Introduction to Data Mining, by Pang-Ning Tan, Michael Steinbach, and Vipin Kumar, Pearson/Addison Wesley, ISBN 0-321-32136-7. 
-  <li> Machine Learning, by Tom M. Mitchell, McGraw-Hill, ISBN 0-07-042807-7
-  </ul>
-<li> Data mining resource site: <a href="http://www.kdnuggets.com/index.html"> KDnuggets Directory </a>
-</ul>
-<H3> Topics (subject to change, slides may be changed too) </H3> 
-
-<ol> 
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-15/CS583-introduction.ppt"> Introduction </a>
-
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-data-prep.ppt"> Data pre-processing  </a>
-<ul>
-<li> Data cleaning
-<li> Data transformation
-<li> Data reduction
-<li> Discretization
-</ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-11/CS583-association-sequential-patterns.ppt"> Association rules and sequential patterns </a>
-     <ul> 
-     <li> Basic concepts
-     <li> Apriori Algorithm
-     <li> Mining association rules with multiple minimum supports 
-     <li> Mining class association rules
-     <li> Sequetial pattern mining
-     <li> Summary
-     </ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-12/CS583-supervised-learning.ppt"> Supervised learning (Classification) </a>
-     <ul> 
-     <li> Basic concepts
-     <li> Decision trees
-     <li> Classifier evaluation
-     <li> Rule induction
-     <li> Classification based on association rules
-     <li> Naive-Bayesian learning
-     <li> Naive-Bayesian learning for text classification
-     <li> Support vector machines
-     <li> K-nearest neighbor
-     <li> Bagging and boosting
-     <li> Summary
-     </ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-unsupervised-learning.ppt"> Unsupervised learning (Clustering) </a>
-     <ul> 
-     <li> Basic concepts
-     <li> K-means algorithm
-     <li> Representation of clusters
-     <li> Hierarchical clustering
-     <li> Distance functions
-     <li> Data standardization
-     <li> Handling mixed attributes
-     <li> Which clustering algorithm to use?
-     <li> Cluster evaluation
-     <li> Discovering holes and data regions
-     <li> Summary
-     </ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-partially-supervised-learning.ppt"> Partially supervised learning  </a>
-     <ul>
-     <li> Semi-supervised learning
-     <ul> 
-        <li> Learning from labeled and unlabeled examples using EM
-        <li> Learning from labeled and unlabeled examples using co-training
-     </ul>
-     <li> Learning from positive and unlabeled examples
-     </ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-07/CS583-info-retrieval.ppt"> Information retrieval and Web search </a>
-     <ul>
-     <li> Basic text processing and representation
-     <li> Cosine similarity
-     <li> Relevance feedback and Rocchio algorithm
-     </ul> 
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-link-analysis.ppt">Social network analysis </a>
-     <ul>
-     <li> Centrality and prestige
-     <li> Citation analysis: co-citation and bibliographic coupling
-     <li> The PageRank algoithm (of Google)
-     <li> The HITS algorithm: authorities and hubs
-     <li> Mining communities on the Web
-     </ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-11/CS583-opinion-mining.ppt"> Opinion mining and sentiment analysis </a>
-
-<ul>
-<li> Opinion mining problem: the abstraction
-<li> Document-level Sentiment classification
-<li> Sentence-level subjectivity and sentiment classification
-<li> Feature-level (aspect-level) sentiment analysis and summarization
-<li> Opinion Lexicon generation
-<li> Feature/aspect extraction
-<li> Opinion spam or fake review detection
-</ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-11/CS583-recommender-systems.ppt"> Recommender systems and collaborative filtering </a>
-
-     <ul>
-<li>Content-based recommendation
-<li>Collaborative filtering based recommendation
-<ul>
-<li> K-nearest neighbor
-<li> Association rules
-<li> Matrix factorization
-</ul>
-</ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-11/CS583-structured-data-extraction.ppt"> Web data extraction </a>
-<ul>
-<li> Wrapper induction 
-<li> Automated extraction
-</ul>
-<li> <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-11/CS583-information-integration.ppt"> Information integration </a>
-</ul>
-
-</ol>
-<H3> Projects - graded  (you will demo your programs to me)</H3>
-<ul>
-<li> Each group consists of 2 students, and will work on two assignments
-<ol>
-<li> Algorithm implementation: TBA
-<li> Research: TBA 
-</ol>
-</ul>
-</ol>
-<br>
-<H3> Rules and Policies </H3> 
-<uL>
-<li> <b>Statute of limitations</b>: No grading questions or complaints, no matter how justified, will be listened to one week after the item in question has been returned. 
-<li> <b>Cheating</b>: Cheating will not be tolerated. All work you submitted must be entirely your own. Any suspicious similarities between students' work (this includes, exams and program) will be recorded and brought to the attention of the Dean. The MINIMUM penalty for any student found cheating will be to receive a 0 for the item in question, and dropping your final course grade one letter. The MAXIMUM penalty will be expulsion from the University. 
-<li> <b>MOSS</b>: Sharing code with your classmates is not acceptable!!! All programs will be screened using the Moss (Measure of Software Similarity.) system. 
-<li> <b>Late assignments</b>: Late assignments will not, in general, be accepted. They will never be accepted if the student has not made special arrangements with me at least one day before the assignment is due. If a late assignment is accepted it is subject to a reduction in score as a late penalty. 
-
-</ul>
-<br>
-Back to <a href="http://www.cs.uic.edu/~liub">Home Page</a>
-<ADDRESS>
-By Bing Liu, Jan 9, 2015
-</ADDRESS>
-</BODY>
-</HTML>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

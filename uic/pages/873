@@ -1,663 +1,313 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> Speakers &lt; IEEE &lt; TWiki</title>
 
-<html lang="en">
-
-  <head>
-
-    <title>Campus Auxiliary Services - Human Resources</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=9" />-->
-
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
-
-    <link rel="stylesheet" href="css/site.css" media="screen">
-
-    <link rel="stylesheet" href="css/font-awesome.min.css"> 
-
-  <style>
-
-.navbar-fixed {
-
-    top: 0;
-
-    z-index: 100;
-
-  position: fixed;
-
-    width: 100%;
-
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/IEEE/Speakers?_T=2018-11-25" type="application/x-wiki" title="edit Speakers" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/IEEE/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/IEEE/Speakers"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
 }
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
- ul li ul.dropdown{
-
-        min-width: 250px; /* Set width of the dropdown */
-
-        background: #2c3e50;
-
-        display: none;
-
-        position: absolute;
-
-        z-index: 999;
-
-        left: 0px;
-
-    }
-
-    ul li:hover ul.dropdown{
-
-        display: block;	/* Display the dropdown */
-
-    }
-
-    ul li ul.dropdown li{
-
-        display: block;
-
-    }
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
 </style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-
-
-<!--google analytics-->
+<!-- Google Analytics Snippet -->
 
 <script type="text/javascript">
 
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-
-
-  ga('create', 'UA-40969558-2', 'auto');
-
-  ga('send', 'pageview');
-
-
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
 </script>
 
-
-
-</head>
-
-
-
-<body>
-
-  
-
-<div id="skip"><a href="#content">Skip to Main Content</a></div> 
-
-<div id="header">
-
-<div class="container">
-
-<div id="header_logo">
-
-<div id="header_logo_left"><a href=" http://vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uic_logo','','img/banner-UIC.png',1)"><img src="img/banner-UIC-white.png" alt="link to UIC home page" id="uic_logo"/></a><a href=" http://vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ovcsa_logo','','img/banner-OVCSA2.png',1)"><img src="img/banner-OVCSA-white2.png" alt="link to OVCSA home page" id="ovcsa_logo" width="200" height="40"/></a></div>
-
-<div id="header_logo_right"><a href=" http://vcsa.uic.edu" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uofi_logo','','img/banner-UniversityofIlli2.png',1)"><img src="img/banner-UniversityofIlli-white2.png" alt="link to UIC" id="uofi_logo"/></a></div>
-
-</div>
-
-<div class="clearfloat"></div>
-
-</div>
-
-</div>
-
-
-
-<!-- title -->   
-
-<div class="container">
-
-      <div class="page-header" id="banner">
-
-        <div class="row">
-
-          <div class="col-lg-12">
-
-            <h1><strong>Student Affairs Human Resources</strong></h1>
-
-          </div>         
-
-        </div>
-
-      </div>
-
-</div>
-
-
-
-
-
-<div class="container" id="navbar_container">
-
-      <!-- Navbar
-
-      ================================================== -->
-
-      <div class="bs-docs-section clearfix">
-
-        <div class="row">
-
-          <div class="col-lg-12">    
-
-            <div class="bs-example">
-
-              <div class="navbar navbar-default" id="nav_bar">
-
-                   <div class="container">
-
-                      <div class="navbar-header">
-
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-
-						<span class="icon-bar">&mdash;</span>
-
-						<span class="icon-bar">&mdash;</span>
-
-                          <span class="icon-bar">&mdash;</span>
-
-                        </button>
-
-                        <a class="navbar-brand" href="index.shtml">Home</a>
-
-                      </div>
-
-                      <div class="navbar-collapse collapse navbar-responsive-collapse">
-
-                         <ul class="nav navbar-nav">
-
-                          
-
-                          <li><a href="about.shtml">About</a></li> 
-
-                          <!--<li><a href="services.shtml">Hiring</a>
-
-                           <ul class="dropdown">
-
-                                 <li><a href="hiringastudent.shtml">Student Hiring</a></li>
-
-                                 <li><a href="extrahelp.shtml">Extra-Help Hiring</a></li>
-
-                                 <li><a href="civilservice.shtml">Civil Service Hiring</a></li>
-
-                                 <li><a href="ap.shtml">Academic Professional Hiring</a></li>                                 
-
-                          </ul>    
-
-                          
-
-                          </li>-->
-
-                          <li><a href="onlineservices.shtml">Submit Ticket</a></li>
-
-                          					  
-
-                          <li>
-
-                          	  <a href="#">Resources</a>
-
-                              <ul class="dropdown">
-
-	                             <li><a href="services.shtml">Hiring</a></li>
-
-                                 <li><a href="hiringastudent.shtml">Student Hiring</a></li>
-
-                                 <li><a href="extrahelp.shtml">Extra-Help Hiring</a></li>
-
-                                 <li><a href="civilservice.shtml">Civil Service Hiring</a></li>
-
-                                 <li><a href="ap.shtml">Academic Professional Hiring</a></li>  
-
-                                 <li><a href="docs/Student Affairs Employee Handbook 2018-2019.pdf" target="_blank">Employee Handbook</a></li>
-
-                                 <li><a href="docs/EVS Flyer.pdf">Employment Verification</a></li>
-
-                                 <li><a href="docs/CAS_HR_Ticketing_System_Manual_11216.pdf">Ticketing System Manual</a></li>
-
-                                 <li><a href="docs/Employee%20resources%200617.pdf">Employee Resources</a></li>                                
-
-                          </ul>    
-
-                          </li>
-
-                             
-
-
-
-                          <li><a href="units.shtml">Units</a></li>
-
-                          <li><a href="contact.shtml">Contact</a></li>            
-
-                        </ul>
-
-						
-
-                        <form class="navbar-form navbar-right" id="cse-search-box" action="search.shtml" >
-
-						<label style="display:none;" for="search">asd</label>
-
-                        <input type="text" name="search" id="search" class="form-control col-lg-8" placeholder="Search">                          
-
-                         
-
-                        <input type="hidden" value="003292673167871140938:0lwgx-lk_g8" name="cx" />
-
-                        <input type="hidden" value="FORID:11" name="cof" />
-
-                        <input type="hidden" value="UTF-8" name="ie" />                        
-
-						  
-
-                        </form>                       
-
-                      </div><!-- /.nav-collapse -->
-
-                  </div><!-- /.container -->
-
-                  </div><!-- /.navbar -->
-
-             
-
-            </div><!-- /example -->
-
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-    <!-- end of Navbar-->
-
-</div>
-
-
-
-<!--main container-->
-<div class="container">
-
-  <div class="row">
-    <div class="col-lg-12">
-      <div><img src="img/bannertest1.jpg" alt="Welcome to the Campus Auxiliary Services Human Resources Web site. In these pages you will find useful employee information for current employees, supervisors, administrators, and applicants."
-          class="img-responsive" /></div>
-    </div>
-  </div>
-
-
-  <div class="content-wrap-spacer"></div>
-
-  <div class="row">
-    <a name="content" tabindex="-1"></a>
-    <div class="col-lg-8">
-      <div id="welcome">
-        <h3>WELCOME!</h3>
-        <p>Student Affairs Human Resources provides a wide variety of services to the units that collectively make up Student
-          Affairs, as well as coordinate initiatives campus wide with the UIC HR department. We meet the needs of customers
-          internally and externally by developing and implementing various programs in such a way as to create and maximize
-          collaboration across the university.</p>
-        <p><a href="about.shtml" class="btn btn-primary btn-sm">Learn more</a></p>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <a href="https://nessie.uihr.uillinois.edu/cf/index.cfm" target="_blank"><img src="img/newhire1.jpg" alt="New Hires"
-          class="img-rounded" style="padding: 0px 0px 10px 10px"></a>
-    </div>
-  </div>
-
-  <div class="content-wrap-spacer"></div>
-
-  <div class="row">
-    <div class="col-lg-12">
-      <div style="background-color:#3498DB; color:#FFFFFF; left:0;
-        margin:20px auto 0; overflow:hidden; padding:2px 0 0 10px; text-transform:uppercase;   border-top-left-radius:4px; border-top-right-radius:4px;">
-        <h3><strong>NEWS </strong></h3>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="row">
-    <!--
-   <div class="col-lg-3">
-       <div class="news">
-        <div class="DATE" style="color: #2c3e50; font-size: 15px; text-transform: uppercase;"><strong><i class="icon-calendar"></i> Fall 2015</strong></div>
-        <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong>Fall Calendar</strong></div>
-        <div class="Event Summary">
-          <p class="list-group-item-text">
-          </p>
-          </div>
-        <!--<div class="Read More" style="margin: 10px auto 0;"><button class="btn btn-primary btn-xs" type="button" onclick="window.location.href='docs/Holiday%20Calender%20AY14.pdf';">Read More</button></div>-->
-    <!--
-       </div>
-   </div>
-   -->
-
-    <div class="col-lg-12">
-      <div class="news">
-        <!-- <div class="DATE" style="color: #2c3e50; font-size: 15px; text-transform: uppercase;">
-          <strong><i class="icon-calendar"></i>Fall 2017</strong>
-        </div> -->
-        <!--<div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong>Fall Events</strong> </br>
-	
-	
-	
-	</div>
-	<div class="col-lg-12">
-		<table class="table table-striped table-hover;  text-align: center">
-  <thead>
-    <tr>
-      <th>Monthly Manager Training Sessions</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Moving From Peer to Supervisor (Session 1)</td>
-      <td>September 21	| 9:00 a.m.</td>
-      <td>713 Student Center East</td>
-	  <td><a href="https://uofi.uic.edu/fb/sec/5468620"> Register Here </a></td>
-    </tr>
-    <tr>
-      	<td>Moving From Peer to Supervisor (Session 2)</td>
-	      <td>September 21	| 2:00 p.m.</td>
-	      <td>SSB Conference Room A</td>
-		  <td><a href="https://uofi.uic.edu/fb/sec/1751446"> Register Here </a></td>
-    </tr>
-           
-    </tbody></table><br /> <br />
-		</div>-->
-        <div class="Event Summary">
-          <p class="list-group-item-text">
-          </p>
-        </div>
-        <!--<div class="Read More" style="margin: 10px auto 0;"><button class="btn btn-primary btn-xs" type="button" onclick="window.location.href='docs/Holiday%20Calender%20AY14.pdf';">Read More</button></div>-->
-      </div>
-    </div>
-
-
-    <!--<div class="col-lg-3">
-        <div class="news">
-        <div class="DATE" style="color: #2c3e50; font-size: 15px; text-transform: uppercase;"><a href="https://www.hr.uic.edu/start/" style="color: rgb(44, 62, 80)"><strong><i class="icon-bullhorn"></i>New Hires</strong></a></div>
-
-          <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"><strong>Brian Smit</strong></div>
-		  <div class="Event Summary"><p class="list-group-item-text"> -Student Centers</p></div>
-
-		  <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"><strong>Rafael Ruiz</strong></div>
-		  <div class="Event Summary"><p class="list-group-item-text"> -Student Centers</p></div>
-
-        </div>
-      </div>-->
-
-
-    <!--<div class="col-lg-6">
-		<div class="news">
-       <div class="DATE" style="color: #2c3e50; font-size: 15px; text-transform: uppercase;"><strong><i class="icon-bullhorn"></i> Promotions</strong></div>
-        <div class="Event Summary"><p class="list-group-item-text"></p> </div>
-
-        <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong>Richard Bernsee</strong></div>
-		<div class="Event Summary"><p class="list-group-item-text"> -CASIT</p></div>
-        <div class="Read More" style="margin: 10px auto 0;"><button class="btn btn-primary btn-xs" type="button">Read More</button></div>
-        </div>
-
-	</div>-->
-
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div style="background-color:#3498DB; color:#FFFFFF; left:0;
-        margin:20px auto 0; overflow:hidden; padding:2px 0 0 10px; text-transform:uppercase;   border-top-left-radius:4px; border-top-right-radius:4px;">
-        <h3><strong>ANNOUNCEMENTS</strong></h3>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-
-
-
-    <!--<div class="col-lg-6">
-        <div class="news">
-        <div class="DATE" style="color: #2c3e50; font-size: 15px; text-transform: uppercase;"><strong><i class="icon-calendar"></i>Training </strong></div>
-        <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong><a href="https://www.hr.uic.edu/professional_development/">UIC Professional Development</a></strong></div>
-
-		<div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong><a href="docs/How to Reach Agreement.pdf">September 5th - How to Reach Agreement...When You Really Don't Agree With Someone!</a></strong></div>
-
-        <div class="Read More" style="margin: 10px auto 0;"><button class="btn btn-primary btn-xs" type="button">Read More</button></div>
-        </div>
-	</div>-->
-    <div class="col-lg-6">
-      <div class="news">
-
-        <div class="DATE" style="color: #2c3e50; font-size: 15px; text-transform: uppercase;"><strong><i class="icon-bullhorn"></i>
-            General Announcements</strong></div><br> <br>
-
-        <!-- <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong></strong></div>
-        <div class="Event Summary">
-        <p class="list-group-item-text">
-		<a href="docs/BenefitChoice052016.pdf">Benefit Choice Period</a><br>
-        </p> -->
-        <!--<p class="list-group-item-text">
-		<a href="https://www.hr.uic.edu/calendar_training">Organizational Development Calendar</a><br>
-
-        <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong><u><a href="docs/ethics_training.pdf" style="color: #E74C3C">Ethics Training</a></u></strong></div>
-        <div class="Event Summary"><p class="list-group-item-text">Mandatory Ethics Training</p> </div>
-        <div class="Event Summary"><p class="list-group-item-text"><strong>October 5th-9th</strong></p> </div>
-		<div class="Event Summary"><p class="list-group-item-text">All CAS employees must complete this training</p> </div>
-
-         <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong><u><a href="docs/fund_drive.pdf" style="color: #E74C3C">2015 UIC Charitable Fund Drive</strong></u></a></div>
-         <div class="Event Summary"><p class="list-group-item-text">Serve By Giving</p> </div>
-         <div class="Event Summary"><p class="list-group-item-text"><strong>September 16th - November 18th, 2015</strong></p> </div>
-         <div class="Event Summary"><p class="list-group-item-text">Over 1500 Charitable Agencies</p> </div>
-		</p>
-
-          <p class="list-group-item-text">Campus Charitable Fund Drive (CCFD) - The 2014 "season of giving" will last from September 9, 2014 through November 26, 2014.
-          </p>
-          </div>
-          <div class="Event Title" style="color: #E74C3C; margin: 10px auto 0;"> <strong><u><a href="docs/NCDM30DayChallengeFlyer2.pdf" style="color: #E74C3C">National Career Development Month</strong></u></a></div>
-         <div class="Event Summary"><p class="list-group-item-text">30 Day Career Readiness Challenge</p> </div>
-         <div class="Event Summary"><p class="list-group-item-text"><strong>September 1st - November 30th, 2015</strong></p> </div>
-		</p>
-		-->
-        <!--<p class="list-group-item-text">Campus Charitable Fund Drive (CCFD) - The 2014 "season of giving" will last from September 9, 2014 through November 26, 2014.
-          </p>-->
-
-        <p><b><a href="https://cas.uic.edu/hr/careersinstudentaffairs.shtml">Careers in Student Affairs Month - October</a></b></p>
-
-
-        <table class="table table-striped table-hover;  text-align: center">
-          <thead>
-            <tr>
-              <th>New Hires</th>
-              <th>Department</th>
-              <th>Title</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Kevin Cane</td>
-              <td>Center for Student Involvement</td>
-              <td>Director of Fraternity & Sorority Life</td>
-            </tr>
-            <tr>
-              <td>Anisha Thigpen</td>
-              <td>UIC Forum</td>
-              <td>Events Administrator</td>
-            </tr>
-
-            <tr>
-              <td>Adam Orde</td>
-              <td>UIC Forum</td>
-              <td>Events Administrator</td>
-            </tr>
-            <tr>
-              <td>Patrick Nichols</td>
-              <td>Student Centers</td>
-              <td>Building Service Worker</td>
-            </tr>
-
-          </tbody>
-        </table><br /> <br />
-
-        <table class="table table-striped table-hover; text-align: center">
-          <thead>
-            <tr>
-              <th>Promotions</th>
-              <th>Department</th>
-              <th>Title</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <tr>
-              <td>Pamela Sanford</td>
-              <td>Campus Housing</td>
-              <td>Building Service Supervisor</td>
-            </tr>
-
-
-          </tbody>
-        </table><br /> <br />
-
-
-
-      </div>
-      <!--<div class="Read More" style="margin: 10px auto 0;"><button class="btn btn-primary btn-xs" type="button" onclick="window.location.href='fund.shtml';">Read More</button></div>-->
-    </div>
-  </div>
-  <div class="content-wrap-spacer">
-  </div>
-</div>
-</div><!-- end of main container-->
-
-<!--footer-->
- <div class="row">
-<div style="position:relative;height:100px; margin:auto; overflow:hidden; font-size:1px" class="content-wrap-spacer">
-</div>
-</div>
-
-<div class="row">
-<div style="position:relative; height:88px; clear:both; margin:auto; background-image:url(img/people-hr2.png); background-repeat:repeat-x; background-position:left top; overflow:hidden; font-size:1px" id="footer-wrap">
-</div>
-</div>
-      
-      <div id="footer-wrap1" style="position:relative; margin:auto; background-color:#2c3e50; overflow:visible; padding-bottom:20px;">
-<div style="position:relative;height:33px; margin:auto; overflow:hidden; font-size:1px" id="content-wrap-spacer">
-</div>
-
-<div class="container">
-<div class="row">
-    	<div class="col-lg-4">
-    	<h3 class="list-group-item-heading" style="color:#3498DB">Student Affairs Human Resources</h3>
-		<p style="color:white; font-size:13px; padding-top:3px;" >STUDENT CENTER EAST - SCE Tower <br>
-        750 S. Halsted St.,
-		Room 702<br>
-        Chicago, IL 60607 <br>
-        <i style="color:#3498DB" class="icon-phone"></i> Phone: 312-355-3350 <br>
-        <i style="color:#3498DB" class="icon-print"></i> Fax: 312-355-3361 
-        </p>
-        
-        </div>
-   		<div class="col-lg-4">
-        <h3 class="list-group-item-heading" style="color:#3498DB">QUICK LINKS</h3>
-         		          <p>
-                          <a href="studenthiring.shtml">Student Hiring</a><br>   
-                          <a href="extrahelp.shtml">Extra Help Hiring</a><br>     
-                          <a href="civilserviceprocedure.shtml">Civil Service Hiring</a><br>
-                          <a href="ap.shtml">Academic Professional Hiring</a> <br>
-						  <a href="feedback.shtml">Feedback - Form</a> 						  
-                      	  </p>
-        </div>
-        <div class="col-lg-4" style="padding-top: 1.5em;">
-
-     
-
-<a href="http://vcsa.uic.edu" style="color:white"><strong>OVCSA</strong></a> -
-
-<a href="http://www.uic.edu" style="color:white"><strong>UIC</strong></a> -
-
-<a href="mailto:vpatan2@uic.edu" style="color:white"><strong>Webmaster</strong></a> -   
- <a href=" https://cas.uic.edu/it/index.shtml" style="color:white" target="_blank"><strong>Student Affairs Technology</strong></a> <br>
-<!-- <a href="http://www.uic.edu/depts/casit/index.shtml" target="_blank"><img src="img/casit.png"  alt="CASIT" style=" line-height: 0;"></a>                    <br> -->
- <a href="http://vcsa.uic.edu"><img src="img/banner-OVCSA-white3.png" class="img-responsive" alt="OVCSA" style="padding-top:5px;"></a> 
- <p style="color:#3498DB; font-size:11px; line-height:1;"><br>© 2018 The Board of Trustees of the University of Illinois|<a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a> </p>
-</p>
-
- 
-        </div>
-    </div>
-</div>
-  
-</div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            
-         
-
-          </div>
-        </div>
-        
-<!--footer-->
-    
-
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>  
-    
-    
-<!-- script and styling for sticky nav bar-->
-<script>
-$(document).ready(function() {
-  
-  $(window).scroll(function () {
-     //console.log($(window).scrollTop());
-    if ($(window).scrollTop() > 180) {
-      $('#nav_bar').addClass('navbar-fixed');
-	  $('#navbar_container').removeClass('container');
-    }
-    if ($(window).scrollTop() < 180) {
-      $('#nav_bar').removeClass('navbar-fixed');
-	  $('#navbar_container').addClass('container');
-    }
-  });
-});
-
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
 </script>
 
-
-<!--switch images-->
-<script type="text/javascript"> 
-<!--
-function MM_swapImgRestore() { //v3.0
-  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
-}
-function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-} 
-function MM_swapImage() { //v3.0
-  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
-   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
-}
-//-->
-</script>
-
-  </body>
-</html>
+<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
+.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
+.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/IEEE/WebHome">IEEE Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/IEEE/WebLeftBar" class="twikiLink">WebLeftBar</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/IEEE/Speakers" title='Topic revision: 4 (2015-10-13 - 19:12:00)'>Speakers</a> <span class='patternRevInfo'>(2015-10-13, Main.aklyuk2)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/IEEE/Speakers?t=1543177231' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/IEEE/Speakers' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Speakers"></a> Speakers </h1>
+<p />
+<h2><a name="Upcoming"></a> Upcoming </h2>
+<p />
+<h3><a name="October_27th_Jalyn_Kelley"></a> October 27th - Jalyn Kelley </h3>
+Jalyn Kelley is a Client Services Manager for IEEE. She will have a 30-45 minute long presentation introducing IEEE, including the history of IEEE, importance of professional organizations, IEEE's humanitarian efforts, benefits of being an IEEE student member, and an introduction to the IEEE Xplore Digital Library.
+<p />
+<strong>When:</strong> 2015, October 27th, October, at 5pm 
+<br> <strong>Where:</strong> SEL 4055 - During IEEE @ UIC General Body Meeting
+<p />
+<h2><a name="Past"></a> Past </h2>
+<h3><a name="September_24th_Jalyn_Kelley"></a> September 24th - Jalyn Kelley </h3>
+Jalyn Kelley is a Client Services Manager for IEEE. She will have a 30-45 minute long presentation introducing IEEE, including the history of IEEE, importance of professional organizations, IEEE's humanitarian efforts, benefits of being an IEEE student member, and an introduction to the IEEE Xplore Digital Library.
+<p />
+<strong>When:</strong> 2014, September 24th, Wednesday, 5pm to 7pm
+<br> <strong>Where:</strong> SEL 4055 - During IEEE @ UIC General Body Meeting
+<p />
+<h3><a name="2014_03_05"></a> 2014-03-05 </h3>
+<img src="https://www.cs.uic.edu/pub/IEEE/Speakers/Speaker_2014-03-05_1.jpg"><hr>
+<img src="https://www.cs.uic.edu/pub/IEEE/Speakers/Speaker_2014-03-05_2.jpg"> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div><div class="twikiAttachments">
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
+<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/IEEE/Speakers?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/IEEE/Speakers?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/IEEE/Speakers?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/IEEE/Speakers?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/IEEE/Speakers?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/IEEE/Speakers?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/IEEE/Speakers?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/jpg.gif" width="16" height="16" alt="JPEG" title="JPEG" border="0" /><span class="twikiHidden">jpg</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/IEEE/Speakers/Speaker_2014-03-05_1.jpg">Speaker_2014-03-05_1.jpg</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/IEEE/Speakers?filename=Speaker_2014-03-05_1.jpg;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 60.4&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2014-09-07 - 08:22</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=IEEE.Speakers;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/jpg.gif" width="16" height="16" alt="JPEG" title="JPEG" border="0" /><span class="twikiHidden">jpg</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/IEEE/Speakers/Speaker_2014-03-05_2.jpg">Speaker_2014-03-05_2.jpg</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/IEEE/Speakers?filename=Speaker_2014-03-05_2.jpg;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 75.8&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2014-09-07 - 08:22</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=IEEE.Speakers;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/IEEE/Speakers?t=1543177231' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/IEEE/Speakers' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/IEEE/Speakers?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/IEEE/Speakers?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r4&nbsp;<a rel="nofollow" href="/bin/rdiff/IEEE/Speakers?rev1=4;rev2=3">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/IEEE/Speakers?rev=3">r3</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/IEEE/Speakers?rev1=3;rev2=2">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/IEEE/Speakers?rev=2">r2</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/IEEE/Speakers?rev1=2;rev2=1">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/IEEE/Speakers?rev=1">r1</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/IEEE/Speakers?template=backlinksweb' rel='nofollow' title='Search the IEEE Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/IEEE/Speakers?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/IEEE/Speakers?t=1543177231;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/IEEE/Speakers?template=oopsmore&amp;param1=4&amp;param2=4' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r4 - 2015-10-13 - 19:12:00 - Main.aklyuk2</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/IEEE/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> IEEE</a>
+</li></ul> 
+</div>
+<a href="/bin/view/IEEE/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img alt="IEEE Logo" height="60" src="https://www.cs.uic.edu/pub/IEEE/WebLeftBar/IEEE_Logo_150x60.png" width="150" /></a> <ul>
+<li> <a href="/bin/view/IEEE/AboutUs" class="twikiLink">About Us</a>
+</li> <li> <a href="/bin/view/IEEE/Announcements" class="twikiLink">Announcements</a>
+</li> <li> <a href="/bin/view/IEEE/Events" class="twikiLink">Event Calendar</a>
+</li> <li> <a href="/bin/view/IEEE/Resources" class="twikiLink">Resources (new)</a>
+</li> <li> <a href="/bin/view/IEEE/Officers" class="twikiLink">Officers</a>
+</li> <li> <a href="/bin/view/IEEE/Photos" class="twikiLink">Photos</a>
+</li> <li> <a href="/bin/view/IEEE/Robotics" class="twikiLink">Robotics</a>
+</li> <li> <a href="/bin/view/IEEE/SupportTeams" class="twikiLink">Collaboration</a>
+</li> <li> <a href="/bin/view/IEEE/Speakers" class="twikiCurrentTopicLink twikiLink">Speakers</a>
+</li> <li> <a href="/bin/view/IEEE/Donate" class="twikiLink">Donate</a>
+</li> <li> <a href="/bin/view/IEEE/Subscribe" class="twikiLink">Subscribe</a>
+</li> <li> <a href="http://www.ieee.org/membership_services/membership/join/index.html" target="_top">Join IEEE</a>
+</li></ul> 
+<p />
+<br><br>
+<a href="/bin/logon/IEEE/Speakers">Log In</a>
+<br><br> <br /> <br /><br /> <center><img alt="IEEE Logo" height="150" src="https://www.cs.uic.edu/pub/IEEE/WebLeftBar/IEEE_Logo_150x150.png" width="150" /></center>
+<p />
+<br /> <br /><br />
+<center><a href="https://www.facebook.com/UIC2018IEEE/" target="_blank"><img alt="IEEE Logo" height="130" src="https://www.cs.uic.edu/pub/IEEE/WebLeftBar/face2.png" width="130" /></a></center>
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

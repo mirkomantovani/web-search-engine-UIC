@@ -1,557 +1,298 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
-  <head>
-    <meta charset="utf-8" />
-<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
-<meta name="MobileOptimized" content="width" />
-<meta name="HandheldFriendly" content="true" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/sites/default/files/chameleon_favicon.png" type="image/png" />
-<link rel="canonical" href="/sigsecurity" />
-<link rel="shortlink" href="/node/313" />
-<link rel="revision" href="/sigsecurity" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebStatistics &lt; CS450 &lt; TWiki</title>
 
-    <title>SIG Security | ACM@UIC</title>
-    <link rel="stylesheet" href="/sites/default/files/css/css_PXKyJUac5CjOsyl7xA6aCmq51JomRky41Sc9wSdnkNM.css?p8svlp" media="all" />
-<link rel="stylesheet" href="/sites/default/files/css/css_zKAinAEmTDxXpiwP8911d0MLPXN_Xx1AUj_aUwWKbL4.css?p8svlp" media="all" />
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS450/WebStatistics?_T=2018-11-25" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS450/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS450/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-    
-<!--[if lte IE 8]>
-<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
 <![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-  </head>
-  <body class="path-node page-node-type-page">
-    <a href="#main-content" class="visually-hidden focusable skip-link">
-      Skip to main content
-    </a>
-    
-      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
-    
+<!-- Google Analytics Snippet -->
 
-<!-- Header and Navbar -->
-<header class="main-header">
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="row">
-      <div class="navbar-header col-md-3">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-                    <div class="region region-header">
-    <div id="block-drupal8-zymphonies-theme-branding" class="settings-tray-editable site-branding block block-system block-system-branding-block" data-drupal-settingstray="editable">
-  
-    
-        <div class="brand logo">
-      <a href="/index.php/" title="Home" rel="home" class="site-branding__logo">
-        <img src="/sites/default/files/chameleon_logo.gif.png" alt="Home" />
-      </a>
-    </div>
-        <div class="brand site-name">
-                    <div class="site-branding__slogan">Association for Computing Machinery Student Chapter at the University of Illinois at Chicago</div>
-          </div>
-  </div>
+<script type="text/javascript">
 
-  </div>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-              </div>
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-      <!-- Navigation -->
-      <div class="col-md-9">
-                    <div class="region region-primary-menu">
-    <nav role="navigation" aria-labelledby="block-drupal8-zymphonies-theme-main-menu-menu" id="block-drupal8-zymphonies-theme-main-menu" class="settings-tray-editable" data-drupal-settingstray="editable">
-            
-  <h2 class="visually-hidden" id="block-drupal8-zymphonies-theme-main-menu-menu">Main navigation</h2>
-  
+</script>
 
-        
-              <ul class="sm menu-base-theme" id="main-menu"  class="menu nav navbar-nav">
-                      <li>
-        <a href="/index.php/" data-drupal-link-system-path="&lt;front&gt;">Home</a>
-                  </li>
-        </ul>
-  
-
-
-  </nav>
-
-  </div>
-
-              
-      </div>
-      <!--End Navigation -->
-
-      </div>
-    </div>
-  </nav>
-
-  <!-- Banner -->
-    <!-- End Banner -->
-
-</header>
-<!--End Header & Navbar -->
-
-
-<!--Highlighted-->
-      <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-            <div class="region region-highlighted">
-    
-
-  </div>
-
-        </div>
-      </div>
-    </div>
-  <!--End Highlighted-->
-
-
-<!-- Start Top Widget -->
-<!--End Top Widget -->
-
-
-<!-- Page Title -->
-<!-- End Page Title -- >
-
-
-<!-- layout -->
-<div id="wrapper">
-  <!-- start: Container -->
-  <div class="container">
-    
-    <!--Content top-->
-          <!--End Content top-->
-    
-    <!--start:content -->
-    <div class="row">
-      <div class="col-md-12">  <div class="region region-breadcrumb">
-    <div id="block-drupal8-zymphonies-theme-breadcrumbs" class="settings-tray-editable block block-system block-system-breadcrumb-block" data-drupal-settingstray="editable">
-  
-    
-        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
-    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
-    <ul>
-          <li>
-                  <a href="/">Home</a>
-         >
-      </li>
-        </ul>
-  </nav>
-
-  </div>
-
-  </div>
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS450/WebHome">CS450 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS450/WebStatistics" title='Topic revision: 35 (2013-01-04 - 18:04:26)'>WebStatistics</a> <span class='patternRevInfo'>(2013-01-04, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS450/WebStatistics?t=1543179558' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS450/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_CS450_Web"></a> Statistics for CS450 Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS450/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS450/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS450/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS450/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS450/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS450/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 420 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;54 <a href="/bin/view/CS450/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;44 <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;25 <a href="/bin/view/CS450/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;24 <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a><br />&nbsp;21 <a href="/bin/view/CS450/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;19 <a href="/bin/view/CS450/Homework1" class="twikiLink">Homework1</a><br />&nbsp;16 <a href="/bin/view/CS450/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;16 <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;16 <a href="/bin/view/CS450/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;15 <a href="/bin/view/CS450/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;15 <a href="/bin/view/CS450/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 5676 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 703 <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />669 <a href="/bin/view/CS450/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />301 <a href="/bin/view/CS450/Homework9" class="twikiLink">Homework9</a><br />285 <a href="/bin/view/CS450/WebSearch" class="twikiLink">WebSearch</a><br />250 <a href="/bin/view/CS450/WebPreferences" class="twikiLink">WebPreferences</a><br />208 <a href="/bin/view/CS450/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />164 <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a><br />163 <a href="/bin/view/CS450/WebChanges" class="twikiLink">WebChanges</a><br />161 <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a><br />156 <a href="/bin/view/CS450/LectureNotes" class="twikiLink">LectureNotes</a><br />143 <a href="/bin/view/CS450/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 7996 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 29 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1386 <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />451 <a href="/bin/view/CS450/Homework7PL" class="twikiLink">Homework7PL</a><br />322 <a href="/bin/view/CS450/Homework8PL" class="twikiLink">Homework8PL</a><br />311 <a href="/bin/view/CS450/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />273 <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a><br />230 <a href="/bin/view/CS450/LectureNotes" class="twikiLink">LectureNotes</a><br />210 <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a><br />160 <a href="/bin/view/CS450/Homework6" class="twikiLink">Homework6</a><br />158 <a href="/bin/view/CS450/Homework1" class="twikiLink">Homework1</a><br />158 <a href="/bin/view/CS450/Homework9" class="twikiLink">Homework9</a><br />113 <a href="/bin/view/CS450/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;29 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 7981 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 18 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 1407 <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />457 <a href="/bin/view/CS450/Homework4" class="twikiLink">Homework4</a><br />376 <a href="/bin/view/CS450/LectureNotes" class="twikiLink">LectureNotes</a><br />301 <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a><br />301 <a href="/bin/view/CS450/Homework5" class="twikiLink">Homework5</a><br />275 <a href="/bin/view/CS450/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />252 <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a><br />200 <a href="/bin/view/CS450/Homework1" class="twikiLink">Homework1</a><br />128 <a href="/bin/view/CS450/Homework6" class="twikiLink">Homework6</a><br />122 <a href="/bin/view/CS450/WebSearch" class="twikiLink">WebSearch</a><br />109 <a href="/bin/view/CS450/Homework3" class="twikiLink">Homework3</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;18 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 9974 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 24 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1517 <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />537 <a href="/bin/view/CS450/Homework1" class="twikiLink">Homework1</a><br />486 <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a><br />476 <a href="/bin/view/CS450/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />428 <a href="/bin/view/CS450/Homework2" class="twikiLink">Homework2</a><br />423 <a href="/bin/view/CS450/Homework3" class="twikiLink">Homework3</a><br />387 <a href="/bin/view/CS450/Homework4" class="twikiLink">Homework4</a><br />331 <a href="/bin/view/CS450/LectureNotes" class="twikiLink">LectureNotes</a><br />271 <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a><br />178 <a href="/bin/view/CS450/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;96 <a href="/bin/view/CS450/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;24 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> Aug 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1 twikiLast"> 4189 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2 twikiLast"> 39 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4 twikiLast"> 678 <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />402 <a href="/bin/view/CS450/Homework1" class="twikiLink">Homework1</a><br />243 <a href="/bin/view/CS450/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />167 <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a><br />145 <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a><br />&nbsp;87 <a href="/bin/view/CS450/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;87 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS450/Homework10?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="Homework10 (this topic does not yet exist; you can create it)">Homework10</a></span><br />&nbsp;74 <a href="/bin/view/CS450/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;72 <a href="/bin/view/CS450/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/CS450/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;53 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/CS450/Recordings?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="Recordings (this topic does not yet exist; you can create it)">Recordings</a></span> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;38 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span><br />&nbsp;&nbsp;1 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TomasGerlich?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="TomasGerlich (this topic does not yet exist; you can create it)">TomasGerlich</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/CS450" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS450/WebStatistics?t=1543179558' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS450/WebStatistics' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450/WebStatistics?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS450/WebStatistics?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r35&nbsp;<a rel="nofollow" href="/bin/rdiff/CS450/WebStatistics?rev1=35;rev2=34">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS450/WebStatistics?rev=34">r34</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS450/WebStatistics?rev1=34;rev2=33">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS450/WebStatistics?rev=33">r33</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS450/WebStatistics?rev1=33;rev2=32">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS450/WebStatistics?rev=32">r32</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS450/WebStatistics?rev1=32;rev2=31">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS450/WebStatistics?rev=31">r31</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450/WebStatistics?template=backlinksweb' rel='nofollow' title='Search the CS450 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450/WebStatistics?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS450/WebStatistics?t=1543179558;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450/WebStatistics?template=oopsmore&amp;param1=35&amp;param2=35' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r35 - 2013-01-04 - 18:04:26 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS450.WebStatistics;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS450</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink">CS450 Home</a>
+</li> <li> <a href="/bin/view/CS450/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS450/Homeworks" class="twikiLink">Homeworks</a>
+</li> <li> - <a href="/bin/view/CS450/UsingSubversion" class="twikiLink">Using Subversion</a>
+</li> <li> <a href="https://piazza.com/class#spring2013/cs450" target="_top">Discussion Forum</a>
+</li> <li> <a href="/bin/view/CS450/LectureNotes" class="twikiLink">Lecture Notes</a>
+</li></ul> 
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS450/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS450/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS450 Web</a></strong>
+</li> <li> <a href="/bin/view/CS450/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS450/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS450/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS450/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS450/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS450/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS450/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS450/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-    </div>
-
-    <div class="row layout">
-      <!--- Start Left SideBar -->
-              <div class="sidebar" >
-          <div class = col-md-3 >
-              <div class="region region-sidebar-first">
-    <div id="block-user-2" class="settings-tray-editable block block-user block-user-login-block" data-drupal-settingstray="editable" role="form">
-  
-    
-      <form class="user-login-form" data-drupal-selector="user-login-form" action="/sigsecurity?destination=/sigsecurity" method="post" id="user-login-form" accept-charset="UTF-8">
-  <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
-      <label for="edit-name" class="js-form-required form-required">Username</label>
-        <input autocorrect="none" autocapitalize="none" spellcheck="false" data-drupal-selector="edit-name" type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required" required="required" aria-required="true" />
-
-        </div>
-<div class="js-form-item form-item js-form-type-password form-item-pass js-form-item-pass">
-      <label for="edit-pass" class="js-form-required form-required">Password</label>
-        <input data-drupal-selector="edit-pass" type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required" required="required" aria-required="true" />
-
-        </div>
-<input autocomplete="off" data-drupal-selector="form-j6q-bux-6-ivbnnkd1w5nbicu3rxmfg-yzrok4whioy" type="hidden" name="form_build_id" value="form-j6Q-bUx-6_IvbNnKd1w5NBIcu3RXMfg-YZrOk4WHiOY" />
-<input data-drupal-selector="edit-user-login-form" type="hidden" name="form_id" value="user_login_form" />
-<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Log in" class="button js-form-submit form-submit" />
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
 </div>
-
-</form>
-<ul><li><a href="/user/password" title="Send password reset instructions via email." class="request-password-link">Reset your password</a></li></ul>
-  </div>
-<nav role="navigation" aria-labelledby="block-user-3-menu" id="block-user-3" class="settings-tray-editable" data-drupal-settingstray="editable">
-            
-  <h2 class="visually-hidden" id="block-user-3-menu">Tools</h2>
-  
-
-        
-              <ul class="menu">
-                    <li class="menu-item">
-        <a href="/join" data-drupal-link-system-path="node/26">Not a member? Click here!</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-<nav role="navigation" aria-labelledby="block-menu-menu" id="block-menu" class="settings-tray-editable" data-drupal-settingstray="editable">
-      
-  <h2 id="block-menu-menu">ACM Menu</h2>
-  
-
-        
-              <ul class="menu">
-                    <li class="menu-item">
-        <a href="/about" data-drupal-link-system-path="node/29">About</a>
-              </li>
-                <li class="menu-item">
-        <a href="/contact" title="Find our location and other contact information" data-drupal-link-system-path="node/5">Contact</a>
-              </li>
-                <li class="menu-item">
-        <a href="/officers" title="View the current ACM officers" data-drupal-link-system-path="node/3">Officers</a>
-              </li>
-                <li class="menu-item">
-        <a href="/bylaws" data-drupal-link-system-path="node/282">ACM Constitution</a>
-              </li>
-                <li class="menu-item">
-        <a href="/policies" data-drupal-link-system-path="node/28">Office Policies</a>
-              </li>
-                <li class="menu-item">
-        <a href="/members" data-drupal-link-system-path="node/83">Members</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-<nav role="navigation" aria-labelledby="block-menu-1-menu" id="block-menu-1" class="settings-tray-editable" data-drupal-settingstray="editable">
-      
-  <h2 id="block-menu-1-menu">SIGs - Active</h2>
-  
-
-        
-              <ul class="menu">
-                    <li class="menu-item">
-        <a href="/sigai" title="SIG AI" data-drupal-link-system-path="node/355">SIG AI</a>
-              </li>
-                <li class="menu-item">
-        <a href="/SIGAlgoTrading" data-drupal-link-system-path="node/337">SIG AlgoTrading</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigblockchain" data-drupal-link-system-path="node/334">SIG BlockChain</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigmathcoding" data-drupal-link-system-path="node/312">SIG Math Coding</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigsysadmin" data-drupal-link-system-path="node/114">SIG SysAdmin</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigwindows" data-drupal-link-system-path="node/333">SIG Windows</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-<nav role="navigation" aria-labelledby="block-menu-20-menu" id="block-menu-20" class="settings-tray-editable" data-drupal-settingstray="editable">
-      
-  <h2 id="block-menu-20-menu">SIGs - Defunct</h2>
-  
-
-        
-              <ul class="menu">
-                    <li class="menu-item">
-        <a href="/sigapp" data-drupal-link-system-path="node/262">SIG App</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sig-android" data-drupal-link-system-path="node/122">SIG Android</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigbuild" data-drupal-link-system-path="node/13">SIG Build</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigcompete" data-drupal-link-system-path="node/310">SIG Compete</a>
-              </li>
-                <li class="menu-item menu-item--active-trail">
-        <a href="/sigsecurity" data-drupal-link-system-path="node/313" class="is-active">SIG Security</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigcode" data-drupal-link-system-path="node/10">SIG Code</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigmedtech" data-drupal-link-system-path="node/332">SIG MedTech</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigsudo" data-drupal-link-system-path="node/311">SIG Sudo</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sighci" data-drupal-link-system-path="node/292">SIG HCI</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigmicro" data-drupal-link-system-path="node/277">SIG Micro</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigux" data-drupal-link-system-path="node/276">SIG UX</a>
-              </li>
-                <li class="menu-item menu-item--collapsed">
-        <a href="/sigweb" data-drupal-link-system-path="node/12">LUG Web</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sig-game" data-drupal-link-system-path="node/160">SIG Game</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigpwn" data-drupal-link-system-path="node/198">SIG Pwn</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigcodereview" data-drupal-link-system-path="node/291">SIG Code Review</a>
-              </li>
-                <li class="menu-item">
-        <a href="/sigopen" data-drupal-link-system-path="node/298">SIG Open</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-
-  </div>
-
-          </div>
-        </div>
-            <!---End Right SideBar -->
-
-      <!--- Start content -->
-              <div class="content_layout">
-          <div class=col-md-6>
-              <div class="region region-content">
-    <div id="block-drupal8-zymphonies-theme-content" class="block block-system block-system-main-block">
-  
-      <h2><span property="schema:name">SIG Security</span>
-</h2>
-    
-      
-<article data-history-node-id="313" role="article" about="/sigsecurity" typeof="schema:WebPage" class="node node--type-page node--view-mode-full">
-
-  
-      <span property="schema:name" content="SIG Security" class="hidden"></span>
-  <span property="schema:interactionCount" content="UserComments:0" class="hidden"></span>
-
-
-  
-  <div class="node__content">
-    
-            <div property="schema:text"><div class="content"><p><strong><br /></strong></p><p><strong><br /></strong></p><p><strong>Weekday</strong>: Tuesday<span style="font-size: 0.9em; line-height: 1.3em;"><br style="font-size: 0.9em; line-height: 1.3em;" /></span></p><p><strong>Time:</strong> 5:00 PM - 7:00 PM<strong></strong></p><p><strong>Location: </strong>ACM Office, SELE 2264</p><p><span style="color: #0000ff;"><span style="text-decoration: underline; color: #0000ff;"><br /></span></span></p><div class="content"><strong><span class="event-description">Who are we? </span></strong></div><div class="content"><span class="event-description">A special interest group centered on anything and everything security in the field of computer science. We try to focus on what you do not necessarily learn from class and hosting/entering various capture the flag (CTF) tournaments.</span></div><div class="content"><span class="event-description"><br /></span></div><div class="content"><span class="event-description"><strong>What to expect?</strong> </span></div><div class="content"><span class="event-description">Interactive labs and demos, informative lectures and guest speakers! Visit the github repo to see what we've covered so far.</span></div><div class="content"><span class="event-description"><br /></span></div><div class="content"><strong><span class="event-description">When do we meet? </span></strong></div><div class="content"><span class="event-description">Tuesdays at 5:00-6:00p.m. Join our mailing list for the location for the week (we tend to bounce between the ACM Office, WiCS Lounge and CS Lounge).</span></div><p> </p><p>Leaders</p><ul><li>Michael Baccia</li></ul><p> </p><p>Contact:</p><p><strong>Email Us: </strong>mbacci3@uic.edu</p><p><strong>Join our mailing list!</strong><strong><br />Send an email to:</strong> sigsec-subscribe AT acm.cs.uic.edu</p><p> https://acm.cs.uic.edu/mailman/listinfo/sigsec</p><p> </p><p><strong>Additional Resources:</strong></p><p>https://github.com/mbaccia514/SIG-Security</p></div></div>
-      
-  </div>
-
-</article>
-
-  </div>
-
-  </div>
-
-          </div>
-        </div>
-            <!---End content -->
-
-      <!--- Start Right SideBar -->
-              <div class="sidebar">
-          <div class=col-md-3>
-              <div class="region region-sidebar-second">
-    <div class="search-block-form settings-tray-editable block block-search" data-drupal-selector="search-block-form" id="block-search" role="search" data-drupal-settingstray="editable">
-  
-    
-      <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
-  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
-      <label for="edit-keys" class="visually-hidden">Search</label>
-        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
-
-        </div>
-<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" value="Search" class="button js-form-submit form-submit" />
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
 </div>
-
-</form>
-
-  </div>
-<nav role="navigation" aria-labelledby="block-menu-2-menu" id="block-menu-2" class="settings-tray-editable" data-drupal-settingstray="editable">
-      
-  <h2 id="block-menu-2-menu">ACM Tools</h2>
-  
-
-        
-              <ul class="menu">
-                    <li class="menu-item">
-        <a href="/cal" title="The official events calendar of the UIC ACM" data-drupal-link-system-path="node/9">Calendar</a>
-              </li>
-                <li class="menu-item">
-        <a href="/mailsignup" data-drupal-link-system-path="node/187">Mailing List Signup</a>
-              </li>
-                <li class="menu-item">
-        <a href="http://acm.cs.uic.edu/umpf" title="Use UMPF to navigate your way around the UIC campus">UIC Mega Pathfinder</a>
-              </li>
-                <li class="menu-item">
-        <a href="/uiclinux" title="A list of guides for using Linux at UIC, including wireless and printing." data-drupal-link-system-path="node/41">UIC Linux Guides</a>
-              </li>
-                <li class="menu-item">
-        <a href="http://acm.cs.uic.edu/wiki" title="View the ACM wiki for helpful tips">ACM Wiki</a>
-              </li>
-                <li class="menu-item">
-        <a href="/irc2" title="Java web client for the ACM IRC channel" data-drupal-link-system-path="node/284">ACM IRC</a>
-              </li>
-                <li class="menu-item">
-        <a href="https://acm.cs.uic.edu/acmmail" title="">ACM Mail</a>
-              </li>
-                <li class="menu-item">
-        <a href="https://acm.cs.uic.edu/git" title="The UIC ACM currently is hosting a Git project hosting and management system for members">ACM Git Project Hosting</a>
-              </li>
-                <li class="menu-item">
-        <a href="https://acm.cs.uic.edu/git/public" title="List of publicly accessible code projects">Public Git Projects</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-<nav role="navigation" aria-labelledby="block-menu-19-menu" id="block-menu-19" class="settings-tray-editable" data-drupal-settingstray="editable">
-      
-  <h2 id="block-menu-19-menu">Committees </h2>
-  
-
-        
-              <ul class="menu">
-                    <li class="menu-item">
-        <a href="/program" data-drupal-link-system-path="node/150">Program Committee</a>
-              </li>
-                <li class="menu-item">
-        <a href="/publicity" data-drupal-link-system-path="node/151">Publicity Committee</a>
-              </li>
-                <li class="menu-item">
-        <a href="/membership" data-drupal-link-system-path="node/152">Membership Committee</a>
-              </li>
-                <li class="menu-item">
-        <a href="/waysandmeans" data-drupal-link-system-path="node/153">Ways and Means Committee</a>
-              </li>
-                <li class="menu-item">
-        <a href="/flourish-committee" data-drupal-link-system-path="node/154">Flourish! Committee</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-<nav role="navigation" aria-labelledby="block-menu-3-menu" id="block-menu-3" class="settings-tray-editable" data-drupal-settingstray="editable">
-      
-  <h2 id="block-menu-3-menu">Events</h2>
-  
-
-        
-              <ul class="menu">
-                    <li class="menu-item">
-        <a href="http://acm.cs.uic.edu/lanparty" title="Learn more about SIG Fun&#039;s LAN party events!">ACM Lan Party</a>
-              </li>
-                <li class="menu-item">
-        <a href="http://flourishconf.com" title="Learn more about UIC&#039;s open source conference ">Flourish</a>
-              </li>
-        </ul>
-  
-
-
-  </nav>
-<div id="block-block" class="settings-tray-editable block block-block-content block-block-contentc807c916-d8b7-4dee-9a44-0de73287198f" data-drupal-settingstray="editable">
-  
-    
-      
-            <div> 
-
-<a href="http://lug.cs.uic.edu"><img src="http://acm.cs.uic.edu/sites/default/files/tux-icons/Tux-G2-LUG-ICONS-FULL_0218_protech.png" width="32" height="32" title="Active Linux Distro PROTECH, distrowatch.com" alt="Active Linux Distro PROTECH, distrowatch.com" onmouseover="this.src='http://acm.cs.uic.edu/sites/default/files/tux-icons/Tux-G2-LUG-ICONS-FULL_0218_protech.png';this.height=193;this.width=201.5" onmouseout="this.src='http://acm.cs.uic.edu/sites/default/files/tux-icons/Tux-G2-LUG-ICONS-FULL_0218_protech.png';this.height=32;this.width=32"></a>
-
-&nbsp;<a href="http://lug.cs.uic.edu/">UIC Linux Users Group</a>
-<div class="social-media" style="float: inherit; margin: 2em auto; text-align: center;">
-<p>Join us on Social Media</p>
-<a href="http://www.facebook.com/pages/UIC-ACM/78488002212" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-<a href="https://twitter.com/uic_acm?lang=en" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-<a href="https://youtube.com/flourishconf" class="google-plus" target="_blank"><i class="fa fa-youtube"></i></a>
-<a href="https://uicacm.slack.com" class="slack" target="_blank"><i class="fa fa-slack"></i></a>
-<a href="rss.xml" class="rss" target="_blank"><i class="fa fa-rss"></i></a>
-</div>
-<p><a class="gap" href="http://cs.uic.edu"><img src="http://acm.cs.uic.edu/sites/default/files/csdepartment.png" alt="UIC Computer Science Department" title="UIC Computer Science Department" align="middle"></a></p>
-<p><a href="http://engineering.uic.edu"><img src="http://acm.cs.uic.edu/sites/default/files/collegeOfEngineering.png" alt="UIC College of Engineering" title="UIC College of Engineering" align="middle"></a></p>
-<p><a href="http://acm.org/"><img src="http://acm.cs.uic.edu/sites/default/files/acm_logo.gif" height="60" width="202" alt="National ACM" title="National ACM"align="middle"></a></p>
-</div>
-      
-  </div>
-
-  </div>
-
-          </div>
-        </div>
-            <!---End Right SideBar -->
-      
-    </div>
-    <!--End Content -->
-
-    <!--Start Content Bottom-->
-        <!--End Content Bottom-->
-  </div>
-</div>
-<!-- End layout -->
-
-
-
-
-
-
-<!-- Start bottom -->
-<!--End Bottom -->
-
-
-
-
-<!-- start: Footer -->
-<!--End Footer -->
-
-<!-- Start Footer Menu -->
-  <div class="footer-menu">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-md-6">
-          
-        </div>
-                <div class="col-sm-6 col-md-6">
-          <div class="social-media">
-                          <a href="http://www.facebook.com/pages/UIC-ACM/78488002212"  class="facebook" target="_blank" ><i class="fa fa-facebook"></i></a>
-                                                  <a href="https://twitter.com/uic_acm?lang=en" class="twitter" target="_blank" ><i class="fa fa-twitter"></i></a>
-                                                              <a href="rss.xml" class="rss" target="_blank" ><i class="fa fa-rss"></i></a>
-                      </div>
-        </div>
-              </div>
-    </div>
-  </div>
-<!-- End Footer Menu -->
-
-<div class="copyright">
-  <div class="container">
-    <div class="row">
-
-      <!-- Copyright -->
-      <div class="col-sm-6 col-md-6">
-                
-          <p>Copyright Association for Computing Machinary at the University of Illinois at Chicago 2018 · All rights reserved</p>        
-              </div>
-      <!-- End Copyright -->
-
-      <!-- Credit link -->
-            <!-- End Credit link -->
-      
-    </div>
-  </div>
-</div>
-
-
-<!-- Google map -->
-<!-- End Google map -->
-  </div>
-
-    
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/313","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"classy\/node,core\/html5shiv,drupal8_zymphonies_theme\/bootstrap,drupal8_zymphonies_theme\/fontawesome,drupal8_zymphonies_theme\/global-components,statistics\/drupal.statistics,system\/base","theme":"drupal8_zymphonies_theme","theme_token":null},"ajaxTrustedUrl":{"\/search\/node":true,"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"statistics":{"data":{"nid":"313"},"url":"\/core\/modules\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"1b39ae5714ccda1a0dfd83a91532f3d5ec1f538ad82ec0463e668766a7fa3805"}}</script>
-<script src="/sites/default/files/js/js_ggnV3neCEO2-NaLMV3j4nywSpE0FKU5xr-DqvSIP9m0.js"></script>
-
-  </body>
-</html>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

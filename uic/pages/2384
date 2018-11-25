@@ -1,822 +1,647 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>
-	LAS - College of Liberal Arts and Sciences University of Illinois at Chicago UIC
-</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="geo.region" content="US-IL" /><meta name="geo.placename" content="Chicago" /><meta name="geo.position" content="41.874428;-87.651787" /><meta name="ICBM" content="41.874428, -87.651787" /><meta name="google-site-verification" content="uOB1uNUby1pU8ARjouF-I4zgsmdHFvg4p4zZTwh8Y_g" /><meta name="twitter:site" content="@UICLAS" /><meta property="og:title" content="UIC College of Liberal Arts and Sciences" /><meta property="og:image" content="//static.las.uic.edu/images/logos/social.las.png" /><meta property="og:site_name" content="LAS" /><meta property="fb:admins" content="139752752710982" /><link rel="apple-touch-icon" href="//static.las.uic.edu/images/logos/social.las.png" /><link rel="apple-touch-icon-precomposed" href="//static.las.uic.edu/images/logos/social.las.png" /><link rel="shortcut icon" href="//static.las.uic.edu/favicon.ico" />
-    <!-- 1140px Grid styles for IE -->
-    <!--[if lte IE 9]><link rel="stylesheet" href="//static.las.uic.edu/css/1140grid/ie.min.css" type="text/css" media="screen" /><![endif]-->
-<link href="https://d35islomi5rx1v.cloudfront.net/ajax/2017.2.621/Menu.css" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><meta name="Generator" content="Sitefinity 10.1.6525.0 PU" /><link rel="canonical" href="https://www.las.uic.edu" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><script type="text/javascript">
-	(function() {var _rdDeviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;var _rdDeviceHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;var _rdOrientation = (window.width > window.height) ? 'landscape' : 'portrait';})();
-</script><link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nHk3pXou44TS3aCy_bKmLFeK_zQWSvzkMhPsdDAOozT0Wg7GeDDAqVW-Mn5x-ChrrC3mjg6X9Q-30ygEuD53RfBBban8_br-sm9ozu0vwc5M0&amp;t=636692118962391687&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%2c+Version%3d10.1.6525.0%2c+Culture%3dneutral%2c+PublicKeyToken%3db28c218413bdf563%3aen%3aeb177f10-254a-47f5-be2f-2f1c3f40d5ff%3a7a90d6a" type="text/css" rel="stylesheet" /><link href="/Sitefinity/Public/ResponsiveDesign/layout_transformations.css?pageDataId=16c717fb-1b90-422f-b7e6-89770d0e7883&amp;pageSiteNode=8C1D8C01-32A0-4A2B-B712-384C67E71422/69423f3e-0b59-47ec-85d6-07bb6596bd96/SitefinitySiteMap" type="text/css" rel="stylesheet" /><link href="/Sitefinity/WebsiteTemplates/LAS/App_Themes/LAS_Home/global/style.css?v=636479935267518834" type="text/css" rel="stylesheet" /><meta name="description" content="This is the home page for the College of Liberal Arts and Sciences (LAS), University of Illinois at Chicago (UIC). It contains featured news, events, videos and articles about the College." /><meta name="keywords" content="news, events, calendar, features, videos, home, College of Liberal Arts and Sciences, LAS" /></head>
-<body>
-    <form method="post" action="./" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="ctl18_TSSM" id="ctl18_TSSM" value="" />
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="qxKKXn9chBQV30B8Bu+l47gPn765YJ2lp4uw+rtYZwLSxyrNp6tNcGhGsS5Wf9Mk2ttUmLUHBFl0tl9i6w0FfN8wWH15h6Ev0GGZm7/+bf4E/rJgPyPM9hZvRglFd2tSoQnQrdttWG2pi3jXcE+5nc/3+FQzOlOtJfsZWKpjXqKBfh03u3aPGAcexHbKMoKif/AsFkbk2n46rmVFlGaN2hk17cHEaJ/pSkDYmcIPdq48PbLgu5BeWY+8PcV+TSNbqVfw6gYUy7MkTZo4nZtbVrrmh9ufdKxyBbpa0P9EkSMk9YkYlQ/wmaQYW7aitNWNYnxFvwELvwPWyqRLEzw2dBjJ+qLhvUh7quTpXRgAjHM/jVNxF/nQZ9JAHAxhheRJh0AXIiDLdcq6IQooUZZYFtDMapp6g+40cXas/qmtfwo/Gt41OSPpS9snsCACp/DjwavGGUgZMcLz+af+32tK6BaCC1K48DCEXxCN2+lTNufzpirZHTgEFGqSi3cnqL7AUad/414tjUkS6Yj5Df8o00VLzWKA5aGtZW6g6RkKL0/gNBEPOpUsWxvj33swWL8pm7pGV3fIHX0+oJqFDUjI62+Mg/W15lBcfIYIwovAnVyD++zm0t7tiJVoEcaJ4osfRBIvJI5b9h9Nx/XTckpM9+8SiXAxsieMO+/Buy8yfSdcRU4FMLWuijYiBPwVJnUaQviFIDz4xCTFmvwj4U8xPJuAxFn11FhLHz5up/PcoxOOygBYu+0H4JdrL32AQogp57/tXETjCrv8LIFBJ6wP++/TXTsOkmqsQfROqGTX8OE/PLgPRovj5DdzUjY/PpfJwaPZduyraKxst/3e0gc9FB/7k8ClEs70DCDgBkRyPSf9ZloNXpg7oQqokwx5y2t65bi4cWd67amhAroYEMddq46arFvs9hEviHECNQYwd4/wYn6V1T+abMuVSpgPaZloNoA6ddJW3viNBZwX2JOhxC93eRLfvc7I5DcAyXpSqgpxvo615CY9aSaKAwko+bc0NQ2qhw2eHBon3BNGx/K/nkJrD3qvSg5RH878wJmPzmwZKh9XhL+KvMsiV/zAPgLAo38rGveNhPU8b2u7ZeqHxydr3o2f5I01r3te5XtSw7jNp+YTfZOqu/B3/0m9N2/sU3NUWjF2JOEO6DBswfnf7ujrTncFnWvdVwkIS0POURJlQShdrq9Zp8bz7xXhHW7JeBJ12/sVgVNz7+BC93t+9Ci2LG6Nm5J9iMG7iRzJ3f2Qf2/Xm7WmRgpUFQsVcEqQzOlGCCaYgrWgyvcKJr8xNaA+tK9e4qO+WajwixjNhZtrnOt0OqBl/ccK+IXpUZ7f7bDQllWtTyYO+plSCMpCoiPsUITrKy09XgfAtIX1Bv9gUpErXZtsFahCA/Zf3HZmdhYJ3IoSxSdZMNQZDC3nbud5uzsHCIEBI8lgFdFXtWG13i6z81MrX20nrz/Xv+pV2Ae/ZkTlQAXghy+m51UPBg7cubIDcJRJUczAjMCrNhvznGPvRO/XUEFCR9j5le8f+mVMjaezDZ5qjjk1IgYQvwqgmqDqL8SZtWEsKXFhZbCYj16vKMD7JzuVsRd0I23MdBIzrQdSvbUiItwyTpyjhFjNMZQywO/J2LxDkFBccKef1j0wSbFskcmKfoUDxVXIacwwm1zci6viyH+7Pwsrm73UymUrRFtw1KCNmYkK+gvd/8eFn1DNM5rPkwRTxvJ2TNuO25GbSCNUzkT2w2OJ2haa2IWby0HicTl3hnJbyMw=" />
-</div>
+<html lang="en-US">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
+<title>Capturing the beauty of discovery | UIC Today</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/style.css" />
+
+<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/css/style.min.css" />
+    
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://today.uic.edu/feed" />
+
+<link rel="shortcut icon" href="https://today.uic.edu/wp-content/themes/uictoday/favicon.ico" />
+
+
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/today.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
 }
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='https://today.uic.edu/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.95' type='text/css' media='all' />
+<link rel='stylesheet' id='ssp-frontend-player-css'  href='https://today.uic.edu/wp-content/plugins/seriously-simple-podcasting/assets/css/player.css?ver=1.19.14' type='text/css' media='all' />
+<link rel='stylesheet' id='qcsld-fa-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='qcopd-custom-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='qcopd-custom-rwd-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style-rwd.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='qcopd-embed-form-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/css/embed-form.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wow-icons-fa-css'  href='https://today.uic.edu/wp-content/plugins/wow-icons//assets/fontawesome/font-awesome.min.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='upw_theme_standard-css'  href='https://today.uic.edu/wp-content/plugins/ultimate-posts-widget/css/upw-theme-standard.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://today.uic.edu/wp-content/tablepress-combined.min.css?ver=26' type='text/css' media='all' />
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
 </script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-a11y.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"mm\/dd\/yy","ui_css":"https:\/\/today.uic.edu\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.95'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/directory-script.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/js/embed-form.js?ver=4.9.8'></script>
+<link rel='https://api.w.org/' href='https://today.uic.edu/wp-json/' />
+<link rel='prev' title='Researchers uncover new target of alcohol in the brain' href='https://today.uic.edu/researchers-uncover-new-target-of-alcohol-in-the-brain' />
+<link rel='next' title='Police report' href='https://today.uic.edu/police-report-83' />
+<link rel="canonical" href="https://today.uic.edu/capturing-the-beauty-of-discovery" />
+<link rel='shortlink' href='https://today.uic.edu/?p=70476' />
+<link rel="alternate" type="application/json+oembed" href="https://today.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftoday.uic.edu%2Fcapturing-the-beauty-of-discovery" />
+<link rel="alternate" type="text/xml+oembed" href="https://today.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftoday.uic.edu%2Fcapturing-the-beauty-of-discovery&#038;format=xml" />
+    <style type="text/css" media="screen">
+      div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
+        text-decoration: none;
+        border: none;
+      }
+    </style>
+           <style type="text/css" media="screen">
+          div.printfriendly {
+            margin: 0px 0px 0px 0px;
+            position: relative;
+            z-index: 1000;
+          }
+          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
+            font-size: 14px;
+            color: #55750C;
+            vertical-align: bottom;
+          }
+          .printfriendly a {
+            box-shadow:none;
+          }
+          .printfriendly a:hover {
+            cursor: pointer;
+          }
+          .printfriendly a img  {
+            border: none;
+            padding:0;
+            margin-right: 6px;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+          }
+          .printfriendly a span{
+            vertical-align: bottom;
+          }
+          .pf-alignleft {
+            float: left;
+          }
+          .pf-alignright {
+            float: right;
+          }
+          div.pf-aligncenter {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+          }
+        </style>
+        <style type="text/css" media="print">
+          .printfriendly {
+            display: none;
+          }
+        </style>
 
+<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://today.uic.edu/feed/podcast" />
 
-<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/WebForms.js" type="text/javascript"></script>
 <script type="text/javascript">
-//<![CDATA[
-window.WebForm_PostBackOptions||document.write('<script type="text/javascript" src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZBhfbtHS450WP3ptpo1xkl7LreNq7wFQdvYoUCdf8bjJ8KTjyzmpfktCDWViQoYP9w2&amp;t=636681423604795562"><\/script>');//]]>
+           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
+         </script><script type="text/javascript">
+	           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
+	         </script>
+<!-- Put the following javascript before the closing </head> tag. -->
+
+<script>
+  (function() {
+    var cx = '009511351313755808885:xdz07yl93pe';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
 </script>
 
+</head>
+
+<body role="document" class="post-template-default single single-post postid-70476 single-format-standard">
 
 
-<script src="/WebResource.axd?d=znKi4Zzr2OLSbiIIbcBLP3V0BrYtrobXx9OzCmqYVWKSw35ZwYVdvvbm-w-H_lFCtU0_C1-_PY6H00W2iAxGvUqQGH9kJDECVEM_FBc_KB6zBqJt3TBdtQAhqmtyu9FZA0qmsmT32M83xSSDvqHSOSjhXAUu3Ab1b__SwyTYW0Fxx0Ph6I665ark3yrB7mN0f-Dlf878Nb8BNk2cplHzMwZCfW5BKxGqF7cHWVS_mEA1&amp;t=636428201040000000" type="text/javascript"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/MicrosoftAjax.js" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-(window.Sys && Sys._Application && Sys.Observer)||document.write('<script type="text/javascript" src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yIorSJlG6QR1MRagrDHi_KCKvtcgZGP5S-bLQ_eaw2MvyfybmCbEtlhWxO057YG6dg_DQYn3vW9MFxH2ueQIa6Os7ANwx0wG7bS9agsczBUkPNDO9TIYJPKcvs8_GDjTp2kRg1sUZOlkq9VYTFbCyDo1&t=545ba255"><\/script>');//]]>
-</script>
+<div id="skip" role="complementary">
+<a href="#the_content">Skip to main content</a></div>
 
-<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/MicrosoftAjaxWebForms.js" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-(window.Sys && Sys.WebForms)||document.write('<script type="text/javascript" src="/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadHrtCe2Pj61j-T1CivMT76sdBdzdPyG148fXV9osUm1wPjohEgZCuHb6Jt9AlgF6zM69RHJ6fos9NbdmkHkgZj_kKYQ-7FaTyDEa-8LlHHX9DSC3SIIuyPiisVSCmYhnscx8DD9AXPp0GlwjbEX7Vyg1&t=545ba255"><\/script>');//]]>
-</script>
 
-<script src="//www.google.com/jsapi" type="text/javascript"></script>
-<script src="https://code.jquery.com/jquery-1.12.1.min.js" type="text/javascript"></script>
-<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=lAcNKCSBPRb9dHiP3rTbPxGqFOcIzMjLpnMI5E_ogQfBPnN22yF4r5CNji1-GWowC5QkWpDwsT8y7ZeSA07HCIm_4Snguvx_H2HV-lQYYsR-gdvBFCCaq_FvCBjth4WmuoRKctCtnpVtk73HdSAvrjlH0CCRChB8YIdfaCxfbgl4DhcCTtL6C3yFAxdCtysego9KHAbVoadmPyhizW0Pow2&amp;t=fffffffff0f3ba09" type="text/javascript"></script>
-<script src="Extensions/Scripts/jquery.bxslider/jquery.bxslider.min.js" type="text/javascript"></script>
-<script src="Extensions/Scripts/jquery.bxslider/plugins/jquery.fitvids.js" type="text/javascript"></script>
-<script src="Extensions/Scripts/youtube.lazyload.js" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=8u3ngCqoRB16IXgFyG-fdr5atD6KbUYoID5PhrQKVT6-TpmGqBsSwKyGjJuTIU3AM-jI08PvNYp7LqPdp01bwaU63FrV7k2jl1Y4HGNrGK8lM3pItCLASfaTXqcds6oV0&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=oTWEP7ThC1yo24ooSsBTowKPespmeDoTjht3N0NL27XWTVTTxvF_NN79YY_H9jgdzQWAI85ME-Us-mlmv-IwOGVaRwvxhEt6PObAyaW2P9hvqn5t4L6ZxF1wWB4IAQ8Nj2X3Z9TKfkfOE_T_8k6nvDobVQwoMnh3mDOpASHL6TM1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=pL5wgiwL1GpmyqMwhkDjFxm8dA8hrRXW5whWY03GTFX8_EDgPd5HISP0vADDf9zCj-Nb3TveEUbV-b3FVyMYIZD6hr9oS8bA_wSSLkebrPnkEvD7t8Sb9gqn6d4DRBOjAElOTiLDM_AO97BPIgtWIg2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=dnHi0nMgDDe1Bo6v1KTdpOS-eZYKEx2DB1Cjp9QqgL0xiHQTxPYDbKMXqg60Txy6sVsqZZC5kGL0ydVsNU6JUbi383vRPWx2aXhdaVfJFqgsU49C0OyEmj2OD3G35uVMxQ8NF2M7FzsjKGHypKAU2Q2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=XrZNnrOF01iHmBPR_JKjWPpFA402uY5gT8OsBqC5XcF4MQG7YZO0DI-63-RTSejdacMOwoLx6zZQa9e2upEV4aAVhsypkcmtURZc-wPn2Yobbe-VVMCQxphPY8MSaO2oDtXtKROU5I0yHnuLDhDq6z8pG22CZCcb6JZrM9N12ow1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=r5UL-hsNriOxS7UV4wWMiLH0c9raOO9WdoVuXinH4ffjIijEeVxh3k1kmTAtkfdE15T7V3pHCl3jsMZpqwBUvnF7vAzDVCiodN-zw-K8XktLUuIHMah_X39VOlydlqsi4ZqAmUPrmmOeeEJOUGWL4WJfTMh11Vu-yR248LdM5JU1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=U8OMYmPzb2LbIsKauUCqxpMst_gJDSi7n5Pbg943ZAY3ON2kTss8TwfKTsaa940FObGl_DC_1ZgWev_sV5daNz7CJ3wLuiXpYmiVAte0iodFGwfqRPTPNuuaNwsCn8LE8-oVTQ0Pz6r1zPBZnR1WOWpaG8znHEERQOJScsFeN7s1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=fXuWcQwzGDZIk7t9UCjetYSqq_9dvzMDsNJZbQDhuNbjOQM_fPslir4L_8HfjRFCQ7kGPfTKZGdFROeDCwBnB-oPsF3iQuS6Ye58XGVtCN6CDUd_4cUJJEUOb5wNcfOdd4dm3ku_SXf4maTkjadGW51mCfKX29p4bAn8VCG3chI1&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=v_I7_Ww9YDbzP79DTo1lX8gxhRIlLFj11eFMlz2zoVVsqDNuUHbu39ODa4oAuqDQE8H9z8rR444qyKc0jrMVYj5bO4ZOUa_ZGQl346Z1QNleQpmwPftoeTWdD8jfge5P5lpuVV9HOpv8CyyZKa0tmzbv78yuWFapPgxFI1LeiT01&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=9dowQ_6VzeNwM20qhTZESxAi5UJD9Uk_IBi3r-oGG333XsIjgGGsWhgLkjGsd-F5SVkIxjJ4DBxbEBB8aw0FWdsA4wvgvHJsXM2wLhjdmmvzp9Jqo5DJNpJ-tuhuIRw8UKbqn21xWXi7V2tvDE53jQ2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=iPpd1bx4kMy75JHaw_kovoPQRCFxtW97R4kZt-NxIig-4aLGAsyySAJGZ8cbUdO22oQ4KUqK0pMOlhBJFhsGKMN854iovrlOnWhlwC-REmtJoEy45WPnVU0Ebfqav8fp1TQkH_kAP3AHixNw5KXBGA2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=zAy82fDGpRbFHnzzHoSBNBJdEbiI7S8lhg3zyNhgTgYuoD0zPUumGqupXZY0LJYiWqtoxNvvseF5HFr_Oz6THXNPjF7jQvG13guJulGDXYN01YHFdy2RIxzOTRzje-uTYaaGh-7BdLZhY-qz-u2ASQ2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=rhuZTxOeKg7tLBV3R6FzUYhtcv-RW4uFlpVWLJuhM1wUVTaonRibxY3n6QZk5PgWnoJgfJAIcBx82ENvyVMnlghPX_cWfddGe2lOGxfOkeeF8RVzCS1bmXRGLtRoErWCIgaUUk_jvW-8lFYZGl9Lt43mtpHaMMSBeNoyiicE6IfdfE-K0-i7got5-j4zIClf0&amp;t=4293c76a" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=75C6zhn_I2ZyGfX3QbVbDLc4JmZKEVQrhoZDaN_I6OqedKka4LGsHwgomJGSv7Fd0YZXrTGywti3AHzqjSeclR6gWni2Q66MyiVA87v4xQ6wW3dUcM0eOlqtNOxtHMLKWjz2ldU6bGAtDQf9KLLA2w2&amp;t=154d5dcf" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=K_8jTsao3WxrqclMbxfB08v48kumD5mzfOs-NOBDWqkOaaFA5Yhi3sEy60CrA7yOnXiGFzVKBLcJH6tkrLXt-Trxk3eNa-YbomvAi2Tp1uXmVtdl95mB5n8VHnhWt0xsBdGcvfyIfgJOaqovdsJeLT-KE-4qKOyD7fcUrqgN_CI1&amp;t=4293c76a" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=wFyiwd2KGkb80TNKGAvDypPBhSDzk0HvFcCfWuao739xCaaIzHeYsXBV0CXW5HtXmpWDoFnrkFYjwqDAGtmcd8eivxxLNQQh33pA9i2A2rV6MZRc7il-uxuMu4rZMalEYtQ0RxxI464DpOwywfL-huCni-TzoXAG4mQ5alXtqQs1&amp;t=4293c76a" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=bjq-pGXrQeYYqT1YVtxkT5Eu-yhPSzkcQmWpwgQ_7PqKX_mAOvSJiOfDv0NsngUL-IQwplYTr_oHC8Zc3zRf59f5qft2Ij0j2kC-WvK_H0axjWjHv4RrBebloTOjdVEO15upmdEqrXnCXK1I5SDXN0hmAtDoGHxydxFQm_SeD0c1&amp;t=4293c76a" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=oafl6y30ZTgf4Yvx-YfqyIDsY3sQbD6gdO4Q0MZcLT2G-aMRPXDGurmKOxJ3Klm_xI4XITCcUhPgdBZBRiKE_Avn6d4FJbcYswniRu48epGTHNzYlfyUB9ogXuaCxIhvDKnrYcfS6gh6rVgs1gbu_Qf47YShD56N8UEp_7k5Sh41&amp;t=4293c76a" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=3uCsyEF6Df1wb2V3ifyGWaUVJnPRL4yVOJQECl-ElZuqXuvgJZcffcIH0zhXlcJAL-SDbt-mof3Pkk3IMDo-w96aEswPqwy-8s-YWg74-cJ6bg6GXZrBgqDGdWSdB_hA5oxATe3CUPBtZ-g5dZVJgEtBbHA9uapd5mnEWDFzdZWDFMMlIaWxmCBWcB4n7iEP0&amp;t=4293c76a" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=p7LzEQib6iv2bdoOPIsFmFQ_AfNcIKbJblD_E6h5n7k6zWffcLscUsAEBPXlUsM7t3veXO_bELfeGckcs5J8a160z0nfzSMh32mhC2fDgSsPv-sRgRHOLFCRaipR-WGMwQ-dxvsjc7c4n7BK2r2UQ011Oa6uxnmqUkJJWYpEkwexQqLVal1W2lrVy2Atrqkl0&amp;t=fffffffff0f3ba09" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=-v_08YrCLKNvPssCbmZlmipqYMsgdB0AIDJTDOBxb8LbTxBW02npXgO_C6JTPm0brSp59TP1u_WMDKGEzW0bNHqz5Z8-ERK2TuzqIdhVdRpXB98gb1CMtrHUTzcTQdWXMc1nYqQ6PgjB1LPFGALJbSrWupr5pQW5Psz7MuX1eEicS4gdsxqcWyPkoj9myUIr0&amp;t=fffffffff0f3ba09" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=ovE1wQRmorqZoGweR_A7Vr_2fwdDMYijuBR4J_FJPU_SUxhA9mQJWoX3x6DXOiNQqDQaiYXRCvvJZfW5eoCUZs4qt21RZvpXHv1WTe2915I3i-nyY_rBsfyb4Ci3aUDpD2a1AnTOn7DGOOrlun74CchA96fwIZaeTpNV51Ny0rY1&amp;t=4293c76a" type="text/javascript"></script>
-<div class="aspNetHidden">
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0A8F06BE" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="WX5JJ2JtbuQVS8LV1o0m6S6rMCvWuVLAhGlhu9DWPCGEaknPip6CSyZtZRPOSSTwx4mMM/JIr2iAn03zeQJKJSD1Ri2+Fp23BjjS6f7Od5+2w9rIBddh4z/8O061qoOBvAAdd2zJCBoL6b5X4ojC6Q==" />
+<div id="header" role="banner">
+
+
+
+
+         		<div id="header-background">
+
+
+
+<!-- removed color wash for now.
+
+			<div class="color-wash">
+            <img src="" alt="   ">
+            </div>
+
+            -->
+
+
+
+            <div class="uic-type-wrapper">
+
+
+            <div class="last-update-timestamp">
+            	Updated: Nov 21, 2018 at 07:24 AM
+            </div><!--  last-update-timestamp   -->
+
+
+            <div class="uic-type-treatment">
+
+  			<div class="_mark">
+    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
+ 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
+ 			<title>UIC Logo</title>
+ 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
+ <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
+</svg>
+</a>
+  			</div><!--  _mark   -->
+
+  			<div class="_text">
+    		<a href="/">
+        	  Today
+      		  </a>
+ 			</div><!--  _text   -->
+
+
+			</div><!--  uic-type-treatment   -->
+
+
+
+            <!-- Put search box here -->
+<div class="search-box" aria-label="Search U I C today">
+    <form role="search" method="get" action="https://today.uic.edu/">
+     
+        <input type="text" id="s" name="s" aria-label="Search" size="25" value="" placeholder="Search">
+
+<button type="submit" value="Submit" style="border: 0;
+clip: rect( 1px, 1px, 1px, 1px );
+clip-path: inset( 50% );
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+word-wrap: normal;">
+Submit
+</button>
+
+    </form>
+    
+    
 </div>
-	<script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
-//]]>
-</script>
-
-	
-	<div id="top_bar">
-		<div class="contentWrapper">
-			
-<div class="sf_cols ">
-    <div class="sf_colsOut sf_3cols_1_33 upper_left_navigation" style="width: 50%;">
-        <div id="cphTopBar_T22F12C67002_Col00" class="sf_colsIn sf_3cols_1in_33"><nav class='sfContentBlock'><ul> <li><a href="/about-las" title="read about the College">About LAS</a></li> <li><a href="/academic-units" title="view our academic units">Academic Units</a></li> <li><a href="/giving" class="no_hover_border"><img src="//static.las.uic.edu/images/giving/small-give-button-las-2014.png" alt="Give to LAS" style="vertical-align: middle;" /></a></li> </ul>
 
 
-</nav>
-            
+
+<!-- End search box code -->
+
+
+
+			</div><!--  uic-type-wrapper    -->
+
+
+		</div><!--  header-background   -->
+
+
+
+
+
+		<div id="main_nav" role="navigation" aria-label="Site">
+	  	 	<div class="main_nav_container"><ul id="menu-main_nav" class="menu"><li id="menu-item-57546"><a href="https://today.uic.edu/campus-news">Campus News</a></li>
+<li id="menu-item-57547"><a href="https://today.uic.edu/academics-research">Academics &#038; Research</a></li>
+<li id="menu-item-57548"><a href="https://today.uic.edu/events">Events</a></li>
+<li id="menu-item-67603"><a href="https://today.uic.edu/resources">Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-67604"><a href="https://today.uic.edu/resources/current-students">Current Student Resources</a></li>
+	<li id="menu-item-67605"><a href="https://today.uic.edu/resources/faculty-staff">Faculty &#038; Staff Resources</a></li>
+	<li id="menu-item-70617"><a href="https://today.uic.edu/campus-news/campus-newspaper">Campus Newspaper &#038; Archives</a></li>
+</ul>
+</li>
+<li id="menu-item-57549"><a href="https://today.uic.edu/contact">Contact</a>
+<ul class="sub-menu">
+	<li id="menu-item-57551"><a href="https://today.uic.edu/contact/communicating-on-campus">Communicating On Campus</a></li>
+	<li id="menu-item-57552"><a href="https://today.uic.edu/contact/communicating-on-campus/sending-massmails-dddh">Sending Announcements / DDDH</a></li>
+	<li id="menu-item-57550"><a href="https://today.uic.edu/contact/social-media-directory">UIC Social Media Directory</a></li>
+</ul>
+</li>
+</ul></div>	    </div>
         </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_2_34 middle_nav" style="width: 25%;">
-        <div id="cphTopBar_T22F12C67002_Col01" class="sf_colsIn sf_3cols_2in_34"><nav class='sfContentBlock'><ul> <li><a href="http://www.uic.edu" title="go to UIC homepage" target="_blank">UIC</a></li> <li><a href="/home" title="go to LAS homepage">LAS</a></li> <li><a href="http://www.uic.edu/htbin/ldap_search/index.pl" title="search UIC phone book" target="_blank">Find People</a></li> </ul>
 
 
-</nav>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_3_33 search_box" style="width: 25%;">
-        <div id="cphTopBar_T22F12C67002_Col02" class="sf_colsIn sf_3cols_3in_33">
-<div id="search" role="search">
-    <label id="lblSearchBox" for="searchTextBox">
-        Search</label>
-    <input name="ctl00$cphTopBar$T22F12C67003$searchTextBox" type="text" id="searchTextBox" />
-    <input type="image" name="ctl00$cphTopBar$T22F12C67003$searchButton" id="cphTopBar_T22F12C67003_searchButton" title="submit this search" class="btnGo" src="//static.las.uic.edu/images/las-ui/btn-go.png" alt="Go" />
-</div>
 
 
-            
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
 
 
 
 		</div>
-	</div>
-	<div class="contentWrapper">
-        <header role="banner">  
-            
-<div class="sf_cols">
-    <div style="" class="sf_colsOut sf_2cols_1_50">
-        <div id="cphHeader_T387A86D8003_Col00" class="sf_colsIn sf_2cols_1in_50"><div class='sfContentBlock'><div class="logo_block"> <h1><a title="go to LAS homepage" href="/"><img src="//static.las.uic.edu/images/logos/logo-2015.png" alt="UIC College of Liberal Arts and Sciences logo" /></a></h1> </div>
+		</div>
 
 
+
+
+
+
+
+
+ <div id="container" role="main" aria-label="Main content" class="clearfix">
+
+
+<a name="the_content" id="the_content" tabindex="-1" aria-label="Main content area"></a>
+
+
+
+
+<div id="content">
+
+		<div id="single_right_sidebar"> <!-- creates social sharing links -->
+			<div class="single_rightBar_widgets connect">
+					<a href="http://www.facebook.com/sharer/sharer.php?u=https://today.uic.edu/capturing-the-beauty-of-discovery&amp;t=Capturing the beauty of discovery">
+						<img src="/wp-content/themes/uictoday/images/icon-facebook-link.svg" alt="Facebook"/>
+					</a>
+					<a href="http://twitter.com/home/?status=Capturing the beauty of discovery - https://today.uic.edu/capturing-the-beauty-of-discovery" title="Tweet this!">
+						<img src="/wp-content/themes/uictoday/images/icon-twitter-link.svg" alt="Twitter"/>
+					</a>
+					<a href="http://www.linkedin.com/shareArticle?mini=true&amp;title=Capturing the beauty of discovery&amp;url=https://today.uic.edu/capturing-the-beauty-of-discovery" title="Share on LinkedIn">
+						<img src="/wp-content/themes/uictoday/images/icon-linkedin-link.svg" alt="LinkedIn"/>
+					</a>
+					<a href="http://www.tumblr.com/share/link?url=https://today.uic.edu/capturing-the-beauty-of-discovery">
+						<img src="/wp-content/themes/uictoday/images/icon-tumblr-link.svg" alt="Tumblr"/>
+					</a>
+					<a href="mailto:?Subject=Capturing the beauty of discovery&Body=https://today.uic.edu/capturing-the-beauty-of-discovery">
+						<img src="/wp-content/themes/uictoday/images/icon-cta-envelope.svg" alt="email"/>
+					</a>
+			</div>
+		</div>
+
+<!--		<div class="labels">
+										</div>  -->
+
+		<div class="article clearfix">
+			<h1>Capturing the beauty of discovery</h1>
+
+			<p class="author-date">
+				October 22, 2018			</p>
+
+			<div class="pf-content">
+		<style type='text/css'>
+			#gallery-1 {
+				margin: auto;
+			}
+			#gallery-1 .gallery-item {
+				float: left;
+				margin-top: 10px;
+				text-align: center;
+				width: 33%;
+			}
+			#gallery-1 img {
+				border: 2px solid #cfcfcf;
+			}
+			#gallery-1 .gallery-caption {
+				margin-left: 0;
+			}
+			/* see gallery_shortcode() in wp-includes/media.php */
+		</style>
+		<div id='gallery-1' class='gallery galleryid-70476 gallery-columns-3 gallery-size-thumbnail'><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a href='https://today.uic.edu/26_kdean4'><img width="150" height="150" src="https://today.uic.edu/files/2018/10/26_kdean4-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" aria-describedby="gallery-1-70473" srcset="https://today.uic.edu/files/2018/10/26_kdean4-150x150.jpg 150w, https://today.uic.edu/files/2018/10/26_kdean4-160x160.jpg 160w, https://today.uic.edu/files/2018/10/26_kdean4-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-1-70473'>
+				Photo: Kaleb Dean
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a href='https://today.uic.edu/38_tmccra2'><img width="150" height="150" src="https://today.uic.edu/files/2018/10/38_tmccra2-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" aria-describedby="gallery-1-70474" srcset="https://today.uic.edu/files/2018/10/38_tmccra2-150x150.jpg 150w, https://today.uic.edu/files/2018/10/38_tmccra2-258x258.jpg 258w, https://today.uic.edu/files/2018/10/38_tmccra2-768x768.jpg 768w, https://today.uic.edu/files/2018/10/38_tmccra2-406x406.jpg 406w, https://today.uic.edu/files/2018/10/38_tmccra2-160x160.jpg 160w, https://today.uic.edu/files/2018/10/38_tmccra2-500x500.jpg 500w, https://today.uic.edu/files/2018/10/38_tmccra2-1000x1000.jpg 1000w, https://today.uic.edu/files/2018/10/38_tmccra2-1320x1320.jpg 1320w, https://today.uic.edu/files/2018/10/38_tmccra2-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-1-70474'>
+				Photo: Tara McCray
+				</dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a href='https://today.uic.edu/24_schult36'><img width="150" height="150" src="https://today.uic.edu/files/2018/10/24_schult36-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" aria-describedby="gallery-1-70475" srcset="https://today.uic.edu/files/2018/10/24_schult36-150x150.jpg 150w, https://today.uic.edu/files/2018/10/24_schult36-160x160.jpg 160w, https://today.uic.edu/files/2018/10/24_schult36-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" /></a>
+			</dt>
+				<dd class='wp-caption-text gallery-caption' id='gallery-1-70475'>
+				Photo: Jeremy Schultz
+				</dd></dl><br style="clear: both" />
+		</div>
+
+<p>Groundbreaking work happening in all corners of the university is now stealing the spotlight in a different form — as art for the annual Image of Research competition.</p>
+<p>The competition, which is sponsored by the Graduate College and University Library, encourages graduate and professional students conducting research to share the beauty of their discoveries with the public through a still image or moving picture. Winners and other notable submissions are on display in the Daley Library from Oct. 25 through Jan. 30. The exhibit will also extend to the Library of Health Sciences from February to May 15.</p>
+<p>All graduate and professional students and faculty are invited to attend an opening reception and awards ceremony for the exhibit at 3:30 p.m. Oct. 24 in room 1-470, Daley Library.</p>
+<p>“This exhibit competition offers a really fun opportunity for students to have exposure, and it’s good practice for them to talk about their work,” said Kevin Monahan, coordinator of the exhibit and director of graduate program review.</p>
+<p>An interdisciplinary panel judges the artwork’s originality, relationship to the research and aesthetic appeal to determine who wins or receives an honorable mention.</p>
+<p>This year, finalists were selected from 80 submissions, 60 still and 20 moving images. Winning entries are all listed <a href="https://grad.uic.edu/ior-results/2018">online</a>.</p>
+<p>Tara McCray, a student studying pathology, placed second in the still image competition. Her image captures her lab’s work with prostate organoids.</p>
+<p>“Our lab is looking at vitamin D, which is actually a hormone, and chemo preventatives in prostate cancer,” she said.</p>
+<p>Jeremy Schultz, who is in the chemistry program, placed third for his image, “In a Small Window.”</p>
+<p>“My research is all about trying to use an interaction between light and plasmonic metal to probe the vibrations of single molecules,” Schultz said. “What kind of interactions happen when we look at something that’s that small.”</p>
+<p>Schultz and McCray are proud of being recognized, but both say the real prize is getting to share what they do with the larger UIC community.</p>
+<p>“It’s an interesting way to bring everything together,” McCray said. “Images are a different and great way to learn.”</p>
+<p>“It’s incredibly useful to learn how to communicate what you’re working on for research,” Schultz said. “I think that’s how the most growth can happen.”</p>
+<p>&nbsp;</p>
 </div>
-            
-        </div>
-    </div>
-    <div style="" class="sf_colsOut sf_2cols_2_50 division_navigation">
-        <div id="cphHeader_T387A86D8003_Col01" class="sf_colsIn sf_2cols_2in_50"><div id="cphHeader_T387A86D8004">
-	<div tabindex="0" id="ctl00_cphHeader_T387A86D8004_ctl00_ctl00_siteMapControl" class="RadMenu RadMenu_Default">
-		<!-- 2017.2.621.40 --><ul class="rmRootGroup rmHorizontal">
-			<li class="rmItem rmFirst"><a class="rmLink rmRootLink" href="students"><span class="rmText">Students</span></a></li><li class="rmItem "><a class="rmLink rmRootLink" href="faculty-staff"><span class="rmText">Faculty + Staff</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink" href="alumni-friends"><span class="rmText">Alumni + Friends</span></a></li>
-		</ul><input id="ctl00_cphHeader_T387A86D8004_ctl00_ctl00_siteMapControl_ClientState" name="ctl00_cphHeader_T387A86D8004_ctl00_ctl00_siteMapControl_ClientState" type="hidden" />
+			<p class="author-date">
+													<div class="rightBar_widgets">
+						<h2>Contact</h2>
+						<p>
+							<span class="bold"><a href="https://today.uic.edu/author/fcoron3" title="Posts by Francisca Corona" rel="author">Francisca Corona</a></span><br />
+							<br />
+							<a href="mailto:fcoron3@uic.edu">fcoron3@uic.edu</a><br />
+										</p>
+			</div>
+
+			<div id="tag-area">
+				<p class="tag-label">Categories</p>
+																<p>
+							<a href="https://today.uic.edu/category/category-campus" rel="category tag">Campus</a>, <a href="https://today.uic.edu/category/featured-campus" rel="category tag">Featured Campus</a>						</p>
+									</p>
+
+													<p class="tag-label">Topics</p>
+					<p><a href="https://today.uic.edu/tag/image-of-research" rel="tag">Image of Research</a></p>
+							</div>
+		
+
+			
+</div>
+
+<!-- Need 2 closing divs before footer to close divs from page header include -->
 	</div>
-</div>            
-        </div>
-    </div>
-</div><div class="sf_cols home_main_block">
-    <div style="" class="sf_colsOut sf_1col_1_100 ">
-        <div id="cphHeader_T387A86D8002_Col00" class="sf_colsIn sf_1col_1in_100"><div>
-	
+    
+</div>    
   
 
+<div class="clearThis">&nbsp;</div>
 
-        <div id="homeSlider" class="sfexpandedListWrp">
-            
-        
-                <ul class="sflistList">
-                    
-                <li class="sflistListItem">
-                    <div class="sflistItemContent">
-                        <img alt="socializing group" data-displaymode="Original" src="/images/default-source/Home-Slider/socializing-group.jpg?sfvrsn=5fc0b858_4" /><br />
-<div class="photoCaption">University of Illinois: <a target="_blank" title="view message from U of I President's Office" href="https://illinois.edu/massmail/massmail/28193.html">Devoted to Diversity, Inclusion, and Scholarship</a></div>
-                    </div>
-                </li>
-            
-                <li class="sflistListItem">
-                    <div class="sflistItemContent">
-                        <img src="/images/default-source/Home-Slider/campus-students.jpg?sfvrsn=20c0b858_4" data-displaymode="Original" alt="campus students" title="Campus Students" /><br />
-<div class="photoCaption">University of Illinois: <a href="https://illinois.edu/massmail/massmail/28193.html" title="view message from U of I President's Office" target="_blank">Devoted to Diversity, Inclusion, and Scholarship</a></div>
-                    </div>
-                </li>
-            
-                </ul>
-            <input id="ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ClientState" name="ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ClientState" type="hidden" /><span id="ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl" style="display:none;"></span>
+
+
+
+
     
-        </div>
-    <input id="ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ClientState" name="ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ClientState" type="hidden" /><span id="ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl" style="display:none;"></span>
-<!-- BxSlider initialization -->
-<script type="text/javascript">
-    $(document).ready(function(){
-	$('#homeSlider .sflistList').bxSlider({
-        infiniteLoop: false,
-        hideControlOnEnd: true
-	});
-    });
-</script><span></span>
-</div>
+
+    <footer id="footer" class="footer u-dark-region" role="contentinfo">
+
+
+  <div class="footer-contact">
+    <div class="l-full">
+
+
+            <div class="uic-type-wrapper-footer">
+
+            <div class="uic-type-treatment-footer">
             
-        </div>
-    </div>
-</div>
-        </header>
-        
-<div class="sf_cols">
-    <div style="width: 47%;" class="sf_colsOut sf_3cols_1_33 home_widget">
-        <div id="cphPageBody_T387A86D8006_Col00" style="margin: 0px;" class="sf_colsIn sf_3cols_1in_33"><div class='sfContentBlock'><h3>Featured</h3>
+  			<div class="_mark"> 
+    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
+ 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
+ 			<title>UIC Logo</title>
+ 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
+ <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
+</svg>
+</a>
+  			</div><!--  _mark   -->   
+            
+  			<div class="_text">
+    		<a href="/">
+        	  Today
+      		  </a>
+ 			</div><!--  _text   -->
+
+            
+			</div><!--  uic-type-treatment-footer   -->
 
 
-</div><div>
-	
+			</div><!--  uic-type-wrapper-footer    -->
+ 
+
+
+  <div class="_contact">
   
-
-<div class="home_widget_block">
-
-        <div id="featureSlider" class="sfexpandedListWrp">
-            
-        
-                <ul id="featureSlider" class="sflistList">
-                    
-                <li class="sflistListItem">
-                    <div class="sflistItemContent">
-                        <div class="youtube" id="lo4PEzVVZjI">&nbsp;</div>
-                    </div>
-                </li>
-            
-                <li class="sflistListItem">
-                    <div class="sflistItemContent">
-                        <div class="youtube" id="-qjxSSqrnKc">&nbsp;</div>
-                    </div>
-                </li>
-            
-                <li class="sflistListItem">
-                    <div class="sflistItemContent">
-                        <div class="youtube" id="2R2WrnkvD3U">&nbsp;</div>
-                    </div>
-                </li>
-            
-                <li class="sflistListItem">
-                    <div class="sflistItemContent">
-                        <div class="youtube" id="YWHaDak-9A0">&nbsp;</div>
-                    </div>
-                </li>
-            
-                <li class="sflistListItem">
-                    <div class="sflistItemContent">
-                        <div class="youtube" id="6MrCG3HKD90">&nbsp;</div>
-                    </div>
-                </li>
-            
-                </ul>
-            <input id="ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ClientState" name="ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ClientState" type="hidden" /><span id="ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl" style="display:none;"></span>
+  
+    <h2>Contact</h2>
     
-        </div>
-    <input id="ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ClientState" name="ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ClientState" type="hidden" /><span id="ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl" style="display:none;"></span>
-</div>
-<span class="home_widget_more"> <a title="go to LAS on YouTube" target="_blank" href="https://www.youtube.com/user/UICLibArtsSciences">View more ></a></span>
-<!-- AnythingSlider initialization -->
-<script type="text/javascript">
-      $(document).ready(function(){
-        $('#featureSlider .sflistList').bxSlider({
-        infiniteLoop: false,
-        hideControlOnEnd: true,
-	video: true,
-	useCSS: false,
-          pager: true
-	}); 
-    });
-</script><span></span>
-</div><div class='sfContentBlock'><h3>Student Experiences</h3>
-
-
-</div><div class='sfContentBlock'><div class="home_widget_block experiences"><span class="sfImageWrapper" data-sfref="[images|OpenAccessDataProvider]3049bfc5-1fd7-6c5c-a337-ff00009e29c1"><img data-displaymode="Original" alt="Intern Fay Hnaihen" src="/images/default-source/student-experiences/intern-fay-hnaihen.jpg?sfvrsn=dadda258_4" /></span><br />
-<h4>Internship Program</h4>
-<blockquote>This internship is the best asset on my resume. I have so much more to offer to employers now.</blockquote> </div>
-<span class="home_widget_more"> <a title="go to LAS Internships" href="/students/current-undergraduate/career-development/las-internship/internship-blog">Read more &gt;</a></span>
-
-
-</div>
-            
-        </div>
-    </div>
-    <div style="width: 27%;" class="sf_colsOut sf_3cols_2_34 home_widget">
-        <div id="cphPageBody_T387A86D8006_Col01" style="margin: 0px 0px 0px 20px;" class="sf_colsIn sf_3cols_2in_34"><div class='sfContentBlock'><a href="https://onlinepathways.uic.edu" title="go to website" target="_blank"><img src="https://static.las.uic.edu/images/badges/online-pathways-badge.png" alt="online pathways badge" class="atlas_mag" /></a>
-<br />
-<br />
-
-
-</div><div class='sfContentBlock'><h3>News</h3>
-
-
-</div>
-
-<div class="home_widget_block minHeightWidget">
-
-        
-      <ul class="sfnewsList sfnewsListTitleDateSummary">
-            
-        <li class="sfnewsListItem ">
-            <img src='//static.las.uic.edu/images/news-icons-2014/research.png' class="home_icon" alt='research icon' />
-            <div class="home_news_title" > 
-            <h4 class="sfnewsTitle inline" title="read this article">
-                <a id="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ctrl0_DetailsViewHyperLink1" href="news/2018/11/20/sociology-professor-barbara-risman-examines-social-media-and-gender-on-the-new-york-times-magazine">Sociology Professor Barbara Risman Examines Social Media and Gender on The New York Times Magazine</a>
-            </h4>  
-           </div>     
-            
-          </li>
     
-        <li class="sfnewsListItem ">
-            <img src='//static.las.uic.edu/images/news-icons-2014/publications.png' class="home_icon" alt='publications icon' />
-            <div class="home_news_title" > 
-            <h4 class="sfnewsTitle inline" title="read this article">
-                <a id="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ctrl1_DetailsViewHyperLink1" href="news/2018/11/20/latest-novel-by-english-professor-luis-urrea-features-on-the-new-york-times-and-time-magazine">Latest Novel by English Professor Luis Urrea Features on The New York Times and Time Magazine</a>
-            </h4>  
-           </div>     
-            
-          </li>
-    
-        <li class="sfnewsListItem ">
-            <img src='//static.las.uic.edu/images/news-icons-2014/in-the-news.png' class="home_icon" alt='in-the-news icon' />
-            <div class="home_news_title" > 
-            <h4 class="sfnewsTitle inline" title="read this article">
-                <a id="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ctrl2_DetailsViewHyperLink1" href="news/2018/11/16/political-science-professor-dick-simpson-talks-the-chicago&#39;s-mayoral-race-on-cltv">Political Science Professor Dick Simpson Talks the Chicago's Mayoral Race on CLTV</a>
-            </h4>  
-           </div>     
-            
-          </li>
-    
-        <li class="sfnewsListItem ">
-            <img src='//static.las.uic.edu/images/news-icons-2014/in-the-news.png' class="home_icon" alt='in-the-news icon' />
-            <div class="home_news_title" > 
-            <h4 class="sfnewsTitle inline" title="read this article">
-                <a id="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ctrl3_DetailsViewHyperLink1" href="news/2018/11/08/psychology-professor-linda-skitka-talks-political-tribalism-on-the-atlantic-s-masthead">Psychology Professor Linda Skitka Talks Political Tribalism on The Atlantic’s Masthead</a>
-            </h4>  
-           </div>     
-            
-          </li>
-    
-        <li class="sfnewsListItem ">
-            <img src='//static.las.uic.edu/images/news-icons-2014/awards-and-honors.png' class="home_icon" alt='awards-and-honors icon' />
-            <div class="home_news_title" > 
-            <h4 class="sfnewsTitle inline" title="read this article">
-                <a id="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ctrl4_DetailsViewHyperLink1" href="news/2018/11/07/uic-scholar-barbara-ransby-honored-for-work-serving-the-public-good">LAS Distinguished Professor Barbara Ransby Honored for Work Serving the ‘Public Good’</a>
-            </h4>  
-           </div>     
-            
-          </li>
-       
-        </ul>
+		<div class="site-address">Office of Public and Government Affairs <br />
+		601 S. Morgan St., 1320 UH, Chicago, IL 60607</div>
       
-    <input id="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ClientState" name="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ClientState" type="hidden" /><span id="ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList" style="display:none;"></span>
-
-</div>
-<span class="home_widget_more"> <a title="view more news" href="/news" sfref="[pages]f18ca1dc-9816-4d6e-9ed5-0a7f301a9daa">Read more ></a></span><span></span>
-            
-        </div>
-    </div>
-    <div style="width: 26%;" class="sf_colsOut sf_3cols_3_33 home_widget">
-        <div id="cphPageBody_T387A86D8006_Col02" style="margin: 0px 0px 0px 20px;" class="sf_colsIn sf_3cols_3in_33"><div class='sfContentBlock'><a href="https://www.las.uic.edu/docs/default-source/las-students/resources-for-uic-students.pdf" title="view UIC Student Resources Guide" target="_blank"><img src="https://static.las.uic.edu/images/badges/student-resources-badge.png" alt="student resources badge" class="atlas_mag" /></a>
-<br />
-<br />
-
-
-</div><div class='sfContentBlock'><h3>Calendar</h3>
-
-
-</div>
+      
+		<div class="site-email"><a href="mailto:uictoday@uic.edu">uictoday@uic.edu</a></div>
         
-      <div class="home_widget_block minHeightWidget">  
-      <ul class="sfeventsList sfeventsListTitleCityDate">
-          
-        <li class="sfeventListItem">
-          
-          <div class="home_date_block"><div class="home_event_month"> Dec </div><div class="home_event_date">03</div></div>
-          <div class="home_event_content">  
-          <h4 class="sfeventTitle" title="view event details">
-            <a href='/events/2018/12/03/default-calendar/december-2018-educational-policy-committee'>
-                December 2018 Educational Policy Committee
-                </a>
-            </h4>
-            <div class="home_event_summary"><div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01">
-	        
-            
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ctl00_textLabel_read" class="sfTxtContent">
-		
-	</div>
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ctl00_characterCounter_read">
-		
-	</div>
         
-<div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ConditionalTemplates" style="display:none;">
-		<div id="ClientTemplatePanel_">
-	
+		<div aria-label="Social Media Accounts" class="_social" role="navigation">
+			<h2 class="assistive-text">Social Media Accounts</h2> 
+  			<ul class="site-social-links">
+            <li><a href="https://www.facebook.com/uicnews "><img src="/wp-content/themes/uictoday/images/social-media-icons/facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://instagram.com/thisisuic/"><img src="/wp-content/themes/uictoday/images/social-media-icons/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today"><img src="/wp-content/themes/uictoday/images/social-media-icons/rss.png" alt="RSS feed"></a></li>
+            <li><a href="https://uicscience.tumblr.com/"><img src="/wp-content/themes/uictoday/images/social-media-icons/tumblr.png" alt="tumblr"></a></li>
+            <li><a href="https://twitter.com/UICnews"><img src="/wp-content/themes/uictoday/images/social-media-icons/twitter.png" alt="Twitter"></a></li>
+            <li><a href="https://www.youtube.com/user/uicmedia"><img src="/wp-content/themes/uictoday/images/social-media-icons/youtube.png" alt="YouTube"></a></li>
+            <li><a href="https://today.uic.edu/contact/social-media-directory"><img src="/wp-content/themes/uictoday/images/social-media-icons/directory.png" alt="Social media directory"></a></li>
+            </ul>
             
-            <div>
-                <span id="titleLabel_write_" class="sfTxtLbl sfInlineBlock"></span>
-                <span id="tooltip_write_">
+            
+		</div>        
+        
+        
+  </div>
 
-<div class="sfDetailsPopupWrp sfInlineBlock">
-    <a onclick="return false;" id="tooltip_write__ctl00_ctl00_btnToolTipTarget_"><span class="sfTooltip">(?)</span></a>
-    <div id="tooltip_write__ctl00_ctl00_wrpToolTip_" class="sfDetailsPopup" style="display: none;">
-        <span id="tooltip_write__ctl00_ctl00_lblTitle_"></span>
-        
-    </div>
-</div>
-</span>
-            </div>
-            <a onclick="return false;" id="expandButton_write_" class="sfOptionalExpander"></a>
-            <div id="expandableTarget_write_" class="sfFieldWrp">
-		
-                <input name="textBox_write_" type="text" id="textBox_write_" class="sfTxt" />
-                <div id="characterCounter_write_" class="sfFlRight sfMRight5">
-			
-		</div>
-                <div id="descriptionLabel_write_" class="sfDescription">
-			
-		</div>
-                <div id="exampleLabel_write_" class="sfExample">
-			
-		</div>
-                <p id="characterCounterDescription_write_" class="sfExample"></p>
-            
-	</div>
-        
-</div>
-	</div>
-</div>Monday, 1:00 PM</div>
-          </div>
-            
-            <div class="clearfix">&nbsp;</div>  
-          
-        </li>
     
-        <li class="sfeventListItem">
-          
-          <div class="home_date_block"><div class="home_event_month"> Dec </div><div class="home_event_date">04</div></div>
-          <div class="home_event_content">  
-          <h4 class="sfeventTitle" title="view event details">
-            <a href='/events/2018/12/04/default-calendar/december-2018-executive-committee-meeting'>
-                December 2018 Executive Committee Meeting
-                </a>
-            </h4>
-            <div class="home_event_summary"><div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01">
-	        
-            
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ctl00_textLabel_read" class="sfTxtContent">
-		
-	</div>
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ctl00_characterCounter_read">
-		
-	</div>
-        
-<div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ConditionalTemplates" style="display:none;">
-		<div id="ClientTemplatePanel_">
-	
-            
-            <div>
-                <span id="titleLabel_write_" class="sfTxtLbl sfInlineBlock"></span>
-                <span id="tooltip_write_">
 
-<div class="sfDetailsPopupWrp sfInlineBlock">
-    <a onclick="return false;" id="tooltip_write__ctl00_ctl00_btnToolTipTarget_"><span class="sfTooltip">(?)</span></a>
-    <div id="tooltip_write__ctl00_ctl00_wrpToolTip_" class="sfDetailsPopup" style="display: none;">
-        <span id="tooltip_write__ctl00_ctl00_lblTitle_"></span>
-        
-    </div>
+       
+
+
+   
+
+
+
+
+
+		<div id="quicklinks_footer" role="navigation" aria-label="Quick Links" >
+			<div id="quicklinks_footer_container">
+	  	 	<div class="menu-footer-quicklinks-container"><ul id="menu-footer-quicklinks" class="menu"><li id="menu-item-57564"><a href="/news-release/news-release/">For the Media</a></li>
+<li id="menu-item-57555"><a href="https://today.uic.edu/experts-guide">Experts Guide</a></li>
+<li id="menu-item-57556"><a href="https://today.uic.edu/campus-news/campus-newspaper/advertising">Advertise in UIC News</a></li>
+<li id="menu-item-57577"><a href="https://today.uic.edu/contact/communicating-on-campus/submit-announcements">Submit Announcements</a></li>
+<li id="menu-item-57578"><a href="https://today.uic.edu/submit-an-event">Submit an Event</a></li>
+<li id="menu-item-67562"><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today">Subscribe to UIC Today</a></li>
+</ul></div>        	</div>
+	    </div>      
+
+
 </div>
-</span>
-            </div>
-            <a onclick="return false;" id="expandButton_write_" class="sfOptionalExpander"></a>
-            <div id="expandableTarget_write_" class="sfFieldWrp">
-		
-                <input name="textBox_write_" type="text" id="textBox_write_" class="sfTxt" />
-                <div id="characterCounter_write_" class="sfFlRight sfMRight5">
-			
-		</div>
-                <div id="descriptionLabel_write_" class="sfDescription">
-			
-		</div>
-                <div id="exampleLabel_write_" class="sfExample">
-			
-		</div>
-                <p id="characterCounterDescription_write_" class="sfExample"></p>
-            
-	</div>
-        
-</div>
-	</div>
-</div>Tuesday, 9:30 AM</div>
-          </div>
-            
-            <div class="clearfix">&nbsp;</div>  
-          
-        </li>
+
     
-        <li class="sfeventListItem">
-          
-          <div class="home_date_block"><div class="home_event_month"> Dec </div><div class="home_event_date">05</div></div>
-          <div class="home_event_content">  
-          <h4 class="sfeventTitle" title="view event details">
-            <a href='/events/2018/12/05/default-calendar/december-2018-executive-officer'>
-                December 2018 Executive Officer
-                </a>
-            </h4>
-            <div class="home_event_summary"><div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01">
-	        
-            
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ctl00_textLabel_read" class="sfTxtContent">
-		
-	</div>
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ctl00_characterCounter_read">
-		
-	</div>
-        
-<div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ConditionalTemplates" style="display:none;">
-		<div id="ClientTemplatePanel_">
-	
-            
-            <div>
-                <span id="titleLabel_write_" class="sfTxtLbl sfInlineBlock"></span>
-                <span id="tooltip_write_">
-
-<div class="sfDetailsPopupWrp sfInlineBlock">
-    <a onclick="return false;" id="tooltip_write__ctl00_ctl00_btnToolTipTarget_"><span class="sfTooltip">(?)</span></a>
-    <div id="tooltip_write__ctl00_ctl00_wrpToolTip_" class="sfDetailsPopup" style="display: none;">
-        <span id="tooltip_write__ctl00_ctl00_lblTitle_"></span>
-        
     </div>
+  </div>
+
+
+
+
+<div class="footer-wrapper-uic-menu-legal">
+
+
+  <div class="footer-uic-menu">
+    <div class="ll-full">
+
+      <div role="navigation" aria-label="UIC.edu Links" >
+  <h2 class="assistive-text">UIC.edu links</h2>
+  <ul class="uic-footer-menu">
+    <li><a href="http://uic.edu/">UIC.edu</a></li>
+    <li><a href="http://catalog.uic.edu/ucat/academic-calendar/">Academic Calendar</a></li>
+    <li><a href="http://uicflames.com/">Athletics</a></li>
+    <li><a href="http://www.uic.edu/apps/departments-az/search">Campus Directory</a></li>
+    <li><a href="http://disabilityresources.uic.edu/">Disability Resources</a></li>
+    <li><a href="http://emergency.uic.edu/">Emergency Information</a></li>
+    <li><a href="http://events.uic.edu/">Event Calendar</a></li>
+    <li><a href="http://uic.edu/about/job-opportunities">Job Openings</a></li>
+    <li><a href="http://library.uic.edu/">Library</a></li>
+    <li><a href="http://maps.uic.edu/">Maps</a></li>
+    <li><a href="http://hospital.uillinois.edu/">UI Health</a></li>
+    <li><a href="http://dos.uic.edu/studentveteranaffairs.shtml">Veterans Affairs</a></li>
+  </ul>
 </div>
-</span>
-            </div>
-            <a onclick="return false;" id="expandButton_write_" class="sfOptionalExpander"></a>
-            <div id="expandableTarget_write_" class="sfFieldWrp">
-		
-                <input name="textBox_write_" type="text" id="textBox_write_" class="sfTxt" />
-                <div id="characterCounter_write_" class="sfFlRight sfMRight5">
-			
-		</div>
-                <div id="descriptionLabel_write_" class="sfDescription">
-			
-		</div>
-                <div id="exampleLabel_write_" class="sfExample">
-			
-		</div>
-                <p id="characterCounterDescription_write_" class="sfExample"></p>
-            
-	</div>
-        
-</div>
-	</div>
-</div>Wednesday, 10:00 AM</div>
-          </div>
-            
-            <div class="clearfix">&nbsp;</div>  
-          
-        </li>
+
+    </div><!--  ll-full   -->
     
-        <li class="sfeventListItem">
-          
-          <div class="home_date_block"><div class="home_event_month"> Jan </div><div class="home_event_date">14</div></div>
-          <div class="home_event_content">  
-          <h4 class="sfeventTitle" title="view event details">
-            <a href='/events/2019/01/14/default-calendar/january-2019-educational-policy-committee'>
-                January 2019 Educational Policy Committee
-                </a>
-            </h4>
-            <div class="home_event_summary"><div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01">
-	        
-            
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ctl00_textLabel_read" class="sfTxtContent">
-		
-	</div>
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ctl00_characterCounter_read">
-		
-	</div>
-        
-<div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ConditionalTemplates" style="display:none;">
-		<div id="ClientTemplatePanel_">
-	
-            
-            <div>
-                <span id="titleLabel_write_" class="sfTxtLbl sfInlineBlock"></span>
-                <span id="tooltip_write_">
-
-<div class="sfDetailsPopupWrp sfInlineBlock">
-    <a onclick="return false;" id="tooltip_write__ctl00_ctl00_btnToolTipTarget_"><span class="sfTooltip">(?)</span></a>
-    <div id="tooltip_write__ctl00_ctl00_wrpToolTip_" class="sfDetailsPopup" style="display: none;">
-        <span id="tooltip_write__ctl00_ctl00_lblTitle_"></span>
-        
-    </div>
-</div>
-</span>
-            </div>
-            <a onclick="return false;" id="expandButton_write_" class="sfOptionalExpander"></a>
-            <div id="expandableTarget_write_" class="sfFieldWrp">
-		
-                <input name="textBox_write_" type="text" id="textBox_write_" class="sfTxt" />
-                <div id="characterCounter_write_" class="sfFlRight sfMRight5">
-			
-		</div>
-                <div id="descriptionLabel_write_" class="sfDescription">
-			
-		</div>
-                <div id="exampleLabel_write_" class="sfExample">
-			
-		</div>
-                <p id="characterCounterDescription_write_" class="sfExample"></p>
-            
-	</div>
-        
-</div>
-	</div>
-</div>Monday, 1:00 PM</div>
-          </div>
-            
-            <div class="clearfix">&nbsp;</div>  
-          
-        </li>
+    <div class="m-full">
+    <img src="/wp-content/themes/uictoday/images/uihealth.png" alt="UI Health and UIC co-branded logo">
+    </div><!--  m-full   -->
     
-        <li class="sfeventListItem">
-          
-          <div class="home_date_block"><div class="home_event_month"> Jan </div><div class="home_event_date">22</div></div>
-          <div class="home_event_content">  
-          <h4 class="sfeventTitle" title="view event details">
-            <a href='/events/2019/01/22/default-calendar/january-2019-executive-committee-meeting'>
-                January 2019 Executive Committee Meeting  
-                </a>
-            </h4>
-            <div class="home_event_summary"><div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01">
-	        
-            
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ctl00_textLabel_read" class="sfTxtContent">
-		
-	</div>
-            
-            <div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ctl00_characterCounter_read">
-		
-	</div>
-        
-<div id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ConditionalTemplates" style="display:none;">
-		<div id="ClientTemplatePanel_">
-	
-            
-            <div>
-                <span id="titleLabel_write_" class="sfTxtLbl sfInlineBlock"></span>
-                <span id="tooltip_write_">
+  </div><!--  footer-uic-menu   --> 
 
-<div class="sfDetailsPopupWrp sfInlineBlock">
-    <a onclick="return false;" id="tooltip_write__ctl00_ctl00_btnToolTipTarget_"><span class="sfTooltip">(?)</span></a>
-    <div id="tooltip_write__ctl00_ctl00_wrpToolTip_" class="sfDetailsPopup" style="display: none;">
-        <span id="tooltip_write__ctl00_ctl00_lblTitle_"></span>
-        
+
+
+
+  <div class="footer-legal">
+    <div class="l-full">
+
+      <div class="site-copyright">
+  &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span>
+  <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
+</div>
+
+<div class="campuses" role="navigation" aria-label="University of Illinois campus web sites">
+  <h2 class="assistive-text">Campuses</h2>
+  <ul class="campuses-list">
+    <li><a href="https://uillinois.edu/">University of Illinois System</a></li>
+    <li><a href="https://illinois.edu/">Urbana-Champaign</a></li>
+    <li><a href="https://uis.edu/">Springfield</a></li>
+  </ul>
+</div>
+
     </div>
-</div>
-</span>
-            </div>
-            <a onclick="return false;" id="expandButton_write_" class="sfOptionalExpander"></a>
-            <div id="expandableTarget_write_" class="sfFieldWrp">
-		
-                <input name="textBox_write_" type="text" id="textBox_write_" class="sfTxt" />
-                <div id="characterCounter_write_" class="sfFlRight sfMRight5">
-			
-		</div>
-                <div id="descriptionLabel_write_" class="sfDescription">
-			
-		</div>
-                <div id="exampleLabel_write_" class="sfExample">
-			
-		</div>
-                <p id="characterCounterDescription_write_" class="sfExample"></p>
-            
-	</div>
-        
-</div>
-	</div>
-</div>Tuesday, 9:30 AM</div>
-          </div>
-            
-            <div class="clearfix">&nbsp;</div>  
-          
-        </li>
+
+
+
+</div><!--  footer-wrapper-uic-menu-legal   --> 
     
-      </ul>    
-      </div>
-      <span class="home_widget_more"> <a title="view full calendar" href="/events" sfref="[pages]066a6b0d-6516-4ec5-a7aa-d9ea499e07bf">Read more ></a></span>
-    <input id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ClientState" name="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ClientState" type="hidden" /><span id="ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList" style="display:none;"></span>
+    
+  </div>
 
-<span></span>
-            
-        </div>
-    </div>
-</div>          
-    </div>
-	<div id="bottom_bar">
-		<div class="contentWrapper">
-			
-<div class="sf_cols">
-    <div class="sf_colsOut sf_3cols_1_33 footer_content" style="width: 45%;">
-        <div id="cphFooter_T22F12C67018_Col00" class="sf_colsIn sf_3cols_1in_33"><div class='sfContentBlock'>College of Liberal Arts and Sciences<br />
-601 South Morgan Street (MC 228)<br />
-Chicago, Illinois 60607<br /> <div class="social_media">
-Social:&nbsp;
-<ul class="footer_list"> <li><a title="find us on Facebook" target="_blank" href="http://www.facebook.com/UIC.LAS"><img alt="Facebook icon" src="//static.las.uic.edu/images/round-social-media-icons/48px/facebook.png" /></a></li> <li><a title="follow us on Twitter" target="_blank" href="https://twitter.com/#!/UICLAS"><img alt="Twitter icon" src="//static.las.uic.edu/images/round-social-media-icons/48px/twitter1.png" /></a></li> <li><a href="http://www.youtube.com/user/UICLibArtsSciences" title="watch our YouTube channel" target="_blank"><img src="//static.las.uic.edu/images/round-social-media-icons/48px/youtube2.png" alt="YouTube icon" /></a></li> <li><a href="http://instagram.com/uiclas" title="view us on Instagram" target="_blank"><img src="//static.las.uic.edu/images/round-social-media-icons/48px/instagram.png" alt="Instagram icon" /></a></li> </ul> </div> <div class="atlas_small"> <a href="http://atlas.las.uic.edu" target="_blank" title="go to AtLAS magazine"> <img src="//static.las.uic.edu/images/badges/atlas-mag-smbutton.png" alt="AtLAS magazine icon" /> </a> </div>
+</footer>
+
+
+
 
 
 </div>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_2_34 footer_content" style="width: 35%;">
-        <div id="cphFooter_T22F12C67018_Col01" class="sf_colsIn sf_3cols_2in_34"><div class='sfContentBlock'>Student Academic Affairs &amp; Advising:<br />
-Phone (312) 996-3366&nbsp;&nbsp;Fax (312) 413-8577<br /> <br />
-LAS Administration:<br />
-Phone (312) 413-2500&nbsp;&nbsp;Fax (312) 413-2511
 
 
-</div>
-            
-        </div>
-    </div>
-    <div class="sf_colsOut sf_3cols_3_33 footer_content" style="width: 20%;">
-        <div id="cphFooter_T22F12C67018_Col02" class="sf_colsIn sf_3cols_3in_33"><nav class='sfContentBlock'><a target="_blank" title="go to website" href="http://www.uic.edu/uic/studentlife/campus/emergency-information.shtml">Emergency Information</a><br /> <a target="_blank" title="go to website" href="http://accessweb.uic.edu/">Accessibility</a><br /> <a target="_blank" title="go to website" href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a><br /> <a title="email LAS webmaster" href="mailto:laswebstaff@uic.edu">Webmaster</a><br />
-
-
-</nav>
-            
-        </div>
-    </div>
-</div>
-            <footer role="contentinfo">
-                
-<div class='sfContentBlock copyright'>&copy;2018 The Board of Trustees of the University of Illinois.
-
-
-</div>
-            </footer>
-		</div>
-	</div>
-	
-	
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			<style type="text/css">
+				.ssp-wave wave wave{
+					background: #28c0e1 !important;
+				}
+			</style>
+		<script type="text/javascript">
+  document.write(unescape("%3Cscript src='//www.uic.edu/inc/emergency/alert.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
-<script type="text/javascript">
-try{
-var pageTracker = _gat._getTracker("UA-24550204-1");
-pageTracker._trackPageview();
-} catch(err) {} 
-</script>
-<script type="text/javascript">$.getScript("https://www.uic.edu/apps/web-alert/alert.js");</script>
-<script type="text/javascript">
-//<![CDATA[
-;(function() {
-                        function loadHandler() {
-                            var hf = $get('ctl18_TSSM');
-                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
-                            hf.value += ';Telerik.Sitefinity.Resources, Version=10.1.6525.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:en:eb177f10-254a-47f5-be2f-2f1c3f40d5ff:7a90d6a';
-                            Sys.Application.remove_load(loadHandler);
-                        };
-                        Sys.Application.add_load(loadHandler);
-                    })();Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_skin":"Default","clientStateFieldID":"ctl00_cphHeader_T387A86D8004_ctl00_ctl00_siteMapControl_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"attributes":{"Sitefinity.PageGUID":"3374E93F-B2F1-4F54-A394-64B04F61A5CE"},"value":"Students","navigateUrl":"~/students"},{"attributes":{"Sitefinity.PageGUID":"96A01FA0-42F1-4C8C-AA8A-B2FAEF436021"},"value":"Faculty + Staff","navigateUrl":"~/faculty-staff"},{"attributes":{"Sitefinity.PageGUID":"7C386DAA-6849-4082-880A-779B5E850A93"},"value":"Alumni + Friends","navigateUrl":"~/alumni-friends"}]}, {"itemClicked":function(sender, args) {var item = args.get_item();if (!item.get_navigateUrl() || item.get_navigateUrl()=="#") { if (item.get_isOpen()) item.close();else item.open();}}}, null, $get("ctl00_cphHeader_T387A86D8004_ctl00_ctl00_siteMapControl"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphHeader$C015$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ItemsContainer","DataService":{}}},"_virtualItemCount":2,"clientStateFieldID":"ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ClientState","renderMode":1}, null, null, $get("ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphHeader$C015$ctl00$ctl00$ctl00$listsControl","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ListContainer","DataService":{}}},"_virtualItemCount":1,"clientStateFieldID":"ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl_ClientState","renderMode":1}, null, null, $get("ctl00_cphHeader_C015_ctl00_ctl00_ctl00_listsControl"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Sitefinity.Web.UI.UserPreferences, {"_timeOffset":"-21600000","_userBrowserSettingsForCalculatingDates":true,"timeZoneDisplayName":"(UTC-06:00) Central Time (US \u0026 Canada)","timeZoneId":"Central Standard Time"}, null, null);
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphPageBody$C002$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ItemsContainer","DataService":{}}},"_virtualItemCount":5,"clientStateFieldID":"ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ClientState","renderMode":1}, null, null, $get("ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphPageBody$C002$ctl00$ctl00$ctl00$listsControl","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ListContainer","DataService":{}}},"_virtualItemCount":1,"clientStateFieldID":"ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl_ClientState","renderMode":1}, null, null, $get("ctl00_cphPageBody_C002_ctl00_ctl00_ctl00_listsControl"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphPageBody$C004$newsFrontendList$ctl00$ctl00$NewsList","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ItemsContainer","DataService":{}}},"_virtualItemCount":5,"clientStateFieldID":"ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList_ClientState","renderMode":1}, null, null, $get("ctl00_cphPageBody_C004_newsFrontendList_ctl00_ctl00_NewsList"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Sitefinity.Web.UI.Fields.TextField, {"_allowNulls":false,"_conditionalTemplatesContainerId":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ConditionalTemplates","_currentCondition":"displaymode-equal-read","_maxChars":0,"_readOnlyReplacement":null,"_textBoxId":"textBox_write","_textLabelId":"textLabel_read","_trimSpaces":false,"_unit":null,"conditionDictionary":{"displaymode-equal-read":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ctl00_conditionalTemplate","displaymode-equal-write":"ClientTemplatePanel_"},"controlErrorCssClass":null,"dataFieldName":null,"dataFormatString":null,"defaultValue":"","description":null,"descriptionElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ctl00_descriptionLabel_read"),"displayMode":0,"example":null,"fieldName":null,"labelElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ctl00_textLabel_read"),"suffix":"_ctl01","title":null,"titleElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01_ctl00_ctl00_titleLabel_read"),"validatorDefinition":"{\"AlphaNumericViolationMessage\":\"Non alphanumeric characters are not allowed.\",\"ComparingValidatorDefinitions\":[],\"CurrencyViolationMessage\":\"You have entered an invalid currency.\",\"EmailAddressViolationMessage\":\"You have entered an invalid email address.\",\"ExpectedFormat\":0,\"IntegerViolationMessage\":\"You have entered an invalid integer.\",\"InternetUrlViolationMessage\":\"You have entered an invalid URL.\",\"MaxLength\":0,\"MaxLengthViolationMessage\":\"Too long\",\"MaxValue\":null,\"MaxValueViolationMessage\":\"Too big\",\"MessageCssClass\":null,\"MessageTagName\":\"div\",\"MinLength\":0,\"MinLengthViolationMessage\":\"Too short.\",\"MinValue\":null,\"MinValueViolationMessage\":\"Too small.\",\"NonAlphaNumericViolationMessage\":\"Alphanumeric characters are not allowed.\",\"NumericViolationMessage\":\"You have entered an invalid number.\",\"PercentageViolationMessage\":\"You have entered an invalid percentage.\",\"RegularExpression\":null,\"RegularExpressionSeparator\":null,\"RegularExpressionViolationMessage\":\"Invalid format\",\"Required\":null,\"RequiredViolationMessage\":\"Required field.\",\"ResourceClassId\":\"\",\"USSocialSecurityNumberViolationMessage\":\"You have entered an invalid US social security number.\",\"USZipCodeViolationMessage\":\"You have entered an invalid US ZIP code.\",\"ValidateIfInvisible\":true}","value":""}, null, null, $get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl0_ctl01"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Sitefinity.Web.UI.Fields.TextField, {"_allowNulls":false,"_conditionalTemplatesContainerId":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ConditionalTemplates","_currentCondition":"displaymode-equal-read","_maxChars":0,"_readOnlyReplacement":null,"_textBoxId":"textBox_write","_textLabelId":"textLabel_read","_trimSpaces":false,"_unit":null,"conditionDictionary":{"displaymode-equal-read":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ctl00_conditionalTemplate","displaymode-equal-write":"ClientTemplatePanel_"},"controlErrorCssClass":null,"dataFieldName":null,"dataFormatString":null,"defaultValue":"","description":null,"descriptionElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ctl00_descriptionLabel_read"),"displayMode":0,"example":null,"fieldName":null,"labelElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ctl00_textLabel_read"),"suffix":"_ctl01","title":null,"titleElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01_ctl00_ctl00_titleLabel_read"),"validatorDefinition":"{\"AlphaNumericViolationMessage\":\"Non alphanumeric characters are not allowed.\",\"ComparingValidatorDefinitions\":[],\"CurrencyViolationMessage\":\"You have entered an invalid currency.\",\"EmailAddressViolationMessage\":\"You have entered an invalid email address.\",\"ExpectedFormat\":0,\"IntegerViolationMessage\":\"You have entered an invalid integer.\",\"InternetUrlViolationMessage\":\"You have entered an invalid URL.\",\"MaxLength\":0,\"MaxLengthViolationMessage\":\"Too long\",\"MaxValue\":null,\"MaxValueViolationMessage\":\"Too big\",\"MessageCssClass\":null,\"MessageTagName\":\"div\",\"MinLength\":0,\"MinLengthViolationMessage\":\"Too short.\",\"MinValue\":null,\"MinValueViolationMessage\":\"Too small.\",\"NonAlphaNumericViolationMessage\":\"Alphanumeric characters are not allowed.\",\"NumericViolationMessage\":\"You have entered an invalid number.\",\"PercentageViolationMessage\":\"You have entered an invalid percentage.\",\"RegularExpression\":null,\"RegularExpressionSeparator\":null,\"RegularExpressionViolationMessage\":\"Invalid format\",\"Required\":null,\"RequiredViolationMessage\":\"Required field.\",\"ResourceClassId\":\"\",\"USSocialSecurityNumberViolationMessage\":\"You have entered an invalid US social security number.\",\"USZipCodeViolationMessage\":\"You have entered an invalid US ZIP code.\",\"ValidateIfInvisible\":true}","value":""}, null, null, $get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl1_ctl01"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Sitefinity.Web.UI.Fields.TextField, {"_allowNulls":false,"_conditionalTemplatesContainerId":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ConditionalTemplates","_currentCondition":"displaymode-equal-read","_maxChars":0,"_readOnlyReplacement":null,"_textBoxId":"textBox_write","_textLabelId":"textLabel_read","_trimSpaces":false,"_unit":null,"conditionDictionary":{"displaymode-equal-read":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ctl00_conditionalTemplate","displaymode-equal-write":"ClientTemplatePanel_"},"controlErrorCssClass":null,"dataFieldName":null,"dataFormatString":null,"defaultValue":"","description":null,"descriptionElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ctl00_descriptionLabel_read"),"displayMode":0,"example":null,"fieldName":null,"labelElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ctl00_textLabel_read"),"suffix":"_ctl01","title":null,"titleElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01_ctl00_ctl00_titleLabel_read"),"validatorDefinition":"{\"AlphaNumericViolationMessage\":\"Non alphanumeric characters are not allowed.\",\"ComparingValidatorDefinitions\":[],\"CurrencyViolationMessage\":\"You have entered an invalid currency.\",\"EmailAddressViolationMessage\":\"You have entered an invalid email address.\",\"ExpectedFormat\":0,\"IntegerViolationMessage\":\"You have entered an invalid integer.\",\"InternetUrlViolationMessage\":\"You have entered an invalid URL.\",\"MaxLength\":0,\"MaxLengthViolationMessage\":\"Too long\",\"MaxValue\":null,\"MaxValueViolationMessage\":\"Too big\",\"MessageCssClass\":null,\"MessageTagName\":\"div\",\"MinLength\":0,\"MinLengthViolationMessage\":\"Too short.\",\"MinValue\":null,\"MinValueViolationMessage\":\"Too small.\",\"NonAlphaNumericViolationMessage\":\"Alphanumeric characters are not allowed.\",\"NumericViolationMessage\":\"You have entered an invalid number.\",\"PercentageViolationMessage\":\"You have entered an invalid percentage.\",\"RegularExpression\":null,\"RegularExpressionSeparator\":null,\"RegularExpressionViolationMessage\":\"Invalid format\",\"Required\":null,\"RequiredViolationMessage\":\"Required field.\",\"ResourceClassId\":\"\",\"USSocialSecurityNumberViolationMessage\":\"You have entered an invalid US social security number.\",\"USZipCodeViolationMessage\":\"You have entered an invalid US ZIP code.\",\"ValidateIfInvisible\":true}","value":""}, null, null, $get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl2_ctl01"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Sitefinity.Web.UI.Fields.TextField, {"_allowNulls":false,"_conditionalTemplatesContainerId":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ConditionalTemplates","_currentCondition":"displaymode-equal-read","_maxChars":0,"_readOnlyReplacement":null,"_textBoxId":"textBox_write","_textLabelId":"textLabel_read","_trimSpaces":false,"_unit":null,"conditionDictionary":{"displaymode-equal-read":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ctl00_conditionalTemplate","displaymode-equal-write":"ClientTemplatePanel_"},"controlErrorCssClass":null,"dataFieldName":null,"dataFormatString":null,"defaultValue":"","description":null,"descriptionElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ctl00_descriptionLabel_read"),"displayMode":0,"example":null,"fieldName":null,"labelElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ctl00_textLabel_read"),"suffix":"_ctl01","title":null,"titleElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01_ctl00_ctl00_titleLabel_read"),"validatorDefinition":"{\"AlphaNumericViolationMessage\":\"Non alphanumeric characters are not allowed.\",\"ComparingValidatorDefinitions\":[],\"CurrencyViolationMessage\":\"You have entered an invalid currency.\",\"EmailAddressViolationMessage\":\"You have entered an invalid email address.\",\"ExpectedFormat\":0,\"IntegerViolationMessage\":\"You have entered an invalid integer.\",\"InternetUrlViolationMessage\":\"You have entered an invalid URL.\",\"MaxLength\":0,\"MaxLengthViolationMessage\":\"Too long\",\"MaxValue\":null,\"MaxValueViolationMessage\":\"Too big\",\"MessageCssClass\":null,\"MessageTagName\":\"div\",\"MinLength\":0,\"MinLengthViolationMessage\":\"Too short.\",\"MinValue\":null,\"MinValueViolationMessage\":\"Too small.\",\"NonAlphaNumericViolationMessage\":\"Alphanumeric characters are not allowed.\",\"NumericViolationMessage\":\"You have entered an invalid number.\",\"PercentageViolationMessage\":\"You have entered an invalid percentage.\",\"RegularExpression\":null,\"RegularExpressionSeparator\":null,\"RegularExpressionViolationMessage\":\"Invalid format\",\"Required\":null,\"RequiredViolationMessage\":\"Required field.\",\"ResourceClassId\":\"\",\"USSocialSecurityNumberViolationMessage\":\"You have entered an invalid US social security number.\",\"USZipCodeViolationMessage\":\"You have entered an invalid US ZIP code.\",\"ValidateIfInvisible\":true}","value":""}, null, null, $get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl3_ctl01"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Sitefinity.Web.UI.Fields.TextField, {"_allowNulls":false,"_conditionalTemplatesContainerId":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ConditionalTemplates","_currentCondition":"displaymode-equal-read","_maxChars":0,"_readOnlyReplacement":null,"_textBoxId":"textBox_write","_textLabelId":"textLabel_read","_trimSpaces":false,"_unit":null,"conditionDictionary":{"displaymode-equal-read":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ctl00_conditionalTemplate","displaymode-equal-write":"ClientTemplatePanel_"},"controlErrorCssClass":null,"dataFieldName":null,"dataFormatString":null,"defaultValue":"","description":null,"descriptionElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ctl00_descriptionLabel_read"),"displayMode":0,"example":null,"fieldName":null,"labelElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ctl00_textLabel_read"),"suffix":"_ctl01","title":null,"titleElement":$get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01_ctl00_ctl00_titleLabel_read"),"validatorDefinition":"{\"AlphaNumericViolationMessage\":\"Non alphanumeric characters are not allowed.\",\"ComparingValidatorDefinitions\":[],\"CurrencyViolationMessage\":\"You have entered an invalid currency.\",\"EmailAddressViolationMessage\":\"You have entered an invalid email address.\",\"ExpectedFormat\":0,\"IntegerViolationMessage\":\"You have entered an invalid integer.\",\"InternetUrlViolationMessage\":\"You have entered an invalid URL.\",\"MaxLength\":0,\"MaxLengthViolationMessage\":\"Too long\",\"MaxValue\":null,\"MaxValueViolationMessage\":\"Too big\",\"MessageCssClass\":null,\"MessageTagName\":\"div\",\"MinLength\":0,\"MinLengthViolationMessage\":\"Too short.\",\"MinValue\":null,\"MinValueViolationMessage\":\"Too small.\",\"NonAlphaNumericViolationMessage\":\"Alphanumeric characters are not allowed.\",\"NumericViolationMessage\":\"You have entered an invalid number.\",\"PercentageViolationMessage\":\"You have entered an invalid percentage.\",\"RegularExpression\":null,\"RegularExpressionSeparator\":null,\"RegularExpressionViolationMessage\":\"Invalid format\",\"Required\":null,\"RequiredViolationMessage\":\"Required field.\",\"ResourceClassId\":\"\",\"USSocialSecurityNumberViolationMessage\":\"You have entered an invalid US social security number.\",\"USZipCodeViolationMessage\":\"You have entered an invalid US ZIP code.\",\"ValidateIfInvisible\":true}","value":""}, null, null, $get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ctrl4_ctl01"));
-});
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl00$cphPageBody$C005$eventsFrontendList$ctl00$ctl00$eventsList","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ItemsContainer","DataService":{}}},"_virtualItemCount":5,"clientStateFieldID":"ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList_ClientState","renderMode":1}, null, null, $get("ctl00_cphPageBody_C005_eventsFrontendList_ctl00_ctl00_eventsList"));
-});
-//]]>
-</script>
-</form>
+      <script type="text/javascript">
+
+          var pfHeaderImgUrl = '';
+          var pfHeaderTagline = '';
+          var pfdisableClickToDel = '0';
+          var pfImagesSize = 'full-size';
+          var pfImageDisplayStyle = 'right';
+          var pfDisableEmail = '0';
+          var pfDisablePDF = '0';
+          var pfDisablePrint = '0';
+          var pfCustomCSS = '';
+          var pfPlatform = 'Wordpress';
+      (function() {
+            var e = document.createElement('script'); e.type="text/javascript";
+            e.src = 'https://cdn.printfriendly.com/printfriendly.js';
+            document.getElementsByTagName('head')[0].appendChild(e);
+        })();
+      </script>
+<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/packery.pkgd.js?ver=1.1'></script>
+<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+ 
+
+
+<!-- Google Analytics Code -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-20665772-1', 'auto');
+    
+        ga('create', 'UA-4402713-9', 'auto', 'todayTracker');
+    
+        ga('send', 'pageview');
+    
+        ga('todayTracker.send', 'pageview');
+      </script>
+
 </body>
-</html>
+</html><!-- WP Fastest Cache file was created in 0.11242198944092 seconds, on 21-11-18 9:42:35 -->

@@ -1,672 +1,233 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>Bits - NetFilterHacking</title>
 
-<title>Back to nature in Cook County&#8217;s backyard | UIC Today</title>
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/style.css" />
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/css/style.min.css" />
-    
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://today.uic.edu/feed" />
-
-<link rel="shortcut icon" href="https://today.uic.edu/wp-content/themes/uictoday/favicon.ico" />
-
-
-
-<link rel='dns-prefetch' href='//s.w.org' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/today.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Bits/NetFilterHacking?_T=2018-11-25" type="application/x-wiki" title="edit NetFilterHacking" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Bits/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Bits/NetFilterHacking"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
 }
 </style>
-<link rel='stylesheet' id='events-manager-css'  href='https://today.uic.edu/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.95' type='text/css' media='all' />
-<link rel='stylesheet' id='ssp-frontend-player-css'  href='https://today.uic.edu/wp-content/plugins/seriously-simple-podcasting/assets/css/player.css?ver=1.19.14' type='text/css' media='all' />
-<link rel='stylesheet' id='qcsld-fa-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-rwd-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style-rwd.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-embed-form-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/css/embed-form.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='wow-icons-fa-css'  href='https://today.uic.edu/wp-content/plugins/wow-icons//assets/fontawesome/font-awesome.min.css?ver=2.0.1' type='text/css' media='all' />
-<link rel='stylesheet' id='upw_theme_standard-css'  href='https://today.uic.edu/wp-content/plugins/ultimate-posts-widget/css/upw-theme-standard.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='tablepress-default-css'  href='https://today.uic.edu/wp-content/tablepress-combined.min.css?ver=26' type='text/css' media='all' />
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-a11y.min.js?ver=4.9.8'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var EM = {"ajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"mm\/dd\/yy","ui_css":"https:\/\/today.uic.edu\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.95'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/directory-script.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/js/embed-form.js?ver=4.9.8'></script>
-<link rel='https://api.w.org/' href='https://today.uic.edu/wp-json/' />
-<link rel='prev' title='The Movement of the &#8217;60s: A Legacy for Today' href='https://today.uic.edu/the-movement-of-the-60s-a-legacy-for-today' />
-<link rel='next' title='Using technology to train health care professionals' href='https://today.uic.edu/uic-taps-technology-to-train-healthcare-professionals' />
-<link rel="canonical" href="https://today.uic.edu/back-to-nature-in-cook-countys-backyard" />
-<link rel='shortlink' href='https://today.uic.edu/?p=10196' />
-<link rel="alternate" type="application/json+oembed" href="https://today.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftoday.uic.edu%2Fback-to-nature-in-cook-countys-backyard" />
-<link rel="alternate" type="text/xml+oembed" href="https://today.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftoday.uic.edu%2Fback-to-nature-in-cook-countys-backyard&#038;format=xml" />
-    <style type="text/css" media="screen">
-      div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
-        text-decoration: none;
-        border: none;
-      }
-    </style>
-           <style type="text/css" media="screen">
-          div.printfriendly {
-            margin: 0px 0px 0px 0px;
-            position: relative;
-            z-index: 1000;
-          }
-          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
-            font-size: 14px;
-            color: #55750C;
-            vertical-align: bottom;
-          }
-          .printfriendly a {
-            box-shadow:none;
-          }
-          .printfriendly a:hover {
-            cursor: pointer;
-          }
-          .printfriendly a img  {
-            border: none;
-            padding:0;
-            margin-right: 6px;
-            box-shadow: none;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-          }
-          .printfriendly a span{
-            vertical-align: bottom;
-          }
-          .pf-alignleft {
-            float: left;
-          }
-          .pf-alignright {
-            float: right;
-          }
-          div.pf-aligncenter {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-          }
-        </style>
-        <style type="text/css" media="print">
-          .printfriendly {
-            display: none;
-          }
-        </style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://today.uic.edu/feed/podcast" />
+@import url('/pub/Main/WebPreferences/mainweb.css ');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
 
 <script type="text/javascript">
-           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-         </script><script type="text/javascript">
-	           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-	         </script>
-<!-- Put the following javascript before the closing </head> tag. -->
 
-<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
   (function() {
-    var cx = '009511351313755808885:xdz07yl93pe';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
 </script>
 
+<!-- /Google Analytics Snippet -->
 </head>
-
-<body role="document" class="post-template-default single single-post postid-10196 single-format-standard">
-
-
-<div id="skip" role="complementary">
-<a href="#the_content">Skip to main content</a></div>
-
-
-
-<div id="header" role="banner">
-
-
-
-
-         		<div id="header-background">
-
-
-
-<!-- removed color wash for now.
-
-			<div class="color-wash">
-            <img src="" alt="   ">
-            </div>
-
-            -->
-
-
-
-            <div class="uic-type-wrapper">
-
-
-            <div class="last-update-timestamp">
-            	Updated: Nov 21, 2018 at 10:21 AM
-            </div><!--  last-update-timestamp   -->
-
-
-            <div class="uic-type-treatment">
-
-  			<div class="_mark">
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->
-
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-
-			</div><!--  uic-type-treatment   -->
-
-
-
-            <!-- Put search box here -->
-<div class="search-box" aria-label="Search U I C today">
-    <form role="search" method="get" action="https://today.uic.edu/">
-     
-        <input type="text" id="s" name="s" aria-label="Search" size="25" value="" placeholder="Search">
-
-<button type="submit" value="Submit" style="border: 0;
-clip: rect( 1px, 1px, 1px, 1px );
-clip-path: inset( 50% );
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal;">
-Submit
-</button>
-
-    </form>
-    
-    
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> -- <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TimothyMerrifield?topicparent=Bits.NetFilterHacking;nowysiwyg=0" rel="nofollow" title="TimothyMerrifield (this topic does not yet exist; you can create it)">TimothyMerrifield</a></span> - 29 Jun 2009 <ul>
+<li> <a target="_blank" href="http://www.netfilter.org/documentation/HOWTO//netfilter-hacking-HOWTO.html">Netfilter Hacking Howto </a>
+</li> <li> <a target="_blank" href="http://www.topsight.net/article.php/2003050621055083/print">Writing Netfilter hooks</a> -Great examples in here. Though possibly a bit dated? Still useful though.
+</li> <li> <a target="_blank" href="http://linux.die.net/lkmpg/index.html">Kernel Module programming guide</a> - Nice guide on writing kernel modules
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"> <ul>
+<li> <a href="/bin/view/Bits/WebHome" class="twikiCurrentWebHomeLink twikiLink">BITS Front Page</a> 
+</li> <li> <a href="/bin/view/Bits/Software" class="twikiLink">Software and Traces</a>
+</li></ul> 
+<p />
+<strong>Internal</strong> <ul>
+<li> <a href="/bin/view/Bits/Documentation" class="twikiLink">Documentation</a>
+</li> <li> <a href="/bin/view/Bits/Internal" class="twikiLink">Members Only</a>
+</li> <li> <a href="/bin/view/Bits/Templates" class="twikiLink">Templates</a>
+</li></ul> 
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Bits/NetFilterHacking">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p />
+<!-- <ul>
+<li> <strong><a href="/bin/view/Bits/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Bits Web</a></strong>
+</li> <li> <a href="/bin/view/Bits/WebCreateNewTopic?topicparent=NetFilterHacking" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Bits/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Bits/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Bits/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Bits/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Bits/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+<p />
+<hr />
+-->
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-
-
-
-<!-- End search box code -->
-
-
-
-			</div><!--  uic-type-wrapper    -->
-
-
-		</div><!--  header-background   -->
-
-
-
-
-
-		<div id="main_nav" role="navigation" aria-label="Site">
-	  	 	<div class="main_nav_container"><ul id="menu-main_nav" class="menu"><li id="menu-item-57546"><a href="https://today.uic.edu/campus-news">Campus News</a></li>
-<li id="menu-item-57547"><a href="https://today.uic.edu/academics-research">Academics &#038; Research</a></li>
-<li id="menu-item-57548"><a href="https://today.uic.edu/events">Events</a></li>
-<li id="menu-item-67603"><a href="https://today.uic.edu/resources">Resources</a>
-<ul class="sub-menu">
-	<li id="menu-item-67604"><a href="https://today.uic.edu/resources/current-students">Current Student Resources</a></li>
-	<li id="menu-item-67605"><a href="https://today.uic.edu/resources/faculty-staff">Faculty &#038; Staff Resources</a></li>
-	<li id="menu-item-70617"><a href="https://today.uic.edu/campus-news/campus-newspaper">Campus Newspaper &#038; Archives</a></li>
-</ul>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
 </li>
-<li id="menu-item-57549"><a href="https://today.uic.edu/contact">Contact</a>
-<ul class="sub-menu">
-	<li id="menu-item-57551"><a href="https://today.uic.edu/contact/communicating-on-campus">Communicating On Campus</a></li>
-	<li id="menu-item-57552"><a href="https://today.uic.edu/contact/communicating-on-campus/sending-massmails-dddh">Sending Announcements / DDDH</a></li>
-	<li id="menu-item-57550"><a href="https://today.uic.edu/contact/social-media-directory">UIC Social Media Directory</a></li>
 </ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
 </li>
-</ul></div>	    </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-		</div>
-
-
-
-
-
-
-
-
- <div id="container" role="main" aria-label="Main content" class="clearfix">
-
-
-<a name="the_content" id="the_content" tabindex="-1" aria-label="Main content area"></a>
-
-
-
-
-<div id="content">
-
-		<div id="single_right_sidebar"> <!-- creates social sharing links -->
-			<div class="single_rightBar_widgets connect">
-					<a href="http://www.facebook.com/sharer/sharer.php?u=https://today.uic.edu/back-to-nature-in-cook-countys-backyard&amp;t=Back to nature in Cook County&#8217;s backyard">
-						<img src="/wp-content/themes/uictoday/images/icon-facebook-link.svg" alt="Facebook"/>
-					</a>
-					<a href="http://twitter.com/home/?status=Back to nature in Cook County&#8217;s backyard - https://today.uic.edu/back-to-nature-in-cook-countys-backyard" title="Tweet this!">
-						<img src="/wp-content/themes/uictoday/images/icon-twitter-link.svg" alt="Twitter"/>
-					</a>
-					<a href="http://www.linkedin.com/shareArticle?mini=true&amp;title=Back to nature in Cook County&#8217;s backyard&amp;url=https://today.uic.edu/back-to-nature-in-cook-countys-backyard" title="Share on LinkedIn">
-						<img src="/wp-content/themes/uictoday/images/icon-linkedin-link.svg" alt="LinkedIn"/>
-					</a>
-					<a href="http://www.tumblr.com/share/link?url=https://today.uic.edu/back-to-nature-in-cook-countys-backyard">
-						<img src="/wp-content/themes/uictoday/images/icon-tumblr-link.svg" alt="Tumblr"/>
-					</a>
-					<a href="mailto:?Subject=Back to nature in Cook County&#8217;s backyard&Body=https://today.uic.edu/back-to-nature-in-cook-countys-backyard">
-						<img src="/wp-content/themes/uictoday/images/icon-cta-envelope.svg" alt="email"/>
-					</a>
-			</div>
-		</div>
-
-<!--		<div class="labels">
-										</div>  -->
-
-		<div class="article clearfix">
-			<h1>Back to nature in Cook County&#8217;s backyard</h1>
-
-			<p class="author-date">
-				April 3, 2013			</p>
-
-			<div class="pf-content"><div id="attachment_13575" style="width: 600px" class="wp-caption alignright"><a href="http://news.uic.edu/files/2013/06/ArnoldRandall-by-LloydDeGrane-copy.jpg"><img class="size-large wp-image-13575" alt="Arnold Randall" src="http://news.uic.edu/files/2013/06/ArnoldRandall-by-LloydDeGrane-copy-590x393.jpg" width="590" height="393" srcset="https://today.uic.edu/files/2013/06/ArnoldRandall-by-LloydDeGrane-copy-590x393.jpg 590w, https://today.uic.edu/files/2013/06/ArnoldRandall-by-LloydDeGrane-copy-387x258.jpg 387w, https://today.uic.edu/files/2013/06/ArnoldRandall-by-LloydDeGrane-copy-500x333.jpg 500w, https://today.uic.edu/files/2013/06/ArnoldRandall-by-LloydDeGrane-copy-300x200.jpg 300w, https://today.uic.edu/files/2013/06/ArnoldRandall-by-LloydDeGrane-copy.jpg 1200w" sizes="(max-width: 590px) 100vw, 590px" /></a><p class="wp-caption-text">Arnold Randall, superintendent of the Cook County Forest Preserve, oversees an area that includes 68,000 acres, 300 miles of trails, 40 lakes and ponds and 274 picnic areas. Photo: Lloyd DeGrane</p></div>
-<p><strong>By Jonathan Black </strong><br />
-<a href="http://uiaa.org/uic/news/uicalumni/" target="_blank"><em>UIC Alumni magazine</em></a></p>
-<p>“It’s the greatest job I’ve ever had, and that’s saying a lot,” declares Arnold Randall (’90 LAS) to the packed luncheon crowd in the Loop banquet room at Maggiano’s restaurant.</p>
-<p>He’s dressed for the occasion — suit and tie, buffed black shoes. This is, after all, the City Club of Chicago, the power elite of politicos and corporate big wigs.</p>
-<p>A few days later, he repeats that phrase — “Greatest job I’ve ever had!” — only this time, he’s at a nature center in the Thatcher Woods Forest Preserve dressed in jeans, sneakers and green work shirt, his audience a caged beady-eyed owl, a snoozing red fox and a pacing coyote.</p>
-<p>It’s one of the challenges of Randall’s job — superintendent of the Forest Preserve District of Cook County — to bring these two groups together, to lure urbanites into the extraordinary wilderness that’s in their backyard.</p>
-<p>Few people in Chicago take advantage of, or are even aware of, the realm that Randall oversees. The preserve takes up 68,000 acres, which is fully 10 percent of the land in Cook County, larger than the cities of Peoria and Springfield combined. There are 300 miles of trails for hiking, biking and horseback riding; 40 lakes and ponds; a half-dozen waterways; 274 picnic areas.</p>
-<p>“How many of you have ever camped in the Forest Preserve?” Randall asks at Maggiano’s. When a few tentative hands flutter, he smiles.</p>
-<p>“Okay, that was a trick question. Unless you’re a Boy Scout, you’re not allowed to camp in the Forest Preserve. It’s strictly prohibited to adults. That’s one of the many things we’re going to change.”</p>
-<p>Randall’s the first to admit that he, too, was somewhat ignorant of the preserve’s resources when Cook Country District Board President Toni Preckwinkle first tapped him to head up the Forest Preserve, the oldest and largest organization of its kind in the nation.</p>
-<p>“I thought, ‘Wow, this is an incredible resource. We need to promote it,’” says Randall. “Most people only know us through picnic permits or church events and birthday parties. They never get past the mowed lawn. City kids are a top priority because they never get out, they’re intimidated by nature, they think, ‘Oh, a bear’s going to get me!’”</p>
-<p>There are no bears in the Forest Preserve District, but there’s a stunning amount of wildlife.</p>
-<div id="attachment_13578" style="width: 397px" class="wp-caption alignleft"><a href="http://news.uic.edu/files/2013/06/Coyotes-by-LloydDeGrane-copy.jpg"><img class="size-medium wp-image-13578" alt="Fake coyotes in the Cook County Forest Preserve" src="http://news.uic.edu/files/2013/06/Coyotes-by-LloydDeGrane-copy-387x258.jpg" width="387" height="258" srcset="https://today.uic.edu/files/2013/06/Coyotes-by-LloydDeGrane-copy-387x258.jpg 387w, https://today.uic.edu/files/2013/06/Coyotes-by-LloydDeGrane-copy-590x393.jpg 590w, https://today.uic.edu/files/2013/06/Coyotes-by-LloydDeGrane-copy-500x333.jpg 500w, https://today.uic.edu/files/2013/06/Coyotes-by-LloydDeGrane-copy-300x200.jpg 300w, https://today.uic.edu/files/2013/06/Coyotes-by-LloydDeGrane-copy.jpg 1200w" sizes="(max-width: 387px) 100vw, 387px" /></a><p class="wp-caption-text">The Forest Preserve is home to all kinds of wildlife, including coyotes, foxes, skunks, turtles, deer and bald eagles. Photo: Lloyd DeGrane</p></div>
-<p>Bald eagles, for the first time in a century, laid eggs and hatched them in the preserve this year. There are skunks, foxes, a “huge number” of turtles and deer (too many, acknowledges Randall).</p>
-<p>The coyote at the Hal Tyrrell Trailside Museum in Thatcher Woods (like the fox, rescued from injury, not “captured”) is one of countless thousands that roam the wilds and occasionally show up in shopping centers or even downtown.</p>
-<p>“These guys are everywhere!” says Randall. “They get in and out of the city by following the green space along the railway lines.”</p>
-<p>&nbsp;</p>
-<p><span style="font-size: medium;"><strong>Chicago’s Olympics bid </strong></span></p>
-<p>Randall may be fascinated now, but supervising 300 square miles of forest, rivers and wildlife was not on his career horizon when he came to UIC.</p>
-<p>He started as an architecture major, switched to political science, but found that a big competitive college was not the easiest adjustment for a South Sider from a small local high school.</p>
-<p>“It was pretty overwhelming, I struggled, I had no group I belonged to.”</p>
-<p>To regain his footing, he left for the military, then returned for a more successful two-year term and joined ROTC.</p>
-<p>Like many first-generation college students, he worked throughout his years at UIC, manning the switchboard at the nearby Illinois State Psychiatric Hospital. (“I worked the late, late shifts that no one wanted and mostly did homework.”)</p>
-<p>His first job at the Chicago Urban League was the start of a busy career spent shuttling between City Hall and professional organizations. He served in a number of roles with the Chicago Park District — overseeing a capital improvement plan, managing more than 100 parks and leading the district’s efforts to host an urban parks summit.</p>
-<div id="attachment_10211" style="width: 358px" class="wp-caption alignright"><a href="http://news.uic.edu/files/2013/04/JulieVandervort-by-LloydDeGrane.jpg"><img class=" wp-image-10211" title="JulieVandervort by LloydDeGrane" alt="Nature center director Julie Vandervort" src="http://news.uic.edu/files/2013/04/JulieVandervort-by-LloydDeGrane-387x258.jpg" width="348" height="232" srcset="https://today.uic.edu/files/2013/04/JulieVandervort-by-LloydDeGrane-387x258.jpg 387w, https://today.uic.edu/files/2013/04/JulieVandervort-by-LloydDeGrane-590x393.jpg 590w, https://today.uic.edu/files/2013/04/JulieVandervort-by-LloydDeGrane-500x333.jpg 500w, https://today.uic.edu/files/2013/04/JulieVandervort-by-LloydDeGrane-300x200.jpg 300w, https://today.uic.edu/files/2013/04/JulieVandervort-by-LloydDeGrane.jpg 1200w" sizes="(max-width: 348px) 100vw, 348px" /></a><p class="wp-caption-text">Julie Vandervort, UIC alumna, is director of the Little Red Schoolhouse, one of the Forest Preserve&#8217;s nature centers. Photo: Lloyd DeGrane</p></div>
-<p>Appointed the city’s commissioner of planning and development, Randall was key in bringing new retail development to the South Side and helped plot the pre-Olympics build-up; he then left City Hall to work on Chicago’s bid for the 2016 Olympics.</p>
-<p>His job was to talk to people in neighborhoods and determine how the scaled-down infrastructure of Olympic buildings and stadiums could be converted to community use. The more he talked to athletes, the more he got excited about how the Olympics would inspire local youth, leaving him understandably frustrated when Rio de Janeiro got the games.</p>
-<p>“We had the best plan. We did all we could do in the U.S.,” says Randall of Chicago’s Olympics bid.</p>
-<p>“We just worried that we didn’t know anything about international Olympics politics, and that turned out to be the case. When we lost, it was disappointing.”</p>
-<p>But that’s in the past. His new job has him brimming with enthusiasm. A busy, engaging man, he operates out of Forest Preserve headquarters on Harlem Avenue in River Forest but spends much of his time talking to groups and explaining exactly what his organization does.</p>
-<p>“Even people who live in Chicago,” Randall says, “don’t understand the Forest Preserve.”</p>
-<p>Distinct from the Parks Department, which focuses on what he calls “active recreation — sports and programming,” the preserve has a very different mission: protecting and tending the county’s “natural lands.”</p>
-<p>Its three central tenets — preservation, education and recreation — require a hugely diverse staff and the preserve’s own 100-man police force.</p>
-<p>“They ride trails on bikes, fight wildfires and enforce wildlife laws. Having visited many city locations,” says Randall, “I’ve never felt more safe than I do in the Forest Preserve.”</p>
-<div id="attachment_13576" style="width: 541px" class="wp-caption alignleft"><a href="http://news.uic.edu/files/2013/06/ArnoldRandallwithKids-by-LloydDeGrane-1-copy.jpg"><img class=" wp-image-13576" alt="Arnold Randall shows exhibits to children" src="http://news.uic.edu/files/2013/06/ArnoldRandallwithKids-by-LloydDeGrane-1-copy-590x393.jpg" width="531" height="354" srcset="https://today.uic.edu/files/2013/06/ArnoldRandallwithKids-by-LloydDeGrane-1-copy-590x393.jpg 590w, https://today.uic.edu/files/2013/06/ArnoldRandallwithKids-by-LloydDeGrane-1-copy-387x258.jpg 387w, https://today.uic.edu/files/2013/06/ArnoldRandallwithKids-by-LloydDeGrane-1-copy-500x333.jpg 500w, https://today.uic.edu/files/2013/06/ArnoldRandallwithKids-by-LloydDeGrane-1-copy-300x200.jpg 300w, https://today.uic.edu/files/2013/06/ArnoldRandallwithKids-by-LloydDeGrane-1-copy.jpg 1200w" sizes="(max-width: 531px) 100vw, 531px" /></a><p class="wp-caption-text">Randall with children at one of the Forest Preserve&#8217;s six nature centers. Most people only know the Forest Preserve through picnics, churche events and birthday parties, he says. &#8220;They never get past the mowed lawns.&#8221; Photo: Lloyd DeGrane</p></div>
-<p>The preserve got its start in 1911 when a group of prominent Chicago civic clubs campaigned to protect rural land from development and the incursion of parks and scenic boulevards.</p>
-<p>Years of legal squabbling finally led to the establishment of the Forest Preserve District of Cook County in 1914.</p>
-<p>Two years later, the first lands were obtained, and by 1922, the district’s holdings had grown to 21,516 acres, the start of an aggressive acquisition period.</p>
-<p>By legislation, the preserve can expand to 75,000 acres, and Randall is forever on the prowl for new land to acquire, mostly targeting abandoned farms on the city’s Southeast Side. The aim is to transform new acreage into what it was before settlers arrived — prairie.</p>
-<p>“Some people think we should be planting more trees — we’re the Forest Preserve,” says Randall. “But no, we want to restore the original ecology.”</p>
-<p>“It’s a balancing act,” he says as we drive through the forested wilds of Thatcher Woods. “These are not planned lands.</p>
-<p>“Some areas, we clean out the underbrush. Some trees, like those over there, we leave where they fall, and they’re full of bugs. We try to keep our interference to a minimum and focus on clearing out invasive plants such as buckthorn.”</p>
-<p>&nbsp;</p>
-<p><span style="font-size: medium;"><strong>Camping, “fishin’ buddies” and nature centers </strong></span></p>
-<p>Randall has already accomplished a lot in his 18 months on the job.</p>
-<p>He’s maintained a vital long-term relationship with the Chicago Botanical Gardens and Brookfield Zoo, both of which operate under preserve auspices, receiving $15 million in funds last year.</p>
-<p>He’s taken advantage of low-interest rates to refinance debt, which could add $100 million to the coffers.</p>
-<p>He’s completed the preserve’s first-ever “Desk Audit,” a comprehensive look at all operations and staff performance.</p>
-<p>Three master plans are in the works, targeting recreation, camping and land acquisition.</p>
-<p>Randall calls camping a “signature project,” and he’s committed to opening new areas for adults that will provide a range of amenities, from food concessions to indoor restrooms.</p>
-<p>He’s big on promoting fishing and has started a “Fishin’ Buddies” program to introduce children to the preserve’s ponds, lakes and rivers. There’s canoeing and kayaking and even a canyon.</p>
-<p>“Yes,” he tells the City Club, “a canyon. So why go to Michigan and Wisconsin when you can come to Cook County?”</p>
-<p>A top priority is building awareness through the six nature centers scattered throughout the preserve.</p>
-<p>A showpiece is the new education center at the Little Red Schoolhouse, but each center has a unique character and all but one, Sagawau ELC, boast live animal exhibits.</p>
-<p>The first and oldest is the Hal Tyrell Trailside Museum, built in 1874 as a high-class finishing school for young women, converted to private use and then to a wildlife rehabilitation center.</p>
-<p>Now it’s an educational facility with rooms of archival photos and displays of Cook County flora and fauna. The morning we visited, a Forest Preserve staffer sat on the floor with a live four-foot black snake surrounded by rapt schoolchildren.</p>
-<p>“See how he moves with his coils. When his tongue goes out, he’s activating glands in his mouth,” she explained as the snake wriggled across the floor to squeals of delight and terror.</p>
-<p>Randall had hoped to bring a sampling of wildlife to the City Club luncheon but was blocked by laws that govern restaurants. Two weeks later, however, the animals were on full display at a mid-day promotional event in Daley Plaza.</p>
-<p>Another snake, this one a fox snake, coiled around the leg of its handler from the Sand Ridge Nature Center while an onlooker exclaimed, “I never knew you had snakes. I live right around there! I love snakes.”</p>
-<p>Meanwhile, a barred owl perched on the arm of a staffer who explained that owls can sport anywhere from 2,000 to 3,000 feathers and have amazing vision at night: “Picture a totally dark football field with a single candle —t hat’s all the light they need to hunt.”</p>
-<div id="attachment_10212" style="width: 541px" class="wp-caption alignleft"><a href="http://news.uic.edu/files/2013/04/LittleRedSchse-by-LloydDeGrane.jpg"><img class=" wp-image-10212" title="LittleRedSchse by LloydDeGrane" alt="Little Red Schoolhouse nature center" src="http://news.uic.edu/files/2013/04/LittleRedSchse-by-LloydDeGrane-590x393.jpg" width="531" height="354" srcset="https://today.uic.edu/files/2013/04/LittleRedSchse-by-LloydDeGrane-590x393.jpg 590w, https://today.uic.edu/files/2013/04/LittleRedSchse-by-LloydDeGrane-387x258.jpg 387w, https://today.uic.edu/files/2013/04/LittleRedSchse-by-LloydDeGrane-500x333.jpg 500w, https://today.uic.edu/files/2013/04/LittleRedSchse-by-LloydDeGrane-300x200.jpg 300w, https://today.uic.edu/files/2013/04/LittleRedSchse-by-LloydDeGrane.jpg 1200w" sizes="(max-width: 531px) 100vw, 531px" /></a><p class="wp-caption-text">The Little Red Schoolhouse, one of the Forest Preserve&#8217;s nature centers. Photo: Lloyd DeGrane</p></div>
-<p>There were more animals, including a one-eyed, red-tailed hawk rescued from a roadside accident and now living at the Trailside Museum.</p>
-<p>Schoolchildren flung fishing lines at a series of pools while more staffers at nearby tents promoted hikes, entertainment programs and volunteer projects, such as “Litter Obliterators” and “Garlic Mustard Busters.” Randall never misses a chance to praise the preserve’s many volunteers, some of whom have been helping for 20 to 30 years.</p>
-<p>The swelling crowd eventually included Forest Preserve CFO Mark Thomas, who dropped by after a board meeting across the street.</p>
-<p>Thomas explained that he’s known Randall for a dozen years, since their time together in the Parks District.</p>
-<p>“I was finished with the Parks Department, finished with the city, done,” he says with a cutting motion across his throat. “Then Arnold called and asked me to join him and I thought, sure. He’s the only person I’d stay in government to work for.”</p>
-<p>&nbsp;</p>
-<p><span style="font-size: medium;"><strong>Treasure trove </strong></span></p>
-<p>Summer features dozens of programs and activities ranging from concerts and movies to golf, bird-watching and model boating. With the change in seasons, visitors can snowmobile, cross-country ski or ice fish.</p>
-<p>For those who want an in-depth look at the Forest Preserve and its long history, there is a unique opportunity indoors. Three years ago, the Gaylord and Dorothy Donelley Foundation provided a grant to collate and digitize the preserve’s vast archive of photos, documents and maps, and they are now available in Special Collections at the UIC Daley Library.</p>
-<p>“We were thrilled to get the collection; it’s an absolute treasure trove,” says Peggy Glowacki (’89 LAS, MA ’96 LAS, MS ’11 UIUC), UIC archival operations and reference specialist.</p>
-<p>“It’s a very large collection and sheds light on everything — politics, urban planning, land acquisition. It’s filled with correspondence and lots of photos. The process started before Superintendent Randall took office, but none of it would have happened without his endorsement.”</p>
-<p>She is far from alone in appreciating all he’s done.</p>
-<p>Last spring, Randall was elected chair of Chicago Wilderness, a conservation alliance that oversees 260 member groups in a four-state region; it’s the first time a land-holding agency has held the chair role.</p>
-<p>Preckwinkle remains Randall’s most significant fan. A week after the Daley Plaza event, she paid a Saturday visit to Baubin Woods and was delighted to find Randall’s staff busy promoting all that’s available.</p>
-<p>“There was canoeing and kayaking. People were teaching archery and pointing out fish in ponds.</p>
-<p>“I’m very pleased with his leadership,” says Preckwinkle. “He’s got a job as long as he wants it.”</p>
-<p><em>— <a href="http://uiaa.org/uic/news/uicalumni/" target="_blank">UIC Alumni magazine</a></em></p>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
 </div>
-			<p class="author-date">
-													<div class="rightBar_widgets">
-						<h2>Contact</h2>
-						<p>
-							<span class="bold"><a href="https://today.uic.edu/author/uicnews-opa" title="Posts by UIC News contributor" rel="author">UIC News contributor</a></span><br />
-							<br />
-							<a href="mailto:uictoday@uic.edu">uictoday@uic.edu</a><br />
-										</p>
-			</div>
-
-			<div id="tag-area">
-				<p class="tag-label">Categories</p>
-																<p>
-							<a href="https://today.uic.edu/category/category-alumni" rel="category tag">Alumni</a>						</p>
-									</p>
-
-													<p class="tag-label">Topics</p>
-					<p><a href="https://today.uic.edu/tag/birds" rel="tag">birds</a>, <a href="https://today.uic.edu/tag/ecology" rel="tag">ecology</a>, <a href="https://today.uic.edu/tag/environment" rel="tag">environment</a>, <a href="https://today.uic.edu/tag/green" rel="tag">green</a>, <a href="https://today.uic.edu/tag/military" rel="tag">military</a>, <a href="https://today.uic.edu/tag/nature" rel="tag">nature</a>, <a href="https://today.uic.edu/tag/recreation" rel="tag">recreation</a>, <a href="https://today.uic.edu/tag/sustainability" rel="tag">sustainability</a>, <a href="https://today.uic.edu/tag/wildlife" rel="tag">wildlife</a></p>
-							</div>
-		
-
-			
-</div>
-
-<!-- Need 2 closing divs before footer to close divs from page header include -->
-	</div>
-    
-</div>    
-  
-
-<div class="clearThis">&nbsp;</div>
-
-
-
-
-
-    
-
-    <footer id="footer" class="footer u-dark-region" role="contentinfo">
-
-
-  <div class="footer-contact">
-    <div class="l-full">
-
-
-            <div class="uic-type-wrapper-footer">
-
-            <div class="uic-type-treatment-footer">
-            
-  			<div class="_mark"> 
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->   
-            
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-            
-			</div><!--  uic-type-treatment-footer   -->
-
-
-			</div><!--  uic-type-wrapper-footer    -->
- 
-
-
-  <div class="_contact">
-  
-  
-    <h2>Contact</h2>
-    
-    
-		<div class="site-address">Office of Public and Government Affairs <br />
-		601 S. Morgan St., 1320 UH, Chicago, IL 60607</div>
-      
-      
-		<div class="site-email"><a href="mailto:uictoday@uic.edu">uictoday@uic.edu</a></div>
-        
-        
-		<div aria-label="Social Media Accounts" class="_social" role="navigation">
-			<h2 class="assistive-text">Social Media Accounts</h2> 
-  			<ul class="site-social-links">
-            <li><a href="https://www.facebook.com/uicnews "><img src="/wp-content/themes/uictoday/images/social-media-icons/facebook.png" alt="Facebook"></a></li>
-            <li><a href="https://instagram.com/thisisuic/"><img src="/wp-content/themes/uictoday/images/social-media-icons/instagram.png" alt="Instagram"></a></li>
-            <li><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today"><img src="/wp-content/themes/uictoday/images/social-media-icons/rss.png" alt="RSS feed"></a></li>
-            <li><a href="https://uicscience.tumblr.com/"><img src="/wp-content/themes/uictoday/images/social-media-icons/tumblr.png" alt="tumblr"></a></li>
-            <li><a href="https://twitter.com/UICnews"><img src="/wp-content/themes/uictoday/images/social-media-icons/twitter.png" alt="Twitter"></a></li>
-            <li><a href="https://www.youtube.com/user/uicmedia"><img src="/wp-content/themes/uictoday/images/social-media-icons/youtube.png" alt="YouTube"></a></li>
-            <li><a href="https://today.uic.edu/contact/social-media-directory"><img src="/wp-content/themes/uictoday/images/social-media-icons/directory.png" alt="Social media directory"></a></li>
-            </ul>
-            
-            
-		</div>        
-        
-        
-  </div>
-
-    
-
-       
-
-
-   
-
-
-
-
-
-		<div id="quicklinks_footer" role="navigation" aria-label="Quick Links" >
-			<div id="quicklinks_footer_container">
-	  	 	<div class="menu-footer-quicklinks-container"><ul id="menu-footer-quicklinks" class="menu"><li id="menu-item-57564"><a href="/news-release/news-release/">For the Media</a></li>
-<li id="menu-item-57555"><a href="https://today.uic.edu/experts-guide">Experts Guide</a></li>
-<li id="menu-item-57556"><a href="https://today.uic.edu/campus-news/campus-newspaper/advertising">Advertise in UIC News</a></li>
-<li id="menu-item-57577"><a href="https://today.uic.edu/contact/communicating-on-campus/submit-announcements">Submit Announcements</a></li>
-<li id="menu-item-57578"><a href="https://today.uic.edu/submit-an-event">Submit an Event</a></li>
-<li id="menu-item-67562"><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today">Subscribe to UIC Today</a></li>
-</ul></div>        	</div>
-	    </div>      
-
-
-</div>
-
-    
-    </div>
-  </div>
-
-
-
-
-<div class="footer-wrapper-uic-menu-legal">
-
-
-  <div class="footer-uic-menu">
-    <div class="ll-full">
-
-      <div role="navigation" aria-label="UIC.edu Links" >
-  <h2 class="assistive-text">UIC.edu links</h2>
-  <ul class="uic-footer-menu">
-    <li><a href="http://uic.edu/">UIC.edu</a></li>
-    <li><a href="http://catalog.uic.edu/ucat/academic-calendar/">Academic Calendar</a></li>
-    <li><a href="http://uicflames.com/">Athletics</a></li>
-    <li><a href="http://www.uic.edu/apps/departments-az/search">Campus Directory</a></li>
-    <li><a href="http://disabilityresources.uic.edu/">Disability Resources</a></li>
-    <li><a href="http://emergency.uic.edu/">Emergency Information</a></li>
-    <li><a href="http://events.uic.edu/">Event Calendar</a></li>
-    <li><a href="http://uic.edu/about/job-opportunities">Job Openings</a></li>
-    <li><a href="http://library.uic.edu/">Library</a></li>
-    <li><a href="http://maps.uic.edu/">Maps</a></li>
-    <li><a href="http://hospital.uillinois.edu/">UI Health</a></li>
-    <li><a href="http://dos.uic.edu/studentveteranaffairs.shtml">Veterans Affairs</a></li>
-  </ul>
-</div>
-
-    </div><!--  ll-full   -->
-    
-    <div class="m-full">
-    <img src="/wp-content/themes/uictoday/images/uihealth.png" alt="UI Health and UIC co-branded logo">
-    </div><!--  m-full   -->
-    
-  </div><!--  footer-uic-menu   --> 
-
-
-
-
-  <div class="footer-legal">
-    <div class="l-full">
-
-      <div class="site-copyright">
-  &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span>
-  <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
-</div>
-
-<div class="campuses" role="navigation" aria-label="University of Illinois campus web sites">
-  <h2 class="assistive-text">Campuses</h2>
-  <ul class="campuses-list">
-    <li><a href="https://uillinois.edu/">University of Illinois System</a></li>
-    <li><a href="https://illinois.edu/">Urbana-Champaign</a></li>
-    <li><a href="https://uis.edu/">Springfield</a></li>
-  </ul>
-</div>
-
-    </div>
-
-
-
-</div><!--  footer-wrapper-uic-menu-legal   --> 
-    
-    
-  </div>
-
-</footer>
-
-
-
-
-
-</div>
-
-
-			<style type="text/css">
-				.ssp-wave wave wave{
-					background: #28c0e1 !important;
-				}
-			</style>
-		<script type="text/javascript">
-  document.write(unescape("%3Cscript src='//www.uic.edu/inc/emergency/alert.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-      <script type="text/javascript">
-
-          var pfHeaderImgUrl = '';
-          var pfHeaderTagline = '';
-          var pfdisableClickToDel = '0';
-          var pfImagesSize = 'full-size';
-          var pfImageDisplayStyle = 'right';
-          var pfDisableEmail = '0';
-          var pfDisablePDF = '0';
-          var pfDisablePrint = '0';
-          var pfCustomCSS = '';
-          var pfPlatform = 'Wordpress';
-      (function() {
-            var e = document.createElement('script'); e.type="text/javascript";
-            e.src = 'https://cdn.printfriendly.com/printfriendly.js';
-            document.getElementsByTagName('head')[0].appendChild(e);
-        })();
-      </script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/packery.pkgd.js?ver=1.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
- 
-
-
-<!-- Google Analytics Code -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-20665772-1', 'auto');
-    
-        ga('create', 'UA-4402713-9', 'auto', 'todayTracker');
-    
-        ga('send', 'pageview');
-    
-        ga('todayTracker.send', 'pageview');
-      </script>
-
-</body>
-</html><!-- WP Fastest Cache file was created in 0.1098940372467 seconds, on 21-11-18 13:06:15 --><!-- need to refresh to see cached version -->
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

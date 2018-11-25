@@ -1,254 +1,307 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-    <meta charset="utf-8" />
-    <title>Extreme Weather Policies</title>
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="blueberry.css" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebSearchAdvanced &lt; CS385fall14 &lt; TWiki</title>
 
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS385fall14/WebSearchAdvanced?_T=2018-11-25" type="application/x-wiki" title="edit WebSearchAdvanced" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS385fall14/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS385fall14/WebSearchAdvanced"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
-    <style type="text/css">
-        @import url("policies.css");
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-        {
-            margin: 0;
-            border: 0;
-            padding: 0;
-        }
+<!-- Google Analytics Snippet -->
 
-        body {
-            background-color: #deeff3;
-            font-family: 'PT Sans', sans-serif;
-            font-size: 13px/19px;
-            color: #0F3C61;
-            margin: 0;
-        }
+<script type="text/javascript">
 
-        h1 {
-            text-align: center;
-            font-size: 180%;
-            line-height: 120%;
-            padding: 5% 0;
-        }
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
 
-        h2 {
-            line-height: 280%;
-            padding-left: 2%;
-            text-align: center;
-            background-color: #ffffff;
-            font-size: 18px;
-        }
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-        h3 {
-            line-height: 280%;
-            padding-left: 2%;
-            text-align: center;
-            font-size: 70%;
-            color: #ffffff;
-        }
+</script>
 
-        p {
-            text-align: justify;
-            padding-left: 50px;
-            padding-right: 80px;
-            background-color: #ffffff;
-            padding-top: 100px;
-            padding-bottom: 120px;
-        }
-
-        img {
-            align-content: center;
-            max-width: 100%;
-            height: auto;
-            width: auto;
-            position: 0 auto;
-        }
-
-        p a {
-            color: #0F3C61;
-            text-decoration: underline;
-        }
-
-            p a:hover {
-                color: #ED3742;
-            }
-
-
-        header {
-            background-color: #ED3742;
-            width: 100%;
-            height: 190px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            opacity: 0.90;
-        }
-
-        #logo {
-            margin-left: 50px;
-            margin-top: 15px;
-            float: left;
-            width: 123px;
-            height: 157px;
-            background-image: url(images/logo.png);
-        }
-
-        nav {
-            float: right;
-            padding: 25px 20px 20px 0;
-        }
-
-        #menu-icon {
-            display: hidden;
-            width: 40px;
-            height: 40px;
-            background: url(images/iconomenu.png) center;
-        }
-
-        a:hover#menu-icon {
-            border-radius: 4px 4px 0 0;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        nav ul li {
-            display: inline-block;
-            float: left;
-            padding: 10px;
-        }
-
-
-
-        @media screen and (max-width: 478px) {
-            body {
-                position: absolute;
-            }
-
-            @media screen and (max-width: 740px) {
-                header {
-                    position: absolute;
-                }
-
-                #menu-icon {
-                    display: inline-block;
-                }
-
-                nav ul, nav:active ul {
-                    display: none;
-                    position: absolute;
-                    padding: 20px;
-                    background: #ED3742;
-                    border: 2px solid #ffffff;
-                    right: 5px;
-                    top: 60px;
-                    width: 100%;
-                    border-radius: 2px 0 2px 2px;
-                }
-
-                nav li a {
-                    text-align: center;
-                    width: 100%;
-                    padding: 0px 0;
-                    margin: 0;
-                }
-
-                nav:hover ul {
-                    display: block;
-                }
-
-                section {
-                    float: left;
-                    width: 100%;
-                    margin: 2% 2%;
-                    text-align: center;
-                }
-
-                article {
-                    float: left;
-                    width: 100%;
-                    margin: 0;
-                    padding: 0;
-                }
-
-                aside {
-                    float: left;
-                    width: 100%;
-                    margin: 0;
-                    padding: 0;
-                }
-    </style>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script src="jquery.blueberry.js"></script>
-    <script>
-        $(window).load(function () {
-            $('.blueberry').blueberry();
-        });
-    </script>
+<!-- /Google Analytics Snippet -->
 </head>
-
-<body>
-    <header>
-        <a href="https://www.uic.edu/uic/" id="logo"></a>
-        <nav>
-            <a href="#" id="menu-icon"></a>
-
-
-            <div class="menuheader1">
-                <ul>
-                    <li>
-                        <a href="https://www.uic.edu/uic/"><img src="images/imghome_3_.png">  UIC Home</a>
-                    </li>
-                    <li>
-                        <a href="http://vcas.uic.edu/">   VCAS Home</a>
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-    </header>
-
-    <section>
-	<br><Br><br><br><br><br>
-        <p>
-            <span style="font-size:140%; font-weight : bold;color:#ED3742;">Extreme Weather Policies</span><br><br>
-            As a matter of policy, the campus is never closed. The residential, healthcare, and research aspects of UIC operations make this a requirement.<br><br>
-
-            In the event of extreme weather conditions, the campus will continue to operate during regularly scheduled hours. Staff are expected to report to their respective offices or workstations. Staff who are not able to commute to campus and who wish to be paid may request that the time missed be charged to vacation time, or make other arrangements. Alternate arrangements are subject to approval by the supervisor and unit head and must meet all University rules and regulations. Policy questions should be directed to Human Resources, Labor and Employee Relations, at (312) 355-3055.<br><br>
-
-            <span style="font-size:100%; font-weight : bold;color:#ED3742;">Cancellation of Individual Classes</span><br><br>
-
-            In individual cases, an instructor may need to cancel a class. Instructors must notify college and departmental offices of such cancellations. All students registered in the class must be informed promptly by e-mail or Blackboard, and the work must be made up later in the semester.<br><br>
-
-            <span style="font-size:100%; font-weight : bold;color:#ED3742;">Cancellation of All Scheduled Classes</span><br><br>
-
-            In accordance with Executive Notice 94-3, all classes will be canceled if, in the judgment of the Chancellor or the Provost, the health and safety of students, faculty, or staff would be seriously jeopardized. In this case, the Vice Chancellors will notify units that report to them. Campus will be notified via Urgent e-mail and sms text messaging to subscribed mobile phones; the UIC.edu website; and the UIC Information Line, (312) 413-9696. Notice will be sent to local radio and television stations for public announcement.<br><br>
-
-            Should you hear on radio or television that the campus is “closed,” know that while classes have been canceled, buildings and offices are open and some special events may take place as scheduled. Faculty and staff with non-instructional responsibilities are not excused when classes are canceled.<br><br>
-
-            <span style="font-size:100%; font-weight : bold;color:#ED3742;">UI Hospital Operations During an Emergency</span><br><br>
-
-            UI Hospital operates continuously regardless of weather. Staff and students assigned to patient care and support functions are expected to report even when classes have been canceled at UIC.<br><br>
-
-            <span style="font-size:100%; font-weight : bold;color:#ED3742;">Support and Administrative Functions</span><br><br>
-
-            Emergency conditions may warrant the suspension of non-essential operations such as university mail delivery or transportation services. The Vice Chancellor for Administrative Services will consult with representatives of campus components likely to be affected by service interruption and notify the other vice chancellors.
-        </p>
-    </section>
-
-
-
-
-    <footer>
-        <section>
-            <div style="height: 80px; background-color: #0F3C61;">
-                <h3><br>© Copyright 2015 The Board of Trustees of the University of Illinois</h3>
-            </div>
-        </section>
-    </footer>
-    </div>
-</body>
-</html>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS385fall14/WebHome">CS385fall14 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS385fall14/WebSearch" class="twikiLink">WebSearch</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS385fall14/WebSearchAdvanced" title='Topic revision: 1 (2006-11-15 - 19:43:52)'>WebSearchAdvanced</a> <span class='patternRevInfo'>(2006-11-15, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS385fall14.WebSearchAdvanced;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS385fall14/WebSearchAdvanced?t=1543179642' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS385fall14/WebSearchAdvanced' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Advanced_Search"></a> Advanced Search </h1>
+<p />
+<p />
+<p />
+<p />
+<div id="searchTopNavWebSearchAdvanced" style="margin-bottom: 1em; "></div>
+<p />
+<p />
+<div id="searchBottomNavWebSearchAdvanced" style="">
+<p />
+ &nbsp;
+<p />
+</div>
+<script type="text/javascript">
+  $('#searchTopNavWebSearchAdvanced').hide(); $('#searchBottomNavWebSearchAdvanced').hide();
+  $('#searchTopNavWebSearchAdvanced').html("&nbsp; ");
+</script>
+<p />
+<a name="twikiSearchForm"></a>
+<div class="twikiPageForm">
+<form id="twikiWebSearchForm" action="/bin/view/CS385fall14/WebSearchAdvanced">
+<table id="twikiSearchTable" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2" class="twikiFirstRow">
+  <input class="twikiInputField" type="text" name="search" value="" size="40" /> 
+  <input type="submit" class="twikiSubmit" value='Search' /><span class="twikiSmall">&nbsp;&nbsp;<a href='https://www.cs.uic.edu/bin/view/CS385fall14/WebSearch?search=;type=word;scope=;web=;nosearch='>Simple search</a> | <a href="/bin/view/TWiki/SearchHelp" class="twikiLink">Help</a></span>
+<div class="twikiSmall" style="padding:1em 0 0 0;">TIP: to search for all topics that contain <code>"SOAP"</code>, <code>"WSDL"</code>, a literal <code>"web service"</code>, but not <code>"shampoo"</code>, write: <code>soap wsdl "web service" -shampoo</code></div>
+</td>
+</tr>
+<tr>
+<th>Search where:</th>
+<td>
+<input type="radio" class="twikiRadioButton" id="textbody" name="scope" value="text"  /><label for="textbody"> Text body</label><br />
+<input type="radio" class="twikiRadioButton" id="topictitle" name="scope" value="topic"  /><label for="topictitle"> Topic title</label><br />
+<input type="radio" class="twikiRadioButton" id="both" name="scope" value="all" checked="checked" /><label for="both"> Both body and title</label>
+<hr />
+<input type="checkbox" class="twikiCheckbox" id="web" name="web" value="all"  /><label for="web"> All public webs</label> <span class="twikiSmall">(otherwise search CS385fall14 Web only)</span>
+</td>
+</tr>
+<tr>
+<th>Sort results by:</th>
+<td>
+<input type="radio" class="twikiRadioButton" id="topic" name="sort" value="topic" checked="checked" /><label for="topic"> Topic name</label><br />
+<input type="radio" class="twikiRadioButton" id="modified" name="sort" value="modified"  /><label for="modified"> Last modified time</label><br />
+<input type="radio" class="twikiRadioButton" id="editby" name="sort" value="editby"  /><label for="editby"> Last editor</label>
+<hr />
+<input type="checkbox" class="twikiCheckbox" name="reverse" id="reverse"  /><label for="reverse"> In reverse order</label>
+</td>
+</tr>
+<tr>
+<th>Make search:</th>
+<td><input type="checkbox" class="twikiCheckbox" id="casesensitive" name="casesensitive"  /><label for="casesensitive"> Case sensitive</label><br />
+<input type="checkbox" class="twikiCheckbox" id="regex" name="regex"  /><label for="regex"> Regular expression search</label> <span class="twikiSmall">(semicolon <code>;</code> for and) <a href="/bin/view/TWiki/RegularExpression" class="twikiLink">about regular expression search</a></span>
+</td>
+</tr>
+<tr>
+<th><b>Don't show:</b></th>
+<td><input type="checkbox" class="twikiCheckbox" id="nosearch" name="nosearch"  /><label for="nosearch"> Search string</label><br />
+<input type="checkbox" class="twikiCheckbox" id="nosummary" name="nosummary"  /><label for="nosummary"> Summaries</label><br />
+<input type="checkbox" class="twikiCheckbox" id="nototal" name="nototal"  /><label for="nototal"> Total matches</label>
+</td>
+</tr>
+<tr>
+<th>Do show:</th>
+<td><input type="checkbox" class="twikiCheckbox" id="bookview" name="bookview"  /><label for="bookview"> BookView</label> <span class="twikiSmall"><a href="/bin/view/TWiki/BookView" class="twikiLink">about BookView</a></span>
+</td>
+</tr>
+<tr>
+<th class="twikiLast">Limit results to:</th>
+<td class="twikiLast"><input type="text" class="twikiInputField" id="limit" name="limit" size="3" value="50" /><label for="limit"> Topics per web </label><span class="twikiSmall">(<code>all</code> to show all topics)</span>
+</td>
+</tr>
+</table>
+</form>
+</div>
+<p />
+<div class="twikiHelp">
+<strong>Other search options:</strong> <ul>
+<li> If you already know the name of the topic, enter the name of the topic into the <a href="/bin/view/TWiki/JumpBox" class="twikiLink">Jump box</a> at the top
+</li> <li> <a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=\.*">List all topics in the CS385fall14 web in alphabetical order</a>
+</li> <li> List topics that start with the letter: <a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ea">A</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Eb">B</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ec">C</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ed">D</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ee">E</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ef">F</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Eg">G</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Eh">H</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ei">I</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ej">J</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ek">K</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5El">L</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Em">M</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5En">N</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Eo">O</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ep">P</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Eq">Q</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Er">R</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Es">S</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Et">T</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Eu">U</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ev">V</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ew">W</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ex">X</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ey">Y</a><span class="twikiSeparator"> | </span><a href="/bin/search/CS385fall14/?scope=topic&amp;regex=on&amp;search=%5Ez">Z</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebChanges" class="twikiLink">Recently changed topics</a>
+</li></ul> 
+</div> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS385fall14/WebSearchAdvanced?t=1543179642' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS385fall14/WebSearchAdvanced' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS385fall14/WebSearchAdvanced?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS385fall14/WebSearchAdvanced?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r1</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS385fall14/WebSearchAdvanced?template=backlinksweb' rel='nofollow' title='Search the CS385fall14 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS385fall14/WebSearchAdvanced?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS385fall14/WebSearchAdvanced?t=1543179642;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS385fall14/WebSearchAdvanced?template=oopsmore&amp;param1=1&amp;param2=1' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r1 - 2006-11-15 - 19:43:52 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS385fall14.WebSearchAdvanced;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS385fall14/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS385fall14</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS385fall14/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS385fall14/LectureNotes" class="twikiLink">Lecture Notes</a>
+</li> <li> <a href="/bin/view/CS385fall14/Homeworks" class="twikiLink">Homeworks</a>
+</li></ul> 
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS385fall14/WebSearchAdvanced">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS385fall14/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS385fall14 Web</a></strong>
+</li> <li> <a href="/bin/view/CS385fall14/WebCreateNewTopic?topicparent=WebSearchAdvanced" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS385fall14/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

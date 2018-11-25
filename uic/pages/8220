@@ -1,356 +1,248 @@
-<!DOCTYPE html>
-<!--[if lt IE 9 ]>    <html class="lt-ie9 no-js"  lang="en" dir="ltr"> <![endif]-->
-<!--[if gte IE 9]><!--> <html class="no-js"  lang="en" dir="ltr"  prefix="content: http://purl.org/rss/1.0/modules/content/
- dc: http://purl.org/dc/terms/
- foaf: http://xmlns.com/foaf/0.1/
- og: http://ogp.me/ns#
- rdfs: http://www.w3.org/2000/01/rdf-schema#
- sioc: http://rdfs.org/sioc/ns#
- sioct: http://rdfs.org/sioc/types#
- skos: http://www.w3.org/2004/02/skos/core#
- xsd: http://www.w3.org/2001/XMLSchema#
-"> <!--<![endif]-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebLeftBar &lt; CoolCS &lt; TWiki</title>
 
-<!-- The following code is to stop search engines from indexing the old profile module -->
-            <!-- Old profile module code block end -->
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CoolCS/WebLeftBar?_T=2018-11-25" type="application/x-wiki" title="edit WebLeftBar" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CoolCS/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CoolCS/WebLeftBar"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
-<link rel="canonical" href="http://theatreandmusic.uic.edu/eventdetails/902/883" />
-<link rel="shortlink" href="http://theatreandmusic.uic.edu/eventdetails/902/883" />
-<link rel="shortcut icon" href="http://theatreandmusic.uic.edu/misc/favicon.ico" />
-  <title>Vocal Jazz Ensemble & Jazz Workshop | School of Theatre and Music</title>
-  <!-- Favicons from realfavicongenerator -->
-  <link rel="apple-touch-icon" sizes="57x57" href="sites/all/themes/tamweb/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="sites/all/themes/tamweb/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="sites/all/themes/tamweb/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="sites/all/themes/tamweb/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="sites/all/themes/tamweb/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="sites/all/themes/tamweb/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="sites/all/themes/tamweb/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="sites/all/themes/tamweb/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="sites/all/themes/tamweb/favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="sites/all/themes/tamweb/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="sites/all/themes/tamweb/favicons/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="sites/all/themes/tamweb/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="sites/all/themes/tamweb/favicons/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="sites/all/themes/tamweb/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="sites/all/themes/tamweb/favicons/manifest.json">
-  <link rel="shortcut icon" href="sites/all/themes/tamweb/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="sites/all/themes/tamweb/favicons/mstile-144x144.png">
-  <meta name="msapplication-config" content="sites/all/themes/tamweb/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="http://theatreandmusic.uic.edu/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" />
-<link rel="stylesheet" href="http://theatreandmusic.uic.edu/sites/default/files/css/css_8I8tOCPjIVP6mfeMJ_e9IPVH1CnLb6wMloNuja55pnc.css" />
-<link rel="stylesheet" href="http://theatreandmusic.uic.edu/sites/default/files/css/css_MNTdNXMhJtWhc-CDmTrj4Qw3MvV-JtOo5YELza2wNSU.css" />
-<link rel="stylesheet" href="http://theatreandmusic.uic.edu/sites/default/files/css/css_djR6J_HBQ_W2a4TlXPHyyF-3xKySq9o-WKk7Sunxprc.css" />
-<link rel="stylesheet" href="http://theatreandmusic.uic.edu/sites/default/files/css/css_KZaCX_M68Fd7kTvrrs2KP4upQ-yOuv9XHkshtgFLFLQ.css" media="print" />
-  <script src="http://theatreandmusic.uic.edu/sites/all/libraries/modernizr/modernizr.min.js?phh7kf"></script>
-<script src="http://theatreandmusic.uic.edu/sites/default/files/js/js_xvYJgU6LChHqbcSh4y1AvdXfD5QBIwT3GVGVUeuksbM.js"></script>
-<script src="http://theatreandmusic.uic.edu/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script>
-<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-55456113-3", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
-<script>(function(){var e={kitId:"; Information added by Drupal.org packaging script on 2015-02-11",scriptTimeout:3e3},t=document.getElementsByTagName("html")[0];t.className+=" wf-loading";var n=setTimeout(function(){t.className=t.className.replace(/(\s|^)wf-loading(\s|$)/g," "),t.className+=" wf-inactive"},e.scriptTimeout),r=document.createElement("script"),i=!1;r.src="//use.typekit.net/"+e.kitId+".js",r.type="text/javascript",r.async="true",r.onload=r.onreadystatechange=function(){var t=this.readyState;if(i||t&&t!="complete"&&t!="loaded")return;i=!0,clearTimeout(n);try{Typekit.load(e)}catch(r){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(r,s)})()</script>
-<script src="http://theatreandmusic.uic.edu/sites/default/files/js/js_HF5gasAkcJDWDoNU53HpcBRMSoiOjFRhBOavSvT3F8k.js"></script>
-<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"tamweb","theme_token":"23Ia-4qrO2AEKUFocozmjmG-Pwzo-4sjv0SuO28XUwo","js":{"sites\/all\/libraries\/modernizr\/modernizr.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"1":1,"sites\/all\/themes\/tamweb\/js\/jquery.matchHeight.js":1,"sites\/all\/themes\/tamweb\/js\/bootstrap.js":1,"sites\/all\/themes\/tamweb\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/eventwork\/css\/custom.css":1,"sites\/all\/themes\/tamweb\/css\/style.css":1,"sites\/all\/themes\/tamweb\/css\/print.css":1}},"urlIsAjaxTrusted":{"\/eventdetails\/902\/883":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});</script>
-  
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
 </head>
-<body class="html not-front not-logged-in no-sidebars page-eventdetails page-eventdetails- page-eventdetails-902 page-eventdetails- page-eventdetails-883" >
-<div id="skip-link">
-  <a href="#main" class="element-invisible element-focusable" role="link">Skip to main content</a>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CoolCS/WebHome">CoolCS Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CoolCS/WebLeftBar" title='Topic revision: 4 (2009-05-20 - 21:07:58)'>WebLeftBar</a> <span class='patternRevInfo'>(2009-05-20, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=CoolCS.WebLeftBar;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CoolCS/WebLeftBar?t=1543180167' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CoolCS/WebLeftBar' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic">  <ul>
+<li> <a href="/bin/view/CoolCS/People" class="twikiLink">People</a>
+</li> <li> <a href="/bin/view/CoolCS/Projects" class="twikiLink">Projects</a>
+</li> <li> <a href="/bin/view/CoolCS/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<p />
+<a href="/bin/edit/CoolCS.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CoolCS/WebLeftBar">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/CoolCS/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CoolCS Web</a></strong>
+</li> <li> <a href="/bin/view/CoolCS/WebCreateNewTopic?topicparent=WebLeftBar" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CoolCS/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CoolCS/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CoolCS/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CoolCS/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CoolCS/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CoolCS/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CoolCS/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr /> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CoolCS/WebLeftBar?t=1543180168' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CoolCS/WebLeftBar' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CoolCS/WebLeftBar?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CoolCS/WebLeftBar?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r4&nbsp;<a rel="nofollow" href="/bin/rdiff/CoolCS/WebLeftBar?rev1=4;rev2=3">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CoolCS/WebLeftBar?rev=3">r3</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CoolCS/WebLeftBar?rev1=3;rev2=2">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CoolCS/WebLeftBar?rev=2">r2</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CoolCS/WebLeftBar?rev1=2;rev2=1">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CoolCS/WebLeftBar?rev=1">r1</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CoolCS/WebLeftBar?template=backlinksweb' rel='nofollow' title='Search the CoolCS Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CoolCS/WebLeftBar?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CoolCS/WebLeftBar?t=1543180168;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CoolCS/WebLeftBar?template=oopsmore&amp;param1=4&amp;param2=4' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r4 - 2009-05-20 - 21:07:58 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=CoolCS.WebLeftBar;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CoolCS/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CoolCS</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CoolCS/People" class="twikiLink">People</a>
+</li> <li> <a href="/bin/view/CoolCS/Projects" class="twikiLink">Projects</a>
+</li> <li> <a href="/bin/view/CoolCS/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<p />
+<a href="/bin/edit/CoolCS.WebLeftBar" target="_top">[edit this</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CoolCS/WebLeftBar">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/CoolCS/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CoolCS Web</a></strong>
+</li> <li> <a href="/bin/view/CoolCS/WebCreateNewTopic?topicparent=WebLeftBar" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CoolCS/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CoolCS/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CoolCS/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CoolCS/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CoolCS/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CoolCS/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CoolCS/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-
-<div id="l-wrapper" class="l-wrapper">
-  <div class="background-image background-image--cover"></div>
-  <div id="l-page" class="l-page">
-    <div class="l-header-wrapper">
-      <header id="l-header" class="l-header" role="banner">
-        <div class="l-inner">
-            <!--    Color logo for front page, B/W for others     -->
-
-            <div class="logo" id="logo">
-                              <a href="/" title="Home" rel="home" >
-                  <img src="http://theatreandmusic.uic.edu/sites/all/themes/tamweb/logo.png" alt="Home" />
-                </a>
-                          </div>
-            <!--  END Color logo for front page, B/W for others     -->
-
-            <div id="l-icons" class="l-icons">
-              <div class="i-inner">
-                <span class="icon-ion-navicon-round mobile-menu-toggle js-mobile-menu-toggle" ></span>
-                &nbsp;
-
-              </div>
-
-            </div>
-
-
-            <div id="l-navigation" class="l-navigation" role="navigation">
-              <nav>
-                  <div id="block-menu-block-1" class="block block-menu-block">
-    
-  <div class="content">
-    <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1 menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
-  <ul class="menu"><li class="first leaf menu-mlid-299 collapsed menu-1-collapse"><a href="/about">About</a></li>
-<li class="leaf menu-mlid-303 collapsed menu-1-collapse"><a href="/cada/news/newssearch" title="">News</a></li>
-<li class="leaf menu-mlid-304 collapsed menu-1-collapse"><a href="/custom/event/search" title="">Calendar</a></li>
-<li class="leaf menu-mlid-306 fourth collapsed menu-1-collapse"><a href="/admissions">Admissions</a></li>
-<li class="leaf menu-mlid-307 collapsed menu-1-collapse"><a href="/directory/profile?field_school_value=All&amp;field_category_value=All" title="Old Directory -&gt; cada/q/profilesearch ">People</a></li>
-<li class="leaf menu-mlid-308 collapsed menu-1-collapse"><a href="/donate-now">Donate Now</a></li>
-<li class="leaf menu-mlid-518 collapsed menu-1-collapse"><a href="/contact">Contact</a></li>
-<li class="last leaf menu-mlid-721 fourth collapsed menu-1-collapse"><a href="/gallery" title="">Gallery</a></li>
-</ul></div>
-  </div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
 </div>
-<div id="block-menu-block-2" class="block block-menu-block">
-    
-  <div class="content">
-    <div class="menu-block-wrapper menu-block-2 menu-name-menu-secondary-menu parent-mlid-0 menu-level-1 menu-block-2 menu-name-menu-secondary-menu parent-mlid-0 menu-level-1">
-  <ul class="menu"><span class="menu_drop_down"><li class="first expanded menu-mlid-718 collapsed menu-1-collapse"><a href="/about-0" title="">Dept of Theatre</a><ul class="menu"><li class="first leaf menu-mlid-743 collapsed menu-1-collapse"><a href="/about-0">About</a></li>
-<li class="leaf menu-mlid-723 collapsed menu-1-collapse"><a href="/degrees">Degrees</a></li>
-<li class="leaf menu-mlid-745 collapsed menu-1-collapse"><a href="/theatre-courses">Theatre Courses</a></li>
-<li class="leaf menu-mlid-726 collapsed menu-1-collapse"><a href="/degree-auditions-0">Degree Auditions</a></li>
-<li class="leaf menu-mlid-735 collapsed menu-1-collapse"><a href="/partner-internships">Partner / Internships</a></li>
-<li class="last leaf has-children menu-mlid-736 collapsed menu-1-collapse"><a href="/theatre-season">Mainstage Production</a></li>
-</ul></li>
-</span><span class="menu_drop_down"><li class="expanded menu-mlid-717 collapsed menu-1-collapse"><a href="/about-1" title="">Dept of Music</a><ul class="menu"><li class="first leaf menu-mlid-744 collapsed menu-1-collapse"><a href="/about-1">About</a></li>
-<li class="leaf menu-mlid-742 collapsed menu-1-collapse"><a href="/music-season">Music Season</a></li>
-<li class="leaf menu-mlid-734 collapsed menu-1-collapse"><a href="/degrees-0">Degrees</a></li>
-<li class="leaf menu-mlid-737 collapsed menu-1-collapse"><a href="/music-courses">Music Courses</a></li>
-<li class="leaf menu-mlid-741 collapsed menu-1-collapse"><a href="/music-ensembles">Music Ensembles</a></li>
-<li class="leaf menu-mlid-722 collapsed menu-1-collapse"><a href="/degree-auditions">Degree Auditions</a></li>
-<li class="leaf menu-mlid-740 collapsed menu-1-collapse"><a href="/ensemble-auditions">Ensemble Auditions</a></li>
-<li class="last leaf menu-mlid-746 collapsed menu-1-collapse"><a href="/partnerinternships">Partner/Internships</a></li>
-</ul></li>
-</span><span class="menu_drop_down"><li class="expanded menu-mlid-719 collapsed menu-1-collapse"><a href="/youth-programs">Youth Programs</a><ul class="menu"><li class="first leaf menu-mlid-730 collapsed menu-1-collapse"><a href="/summer-camps-high-school-students">Summer Camps</a></li>
-<li class="leaf menu-mlid-733 collapsed menu-1-collapse"><a href="/high-school-jazz-festival">High School Jazz</a></li>
-<li class="leaf menu-mlid-731 collapsed menu-1-collapse"><a href="/uic-7th-annual-honors-band-festival">Honors Band</a></li>
-<li class="leaf menu-mlid-754 collapsed menu-1-collapse"><a href="/band-orchestra-festival">Band &amp; Orchestra Festival</a></li>
-<li class="leaf menu-mlid-728 collapsed menu-1-collapse"><a href="/august-wilson-monologue-competition">AWMC</a></li>
-<li class="last leaf menu-mlid-729 collapsed menu-1-collapse"><a href="/theatre-group-visits">Theatre Group Visits</a></li>
-</ul></li>
-</span><span class="menu_drop_down fourth"><li class="last expanded menu-mlid-720 collapsed menu-1-collapse"><a href="/current-students" title="">Information For</a><ul class="menu"><li class="first leaf menu-mlid-724 collapsed menu-1-collapse"><a href="/current-students">Current Students</a></li>
-<li class="leaf menu-mlid-732 collapsed menu-1-collapse"><a href="/info-faculty-staff">Faculty/Staff</a></li>
-<li class="leaf menu-mlid-747 collapsed menu-1-collapse"><a href="/alumni">Alumni</a></li>
-<li class="leaf menu-mlid-738 collapsed menu-1-collapse"><a href="/job-opportunities">Job Opportunities</a></li>
-<li class="last leaf menu-mlid-727 collapsed menu-1-collapse"><a href="/financial-aid">Financial Aid</a></li>
-</ul></li>
-</span></ul></div>
-  </div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
 </div>
-
-              </nav>
-            </div>
-
-
-
-
-
-
-        </div>
-      </header>
-    </div>
-
-
-
-
-
-    <div class="l-main-wrapper">
-
-
-      <main id="main" class="main" role="main">
-
-        <a id="main-content"></a>
-
-
-                                                  
-
-                  <div class="main_prefix">
-              <div id="block-event-event-filter" class="block block-event">
-    <h2>Events</h2>
-  
-  <div class="content">
-    <form action="/eventdetails/902/883" method="post" id="event-search-filter-block-form" accept-charset="UTF-8"><div><div id="edit-event-dates" class="form-radios"><div class="form-item form-type-radio form-item-event-dates">
- <input onchange="this.form.submit()" type="radio" id="edit-event-dates-0" name="event_dates" value="0" checked="checked" class="form-radio" />  <label class="option" for="edit-event-dates-0">Current events </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-dates">
- <input onchange="this.form.submit()" type="radio" id="edit-event-dates-1" name="event_dates" value="1" class="form-radio" />  <label class="option" for="edit-event-dates-1">Past events </label>
-
-</div>
-</div><div id="edit-event-type" class="form-radios"><div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-0" name="event_type" value="0" checked="checked" class="form-radio" />  <label class="option" for="edit-event-type-0">Type: Any </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-1" name="event_type" value="1" class="form-radio" />  <label class="option" for="edit-event-type-1">Lectures </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-2" name="event_type" value="2" class="form-radio" />  <label class="option" for="edit-event-type-2">Performance/concerts </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-3" name="event_type" value="3" class="form-radio" />  <label class="option" for="edit-event-type-3">Conferences/symposia </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-4" name="event_type" value="4" class="form-radio" />  <label class="option" for="edit-event-type-4">Auditions/master classes </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-5" name="event_type" value="5" class="form-radio" />  <label class="option" for="edit-event-type-5">Admission events/deadlines </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-6" name="event_type" value="6" class="form-radio" />  <label class="option" for="edit-event-type-6">Academic dates/deadlines </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-7" name="event_type" value="7" class="form-radio" />  <label class="option" for="edit-event-type-7">Alumni events </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-8" name="event_type" value="8" class="form-radio" />  <label class="option" for="edit-event-type-8">Special events </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-type">
- <input onchange="this.form.submit()" type="radio" id="edit-event-type-9" name="event_type" value="9" class="form-radio" />  <label class="option" for="edit-event-type-9">Exhibitions </label>
-
-</div>
-</div><div id="edit-event-program" class="form-radios"><div class="form-item form-type-radio form-item-event-program">
- <input onchange="this.form.submit()" type="radio" id="edit-event-program-0" name="event_program" value="0" checked="checked" class="form-radio" />  <label class="option" for="edit-event-program-0">All </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-program">
- <input onchange="this.form.submit()" type="radio" id="edit-event-program-4" name="event_program" value="4" class="form-radio" />  <label class="option" for="edit-event-program-4">Department of Music </label>
-
-</div>
-<div class="form-item form-type-radio form-item-event-program">
- <input onchange="this.form.submit()" type="radio" id="edit-event-program-3" name="event_program" value="3" class="form-radio" />  <label class="option" for="edit-event-program-3">Department of Theatre </label>
-
-</div>
-</div><input type="submit" id="edit-submit-button" name="op" value="search" class="form-submit" /><input type="hidden" name="form_build_id" value="form-QzQ9pGg2Uvc2VoCnqJE1gsht0pnSoJ2Fga0YzKdNwl0" />
-<input type="hidden" name="form_id" value="event_search_filter_block_form" />
-</div></form>  </div>
-</div>
-          </div>
-        
-        
-
-          <div class="main_content">
-            <h1 id="page-title">
-              Vocal Jazz Ensemble &amp; Jazz Workshop            </h1>
-              
-
-<div class="content-column">
-  <div class="content-box">
-
-    <!-- check to see if there is media    -->
-
-      <!--  endif for  if (!empty($media)):   -->
-
-
-
-    <div class="content-info" id="content-info">
-
-      <div class="details">
-        <div class="details-time-date details-text">Tuesday 5.1.18 7:30 PM</div>
-        <div class ="location details-text"></div>
-      </div>
-
-
-      <div class="description">
-        <p dir="ltr"><span>Recital Hall (L285), 1044 W Harrison St</span></p>
-<p dir="ltr"><span>Hear the virtuosic talent of the Vocal Jazz Ensemble alongside students in UIC&rsquo;s Jazz Workshop in this combined end-of-semester concert.</span></p>
-<p><span>&nbsp;</span></p>
-<p dir="ltr">&nbsp;</p>      </div>
-
-
-    </div>
-  </div><!--end of content box-->
-
-  <div class="info-box">
-    
-  </div>
-
-</div><!--end of content column-->
-
-
-          </div>
-        
-              </main>
-
-    </div>
-
-    <div class="l-footer-wrapper">
-      <footer id="l-footer" class="l-footer" role="contentinfo">
-        <div class="l-inner">
-          <div class="footer-subsection-1 footer-subsection">
-            <div id="l-footer1" class="l-footer1  ">
-
-                <span class="icon-stack slide-hide">
-                    <a class="icon-circle icon"></a>
-                    <a class="icon-ion-social-facebook icon" href="https://www.facebook.com/UICTheatreandMusic"></a>
-                </span>
-
-                <span class="icon-stack slide-hide">
-                    <a class="icon-circle icon"></a>
-                    <a class="icon-ion-social-twitter icon" href="http://twitter.com/uictheatremusic" ></a>
-
-                </span>
-
-              <a class="icon-ion-social-instagram icon slide-hide"  href="http://instagram.com/uictheatremusic/"></a>
-              <a class="icon-ion-social-youtube icon slide-hide" href="http://www.youtube.com/channel/UCwSTTEFgGyahYfpnpzkNFmQ"></a>
-
-
-                <span class="footer-search">
-                  <span class="icon-ion-ios-search-strong icon" id="search-icon" ></span>
-                  <form action="/eventdetails/902/883" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
-      <h2 class="element-invisible">Search form</h2>
-    <div class="form-item form-type-textfield form-item-search-block-form">
-  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
- <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
-</div>
-<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-o8czWvrOzoO7u6iuNL4m9K0nHWF1Ta1ATg2u7pvaqCI" />
-<input type="hidden" name="form_id" value="search_block_form" />
-</div>
-</div></form>                </span>
-
-                <span class="footer-mail">
-                  <span class="icon-mail icon" id="mail-icon"></span>
-                  <form id="mailing-list-form" target="vr_optin_popup" onsubmit="window.open( 'http://www.verticalresponse.com', 'vr_optin_popup', 'scrollbars=yes,width=600,height=450' ); return true;" method="post" action="http://oi.vresp.com?fid=430d8b2cbd">
-                    <label class="element-invisible">Enter your email address to subscribe to our mailing list:</label>  <input type="text" size="15" name="email_address" value="subscribe to our mailing list" id="mailing-list-subscribe"> <br> <input type="submit" value="subscribe" class="element-invisible">
-                  </form>
-                </span>
-
-		<!-- Privacy policy -->
-                <span>
-                    <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy policy</a>
-                </span>	
-
-                              </div>
-          </div>
-
-          <div class="footer-subsection-2 footer-subsection">
-            <div id="l-footer2" class="l-footer2  ">
-              <a class="icon-uicinverse" href="http://uic.edu"></a>
-              <a href="http://cada.uic.edu/">College of Architecture, Design, and the Arts </a>
-                            </div>
-            <div id="l-footer3" class="l-footer3  ">
-              
-                          </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-
-  </div>
-</div>
-</body>
-</html>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

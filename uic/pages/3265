@@ -1,968 +1,1022 @@
+
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-        <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-WXRNQ8');</script> <!-- End Google Tag Manager -->
-    <title>Assign someone to pick up library items for me</title>
-    <link rel="stylesheet" href="/css/gdpr.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/css/main.min.css?version=1.7">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en-US">
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic' rel='stylesheet' type='text/css'>
 
-    <script>
-        document.documentElement.className = "js";
+<!--[if IE 7 ]>    <html class= "ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class= "ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class= "ie9"> <![endif]-->
 
-        // utilities
-        var getQueryString = function ( field, url ) {
-            // hat tip https://goo.gl/Q6Hyyx
-            var href = url ? url : window.location.href;
-            var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
-            var string = reg.exec(href);
-            return string ? string[1] : null;
-        };
-    </script>
-
-
-    <script src="//v2.libanswers.com/load_chat.php?hash=a8f3cdd768831e345ca9d2f796ff5e5d"></script>
-    <script src="https://cdn.cookielaw.org/consent/f5cc0259-ebf9-460e-b628-c1d661e5d3b6.js" type="text/javascript" charset="UTF-8"></script>
-</head>
-<body class="theme--navy">
-    <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXRNQ8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) -->
-    <div class="page l-page ">
-
-        <header role="banner">
-                            <!--[if lte IE 9]>
-<div class="browser-stripe u-dark-region">
-  <div class="l-full">
-      <h2>Your browser is unsupported</h2>
-      <p>We recommend using the latest version of IE11, Edge, Chrome, Firefox or Safari.</p>
-  </div>
-</div>
+<!--[if lt IE 9]>
+   <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+   </script>
 <![endif]-->
-<div class="browser-stripe u-dark-region ie10">
-  <div class="l-full">
-      <h2>This page is taking too long to load.</h2>
-      <p>Try refreshing the page, or you may need to update your browser. We recommend using the latest version of IE11, Edge, Chrome, Firefox or Safari.</p>
-  </div>
-</div>
-                
-<div class="l-header">
+<head>
 
-    <div class="eyebrow-mobile-wrapper js-eyebrow-mobile">
-  <div class="eyebrow-mobile">
-    <a href="http://uic.edu" class="icon-uic-logo eyebrow-logo">UIC.edu Home</a>
-    <div class="site-title-eyebrow-mobile">
-      <a href="/">University Library</a>
-    </div>
-    <button class="search-toggle-mobile js-search-toggle-mobile">
-      <span class="icon-search-mobile">
-      Toggle Search
-      </span>
-    </button>
-    <button class="nav-header-toggle js-nav-header-toggle">
-      <span class="icon-menu">
-      Toggle Menu
-      </span>
-    </button>
-  </div>
-    <div class="search-input-container-mobile">
-      <div class="search-title">
-        Search
-        <a class="search-close search-toggle-mobile">
-<svg aria-label="Close search box" width="100%" height="100%" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"><g id="icon-close"><path id="Line" d="M2,2l18,18" style="fill:none;stroke-width:2px;stroke:#fff;"/><path id="Line1" d="M20,2l-18,18" style="fill:none;stroke-width:2px;stroke:#fff;"/></g></svg>
-        </a>
-    </div>
-      <form method="get" action="/search" role="search" aria-label="Search this site on your mobile device">
-        <input type="text" name="q" class="search-input-mobile" placeholder="Search..." tabindex="-1" aria-label="Search this site on your mobile device" disabled="">
-        <input type="submit" class="submit-button" name="search" value="Submit">
-      </form>
-    </div>
-</div>
+<title>UIC Center for Global Health &raquo; Global Health in Hematology &#038; Oncology</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <a href="http://uic.edu" class="icon-uic-logo header-logo">UIC.edu Home</a>
+<!-- *************************************************************************
+**************************   STYLE SHEET   *******************************
+************************************************************************** -->
+<link href="https://globalhealth.uic.edu/wp-content/themes/mammoth-wp-child/style.css" rel="stylesheet" type="text/css" media="screen" />
 
-    <div class="l-full">
-        <div class="site-title-main -large">
-            <a href="/">University Library</a>
-        </div>
-        <nav class="header-menus js-header-menus" role="navigation">
 
-  <div id="skip" class="skip-menu assistive-text">
-  <p>
-    Skip to
-    <a class="_main" href="#main">the content of this page</a>,
-    <a class="_primary-menu" href="#menu-main">the main menu</a>,
-        <a class="_search" href="#search">the site search form</a>
-    or go to the
-    <a class="_home" href="/">the site home page</a>.
-  </p>
-</div>
+<link rel="pingback" href="https://globalhealth.uic.edu/xmlrpc.php" />
 
-  <div class="site-title-mobile-menu">
-    <a href="/">University Library</a>
-  </div>
+ <!-- *************************************************************************
+*****************                FAVICON               ********************
+************************************************************************** -->
 
-  <h2 class="assistive-text">Main Menu</h2>
-  <ul id="menu-main" class="menu menu-main" aria-label="Main menu">
-	<li class="_item current-menu-item current-page-ancestor">
-		<a href="/help" target="_self">Help</a>
-    	</li>
-	<li class="_item menu-item-has-children">
-		<a href="/collections" target="_self">Collections</a>
-          <button role="button" class="expand-item js-expand-item">Expand Collections menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/collections/articles" target="_self">Articles</a>
-    </li>
-    <li class="_item ">
-    <a href="/collections/books-media" target="_self">Books & Media</a>
-    </li>
-    <li class="_item menu-item-has-children">
-    <a href="/collections/digital-images" target="_self">Digital Images</a>
-        <button role="button" class="expand-item js-expand-item">Expand Digital Images menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/collections/digital-images/uic-image-collections" target="_self">UIC Image Collections</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item ">
-    <a href="/special-collections-university-archives" target="_self">Special Collections & University Archives</a>
-    </li>
-    <li class="_item ">
-    <a href="/collections/maps-gis" target="_self">Maps & GIS</a>
-    </li>
-    <li class="_item ">
-    <a href="/collections/uic-publications" target="_self">Theses, Dissertations & UIC Publications</a>
-    </li>
-  </ul>
-	</li>
-	<li class="_item menu-item-has-children">
-		<a href="/libraries" target="_self">Libraries</a>
-          <button role="button" class="expand-item js-expand-item">Expand Libraries menu</button>
-  <ul class="_child">
-    <li class="_item menu-item-has-children">
-    <a href="/libraries/daley" target="_self">Chicago-Daley</a>
-        <button role="button" class="expand-item js-expand-item">Expand Chicago-Daley menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/libraries/daley/hours" target="_self">Hours & Location</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item menu-item-has-children">
-    <a href="/libraries/lhs-chicago" target="_self">Chicago-Health Sciences</a>
-        <button role="button" class="expand-item js-expand-item">Expand Chicago-Health Sciences menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/libraries/lhs-chicago/hours" target="_self">Hours & Location</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item menu-item-has-children">
-    <a href="/libraries/lhs-peoria" target="_self">Peoria-Health Sciences</a>
-        <button role="button" class="expand-item js-expand-item">Expand Peoria-Health Sciences menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/libraries/lhs-peoria/hours" target="_self">Hours & Location</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item menu-item-has-children">
-    <a href="/libraries/lhs-rockford" target="_self">Rockford-Health Sciences</a>
-        <button role="button" class="expand-item js-expand-item">Expand Rockford-Health Sciences menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/libraries/lhs-rockford/hours" target="_self">Hours & Location</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item menu-item-has-children">
-    <a href="/libraries/lhs-urbana" target="_self">Urbana-Health Sciences</a>
-        <button role="button" class="expand-item js-expand-item">Expand Urbana-Health Sciences menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/libraries/lhs-urbana/hours" target="_self">Hours & Location</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item ">
-    <a href="http://library.uic.edu/special-collections-university-archives" target="_self">Special Collections & University Archives</a>
-    </li>
-  </ul>
-	</li>
-	<li class="_item menu-item-has-children">
-		<a href="/about" target="_self">About</a>
-          <button role="button" class="expand-item js-expand-item">Expand About menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/about/events" target="_self">Events</a>
-    </li>
-    <li class="_item ">
-    <a href="/about/news" target="_self">News</a>
-    </li>
-    <li class="_item ">
-    <a href="/about/employment" target="_self">Jobs & Careers</a>
-    </li>
-    <li class="_item menu-item-has-children">
-    <a href="/about/directory" target="_self">People</a>
-        <button role="button" class="expand-item js-expand-item">Expand People menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/about/directory/liaisons" target="_self">Subject Librarians</a>
-    </li>
-    <li class="_item ">
-    <a href="/about/directory/faculty" target="_self">Faculty</a>
-    </li>
-    <li class="_item ">
-    <a href="/about/directory/staff" target="_self">Staff</a>
-    </li>
-    <li class="_item ">
-    <a href="/about/library-departments" target="_self">Library Departments</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item menu-item-has-children">
-    <a href="/about/faculty" target="_self">Faculty</a>
-        <button role="button" class="expand-item js-expand-item">Expand Faculty menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/about/faculty/projects" target="_self">Projects and Initiatives</a>
-    </li>
-    <li class="_item ">
-    <a href="/about/faculty/teaching" target="_self">Teaching and Learning</a>
-    </li>
-  </ul>
-  </li>
-    <li class="_item ">
-    <a href="/about/policies" target="_self">Library Policies</a>
-    </li>
-  </ul>
-	</li>
-	<li class="_item menu-item-has-children">
-		<a href="/special-collections-university-archives" target="_self">Special Collections & University Archives</a>
-          <button role="button" class="expand-item js-expand-item">Expand Special Collections & University Archives menu</button>
-  <ul class="_child">
-    <li class="_item ">
-    <a href="/about-special-collections-university-archives" target="_self">About Special Collections & University Archives</a>
-    </li>
-    <li class="_item ">
-    <a href="/finding-aids" target="_self">Finding Aids</a>
-    </li>
-    <li class="_item ">
-    <a href="/rare-books" target="_self">Rare Books</a>
-    </li>
-    <li class="_item ">
-    <a href="http://library.uic.edu/collections/maps-gis" target="_self">Maps & GIS</a>
-    </li>
-    <li class="_item ">
-    <a href="http://library.uic.edu/collections/digital-images" target="_self">Digital Images</a>
-    </li>
-    <li class="_item ">
-    <a href="http://library.uic.edu/help/search?q=&t%5B%5D=29" target="_self">Using Special Collections & University Archives</a>
-    </li>
-    <li class="_item ">
-    <a href="http://researchguides.uic.edu/subject/special-collections-archives" target="_self">Special Collections Research Guides</a>
-    </li>
-  </ul>
-	</li>
+<link rel="shortcut icon" href="http://globalhealth.uic.edu/wp-content/uploads/2013/10/favicon.ico" />
+
+  <!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/globalhealth.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=1b3d9be67641b8bac48420fd847b7e92"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='zilla-shortcodes-css'  href='https://globalhealth.uic.edu/wp-content/plugins/zilla-shortcodes/shortcodes.css?ver=1b3d9be67641b8bac48420fd847b7e92' type='text/css' media='all' />
+<link rel='stylesheet' id='events-manager-css'  href='https://globalhealth.uic.edu/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.92' type='text/css' media='all' />
+<link rel='stylesheet' id='collapseomatic-css-css'  href='https://globalhealth.uic.edu/wp-content/plugins/jquery-collapse-o-matic/light_style.css?ver=1.6' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css'  href='https://globalhealth.uic.edu/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox.min.css?ver=1.3.14' type='text/css' media='screen' />
+<link rel='stylesheet' id='mediaelementjs-styles-css'  href='http://globalhealth.uic.edu/wp-content/plugins/media-element-html5-video-and-audio-player/mediaelement/v4/mediaelementplayer.min.css?ver=1b3d9be67641b8bac48420fd847b7e92' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelementjs-styles-legacy-css'  href='http://globalhealth.uic.edu/wp-content/plugins/media-element-html5-video-and-audio-player/mediaelement/v4/mediaelementplayer-legacy.min.css?ver=1b3d9be67641b8bac48420fd847b7e92' type='text/css' media='all' />
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/accordion.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/plugins/zilla-shortcodes/js/zilla-shortcodes-lib.js?ver=1b3d9be67641b8bac48420fd847b7e92'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/wp-a11y.min.js?ver=1b3d9be67641b8bac48420fd847b7e92'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/globalhealth.uic.edu\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/globalhealth.uic.edu\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/globalhealth.uic.edu\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.92'></script>
+<script type='text/javascript' src='http://globalhealth.uic.edu/wp-content/plugins/media-element-html5-video-and-audio-player/mediaelement/v4/mediaelement-and-player.min.js?ver=4.2.8'></script>
+<link rel='https://api.w.org/' href='https://globalhealth.uic.edu/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://globalhealth.uic.edu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://globalhealth.uic.edu/wp-includes/wlwmanifest.xml" /> 
+
+<link rel="canonical" href="https://globalhealth.uic.edu/about-us/strategic-initiatives/global-health-in-hematology-oncology" />
+<link rel='shortlink' href='https://globalhealth.uic.edu/?p=1801' />
+<link rel="alternate" type="application/json+oembed" href="https://globalhealth.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fglobalhealth.uic.edu%2Fabout-us%2Fstrategic-initiatives%2Fglobal-health-in-hematology-oncology" />
+<link rel="alternate" type="text/xml+oembed" href="https://globalhealth.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fglobalhealth.uic.edu%2Fabout-us%2Fstrategic-initiatives%2Fglobal-health-in-hematology-oncology&#038;format=xml" />
+<link rel="alternate" type="application/rss+xml" title="UIC Center for Global Health GeoRSS-Feed" href="https://globalhealth.uic.edu/wp-content/plugins/leaflet-maps-marker/leaflet-georss.php?layer=all" />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//globalhealth.uic.edu/?wordfence_lh=1&hid=96666D4E4F543F364CE30D8309326AE4');
+</script>
+<!-- *************************************************************************
+*****************          Theme Option Colors         ********************
+************************************************************************** -->
+
+
+
+
+<style type="text/css">
+	
+#outer_footer_wrapper {
+	background-image:url('');
+	background-repeat:;
+	background-color:#b4484a;
+	}
+	
+.copyright_message, .copyright_message p, .copyright_message a, .copyright_message a:hover {
+	color:#ffffff;
+	}
+	
+ul.icons li a, ul.icons li a:hover, .social .one_fourth_first, .social .one_fourth, .social .one_fourth p, .social .one_fourth a, .social .one_fourth a:hover, .social .one_fourth li, .social .one_fourth li a, .social .one_fourth li a:hover, .social .one_fourth_first p, .social .one_fourth_first a, .social .one_fourth_first a:hover, .social .one_fourth_first li, .social .one_fourth_first li a, .social .one_fourth_first li a:hover, .social .one_fourth_first h1, .social .one_fourth_first h2, .social .one_fourth_first h3, .social .one_fourth_first h4, .social .one_fourth_first h5, .social .one_fourth_first h6, .social .one_fourth_first h1 a, .social .one_fourth_first h2 a, .social .one_fourth_first h3 a, .social .one_fourth_first h4 a, .social .one_fourth_first h5 a, .social .one_fourth_first h6 a, .social .one_fourth_first h1 a:hover, .social .one_fourth_first h2 a:hover, .social .one_fourth_first h3 a:hover, .social .one_fourth_first h4 a:hover, .social .one_fourth_first h5 a:hover, .social .one_fourth_first h6 a:hover, .social .one_fourth h1, .social .one_fourth h2, .social .one_fourth h3, .social .one_fourth h4, .social .one_fourth h5, .social .one_fourth h6, .social .one_fourth h1 a, .social .one_fourth h2 a, .social .one_fourth h3 a, .social .one_fourth h4 a, .social .one_fourth h5 a, .social .one_fourth h6 a, .social .one_fourth h1 a:hover, .social .one_fourth h2 a:hover, .social .one_fourth h3 a:hover, .social .one_fourth h4 a:hover, .social .one_fourth h5 a:hover, .social .one_fourth h6 a:hover{
+	color:#ffffff;
+	}
+	
+#bottom_nav_wrap {
+	background-image:url('');
+	background-repeat:;
+	background-color:#6ba3b8;
+	}
+	
+ul.icons li:hover {
+	border:4px solid #ffffff;
+	}
+	
+.social input[type="text"], .social textarea {
+	background-color:#7fadb8;
+	color:#575757;
+	border:1px solid #ffffff;
+	}
+
+.social input[type="text"]:focus, .social textarea:focus {
+	background-color:#ffffff;
+	color:#575757;
+	border:1px solid #7fadb8;
+	}
+	
+.social p, .textwidget div.wpcf7-validation-errors, .textwidget span.wpcf7-not-valid-tip, 
+.textwidget div.wpcf7-mail-sent-ok, .social h1 {
+	color:#ffffff !important;
+	border:none !important;
+	}
+	
+div.wpcf7-validation-errors, span.wpcf7-not-valid-tip, div.wpcf7-mail-sent-ok, .wpcf7-form p {
+	color:#000000 !important;
+	border:none !important;
+	}
+
+.bdywrapper {
+	background-image:url('');
+	background-repeat:;
+	background-color:;
+	}
+	
+#slider_wrapper, .intro_text_wrapper {
+	background-image:url('');
+	background-repeat:;
+	background-color:#f0f4f7;
+	}
+	
+#outer_wrapper, .sf-menu li li {
+	background-image:url('');
+	background-repeat:;
+	background-color:#f0f4f7;
+	}
+	
+ul.sf-menu li ul.sub-menu li.current_page_item a, ul.sf-menu li.current_page_item a, ul.sf-menu li ul.sub-menu li.current-menu-item a, ul.sf-menu li.current-menu-item a, .sf-menu li a:hover, ul.sf-menu li ul.sub-menu li a:hover {
+	color:#ba3029;
+	}
+	
+.sf-menu li a, ul.sf-menu li ul.sub-menu li a {
+	color:#666666;
+	}
+	
+.orange_background {
+	background-color:#83b2bd;
+	}
+	
+.orange_background p {
+	color:#ffffff !important;
+	}
+	
+.orange_background a, .orange_background a:hover {
+	color:#ffffff;
+	text-decoration:underline;
+	}
+	
+.intro_text p {
+	color:#575757;
+	}
+	
+h1.orange {
+	color:#ffffff;
+	background-color:#b4484a;
+	}
+	
+h1.homeslide {
+	color:#ffffff;
+	background-color:#b4484a;
+	} 
+	
+body, p, ul li, ol li, .one_half, .one_half_first, .one_third, .one_third_first, .two_third, .two_third_first, .one_fourth, .one_fourth_first, .three_fourth, .three_fourth_first, .one_fifth, .one_fifth_first, .two_fifth, .two_fifth_first, .three_fifth, .three_fifth_first, .four_fifth, .four_fifth_first, .one_sixth, .one_sixth_first, .event_content_last, .comment-content, .comment-meta, .commentlist p, .meta, .metacomments, label, .collapseomatic_content  {
+	color:#000000;
+	}
+	
+a, ul li a, ol li a, .one_half a, .one_half_first a, .one_third a, .one_third_first a, .two_third a, .two_third_first a, .one_fourth a, .one_fourth_first a, .three_fourth a, .three_fourth_first a, .one_fifth a, .one_fifth_first a, .two_fifth a, .two_fifth_first a, .three_fifth a, .three_fifth_first a, .four_fifth a, .four_fifth_first a, .one_sixth a, .one_sixth_first a, blockquote a, blockquote p a, .quote a, .quote p a, .pullquoteleft a, .pullquoteright a, .intro a, .intro p a, .metacomments a {
+	color:#4e8ca3;
+	}
+	
+.intro, .intro p {
+	color:#474747;
+	}
+	
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .blog_wrapper h1 a, .bdywrapper h2 a, .bdywrapper h3 a, .bdywrapper h4 a, .bdywrapper h5 a, .bdywrapper h6 a, .comment-author, .comment_title, blockquote, blockquote p, .quote, .quote p, .pullquoteleft, .pullquoteright {
+	color:#474747;
+	}
+	
+a:hover, ul li a:hover, ol li a:hover, .one_half a:hover, .one_half_first a:hover, .one_third a:hover, .one_third_first a:hover, .two_third a:hover, .two_third_first a:hover, .one_fourth a:hover, .one_fourth_first a:hover, .three_fourth a:hover, .three_fourth_first a:hover, .one_fifth a:hover, .one_fifth_first a:hover, .two_fifth a:hover, .two_fifth_first a:hover, .three_fifth a:hover, .three_fifth_first a:hover, .four_fifth a:hover, .four_fifth_first a:hover, .one_sixth a:hover, .one_sixth_first a:hover, blockquote a:hover, blockquote p a:hover, .quote a:hover, .quote p a:hover, .pullquoteleft a:hover, .pullquoteright a:hover, .comments:after, .time:after, .venue:after, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .intro a:hover, .intro p a:hover, .metacomments a:hover, .blog_wrapper h1 a:hover, .blog_wrapper h2 a:hover, .blog_wrapper h3 a:hover, .blog_wrapper h4 a:hover, .blog_wrapper h5 a:hover, .blog_wrapper h6 a:hover {
+	color:#b4484a;
+	}
+	
+hr, .hrr, .commentlist li, .commentlist li:first-child, ul.sf-menu li ul.sub-menu li a, #homepage_slider, .intro_text_wrapper {
+	border-bottom: 1px solid #e1e1e1;
+	}
+	
+.pullquoteleft, .pullquoteright, .navigation, blockquote, .quote {
+	border-bottom: 1px solid #e1e1e1;
+	border-top: 1px solid #e1e1e1;
+	}
+	
+.commentlist ul.children li {
+	border-top: 1px solid #e1e1e1;
+	}
+	
+.collapseomatic {
+	background-color:#b4484a;
+	color:#ffffff;
+	}
+	
+.featured_text_link, .featured_text_quote {
+	background-color:;
+	}
+
+.featured_text_quote_title {
+	background-color:;
+	}
+	
+input[type="text"], textarea {
+	background-color:#f5f8fa;
+	color:#888888;
+	border:1px solid #e1e1e1;
+	}
+	
+input[type="text"]:focus, textarea:focus {
+	background-color:#ffffff;
+	color:#888888;
+	border:1px solid #c9c9c9;
+	}
+	
+ul.icons li {
+	background-color:#9ec1c9;
+	}
+	
+.portfolio_content_wrapper {
+	background-color:#ffffff;
+	}
+	
+input[type=submit], .button a, .button_reverse a:hover {
+	background-color:#b4484a;
+	color:#ffffff;
+	}
+
+input[type=submit]:hover, .button_reverse a, .button a:hover {
+	background-color:#88bbc8;
+	color:#ffffff;
+	}
+	
+.social .wpcf7-form p {
+	color:#ffffff !important;
+	}
+
+
+</style>
+
+<!-- *************************************************************************
+*****************              CUSTOM CSS              ********************
+************************************************************************** -->
+
+
+<style type="text/css">
+    /*/////  HEADER ////*/
+
+.sf-menu li ul {margin-left: 2px;}
+
+#nav_wrapper {min-height: 115px;}
+
+
+/*/////  SLIDER  ////*/
+
+.orange_background a {color: #ffffff; text-decoration: none; border-bottom: 1px solid #adcdd7;}
+
+.orange_background p {font-weight: 400;}
+
+.orange_background a:hover {text-decoration: none; border-bottom: 1px solid #fff;}
+
+
+/*/////  BODY  ////*/
+p, ul li, ol li, .one_half, .one_half_first, .two_third, .two_third_first, .one_fourth, .one_fourth_first, .three_fourth, .three_fourth_first, .one_fifth, .one_fifth_first, .two_fifth, .two_fifth_first, .three_fifth, .three_fifth_first, .four_fifth, .four_fifth_first, .one_sixth, .one_sixth_first, .event_content_last, .comment-content, .comment-meta, .commentlist p, .meta, .metacomments, label, .collapseomatic_content, .featured_text_full {color: #4a4a4a; font-weight: 400; line-height: 1.7em;}
+
+.intro_text_wrapper {padding: 60px 0 60px;}
+p {clear: none;}
+
+h2 {font-weight: 300;}
+
+h3, h3 a {font-size: 18px; text-transform: initial; font-weight: 600; letter-spacing: 0px;}
+
+h3 a, .bdywrapper h3 a {color: #4e8ca3;}
+
+h4 {font-size: 15px; line-height: 1.25em; margin: 25px 0 0;}
+
+ul li {list-style: square outside none; padding-bottom: 5px;}
+
+ol li {list-style: decimal outside; padding-bottom: 15px;}
+
+.zilla-one-half {padding-top: 15px;}
+
+img.alignleft, img.alignright {margin-bottom: 0px;}
+
+.intro {font-size: 18px; line-height: 1.75em; font-weight: 300;}
+
+blockquote p {margin-bottom: 10px;}
+
+blockquote {margin-bottom: 15px;}
+
+.featured_text_full ul li, .featured_text_full ol li  {margin-left: 19px;}
+
+#main {padding-top: 25px;}
+
+#breadcrumbs {color: #777; font-weight: 400; font-size: 13px; padding-bottom: 15px;}
+
+.blog_wrapper img {border: 1px solid #ccc;}
+
+
+/*/////  SUBNAV  ////*/
+
+#wrapper_content_left, #right_content { background: #f0f4f7; padding: 0 0 10px 20px;}
+
+#rightside_content, #right_content { margin-top: 15px;}
+
+#right_content {padding: 5px 0 20px 30px;}
+
+ul.subnav li.children {padding: 0 10px 0 1.4em; }
+
+ul.subnav li.level-1, ul.subnav, li.level-2 {list-style: square outside none; padding-bottom: 10px;}
+
+.root-parent {font-weight: 800; padding: 10px 0 15px;}
+
+
+
+/*/////   GRAVITY FORM    ////*/
+
+.gform_wrapper .ginput_complex label {margin: -8px 0 12px 0;}
+
+
+
+
+/*/////   FOOTER    ////*/
+
+.social .one_fourth ul li a, .social a, .social .one_fourth_first a {text-decoration: none; border-bottom: 1px solid #8dc5d8; }
+
+.social .one_fourth_first a:hover, .social .one_fourth ul li a:hover {text-decoration: none; border-bottom: 1px solid #fff; }
+
+.social h5 {margin-bottom: 10px;}
+
+
+/*/////   MEDIA QUERIES    ////*/
+
+media="screen"
+@media only screen and (max-width: 768px) {
+
+#nav_wrapper, #main, .social, #footer_wrapper, .copyright_message, .intro_text, #main_fullwidth, .slider_content_wrapper, .flex-control-nav, #wrapper_content_right, #wrapper_content_left, #left_content_wrapper, #right_content_wrapper {width: 93%;}
+
+}	
+	
+</style>
+
+</head>
+
+
+
+
+<body class="page-template-default page page-id-1801 page-child parent-pageid-2162">
+
+<!-- Start of outer wrapper -->
+<header id="outer_wrapper">
+
+<!-- Start of nav wrapper -->
+<div id="nav_wrapper">
+
+<!-- Start of top menu -->
+<nav id="topmenu">  
+  <div class="menu-eyebrow-container"><ul id="menu-eyebrow" class="sf-menu"><li id="menu-item-1706" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1706"><a href="https://globalhealth.uic.edu/category/news">News</a></li>
+<li id="menu-item-450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450"><a href="https://globalhealth.uic.edu/formspolicies">Forms/Policies</a></li>
+<li id="menu-item-449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-449"><a href="https://globalhealth.uic.edu/donations">Make a Gift</a></li>
+<li id="menu-item-452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452"><a href="https://globalhealth.uic.edu/resources">Resources</a></li>
+<li id="menu-item-596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-596"><a href="https://globalhealth.uic.edu/about-us/contact-us">Contact Us</a></li>
+</ul></div><div class="sf-menu"><ul>
+<li class="page_item page-item-18 page_item_has_children current_page_ancestor"><a href="https://globalhealth.uic.edu/about-us">About Us</a>
+<ul class='children'>
+	<li class="page_item page-item-382"><a href="https://globalhealth.uic.edu/about-us/contact-us">Contact Us</a></li>
+	<li class="page_item page-item-380"><a href="https://globalhealth.uic.edu/about-us/message-from-the-director">Message from the Director</a></li>
+	<li class="page_item page-item-142"><a href="https://globalhealth.uic.edu/about-us/newsletters">Newsletter Archive</a></li>
+	<li class="page_item page-item-3473"><a href="https://globalhealth.uic.edu/about-us/newsletters-2">Newsletters</a></li>
+	<li class="page_item page-item-20 page_item_has_children"><a href="https://globalhealth.uic.edu/about-us/who-we-are">Our People</a>
+	<ul class='children'>
+		<li class="page_item page-item-78"><a href="https://globalhealth.uic.edu/about-us/who-we-are/andrew-dykens">Andrew Dykens</a></li>
+		<li class="page_item page-item-677"><a href="https://globalhealth.uic.edu/about-us/who-we-are/bellur-s-prabhakar">Bellur S. Prabhakar</a></li>
+		<li class="page_item page-item-700"><a href="https://globalhealth.uic.edu/about-us/who-we-are/damiano-rondelli-3">Damiano Rondelli</a></li>
+		<li class="page_item page-item-72"><a href="https://globalhealth.uic.edu/about-us/who-we-are/dan-hryhorczuk">Dan Hryhorczuk</a></li>
+		<li class="page_item page-item-2596"><a href="https://globalhealth.uic.edu/about-us/who-we-are/gelila-goba">Gelila Goba</a></li>
+		<li class="page_item page-item-75"><a href="https://globalhealth.uic.edu/about-us/who-we-are/janet-lin">Janet Lin</a></li>
+		<li class="page_item page-item-1494"><a href="https://globalhealth.uic.edu/about-us/who-we-are/jeanne-burian">Jeanne Burian</a></li>
+		<li class="page_item page-item-2508"><a href="https://globalhealth.uic.edu/about-us/who-we-are/maarten-bosland">Maarten Bosland</a></li>
+		<li class="page_item page-item-68"><a href="https://globalhealth.uic.edu/about-us/who-we-are/marcia-edison">Marcia Edison</a></li>
+		<li class="page_item page-item-2591"><a href="https://globalhealth.uic.edu/about-us/who-we-are/maximo-brito">Maximo Brito</a></li>
+		<li class="page_item page-item-2600"><a href="https://globalhealth.uic.edu/about-us/who-we-are/r-v-paul-chan">R. V. Paul Chan</a></li>
+		<li class="page_item page-item-49"><a href="https://globalhealth.uic.edu/about-us/who-we-are/rhea-begeman">Rhea Begeman</a></li>
+		<li class="page_item page-item-53"><a href="https://globalhealth.uic.edu/about-us/who-we-are/stacey-chamberlain">Stacey Chamberlain</a></li>
+		<li class="page_item page-item-100"><a href="https://globalhealth.uic.edu/about-us/who-we-are/stevan-weine">Stevan Weine</a></li>
+		<li class="page_item page-item-104"><a href="https://globalhealth.uic.edu/about-us/who-we-are/tracy-irwin">Tracy Irwin</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-2162 page_item_has_children current_page_ancestor current_page_parent"><a href="https://globalhealth.uic.edu/about-us/strategic-initiatives">Strategic Initiatives</a>
+	<ul class='children'>
+		<li class="page_item page-item-2166"><a href="https://globalhealth.uic.edu/about-us/strategic-initiatives/uic-global-health-and-service">Global Health and Service</a></li>
+		<li class="page_item page-item-1801 current_page_item"><a href="https://globalhealth.uic.edu/about-us/strategic-initiatives/global-health-in-hematology-oncology">Global Health in Hematology &#038; Oncology</a></li>
+		<li class="page_item page-item-2172"><a href="https://globalhealth.uic.edu/about-us/strategic-initiatives/postgraduate-global-health-education">Postgraduate Global Health Education</a></li>
+	</ul>
+</li>
 </ul>
-
-  <div class="l-eyebrow">
-
-    <h2 class="assistive-text">Eyebrow menu</h2>
-    <ul id="menu-eyebrow" class="menu menu-eyebrow" aria-label="Eyebrow menu">
-	<li class="_item ">
-		<a href="/contact" target="_self">Contact Us</a>
-    	</li>
-	<li class="_item ">
-		<a href="/accounts" target="_self">My Accounts</a>
-    	</li>
-	<li class="_item ">
-		<a href="/donate" target="_self">Give to the Library</a>
-    	</li>
+</li>
+<li class="page_item page-item-1726"><a href="https://globalhealth.uic.edu/add-a-project">Add a Project</a></li>
+<li class="page_item page-item-711"><a href="https://globalhealth.uic.edu/affiliationspartners">Affiliations/Partners</a></li>
+<li class="page_item page-item-358"><a href="https://globalhealth.uic.edu/all-events">All Events</a></li>
+<li class="page_item page-item-901"><a href="https://globalhealth.uic.edu/dharmapuri-vidyasagar-2">Dharmapuri Vidyasagar</a></li>
+<li class="page_item page-item-384 page_item_has_children"><a href="https://globalhealth.uic.edu/education">Education</a>
+<ul class='children'>
+	<li class="page_item page-item-1521"><a href="https://globalhealth.uic.edu/education/fellowship-opportunities">Fellowship Opportunities</a></li>
+	<li class="page_item page-item-386 page_item_has_children"><a href="https://globalhealth.uic.edu/education/gmed-program">GLOBAL MEDICINE (GMED) Program</a>
+	<ul class='children'>
+		<li class="page_item page-item-388 page_item_has_children"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes">Current GMED Classes</a>
+		<ul class='children'>
+			<li class="page_item page-item-2637"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/gmed-photos">GMED Student Photo Gallery</a></li>
+			<li class="page_item page-item-3181"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/m1-class-of-2021">M1 Class of 2021</a></li>
+			<li class="page_item page-item-2479"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/m1-class-2">M3 Class of 2019</a></li>
+			<li class="page_item page-item-2104"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/gmed-m1-class">M4 Class of 2018</a></li>
+		</ul>
+</li>
+		<li class="page_item page-item-2930 page_item_has_children"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-alumni">GMED Alumni</a>
+		<ul class='children'>
+			<li class="page_item page-item-3193"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-alumni/gmed-class-of-2016">GMED Class of 2016</a></li>
+		</ul>
+</li>
+		<li class="page_item page-item-393"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-application">GMED Application</a></li>
+		<li class="page_item page-item-654"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-curriculum">GMED Curriculum</a></li>
+		<li class="page_item page-item-2534"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-faculty">GMED Faculty</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-1871"><a href="https://globalhealth.uic.edu/education/medical-student-information">Medical Student Information</a></li>
+	<li class="page_item page-item-913"><a href="https://globalhealth.uic.edu/education/observerships">Observerships</a></li>
+	<li class="page_item page-item-2055 page_item_has_children"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht">RESIDENCY &#8211; GLOBAL COMMUNITY HEALTH TRACK (GCHT)</a>
+	<ul class='children'>
+		<li class="page_item page-item-2073"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht/cgh-gcht-curriculum">CGH GCHT CURRICULUM</a></li>
+		<li class="page_item page-item-2090"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht/contact-us">GCHT &#8211; CONTACT US</a></li>
+		<li class="page_item page-item-2268"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht/2268-2">GCHT Journal Club and Didactics Calendar</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-407 page_item_has_children"><a href="https://globalhealth.uic.edu/education/scholarships-awards">Scholarships &#038; Awards</a>
+	<ul class='children'>
+		<li class="page_item page-item-859 page_item_has_children"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care">Erickson Explorers Award for Humanitarian Care</a>
+		<ul class='children'>
+			<li class="page_item page-item-876"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2012-2">2012 Awards</a></li>
+			<li class="page_item page-item-877"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2013-2">2013 Awards</a></li>
+			<li class="page_item page-item-2446"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2015-awards">2015 Awards</a></li>
+			<li class="page_item page-item-3072"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2016-awards">2016 Awards</a></li>
+			<li class="page_item page-item-3397"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2017-awards">2017 Awards</a></li>
+		</ul>
+</li>
+		<li class="page_item page-item-860"><a href="https://globalhealth.uic.edu/education/scholarships-awards/warren-g-lavey-and-dr-holly-a-rosencranz-fund">Warren G. Lavey and Dr. Holly A. Rosencranz Fund</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-403"><a href="https://globalhealth.uic.edu/education/travel-information-waiver-forms">Travel Information and Waiver Forms</a></li>
 </ul>
-
-    <h2 class="assistive-text">UIC menu</h2>
-    <ul class="menu-uic">
-  <li class="_item">
-    <a href="http://uic.edu">UIC.edu</a>
-  </li>
-  <li class="_item">
-    <a href="http://maps.uic.edu/">Campus Map</a>
-  </li>
-  <li class="_item">
-    <a href="http://today.uic.edu/">UIC Today</a>
-  </li>
+</li>
+<li class="page_item page-item-16"><a href="https://globalhealth.uic.edu/events">Events</a></li>
+<li class="page_item page-item-445"><a href="https://globalhealth.uic.edu/formspolicies">Forms/Policies</a></li>
+<li class="page_item page-item-127"><a href="https://globalhealth.uic.edu/">Home</a></li>
+<li class="page_item page-item-2950"><a href="https://globalhealth.uic.edu/m1-class">M2 Class of 2020</a></li>
+<li class="page_item page-item-447"><a href="https://globalhealth.uic.edu/donations">Make a Gift</a></li>
+<li class="page_item page-item-443"><a href="https://globalhealth.uic.edu/news">News</a></li>
+<li class="page_item page-item-3431 page_item_has_children"><a href="https://globalhealth.uic.edu/our-faculty-affiliates">Our Faculty Affiliates</a>
+<ul class='children'>
+	<li class="page_item page-item-3277"><a href="https://globalhealth.uic.edu/our-faculty-affiliates/faculty-affiliates">Faculty Affiliates Info and Application</a></li>
 </ul>
-
-    <button id="header-search" class="search-toggle">
-      <span class="icon-search">
-      Toggle Search
-      </span>
-    </button>
-
-    <div class="search-input-container">
-      <form method="get" action="/search" role="search" aria-label="Search this site">
-        <input type="text" name="q" class="search-input" placeholder="Search..." tabindex="-1" aria-label="Search" disabled="">
-        <input type="submit" class="submit-button" name="search" value="Submit">
-      </form>
-    </div>
-
-  </div>
-
-
+</li>
+<li class="page_item page-item-1621"><a href="https://globalhealth.uic.edu/past-events">Past Events</a></li>
+<li class="page_item page-item-409 page_item_has_children"><a href="https://globalhealth.uic.edu/research">Research</a>
+<ul class='children'>
+	<li class="page_item page-item-2388"><a href="https://globalhealth.uic.edu/research/cdc-global-health-research-network">CDC Global Health Research Network</a></li>
+	<li class="page_item page-item-415 page_item_has_children"><a href="https://globalhealth.uic.edu/research/funding">Funding Opportunities</a>
+	<ul class='children'>
+		<li class="page_item page-item-419"><a href="https://globalhealth.uic.edu/research/funding/seed-grants">Seed Grants</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-413 page_item_has_children"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects">Ongoing Research Projects</a>
+	<ul class='children'>
+		<li class="page_item page-item-799"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/dioxin-and-t1418-translocations">Dioxin and t(14;18) translocations</a></li>
+		<li class="page_item page-item-795"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/family-and-children-of-ukraine">Family and Children of Ukraine</a></li>
+		<li class="page_item page-item-797"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/geohub">GEOHub</a></li>
+		<li class="page_item page-item-793"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/lead-exposure-and-school-performance">Lead Exposure and School Performance</a></li>
+	</ul>
+</li>
+	<li class="page_item page-item-411"><a href="https://globalhealth.uic.edu/research/articlespublications">Peer Review Publications</a></li>
+</ul>
+</li>
+<li class="page_item page-item-22"><a href="https://globalhealth.uic.edu/resources">Resources</a></li>
+<li class="page_item page-item-465"><a href="https://globalhealth.uic.edu/reference-page">Shortcodes Reference Page</a></li>
+<li class="page_item page-item-1721"><a href="https://globalhealth.uic.edu/uic-global-health-seed-grant-project">UIC Global Health &#038; Well Being Research Seed Grant Program</a></li>
+<li class="page_item page-item-3326"><a href="https://globalhealth.uic.edu/uic-global-health-colloquium">UIC Global Health Colloquium</a></li>
+<li class="page_item page-item-1856"><a href="https://globalhealth.uic.edu/education/cme-continuing-medical-education/2013-cgh-monthly-network-meetings">2013 CGH Monthly Network Meetings</a></li>
+<li class="page_item page-item-1858"><a href="https://globalhealth.uic.edu/education/cme-continuing-medical-education/2014-cgh-monthly-network-meetings">2014 CGH Monthly Network Meetings</a></li>
+<li class="page_item page-item-2404"><a href="https://globalhealth.uic.edu/education/cme-continuing-medical-education/2015-cgh-monthly-network-meetings">2015 CGH Monthly Network Meetings</a></li>
+<li class="page_item page-item-401"><a href="https://globalhealth.uic.edu/education/gme-graduate-medical-education/international-elective-opportunities">International Elective Opportunities</a></li>
+<li class="page_item page-item-399"><a href="https://globalhealth.uic.edu/education/gme-graduate-medical-education/residentsfellows">Residents/Fellows</a></li>
+</ul></div>
 </nav>
-    </div>
+<!-- End of top menu -->
 
-    
-    
+<!-- Start of top logo -->
+<div id="top_logo">
+<a href="https://globalhealth.uic.edu"><img src="http://globalhealth.uic.edu/wp-content/uploads/2013/12/cgh-uic-logo.png" alt="logo" /></a>
+
 </div>
-                    </header>
+<!-- End of top logo -->
 
-                <main id="main" class="page__main">
+<!-- Start of global menu -->
+<nav id="globalmenu">
+	<div class="menu-global-navigation-container"><ul id="menu-global-navigation" class="sf-menu"><li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-26"><a href="https://globalhealth.uic.edu/about-us">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422"><a href="https://globalhealth.uic.edu/about-us/message-from-the-director">Message from the Director</a></li>
+	<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30"><a href="https://globalhealth.uic.edu/about-us/who-we-are">Our People</a>
+	<ul class="sub-menu">
+		<li id="menu-item-574" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-574"><a href="https://globalhealth.uic.edu/about-us/who-we-are/rhea-begeman">Rhea Begeman</a></li>
+		<li id="menu-item-2611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2611"><a href="https://globalhealth.uic.edu/about-us/who-we-are/maarten-bosland">Maarten Bosland</a></li>
+		<li id="menu-item-2610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2610"><a href="https://globalhealth.uic.edu/about-us/who-we-are/maximo-brito">Maximo Brito</a></li>
+		<li id="menu-item-1498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1498"><a href="https://globalhealth.uic.edu/about-us/who-we-are/jeanne-burian">Jeanne Burian</a></li>
+		<li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576"><a href="https://globalhealth.uic.edu/about-us/who-we-are/stacey-chamberlain">Stacey Chamberlain</a></li>
+		<li id="menu-item-2608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2608"><a href="https://globalhealth.uic.edu/about-us/who-we-are/r-v-paul-chan">R. V. Paul Chan</a></li>
+		<li id="menu-item-569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569"><a href="https://globalhealth.uic.edu/about-us/who-we-are/andrew-dykens">Andrew Dykens</a></li>
+		<li id="menu-item-573" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-573"><a href="https://globalhealth.uic.edu/about-us/who-we-are/marcia-edison">Marcia Edison</a></li>
+		<li id="menu-item-2609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2609"><a href="https://globalhealth.uic.edu/about-us/who-we-are/gelila-goba">Gelila Goba</a></li>
+		<li id="menu-item-570" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570"><a href="https://globalhealth.uic.edu/about-us/who-we-are/dan-hryhorczuk">Dan Hryhorczuk</a></li>
+		<li id="menu-item-571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-571"><a href="https://globalhealth.uic.edu/about-us/who-we-are/janet-lin">Janet Lin</a></li>
+		<li id="menu-item-853" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-853"><a href="https://globalhealth.uic.edu/about-us/who-we-are/bellur-s-prabhakar">Bellur S. Prabhakar</a></li>
+		<li id="menu-item-852" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-852"><a href="https://globalhealth.uic.edu/about-us/who-we-are/damiano-rondelli-3">Damiano Rondelli</a></li>
+		<li id="menu-item-904" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-904"><a href="https://globalhealth.uic.edu/dharmapuri-vidyasagar-2">Dharmapuri Vidyasagar</a></li>
+		<li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577"><a href="https://globalhealth.uic.edu/about-us/who-we-are/stevan-weine">Stevan Weine</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3475"><a href="https://globalhealth.uic.edu/about-us/newsletters-2">Newsletters</a>
+	<ul class="sub-menu">
+		<li id="menu-item-224" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="https://globalhealth.uic.edu/about-us/newsletters">Newsletter Archive</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3441"><a href="https://globalhealth.uic.edu/our-faculty-affiliates">Our Faculty Affiliates</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3281"><a href="https://globalhealth.uic.edu/our-faculty-affiliates/faculty-affiliates">Faculty Affiliates Info and Application</a></li>
+	</ul>
+</li>
+	<li id="menu-item-421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421"><a href="https://globalhealth.uic.edu/about-us/contact-us">Contact Us</a></li>
+</ul>
+</li>
+<li id="menu-item-430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-430"><a href="https://globalhealth.uic.edu/education">Education</a>
+<ul class="sub-menu">
+	<li id="menu-item-436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-436"><a href="https://globalhealth.uic.edu/education/gmed-program">GLOBAL MEDICINE (GMED) Program</a>
+	<ul class="sub-menu">
+		<li id="menu-item-437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-437"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes">Current GMED Classes</a>
+		<ul class="sub-menu">
+			<li id="menu-item-3184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3184"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/m1-class-of-2021">M1 Class of 2021</a></li>
+			<li id="menu-item-2955" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2955"><a href="https://globalhealth.uic.edu/m1-class">M2 Class of 2020</a></li>
+			<li id="menu-item-2482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2482"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/m1-class-2">M3 Class of 2019</a></li>
+			<li id="menu-item-2113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2113"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/gmed-m1-class">M4 Class of 2018</a></li>
+			<li id="menu-item-2674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2674"><a href="https://globalhealth.uic.edu/education/gmed-program/current-gmed-classes/gmed-photos">GMED Student Photo Gallery</a></li>
+		</ul>
+</li>
+		<li id="menu-item-3219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3219"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-alumni">GMED Alumni</a>
+		<ul class="sub-menu">
+			<li id="menu-item-3218" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3218"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-alumni/gmed-class-of-2016">GMED Class of 2016</a></li>
+		</ul>
+</li>
+		<li id="menu-item-660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-660"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-curriculum">GMED Curriculum</a></li>
+		<li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-application">GMED Application</a></li>
+		<li id="menu-item-2538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2538"><a href="https://globalhealth.uic.edu/education/gmed-program/gmed-faculty">GMED Faculty</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2070" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2070"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht">RESIDENCY – GLOBAL COMMUNITY HEALTH TRACK (GCHT)</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2089"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht/cgh-gcht-curriculum">CGH GCHT CURRICULUM</a></li>
+		<li id="menu-item-2094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht/contact-us">GCHT – CONTACT US</a></li>
+		<li id="menu-item-2275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2275"><a href="https://globalhealth.uic.edu/education/residency-global-community-health-track-gcht/2268-2">GCHT Journal Club and Didactics Calendar</a></li>
+	</ul>
+</li>
+	<li id="menu-item-441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-441"><a href="https://globalhealth.uic.edu/education/scholarships-awards">Scholarships &#038; Awards</a>
+	<ul class="sub-menu">
+		<li id="menu-item-863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-863"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care">Erickson Explorers Award for Humanitarian Care</a>
+		<ul class="sub-menu">
+			<li id="menu-item-3408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3408"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2017-awards">2017 Awards</a></li>
+			<li id="menu-item-3084" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3084"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2016-awards">2016 Awards</a></li>
+			<li id="menu-item-2466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2466"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2015-awards">2015 Awards</a></li>
+			<li id="menu-item-881" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-881"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2013-2">2013 Awards</a></li>
+			<li id="menu-item-880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-880"><a href="https://globalhealth.uic.edu/education/scholarships-awards/erickson-explorers-award-for-humanitarian-care/2012-2">2012 Awards</a></li>
+		</ul>
+</li>
+		<li id="menu-item-864" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-864"><a href="https://globalhealth.uic.edu/education/scholarships-awards/warren-g-lavey-and-dr-holly-a-rosencranz-fund">Warren G. Lavey and Dr. Holly A. Rosencranz Fund</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1526"><a href="https://globalhealth.uic.edu/education/fellowship-opportunities">Fellowship Opportunities</a></li>
+	<li id="menu-item-435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-435"><a href="https://globalhealth.uic.edu/education/travel-information-waiver-forms">Travel Information and Waiver Forms</a></li>
+	<li id="menu-item-1879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1879"><a href="https://globalhealth.uic.edu/education/medical-student-information">Medical Student Information</a></li>
+</ul>
+</li>
+<li id="menu-item-170" class="menu-item menu-item-type-taxonomy menu-item-object-types menu-item-170"><a href="https://globalhealth.uic.edu/types/projects">Projects</a></li>
+<li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-424"><a href="https://globalhealth.uic.edu/research">Research</a>
+<ul class="sub-menu">
+	<li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429"><a href="https://globalhealth.uic.edu/research/articlespublications">Peer Review Publications</a></li>
+	<li id="menu-item-428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-428"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects">Ongoing Research Projects</a>
+	<ul class="sub-menu">
+		<li id="menu-item-839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-839"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/dioxin-and-t1418-translocations">Dioxin and t(14;18) translocations</a></li>
+		<li id="menu-item-841" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-841"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/family-and-children-of-ukraine">Family and Children of Ukraine</a></li>
+		<li id="menu-item-840" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-840"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/geohub">GEOHub</a></li>
+		<li id="menu-item-842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842"><a href="https://globalhealth.uic.edu/research/ongoing-research-projects/lead-exposure-and-school-performance">Lead Exposure and School Performance</a></li>
+	</ul>
+</li>
+	<li id="menu-item-425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-425"><a href="https://globalhealth.uic.edu/research/funding">Funding Opportunities</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1729"><a href="https://globalhealth.uic.edu/uic-global-health-seed-grant-project">UIC Global Health &#038; Well Being Research Seed Grant Program</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1703" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1703"><a href="https://globalhealth.uic.edu/events">Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-1704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1704"><a href="https://globalhealth.uic.edu/events">Upcoming Events</a></li>
+	<li id="menu-item-1702" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1702"><a href="https://globalhealth.uic.edu/past-events">Past Events</a></li>
+	<li id="menu-item-3329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3329"><a href="https://globalhealth.uic.edu/uic-global-health-colloquium">UIC Global Health Colloquium</a></li>
+</ul>
+</li>
+</ul></div></nav>
+<!-- End of global menu -->
+
+<div class="clear"></div>
+
+</div><!-- End of nav wrapper -->
+
+</header><!-- End of outer wrapper -->
+
+
+
+<!-- Start of intro text wrapper -->
+	<div class="intro_text_wrapper" style="background-image: url('https://globalhealth.uic.edu/wp-content/uploads/2013/11/mountains.jpg'); background-repeat:no-repeat;width:100%; position:relative; z-index:5; min-height:auto; max-width:100%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+	
+<!-- Start of intro text -->
+<div class="intro_text" style="position:relative; z-index:10;">
+
+<h1 class="orange">Global Health in Hematology &#038; Oncology</h1>
+
+<!-- 
+<div class="orange_background">
+<p></p>
+</div>
+-->
+
+<div class="clear"></div>
+
+</div><!-- End of intro text -->
+
+</div><!-- End of intro text wrapper -->
+
+<!-- Start of bdywrapper -->
+<div class="bdywrapper">
+
+<!-- Start of main -->
+<section id="main">
+
+<!-- Start of In This Section toggle -->
+<div class="menu-toggle-container">
+	<a class="menu-toggle scroll-link" href="#rightside_content">In this section</a>
+</div>
+<!-- End of In This Section toggle -->
+
+<!-- Start of wrapper content right -->
+<section id="wrapper_content_right">
+
+<!-- Start of leftside content -->
+<div id="leftside_content">
+
+<!-- Start of blog wrapper -->
+<div class="blog_wrapper">
+
+<!-- Start of featured text full -->
+<div class="featured_text_full">
+<div id="breadcrumbs" class="blue ">You are here: <a href="https://globalhealth.uic.edu">Home</a> &raquo; <a href="https://globalhealth.uic.edu/about-us">About Us</a> &raquo; <a href="https://globalhealth.uic.edu/about-us/strategic-initiatives">Strategic Initiatives</a> &raquo; <span class="current">Global Health in Hematology &#038; Oncology</span></div><h4><b>Mission:</b><b>   </b>The dignity of each human being mandates the effort of providing equal and adequate care to patients with life-threatening blood disorders, such as aplastic anemia, or liquid or solid cancer, regardless of their ethnicity or social status, and in any region of the world.</h4>
+<p><b> Goals:<br />
+</b></p>
+<ul>
+<li>To support hematology/oncology health providers in low income countries with technological and educational resources,</li>
+<li>To collaborate with hematology/oncology providers in low income or developing countries in establishing standard treatment guidelines and designing clinical studies that may address specific needs of local patients with severe blood disorders or malignancies,</li>
+<li>To promote the culture, develop policies and favor local and global networking focused on increasing equal access to care for patients of low income countries.</li>
+</ul>
+<p><b>Challenges:      </b></p>
+<ul>
+<li>Limited or lacking subspecialty (hem/onc) training in developing countries,</li>
+<li>Lack of infrastructure for controlled clinical trials, data collection and outcome analysis,</li>
+<li>Limitations in work environment (hospital facilities, transportation, rural vs urban care settings, etc.),</li>
+<li>Public vs private funded institutions with high degree of treatment disparities for low income patients,</li>
+<li>Cost of chemotherapy drugs not affordable for the majority of the World&#8217;s population,</li>
+<li>“Brain drain” of local providers trained abroad,</li>
+<li>Limited financial resources.</li>
+</ul>
+<p><b>  Opportunities: </b></p>
+<ul>
+<li>To create an infrastructure where training programs can be developed by identifying and addressing specific needs in low income/developing countries. Training can be provided by means of rotations for UIC faculty and trainees abroad, telemedicine programs, and hosting providers from other countries at UIC as visiting observers.</li>
+<li>To obtain external research funding to support the growth of health care through collaborations aimed at analyzing and improving outcome results, addressing barriers to cancer screening and developing technology innovation in low income/developing countries.</li>
+<li>To create an External Consulting Board in Global Health for Hem/Onc through the collaboration of public or private educational institutions, government law/policy agencies, corporate financial subjects, philanthropic organizations and volunteers (foundations, NGOs). This board would contribute to the development of the global program through academic experts, innovative suggestions and specific projects.</li>
+<li>To develop philanthropic mechanisms that can sustain the activities of the program.</li>
+</ul>
+<p>Program Contact:<br />
+<a title="Damiano Rondelli" href="http://globalhealth.uic.edu/about-us/who-we-are/damiano-rondelli-3">Damiano Rondelli, MD</a><br />
+drond@uic.edu</p>
+ 
+
+ 
+
+
+</div><!-- End of featured text full -->
+
+<!-- Start of clear fix --><div class="clear"></div>
+
+</div><!-- End of blog wrapper -->
+
+</div><!-- End of leftside content -->
+
+</section><!-- End of wrapper content right -->
+
+<!-- Start of wrapper content left -->
+<aside id="wrapper_content_left">
+
+<!-- Start of rightside content -->
+<div id="rightside_content">
+		
+</div><!-- End of rightside content -->
+
+</aside><!-- End of wrapper content left -->
+
+<!-- Start of clear fix --><div class="clear"></div>
             
-    <div class="layout ">
-    <div class="layout__main">
-            <!-- help-article.twig main -->
-        <nav class="breadcrumbs" aria-label="Breadcrumbs">
-        <h2 class="breadcrumbs__header">Breadcrumbs</h2>
-        <ol>
-                                                <li class="breadcrumbs__list-item">
-                        <a class="breadcrumb breadcrumb--home" href="/">Home</a>
-                    </li>
-                                                                <li class="breadcrumbs__list-item">
-                        <a href="/help"><span class="breadcrumb breadcrumb--here">Help</span></a>
-                    </li>
-                                    </ol>
-    </nav>
-
-    <h1 class="page-title">Assign someone to pick up library items for me</h1>
-            <div class="intro">
-    <p>UIC faculty, administrators (deans, directors, department heads) and anyone unable to come into the library due to a disability can designate a proxy borrower to check out and pick up library items at Daley Library or the Library of the Health Sciences-Chicago.</p>
-
-</div>    
-            <section aria-label="Article content">
-            <!-- container.twig -->
-<div class="content-container">
-  
-          <div class="text-content"><h2>More information about proxy borrowing</h2>
-<p>You will be responsible for items checked out and for any fines or fees.</p>
-<p>Your proxy borrower will need to show a valid photo ID when they pick up your items. They can pick up items at the Circulation desk at Daley Library or the Library of the Health Sciences-Chicago.</p>
-</div>    
-    
-    
-    
-    
-  
-    
-    
-    
-          <div class="form-content">
-    <div class="form" id="form-7">
-    <form action="/help/article/1875/assign-someone-to-pick-up-library-items-for-me#form-7" method="POST">
-        <input type="hidden" name="library-form-id" value="7">
-
-        <h2 class="form__title">Assign someone to pick up your items</h2>
-
-        
-        
-                    <div class="form-element">
-            <label>
-    <span class="form-element-label required">Name</span>            <input class="text-input" type="text" name="input_1"
-            aria-required="true"></label>    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label required">Email</span>        <input class="email-input" type="email" name="input_3"
-            aria-required="true"></label>    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label ">Phone</span>            <input class="text-input" type="text" name="input_16"
-            ></label>    </div>                    <div class="form-element">
-            <fieldset aria-labelledby="input_4_label" >
-    <legend id="input_4_label" class="form-element-label ">Are you UIC faculty?</legend>
-            <ul class="input-list">
-                    <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_4" value="Yes">
-                Yes
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_4" value="No">
-                No
-            </label>
-        </li>
-        </ul>
-</fieldset>
-
-    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label ">Department</span>            <input class="text-input" type="text" name="input_5"
-            ></label>    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label ">m/c</span>            <input class="text-input" type="text" name="input_15"
-            ></label>    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label ">Faculty UIC ID</span>            <input class="text-input" type="text" name="input_18"
-            ></label>    </div>                    <div class="form-element">
-            <fieldset aria-labelledby="input_17_label" >
-    <legend id="input_17_label" class="form-element-label ">Title</legend>
-            <ul class="input-list">
-                    <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Administrator">
-                Administrator
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Chair">
-                Chair
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Chancellor">
-                Chancellor
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Coordinator">
-                Coordinator
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Dean">
-                Dean
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Director">
-                Director
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="President">
-                President
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Professor">
-                Professor
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_17" value="Provost">
-                Provost
-            </label>
-        </li>
-        </ul>
-</fieldset>
-
-    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label ">Person 1</span>            <input class="text-input" type="text" name="input_9"
-            ></label>    </div>                    <div class="form-element">
-            <fieldset aria-labelledby="input_10_label" >
-    <legend id="input_10_label" class="form-element-label ">How long can person 1 check out items for you?</legend>
-            <ul class="input-list">
-                    <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_10" value="Current semester only">
-                Current semester only
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_10" value="Full academic year">
-                Full academic year
-            </label>
-        </li>
-        </ul>
-</fieldset>
-
-    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label ">Person 2</span>            <input class="text-input" type="text" name="input_12"
-            ></label>    </div>                    <div class="form-element">
-            <fieldset aria-labelledby="input_14_label" >
-    <legend id="input_14_label" class="form-element-label ">How long can person 2 check out items for you?</legend>
-            <ul class="input-list">
-                    <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_14" value="Current semester only">
-                Current semester only
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_14" value="Full academic year">
-                Full academic year
-            </label>
-        </li>
-        </ul>
-</fieldset>
-
-    </div>                    <div class="form-element">
-            <label>
-    <span class="form-element-label ">Person 3</span>            <input class="text-input" type="text" name="input_11"
-            ></label>    </div>                    <div class="form-element">
-            <fieldset aria-labelledby="input_13_label" >
-    <legend id="input_13_label" class="form-element-label ">How long can person 3 check out items for you?</legend>
-            <ul class="input-list">
-                    <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_13" value="Current semester only">
-                Current semester only
-            </label>
-        </li>
-            <li class="input-list-item">
-            <label class="input-list-label">
-                <input class="input-list-input" type="radio" name="input_13" value="Full academic year">
-                Full academic year
-            </label>
-        </li>
-        </ul>
-</fieldset>
-
-    </div>        
-      <button type="submit" class="button">Send</button>
-
-    </form>
-</div></div>
-    
-    
-  </div>
-        </section>
-    
-            <section class="section help-articles-list" aria-label="Help Articles list section">
-
-    <h2 class="section__title section-heading"><span>How Do I...?</span></h2>
-
-    <div class="section__content">
-    <ul class="help-articles-list__articles">
-                    <li class="help-articles-list__article">
-                <a href="/help/article/1870/access-databases-journals-and-articles-from-off-campus">Access library resources from off-campus</a>
-            </li>
-                    <li class="help-articles-list__article">
-                <a href="/help/article/1891/faculty-services">Faculty services</a>
-            </li>
-                    <li class="help-articles-list__article">
-                <a href="/help/article/1893/find-a-book-on-the-shelf">Find a book on the shelf</a>
-            </li>
-                    <li class="help-articles-list__article">
-                <a href="/help/article/1901/find-out-when-items-are-due">Renew or find out when items are due</a>
-            </li>
-                    <li class="help-articles-list__article">
-                <a href="/help/article/1904/get-books-from-storage">Get books from storage</a>
-            </li>
-                    <li class="help-articles-list__article">
-                <a href="/help/article/1927/recommend-an-item-for-the-library-to-purchase">Recommend an item for the library to purchase</a>
-            </li>
-                    <li class="help-articles-list__article">
-                <a href="/help/article/1928/report-an-item-that-is-missing">Report that an item is missing</a>
-            </li>
-            </ul>
-
-    <p class="section__footer">
-        <a class="button" href="/help/search">Get More Help</a>
-    </p>
-
+<!-- Start of Back to Top toggle -->
+<p>
+<div class="menu-toggle-container">
+	<a class="scroll-top scroll-link" href="#">Back to top</a>
 </div>
+</p>
+<!-- End of Back to Top toggle -->
 
-</section>    
-    </div>
-    <div class="layout__sidebar">
-        
-            <section class="filter-links" aria-label="Filters to limit results">
+</section><!-- End of main -->
 
-    <h2 class="filter-links__title">Filter by Location</h2>
+<!-- Start of clear fix --><div class="clear"></div>
 
-    <ul class="filter-links__list">
-                    <li class="filter-links__item">
-                <a href="/help/search?l%5B0%5D=386">Chicago-Daley</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?l%5B0%5D=388">Chicago-Health Sciences</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?l%5B0%5D=389">Peoria-Health Sciences</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?l%5B0%5D=390">Rockford-Health Sciences</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?l%5B0%5D=391">Urbana-Health Sciences</a>
-            </li>
-            </ul>
+</div><!-- End of bdywrapper -->
 
-</section>
-    
-            <section class="filter-links" aria-label="Filters to limit results">
+<!-- Start of bottom nav wrap -->
+<div id="bottom_nav_wrap">
 
-    <h2 class="filter-links__title">Filter by Topic</h2>
+<!-- Start of social -->
+<section class="social">
 
-    <ul class="filter-links__list">
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=17">Accessibility</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=18">Borrowing</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=19">Computers, Printing &amp; Scanning</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=48">Copyright &amp; Scholarly Publishing</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=20">Course Reserves</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=21">Electronic Resources</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=23">Library Accounts</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=24">Off-Campus Access</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=26">Requesting Materials</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=27">Research Help</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=361">Searching</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=29">Special Collections &amp; University Archives</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=208">Study Spaces</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=1">Uncategorized</a>
-            </li>
-                    <li class="filter-links__item">
-                <a href="/help/search?t%5B0%5D=286">Writing, Style &amp; Citations</a>
-            </li>
-            </ul>
 
-</section>
-    
-    </div>
+
+
+
+<!-- Start of one fourth first -->
+<div class="one_fourth_first">
+<h5>UIC Center for Global Health</h5>			<div class="textwidget"><p>1940 W. Taylor M/C 584<br />
+Chicago, IL 60612<br />
+(312) 355-4116<br />
+follow us on Twitter @UIC_CGH</p>
+<p><a href ="http://globalhealth.uic.edu/about-us/contact-us">Contact us »</a></p>
 </div>
+		
+</div><!-- End of one fourth first -->
 
-    <div class="contact-callout" aria-label="Contact a Librarian">
-    <div class="contact-callout__container uic_grid">
-        <div class="contact-callout__content">
-            <div>
-                <a href="/contact" class="jumbo-link">
-                    <span class="_prefix">Need help?</span>
-                    <span class="_text">Contact a Librarian!</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Start of one fourth -->
+<div class="one_fourth">
+<h5>Campuses</h5><div class="menu-campuses-container"><ul id="menu-campuses" class="menu"><li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5"><a target="_blank" href="http://www.medicine.uic.edu/">Chicago</a></li>
+<li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a target="_blank" href="http://peoria.medicine.uic.edu/">Peoria</a></li>
+<li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a target="_blank" href="http://rockford.medicine.uic.edu/">Rockford</a></li>
+<li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8"><a target="_blank" href="http://www.med.uiuc.edu/">Urbana</a></li>
+</ul></div>
+</div><!-- End of one fourth -->
 
-        </main>
-        
-        <footer class="page__footer" role="contentinfo">
-                            <div class="footer uic-footer">
+<!-- Start of one fourth -->
+<div class="one_fourth">
+<h5>Participating Colleges</h5><div class="menu-participating-colleges-container"><ul id="menu-participating-colleges" class="menu"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a target="_blank" href="http://www.medicine.uic.edu/">Medicine</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a target="_blank" href="http://www.ahs.uic.edu/">AHS</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a target="_blank" href="http://dentistry.uic.edu/">Dentistry</a></li>
+<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a target="_blank" href="http://www.uic.edu/pharmacy/">Pharmacy</a></li>
+<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a target="_blank" href="https://www.nursing.uic.edu/about-us/global-health#global-health-outreach#international-outreach">Nursing</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15"><a target="_blank" href="http://publichealth.uic.edu/globalhealthinitiative/">Public Health</a></li>
+</ul></div>
+</div><!-- End of one fourth -->
 
-    <section class="uic-footer__site" aria-label="Website footer, with miscellaneous site and location links">
-        <div class="uic-footer__site-container">
-            <div class="uic-footer__site-title">
-                                    <span class="wordmark" style="display: inline-block;">
-    <span class="wordmark__container">
-        <span class="wordmark__content">
-            <span class="wordmark__logo"><svg class="uic-circle-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
-    <title>Logo for the University of Illinois at Chicago</title>
-    <rect class="uic-circle-logo__text" x="5" y="17" width="46" height="20"/>
-    <path class="uic-circle-logo__circle" d="M54,27C54,12.1,41.9,0,27,0S0,12.1,0,27s12.1,27,27,27S54,41.9,54,27z M21.8,29.4c0,2.5-0.3,3.6-1,4.8
-	c-1.2,1.9-4.3,2.7-7,2.7s-5.8-0.8-7-2.7c-0.7-1.2-1-2.4-1-4.8V19H11v10.5c-0.1,0.9,0.1,1.8,0.6,2.5c0.5,0.5,1.3,0.8,2.1,0.7
-	c0.8,0.1,1.6-0.2,2.2-0.8c0.5-0.7,0.7-1.6,0.6-2.5V19h5.3V29.4z M25,19h5.3v17.6H25V19z M49.3,23.4l-4.6,2.2
-	c-0.4-1.7-1.4-2.7-3.1-2.7c-2.2,0-3.4,1.9-3.4,4.9s1.1,4.8,3.4,4.8c1.4,0.1,2.7-0.8,3-2.2l4.8,1.7c-1.2,2.8-3.8,4.8-7.8,4.8
-	c-5.6,0-8.8-3.7-8.8-9.1s3.4-9.1,8.9-9.1C45.9,18.7,48.3,21.1,49.3,23.4L49.3,23.4z"/>
-</svg>
-</span>
-            <span class="wordmark__text">
-                <span class="wordmark__line wordmark__university">University</span>
-                <span class="wordmark__line wordmark__library">Library</span>
-            </span>
-        </span>
-    </span>
-</span>
-                            </div>
-            <div class="uic-footer__site-content-and-links">
-                <div class="uic-footer__site-content">
-                                            <section class="footer-locations"  aria-label="Library locations">
+<!-- Start of one fourth -->
+<div class="one_fourth">
 
-    <h2 class="footer-locations__header">Locations</h2>
+</div><!-- End of one fourth -->
 
-    <ul class="footer-locations__list">
-                    <li class="footer-locations__list-item">
-                <article class="footer-location" aria-label="Footer for location Richard J. Daley Library">
-    <a href="/libraries/daley">
-        <div class="footer-location__icon"><svg class="arrow-right-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-    <path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/>
-</svg>
-</div>
+<!-- Start of clear fix --><div class="clear"></div>
 
-        <h3 class="footer-location__name">Richard J. <span class="last-two-words">Daley Library</span></h3>
+</section><!-- End of social -->
 
-                    <div class="footer-location__address">
-                <div class="footer-location-address">
-    <p>801 S. Morgan</p>
+</div><!-- End of bottom nav wrap -->
 
-    <p>
-        <span class="city">Chicago</span>,
-        <span class="state">IL</span>
-        <span class="zip">60607</span>
-    </p>
-</div>
-            </div>
-        
-                    <div class="footer-location__phones">
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Circulation</span>
-    <span class="footer-location-phone__number">(312) 996-2724</span>
-</div>
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Reference</span>
-    <span class="footer-location-phone__number">(312) 996-2726</span>
-</div>
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Special Collections & University Archives</span>
-    <span class="footer-location-phone__number">(312) 996-2742</span>
-</div>
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Course Reserves</span>
-    <span class="footer-location-phone__number">(312) 996-2719</span>
-</div>
-                            </div>
-        
-    </a>
-</article>
-            </li>
-                    <li class="footer-locations__list-item">
-                <article class="footer-location" aria-label="Footer for location Library of the Health Sciences-Chicago">
-    <a href="/libraries/lhs-chicago">
-        <div class="footer-location__icon"><svg class="arrow-right-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-    <path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/>
-</svg>
-</div>
+<!-- Start of outer footer wrapper -->
+<footer id="outer_footer_wrapper">
 
-        <h3 class="footer-location__name">Library of the <span class="last-two-words">Health Sciences-Chicago</span></h3>
+<!-- Start of footer wrapper -->
+<div id="footer_wrapper">
 
-                    <div class="footer-location__address">
-                <div class="footer-location-address">
-    <p>1750 W. Polk St.</p>
+<!-- Start of copyright message -->
+<div class="copyright_message">
+     
+ 
+&copy;Copyright 2014 The Board of Trustees of the University of Illinois.
+</div><!-- End of copyright message -->
 
-    <p>
-        <span class="city">Chicago</span>,
-        <span class="state">IL</span>
-        <span class="zip">60612</span>
-    </p>
-</div>
-            </div>
-        
-                    <div class="footer-location__phones">
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Circulation</span>
-    <span class="footer-location-phone__number">(312) 996-8966</span>
-</div>
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Reference</span>
-    <span class="footer-location-phone__number">(312) 996-9163</span>
-</div>
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Special Collections & University Archives</span>
-    <span class="footer-location-phone__number">(312) 996-8977</span>
-</div>
-                            </div>
-        
-    </a>
-</article>
-            </li>
-                    <li class="footer-locations__list-item">
-                <article class="footer-location" aria-label="Footer for location Library of the Health Sciences-Peoria">
-    <a href="/libraries/lhs-peoria">
-        <div class="footer-location__icon"><svg class="arrow-right-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-    <path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/>
-</svg>
-</div>
+<div class="clear"></div>
 
-        <h3 class="footer-location__name">Library of the <span class="last-two-words">Health Sciences-Peoria</span></h3>
+</div><!-- End of footer wrapper -->
 
-                    <div class="footer-location__address">
-                <div class="footer-location-address">
-    <p>One Illini Drive</p>
+</footer><!-- End of outer footer wrapper -->
 
-    <p>
-        <span class="city">Peoria</span>,
-        <span class="state">IL</span>
-        <span class="zip">61605</span>
-    </p>
-</div>
-            </div>
-        
-                    <div class="footer-location__phones">
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Phone</span>
-    <span class="footer-location-phone__number">(309) 671-8490</span>
-</div>
-                            </div>
-        
-    </a>
-</article>
-            </li>
-                    <li class="footer-locations__list-item">
-                <article class="footer-location" aria-label="Footer for location Crawford Library of the Health Sciences-Rockford">
-    <a href="/libraries/lhs-rockford">
-        <div class="footer-location__icon"><svg class="arrow-right-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-    <path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/>
-</svg>
-</div>
+<script type="text/javascript">
+// DOM ready
+jQuery(document).ready(function(){
 
-        <h3 class="footer-location__name">Crawford Library of the <span class="last-two-words">Health Sciences-Rockford</span></h3>
+// Create the dropdown base
+jQuery("<select />").appendTo("#topmenu");
+jQuery("<select />").appendTo("#globalmenu");
 
-                    <div class="footer-location__address">
-                <div class="footer-location-address">
-    <p>1601 Parkview Ave.</p>
+// Create default option "Go to..."
+jQuery("<option />", {
+ "selected": "selected",
+ "value"   : "",
+ //"text"    : "Menu Selection..."
+ "text"    : "Campuses and Colleges..."
+}).appendTo("#topmenu select");
+jQuery("<option />", {
+ "selected": "selected",
+ "value"   : "",
+ "text"    : "Menu Selection..."
+}).appendTo("#globalmenu select");
 
-    <p>
-        <span class="city">Rockford</span>,
-        <span class="state">IL</span>
-        <span class="zip">61107</span>
-    </p>
-</div>
-            </div>
-        
-                    <div class="footer-location__phones">
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Phone</span>
-    <span class="footer-location-phone__number">(815) 395-5650</span>
-</div>
-                            </div>
-        
-    </a>
-</article>
-            </li>
-                    <li class="footer-locations__list-item">
-                <article class="footer-location" aria-label="Footer for location Library of the Health Sciences-Urbana">
-    <a href="/libraries/lhs-urbana">
-        <div class="footer-location__icon"><svg class="arrow-right-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-    <path d="M1 3.9h5L3.9 1.8c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0L10 5 5.4 9.7c-.2.2-.5.3-.8.3s-.5-.1-.7-.3c-.4-.4-.4-1.1 0-1.5L6.1 6H1c-.5 0-1-.4-1-1s.5-1.1 1-1.1z"/>
-</svg>
-</div>
+// Populate dropdown with menu items
+/*jQuery("#topmenu a").each(function() {
+var el = jQuery(this);
+jQuery("<option />", {
+   "value"   : el.attr("href"),
+   "text"    : el.text()
+}).appendTo("#topmenu select");
+});*/
 
-        <h3 class="footer-location__name">Library of the <span class="last-two-words">Health Sciences-Urbana</span></h3>
+jQuery("#globalmenu a").each(function() {
+var el = jQuery(this);
+if ( el.parent().parent().attr("class") != "sub-menu" ){
+jQuery("<option />", {
+   "value"   : el.attr("href"),
+   "text"    : el.text()
+}).appendTo("#globalmenu select");
+}
+});
 
-                    <div class="footer-location__address">
-                <div class="footer-location-address">
-    <p>470 Grainger Engineering Library Information Center,<br />
-1301 W. Springfield Ave.</p>
+jQuery("#topmenu a").each(function() {
+var el = jQuery(this);
+if ( el.parent().parent().attr("id") == "menu-eyebrow" ){
+jQuery("<option />", {
+  "value"   : el.attr("href"),
+  "text"    : el.text()
+}).appendTo("#globalmenu select");
+}
+});
 
-    <p>
-        <span class="city">Urbana</span>,
-        <span class="state">IL</span>
-        <span class="zip">61801</span>
-    </p>
-</div>
-            </div>
-        
-                    <div class="footer-location__phones">
-                                    <div class="footer-location-phone">
-    <span class="footer-location-phone__name">Circulation and Reference</span>
-    <span class="footer-location-phone__number">(217) 244-2261</span>
-</div>
-                            </div>
-        
-    </a>
-</article>
-            </li>
-            </ul>
+// To make dropdown actually work
+// To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+jQuery("#topmenu select").change(function() {
+window.location = jQuery(this).find("option:selected").val();
+});
+jQuery("#globalmenu select").change(function() {
+window.location = jQuery(this).find("option:selected").val();
+});
+jQuery(".tweet").tweet({
+            username: "",
+            join_text: "auto",
+            avatar_size: 0,
+            count: 3,
+            auto_join_text_default: "we said,", 
+            auto_join_text_ed: "we",
+            auto_join_text_ing: "we were",
+            auto_join_text_reply: "we replied to",
+            auto_join_text_url: "we were checking out",
+            loading_text: "loading tweets..."
+        });
+		
+jQuery('.slider').flexslider();
 
-</section>
-                                    </div>
-                <div class="uic-footer__site-links">
-                                            <ul class="footer-buttons">
-            <li>
-            <a class="footer-button" href="/help/article/1891/faculty-services">Faculty services</a>        </li>
-            <li>
-            <a class="footer-button" href="/help/article/1873/alumni-services">Alumni services</a>        </li>
-            <li>
-            <a class="footer-button" href="/help/article/1887/distance-student-services">Distance education user services</a>        </li>
-            <li>
-            <a class="footer-button" href="/help/article/1955/use-accessibility-services">Accessibility services</a>        </li>
-    </ul>                                                                <nav class="uic-social-navigation" aria-labelledby="social-nav-header">
-    <h2 id="social-nav-header">Social Networking</h2>
-    <ul>
-            </ul>
-</nav>
-                                    </div>
-            </div>
-        </div>
-    </section>
+});
+</script>
 
-    
-    <section class="uic-footer__university" aria-label="University links">
+     
 
-        <section class="uic-footer-legal" aria-label="Legal, privacy, and copyright links">
-    <div class="uic-footer-legal__container">
 
-        <div class="uic-footer-legal__legal">
-            <p class="uic-footer-legal__copyright">&copy; 2018 The Board of Trustees of the University of Illinois</p>
-            <p class="uic-footer-legal__privacy-link"><a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy Policy</a></p>
-            <br/>
-            <p class="uic-footer-legal__govt-docs"><a href="http://researchguides.uic.edu/gov">Federal Depository Library for U.S. Government Documents</a></p>
-            <p class="uic-footer-legal__govt-docs"><a href="http://researchguides.uic.edu/gov">GDPR</a></p>
-        </div>
-
-        <div class="uic-footer-legal__university-links">
-            <h2>Campus Links</h2>
-            <ul>
-                <li><a href="http://uillinois.edu/">University of Illinois</a></li>
-                <li><a href="http://uic.edu/">Chicago</a></li>
-                <li><a href="http://illinois.edu/">Urbana-Champaign</a></li>
-                <li><a href="http://uis.edu/">Springfield</a></li>
-            </ul>
-        </div>
-
-    <!--OneTrust Cookies Settings button start --><a class="optanon-show-settings">Cookie Settings</a><!--OneTrust Cookies Settings button end -->
-    </div>
-</section>
-
-    </section>
-    <div class="chat-widget" aria-labelledby="chat-window-title">
-    <div class="chat-widget__header">
-        <a href="#" id="chat-window-title" class="chat-widget__title">
-            Chat with a Librarian
-        </a>
-        <a href="#" class="chat-widget__close">
-            Close
-        </a>
-    </div>
-    <div class="chat-widget__embed">
-        <div class="chat-widget__embed-content">
-            <div id="libchat_a8f3cdd768831e345ca9d2f796ff5e5d"></div>
-        </div>
-    </div>
-</div></div>
-                    </footer>
-
-    </div>
-    <script src="/js/main.js"></script>
-    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 </body>
 </html>
+
+<script type='text/javascript'>
+var colomatduration = 'fast';
+var colomatslideEffect = 'slideFade';
+var colomatpauseInit = '';
+var colomattouchstart = '';
+</script><script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp-child/js/slider_fix.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/comment-reply.min.js?ver=1b3d9be67641b8bac48420fd847b7e92'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/plugins/jquery-collapse-o-matic/js/collapse.js?ver=1.6.14'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp-child/js/custom.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp/js/jquery.tweet.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp/js/jquery.flexslider-min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp/js/jquery.easing.1.3.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp/js/hoverIntent.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp/js/respond.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp/js/jquery.sfmenu.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/themes/mammoth-wp/js/jquery.preloadcssimages.js?ver=1.0'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/plugins/page-links-to/js/new-tab.min.js?ver=2.9.8'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox.min.js?ver=1.3.14'></script>
+<script type='text/javascript'>
+var fb_timeout, fb_opts={'overlayShow':true,'hideOnOverlayClick':true,'showCloseButton':true,'margin':20,'centerOnScroll':false,'enableEscapeButton':true,'scriptPriority':10 };
+if(typeof easy_fancybox_handler==='undefined'){
+var easy_fancybox_handler=function(){
+jQuery('.nofancybox,a.pin-it-button,a[href*="pinterest.com/pin/create"]').addClass('nolightbox');
+/* IMG */
+var fb_IMG_select='a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a),area[href*=".jpg"]:not(.nolightbox),a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a),area[href*=".jpeg"]:not(.nolightbox),a[href*=".png"]:not(.nolightbox,li.nolightbox>a),area[href*=".png"]:not(.nolightbox),a[href*=".webp"]:not(.nolightbox,li.nolightbox>a),area[href*=".webp"]:not(.nolightbox)';
+jQuery(fb_IMG_select).addClass('fancybox image');
+var fb_IMG_sections = jQuery('div.gallery,div.wp-block-gallery,div.tiled-gallery');
+fb_IMG_sections.each(function(){jQuery(this).find(fb_IMG_select).attr('rel','gallery-'+fb_IMG_sections.index(this));});
+jQuery('a.fancybox,area.fancybox,li.fancybox a').each(function(){jQuery(this).fancybox(jQuery.extend({},fb_opts,{'transitionIn':'elastic','easingIn':'easeOutBack','transitionOut':'elastic','easingOut':'easeInBack','opacity':false,'hideOnContentClick':false,'titleShow':true,'titlePosition':'over','titleFromAlt':true,'showNavArrows':true,'enableKeyboardNav':true,'cyclic':false}))});};
+jQuery('a.fancybox-close').on('click',function(e){e.preventDefault();jQuery.fancybox.close()});
+};
+var easy_fancybox_auto=function(){setTimeout(function(){jQuery('#fancybox-auto').trigger('click')},1000);};
+jQuery(easy_fancybox_handler);jQuery(document).on('post-load',easy_fancybox_handler);
+jQuery(easy_fancybox_auto);
+</script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-content/plugins/easy-fancybox/js/jquery.easing.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://globalhealth.uic.edu/wp-includes/js/wp-embed.min.js?ver=1b3d9be67641b8bac48420fd847b7e92'></script>

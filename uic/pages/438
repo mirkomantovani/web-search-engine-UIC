@@ -1,605 +1,1063 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<title>events | UIC Today</title>
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/style.css" />
-
-<link rel="stylesheet" type="text/css" media="all" href="https://today.uic.edu/wp-content/themes/uictoday/css/style.min.css" />
+<html lang="en"><head>
+    <title>Office of the Dean of Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/site.css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css"> 
     
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://today.uic.edu/feed" />
+    <!--royalslider CSS-->
+    <link href="assets/royalslider/royalslider.css" rel="stylesheet">
+ 	<link href="assets/royalslider/skins/default/rs-default.css" rel="stylesheet">
+   <link href="assets/royalslider/skins/minimal-white/rs-minimal-white.css" rel="stylesheet">
+     <!-- slider JS files -->    
+	<script  src="royalslider/jquery-1.8.3.min.js"></script>
+	<script src="royalslider/jquery.royalslider.min.js"></script>
+    <script src="assets/royalslider/jquery.easing-1.3.js"> </script>
+   
+<style>
+.error{
+border: 1px solid #F00000;
+}
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+}
 
-<link rel="shortcut icon" href="https://today.uic.edu/wp-content/themes/uictoday/favicon.ico" />
+<!-- slider css -->
 
+  #video-gallery {
+width: 100%;
+color: #FFF;
+}
 
+.videoGallery .rsCloseVideoBtn {
+  display: none;
+} 
+/* Styling thumbnails */
+.videoGallery h5 {
+  margin: 0;
+}
+.videoGallery p {
+  color: #ddd;
+  font-size: 13px;
+}
+.videoGallery .rsTmb {
+  padding: 20px;
+}
 
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="UIC Today &raquo; events Tag Feed" href="https://today.uic.edu/tag/events-2/feed" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/today.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+.videoGallery .rsThumbs .rsThumb {
+  width: 940px;
+  height: 80px;
+  border-bottom: 1px solid #2E2E2E;
+}
+.videoGallery .rsThumbs.rsThumbsVer {
+  width: 220px;
+  padding: 0;
+}
+.videoGallery .rsThumb:hover {
+  background: #000;
+}
+.videoGallery .rsThumb.rsNavSelected {
+  background-color: #18bc9c;
+  border-bottom: 1px solid #009E56;
+}
+.rsDefault .rsOverflow,
+.rsDefault .rsSlide,
+.rsDefault .rsVideoFrameHolder,
+.rsDefault .rsThumbs {
+  background: #202020;
+}
+.sampleBlock {
+  left: 3%; 
+  top: 1%; 
+  width: 100%;
+  max-width: 400px;
+  color: #FFF;
+  font-weight:bold;
+   background: #000;
+  background: rgba(0,0,0,0.75);
+  padding:7px 10px 10px 10px;
+}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+  .videoGallery .rsTmb {
+    padding: 6px 8px;
+  }
+  .videoGallery h5 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .videoGallery .rsThumbs.rsThumbsVer {
+    width: 100px;
+    padding: 0;
+  }
+  .videoGallery .rsThumbs .rsThumb {
+    width: 100px;
+    height: 47px;
+  }
+  .videoGallery .rsTmb p {
+    display: none;
+  }
+  .videoGallery .rsOverflow,
+  .royalSlider.videoGallery {
+    height: 300px !important;
+  }
+  .sampleBlock {
+    font-size: 14px;
+  }
+}
+<!-- Block Text Slider -->
+#slider-with-blocks-1 {
+  width: 100%;
+  height: 100%;
+}
+.rsContent {
+  color: #FFF;
+  font-size: 24px;
+  line-height: 32px;
+  float: left;
+}
+
+.bContainer {
+  position: relative;
+}
+.rsABlock {
+  left: 30px;
+	top: 280px;
+	position: absolute;
+	z-index: 15;
+	
+}
+
+.rsBBlock {
+  position: relative;
+  display: block;
+  left: auto;
+  top: auto;
+}
+.blockHeadline {
+  font-size: 42px;
+  line-height: 50px;
+}
+.blockSubHeadline {
+  font-size: 32px;
+  line-height: 40px
+}
+.txtCent {
+  text-align: center; 
+  width: 100%; 
+}
+.slide1 {
+  background: #f06b50;
+}
+.slide1 .bContainer {
+	top: 30px;
+}
+.slide2 {
+    background: #ffbc11;
+    color:#000;
+}
+.slide2 .bContainer {
+  top: 20px;
+}
+.slide2 .txtCent {
+  line-height: 44px;
+}
+.slide2 .blockHeadline {
+   line-height: 66px;
+}
+.slide3 {
+    background: #45aab8;
+    color:#FFF;
+}
+.slide3 .bContainer {
+   top: 24px;
+}
+.slide3 span {
+  line-height: 44px;
+}
+.slide4 .bContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  top: 24px;
+}
+.photoCopy {
+  position: absolute;
+  line-height: 24px;
+  font-size: 12px;
+  background: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0px 10px;
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  top: auto;
+  border-radius: 2px;
+  z-index: 25;
+}
+.photoCopy a {
+  color: #FFF;
+}
+.palmImg {
+  left: 0;
+  top: auto;
+  bottom: -60px;
+  position: absolute;
+}
+@media screen and (min-width: 0px) and (max-width: 960px) { 
+  .rsContent {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .blockHeadline {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 26px;
+    line-height: 32px
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 500px) { 
+  .royalSlider,
+  .rsOverflow {
+    height: 200px !important;
+  }
+  .rsContent {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .blockHeadline {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .blockSubHeadline {
+    font-size: 22px;
+    line-height: 32px
+  }
+}
+
+.label {
+  margin-right: 5px;
 }
 </style>
-<link rel='stylesheet' id='events-manager-css'  href='https://today.uic.edu/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.95' type='text/css' media='all' />
-<link rel='stylesheet' id='ssp-frontend-player-css'  href='https://today.uic.edu/wp-content/plugins/seriously-simple-podcasting/assets/css/player.css?ver=1.19.14' type='text/css' media='all' />
-<link rel='stylesheet' id='qcsld-fa-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-custom-rwd-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/css/directory-style-rwd.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='qcopd-embed-form-css-css'  href='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/css/embed-form.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='wow-icons-fa-css'  href='https://today.uic.edu/wp-content/plugins/wow-icons//assets/fontawesome/font-awesome.min.css?ver=2.0.1' type='text/css' media='all' />
-<link rel='stylesheet' id='upw_theme_standard-css'  href='https://today.uic.edu/wp-content/plugins/ultimate-posts-widget/css/upw-theme-standard.min.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='tablepress-default-css'  href='https://today.uic.edu/wp-content/tablepress-combined.min.css?ver=26' type='text/css' media='all' />
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-a11y.min.js?ver=4.9.8'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var EM = {"ajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/today.uic.edu\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"mm\/dd\/yy","ui_css":"https:\/\/today.uic.edu\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"0","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.95'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/directory-script.js?ver=4.9.8'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//embed/js/embed-form.js?ver=4.9.8'></script>
-<link rel='https://api.w.org/' href='https://today.uic.edu/wp-json/' />
-    <style type="text/css" media="screen">
-      div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
-        text-decoration: none;
-        border: none;
-      }
-    </style>
-           <style type="text/css" media="screen">
-          div.printfriendly {
-            margin: 0px 0px 0px 0px;
-            position: relative;
-            z-index: 1000;
-          }
-          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
-            font-size: 14px;
-            color: #55750C;
-            vertical-align: bottom;
-          }
-          .printfriendly a {
-            box-shadow:none;
-          }
-          .printfriendly a:hover {
-            cursor: pointer;
-          }
-          .printfriendly a img  {
-            border: none;
-            padding:0;
-            margin-right: 6px;
-            box-shadow: none;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-          }
-          .printfriendly a span{
-            vertical-align: bottom;
-          }
-          .pf-alignleft {
-            float: left;
-          }
-          .pf-alignright {
-            float: right;
-          }
-          div.pf-aligncenter {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-          }
-        </style>
-        <style type="text/css" media="print">
-          .printfriendly {
-            display: none;
-          }
-        </style>
-
-<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://today.uic.edu/feed/podcast" />
-
-<script type="text/javascript">
-           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-         </script><script type="text/javascript">
-	           var ajaxurl = "https://today.uic.edu/wp-admin/admin-ajax.php";
-	         </script>
-<!-- Put the following javascript before the closing </head> tag. -->
-
-<script>
-  (function() {
-    var cx = '009511351313755808885:xdz07yl93pe';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
 
 </head>
-
-<body role="document" class="archive tag tag-events-2 tag-2651">
-
-
-<div id="skip" role="complementary">
-<a href="#the_content">Skip to main content</a></div>
-
-
-
-<div id="header" role="banner">
-
-
-
-
-         		<div id="header-background">
-
-
-
-<!-- removed color wash for now.
-
-			<div class="color-wash">
-            <img src="" alt="   ">
-            </div>
-
-            -->
-
-
-
-            <div class="uic-type-wrapper">
-
-
-            <div class="last-update-timestamp">
-            	Updated: Nov 21, 2018 at 10:21 AM
-            </div><!--  last-update-timestamp   -->
-
-
-            <div class="uic-type-treatment">
-
-  			<div class="_mark">
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->
-
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-
-			</div><!--  uic-type-treatment   -->
-
-
-
-            <!-- Put search box here -->
-<div class="search-box" aria-label="Search U I C today">
-    <form role="search" method="get" action="https://today.uic.edu/">
-     
-        <input type="text" id="s" name="s" aria-label="Search" size="25" value="" placeholder="Search">
-
-<button type="submit" value="Submit" style="border: 0;
-clip: rect( 1px, 1px, 1px, 1px );
-clip-path: inset( 50% );
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
-word-wrap: normal;">
-Submit
-</button>
-
-    </form>
-    
-    
-</div>
-
-
-
-<!-- End search box code -->
-
-
-
-			</div><!--  uic-type-wrapper    -->
-
-
-		</div><!--  header-background   -->
-
-
-
-
-
-		<div id="main_nav" role="navigation" aria-label="Site">
-	  	 	<div class="main_nav_container"><ul id="menu-main_nav" class="menu"><li id="menu-item-57546"><a href="https://today.uic.edu/campus-news">Campus News</a></li>
-<li id="menu-item-57547"><a href="https://today.uic.edu/academics-research">Academics &#038; Research</a></li>
-<li id="menu-item-57548"><a href="https://today.uic.edu/events">Events</a></li>
-<li id="menu-item-67603"><a href="https://today.uic.edu/resources">Resources</a>
-<ul class="sub-menu">
-	<li id="menu-item-67604"><a href="https://today.uic.edu/resources/current-students">Current Student Resources</a></li>
-	<li id="menu-item-67605"><a href="https://today.uic.edu/resources/faculty-staff">Faculty &#038; Staff Resources</a></li>
-	<li id="menu-item-70617"><a href="https://today.uic.edu/campus-news/campus-newspaper">Campus Newspaper &#038; Archives</a></li>
-</ul>
-</li>
-<li id="menu-item-57549"><a href="https://today.uic.edu/contact">Contact</a>
-<ul class="sub-menu">
-	<li id="menu-item-57551"><a href="https://today.uic.edu/contact/communicating-on-campus">Communicating On Campus</a></li>
-	<li id="menu-item-57552"><a href="https://today.uic.edu/contact/communicating-on-campus/sending-massmails-dddh">Sending Announcements / DDDH</a></li>
-	<li id="menu-item-57550"><a href="https://today.uic.edu/contact/social-media-directory">UIC Social Media Directory</a></li>
-</ul>
-</li>
-</ul></div>	    </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-		</div>
-
-
-
-
-
-
-
-
- <div id="container" role="main" aria-label="Main content" class="clearfix">
-
-
-<a name="the_content" id="the_content" tabindex="-1" aria-label="Main content area"></a>
-
-
-
-
-
-
-		    <h1>All events</h1>
-	 
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2016/09/IMG_9554-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="UIC’s annual carnival" srcset="https://today.uic.edu/files/2016/09/IMG_9554-150x150.jpg 150w, https://today.uic.edu/files/2016/09/IMG_9554-100x100.jpg 100w, https://today.uic.edu/files/2016/09/IMG_9554-200x200.jpg 200w, https://today.uic.edu/files/2016/09/IMG_9554-125x125.jpg 125w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">August 22, 2018</p>
-            <a href="https://today.uic.edu/get-fired-up-for-fall-semester-with-campus-events"> Get fired up for fall semester with campus events </a>
-            <p>Save the dates for carnival, music festival, family weekend and more</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2015/10/Chec_Press_Conference-57-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Robert Winn" srcset="https://today.uic.edu/files/2015/10/Chec_Press_Conference-57-150x150.jpg 150w, https://today.uic.edu/files/2015/10/Chec_Press_Conference-57-100x100.jpg 100w, https://today.uic.edu/files/2015/10/Chec_Press_Conference-57-200x200.jpg 200w, https://today.uic.edu/files/2015/10/Chec_Press_Conference-57-160x160.jpg 160w, https://today.uic.edu/files/2015/10/Chec_Press_Conference-57-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">September 20, 2017</p>
-            <a href="https://today.uic.edu/cancer-is-like-a-hurricane-but-community-can-help"> &#8216;Cancer is like a hurricane,&#8217; but community can help </a>
-            <p>Forum planned for Sept. 22</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2013/11/IMG_3812-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Paper bag turkeys" srcset="https://today.uic.edu/files/2013/11/IMG_3812-150x150.jpg 150w, https://today.uic.edu/files/2013/11/IMG_3812-160x160.jpg 160w, https://today.uic.edu/files/2013/11/IMG_3812-45x45.jpg 45w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">November 10, 2016</p>
-            <a href="https://today.uic.edu/childrens-hospital-to-host-thanksgiving-party-for-patients-and-families"> Children&#8217;s hospital to host Thanksgiving party for patients and families </a>
-            <p>Games, crafts and treats begin the holiday season</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2015/09/DSC_4334-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="crowd holding up glow sticks" srcset="https://today.uic.edu/files/2015/09/DSC_4334-150x150.jpg 150w, https://today.uic.edu/files/2015/09/DSC_4334-100x100.jpg 100w, https://today.uic.edu/files/2015/09/DSC_4334-200x200.jpg 200w, https://today.uic.edu/files/2015/09/DSC_4334-125x125.jpg 125w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">September 11, 2015</p>
-            <a href="https://today.uic.edu/fun-sparkuic-i-lost-my-voice-and-i-cant-feel-my-feet"> Fun at #SparkUIC: &#8216;I lost my voice and I can&#8217;t feel my feet&#8217; </a>
-            <p>Students share the experience of free private concert on social media</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2015/09/DSC_4445-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="crowd holds up drummer of twenty one pilots on a platform" srcset="https://today.uic.edu/files/2015/09/DSC_4445-150x150.jpg 150w, https://today.uic.edu/files/2015/09/DSC_4445-100x100.jpg 100w, https://today.uic.edu/files/2015/09/DSC_4445-200x200.jpg 200w, https://today.uic.edu/files/2015/09/DSC_4445-125x125.jpg 125w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">September 8, 2015</p>
-            <a href="https://today.uic.edu/sparkuic-lights-up-the-pavilion"> SparkUIC lights up the Pavilion </a>
-            <p>Glowsticks, fog, crowds and music at free music festival</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2015/09/105040_D1865b31-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Sheryl Underwood, 1987 UIC graduate and host of &quot;The Talk&quot; on CBS." srcset="https://today.uic.edu/files/2015/09/105040_D1865b31-150x150.jpg 150w, https://today.uic.edu/files/2015/09/105040_D1865b31-100x100.jpg 100w, https://today.uic.edu/files/2015/09/105040_D1865b31-200x200.jpg 200w, https://today.uic.edu/files/2015/09/105040_D1865b31-125x125.jpg 125w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">September 7, 2015</p>
-            <a href="https://today.uic.edu/comedian-tv-host-returns-to-share-experiences-advice"> Comedian, TV host returns to share experiences, advice </a>
-            <p>Have a question for Sheryl Underwood? Tweet #goUIC</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2014/10/lesinski2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Student, faculty sit-in for Latino studies program" srcset="https://today.uic.edu/files/2014/10/lesinski2-150x150.jpg 150w, https://today.uic.edu/files/2014/10/lesinski2-100x100.jpg 100w, https://today.uic.edu/files/2014/10/lesinski2-200x200.jpg 200w, https://today.uic.edu/files/2014/10/lesinski2-160x160.jpg 160w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">October 16, 2014</p>
-            <a href="https://today.uic.edu/latin-american-and-latino-studies-program-celebrates-40-years"> Latin American and Latino studies program celebrates 40 years </a>
-            <p>Events include scholarship fundraiser, film, panel discussions</p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2014/09/Estrella-Consort-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Estrella Consort" srcset="https://today.uic.edu/files/2014/09/Estrella-Consort-150x150.jpg 150w, https://today.uic.edu/files/2014/09/Estrella-Consort-100x100.jpg 100w, https://today.uic.edu/files/2014/09/Estrella-Consort-200x200.jpg 200w, https://today.uic.edu/files/2014/09/Estrella-Consort-160x160.jpg 160w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">September 4, 2014</p>
-            <a href="https://today.uic.edu/tuesdays-at-one"> Jazz, classical, new music in free lunchtime concerts </a>
-            <p>Tuesdays-at-One performance series features national, local artists </p>
-          </div>
-        </div>
-            <div class='news-release'>
-          <div class="listing-thumb">
-            <img width="150" height="150" src="https://today.uic.edu/files/2014/01/cd_img9-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="The Cavatina Duo" srcset="https://today.uic.edu/files/2014/01/cd_img9-150x150.jpg 150w, https://today.uic.edu/files/2014/01/cd_img9-160x160.jpg 160w" sizes="(max-width: 150px) 100vw, 150px" />          </div>
-          <div class='news-release-info clearfix'>
-            <p class="date grayed">January 23, 2014</p>
-            <a href="https://today.uic.edu/concerts-spring-14"> Jazz, classical, new music in UIC concerts </a>
-            <p>Evening and lunchtime concerts, most free</p>
-          </div>
-        </div>
-        
-    <!-- Creates paginated archive pages -->
-    
-     <div class="archivepaged">
-           </div>
+<body>
   
+<div id="skip"><a href="#content">Skip to Main Content</a></div> 
+<div class="container header_container">
+<div id="header">
+<div id="header_logo">
+<div id="header_logo_left"><a href="http://www.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uic_logo','','img/banner-UIC.png',1)"><img src="img/banner-UIC.png" alt="link to UIC home page" id="uic_logo"/></a><a href="http://vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ovcsa_logo','','img/banner-OVCSA2.png',1)"><img src="img/banner-OVCSA2.png" alt="link to OVCSA home page" id="ovcsa_logo" width="200" height="40"/></a></div>
+<div id="header_logo_right"><a href="http://www.uic.edu" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uofi_logo','','img/banner-UniversityofIlli2.png',1)"><img src="img/banner-UniversityofIlli2.png" alt="link to UIC" id="uofi_logo"/></a></div>
+</div>
+<div class="clearfloat"></div>
+</div>
+<div class="triangle_left"></div>
+<div class="triangle_right"></div>
+</div>
+<!-- title -->   
+<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 style="padding-left:12px"><strong>OFFICE OF THE DEAN OF STUDENTS</strong></h1>
+          </div>         
+        </div>
+      </div>
+</div>
+<div class="container" id="navbar_container">
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">    
+            <div class="bs-example">
+              <div class="navbar navbar-default" id="nav_bar">
+                   <div class="container">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                         <a class="navbar-brand" href="index.shtml">Home</a>
+                      </div>
+                      <div class="navbar-collapse collapse navbar-responsive-collapse">
+                         <ul class="nav navbar-nav">
+                          <li><a href="about.shtml">About Us</a></li>    
+                          <li><a href="services.shtml">Students</a></li>     
+                          <li><a href="units.shtml">Faculty & Staff</a></li>
+                          <li><a href="contact.shtml">Contact Us</a></li>            
+						  <li><a href="needhelp.shtml">Need Help?</a></li> 
+                        </ul>
+                        <form class="navbar-form navbar-right" id="cse-search-box" action="search.shtml">
+                        <input type="hidden" value="003292673167871140938:_ftumhdite0" name="cx" />
+                        <input type="hidden" value="FORID:11" name="cof" />
+                        <input type="hidden" value="UTF-8" name="ie" />                        
+                        <input type="text"  id="search"  name="q" class="form-control col-lg-8" placeholder="Search">     
+                        </form>   
+	</div><!-- /.nav-collapse -->
+                  </div><!-- /.container -->
+                  </div><!-- /.navbar -->
+             
+            </div><!-- /example -->
+          </div>
+        </div>
+      </div>
+    <!-- end of Navbar-->
+</div>
+    
+      
+<!--main container-->
+<div class="container">
+<div class="Flexible-container">         
+<img src="img/dos_uicare.jpg" alt="About Dean Of Students" class="img-responsive">  
+</div>
+<br />
+	
+<div class="row">
+<a tabindex="-1" name="content"></a>
+<div class="col-lg-9">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="h3">Information for Students Needing Help</h3>
+</div>
+<div class="panel-body">
+<p>We are here to help you!</p>
+<p>UIC is dedicated to assisting all students experiencing personal difficulties no matter how serious or small the situation may seem. The resources listed below address some of the more commonly reported areas of difficulties students face.  If your situation is not addressed below, or if you prefer to speak to someone, please contact the Office of the Dean of Students at (312) 996-4857 or any of the U and I Care partners for further assistance.</p>
 
-<!-- Need 2 closing divs before footer to close divs from page header include -->
+</div>
+</div>
+<!-- Quick Links Section
+<div class="row">
+   	<div class="col-lg-12">
+	   <div style="background-color:#3498DB; color:#FFFFFF; left:0;
+        margin:15px auto 0; overflow:hidden; padding:2px 0 0 10px; text-transform:uppercase;">
+ 	    <h3 style="color:#FFFFFF; text-align: center;"> <i class="fa fa-bookmark"></i><strong> QUICK LINKS</strong></h3>
+        </div>
+        <div id="qlinks" style="box-shadow: 0 8px 6px -6px #000000;">
+
+		<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#abuse';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Sexual Assault </span></button>
+        </div>
+		  <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#abuse';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Stalking </span></button>
+        </div>
+
+        <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Homelessness </span></button>
+        </div>
+		 <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Food Insecurity </span></button>
+        </div>
+        <div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Hospitalization </span></button>
+        </div>  
+		<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Death in Family  </span></button>
+        </div>
+<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#emotionaldistress';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Feeling Depressed or Suicidal   </span></button>
+        </div>		
+			<div>
+        <button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#harass';" style="width:100%;" >
+                <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Feeling Harassed </span></button>
+        </div>	
+
+        </div>
+   </div>
+   </div>
+   <br />
+-->
+
+<!-- New Layout for Questions -->
+<div class="row">
+   	<div class="col-lg-12">
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#concern';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you need to talk to someone about a personal situation or an academic concern?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#emotionaldistress';" style="width:100%" "height:200px;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you feeling depressed or really stressed, emotional or anxious?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#abuse';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Not sure what to do if someone sexually assaulted you, is stalking you or you feel you are in an abusive relationship?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#financialhardship';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you experiencing financial hardship?</span></button>
+		</div>
+
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#healthy';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you thinking of leading a healthier life or looking for information on wellness and nutrition?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#identity';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you have questions regarding your gender identity or sexuality and are not sure who to talk to?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#surgery';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Considering procedures for surgical gender transition and would like to talk to someone about it?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#disability';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you have or think you might have a disability and are not sure who to talk to?</span></button>
+		</div>
+		<a class="jump" name="concern"></a>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#harass';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Do you feel like someone is harassing you or discriminating against you?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#lonely';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you feeling lonely and are looking to make new friends and become more involved on campus?</span></button>
+		</div>
+		<div>
+			<button type="button" class="btn btn-labeled btn-success quicklink" onclick="window.location.href='#undocument';" style="width:100%;" >
+			        <span class="quickdown" ><i class="fa fa-external-link"></i></span> <span class="quickbutton">Are you scared to talk to someone about your undocumented status? Don’t be!</span></button>
+		</div>
 	</div>
-    
-</div>    
-
-<div class="clearThis">&nbsp;</div>
-
-
-
-
-
-    
-
-    <footer id="footer" class="footer u-dark-region" role="contentinfo">
-
-
-  <div class="footer-contact">
-    <div class="l-full">
-
-
-            <div class="uic-type-wrapper-footer">
-
-            <div class="uic-type-treatment-footer">
-            
-  			<div class="_mark"> 
-    		<a href="http://uic.edu" class="uic-logo-icon" aria-label="UIC logo">
- 			<svg aria-label="UIC.edu" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
- 			<title>UIC Logo</title>
- 			<circle class="_circle" cx="27" cy="27" r="25" fill="none"></circle>
- <path class="_mark" d="M49.73 23.917l-4.583 2.2c-.44-1.71-1.397-2.718-3.056-2.718-2.25 0-3.39 1.862-3.39 4.918 0 3.03 1.14 4.844 3.39 4.844 1.555 0 2.462-.83 2.954-2.203l4.79 1.707c-1.242 2.824-3.754 4.767-7.768 4.767-5.57 0-8.754-3.728-8.754-9.116 0-5.41 3.368-9.114 8.857-9.114 4.194 0 6.68 2.407 7.56 4.713zm-24.264-4.403h5.282v17.61h-5.282v-17.61zm-3.21 10.41c0 2.46-.258 3.65-.96 4.844-1.164 1.94-4.27 2.692-6.99 2.692-2.72 0-5.828-.753-6.993-2.692-.698-1.194-.96-2.384-.96-4.844v-10.41h5.284v10.513c0 1.192.157 1.968.596 2.486.416.492 1.09.726 2.073.726.983 0 1.657-.235 2.07-.727.44-.518.597-1.294.597-2.486V19.514h5.282v10.41zM54.5 27.5c0-14.912-12.09-27-27-27-14.913 0-27 12.088-27 27s12.087 27 27 27c14.91 0 27-12.088 27-27z" fill="#d50032" fill-rule="evenodd"></path>
-</svg>
-</a>
-  			</div><!--  _mark   -->   
-            
-  			<div class="_text">
-    		<a href="/">
-        	  Today
-      		  </a>
- 			</div><!--  _text   -->
-
-            
-			</div><!--  uic-type-treatment-footer   -->
-
-
-			</div><!--  uic-type-wrapper-footer    -->
- 
-
-
-  <div class="_contact">
-  
-  
-    <h2>Contact</h2>
-    
-    
-		<div class="site-address">Office of Public and Government Affairs <br />
-		601 S. Morgan St., 1320 UH, Chicago, IL 60607</div>
-      
-      
-		<div class="site-email"><a href="mailto:uictoday@uic.edu">uictoday@uic.edu</a></div>
-        
-        
-		<div aria-label="Social Media Accounts" class="_social" role="navigation">
-			<h2 class="assistive-text">Social Media Accounts</h2> 
-  			<ul class="site-social-links">
-            <li><a href="https://www.facebook.com/uicnews "><img src="/wp-content/themes/uictoday/images/social-media-icons/facebook.png" alt="Facebook"></a></li>
-            <li><a href="https://instagram.com/thisisuic/"><img src="/wp-content/themes/uictoday/images/social-media-icons/instagram.png" alt="Instagram"></a></li>
-            <li><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today"><img src="/wp-content/themes/uictoday/images/social-media-icons/rss.png" alt="RSS feed"></a></li>
-            <li><a href="https://uicscience.tumblr.com/"><img src="/wp-content/themes/uictoday/images/social-media-icons/tumblr.png" alt="tumblr"></a></li>
-            <li><a href="https://twitter.com/UICnews"><img src="/wp-content/themes/uictoday/images/social-media-icons/twitter.png" alt="Twitter"></a></li>
-            <li><a href="https://www.youtube.com/user/uicmedia"><img src="/wp-content/themes/uictoday/images/social-media-icons/youtube.png" alt="YouTube"></a></li>
-            <li><a href="https://today.uic.edu/contact/social-media-directory"><img src="/wp-content/themes/uictoday/images/social-media-icons/directory.png" alt="Social media directory"></a></li>
-            </ul>
-            
-            
-		</div>        
-        
-        
-  </div>
-
-    
-
-       
-
-
+</div>
    
+<!-- Old Layout for Questions
+<div class="bs-example">
+<ul class="list-group">
+<li class="list-group-item">
+<a style="color:white;" href="#concern">
+<span class="anchorlink">Need to talk to someone about a personal situation or an academic concern? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#emotionaldistress">
+<span class="anchorlink">Feeling depressed, stressed, emotional or anxious? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#abuse">
+<span class="anchorlink">Not sure what to do if someone sexually assaulted you, is stalking you or in an abusive relationship? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#financialhardship">
+<span class="anchorlink">Are you experiencing financial hardship? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#healthy">
+<span class="anchorlink">Thinking of leading a healthier life or looking for information on wellness and nutrition? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#identity">
+<span class="anchorlink">Questions regarding your gender identity or sexuality? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#surgery">
+<span class="anchorlink">Considering procedures for surgical gender transition and would like to talk to someone about it? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#disability">
+<span class="anchorlink">Do you have or think you might have a disability and are not sure who to talk to? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#harass">
+<span class="anchorlink">Do you feel like someone is harassing you or discriminating against you? </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a style="color:white;" href="#lonely">
+<span class="anchorlink">Are you feeling lonely and are looking to make new friends and become involved?  </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+<li class="list-group-item">
+<a class="jump" name="concern"></a>
+<a style="color:white;" href="#undocument">
+<span class="anchorlink">Are you scared to talk to someone about your undocumented status?  Don’t be!  </span><span class="badge"><i class="fa fa-anchor"></i> </span></a>
+</li>
+</ul>
+</div>
+-->
 
 
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you need to talk to someone about a personal situation or an academic concern? </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		You can talk to someone on the <a href="http://dos.uic.edu">Office of the Dean of Students</a> about <strong><u>any</u></strong> personal matter.  We will either provide you with direct assistance or make sure to connect you to the appropriate resource.  Some examples of situations addressed by DOS include but are not limited to:<br>
+		<p style="text-align:center">
+		<span class="label label-default">Crime Victims Assistance </span>
+		<span class="label label-default">Personal Crisis </span> 
+		<span class="label label-default">Threats </span>
+		<span class="label label-default">Bullying  </span>
+		<span class="label label-default">Homelessness  </span><br>
+		<span class="label label-default">Food Insecurity  </span>
+		<span class="label label-default">Fire Victims Assistance  </span>
+		<span class="label label-default">Financial Emergencies  </span><br>
+		<span class="label label-default">Academic Difficulties  </span>
+		<span class="label label-default">Death in the Family  </span>
+		<span class="label label-default">Hospitalization  </span>
+		<span class="label label-default">Religious Accommodations  </span>
+		<span class="label label-default">Legal Assistance  </span><br>
+		<span class="label label-default">Suicidal Ideations or Attempts  </span>
+		<span class="label label-default">Dealing with Unwanted Advances  </span>
+		<span class="label label-default">Grade Dispute  </span>	
+		</p>
+		<br>
+		<p><center><a href="docs/homelessshelters.pdf" style="margin-right:12px;">List of Chicago Homeless Shelters</a>
+		<a href="docs/foodpantries.pdf">List of Chicago-based Food Pantries</a></center></p>
+		<br>
+		<p style="text-align:center"><strong>The Office of the Dean of Students</strong><br>
+	3030 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-4857<br>
+	<i class="fa fa-envelope"></i> dos@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://dos.uic.edu/">dos.uic.edu</a>
+	</p>
+	
+	<a class="jump" name="emotionaldistress"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>	
 
 
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you feeling depressed or really stressed, emotional or anxious?  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://counseling.uic.edu/">Counceling Center</a> provides a safe, supportive, and confidential setting to explore your concerns towards improving your emotional and physical well-being and your ability to better focus on your academics.  Some examples of areas you can talk to a counselor about include but are not limited to:<br>
+		<p style="text-align:center">
+		<span class="label label-default">Depression  </span>
+		<span class="label label-default">Anxiety  </span> 
+		<span class="label label-default">Suicidal Ideations  </span>
+		<span class="label label-default">Dealing with a Crisis or Trauma   </span>
+		<span class="label label-default">Difficulties Transitioning to College   </span><br>
+		<span class="label label-default">A Difficult Break-up  </span>
+		<span class="label label-default">Gender or Cultural Identity Concerns   </span>
+		<span class="label label-default">Stress   </span>
+		<span class="label label-default">Mental Health Concerns   </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Counseling Center</strong><br>
+	2010 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-3490<br>
+	<i class="fa fa-globe"></i> <a href="http://counseling.uic.edu/">counseling.uic.edu</a><br>
+	In-Touch Hotline: (312)996-5535 
+	</p>
+	<a class="jump" name="abuse"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>	
 
-		<div id="quicklinks_footer" role="navigation" aria-label="Quick Links" >
-			<div id="quicklinks_footer_container">
-	  	 	<div class="menu-footer-quicklinks-container"><ul id="menu-footer-quicklinks" class="menu"><li id="menu-item-57564"><a href="/news-release/news-release/">For the Media</a></li>
-<li id="menu-item-57555"><a href="https://today.uic.edu/experts-guide">Experts Guide</a></li>
-<li id="menu-item-57556"><a href="https://today.uic.edu/campus-news/campus-newspaper/advertising">Advertise in UIC News</a></li>
-<li id="menu-item-57577"><a href="https://today.uic.edu/contact/communicating-on-campus/submit-announcements">Submit Announcements</a></li>
-<li id="menu-item-57578"><a href="https://today.uic.edu/submit-an-event">Submit an Event</a></li>
-<li id="menu-item-67562"><a href="https://today.uic.edu/campus-news/campus-newspaper/subscribe-to-uic-today">Subscribe to UIC Today</a></li>
-</ul></div>        	</div>
-	    </div>      
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Not sure what to do if someone sexually assaulted you, is stalking you or you feel you are in an abusive relationship? </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://can.uic.edu/">Campus Advocacy Network</a> is dedicated to providing you with confidential, anonymous, free services to UIC students who have experienced some form or sexual misconduct.  Some of the specific areas you can talk to an advocate at CAN about include but are not limited to:<br>
+		<p style="text-align:center">
+		<span class="label label-default">Stalking   </span> 
+		<span class="label label-default">Sexual Assault   </span> 
+		<span class="label label-default">Domestic/Dating Violence   </span>
+		<span class="label label-default">Hate Crime   </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Campus Advocacy Network</strong><br>
+	2010 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 413-1025<br>
+	<i class="fa fa-envelope"></i> can@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://can.uic.edu/">Campus Advocacy Network</a><br>
+	</p>
+	<a class="jump" name="financialhardship"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you experiencing financial hardship?</h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		Financial hardship can happen to anyone and it often takes place unexpectedly.  We know it isn’t easy telling someone that you need financial help especially when it comes to something very personal, like food, clothing, and toiletries.  But U&I Care partners are experienced in helping you find resources in a very safe, comfortable and non-judgmental environment.  We encourage you to contact the Office of the Dean of Students for assistance. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Personal Crisis </span> 
+		<span class="label label-default">Homelessness </span> 
+		<span class="label label-default">Food Insecurity </span>
+		<span class="label label-default">Fire Victims Assistance </span>
+		<span class="label label-default">Financial Emergencies </span> 
+		<span class="label label-default">Death in the Family or Other Family Crisis </span> 
+		<span class="label label-default">Hospitalization  </span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>The Office of the Dean of Students</strong><br>
+	3030 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-4857<br>
+	<i class="fa fa-envelope"></i> dos@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://dos.uic.edu/">dos.uic.edu</a><br>
+	</p>
+	<a class="jump" name="healthy"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you thinking of leading a healthier life or looking for information on wellness and nutrition? </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://wellness.uic.edu/">Wellness Center</a> is an excellent resource for health and wellness information to help you make healthy choices in a number of personal areas.  You can contact or visit the office for any of the following: <br>
+		<p style="text-align:center">
+		<span class="label label-default">Sexual Well-Being  </span> 
+		<span class="label label-default">Free Condoms & Lubricants  </span> 
+		<span class="label label-default">Emotional Health  </span>
+		<span class="label label-default">Environmental Health  </span><br>
+		<span class="label label-default">Free Food Pantry  </span> 
+		<span class="label label-default">Emergency Personal Toiletry Packs  </span> 
+		<span class="label label-default">Nutritional Education  </span> <br>
+		<span class="label label-default">Balancing Life   </span> 
+		<span class="label label-default">Spiritual Appreciation  </span> 
+		<span class="label label-default">Social Support   </span> 
+		<span class="label label-default">Alcohol & Marijuana Education   </span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Wellness Center</strong><br>
+	238 Student Center East<br>
+	<i class="fa fa-phone"></i> (312) 413-2120<br>
+	<i class="fa fa-envelope"></i> wellness@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://wellness.uic.edu/">wellnesscenter.uic.edu</a><br>
+	</p>
+	<a class="jump" name="identity"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you have questions regarding your gender identity or sexuality and are not sure who to talk to?  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://genderandsexuality.uic.edu/">Gender and Sexuality Center</a> provides a safe space to explore <strong>gender identity</strong> and its intersection with other social identities such as race, religion, and class. Call or visit GSC to talk to someone about any of the following: <br>
+		<p style="text-align:center">
+		<span class="label label-default">Gender Identity Concerns   </span> 
+		<span class="label label-default">Coming Out   </span> 
+		<span class="label label-default">Gender Transitioning   </span>
+		<span class="label label-default">Safe Zones   </span><br>
+		<span class="label label-default">Connecting with the LGBTQ Community  </span> 
+		<span class="label label-default">Becoming Involved in LGBTQ Clubs   </span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Gender and Sexuality Center</strong><br>
+	181 Behavioral Sciences Building <br>
+	<i class="fa fa-phone"></i> (312) 413-8619<br>
+	<i class="fa fa-envelope"></i> lgbtqa@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://genderandsexuality.uic.edu/">genderandsexuality.uic.edu</a> <br>
+	</p>
+	<a class="jump" name="surgery"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Considering procedures for surgical gender transition and would like to talk to someone about it?   </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		<a href="http://gapadvocates.webhost.uic.edu/">GAP Advocates @ UIC</a> are students, faculty, and staff trained to be student-centered and trauma informed resources for students considering surgery for gender reassignment.  Their primary purpose is to provide the best quality of care for you by being someone who will listen, support, and connect you with resources. <br>
+
+		<p style="text-align:center"><strong>GAP Advocates @ UIC</strong><br>
+	<i class="fa fa-globe"></i> <a href="http://gapadvocates.webhost.uic.edu/"> gapadvocates.webhost.uic.edu</a> <br>
+	</p>
+	<a class="jump" name="disability"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you have or think you might have a disability and are not sure who to talk to?   </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The <a href="http://drc.uic.edu/">Disability Resource Center</a> works to provide you with high quality services and resources to help make UIC a welcoming and accessible place.  Visit or contact DRC to talk about any of the following: <br>
+		<p style="text-align:center">
+		<span class="label label-default">Transitioning to College </span> 
+		<span class="label label-default">Understanding Accommodations on Campus </span> <br>
+		<span class="label label-default">Transportation Services    </span>
+		<span class="label label-default">Test-Taking Services   </span>
+		<span class="label label-default">Note-taking Assistance  </span> 
+		<span class="label label-default"> Media Conversion   </span> <br>
+		<span class="label label-default"> Assistive Learning Devices    </span>
+		<span class="label label-default"> American Sign Language Interpreters    </span>
+		<span class="label label-default"> CART and Captioning Services   </span>
+		<span class="label label-default"> Connecting with others on Campus </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Disability Resource Center</strong><br>
+	1190 Student Services Building <br>
+	<i class="fa fa-phone"></i> (312) 413-2183<br>
+	<i class="fa fa-globe"></i> <a href="http://drc.uic.edu/">drc.uic.edu</a> <br>
+	</p>
+	<a class="jump" name="harass"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Do you feel like someone is harassing you or discriminating against you?  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The Office of the Dean of Students (DOS) serves as a general resource for you especially when you are dealing with a situation that you are not sure what to do.  We can help you determine what your best options might be including getting you connected with appropriate offices or services. DOS is a perfect “first step” in addressing a situation like someone who may be harassing or discriminating against you. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Crime Victims Assistance </span> 
+		<span class="label label-default">Personal Crisis </span> 
+		<span class="label label-default">Threats </span>
+		<span class="label label-default">Bullying   </span>
+		<span class="label label-default">Homelessness   </span> <br>
+		<span class="label label-default">Food Insecurity </span> 
+		<span class="label label-default">Fire Victims Assistance    </span>
+		<span class="label label-default">Financial Emergencies  </span>
+		<span class="label label-default">Academic Difficulties   </span><br>
+		<span class="label label-default">Death in the Family    </span>
+		<span class="label label-default">Hospitalization    </span>
+		<span class="label label-default">Religious Accommodations    </span>
+		<span class="label label-default">Legal Assistance    </span><br>
+		<span class="label label-default">Suicidal Ideations or Attempts    </span>
+		<span class="label label-default">| Dealing with Unwanted Advances    </span>
+		<span class="label label-default">Grade Dispute    </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>The Office of the Dean of Students</strong><br>
+	3030 Student Services Building<br>
+	<i class="fa fa-phone"></i> (312) 996-4857<br>
+	<i class="fa fa-envelope"></i> dos@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://dos.uic.edu/">dos.uic.edu</a> <br><br></p>
+	
+	You can also contact the <a href="http://oae.uic.edu/">Office of Access and Equity</a> (OAE) directly.  OAE strives to increase access to employment, programs, and services by helping make our environment free of unlawful discrimination and harassment.  You can speak to a representative about any of the following:<br>
+	<p style="text-align:center">
+		<span class="label label-default">Sexual Misconduct  </span> 
+		<span class="label label-default">Discrimination  </span> 
+		<span class="label label-default">Gender Inclusive Resources  </span>
+		<span class="label label-default">Lactation Rooms    </span><br>
+		<span class="label label-default"> Grievance Procedures    </span>
+		<span class="label label-default">Dispute Resolution Services </span> 
+		</p>
+		
+		<p style="text-align:center"><strong>Office of Access and Equity</strong><br>
+	809 S. Marshfield Ave Room 717<br>
+	<i class="fa fa-phone"></i> (312) 996-8670<br>
+	<i class="fa fa-envelope"></i> oae@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://oae.uic.edu/">oae.uic.edu</a></p>
+	
+	</p>
+	<a class="jump" name="lonely"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you feeling lonely and are looking to make new friends and become more involved on campus?   </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		The Center for Student Involvement can help you connect with other students, provide you with opportunities to get involved in student organizations and social programming.  Talk to a representative if you are interested in any of the following:. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Becoming a Member of a Student Organization </span> 
+		<span class="label label-default">Greek Life </span> 
+		<span class="label label-default">Concerts  </span>
+		<span class="label label-default">Cultural Programs   </span><br>
+		<span class="label label-default">Exhibits    </span>
+		<span class="label label-default">Internet Radio</span> 
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Center for Student Involvement</strong><br>
+	340 Student Center East<br>
+	<i class="fa fa-phone"></i> (312) 413-5070<br>
+	<i class="fa fa-globe"></i> <a href="http://campusprograms.uic.edu/">campusprograms.uic.edu</a> <br>
+	</p>
+	<p style="text-align:center"><strong>Undergraduate Student Government</strong><br>
+	397 Student Center East<br>
+	<i class="fa fa-globe"></i> <a href="http://usg.uic.edu/"> usg.uic.edu</a> <br>
+	</p>
+	<p style="text-align:center"><strong>Graduate Student Council</strong><br>
+	380 Student Center East<br>
+	<i class="fa fa-envelope"></i> gsc-officer@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://gradstudentcouncil.uic.edu/">  gradstudentcouncil.uic.edu</a> <br>
+	</p>
+	<p style="text-align:center"><strong>Health Professions Student Council</strong><br>
+	College of Pharmacy, Room 216, Last Thursday of the Month, 6 PM<br>
+	<i class="fa fa-globe"></i> <a href="http://hpsc.org.uic.edu/">hpsc.org.uic.edu</a> <br>
+	</p>
+	
+	<p style="text-align:center"><strong>Student Leadership and Volunteer Services</strong><br>
+	390 Student Center East<br>
+	<i class="fa fa-phone"></i> (312) 996-4500<br>
+	<i class="fa fa-envelope"></i> sldvs@uic.edu<br>
+	<i class="fa fa-globe"></i> <a href="http://sldvs.uic.edu/">sldvs.org.uic.edu</a> <br>
+	</p>
+	
+	
+	</p>
+	<a class="jump" name="undocument"></a>
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="h3">Are you scared to talk to someone about your undocumented status?  Don’t be!  </h3>
+	</div>
+	<div class="panel-body">
+	<p>
+		<a href="http://dream.uic.edu/">Undocumented Student Support</a> in the Office of Diversity offers assistance to students by providing helpful information in a safe and private environment.  To learn more about any of the following, contact Tanya Cabrera, Associate Director for Equity and Inclusion. <br>
+		<p style="text-align:center">
+		<span class="label label-default">Academic Assistance </span> 
+		<span class="label label-default">Financial Aid Information </span> 
+		<span class="label label-default">Legal Assistance </span>
+		</p>
+		<br>
+		<p style="text-align:center"><strong>Office of Diversity</strong><br>
+		Tanya Cabrera<br>
+		Associate Director for Equity and Inclusion<br>
+	601 South Morgan<br>
+	2627 UH<br>
+	<i class="fa fa-phone"></i> (312) 355-0011<br>
+	</p>
+	
+	<a href="infostudents.shtml" class="btn btn-primary btn-xs">Back to Top</a>
+		</div>
+	</div>
+	</div>
+</div>
 
 
 </div>
-
+<div class="col-lg-3">
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="uicare.shtml">About U and I Care</a>
+<a class="list-group-item " href="infostudents.shtml">For Students Needing Help</a>
+<a class="list-group-item" href="uicarestudentstostudents.shtml">For Students Helping Students</a>
+<a class="list-group-item" href="uicarestaff.shtml">For Faculty/Staff</a>
+<a class="list-group-item" href="uicarecontact.shtml">Contact a U and I Care Partner</a>
+</div>
+  
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="uicare.shtml">Quick Links</a>
+<a class="list-group-item " href="https://cm.maxient.com/reportingform.php?UnivofIllinoisChicago&layout_id=2">Request Assistance</a>
+<a class="list-group-item" href="http://sexualmisconduct.uic.edu/forstdntsurvivors.shtml">Sexual Misconduct</a>
+<a class="list-group-item" href="studentconductprocess.shtml">Student Conduct</a>
+<a class="list-group-item" href="contact.shtml">Consult with the Office of the Dean of Students</a>
+</div>
+     
+  <div class="list-group" style="box-shadow: 0 8px 6px -6px #000000;">
+<a class="list-group-item active" href="about.shtml">Other Services</a>
+<a class="list-group-item " href="studentconductprocess.shtml">Student Conduct Process</a>
+<a class="list-group-item" href="studentadvocacyservices.shtml">Student Advocacy Services</a>
+<a class="list-group-item" href="studentombudsservices.shtml">Student Ombuds Services</a>
+<a class="list-group-item" href="studentlegalservices.shtml">Student Legal Services</a>
+<a class="list-group-item" href="studentveteranaffairs.shtml">Student Veteran Affairs</a>
+<a class="list-group-item" href="studentgovernanceadvising.shtml">Student Governance Advising</a>
+<a class="list-group-item" href="religiousworkersassociation.shtml">Religious Workers Association</a>
+<a class="list-group-item" href="policiesandprocedures.shtml">Policies & Procedures</a>
+</div> 
     
+  
+		
+	</div></div>
+</div><!-- end of main container-->
+<!--footer-->
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="row">
+<div class="content-wrap-spacer">
+</div>
+</div>
+<div class="container footer_container">  
+<div class="triangle_left_footer"></div>
+<div class="triangle_right_footer"></div> 
+<div id="footer-wrap">
+<div class="content-wrap-spacer"></div>
+<div class="row">
+<div class="col-lg-4" style="color:#00000; padding-top: 10px; padding-bottom:10px;text-align:center;" > 
+Student Services Building (SSB)<br>
+1200 West Harrison St,<br>
+3030 SSB (MC 318)<br>
+Chicago, IL 60607<br><br>
+
+<small><i class="fa fa-phone"></i> Phone: 312-996-4857 <br>
+<i class="fa fa-print"></i> Fax: 312-413-3716 
+</small>
+</div>
+   		
+<div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px; text-align: center;" >
+      
+<a href="http://vcsa.uic.edu">OVCSA</a>
+|
+<a href="http://www.uic.edu">UIC</a>
+|
+<a href="sitemap.shtml">Site Map</a>
+|
+<a href="needhelp.shtml">Need Help?</a>
+ <p style="color:#3498DB; font-size:11px; line-height:1;"><br>Copyright © 2018 The Board of Trustees of the University of Illinois | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy" target="_blank">Privacy Statement</a> </p>
+</p> 
+        
+        </div>        
+        <div class="col-lg-4" style="padding-top: 10px; padding-bottom:10px;">   
+         
+             <a href="http://vcsa.uic.edu"><img src="img/banner-OVCSA-white3.png" class="img-responsive" alt="OVCSA"></a> 
+            
+        </div>
+        
     </div>
-  </div>
-
-
-
-
-<div class="footer-wrapper-uic-menu-legal">
-
-
-  <div class="footer-uic-menu">
-    <div class="ll-full">
-
-      <div role="navigation" aria-label="UIC.edu Links" >
-  <h2 class="assistive-text">UIC.edu links</h2>
-  <ul class="uic-footer-menu">
-    <li><a href="http://uic.edu/">UIC.edu</a></li>
-    <li><a href="http://catalog.uic.edu/ucat/academic-calendar/">Academic Calendar</a></li>
-    <li><a href="http://uicflames.com/">Athletics</a></li>
-    <li><a href="http://www.uic.edu/apps/departments-az/search">Campus Directory</a></li>
-    <li><a href="http://disabilityresources.uic.edu/">Disability Resources</a></li>
-    <li><a href="http://emergency.uic.edu/">Emergency Information</a></li>
-    <li><a href="http://events.uic.edu/">Event Calendar</a></li>
-    <li><a href="http://uic.edu/about/job-opportunities">Job Openings</a></li>
-    <li><a href="http://library.uic.edu/">Library</a></li>
-    <li><a href="http://maps.uic.edu/">Maps</a></li>
-    <li><a href="http://hospital.uillinois.edu/">UI Health</a></li>
-    <li><a href="http://dos.uic.edu/studentveteranaffairs.shtml">Veterans Affairs</a></li>
-  </ul>
 </div>
-
-    </div><!--  ll-full   -->
-    
-    <div class="m-full">
-    <img src="/wp-content/themes/uictoday/images/uihealth.png" alt="UI Health and UIC co-branded logo">
-    </div><!--  m-full   -->
-    
-  </div><!--  footer-uic-menu   --> 
-
-
-
-
-  <div class="footer-legal">
-    <div class="l-full">
-
-      <div class="site-copyright">
-  &copy; 2018 The Board of Trustees of the University of Illinois <span class="pipe-separator">|</span>
-  <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Statement</a>
+  
 </div>
+<div class="row">
+          <div class="col-lg-12">
+         </div>
+        </div>
 
-<div class="campuses" role="navigation" aria-label="University of Illinois campus web sites">
-  <h2 class="assistive-text">Campuses</h2>
-  <ul class="campuses-list">
-    <li><a href="https://uillinois.edu/">University of Illinois System</a></li>
-    <li><a href="https://illinois.edu/">Urbana-Champaign</a></li>
-    <li><a href="https://uis.edu/">Springfield</a></li>
-  </ul>
-</div>
-
-    </div>
-
-
-
-</div><!--  footer-wrapper-uic-menu-legal   --> 
-    
-    
-  </div>
-
-</footer>
-
-
-
-
-
-</div>
-
-
-			<style type="text/css">
-				.ssp-wave wave wave{
-					background: #28c0e1 !important;
-				}
-			</style>
-		<script type="text/javascript">
-  document.write(unescape("%3Cscript src='//www.uic.edu/inc/emergency/alert.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type='text/javascript' src='https://today.uic.edu/wp-content/plugins/simple-link-directory//assets/js/packery.pkgd.js?ver=1.1'></script>
-<script type='text/javascript' src='https://today.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
- 
-
-
-<!-- Google Analytics Code -->
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+//vravic2 added this script for valdiation of message textarea
+   $( "#submitbutton" ).click(function(event) {
+	  if($("#textarea").val()=='')
+	  {
+		$("#textarea").addClass("error");
+		event.preventDefault();
+	  }
+	});
+	
+   </script>
 
-        ga('create', 'UA-20665772-1', 'auto');
-    
-        ga('create', 'UA-4402713-9', 'auto', 'todayTracker');
-    
-        ga('send', 'pageview');
-    
-        ga('todayTracker.send', 'pageview');
-      </script>
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-</body>
-</html><!-- WP Fastest Cache file was created in 0.36419796943665 seconds, on 21-11-18 12:16:27 --><!-- need to refresh to see cached version -->
+  ga('create', 'UA-54652433-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+     
+<!--footer-->
+    
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>  
+    
+    
+    <!-- script and styling for sticky nav bar-->
+<script>
+$(document).ready(function() {
+  $(window).scroll(function () {
+     console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 180) {
+      $('#nav_bar').addClass('navbar-fixed');
+	  $('#navbar_container').removeClass('container');
+    }
+    if ($(window).scrollTop() < 181) {
+      $('#nav_bar').removeClass('navbar-fixed');
+	  $('#navbar_container').addClass('container');
+    }
+  });
+});
+</script>
+<!--switch images-->
+<script type="text/javascript"> 
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+} 
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+  </body>
+</html>

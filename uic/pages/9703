@@ -1,573 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<head>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
-<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-<title> WebChanges &lt; CS450fall09 &lt; TWiki</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS450fall09/WebChanges?_T=2018-11-21" type="application/x-wiki" title="edit WebChanges" />
-<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<meta name="SCRIPTURLPATH" content="/bin" />
-<meta name="SCRIPTSUFFIX" content="" />
-<meta name="TEXT_JUMP" content="Jump" />
-<meta name="TEXT_SEARCH" content="Search" />
-<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
-<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS450fall09/WebRss" />
-<base href="https://www.cs.uic.edu/bin/view/CS450fall09/WebChanges"></base>
-<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
-<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/TWikiTemplates/base.css');
-</style>
-<style type="text/css" media="all">
-#patternTopBar,
-#patternClearHeaderCenter,
-#patternClearHeaderLeft,
-#patternClearHeaderRight,
-#patternTopBarContentsOuter,
-#patternTopBarContents {
-/*	height:64px; */ /* top bar height; make room for header columns */
-	overflow:hidden;
-}
-#patternOuter {
-	margin-left:14em;
-}
-#patternLeftBar {
-	width:14em;
-	margin-left:-14em;
-}
-</style>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/PatternSkin/layout.css');
-@import url('/pub/TWiki/PatternSkin/style.css');
-@import url('/pub/TWiki/PatternSkin/colors.css');
-</style>
-<style type="text/css" media="all">
-	/* Styles that are set using variables */
-	.patternBookView .twikiTopRow,
-	.patternWebIndicator a img,
-	.patternWebIndicator a:hover img {
-		background-color:#D0D0D0;
-	}
-	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
-	
-	.patternBookView {
-		border-color:#D0D0D0;
-	}
-	.patternPreviewPage #patternMain {
-		/* uncomment to set the preview image */
-		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
-	}
-	
-</style><style type="text/css" media="all">
 
-@import url('/pub/Main/WebPreferences/mainweb.css');
+    <title>UIC Bluestem ID Server</title>
 
-</style>
-<style type="text/css" media="all">
-	@import url("/pub/TWiki/PatternSkin/print.css");
-</style>
-<!--[if IE]><style type="text/css" media="screen">
-pre {
-	overflow-x:auto;
-	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
-}
-</style>
-<![endif]-->
-<!--[if lte IE 6]> 
-<style type="text/css">
-#patternLeftBar {
-	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
-}
-</style><![endif]-->
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bluestem/assets/styles/login.css">
 
-<!-- Google Analytics Snippet -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
 
-<script type="text/javascript">
+  <div class="jumbotron" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 logo"> </div>
+      </div>
+    </div>
+  </div>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-17081517-1']);
-  _gaq.push(['_setDomainName', 'none']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
 
-  (function() {
-	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
-'.google-analytics.com/ga.js';
-	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 login-alert">
+      <div class="alert alert-danger" role="alert">
+        <h1>Invalid Referral to UIC WWW Identification Service</h1>
 
+        <p class="lead">Please configure your browser to accept cookies and try again.</p>
+
+        <p>
+          You arrived at this service someway other than by
+          referral from an authorized server, perhaps by
+          typing in a URL, or returning to a previous
+          authentication page.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+ <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+	<p>
+	  &copy; University of Illinois Board of Trustees |
+          <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
+	</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/bluestem/assets/js/jquery.placeholder.min.js"></script>
+<script>
+	$(function() {
+	// Invoke placeholder plugin
+	$('input').placeholder(); 
+	});
 </script>
-
-<!-- /Google Analytics Snippet -->
-</head>
-<body class="patternViewPage">
-<a name="PageTop"></a>
-<div id="patternScreen">
-<div id="patternPageShadow">
-<div id="patternPage">
-<div id="patternWrapper"><div id="patternOuter">
-<div id="patternFloatWrap">
-<div id="patternMain"><div id="patternClearHeaderCenter"></div>
-<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS450fall09/WebHome">CS450fall09 Web</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS450fall09/WebChanges" title='Topic revision: 1 (2006-11-15 - 19:43:52)'>WebChanges</a> <span class='patternRevInfo'>(2006-11-15, <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span>)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS450fall09/WebChanges?t=1542827315' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS450fall09/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Recent_Changes_in_CS450fall09_We"></a> Recent Changes in CS450fall09 Web <span style="font-size: 50%">retrieved at 19:08 (GMT)</span> </h1>
-<p />
-<div id="searchTopNavWebChanges" style="margin-bottom: 1em; "></div>
-<!-- remove the format parameter to show absolute date instead if topic age -->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homeworks"><b>Homeworks</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Ckanich?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="ckanich (this topic does not yet exist; you can create it)">ckanich</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homeworks" title="2013-01-03 - 00:11" rel="nofollow">5 years ago</a> - r22 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homeworks Homework problems and solutions will be posted here as they become available. See the HomeworkSchedule for upcoming due dates. Homeworks are to be turned...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/LectureNotes"><b>LectureNotes</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/LectureNotes" title="2009-12-06 - 03:57" rel="nofollow">8 years ago</a> - r38 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Lecture Notes and Recordings Lecture 2 Network Programming (for application programmers) http://www.cs.uic.edu/~jakob/cs450/lecture2.mov quicktime...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework9"><b>Homework9</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework9" title="2009-11-30 - 20:58" rel="nofollow">8 years ago</a> - r6 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 9 crawling the web (12 points!) due Mon Nov 30 at 2 pm In our last homework, we return to the application layer. You will write a simple web crawling application...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework8"><b>Homework8</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework8" title="2009-11-09 - 18:40" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 8 multiple access control In this homework, we experiment with the problem of multiple access control. Begin by copying the homework template to your submission...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework7"><b>Homework7</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework7" title="2009-10-19 - 13:05" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 7 parsing packet traces due 10/26 In this homework, we use libpcap to analyze packet traces captured with tcpdump. You can use `man pcap` to learn about...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/HomeworkHints"><b>HomeworkHints</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Wqin2?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="wqin2 (this topic does not yet exist; you can create it)">wqin2</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/HomeworkHints" title="2009-10-18 - 17:38" rel="nofollow">9 years ago</a> - r7 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework Hints This page is for you guys to edit, to provide any homework hints that you think may be helpful. As a reminder, everyone is encouraged to discuss the...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebLeftBar"><b>WebLeftBar</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Wqin2?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="wqin2 (this topic does not yet exist; you can create it)">wqin2</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebLeftBar" title="2009-10-18 - 17:35" rel="nofollow">9 years ago</a> - r9 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Syllabus Lecture Notes References Homeworks Subversion VMWare schedule hints archives FAQ ERF2054 map edit...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework6"><b>Homework6</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework6" title="2009-10-15 - 15:15" rel="nofollow">9 years ago</a> - r3 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 6 who are the big fish on the Internet? NOTE: due to a recent discovery, there is an easier way to do the ASN lookup. Please see the instructions at the...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/References"><b>References</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Amusa2?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="amusa2 (this topic does not yet exist; you can create it)">amusa2</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/References" title="2009-10-02 - 21:11" rel="nofollow">9 years ago</a> - r7 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">References Results of the midterm poll. For midterm 1, there are some parts in the book that you can skip. Inofficial usage policies on the UIC network. Learn how...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/MidtermPoll"><b>MidtermPoll</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/MidtermPoll" title="2009-10-02 - 12:31" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Midterm Poll It`s only fair that I get a midterm evaluation as well, so here goes. Make your choices, and then click OK . You may vote any number of times, but only...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebHome"><b>WebHome</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebHome" title="2009-10-02 - 12:29" rel="nofollow">9 years ago</a> - r11 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS450 Introduction to Networking Welcome to the CS450 web page for Fall 2009. In addition to the class mailing list, cs450 #64;uic.edu, to which registered students...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework5"><b>Homework5</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework5" title="2009-10-01 - 01:39" rel="nofollow">9 years ago</a> - r7 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 5 network performance measurements (due Oct 12 at 2 pm) In this homework, we`ll use a set of tools for measuring, analyzing and reporting network performance...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/MidtermOneHints"><b>MidtermOneHints</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/MidtermOneHints" title="2009-09-28 - 16:09" rel="nofollow">9 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">The following subsections will not appear in midterm one: 1.7 History of Computer Networking and the Internet 2.3 File transfer: FTP 2.6 Peer to Peer...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework4"><b>Homework4</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework4" title="2009-09-24 - 04:22" rel="nofollow">9 years ago</a> - r5 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 4 due Mon Sept 28 at 2 pm In this homework, we implement reliable communication over a highly unreliable link. The homework template is available at: svn...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework3"><b>Homework3</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework3" title="2009-09-14 - 02:29" rel="nofollow">9 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 3 due Mon 9/21 In this homework, we finally get to the mother of all serious socket programming: the select() system call. select() allows a program to...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/VMWare"><b>VMWare</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/VMWare" title="2009-09-11 - 05:57" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Recommended Development Environment with VMWare/Ubuntu 9.04 All the homeworks will require a working Linux development environment. OS X is also possible, but it is...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework2"><b>Homework2</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework2" title="2009-09-10 - 00:11" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 2 due 2 pm Sept 14 In this homework, we talk to the global domain name system to resolve domain names into IP addresses. Some good domain names to try,...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/HomeworkSchedule"><b>HomeworkSchedule</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/HomeworkSchedule" title="2009-09-09 - 04:12" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework and exam schedule These are the tentative due dates for homeworks, as well as midterm (in class) exam dates. 8/31 Homework 0 9/8 Homework...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/FrequentlyAskedQuestions"><b>FrequentlyAskedQuestions</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/FrequentlyAskedQuestions" title="2009-09-09 - 03:43" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Frequently Asked Questions If you have an answer to a question you think others will ask, feel free to add it here. If all you have is a question, you can post that...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework0"><b>Homework0</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework0" title="2009-08-31 - 16:20" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 0 due Monday 8/31 at 2 pm. The main objective of this homework is to get you familiarized with the versioning system we will be using for homework turn...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Subversion"><b>Subversion</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Subversion" title="2009-08-31 - 14:10" rel="nofollow">9 years ago</a> - r4 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Doing Homeworks with Subversion Knowing how to use a revision control system is an essential skill for a software developer, and subversion (svn) is one of the more...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Homework1"><b>Homework1</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Homework1" title="2009-08-31 - 04:21" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Homework 1 due Sept 8 at 2 pm In this homework, we`ll do the server end of http. First copy the template code in svn://bits.cs.uic.edu/cs450f09/homeworks/hw1 to...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/ERF2054Map"><b>ERF2054Map</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/ERF2054Map" title="2009-08-26 - 13:55" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Map to ERF2054 ERF building access typically requires an access card. The door by the elevators is usually propped/taped up, and we`ll try to remember taping/propping...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/Syllabus"><b>Syllabus</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/Syllabus" title="2009-08-24 - 20:25" rel="nofollow">9 years ago</a> - r9 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Syllabus Meets: 2 2:50 pm MWF, in 304 SH Instructor: Dr. Jakob Eriksson jakob@uic.edu Book: Kurose and Ross Computer Networks a top down approach Office:...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebPreferences"><b>WebPreferences</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebPreferences" title="2009-08-24 - 20:08" rel="nofollow">9 years ago</a> - r12 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">CS450fall09 Web Preferences The following settings are web preferences of the CS450fall09 web. These preferences overwrite the site level preferences...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebStatistics"><b>WebStatistics</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiGuest?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiGuest (this topic does not yet exist; you can create it)">TWikiGuest</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebStatistics" title="2009-08-18 - 14:06" rel="nofollow">9 years ago</a> - r31 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Statistics for CS450fall09 Web Month: Topic views: Topic saves: File uploads: Most popular topic views: Top contributors for topic...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/AdditionalMaterial"><b>AdditionalMaterial</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Jakob?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="jakob (this topic does not yet exist; you can create it)">jakob</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/AdditionalMaterial" title="2009-08-09 - 20:54" rel="nofollow">9 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">Additional Material This page will hold relevant links and materials for the course.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebNotify"><b>WebNotify</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiAdminUser?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiAdminUser (this topic does not yet exist; you can create it)">TWikiAdminUser</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebNotify" title="2009-05-14 - 12:19" rel="nofollow">9 years ago</a> - r2 &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">This is a subscription service to be automatically notified by e mail when topics change in this 1 web. This is a convenient service, so you do not have to come...</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebTopicList"><b>WebTopicList</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebTopicList" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebSearchAdvanced"><b>WebSearchAdvanced</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebSearchAdvanced" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebSearch"><b>WebSearch</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebSearch" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebIndex"><b>WebIndex</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebIndex" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebChanges"><b>WebChanges</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebChanges" title="2006-11-15 - 19:43" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebAtom"><b>WebAtom</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebAtom" title="2006-01-24 - 06:07" rel="nofollow">12 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">TWiki`s CS450fall09 web The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebCreateNewTopic"><b>WebCreateNewTopic</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebCreateNewTopic" title="2005-11-08 - 06:37" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText"></div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<div class="patternSearchResult">
-<div class="twikiTopRow">
-<div class="twikiLeft"><a href="/bin/view/CS450fall09/WebRss"><b>WebRss</b></a></div>
-<div class="twikiRight twikiSRAuthor"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span> </div>
-<div class="twikiRight twikiSRRev" style="white-space:nowrap">
-<a href="/bin/rdiff/CS450fall09/WebRss" title="2005-03-28 - 09:40" rel="nofollow">13 years ago</a> - <span class="twikiNew">NEW</span> &nbsp;</div><br class="twikiClear" /></div>
-<!--/twikiTopRow-->
-<div class="twikiBottomRow"><div class="twikiSummary twikiGrayText">/CS450fall09 The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.</div><!--/twikiSummary--></div><!--/twikiBottomRow-->
-</div><!--/patternSearchResult-->
-<p />
-<div id="searchBottomNavWebChanges" style="">
-<p />
- &nbsp;
-<p />
-</div>
-<script type="text/javascript">
-  $('#searchTopNavWebChanges').hide(); $('#searchBottomNavWebChanges').hide();
-  $('#searchTopNavWebChanges').html("&nbsp; ");
+<script>
+  $('#disable-on-click').on('click', function(){
+    $('#disable-on-click').attr("disabled", true);
+  	$("#login-form").submit()
+  });
 </script>
-<p />
-Show <a href='/bin/view/CS450fall09/WebChanges?limit=10' rel='nofollow'>10</a>&#44; <a href='/bin/view/CS450fall09/WebChanges?limit=20' rel='nofollow'>20</a>&#44; <b>50</b>&#44; <a href='/bin/view/CS450fall09/WebChanges?limit=100' rel='nofollow'>100</a>&#44; <a href='/bin/view/CS450fall09/WebChanges?limit=500' rel='nofollow'>500</a>&#44; <a href='/bin/view/CS450fall09/WebChanges?limit=1000' rel='nofollow'>1000</a> results per page, or <a href='/bin/view/CS450fall09/WebChanges?limit=all' rel='nofollow'>show all</a>.
-<p />
-<strong><em>Related topics:</em></strong> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> <a href="/bin/view/CS450fall09/WebRss" class="twikiLink">RSS feed</a>, <a href="/bin/view/CS450fall09/WebAtom" class="twikiLink">ATOM feed</a>, <a href="/bin/view/CS450fall09/WebNotify" class="twikiLink">WebNotify</a>, <a href="/bin/view/TWiki/SiteChanges" class="twikiLink">site changes</a>, <a href="/bin/view/TWiki/SiteMap" class="twikiLink">site map</a> </div><!-- /patternTopic-->
-<div class="twikiContentFooter"></div></div><!-- /patternContent-->
-<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS450fall09/WebChanges?t=1542827315' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS450fall09/WebChanges' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450fall09/WebChanges?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS450fall09/WebChanges?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r1</span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450fall09/WebChanges?template=backlinksweb' rel='nofollow' title='Search the CS450fall09 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS450fall09/WebChanges?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS450fall09/WebChanges?t=1542827315;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS450fall09/WebChanges?template=oopsmore&amp;param1=1&amp;param2=1' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r1 - 2006-11-15 - 19:43:52 - <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/TWikiContributor?topicparent=CS450fall09.WebChanges;nowysiwyg=0" rel="nofollow" title="TWikiContributor (this topic does not yet exist; you can create it)">TWikiContributor</a></span></div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
-</div><!-- /patternMainContents-->
-</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
-<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
-<li> <a href="/bin/view/CS450fall09/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS450fall09</a>
-</li></ul> 
-</div> <ul>
-<li> <a href="/bin/view/CS450fall09/Syllabus" class="twikiLink">Syllabus</a>
-</li> <li> <a href="/bin/view/CS450fall09/LectureNotes" class="twikiLink">Lecture Notes</a>
-</li> <li> -<span style="color: #0000ff"> <a href="/bin/view/CS450fall09/References" class="twikiLink">References</a></span>
-</li> <li> <a href="/bin/view/CS450fall09/Homeworks" class="twikiLink">Homeworks</a>
-</li> <li> - <a href="/bin/view/CS450fall09/Subversion" class="twikiLink">Subversion</a>
-</li> <li> - <a href="/bin/view/CS450fall09/VMWare" class="twikiLink">VMWare</a>
-</li> <li> - <a href="/bin/view/CS450fall09/HomeworkSchedule" class="twikiLink">schedule</a>
-</li> <li> - <a href="/bin/view/CS450fall09/HomeworkHints" class="twikiLink">hints</a>
-</li> <li> <a href="http://listserv.uic.edu/htbin/wa?A0=CS450" target="_top">list archives</a>
-</li> <li> <a href="/bin/view/CS450fall09/FrequentlyAskedQuestions" class="twikiLink">FAQ</a>
-</li> <li> <a href="/bin/view/CS450fall09/ERF2054Map" class="twikiLink">ERF2054 map</a>
-</li></ul> 
-<p />
-<a href="/bin/edit/CS450fall09.WebLeftBar" target="_top">[edit this</a>]
-<hr />
-<div class="patternLeftBarPersonal">
-<ul><li class="patternLogIn"><a href="/bin/logon/CS450fall09/WebChanges">Log In</a> </li></ul>
-</div><!--/patternLeftBarPersonal-->
-<p /> <ul>
-<li> <strong><a href="/bin/view/CS450fall09/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS450fall09 Web</a></strong>
-</li> <li> <a href="/bin/view/CS450fall09/WebCreateNewTopic?topicparent=WebChanges" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
-</li> <li> <a href="/bin/view/CS450fall09/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
-</li> <li> <a href="/bin/view/CS450fall09/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
-</li> <li> <a href="/bin/view/CS450fall09/WebChanges" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
-</li> <li> <a href="/bin/view/CS450fall09/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
-</li> <li> <a href="/bin/view/CS450fall09/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
-</li> <li> <a href="/bin/view/CS450fall09/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
-</li> <li> <a href="/bin/view/CS450fall09/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
-</li></ul> 
-<hr />
-</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
-</div><!-- /patternFloatWrap-->
-<div class="clear">&nbsp;</div>
-</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
-<map id="logomap" name="logomap">
-	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
-	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
-	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
-</map>
-<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
-</div>
-<p />
-<div style="margin-left:650px; position:relative;">
-	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
-		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
-		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
-	</form>
-</div>
-<p />
-<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
-<div id="navMenu">
-<ul>
-<li> <a href="#">ABOUT US</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">ACADEMICS</a>
-	<ul>
-	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
-	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
-	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
-	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
-	<li><a href="/Main/Courses">Courses</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">RESEARCH</a>
-	<ul>
-	<li><a href="/Main/Research">Overview</a></li>
-	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
-	<li><a href="/Main/Research#Labs">Labs</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">PEOPLE</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
-	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
-	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
-	<li><a href="/Main/Students">Students</a></li>
-	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
-	</ul>
-</li>
-</ul>
-<br class="clearFloat"/>
-</div>
-</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
-<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
-<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
-</div><!-- /patternPage-->
-</div><!-- /patternPageShadow-->
-</div><!-- /patternScreen-->
-</body></html>
-<p />
+  </body>
+</html>
+

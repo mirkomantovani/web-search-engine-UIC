@@ -1,206 +1,357 @@
-<!DOCTYPE html>
-<html lang="en-US" class=" html_boxed fixed_layout av-preloader-active av-preloader-enabled av-default-lightbox  html_header_top html_logo_left html_bottom_nav_header html_menu_left html_custom html_header_sticky_disabled html_header_shrinking_disabled html_header_topbar_active html_mobile_menu_phone html_disabled html_header_searchicon_disabled html_content_align_center html_header_unstick_top_disabled html_header_stretch_disabled html_minimal_header html_entry_id_4167 ">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-<meta charset="UTF-8" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>TWiki - BookView</title>
 
-<!-- page title, displayed in your browser bar -->
-<title>Clinical Immersion Program |   John Jarka</title>
-
-<meta name="robots" content="index, follow" />
-<link rel="icon" href="https://kotche.webhost.uic.edu/wp-content/uploads/2015/05/Screen-Shot-2015-05-29-at-4.43.07-PM.png" type="image/png">
-
-<!-- mobile setting -->
-
-
-<!-- Scripts/CSS and wp_head hook -->
-<link rel='dns-prefetch' href='//maps.google.com' />
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="Clinical Immersion Program &raquo; Feed" href="https://clinicalimmersion.uic.edu/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Clinical Immersion Program &raquo; Comments Feed" href="https://clinicalimmersion.uic.edu/comments/feed/" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/clinicalimmersion.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.7"}};
-			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/TWiki/BookView?_T=2018-11-25" type="application/x-wiki" title="edit BookView" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/TWiki/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/TWiki/BookView"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
 }
 </style>
-<link rel='stylesheet' id='es-widget-css-css'  href='https://clinicalimmersion.uic.edu/wp-content/plugins/email-subscribers/widget/es-widget.css?ver=4.7.7' type='text/css' media='all' />
-<link rel='stylesheet' id='wpuf-css-css'  href='https://clinicalimmersion.uic.edu/wp-content/plugins/wp-user-frontend-pro/assets/css/frontend-forms.css?ver=4.7.7' type='text/css' media='all' />
-<link rel='stylesheet' id='avia-grid-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/css/grid.css?ver=2' type='text/css' media='all' />
-<link rel='stylesheet' id='avia-base-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/css/base.css?ver=2' type='text/css' media='all' />
-<link rel='stylesheet' id='avia-layout-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/css/layout.css?ver=2' type='text/css' media='all' />
-<link rel='stylesheet' id='avia-scs-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/css/shortcodes.css?ver=2' type='text/css' media='all' />
-<link rel='stylesheet' id='avia-popup-css-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/js/aviapopup/magnific-popup.css?ver=1' type='text/css' media='screen' />
-<link rel='stylesheet' id='avia-media-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/js/mediaelement/skin-1/mediaelementplayer.css?ver=1' type='text/css' media='screen' />
-<link rel='stylesheet' id='avia-print-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/css/print.css?ver=1' type='text/css' media='print' />
-<link rel='stylesheet' id='avia-dynamic-css'  href='https://clinicalimmersion.uic.edu/wp-content/uploads/dynamic_avia/bioengineering.css?ver=592e1f03a3dc9' type='text/css' media='all' />
-<link rel='stylesheet' id='avia-custom-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/css/custom.css?ver=2' type='text/css' media='all' />
-<link rel='stylesheet' id='avia-style-css'  href='https://clinicalimmersion.uic.edu/wp-content/themes/Marck%20Design%20Theme/style.css?ver=2' type='text/css' media='all' />
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=true&#038;ver=4.7.7'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/plugins/wp-user-frontend-pro/assets/js/frontend-form.js?ver=4.7.7'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/js/avia-compat.js?ver=2'></script>
-<link rel='https://api.w.org/' href='https://clinicalimmersion.uic.edu/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://clinicalimmersion.uic.edu/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://clinicalimmersion.uic.edu/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.7.7" />
-<link rel="canonical" href="https://clinicalimmersion.uic.edu/blogs-2018/john-jarka/" />
-<link rel='shortlink' href='https://clinicalimmersion.uic.edu/?p=4167' />
-<link rel="alternate" type="application/json+oembed" href="https://clinicalimmersion.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclinicalimmersion.uic.edu%2Fblogs-2018%2Fjohn-jarka%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://clinicalimmersion.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclinicalimmersion.uic.edu%2Fblogs-2018%2Fjohn-jarka%2F&#038;format=xml" />
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="alternate" type="application/rss+xml" title="Clinical Immersion Program RSS2 Feed" href="https://clinicalimmersion.uic.edu/feed/" />
-<link rel="pingback" href="https://clinicalimmersion.uic.edu/xmlrpc.php" />
-
-<style type='text/css' media='screen'>
- #top #header_main > .container, #top #header_main > .container .main_menu ul:first-child > li > a, #top #header_main #menu-item-shop .cart_dropdown_link{ height:186px; line-height: 186px; }
- .html_header_top.html_header_sticky #top #wrap_all #main{ padding-top:250px; } 
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
 </style>
-<!--[if lt IE 9]><script src="https://clinicalimmersion.uic.edu/wp-content/themes/enfold/js/html5shiv.js"></script><![endif]-->		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#FFD8AA;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#FFD8AA;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+@import url('/pub/Main/WebPreferences/mainweb.css');
+@import url('/pub/TWiki/WebPreferences/hideattachments.css');
 
-<!--
-Debugging Info for Theme support: 
-
-Theme: Enfold
-Version: 3.2
-Installed: enfold
-AviaFramework Version: 2.2
-AviaBuilder Version: 0.8
-- - - - - - - - - - -
-ChildTheme: Bioengineering
-ChildTheme Version: 1.0
-ChildTheme Installed: enfold
-
-ML:128-PU:65-PLA:10
-WP:4.7.7
-Updates: disabled
--->
-
-<style type='text/css'>
-@font-face {font-family: 'entypo-fontello'; font-weight: normal; font-style: normal;
-src: url('https://clinicalimmersion.uic.edu/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.eot?v=3');
-src: url('https://clinicalimmersion.uic.edu/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.eot?v=3#iefix') format('embedded-opentype'), 
-url('https://clinicalimmersion.uic.edu/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.woff?v=3') format('woff'), 
-url('https://clinicalimmersion.uic.edu/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.ttf?v=3') format('truetype'), 
-url('https://clinicalimmersion.uic.edu/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello.svg?v=3#entypo-fontello') format('svg');
-} #top .avia-font-entypo-fontello, body .avia-font-entypo-fontello, html body [data-av_iconfont='entypo-fontello']:before{ font-family: 'entypo-fontello'; }
 </style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
 </head>
-
-
-
-
-<body id="top" class="page-template page-template-template-blank page-template-template-blank-php page page-id-4167 page-child parent-pageid-4150 boxed arial-websave _arial avia-blank" itemscope="itemscope" itemtype="https://schema.org/WebPage" >
-
-	<div class='av-siteloader-wrap av-transition-enabled'><div class='av-siteloader-inner'><div class='av-siteloader-cell'><div class='av-siteloader'><div class='av-siteloader-extra'></div></div></div></div></div>
-	<div id='wrap_all'>
-
-			
-	<div id='main' data-scroll-offset='0'>
-
-	<div id='av_section_1' class='avia-section main_color avia-section-default avia-no-shadow avia-bg-style-scroll  avia-builder-el-0  avia-builder-el-no-sibling  av-minimum-height av-minimum-height-100 container_wrap fullsize' style = 'background-color: #d3d3d3; '  ><div class='container' ><main  role="main" itemprop="mainContentOfPage"  class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-4167'><div class='entry-content-wrapper clearfix'>
-<section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '  style='font-size:36px; '  itemprop="text" ><p><span class="custom"><strong>John Jarka</strong></span></p>
-<p><span class="custom">University of Illinois at Chicago<br />
-Bioengineering</span></p>
-</div></section>
-<div class="flex_column av_two_fifth  flex_column_div first  avia-builder-el-2  el_after_av_textblock  el_before_av_one_fifth  column-top-margin" ><section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '   itemprop="text" ><hr style="border-top: dotted 2px;" />
-</div></section>
-<div class='template-blog  av-blog-meta-author-disabled av-blog-meta-comments-disabled av-blog-meta-category-disabled av-blog-meta-html-info-disabled av-blog-meta-tag-disabled'  itemscope="itemscope" itemtype="https://schema.org/Blog" ><article class='post-entry post-entry-type-standard post-entry-4801 post-loop-1 post-parity-odd single-big with-slider post-4801 post type-post status-publish format-standard has-post-thumbnail hentry category-john-jarka'  itemscope="itemscope" itemtype="https://schema.org/BlogPosting" ><div class='blog-meta'></div><div class='entry-content-wrapper clearfix standard-content'><header class="entry-content-header"><h2 class='post-title entry-title'  itemprop="headline" >	<a href='https://clinicalimmersion.uic.edu/week-5-wrapping-up/' rel='bookmark' title='Permanent Link: Week 5: Wrapping Up'>Week 5: Wrapping Up			<span class='post-format-icon minor-meta'></span>	</a></h2><span class='post-meta-infos'><time class='date-container minor-meta updated'  itemprop="datePublished" datetime="2018-07-30T11:27:49+00:00" >July 30, 2018</time><span class='text-sep text-sep-date'>/</span><span class="blog-categories minor-meta">in <a href="https://clinicalimmersion.uic.edu/category/2018/john-jarka/" rel="tag">John Jarka</a> </span><span class="text-sep text-sep-cat">/</span><span class="blog-author minor-meta">by <span class="entry-author-link"  itemprop="name" ><span class="vcard author"><span class="fn"><a href="https://clinicalimmersion.uic.edu/author/jjarka2/" title="Posts by jjarka2" rel="author">jjarka2</a></span></span></span></span></span></header><div class="big-preview single-big"><a href="https://clinicalimmersion.uic.edu/week-5-wrapping-up/" title="Week 5: Wrapping Up"><img width="2045" height="1310" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1.jpg" class="attachment-no scaling size-no scaling wp-post-image" alt="" srcset="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1.jpg 2045w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1-300x192.jpg 300w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1-768x492.jpg 768w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1-1030x660.jpg 1030w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1-1500x961.jpg 1500w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1-705x452.jpg 705w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Pipe-Cleaner-Dude.1-450x288.jpg 450w" sizes="(max-width: 2045px) 100vw, 2045px" /></a></div><div class="entry-content"  itemprop="text" ><p>This last week has been my last for prototype refinement. Class time was spent making some very rough prototypes (evidence shown above as a pipe cleaner body analog). With presentations coming up soon, the week int he clinic was spent inquiring with the staff about our proposed device and adjusting from their feedback. Additionally, I spent a great deal of time doing my own secondary research, outside of the clinic, then parsing the differences between staff anecdotes and the literature. </p>
-<p>I was a bit sentimental this last week, the hospital has come to feel like home. Its people and their pace are enthralling, and I will miss the days spent listening to their stories and learning through their demonstrations and lectures. Upon the conclusion of this program, I will look for ways of staying involved with the medical campus. Not only do I think it will be beneficial for my professional development, but I have come to really enjoy medicine and the people who practice it.</p>
-</div><footer class="entry-footer"></footer><div class='post_delimiter'></div></div><div class='post_author_timeline'></div></article><article class='post-entry post-entry-type-standard post-entry-4696 post-loop-2 post-parity-even single-big with-slider post-4696 post type-post status-publish format-standard has-post-thumbnail hentry category-john-jarka'  itemscope="itemscope" itemtype="https://schema.org/BlogPosting" ><div class='blog-meta'></div><div class='entry-content-wrapper clearfix standard-content'><header class="entry-content-header"><h2 class='post-title entry-title'  itemprop="headline" >	<a href='https://clinicalimmersion.uic.edu/week-4-brainstorming/' rel='bookmark' title='Permanent Link: Week 4: Brainstorming'>Week 4: Brainstorming			<span class='post-format-icon minor-meta'></span>	</a></h2><span class='post-meta-infos'><time class='date-container minor-meta updated'  itemprop="datePublished" datetime="2018-07-23T04:13:05+00:00" >July 23, 2018</time><span class='text-sep text-sep-date'>/</span><span class="blog-categories minor-meta">in <a href="https://clinicalimmersion.uic.edu/category/2018/john-jarka/" rel="tag">John Jarka</a> </span><span class="text-sep text-sep-cat">/</span><span class="blog-author minor-meta">by <span class="entry-author-link"  itemprop="name" ><span class="vcard author"><span class="fn"><a href="https://clinicalimmersion.uic.edu/author/jjarka2/" title="Posts by jjarka2" rel="author">jjarka2</a></span></span></span></span></span></header><div class="big-preview single-big"><a href="https://clinicalimmersion.uic.edu/week-4-brainstorming/" title="Week 4: Brainstorming"><img width="1189" height="3261" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4.jpg" class="attachment-no scaling size-no scaling wp-post-image" alt="" srcset="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4.jpg 1189w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4-109x300.jpg 109w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4-768x2106.jpg 768w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4-376x1030.jpg 376w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4-547x1500.jpg 547w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4-257x705.jpg 257w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Crazy-4-364x999.jpg 364w" sizes="(max-width: 1189px) 100vw, 1189px" /></a></div><div class="entry-content"  itemprop="text" ><p>This week was used to brainstorm solutions to a problem afflicting patients of the NSICU. The development of pressure sores is a common issue in the NSICU, which often leads to infections and severe patient discomfort. According to the staff at the hospital, the current solutions to this problem include periodic rotation of the patient, special air mattresses to rotate pressure points, and disposable bedding pads.</p>
-<p>During class this week, we settled on a needs statement. We also learned and practiced several methods for brainstorming ideas and sifting through them (including rapid sketching of ideas, as shown in the image above). Following this exercise, our team decided to pursue several possible solutions. I kept them in mind as we continued our time in the clinic. As well as our need statement: &#8220;Prevent the development of pressure sores on unconscious patients&#8221;.</p>
-<p>It was difficult identifying more criteria for narrowing down to a single solution, and I will be using my remaining time in the clinic to use primary research to narrow down to our team&#8217;s solution.</p>
-</div><footer class="entry-footer"></footer><div class='post_delimiter'></div></div><div class='post_author_timeline'></div></article><article class='post-entry post-entry-type-standard post-entry-4620 post-loop-3 post-parity-odd single-big with-slider post-4620 post type-post status-publish format-standard has-post-thumbnail hentry category-john-jarka'  itemscope="itemscope" itemtype="https://schema.org/BlogPosting" ><div class='blog-meta'></div><div class='entry-content-wrapper clearfix standard-content'><header class="entry-content-header"><h2 class='post-title entry-title'  itemprop="headline" >	<a href='https://clinicalimmersion.uic.edu/week-3-staff-needs/' rel='bookmark' title='Permanent Link: Week 3: Staff Needs'>Week 3: Staff Needs			<span class='post-format-icon minor-meta'></span>	</a></h2><span class='post-meta-infos'><time class='date-container minor-meta updated'  itemprop="datePublished" datetime="2018-07-16T04:56:13+00:00" >July 16, 2018</time><span class='text-sep text-sep-date'>/</span><span class="blog-categories minor-meta">in <a href="https://clinicalimmersion.uic.edu/category/2018/john-jarka/" rel="tag">John Jarka</a> </span><span class="text-sep text-sep-cat">/</span><span class="blog-author minor-meta">by <span class="entry-author-link"  itemprop="name" ><span class="vcard author"><span class="fn"><a href="https://clinicalimmersion.uic.edu/author/jjarka2/" title="Posts by jjarka2" rel="author">jjarka2</a></span></span></span></span></span></header><div class="big-preview single-big"><a href="https://clinicalimmersion.uic.edu/week-3-staff-needs/" title="Week 3: Staff Needs"><img width="1750" height="2568" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2.jpg" class="attachment-no scaling size-no scaling wp-post-image" alt="" srcset="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2.jpg 1750w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2-204x300.jpg 204w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2-768x1127.jpg 768w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2-702x1030.jpg 702w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2-1022x1500.jpg 1022w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2-480x705.jpg 480w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/PC-Cart-1-2-450x660.jpg 450w" sizes="(max-width: 1750px) 100vw, 1750px" /></a></div><div class="entry-content"  itemprop="text" ><p>This week was focused on forming and improving need statements. I chose to focus on an issue that affects the staff rounding in the ICU. They use PCs built into push carts,  called EMR carts or PC carts, during their rounds to pull up patient records and put in orders for patient treatments. These carts are bulky, dirty, and expensive. My initial statement began as:</p>
-<p>&#8220;Reduce hallway congestion by reducing the size of the PC carts.&#8221;</p>
-<p>After interviewing several members of the staff about how they feel about the carts, I was surprised to hear that a lot of them actually liked the larger size of the carts. The increased size gives plenty of space for a table top area for writing, and it also allows for a larger viewing screen and a full keyboard. All of these things would be difficult to accommodate on a smaller model, but not impossible. I revised the statement to:</p>
-<p>&#8220;Maintaining the current functionality of the PC carts, reduce the the size of aesthetic or non-major components of the cart to allow for improved flow of staff through the ICU hallway.&#8221;</p>
-<p>I ignored what the staff likes about the carts for a moment, and considered the issue of staff flow through the hallway. On several occasions, in a single morning, staff members detoured around our rounding team to get to their patients or other destinations. This is a big issue in a department that can see rapid patient decline in minutes or even an instant. So the focus then becomes preserving the current characteristics of the carts that the staff likes, while still reducing their hallway footprint.</p>
-<p>As an aside, the carts wheels are designed with deep, narrow slits that seem to trap grime from the floor. There seems no easy way to clean them, and with a price point of ~$6,000 this should not be a concern for a device designed for a hospital. However, this design feature may be out of the scope of this need statement. I am thinking of pursuing a redesign of these carts, and now see that several need statements will be needed to do so.</p>
-</div><footer class="entry-footer"></footer><div class='post_delimiter'></div></div><div class='post_author_timeline'></div></article><article class='post-entry post-entry-type-standard post-entry-4522 post-loop-4 post-parity-even single-big with-slider post-4522 post type-post status-publish format-standard has-post-thumbnail hentry category-john-jarka'  itemscope="itemscope" itemtype="https://schema.org/BlogPosting" ><div class='blog-meta'></div><div class='entry-content-wrapper clearfix standard-content'><header class="entry-content-header"><h2 class='post-title entry-title'  itemprop="headline" >	<a href='https://clinicalimmersion.uic.edu/week-2-storyboard-of-the-or/' rel='bookmark' title='Permanent Link: Week 2: Storyboard of the OR'>Week 2: Storyboard of the OR			<span class='post-format-icon minor-meta'></span>	</a></h2><span class='post-meta-infos'><time class='date-container minor-meta updated'  itemprop="datePublished" datetime="2018-07-09T03:56:47+00:00" >July 9, 2018</time><span class='text-sep text-sep-date'>/</span><span class="blog-categories minor-meta">in <a href="https://clinicalimmersion.uic.edu/category/2018/john-jarka/" rel="tag">John Jarka</a> </span><span class="text-sep text-sep-cat">/</span><span class="blog-author minor-meta">by <span class="entry-author-link"  itemprop="name" ><span class="vcard author"><span class="fn"><a href="https://clinicalimmersion.uic.edu/author/jjarka2/" title="Posts by jjarka2" rel="author">jjarka2</a></span></span></span></span></span></header><div class="big-preview single-big"><a href="https://clinicalimmersion.uic.edu/week-2-storyboard-of-the-or/" title="Week 2: Storyboard of the OR"><img width="2121" height="1932" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1.jpg" class="attachment-no scaling size-no scaling wp-post-image" alt="" srcset="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1.jpg 2121w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1-300x273.jpg 300w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1-768x700.jpg 768w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1-1030x938.jpg 1030w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1-1500x1366.jpg 1500w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1-705x642.jpg 705w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/OR-Camera-1-450x410.jpg 450w" sizes="(max-width: 2121px) 100vw, 2121px" /></a></div><div class="entry-content"  itemprop="text" ><p class="MsoNormal">This week I had the opportunity to observe a case, in its entirety, from the perspective of the surgery team. I decided this would make an excellent procedure to storyboard for this weeks exercise.</p>
-<p class="MsoNormal">Things begin when the patient is wheeled into the room, on their bed, from the prep room. One nurse consoled the nervous patient as the other began laying out drapes and preparing the instrumentation. The patient was then asked a series of questions, for identity confirmation, before being anaesthetized and intubated. Because of the area of operation, the patients head was shaved following intubation, and the scalp was then cleaned with several times with a soapy mixture, alcohol, and iodine. The patients head was then rested on what the staff called a &#8220;horse shoe&#8221;.</p>
-<p class="MsoNormal">This device created a 5-10 minute delay in the procedure. It is difficult to assemble and falls apart often. It is a couple of pads attached to a metal frame, which supports the patient&#8217;s head during surgery. </p>
-<p class="MsoNormal"><a href="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/HorseShoe.jpg"><img class="attachment-thumbnail size-thumbnail" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/HorseShoe-80x80.jpg" alt="" width="80" height="80" /></a></p>
-<p class="MsoNormal">&#8220;Horse Shoe&#8221;</p>
-<p class="MsoNormal"><a href="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/HorseShoe-Bottom.jpg"><img class="attachment-thumbnail size-thumbnail" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/HorseShoe-Bottom-80x80.jpg" alt="" width="80" height="80" /></a></p>
-<p class="MsoNormal">Perspective from bottom</p>
-<p class="MsoNormal"><a href="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/HorseShoe-Wrapped.jpg"><img class="attachment-thumbnail size-thumbnail" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/HorseShoe-Wrapped-80x80.jpg" alt="" width="80" height="80" /></a></p>
-<p class="MsoNormal">Ultimately, the staff resorted to wrapping the fixture in gauze to hold the pads on, which is something they said they do often.</p>
-<p class="MsoNormal">Cleaning ended with an Iodine laced sticker being placed across the entire scalp. The mid-line and incision line were marked with a pen and covering sheets were stapled in place around the area of operation. I overheard the staff discussing the occasional patient getting unwanted ear or nipple piercings. An unintended consequence of using surgical staples to hold the sheets in place against the patient. Curiously, the second layer of sheets, and scum bag, were held in place by an adhesive strip on the bottom side of the material, then stapled as well. I wonder if one style of fixation would be enough. The patient’s ID and needed operation was then confirmed a second time by one the surgeons, as a nurse read the patient’s name and operation aloud. The surgeon then proceeded to operate.</p>
-<p class="MsoNormal">During the operation I noticed chances for improvement. The staff didn’t have enough saline to fully submerse the bone flap being replaced and needed to get more from a neighboring OR. Additionally, one of the patient’s IV drips had completely ran out before the attending anesthesiologist had noticed, and blood splattered the sheets and floor where the scumbag had failed to catch escaping fluid. </p>
-<p class="MsoNormal">The operation finished without medical complication. Following completion of the operation, the patient was removed from anesthesia and gently woke up. The patient was then lifted by the surgical staff from the operating table to a new bed that wheeled her into the recovery room. </p>
-</div><footer class="entry-footer"></footer><div class='post_delimiter'></div></div><div class='post_author_timeline'></div></article><article class='post-entry post-entry-type-standard post-entry-4350 post-loop-5 post-parity-odd post-entry-last single-big with-slider post-4350 post type-post status-publish format-standard has-post-thumbnail hentry category-john-jarka'  itemscope="itemscope" itemtype="https://schema.org/BlogPosting" ><div class='blog-meta'></div><div class='entry-content-wrapper clearfix standard-content'><header class="entry-content-header"><h2 class='post-title entry-title'  itemprop="headline" >	<a href='https://clinicalimmersion.uic.edu/week-1-introductions-and-intubations/' rel='bookmark' title='Permanent Link: Week 1: Introductions and Intubations'>Week 1: Introductions and Intubations			<span class='post-format-icon minor-meta'></span>	</a></h2><span class='post-meta-infos'><time class='date-container minor-meta updated'  itemprop="datePublished" datetime="2018-07-02T03:11:21+00:00" >July 2, 2018</time><span class='text-sep text-sep-date'>/</span><span class="blog-categories minor-meta">in <a href="https://clinicalimmersion.uic.edu/category/2018/john-jarka/" rel="tag">John Jarka</a> </span><span class="text-sep text-sep-cat">/</span><span class="blog-author minor-meta">by <span class="entry-author-link"  itemprop="name" ><span class="vcard author"><span class="fn"><a href="https://clinicalimmersion.uic.edu/author/jjarka2/" title="Posts by jjarka2" rel="author">jjarka2</a></span></span></span></span></span></header><div class="big-preview single-big"><a href="https://clinicalimmersion.uic.edu/week-1-introductions-and-intubations/" title="Week 1: Introductions and Intubations"><img width="2541" height="1101" src="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device.jpg" class="attachment-no scaling size-no scaling wp-post-image" alt="" srcset="https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device.jpg 2541w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device-300x130.jpg 300w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device-768x333.jpg 768w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device-1030x446.jpg 1030w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device-1500x650.jpg 1500w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device-705x305.jpg 705w, https://clinicalimmersion.uic.edu/wp-content/uploads/2018/07/Intubation-Device-450x195.jpg 450w" sizes="(max-width: 2541px) 100vw, 2541px" /></a></div><div class="entry-content"  itemprop="text" ><p>My time in the department of neurosurgery started as a blur. My first day began with rounds in the NSICU with Dr. Arshi. His deeply rooted passion for innovation and education became obvious after a short time, and I felt lucky to have landed with such a perfect teacher and guide for my first day. As my eyes and ears began to focus through the passing nurses, residents, and their jargon, I gathered details about my surroundings. The ICU is a rather uninviting place. The chimes and blips of instruments cut from every room and fill the hallways with the torrent of their noises to create an alarm that seemed to always be going off. Most patients were in varying levels of comatose and required devices to assist them in breathing and/or secretion control. Their condition and surrounding tangles of instrumentation created an atmosphere of desperation, and I feel that this likely causes patients and their visiting family anxiety.</p>
-<p>After finishing rounding with Dr. Arshi, I left to meet my program mentor, Dr. Mehta, outside the operating room. While I was waiting, I studied the surrounding staff and tried to understand their rhythm. People passed quickly, ducking in and out of rooms, delivering supplies or lending aid. Carts of surgical kits were stacked along most walls of the extra wide hallways, but their seemed to always be staff carrying tools into started procedures. I assume this means the surgeon needing more than expected is not all that uncommon. In general, the OR felt more systematic than the ICU. The planned, methodical atmosphere matched the type of work being done, as much as the unpredictable atmosphere of the ICU matched its own. Dr. Mehta arrived, and we stepped into his OR. The staff outside the sterile field talked casually, while those inside prepared their tools and themselves silently. This divide in demeanor continued through the operation. Towards the later part of the operation, Dr. Mehta used a surgical microscope as he worked, and its partnered screen allowed for myself and three other students to comfortably view the surgery, as if we were leaning over his shoulder.</p>
-<p>I was back in the ICU with Dr. Arshi the next morning. I had asked about the mechanism of the assisted breathing devices most of the patients seemed to have. After explaining it, he added that most of the patients are actually capable of breathing on their own, but they have been intubated or have undergone a tracheostomy because they are unable to keep their saliva from going down their trachea. This was as depressing as it was shocking, and I felt a new type of empathy for the patients who suffered through the risks and discomforts of these treatments.</p>
-<p>My week ended with Dr. Mehta and one of his students, Dr. Theiss, in the outpatient clinic. Most of my personal experiences in the hospital have taken place in this area, and it felt familiar. The calm, scented air seemed strange after my time in the ICU and OR. The pace of things was still fast, but lower stakes were definitely reflected in the mood of the staff. Things were mostly relaxed, but tensions seemed to always rise when patients talked about their health insurance provider. Patients had missed treatment because they were dropped from their insurance, and others worried what treatments they could afford under their current plan.</p>
-<p>Reflecting on my week, I tried to imagine myself as a patient and then medical student. As a teaching hospital, UIC has an obligation to the needs of both. As a patient, I would be horrified to have to choose between the options of tracheal intubation or a traechostomy. Invasive surgery weighted against the discomfort and dangers of intubation would not be an easy choice. Both procedures offer a serious risk of infection, and intubation leads to days or weeks of constant discomfort and/or sedation. Both of these procedures and devices presented the most impactful opportunity for innovation I found this week, and pertained to the needs of the patient. Whereas the use of the surgical microscope as an instrument for both surgery and education was the most innovative solution I found, and it greatly improved the educational experience for students in the OR.</p>
-</div><footer class="entry-footer"></footer><div class='post_delimiter'></div></div><div class='post_author_timeline'></div></article><div class='single-big'></div></div></div><div class="flex_column av_one_fifth  flex_column_div av-zero-column-padding   avia-builder-el-5  el_after_av_two_fifth  el_before_av_two_fifth  column-top-margin" style='border-radius:0px; '><section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '   itemprop="text" ><hr style="border-top: dotted 2px;" />
-</div></section>
-<div style='height:1px; margin-top:-40px'  class='hr hr-invisible  avia-builder-el-7  el_after_av_textblock  el_before_av_textblock '><span class='hr-inner ' ><span class='hr-inner-style'></span></span></div>
-<section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '   itemprop="text" ><p class="p1"><strong>Archives</strong></p>
-</div></section>
-<div id='av-magazine-1' class='av-magazine  avia-builder-el-9  el_after_av_textblock  avia-builder-el-last   av-magazine-top-bar-active av-magazine-tabs-active' ><div class='av-magazine-top-bar ' ></div><div class='av-magazine-group sort_all'><article class='hentry av-magazine-entry av-magazine-entry-id-4801 av-magazine-format-standard av-magazine-type-post av-magazine-entry-1 av-magazine-entry-small av-magazine-no-thumb'  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='av-magazine-content-wrap'><header class='entry-content-header'><time class='av-magazine-time updated'  itemprop="datePublished" datetime="2018-07-30T11:27:49+00:00" >July 30, 2018</time><span class='av-magazine-text-sep text-sep-date'>/</span><span class="av-magazine-author minor-meta">by <span class="av-magazine-author-link"  itemprop="name" ><span class='av-magazine-author meta-color vcard author'><span class='fn'><a href=https://clinicalimmersion.uic.edu/author/jjarka2/ title="by jjarka2" rel="author">jjarka2</a></span></span></span></span><h3 class='av-magazine-title entry-title'  itemprop="headline" ><a href='https://clinicalimmersion.uic.edu/week-5-wrapping-up/' title='Link to: Week 5: Wrapping Up'>Week 5: Wrapping Up</a></h3></header></div><footer class='entry-footer'></footer></article><article class='hentry av-magazine-entry av-magazine-entry-id-4696 av-magazine-format-standard av-magazine-type-post av-magazine-entry-2 av-magazine-entry-small av-magazine-no-thumb'  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='av-magazine-content-wrap'><header class='entry-content-header'><time class='av-magazine-time updated'  itemprop="datePublished" datetime="2018-07-23T04:13:05+00:00" >July 23, 2018</time><span class='av-magazine-text-sep text-sep-date'>/</span><span class="av-magazine-author minor-meta">by <span class="av-magazine-author-link"  itemprop="name" ><span class='av-magazine-author meta-color vcard author'><span class='fn'><a href=https://clinicalimmersion.uic.edu/author/jjarka2/ title="by jjarka2" rel="author">jjarka2</a></span></span></span></span><h3 class='av-magazine-title entry-title'  itemprop="headline" ><a href='https://clinicalimmersion.uic.edu/week-4-brainstorming/' title='Link to: Week 4: Brainstorming'>Week 4: Brainstorming</a></h3></header></div><footer class='entry-footer'></footer></article><article class='hentry av-magazine-entry av-magazine-entry-id-4620 av-magazine-format-standard av-magazine-type-post av-magazine-entry-3 av-magazine-entry-small av-magazine-no-thumb'  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='av-magazine-content-wrap'><header class='entry-content-header'><time class='av-magazine-time updated'  itemprop="datePublished" datetime="2018-07-16T04:56:13+00:00" >July 16, 2018</time><span class='av-magazine-text-sep text-sep-date'>/</span><span class="av-magazine-author minor-meta">by <span class="av-magazine-author-link"  itemprop="name" ><span class='av-magazine-author meta-color vcard author'><span class='fn'><a href=https://clinicalimmersion.uic.edu/author/jjarka2/ title="by jjarka2" rel="author">jjarka2</a></span></span></span></span><h3 class='av-magazine-title entry-title'  itemprop="headline" ><a href='https://clinicalimmersion.uic.edu/week-3-staff-needs/' title='Link to: Week 3: Staff Needs'>Week 3: Staff Needs</a></h3></header></div><footer class='entry-footer'></footer></article><article class='hentry av-magazine-entry av-magazine-entry-id-4522 av-magazine-format-standard av-magazine-type-post av-magazine-entry-4 av-magazine-entry-small av-magazine-no-thumb'  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='av-magazine-content-wrap'><header class='entry-content-header'><time class='av-magazine-time updated'  itemprop="datePublished" datetime="2018-07-09T03:56:47+00:00" >July 9, 2018</time><span class='av-magazine-text-sep text-sep-date'>/</span><span class="av-magazine-author minor-meta">by <span class="av-magazine-author-link"  itemprop="name" ><span class='av-magazine-author meta-color vcard author'><span class='fn'><a href=https://clinicalimmersion.uic.edu/author/jjarka2/ title="by jjarka2" rel="author">jjarka2</a></span></span></span></span><h3 class='av-magazine-title entry-title'  itemprop="headline" ><a href='https://clinicalimmersion.uic.edu/week-2-storyboard-of-the-or/' title='Link to: Week 2: Storyboard of the OR'>Week 2: Storyboard of the OR</a></h3></header></div><footer class='entry-footer'></footer></article><article class='hentry av-magazine-entry av-magazine-entry-id-4350 av-magazine-format-standard av-magazine-type-post av-magazine-entry-5 av-magazine-entry-small av-magazine-no-thumb'  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='av-magazine-content-wrap'><header class='entry-content-header'><time class='av-magazine-time updated'  itemprop="datePublished" datetime="2018-07-02T03:11:21+00:00" >July 2, 2018</time><span class='av-magazine-text-sep text-sep-date'>/</span><span class="av-magazine-author minor-meta">by <span class="av-magazine-author-link"  itemprop="name" ><span class='av-magazine-author meta-color vcard author'><span class='fn'><a href=https://clinicalimmersion.uic.edu/author/jjarka2/ title="by jjarka2" rel="author">jjarka2</a></span></span></span></span><h3 class='av-magazine-title entry-title'  itemprop="headline" ><a href='https://clinicalimmersion.uic.edu/week-1-introductions-and-intubations/' title='Link to: Week 1: Introductions and Intubations'>Week 1: Introductions and Intubations</a></h3></header></div><footer class='entry-footer'></footer></article></div></div></div><div class="flex_column av_two_fifth  flex_column_div av-zero-column-padding   avia-builder-el-10  el_after_av_one_fifth  avia-builder-el-last  column-top-margin" style='border-radius:0px; '><section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '   itemprop="text" ><hr style="border-top: dotted 2px;" />
-</div></section>
-<div style='height:1px; margin-top:-40px'  class='hr hr-invisible  avia-builder-el-12  el_after_av_textblock  el_before_av_textblock '><span class='hr-inner ' ><span class='hr-inner-style'></span></span></div>
-<section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '  style='font-size:15px; '  itemprop="text" ><p><strong>About</strong><br />
-I am a bioengineering student, with passions for improving patients&#8217; hospital experience, and improve quality of life during recovery and post recovery. I was fortunate to be placed in my preferred department of neurosurgery. I will use my time there to learn more about the technology surrounding the treatment of the nervous system and the interactions patients have with this technology. I will apply my new experiences with these devices and patients to further my work with prosthetic and assistive devices, as well as aide in developing my understanding of brain computer interfaces.</p>
-</div></section>
-<section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '   itemprop="text" ><hr style="border-top: dotted 2px;" />
-</div></section>
-<div style='height:1px; margin-top:-40px'  class='hr hr-invisible  avia-builder-el-15  el_after_av_textblock  el_before_av_textblock '><span class='hr-inner ' ><span class='hr-inner-style'></span></span></div>
-<section class="av_textblock_section"  itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock '  style='font-size:15px; '  itemprop="text" ><p><strong>Contact</strong><br />
-<a href="mailto:jjarka2@uic.edu">jjarka2@uic.edu</a><br />
-(224) 508-0680</p>
-</div></section></div>
-</div></div></main><!-- close content main element --> <!-- section close by builder template -->		</div><!--end builder template--></div><!-- close default .container_wrap element -->				<!-- end main -->
-		</div>
-		
-		<!-- end wrap_all --></div>
-
-
- <script type='text/javascript'>
- /* <![CDATA[ */  
-var avia_framework_globals = avia_framework_globals || {};
-    avia_framework_globals.frameworkUrl = 'https://clinicalimmersion.uic.edu/wp-content/themes/enfold/framework/';
-    avia_framework_globals.installedAt = 'https://clinicalimmersion.uic.edu/wp-content/themes/enfold/';
-    avia_framework_globals.ajaxurl = 'https://clinicalimmersion.uic.edu/wp-admin/admin-ajax.php';
-/* ]]> */ 
-</script>
- 
- <script type='text/javascript'>
-/* <![CDATA[ */
-var es_widget_page_notices = {"es_email_notice":"Please enter email address","es_success_message":"Successfully Subscribed.","es_success_notice":"Your subscription was successful! Kindly check your mailbox and confirm your subscription. If you don't see the email within a few minutes, check the spam\/junk folder.","es_email_exists":"Email Address already exists!","es_error":"Oops.. Unexpected error occurred.","es_invalid_email":"Invalid email address","es_try_later":"Please try after some time","es_ajax_url":"https:\/\/clinicalimmersion.uic.edu\/wp-admin\/admin-ajax.php"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/plugins/email-subscribers/widget/es-widget-page.js?ver=4.7.7'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/plugins/wp-user-frontend-pro/assets/js/conditional-logic.js?ver=4.7.7'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/plugins/wp-user-frontend-pro/assets/js/subscriptions.js?ver=4.7.7'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/js/avia.js?ver=3'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/js/shortcodes.js?ver=3'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-content/themes/enfold/js/aviapopup/jquery.magnific-popup.min.js?ver=2'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var mejsL10n = {"language":"en-US","strings":{"Close":"Close","Fullscreen":"Fullscreen","Turn off Fullscreen":"Turn off Fullscreen","Go Fullscreen":"Go Fullscreen","Download File":"Download File","Download Video":"Download Video","Play":"Play","Pause":"Pause","Captions\/Subtitles":"Captions\/Subtitles","None":"None","Time Slider":"Time Slider","Skip back %1 seconds":"Skip back %1 seconds","Video Player":"Video Player","Audio Player":"Audio Player","Volume Slider":"Volume Slider","Mute Toggle":"Mute Toggle","Unmute":"Unmute","Mute":"Mute","Use Up\/Down Arrow keys to increase or decrease volume.":"Use Up\/Down Arrow keys to increase or decrease volume.","Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds."}};
-var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=2.22.0'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=4.7.7'></script>
-<script type='text/javascript' src='https://clinicalimmersion.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.7.7'></script>
-<a href='#top' title='Scroll to top' id='scroll-top-link' aria-hidden='true' data-av_icon='' data-av_iconfont='entypo-fontello'><span class="avia_hidden_link_text">Scroll to top</span></a>
-
-<div id="fb-root"></div>
-</body>
-</html>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Book_View"></a> Book View </h1>
+<p />
+BookView is an option available from the <a href="/bin/view/TWiki/WebSearchAdvanced" class="twikiLink">advanced search</a> topic. It allows you to display the result in "book view", that is, the whole content of topics is shown instead of a topic summary. This allows you to easily see a whole set of pages.
+<p />
+If you want to print a set of pages it is recommended to create a topic that <a href="/bin/view/TWiki/VarINCLUDE" class="twikiLink">includes</a> a set of topics, which gives more control over formatting and layout for printing.
+<p />
+<strong><em>Related Topics:</em></strong> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">UserDocumentationCategory</a>, <a href="/bin/view/TWiki/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a>
+<p />
+-- <strong><em>Contributors:</em></strong> <a href="http://twiki.org/cgi-bin/view/Main/PeterThoeny" target="_top" title="'Main/PeterThoeny' on TWiki.org" class="interwikiLink">TWiki:Main/PeterThoeny</a>, <a href="http://twiki.org/cgi-bin/view/Main/MattWilkie" target="_top" title="'Main/MattWilkie' on TWiki.org" class="interwikiLink">TWiki:Main/MattWilkie</a> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents">
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/TWiki/BookView">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/TWiki/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> TWiki Web</a></strong>
+</li> <li>  <img src="/pub/TWiki/TWikiDocGraphics/person.gif" width="16" height="16" alt="Person" title="Person" border="0" /> Users
+</li> <li> <a href="/bin/view/Main/TWikiGroups" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/group.gif" width="16" height="16" alt="Group" title="Group" border="0" /> Groups</a>
+</li> <li> <a href="/bin/view/TWiki/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/TWiki/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/TWiki/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/TWiki/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/TWiki/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/TWiki/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>User Reference</strong>
+</li> <li> <a href="/bin/view/TWiki/ATasteOfTWiki" class="twikiLink">ATasteOfTWiki</a>
+</li> <li> <a href="/bin/view/TWiki/TextFormattingRules" class="twikiLink">TextFormattingRules</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiVariables" class="twikiLink">TWikiVariables</a>
+</li> <li> <a href="/bin/view/TWiki/FormattedSearch" class="twikiLink">FormattedSearch</a>
+</li> <li> <a href="/bin/view/TWiki/QuerySearch" class="twikiLink">QuerySearch</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiDocGraphics" class="twikiLink">TWikiDocGraphics</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSkinBrowser" class="twikiLink">TWikiSkinBrowser</a>
+</li> <li> <a href="/bin/view/TWiki/InstalledPlugins" class="twikiLink">InstalledPlugins</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Admin Trash/Maintenance</strong>
+</li> <li> <a href="/bin/view/TWiki/TWikiReferenceManual" class="twikiLink">Reference Manual</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">AdminToolsCategory</a>
+</li> <li> <a href="/bin/view/TWiki/InterWikis" class="twikiLink">InterWikis</a>
+</li> <li> <a href="/bin/view/TWiki/ManagingWebs" class="twikiLink">ManagingWebs</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools" class="twikiLink">TWikiSiteTools</a>
+</li> <li> <a href="/bin/view/TWiki/TWikiPreferences" class="twikiLink">TWikiPreferences</a>
+</li> <li> <a href="/bin/view/TWiki/WebPreferences" class="twikiLink">WebPreferences</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Categories</strong>
+</li> <li> <a href="/bin/view/TWiki/AdminDocumentationCategory" class="twikiLink">Admin Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/AdminToolsCategory" class="twikiLink">Admin Tools</a>
+</li> <li> <a href="/bin/view/TWiki/DeveloperDocumentationCategory" class="twikiLink">Developer Doc</a>
+</li> <li> <a href="/bin/view/TWiki/UserDocumentationCategory" class="twikiLink">User Documentation</a>
+</li> <li> <a href="/bin/view/TWiki/UserToolsCategory" class="twikiLink">User Tools</a>
+</li></ul> 
+<p /> <ul>
+<li> <strong>Webs</strong>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/AES/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;AES</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Advis/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Advis</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BIOE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BIOE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Bits</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/Mobicom10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>Mobicom10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Bits/People/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>People</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/BoXu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;BoXu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Buy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Buy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CHE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CHE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CME/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CME</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS101/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS101</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS107/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS107</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS111</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Green/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Green</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA16/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA16</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111GreenFA17/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111GreenFA17</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS111Media/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS111Media</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS151/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS151</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS201/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS201</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS202/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS202</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS211/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS211</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS301/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS301</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS335/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS335</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS340/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS340</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS342/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS342</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS361fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS361fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS377/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS377</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385fall14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385fall14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS385spring14/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS385spring14</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS401/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS401</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS422/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS422</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall09/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall09</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall10/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall10</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS450fall11/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS450fall11</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS474/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;CS474</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS477/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS477</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS491Law/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS491Law</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS499/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS499</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CS594WN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CS594WN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSGSA/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSGSA</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CSOpenHouse/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CSOpenHouse</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ClementYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ClementYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputationalEcology/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ComputationalEcology</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ComputerSupport/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;ComputerSupport</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ConferenceRooms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ConferenceRooms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/CoolCS/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;CoolCS</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Cruz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Cruz/NSFMatchingGrant/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;<span class="twikiWebIndent"></span>NSFMatchingGrant</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Devroye/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Devroye</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/DiEugenio/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;DiEugenio</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE341s12/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE341s12</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/ECE534/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;ECE534</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/EngineeringDiversity/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;EngineeringDiversity</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/FESP/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;FESP</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Feinerman/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Feinerman</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/HKN/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;HKN</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/IEEE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;IEEE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2012/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2012</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Isaim2014/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Isaim2014</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Jakob/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Jakob</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/JohnBell/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;JohnBell</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kanich/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kanich</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KenBrezinsky/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KenBrezinsky</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Kenyon/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Kenyon</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/KirstenGorton/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;KirstenGorton</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MASG/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MASG</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MIE</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/NonAcademicChecklist/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>NonAcademicChecklist</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MIE/UndergraduatePrograms/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span>UndergraduatePrograms</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/MRC/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;MRC</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Main/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;Main</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Murata/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Murata</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/NewLookTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;NewLookTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/News/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#d0d0d0" />&nbsp;News</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PSYu/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PSYu</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PeterNelson/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PeterNelson</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;PhilTest</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/PhilTest/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Piotr/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Piotr</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reach/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reach</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Reed/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Reed</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/RonFernandez/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;RonFernandez</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sandbox/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sandbox</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Shatz/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Shatz</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sistla/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sistla</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Sloan/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Sloan</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/TWiki/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#FFD8AA" />&nbsp;TWiki</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Tanya/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#549703" />&nbsp;Tanya</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Theys/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Theys</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Troy/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Troy</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Ziebart</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Ziebart/Teaching/CS594Fall13/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#A0A0D0" />&nbsp;<span class="twikiWebIndent"></span><span class="twikiWebIndent"></span>CS594Fall13</a></span>
+</li> <li> <span style="white-space:nowrap"><a href="/bin/view/Zuck/WebHome"><img src="https://www.cs.uic.edu/pub/TWiki/TWikiDocGraphics/web-bg.gif" border="0" alt="" width="16" height="16" style="background-color:#D0D0D0" />&nbsp;Zuck</a></span>
+</li></ul> 
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
+</li>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
+</li>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

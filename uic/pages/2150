@@ -1,529 +1,947 @@
-				<!DOCTYPE html>
-<html lang="en-US"><head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+  <title>Sloan - WebStatistics</title>
+
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/Sloan/WebStatistics?_T=2018-11-25" type="application/x-wiki" title="edit WebStatistics" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/Sloan/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/Sloan/WebStatistics"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+	height:100px;  /* top bar height; make room for header columns */
+	overflow:visible;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
+}
+</style>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
 	
-	<!-- Google Site Verification -->
-	<meta name="google-site-verification" content="U4nFQYZb1ra0Xr2hHgXzJpSS_43bwtAiSTl2fXQbhRQ" />
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
 
-        <meta charset="utf-8">
-        <title>Food For Thought sponsored by UIC Student Nutrition Association | Campus Recreation</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Official Website of UIC Campus Recreation" />  
-        <meta name="keywords" content="Campus Recreation" />
-        
-                
-                <!-- Le styles -->
-        <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="http://recreation.uic.edu/wp-content/uploads/2013/02/favicon1.png">
-        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <!--[if lte IE 8]>
-    	<link rel="stylesheet" type="text/css" href="http://recreation.uic.edu/wp-content/themes/builder/assets/css/ie.css" />
-		<![endif]-->
-                <link rel="alternate" type="application/rss+xml" title="Campus Recreation &raquo; Feed" href="http://recreation.uic.edu/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Campus Recreation &raquo; Comments Feed" href="http://recreation.uic.edu/comments/feed/" />
-<link rel='stylesheet' id='stylesheet-css'  href='http://recreation.uic.edu/wp-content/themes/builder/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='wide_layout-css'  href='http://recreation.uic.edu/wp-content/themes/builder/assets/css/wide_layout.css' type='text/css' media='all' />
-<link rel='stylesheet' id='gsc_style-css'  href='http://recreation.uic.edu/wp-content/plugins/google-custom-search/css/smoothness/jquery-ui-1.7.3.custom.css' type='text/css' media='all' />
-<link rel='stylesheet' id='gsc_style_search_bar-css'  href='http://www.google.com/cse/style/look/minimalist.css' type='text/css' media='all' />
-<link rel='stylesheet' id='gsc_style_search_bar_more-css'  href='http://recreation.uic.edu/wp-content/plugins/google-custom-search/css/gsc.css' type='text/css' media='all' />
-<link rel='stylesheet' id='css3_grid_font_yanone-css'  href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&#038;ver=1529' type='text/css' media='all' />
-<link rel='stylesheet' id='css3_grid_table1_style-css'  href='http://recreation.uic.edu/wp-content/plugins/css3_web_pricing_tables_grids/table1/css3_grid_style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='css3_grid_table2_style-css'  href='http://recreation.uic.edu/wp-content/plugins/css3_web_pricing_tables_grids/table2/css3_grid_style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='css3_grid_responsive-css'  href='http://recreation.uic.edu/wp-content/plugins/css3_web_pricing_tables_grids/responsive.css' type='text/css' media='all' />
-<link rel='stylesheet' id='rs-settings-css'  href='http://recreation.uic.edu/wp-content/plugins/revslider/rs-plugin/css/settings.css' type='text/css' media='all' />
-<link rel='stylesheet' id='rs-captions-css'  href='http://recreation.uic.edu/wp-content/plugins/revslider/rs-plugin/css/captions.css' type='text/css' media='all' />
-<link rel='stylesheet' id='super-rss-reader-css-css'  href='http://recreation.uic.edu/wp-content/plugins/super-rss-reader/public/srr-css.css' type='text/css' media='all' />
-<link rel='stylesheet' id='js_composer_front-css'  href='http://recreation.uic.edu/wp-content/plugins/js_composer/assets/css/js_composer.css' type='text/css' media='all' />
-<link rel='stylesheet' id='js_composer_custom_css-css'  href='http://recreation.uic.edu/wp-content/uploads/js_composer/custom.css' type='text/css' media='screen' />
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/jquery.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/jquery-migrate.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/jquery-vertical-accordion-menu/js/jquery.hoverIntent.minified.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/jquery-vertical-accordion-menu/js/jquery.cookie.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/jquery-vertical-accordion-menu/js/jquery.dcjqaccordion.2.9.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/google-custom-search/js/gsc.js'></script>
-<script type='text/javascript' src='http://www.google.com/jsapi'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.plugins.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/super-rss-reader/public/srr-js.js'></script>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://recreation.uic.edu/xmlrpc.php?rsd" />
-<link rel='canonical' href='http://recreation.uic.edu/food-for-thought/' />
-<link rel='shortlink' href='http://recreation.uic.edu/?p=10637' />
-<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
-        
-        <!-- Added by vishakha -->
-	<style type="text/css" media="screen">
-    #skip a, #skip a:hover, #skip a:visited 
-    { 
-    position:absolute; 
-    left:0px; 
-    top:-500px; 
-    width:1px; 
-    height:1px; 
-    overflow:hidden;
-    } 
-    
-    #skip a:active {
-    width: auto;
-    position: static;
-    height: auto;
-    }
-    
-    #skip a:focus 
-    { 
-    position:static; 
-    width:auto; 
-    height:auto; 
-    } 
-    
-    .hidden
-    {position:absolute;
-    left:0px;
-    top:-500px;
-    width:1px;
-    height:1px;
-    overflow:hidden;}
-    </style>
-    
-    <script type="text/javascript"> 
-    <!--added by Vishakha
-    function MM_swapImgRestore() { //v3.0
-      var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
-    }
-    
-    function MM_findObj(n, d) { //v4.01
-      var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-        d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-      if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-      for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-      if(!x && d.getElementById) x=d.getElementById(n); return x;
-    }
-     
-    function MM_swapImage() { //v3.0
-      var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
-       if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
-    }
-    //-->
-    </script>
+@import url('/pub/Main/WebPreferences/mainweb.css');
 
-<!-- added by Vishakha for Google Analytics -->
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-42322888-1']);
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
   _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
 </script>
 
-    </head>
-
-	<body  class="page page-id-10637 page-template-default wpb-js-composer js-comp-ver-4.3.3 vc_responsive">
-    
-	<!--added skip to main content link by Vishakha -->
-    <div id="skip"><a href="#content">Skip to Main Content</a></div> 
-    <h1 class="hidden">UIC Campus Recreation</h1>
-
-    <div class="wide_cont" style="background-image:url(http://recreation.uic.edu/wp-content/uploads/2013/04/bkgrnd2.png); background-position:center;">
-    
-     <!--banner added by Vishakha -->
-    <div class="banner" style="background-color:#dedede">
-    <div class="container">
-        	<div class="row">
-            	<div class="span6">   
-                <a href="http://www.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uic_logo','','http://recreation.uic.edu/wp-content/uploads/2013/04/banner-UIC.png',1)"><img src=		"http://recreation.uic.edu/wp-content/uploads/2013/04/banner-UIC-white.png" alt="University of Illinois at Chicago" id="uic_logo"> </a>
-                <a href="http://www.vcsa.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('ovcsa_logo','','http://recreation.uic.edu/wp-content/uploads/2013/04/banner-OVCSA.png',1)"><img src="http://recreation.uic.edu/wp-content/uploads/2013/04/banner-OVCSA-white.png" alt="Office of the Vice Chancellor for Student Affairs" id="ovcsa_logo"></a>
- 				</div>
-                <div class="span6" style="text-align:right">
-                <a href="http://www.uic.edu" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('uofi_logo','','http://recreation.uic.edu/wp-content/uploads/2013/03/banner-UniversityofIlli.png',1)"><img src="http://recreation.uic.edu/wp-content/uploads/2013/03/banner-UniversityofIlli-white.png" alt="University of Illinois at Chicago" id="uofi_logo"></a>
-                </div>
-    		</div>
-    </div>
-    </div>
-    
-    <!--TOP-->
-      	<div class="top_line">
-    	<div class="container">
-        	<div class="row">
-            	<div class="span10">
-                
-                <!--twitter feed added by Vishakha, the twitter account name should be populated the admin panel footer settings-->                     
-                  <!--  <div class="tweet" style="color:#ffffff; padding-bottom:0px; padding-top:5px; padding-left:4px;"></div>   -->
-
-		 <p>How good is your poker face? 
-
-All intramural activities are FREE and open to the UIC community.  ♥️♣️♦️♠️ <a href="https://t.co/n9NMECzhLb">https://t.co/n9NMECzhLb</a> - <span class="0_tweet_date"></span></p>
-
-		<script type="text/javascript">
-			jQuery(document).ready(function() { 
-									moment.lang('en');
-												var date_val_0 = 1542812535;
-								var date_0 = moment.unix(date_val_0).fromNow();
-								jQuery(".0_tweet_date").html(date_0);
-							});
-		</script>
-
-
-                    
-					<!--commented by Vishakha<p class="feed"></p>-->
-    			</div>
-                <div class="span2 soc_icons">
-                																                    	<a href="http://recreation.uic.edu/search/" target="_blank"><div class="icon_google"></div></a>
-                    					                    	<a href="https://www.facebook.com/UICCampusRec" target="_blank"><div class="icon_facebook"></div></a>
-                                                            	<a href="https://www.instagram.com/uic_campusrec/" target="_blank"><div class="icon_in"></div></a>
-                                                                                	<a href="https://twitter.com/uiccampusrec" target="_blank"><div class="icon_t"></div></a>
-                                    </div>
-    		</div>
-    	</div>
-    </div>
-    <!--/TOP-->
-        
-    
-    <!--PAGE HEAD-->
-    <div class="page_head" >
-    	<div class="container">
-        	<div class="row">
-            	<div class="span3">
-                	<div class="logo">
-                    	<a href="http://recreation.uic.edu"> <img src="http://recreation.uic.edu/wp-content/uploads/2013/05/CampRecLogo6.png" alt="Campus Recreation" /></a>
-                    </div>
-                </div>
-                <div class="span9">
-                	<nav>
-                    	<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-7012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7012"><a title="Home" href="http://recreation.uic.edu/" >About</a>
-<ul class="sub-menu">
-	<li id="menu-item-5694" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5694"><a href="http://recreation.uic.edu/mission-vision-and-values/" >Mission, Vision and Values</a></li>
-	<li id="menu-item-5693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5693"><a href="http://recreation.uic.edu/sustainability/" >Sustainability</a></li>
-	<li id="menu-item-13876" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13876"><a href="http://recreation.uic.edu/inclusive-recreation/" >Inclusive Recreation</a></li>
-	<li id="menu-item-5692" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5692"><a href="http://recreation.uic.edu/history/" >History</a></li>
-	<li id="menu-item-5691" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5691"><a href="http://recreation.uic.edu/photo-gallery/" >Photo Gallery</a></li>
-</ul>
-</li>
-<li id="menu-item-6348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6348"><a title="Facilities &amp; Hours" href="http://recreation.uic.edu/facilities/" >Facilities</a>
-<ul class="sub-menu">
-	<li id="menu-item-12710" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12710"><a href="http://recreation.uic.edu/rentals/" >Facility Rentals</a></li>
-	<li id="menu-item-5295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5295"><a title="Student Recreation Facility" href="http://recreation.uic.edu/facilities/facility_srf/" >Student Recreation Facility</a></li>
-	<li id="menu-item-5455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5455"><a href="http://recreation.uic.edu/facilities/facility_sfc/" >Sport &#038; Fitness Center</a></li>
-	<li id="menu-item-7077" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7077"><a href="http://recreation.uic.edu/facilities/ofc/" >Outdoor Field Complex</a></li>
-	<li id="menu-item-5294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5294"><a title="Outdoor Recreation Courts" href="http://recreation.uic.edu/facilities/facility_courts/" >Outdoor Recreation Courts</a></li>
-	<li id="menu-item-9171" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9171"><a href="http://recreation.uic.edu/facilities/facility_srf/" >SRF Hours</a></li>
-	<li id="menu-item-9172" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9172"><a href="http://recreation.uic.edu/facilities/facility_sfc/" >SFC Hours</a></li>
-	<li id="menu-item-10400" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10400"><a href="https://www.uic.edu/apps/security/guestwireless/signup.pl" >Guest Wifi</a></li>
-</ul>
-</li>
-<li id="menu-item-12709" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12709"><a href="http://recreation.uic.edu/rentals/" >Rentals</a></li>
-<li id="menu-item-2047" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2047"><a title="Programs" href="#">Programs</a>
-<ul class="sub-menu">
-	<li id="menu-item-13733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13733"><a href="http://recreation.uic.edu/aquatics-2/" >Aquatics</a></li>
-	<li id="menu-item-5401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5401"><a href="http://recreation.uic.edu/intramural/" >Intramural Sports</a></li>
-	<li id="menu-item-12206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12206"><a href="http://recreation.uic.edu/sport_club/" >Sport Clubs</a></li>
-	<li id="menu-item-5632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5632"><a href="http://recreation.uic.edu/climbing-wall/" >Climbing Wall</a></li>
-	<li id="menu-item-9384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9384"><a href="http://recreation.uic.edu/adventure/" >Outdoor Adventure</a></li>
-	<li id="menu-item-6190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6190"><a href="http://recreation.uic.edu/team-challenge/" >Team Challenge</a></li>
-	<li id="menu-item-12961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12961"><a href="http://recreation.uic.edu/youth-program/" >Youth Program</a></li>
-</ul>
-</li>
-<li id="menu-item-12914" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-12914"><a title="Fitness and Wellness" href="http://recreation.uic.edu/fitness-wellness/" >Fitness &#038; Wellness</a>
-<ul class="sub-menu">
-	<li id="menu-item-12915" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12915"><a href="http://recreation.uic.edu/drop-in-fitness/" >Drop-In Fitness</a></li>
-	<li id="menu-item-5649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5649"><a href="http://recreation.uic.edu/personal-training/" >Personal Training</a></li>
-	<li id="menu-item-5641" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5641"><a href="http://recreation.uic.edu/human-performance-lab/" >Fitness Testing</a></li>
-	<li id="menu-item-10695" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10695"><a href="http://recreation.uic.edu/massage-therapy/" >Massage Therapy</a></li>
-	<li id="menu-item-12916" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12916"><a href="http://recreation.uic.edu/group-fitness-session/" >Group Fitness Session &#038; Instructional Programs</a></li>
-	<li id="menu-item-12917" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12917"><a href="http://recreation.uic.edu/walkingrunning-routes-at-uic/" >Walking/Running Routes at UIC</a></li>
-	<li id="menu-item-10696" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10637 current_page_item menu-item-10696"><a href="http://recreation.uic.edu/food-for-thought/" >Nutrition</a></li>
-</ul>
-</li>
-<li id="menu-item-7350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7350"><a href="http://recreation.uic.edu/memberships/" >Memberships</a>
-<ul class="sub-menu">
-	<li id="menu-item-7375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7375"><a href="http://recreation.uic.edu/memberships/" >Membership Types</a></li>
-	<li id="menu-item-6922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6922"><a href="http://recreation.uic.edu/memberships/electronic-fund-transfer/" >Electronic Fund Transfer</a></li>
-	<li id="menu-item-6920" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6920"><a href="http://recreation.uic.edu/guest-information/" >Guest Information</a></li>
-	<li id="menu-item-6921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6921"><a href="http://recreation.uic.edu/cancellations/" >Cancellations</a></li>
-</ul>
-</li>
-<li id="menu-item-5450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5450"><a title="Contact Us" href="http://recreation.uic.edu/contacts/" >Contact Us</a>
-<ul class="sub-menu">
-	<li id="menu-item-6270" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6270"><a href="http://recreation.uic.edu/employment/" >Employment</a></li>
-	<li id="menu-item-5665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5665"><a href="http://recreation.uic.edu/comments-and-suggestions/" >Comments and Suggestions</a></li>
-	<li id="menu-item-5664" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5664"><a href="http://recreation.uic.edu/professional-staff/" >Professional Staff</a></li>
-	<li id="menu-item-11765" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11765"><a href="http://recreation.uic.edu/additional-resources/" >Additional Resources</a></li>
-	<li id="menu-item-9173" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9173"><a title="SRF Hours" href="http://recreation.uic.edu/facilities/facility_srf/" >SRF Hours</a></li>
-	<li id="menu-item-9174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9174"><a title="SFC Hours" href="http://recreation.uic.edu/facilities/facility_sfc/" >SFC Hours</a></li>
-</ul>
-</li>
-</ul></div>                    </nav>
-                </div>
-    		</div>
-    	</div>
-    </div>
-    <!--/PAGE HEAD-->
-    
-    <!-- check if front page Vishakha -->
-        <!--WELCOME AREA-->
-    <div class="tag_line">
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                    <div class="welcome">
-                    <!--changed to h2 from h3 by vishakha -->
-                        <h2> <span class="colored">Food For Thought sponsored by UIC Student Nutrition Association</span>   </h2>
-																			<a class="subpage_block" href="http://recreation.uic.edu">Home</a><div class="subpage_breadcrumbs_dv"></div>Food For Thought sponsored by UIC Student Nutrition Association                                                                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        
-	    
-    		    
-	    
-    				
-				
-                					                    
-                                        
-                                
-                
-                <div class="main_content_area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="span12">
-                                   
-                                                                <div class="vc_row wpb_row vc_row-fluid">
-	<div class="vc_col-sm-12 wpb_column vc_column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_single_image wpb_content_element vc_align_left">
-		<div class="wpb_wrapper">
-			
-			<img class="" src="http://recreation.uic.edu/wp-content/uploads/2013/05/banner_services.jpg" width="1170" height="200" alt="banner_services" />
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-</div><div class="vc_row wpb_row vc_row-fluid">
-	<div class="vc_col-sm-3 wpb_column vc_column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<h4>Nutrition Resources</h4>
-<p><strong><a href="http://www.choosemyplate.gov" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.choosemyplate.gov']);">www.choosemyplate.gov</a></strong></p>
-<p><strong><a href="http://fnic.nal.usda.gov" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://fnic.nal.usda.gov']);">fnic.nal.usda.gov</a></strong></p>
-<p><strong><a href="http://www.eatrightfoundation.org" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.eatrightfoundation.org']);">www.eatrightfoundation.org</a></strong></p>
-<p><strong><a href="http://www.fitday.com" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.fitday.com']);">www.fitday.com</a></strong></p>
-
-		</div> 
-	</div> 
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<h4>Recipes of the Month</h4>
-
-		</div> 
-	</div> 
-	<div class="wpb_single_image wpb_content_element vc_align_center">
-		<div class="wpb_wrapper">
-			
-			<a href="http://recreation.uic.edu/wp-content/uploads/2015/05/Hearty-Black-Bean-Quesadillas.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/05/Hearty-Black-Bean-Quesadillas.pdf']);" target="_self"><img width="300" height="225" src="http://recreation.uic.edu/wp-content/uploads/2015/04/asd-300x225.png" class=" vc_box_border_grey attachment-medium" alt="Quesadillas" /></a>
-		</div> 
-	</div> 
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<p><strong><a href="http://recreation.uic.edu/wp-content/uploads/2015/05/Got-Kale.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/05/Got-Kale.pdf']);">Got Kale</a></strong></p>
-<p><strong><a title="tips" href="http://recreation.uic.edu/wp-content/uploads/2015/05/NutritionTips.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/05/NutritionTips.pdf']);">Healthier version of a college meal</a></strong></p>
-<p><strong><a href="http://recreation.uic.edu/wp-content/uploads/2015/05/Hearty-Black-Bean-Quesadillas.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/05/Hearty-Black-Bean-Quesadillas.pdf']);">Hearty Black Bean Quesadillas</a></strong></p>
-
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-
-	<div class="vc_col-sm-6 wpb_column vc_column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<p></p>
-<h3>Food For Thought sponsored by:<br />
-UIC Student Nutrition Association</h3>
-
-		</div> 
-	</div> 
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<h4>Nutrition Tips</h4>
-<ol>
-<li>One 20oz Coca-Cola contains 240 calories and 65 grams of sugar. This is about 17 teaspoons of sugar. Rethink your drink by choosing water over soda one time a day and save 87,600 calories in a year, 23, 725 grams or 5,931 teaspoons of sugar.</li>
-</ol>
-<ol start="2">
-<li>Greek yogurt is packed with protein, probiotics to keep you regular, and calcium for bone health.  Try replacing sour cream or mayo with Greek yogurt. You can also add it to a smoothie, or add fruit and granola to make a sweet breakfast treat.</li>
-</ol>
-<ol start="3">
-<li>The USDA recommends making half your grains whole grains. Make an easy change by swapping out regular rice, pasta, and white bread for brown rice, whole-wheat pasta, or whole grain bread.</li>
-</ol>
-<ol start="4">
-<li>Have trouble with portion control? Try eating on a smaller plate. The size of a normal dinner plate has grown over the years. Another trick is to avoid eating directly from the package. It is much easier to eat a whole bag of chips directly from the bag vs. taking out one serving and putting it in a bowl.</li>
-</ol>
-<ol start="5">
-<li>Vegetables are packed with vitamins and minerals the body needs. But lets face it sometimes you might not feel like a salad. Sneak veggies into your meals by adding them as toppings on a pizza, sandwich, or taco. They can also be blended into smoothies.  Veggies contribute flavor when added to scrambled eggs, soups, and pasta dishes.</li>
-</ol>
-
-		</div> 
-	</div> 
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<h4>More Tips on Nutrition</h4>
+<!-- /Google Analytics Snippet -->
+</head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="Statistics_for_Sloan_Web"></a> Statistics for Sloan Web </h2>
+<p />
+<table cellspacing="0" id="table1" cellpadding="0" class="twikiTable" rules="all" border="1">
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#687684" valign="top" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/Sloan/WebStatistics?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Month:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/Sloan/WebStatistics?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/Sloan/WebStatistics?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Topic <br /> saves:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/Sloan/WebStatistics?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">File <br /> uploads:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/Sloan/WebStatistics?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Most popular <br /> topic views:</font></a> </th>
+			<th bgcolor="#687684" valign="top" class="twikiTableCol5 twikiLastCol"> <a rel="nofollow" href="/bin/view/Sloan/WebStatistics?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#ffffff">Top contributors for <br /> topic save and uploads:</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> <!--statDate--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol1"> <!--statViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol2"> <!--statSaves--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol3"> <!--statUploads--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> <!--statTopViews--> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> <!--statTopContributors--> </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-03 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1812<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 453&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />294&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />105&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />104&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;94&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;94&nbsp;<a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;&nbsp;87&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;83&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;77&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-02 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1529<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 500&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />329&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;76&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;75&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;50&nbsp;<a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2017-01 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1317<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 538&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />139&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;68&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;66&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;60&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;41&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1323<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 522&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />123&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;88&nbsp;<a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;&nbsp;76&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;65&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-11 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1523<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 545&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />228&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;85&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;72&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;71&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;68&nbsp;<a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;62&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-10 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1661<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 572&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />312&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;78&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;76&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;66&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-09 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1177<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 589&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;87&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;47&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;46&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;37&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;27&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-08 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 639<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 261&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;51&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;30&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;21&nbsp;<a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;18&nbsp;<a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;18&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;17&nbsp;<a href="/bin/view/Sloan/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-07 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1692<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 488&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />180&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;89&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;80&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;79&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;73&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;70&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;68&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;60&nbsp;<a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;58&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-06 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 884<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 223&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;75&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-04 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1021<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 293&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />107&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;65&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;57&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;53&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;44&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-03 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1163<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 311&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />268&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;63&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;43&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;36&nbsp;<a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;35&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-02 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1121<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 332&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />121&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />120&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;56&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;45&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;42&nbsp;<a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;39&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;38&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;33&nbsp;<a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> 2016-01 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 804<br />(1 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 260&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;96&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;49&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> 2015-12 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 802<br />(1 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0<br />(0 unique users) </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 252&nbsp;<a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;64&nbsp;<a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;&nbsp;55&nbsp;<a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;48&nbsp;<a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;40&nbsp;<a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;34&nbsp;<a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;32&nbsp;<a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;&nbsp;31&nbsp;<a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;29&nbsp;<a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;26&nbsp;<a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1609 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 445 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;86 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;80 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;62 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;53 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;52 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;50 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;48 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;44 <a href="/bin/view/Sloan/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;43 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;43 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1917 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 485 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />116 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;95 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;74 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;64 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;63 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;62 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;60 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;59 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;55 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;54 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1916 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 412 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />109 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />105 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />100 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;80 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;79 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;73 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;68 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;64 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;63 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;62 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1829 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 413 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />126 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />101 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;98 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;80 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;79 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;69 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;67 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;63 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;59 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;58 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2235 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 565 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />221 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />139 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />125 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />113 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />106 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;84 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;78 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;67 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;57 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;55 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1071 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 284 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;58 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;58 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;46 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;42 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;41 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;40 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;37 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;36 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;34 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;33 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3843 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 1209 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />568 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />244 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />130 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />130 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />118 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />115 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />102 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;92 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;84 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;81 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2223 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 561 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />270 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />144 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;87 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;85 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;82 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;60 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;58 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;57 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;53 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;52 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2338 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 637 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />189 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />175 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />138 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />124 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />110 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;61 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;60 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;59 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;56 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;55 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2015 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2316 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 637 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />201 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />149 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />106 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;98 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;87 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;68 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;59 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;56 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;51 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;51 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2015 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2281 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 648 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />211 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />110 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;76 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;70 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;64 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;57 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;55 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;54 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;50 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;48 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1583 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 398 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />168 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />150 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;55 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;50 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;45 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;44 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;41 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;40 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;38 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;37 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1849 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 511 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />225 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;95 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;69 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;65 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;65 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;59 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;52 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;47 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;47 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;45 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2323 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 628 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />235 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />106 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;83 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;78 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;75 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;73 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;71 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;68 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;66 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;64 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2585 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 753 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />271 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />146 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />111 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />101 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;91 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;76 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;76 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;73 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;70 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;62 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 5145 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 750 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />738 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />658 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />488 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />363 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />255 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />239 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />207 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />120 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />110 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />108 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 7423 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 1285 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />987 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />859 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />696 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />534 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />439 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />427 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />358 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />152 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />143 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />142 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 6242 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 1008 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />906 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />740 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />724 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />496 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />489 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />290 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />257 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />100 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;99 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;94 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 6737 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 1081 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />1052 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />899 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />789 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />587 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />403 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />287 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />243 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />110 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />104 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;96 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3627 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 745 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />629 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />355 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />332 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />201 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />178 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />136 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />117 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;65 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;65 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;59 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2632 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 593 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />430 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />192 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />189 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />157 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />105 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;97 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;62 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;57 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;50 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;48 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2014 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1278 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 349 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />154 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />108 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;44 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;41 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;41 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;38 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;27 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;26 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;25 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;24 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2014 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1578 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 365 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />184 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />162 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;57 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;51 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;44 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;39 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;36 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;32 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;32 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1086 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 275 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />121 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />103 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;52 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;33 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;30 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;30 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;25 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;22 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;20 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;18 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3175 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 556 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />531 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />370 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />171 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />163 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />155 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />144 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />111 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;59 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;52 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1581 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 427 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />187 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />133 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;62 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;55 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;53 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;42 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;40 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;38 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;35 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;33 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1748 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 476 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />198 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />153 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;64 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;59 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;48 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;43 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;37 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;34 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;34 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2381 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 727 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />241 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />227 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;72 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;67 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;49 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;47 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;47 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;44 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;39 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;37 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1354 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 309 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />222 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />171 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;53 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;53 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;53 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;43 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;31 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;29 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;27 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;26 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2175 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 507 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />266 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />232 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;88 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;85 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;75 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;73 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;47 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;45 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;44 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;40 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2399 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 530 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />300 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />272 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />113 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;76 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;72 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;64 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;62 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;55 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;50 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;45 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2240 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 465 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />253 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />249 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;92 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;81 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;80 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;78 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;77 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;70 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;51 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;48 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2013 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1514 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 336 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />164 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />137 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;85 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;74 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;67 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;51 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;50 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;41 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;29 <a href="/bin/view/Sloan/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;27 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2013 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3902 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 763 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />427 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />388 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />357 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />342 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />224 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />129 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />113 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;83 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;75 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;61 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3284 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 655 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />455 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />303 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />206 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />204 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />193 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />121 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;81 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;74 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;69 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;69 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1026 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 216 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />151 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;99 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;42 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;36 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;30 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;29 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;27 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;25 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;24 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;24 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1964 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 388 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />360 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />185 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />105 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;70 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;62 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;59 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;49 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;45 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;45 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;44 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1082 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 263 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />122 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />110 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;57 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;32 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;32 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;31 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;30 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;26 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;25 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;25 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2225 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 476 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />310 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />200 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />107 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;67 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;60 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;57 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;56 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;55 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;54 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;51 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1743 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 334 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />285 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />158 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;84 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;70 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;61 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;57 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;54 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;51 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;45 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;42 <a href="/bin/view/Sloan/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1460 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 411 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />158 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />122 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;63 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;54 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;40 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;36 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;34 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;33 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;28 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;26 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 595 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />174 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />160 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;84 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;71 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;67 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;64 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;62 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;48 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;43 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;40 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2854 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 692 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />363 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />274 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />133 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />104 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;81 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;67 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;67 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;64 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;62 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;61 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2012 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2047 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 621 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />190 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />178 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;81 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;60 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;53 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;47 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;45 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;42 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;34 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;33 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2012 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3023 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 693 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />468 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />233 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />111 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;95 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;90 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;89 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;72 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;60 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;55 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;52 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2304 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 419 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />362 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />199 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;93 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;84 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;82 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;77 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;62 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;62 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;59 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;58 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2136 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 444 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />410 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />204 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;56 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;52 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;48 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;46 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;46 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;46 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;45 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;45 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2018 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 367 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />358 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />218 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;92 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;78 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;74 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;60 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;53 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;51 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;46 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;44 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2304 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 412 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />354 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />230 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />135 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />108 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;78 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;75 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;69 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;68 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;53 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;53 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2246 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 614 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />338 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />156 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />114 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;66 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;64 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;63 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;59 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;56 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;56 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;52 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2839 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 525 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />401 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />232 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />227 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />129 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />118 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />109 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;93 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;93 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;78 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;70 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Apr 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 3408 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 740 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />518 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />218 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />140 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />119 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;99 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;96 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;96 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;90 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;89 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;86 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2011 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1201 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 243 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />229 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;83 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;70 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;43 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;37 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;35 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;34 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;34 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;31 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;30 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2011 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1101 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 211 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />160 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;80 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;46 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;42 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;38 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;35 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;33 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;32 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;26 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;26 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 156 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> &nbsp;29 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;28 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;18 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;&nbsp;6 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;&nbsp;5 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;&nbsp;4 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2698 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 591 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />396 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />275 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />134 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />120 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />102 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;66 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;65 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;62 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;57 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;57 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2216 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 360 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />357 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />122 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />119 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />119 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />100 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />&nbsp;65 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;61 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;60 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;59 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;55 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2342 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 523 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />378 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />139 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;94 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;75 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;69 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;68 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;68 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;67 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;64 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;60 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1327 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 335 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />204 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;61 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;55 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;49 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;43 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;40 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;37 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;35 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;34 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;32 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 77 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> &nbsp;20 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;11 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/WebTopicList" class="twikiLink">WebTopicList</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;&nbsp;3 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Sloan/WebSearchAdvanced" class="twikiLink">WebSearchAdvanced</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Sloan/WebIndex" class="twikiLink">WebIndex</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a><br />&nbsp;&nbsp;2 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> May 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1869 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 322 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />282 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />192 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />109 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;79 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;56 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;55 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;53 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;51 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;51 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;47 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Mar 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1606 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 7 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 3 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 269 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />189 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />113 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />&nbsp;75 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;75 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;64 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;59 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;46 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;43 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;43 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;43 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;10 Main.sloan </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Feb 2010 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 3732 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 12 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 479 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />462 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />337 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />247 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />217 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />208 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />137 <a href="/bin/view/Sloan/LectureNotes" class="twikiLink">LectureNotes</a><br />125 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />115 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;88 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;82 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;16 Main.sloan </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jan 2010 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2735 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 24 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 5 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 499 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />308 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />148 <a href="/bin/view/Sloan/PrivacyCourseSpring2010" class="twikiLink">PrivacyCourseSpring2010</a><br />111 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />102 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;98 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;98 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;80 <a href="/bin/view/Sloan/ReadingAssignments" class="twikiLink">ReadingAssignments</a><br />&nbsp;76 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;75 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;74 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;29 Main.sloan </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Dec 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1902 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 401 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />296 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;96 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;73 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;72 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;70 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;68 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;68 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;66 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;61 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;60 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Nov 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 2005 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 472 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />246 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />110 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;78 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;77 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;72 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;71 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;70 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;68 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;66 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;59 <a href="/bin/view/Sloan/WebTopicList" class="twikiLink">WebTopicList</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Oct 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 2599 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 1 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 591 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />391 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />176 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />133 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />116 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;79 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;78 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;72 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;70 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;69 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;63 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 Main.sloan </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Sep 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 1554 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 370 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />249 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;78 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;67 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;52 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;50 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;47 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;45 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;43 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;42 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;40 <a href="/bin/view/Sloan/WebNotify" class="twikiLink">WebNotify</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Aug 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 1611 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 2 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 356 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />286 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;64 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;60 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;53 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;52 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;49 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;47 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;47 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;46 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;46 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;1 Main.sloan<br />&nbsp;&nbsp;1 Main.ifcruz </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol"> Jul 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1"> 880 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2"> 10 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3"> 3 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4"> 234 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />109 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;41 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;37 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;35 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;31 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;30 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;30 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;27 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;27 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;25 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp;&nbsp;9 Main.sloan<br />&nbsp;&nbsp;4 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/AndrewJohnson?topicparent=Sloan.WebStatistics;nowysiwyg=0" rel="nofollow" title="AndrewJohnson (this topic does not yet exist; you can create it)">AndrewJohnson</a></span> </td>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol0 twikiFirstCol"> Jun 2009 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol1"> 746 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol2"> 0 </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0 </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol4"> 204 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />150 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;35 <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink">WebStatistics</a><br />&nbsp;31 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;25 <a href="/bin/view/Sloan/WebSearch" class="twikiLink">WebSearch</a><br />&nbsp;24 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;23 <a href="/bin/view/Sloan/WebChanges" class="twikiLink">WebChanges</a><br />&nbsp;23 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;22 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;21 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;21 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a> </td>
+			<td bgcolor="#ffffff" valign="top" class="twikiTableCol5 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted1 twikiTableRowdataBg1">
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> May 2009 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol1 twikiLast"> 361 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol2 twikiLast"> 29 </td>
+			<td bgcolor="#edf4f9" align="right" valign="top" class="twikiTableCol3 twikiLast"> 0 </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol4 twikiLast"> &nbsp;66 <a href="/bin/view/Sloan/WebCreateNewTopic" class="twikiLink">WebCreateNewTopic</a><br />&nbsp;61 <a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink">WebHome</a><br />&nbsp;19 <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a><br />&nbsp;12 <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a><br />&nbsp;12 <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a><br />&nbsp;&nbsp;9 <a href="/bin/view/Sloan/Links" class="twikiLink">Links</a><br />&nbsp;&nbsp;8 <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a><br />&nbsp;&nbsp;6 <a href="/bin/view/Sloan/WebPreferences" class="twikiLink">WebPreferences</a><br />&nbsp;&nbsp;6 <a href="/bin/view/Sloan/WebLeftBar" class="twikiLink">WebLeftBar</a> </td>
+			<td bgcolor="#edf4f9" valign="top" class="twikiTableCol5 twikiLastCol twikiLast"> &nbsp;29 <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/JakobEriksson?topicparent=Sloan.WebStatistics;nowysiwyg=0" rel="nofollow" title="JakobEriksson (this topic does not yet exist; you can create it)">JakobEriksson</a></span> </td>
+		</tr></table>
+<p />
+<strong><em>Notes:</em></strong> <ul>
+<li> Do not edit this topic, it is updated automatically. (You can also <a href="https://www.cs.uic.edu/bin/statistics/Sloan" target="_top">force</a> an update)
+</li> <li> <a href="/bin/view/TWiki/TWikiSiteTools#WebStatistics_site_statistics" class="twikiAnchorLink">TWikiSiteTools</a> tells you how to enable the automatic updates of the statistics.
+</li> <li> Suggestion: You could archive this topic once a year and delete the previous year's statistics from the table.
+</li></ul>  </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"></span></div><!--/patternTopicAction--></div><!--/patternTopicActions-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"> <ul>
+<li> <a href="/bin/view/Sloan/Research" class="twikiLink">Research</a>
+</li> <li> <a href="/bin/view/Sloan/Teaching" class="twikiLink">Teaching</a>
+</li> <li> <a href="/bin/view/Sloan/Publications" class="twikiLink">Publications</a>
+</li> <li> 
+</li> <li> 
+</li> <li> <a href="/bin/view/Sloan/Personal" class="twikiLink">Personal</a>
+</li> <li> <a href="/bin/view/Sloan/Education" class="twikiLink">Education</a>
+</li> <li> <a href="/bin/view/Sloan/Contact" class="twikiLink">Contact</a>
+</li></ul> 
+<a href="/bin/edit/Sloan.WebLeftBar" target="_top">edit this</a>
+<p />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/Sloan/WebStatistics">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal--> <ul>
+<li> <strong><a href="/bin/view/Sloan/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> Sloan Web</a></strong>
+</li> <li> <a href="/bin/view/Sloan/WebCreateNewTopic?topicparent=WebStatistics" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/Sloan/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/Sloan/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/Sloan/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/Sloan/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/Sloan/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/Sloan/WebStatistics" class="twikiCurrentTopicLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/Sloan/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div 
+id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+</div>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
 <ul>
-<li><strong><a title="stay fit" href="http://recreation.uic.edu/wp-content/uploads/2015/04/Stay-Fit-on-Campus.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/04/Stay-Fit-on-Campus.pdf']);">Stay Fit on Campus</a></strong></li>
-<li><strong><a title="choose your dinning" href="http://recreation.uic.edu/wp-content/uploads/2015/04/Be-Choosy-in-the-Dining-Hall.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/04/Be-Choosy-in-the-Dining-Hall.pdf']);">Be Choosy in the Dining Hall</a></strong></li>
-<li><strong><a title="healthy meal" href="http://recreation.uic.edu/wp-content/uploads/2015/04/10-Tips-for-Building-a-Healthy-Meal.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/04/10-Tips-for-Building-a-Healthy-Meal.pdf']);">10 Tips for Building a Healthy Meal</a></strong></li>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
+</li>
 </ul>
-
-		</div> 
-	</div> <div class="vc_row wpb_row vc_inner vc_row-fluid">
-	<div class="vc_col-sm-6 wpb_column vc_column_container">
-		<div class="wpb_wrapper">
-			
-		</div> 
-	</div> 
-
-	<div class="vc_col-sm-6 wpb_column vc_column_container">
-		<div class="wpb_wrapper">
-			
-		</div> 
-	</div> 
-</div>
-		</div> 
-	</div> 
-
-	<div class="vc_col-sm-3 wpb_column vc_column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<h4>NCAA Handouts</h4>
-
-		</div> 
-	</div> <a class="wpb_button_a" title="How to maximize Performance Hydration" href="http://recreation.uic.edu/wp-content/uploads/2015/05/SCAN-NCAA-Performance-Hydration.compressed.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/05/SCAN-NCAA-Performance-Hydration.compressed.pdf']);"><span class="wpb_button  wpb_btn-danger wpb_btn-large wpb_document_pdf">How to maximize Performance Hydration <i class="icon"> </i></span></a>
-<a class="wpb_button_a" title="Eating Frequency for the Student Athlete" href="http://recreation.uic.edu/wp-content/uploads/2015/05/SCAN-NCAA-Eating-Frequency-Redesign-NO-MARKS.pdf" onclick="javascript:_gaq.push(['_trackEvent','download','http://recreation.uic.edu/wp-content/uploads/2015/05/SCAN-NCAA-Eating-Frequency-Redesign-NO-MARKS.pdf']);"><span class="wpb_button  wpb_btn-danger wpb_btn-large wpb_document_pdf">Eating Frequency for the Student Athlete <i class="icon"> </i></span></a>
-
-		</div> 
-	</div> 
-</div>
-                                 
-                                                            </div>
-                        </div>
-                    </div>
-                </div>
-				        <!--FOOTER-->
-                        <div class="footer">
-            <div class="container">
-                <div class="row">
-                	<div class="span3"><!-- removed soc_icons and created separate div for media icons by Vishakha --><strong></strong>
-                    <div style="">
-                    	<!-- linked the logo Vishakha-->
-                    	<a href="http://recreation.uic.edu"><img src="http://recreation.uic.edu/wp-content/uploads/2013/02/CampRecLogo6_white.png" alt="Campus Recreation" /></a><br><!--  break added for padding purposes, vishakha--> <br>
-                        <a href="http://www.nirsa.org"><img src="http://recreation.uic.edu/wp-content/uploads/2013/04/NIRSALogoWhite.png" alt="NIRSA Logo" /></a><br><br> <!-- added by Vishakha -->
-                        <div class="soc_icons"><!-- added by Vishakha -->
-						                                                    <a href="http://recreation.uic.edu/search/" target="_blank"><div class="icon_google"></div></a>
-                                                                            <a href="https://www.facebook.com/UICCampusRec" target="_blank"><div class="icon_facebook"></div></a>
-                                                                                                    <a href="https://twitter.com/uiccampusrec" target="_blank"><div class="icon_t"></div></a>
-                                                                                                
-                        
-						                                                                            <a href="https://www.instagram.com/uic_campusrec/" target="_blank"><div class="icon_icq"></div></a>
-                                                                                                                                            </div>
-                    </div><!-- added by Vishakha -->
-                    <br class="visiblephone"><br class="visiblephone"><br class="visiblephone"><br class="visiblephone">
-                    </div>
-                    <div class="span3"><h6 style="text-transform: uppercase !important; font-weight:600; !important">Facility Hours</h6><hr>			<div class="textwidget"><p><a href="http://recreation.uic.edu/facilities/facility_srf/" >SRF Hours</a></p>
-<p><a href="http://recreation.uic.edu/facilities/facility_sfc/" >SFC Hours</a></p>
-</div>
-		</div><div class="span3"><h6 style="text-transform: uppercase !important; font-weight:600; !important">Quick Links</h6><hr>			<div class="textwidget"><p><a href="https://north-a-60ols.csi-cloudapp.net/UIC/Login.aspx?ReturnUrl=%2fUIC%2f" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://north-a-60ols.csi-cloudapp.net']);" style="text-underline:none;">Register for Swim Lessons</a></p>
-<p><a href="https://north-a-60ols.csi-cloudapp.net/UIC/Login.aspx?ReturnUrl=%2fUIC%2f" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://north-a-60ols.csi-cloudapp.net']);" style="text-underline:none;">Register for Fitness Sessions</a></p>
-<p><a href="https://illinois.edu/fb/sec/3878143" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://illinois.edu']);" style="text-underline:none;">Facility Rental Reservations</a></p>
-<p><a href="https://www.imleagues.com/Login.aspx?SchId=LgpPaUngq4bOddLOoMrcYg==" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.imleagues.com']);"  style="text-underline:none;">Login to IM Leagues</a></p>
-</div>
-		</div><div class="span3"><h6 style="text-transform: uppercase !important; font-weight:600; !important">CONTACT INFORMATION</h6><hr>			<div class="textwidget"><ul class="unstyled">
-<li>
-<img src="http://recreation.uic.edu/wp-content/uploads/2013/04/icon_phone.png" alt="phone" />
-SRF Phone: 312-413-5150<br>
-<img src="http://recreation.uic.edu/wp-content/uploads/2013/04/icon_phone.png" alt="phone" />
-SFC Phone: 312-413-5260 
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
 </li>
-<li>
-<i class="icon-envelope icon-white"></i>
-rec@uic.edu
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
 </li>
-<li>
-<i class="icon-map-marker icon-white"></i>
-SRF: 737 S. Halsted St. Chicago, IL 60607<br>
-<i class="icon-map-marker icon-white"></i>
-SFC: 828 S. Wolcott Chicago, IL 60612
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
 </li>
-
-</ul></div>
-		</div> 
-                </div>
-            </div>
-        </div>
-                <div class="bottom_line" style="border-top:1px solid #444444;">
-            <div class="container">
-            	<div class="row">
-                    <div class="span6">
-                        <span style="font-size:11px;">Copyright 2012 UIC University of Illinois at Chicago | <a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Privacy Statement</a></span>
-                    </div>
-                    <div class="span6">
-                        <span style="font-size:11px;" class="pull-right visible-desktop"><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="unstyled footer_menu"><li id="menu-item-5352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5352"><a href="http://recreation.uic.edu/contacts/" >Contacts</a></li>
-<li id="menu-item-5460" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5460"><a href="http://www.uic.edu/depts/studentcenters" >Student Centers</a></li>
-<li id="menu-item-5461" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5461"><a href="http://www.vcsa.uic.edu" onclick="javascript:_gaq.push(['_trackEvent','outbound-menu','http://www.vcsa.uic.edu']);">Student Affairs</a></li>
-<li id="menu-item-6317" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6317"><a href="http://recreation.uic.edu/employment/" >Employment</a></li>
-</ul></div></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-                <!--/FOOTER-->
-        </div>
-	</body>
-    <link rel='stylesheet' id='bodyfont-css'  href='http://fonts.googleapis.com/css?family=open+sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese&#038;ver=1529' type='text/css' media='all' />
-<link rel='stylesheet' id='onefont-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese&#038;ver=1529' type='text/css' media='all' />
-<link rel='stylesheet' id='twofont-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese&#038;ver=1529' type='text/css' media='all' />
-<link rel='stylesheet' id='threefont-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese&#038;ver=1529' type='text/css' media='all' />
-<link rel='stylesheet' id='fourfont-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese&#038;ver=1529' type='text/css' media='all' />
-<link rel='stylesheet' id='fivefont-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese&#038;ver=1529' type='text/css' media='all' />
-<link rel='stylesheet' id='sixfont-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Cgreek-ext%2Ccyrillic%2Clatin-ext%2Cgreek%2Ccyrillic-ext%2Cvietnamese&#038;ver=1529' type='text/css' media='all' />
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.core.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.widget.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.mouse.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.resizable.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.draggable.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.button.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.position.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-includes/js/jquery/ui/jquery.ui.dialog.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/jquery.tweet.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/jflickrfeed.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/jquery.easing.1.3.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/superfish-menu/superfish.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/jquery.nivo.slider.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/jquery.prettyPhoto.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/jquery.waitforimages.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/jquery.isotope.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/testimonialrotator.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/custom.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/themes/builder/assets/js/tweet.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/twitget/js/moment.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/twitget/js/langs.min.js'></script>
-<script type='text/javascript' src='http://recreation.uic.edu/wp-content/plugins/js_composer/assets/js/js_composer_front.js'></script>
-
-
-
-
-
-</html>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- 
+/patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />

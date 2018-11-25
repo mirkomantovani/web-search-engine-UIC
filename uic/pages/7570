@@ -1,138 +1,203 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-	<title>Illinois Identity Provider Selection</title> 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="keywords" content="Home Organisation, Discovery Service, WAYF, Shibboleth, Login, AAI">
-	<meta name="description" content="Choose your home organisation to authenticate">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-	<link rel="stylesheet" href="/discovery/DS/styles.css" type="text/css">
-	<link rel="stylesheet" href="/discovery/DS/ImprovedDropDown.css" type="text/css">
-	<script type="text/javascript" src="/wayf/js/jquery.js"></script>
-	<!--<script type="text/javascript" src="/wayf/js/improvedDropDown.js"></script>-->
-	<script type="text/javascript">
-	<!--
-	
-	// Prevent that WAYF is loaded in an IFRAME
-	function preventIframeEmbedding(){
-		if (top != self) {
-			top.location = self.location;
-		}
-	}
-	
-	// Set focus to submit button or drop down list
-	function setFocus(){
-		// Skip this if we cannot access the form elements
-		if (
-			!document.IdPList || 
-			!document.IdPList.Select
-			){
-			return;
-		}
-		
-		if (
-				document.IdPList.user_idp && 
-				document.IdPList.user_idp.selectedIndex == 0
-			){
-			// Set focus to select
-			document.IdPList.user_idp.focus();
-		} else {
-			// Set focus to submit button
-			document.IdPList.Select.focus();
-		}
-	}
-	
-	// Perform input validation on WAYF form
-	function checkForm(){
-		if(
-			document.IdPList.user_idp && 
-			document.IdPList.user_idp.selectedIndex == 0
-		){
-			alert(unescape('You must select an organisation.'));
-			return false;
-		} else {
-			return true;
-		}
-	}
-	
-	// Init WAYF
-	function init(){
-		preventIframeEmbedding();
-		
-		setFocus();
-		
-		if (false){
-			
-			var searchText = 'Enter the name of the organisation you are affiliated with...';
-			$("#userIdPSelection:enabled option[value='-']").text(searchText);
-			
-			// Convert select element into improved drop down list
-			$("#userIdPSelection:enabled").improveDropDown({
-				iconPath:'https://discovery.illinois.edu/discovery/images/drop_icon.png',
-				noMatchesText: 'No organisation found for this search text',
-				noItemsText: 'No organisation available',
-				disableRemoteLogos: true			});
-		}
-	}
-	
-	// Call init function when DOM is ready
-	$(document).ready(init);
-	
-	-->
-	</script>
-</head>
 
-<body>
+<HTML>
+<!-- <BODY BGCOLOR="#AAAAAA" TEXT="#000000" LINK="#9690CC"> -->
 
-<div id="pageWrapper">
-	
-	<header id="customheader" role="banner">
-		<img id="Image1" src="/wayf/images/illinois.gif" alt="Illinois logo"
-		style="border-width:0px;" />
-	</header>
+<BODY BGCOLOR="#FFFFFF">
 
-	<main id="maincontent" role="main">
-<!-- Body: Start -->
+<HEAD> 
+<TITLE> CS 583 Spring 2008 </TITLE>
+</HEAD>
+<BODY>
+<H2>
+<center>
+CS 583 - Spring 2008 (under construction)
+</center>
+</H2> 
+<h1>
+<center>
+Data Mining and Text Mining
+</center>
+</H1>
+<br> 
+<h3> If the class is full, please contact Santhi Nannapaneni (santhi@cs.uic.edu) to put you in the waiting list.</h3
+<br>
+<H3> Course Objective </h3>
+<p>This course has three objectives. First, to provide students with a sound basis in data mining tasks and techniques. Second, to ensure that students are able to read, and critically evaluate data mining research papers. Third, to ensue that students are able to implement and to use some of the important data mining and text mining algorithms. 
 
-<!-- Identity Provider Selection: Start -->
-        <h1>Select your Illinois Campus</h1>
+<center> <h3> Think and Ask! </h3> </center>
+<p> If you have questions about any topic or assignment, DO ASK me or 
+even your classmates for help, I am here to make the course 
+undersdood. DO NOT delay your questions. There is no such thing as a 
+stupid question. The only obstacle to learning is laziness. </p>
 
-    <p class="text">
+</p> 
+<h3> General Information </h3> 
+<UL>
+<LI> Instructor: Bing Liu 
+<ul> 
+   <li> Email: <a href="http://www.cs.uic.edu/~liub"> Bing Liu</a>
+   <li> Tel: (312) 355 1318
+   <li> Office: SEO 931
+</ul>
+<LI> Course Call Number: 25479
+<LI> Lecture times: 
+     <ul>
+       <li> 0930-1045 Tuesday & Thursday
+     </ul>
+<LI> Room: 216 TH
+<li> Office hours: 2:00pm-3:30pm, Tuesday & Thursday (or by appointment)
+</ul>
 
-    This service, <span class="serviceName">Web Services - Illinois.edu</span>,     supports multiple groups associated with the University of Illinois. Select your campus below to go to the appropriate login screen.
-    </p>
+</UL>
 
-    <div class="list">
+<H3>Grading</H3>
+<UL>
+<li> Midterm: 25%
+<ul>
+<li> Time and date: passed
+</ul>
+<li> Final Exam: 40%
+<ul>
+<li> Time and date: May 6, 10:30 - 12:30 am
+<li> Room: 216 TH
+</ul>
+<li> Projects: passed
+<ul>
+<li> Project 1: Algorithm implementation (15%)
+<ul>
+<li> Deadline: passed
+</ul>
+<li> Project 2: Research project (including implementation) (20%)
+<ul>
+<li> Demo on: TBA
+<li> Report due: TBA
+</ul>
+</ul>
+</ul>
+<P>
+<H3>Prerequisites</H3>
+<UL>
+<li> Knowledge of probability and algorithms 
+<li> Any program language for projects
+</ul>
+<p>
+<H3> Teaching materials </H3> 
+<ul>
+<li> Required Textbook:
+<ul>
+<li><a href="http://www.cs.uic.edu/~liub/WebMiningBook.html"><b>Web Data 
+Mining</b> - Exploring Hyperlinks, Contents and Usage Data</a>, By Bing Liu, Springer, ISBN 3-540-37881-2, Dec 2006. 
+</ul>
+<li> References
+  <ul>
+  <li> Data mining: Concepts and Techniques, by Jiawei Han and Micheline Kamber, Morgan Kaufmann Publishers, ISBN 1-55860-489-8. 
+  <li> Principles of Data Mining, by David Hand, Heikki Mannila, Padhraic Smyth, The MIT Press, ISBN 0-262-08290-X. 
+  <li> Introduction to Data Mining, by Pang-Ning Tan, Michael Steinbach, and Vipin Kumar, Pearson/Addison Wesley, ISBN 0-321-32136-7. 
+  <li> Machine Learning, by Tom M. Mitchell, McGraw-Hill, ISBN 0-07-042807-7
+  </ul>
+<li> Data mining resource site: <a href="http://www.kdnuggets.com/index.html"> KDnuggets Directory </a>
+</ul>
+<H3> Topics (subject to change, slides will be changed too) </H3> 
+Introduction <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-07/CS583-introduction.ppt"> Slides </a>
+<ol> 
+<li> Data pre-processing <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-data-prep.ppt"> Slides </a>
+<ul>
+<li> Data cleaning
+<li> Data transformation
+<li> Data reduction
+<li> Discretization
+</ul>
+<li> Association rules and sequential patterns <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-06/CS583-association-sequential-patterns.ppt"> Slides </a>
+     <ul> 
+     <li> Basic concepts
+     <li> Apriori Algorithm
+     <li> Mining association rules with multiple minimum supports 
+     <li> Mining class association rules
+     <li> Sequetial pattern mining
+     <li> Summary
+     </ul>
+<li> Supervised learning (Classification) <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-06/CS583-supervised-learning.ppt"> Slides </a>
+     <ul> 
+     <li> Basic concepts
+     <li> Decision trees
+     <li> Classifier evaluation
+     <li> Rule induction
+     <li> Classification based on association rules
+     <li> Naive-Bayesian learning
+     <li> Naive-Bayesian learning for text classification
+     <li> Support vector machines
+     <li> K-nearest neighbor
+     <li> Summary
+     </ul>
+<li> Unsupervised learning (Clustering) <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-unsupervised-learning.ppt"> Slides </a>
+     <ul> 
+     <li> Basic concepts
+     <li> K-means algorithm
+     <li> Representation of clusters
+     <li> Hierarchical clustering
+     <li> Distance functions
+     <li> Data standardization
+     <li> Handling mixed attributes
+     <li> Which clustering algorithm to use?
+     <li> Cluster evaluation
+     <li> Discovering holes and data regions
+     <li> Summary
+     </ul>
+<li> Post-processing: Are all the data mining results interesting? <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-postproc.doc"> Slides </a>
+     <ul>
+     <li> Objective interestingness
+     <li> Subjective interestingness
+     </ul>
+<li> Information retrieval and Web search <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-07/CS583-info-retrieval.ppt"> Slides </a>
+     <ul>
+     <li> Basic text processing and representation
+     <li> Cosine similarity
+     <li> Relevance feedback and Rocchio algorithm
+     </ul> 
+<li> Partially supervised learning <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-partially-supervised-learning.ppt"> Slides </a>
+     <ul>
+     <li> Semi-supervised learning
+     <ul> 
+        <li> Learning from labeled and unlabeled examples using EM
+        <li> Learning from labeled and unlabeled examples using co-training
+     </ul>
+     <li> Learning from positive and unlabeled examples
+     </ul>
+<li> Link analysis <a href="http://www.cs.uic.edu/~liub/teach/cs583-fall-05/CS583-link-analysis.ppt"> Slides </a>
+     <ul>
+     <li> Social network analysis: centrality and prestige
+     <li> Citation analysis: co-citation and bibliographic coupling
+     <li> The PageRank algoithm (of Google)
+     <li> The HITS algorithm: authorities and hubs
+     <li> Mining communities on the Web
+     </ul>
+<li> Data extraction and information integration <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-07/CS583-extraction-integration.ppt"> Slides </a>
+<li> Opinion mining and summarization <a href="http://www.cs.uic.edu/~liub/teach/cs583-spring-07/CS583-opinion-mining.ppt"> Slides </a>
+<li> Summary
+</ol>
+<H3> Projects - graded  (you will demo your programs to me)</H3>
+<ul>
+<li> Each group consists of 3 students, and will work on two assignments
+<ol>
+<li> One standard algorithm implementtion, and
+<li> One research project. 
+</ol>
+<li> Deadlines: TBA
+</ul>
+</ol>
+<br>
+<H3> Rules and Policies </H3> 
+<uL>
+<li> <b>Statute of limitations</b>: No grading questions or complaints, no matter how justified, will be listened to one week after the item in question has been returned. 
+<li> <b>Cheating</b>: Cheating will not be tolerated. All work you submitted must be entirely your own. Any suspicious similarities between students' work (this includes, exams and program) will be recorded and brought to the attention of the Dean. The MINIMUM penalty for any student found cheating will be to receive a 0 for the item in question, and dropping your final course grade one letter. The MAXIMUM penalty will be expulsion from the University. 
+<li> <b>MOSS</b>: Sharing code with your classmates is not acceptable!!! All programs will be screened using the Moss (Measure of Software Similarity.) system. 
+<li> <b>Late assignments</b>: Late assignments will not, in general, be accepted. They will never be accepted if the student has not made special arrangements with me at least one day before the assignment is due. If a late assignment is accepted it is subject to a reduction in score as a late penalty. 
 
-<form id="IdPList" name="IdPList" method="post" onSubmit="return checkForm()" action="/discovery/DS?entityID=https%3A%2F%2Fillinois.edu%2Fshibboleth&amp;return=https%3A%2F%2Fforms.uofi.uic.edu%2FShibboleth.sso%2FLogin%3FSAMLDS%3D1%26target%3Dss%253Amem%253A71dc575b00d68a1a81e6cb0c10b538c6506a243bd3d39f8dfe94908e9855ff07">
-	<fieldset class="no-border">
-        <legend><h2>Select your campus:</h2></legend>
-
-	<div id="userIdPSelection"> 
-	
-	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://shibboleth.uic.edu/shibboleth" id="https://shibboleth.uic.edu/shibboleth" data="uic.edu University of Illinois at Chicago" ><label for="https://shibboleth.uic.edu/shibboleth">University of Illinois at Chicago</label></p>
-	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://uisshibb1.uis.edu/idp/shibboleth" id="https://uisshibb1.uis.edu/idp/shibboleth" data="uis.edu University of Illinois at Springfield" ><label for="https://uisshibb1.uis.edu/idp/shibboleth">University of Illinois at Springfield</label></p>
-	<p class="campus-list-item"><input type="radio" name="user_idp" value="urn:mace:incommon:uiuc.edu" id="urn:mace:incommon:uiuc.edu" data="uiuc.edu University of Illinois at Urbana-Champaign" ><label for="urn:mace:incommon:uiuc.edu">University of Illinois at Urbana-Champaign</label></p>	</div>
-	</fieldset>
-	<input type="submit" name="Select" accesskey="s" value="Select"> 
-				<!-- Value permanent must be a number which is equivalent to the days the cookie should be valid -->
-		<input type="checkbox" name="permanent" id="rememberPermanent" value="3650">
-		<label for="rememberPermanent">Remember my choice</label>
-		</form>
-	</div>
-
-<!-- Identity Provider Selection: End -->
-	
-</main>
-
-	<!-- Body: End -->
-	<footer id="footer" role="contentinfo">
-        <p class="text">
-Need assistance? Send email to <a href="mailto:consult@illinois.edu">consult@illinois.edu</a> with a description.
-        </p>
-	</footer><!-- #footer -->
-
-</div><!-- #pageWrapper -->
-
-</body>
-</html>
+</ul>
+<br>
+Back to <a href="http://www.cs.uic.edu/~liub">Home Page</a>
+<ADDRESS>
+By Bing Liu, Jan 1, 2008
+</ADDRESS>
+</BODY>
+</HTML>

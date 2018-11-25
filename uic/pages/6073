@@ -1,56 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Illinois Identity Provider Selection</title> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="Home Organisation, Discovery Service, WAYF, Shibboleth, Login, AAI">
+	<meta name="description" content="Choose your home organisation to authenticate">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" href="/discovery/DS/styles.css" type="text/css">
+	<link rel="stylesheet" href="/discovery/DS/ImprovedDropDown.css" type="text/css">
+	<script type="text/javascript" src="/wayf/js/jquery.js"></script>
+	<!--<script type="text/javascript" src="/wayf/js/improvedDropDown.js"></script>-->
+	<script type="text/javascript">
+	<!--
+	
+	// Prevent that WAYF is loaded in an IFRAME
+	function preventIframeEmbedding(){
+		if (top != self) {
+			top.location = self.location;
+		}
+	}
+	
+	// Set focus to submit button or drop down list
+	function setFocus(){
+		// Skip this if we cannot access the form elements
+		if (
+			!document.IdPList || 
+			!document.IdPList.Select
+			){
+			return;
+		}
+		
+		if (
+				document.IdPList.user_idp && 
+				document.IdPList.user_idp.selectedIndex == 0
+			){
+			// Set focus to select
+			document.IdPList.user_idp.focus();
+		} else {
+			// Set focus to submit button
+			document.IdPList.Select.focus();
+		}
+	}
+	
+	// Perform input validation on WAYF form
+	function checkForm(){
+		if(
+			document.IdPList.user_idp && 
+			document.IdPList.user_idp.selectedIndex == 0
+		){
+			alert(unescape('You must select an organisation.'));
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	// Init WAYF
+	function init(){
+		preventIframeEmbedding();
+		
+		setFocus();
+		
+		if (false){
+			
+			var searchText = 'Enter the name of the organisation you are affiliated with...';
+			$("#userIdPSelection:enabled option[value='-']").text(searchText);
+			
+			// Convert select element into improved drop down list
+			$("#userIdPSelection:enabled").improveDropDown({
+				iconPath:'https://discovery.illinois.edu/discovery/images/drop_icon.png',
+				noMatchesText: 'No organisation found for this search text',
+				noItemsText: 'No organisation available',
+				disableRemoteLogos: true			});
+		}
+	}
+	
+	// Call init function when DOM is ready
+	$(document).ready(init);
+	
+	-->
+	</script>
+</head>
 
-<!-- saved from url=(0058)http://www.cs.uic.edu/~liub/diagnosticDM/diagnosticDM.html -->
-<html><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head>
-<meta name="allow-search" content="YES">
-<meta name="searchtitle" content="Bing Liu CV, curriculum vitae, Biography, data mining, big data
-[Bing Liu, Zhiyuan Chen, machine learning, topic model, LDA, LTM, AMC] by webmaster@cs.uic.edu">
-<meta name="keywords" content="Bing Liu CV, curriculum vitae, Biography, big data, Data Mining, Text Mining">
-<meta name="description" content="Lifelong Machine Learning and Big Data">
-<meta name="page-type" content="Bing Liu CV, curriculum vitae, Biography">
-<meta name="revisit-after" content="Bing Liu CV, curriculum vitae, Biography">
-<meta name="audience" content="All">
-<meta name="author" content="liub">
-<meta name="abstract" content="Biography">
-<!--<base target="Main">--><base href="." target="Main">
-<title>Bing Liu CV - Biography</title>
-</head><body bgcolor="#f5f5f5">
-<h1> Biography</h1>
+<body>
 
-<p>
-<a href="http://www.cs.uic.edu/~liub/">Bing Liu</a> is a Distinguished Professor of Computer Science at the University of Illinois at Chicago (UIC). He received his PhD in Artificial Intelligence from the University of Edinburgh. Before joining UIC, he was a faculty member (associate professor) at School of Computing, National University of Singapore (NUS). 
-<ul>
-<li> <b>Research Interests</b>: Sentiment analysis and opinion mining, lifelong machine learning, data mining, machine learning, and natural language processing (NLP). </li>
-<br>
-<li> <b>Research Publications</b>: He has published extensively in top conferences and journals such as KDD, ICML, WWW, ACL, EMNLP, AAAI, IJCAI, TKDE, TWEB, CL, etc. His papers with citations can be found from his <a href="https://scholar.google.com/citations?user=Kt1bjZoAAAAJ">Google Scholar</a> page (or his <a href="https://www.cs.uic.edu/~liub/publications/papers_chron.html">publication page</a> or <a href="http://dblp.uni-trier.de/pers/hd/l/Liu_0001:Bing.html">DBLP</a>). He has also authored four <b>books</b> (3 monographs and 1 textbook): </li>
-<br><ol>
-<li>Z. Chen and B. Liu. "<a href="https://www.cs.uic.edu/~liub/lifelong-machine-learning.html">Lifelong Machine Learning</a>." Morgan & Claypool Publishers. First edition, November 2016; Second edition, August 2018.
-<li>B. Liu. “<a href="http://www.amazon.com/Sentiment-Analysis-Opinions-Sentiments-Emotions-ebook/dp/B00Y37YXIG">Sentiment Analysis: Mining Opinions, Sentiments, and Emotions</a>.” Cambridge University Press, June 2015.
-<li>B. Liu. “<a href="http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf">Sentiment Analysis and Opinion Mining</a>.” Morgan & Claypool Publishers, May, 2012. 
-<li>B. Liu. “<a href="http://www.amazon.com/Web-Data-Mining-Data-Centric-Applications/dp/3642194591/ref=sr_1_3?s=books&ie=UTF8&qid=1302988351&sr=1-3">Web Data Mining: Exploring Hyperlinks, Contents and Usage Data</a>.” 
-Springer, First Edition, 2006; Second Edition, 2011.</li>
-</ol>
-<br>
+<div id="pageWrapper">
+	
+	<header id="customheader" role="banner">
+		<img id="Image1" src="/wayf/images/illinois.gif" alt="Illinois logo"
+		style="border-width:0px;" />
+	</header>
 
-<li> <b>Research Contributions</b>: He is best known for his pioneering work on <a href="http://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">sentiment analysis and opinion mining</a> (KDD-2004 paper: KDD-2015 <i>test-of-time</i> paper award), <a href="http://www.cs.uic.edu/~liub/FBS/fake-reviews.html">fake/deceptive opinion detection</a>, and <a href="https://www.cs.uic.edu/~liub/publications/papers_topics.html#cba">association rules based classification</a> (KDD-1998 paper: KDD-2014 <i>test-of-time</i> paper award). He is also a pioneer researcher of <a href="https://www.cs.uic.edu/~liub/NSF/PSC-IIS-0307239.html">PU learning </a> (or learning from positive and unlabeled examples) (or <i>set expansion</i>), <a href="https://www.cs.uic.edu/~liub/WebDataExtraction/dataExtract.html">Web data extraction</a> and <a href="https://www.cs.uic.edu/~liub/diagnosticDM/diagnosticDM.html">interestingness in data mining</a>. In 2013, he started to work on <a href="https://www.cs.uic.edu/~liub/lifelong-learning.html">lifelong machine learning</a> and wrote the first ever book dedicated to the topic with his student, published in Nov 2016.</li>
+	<main id="maincontent" role="main">
+<!-- Body: Start -->
 
-<!-- <li> <b>Research Contributions</b>: He is best known for his work on <a href="http://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">sentiment analysis and opinion mining</a>, <a href="http://www.cs.uic.edu/~liub/FBS/fake-reviews.html">fake/deceptive opinion detection</a>, 
-<a href="https://www.cs.uic.edu/~liub/NSF/PSC-IIS-0307239.html">PU learning (learning from positive and unlabeled examples)</a>, and <a href="https://www.cs.uic.edu/~liub/publications/papers_topics.html#cba">association rules based classification</a>. He also made important contributions to <a href="https://www.cs.uic.edu/~liub/WebDataExtraction/dataExtract.html">Web data extraction</a> and <a href="https://www.cs.uic.edu/~liub/diagnosticDM/diagnosticDM.html">interestingness in data mining</a>. In 2013, he started to work on <a href="https://www.cs.uic.edu/~liub/lifelong-learning.html">lifelong machine learning</a>, and wrote the first ever book dedicated to the topic with his student, whcih was published in Nov 2016.</li> -->
-<br>
-<li><b>Awards and Honors (Selected)</b>: 
-<br>
-<ol>
-<li><b>ACM Fellow, AAAI Fellow, and IEEE Fellow</b>
-<li><b>ACM SIGKDD Innovation Award</b>
-<li><b>2015 KDD <i>Test-of-Time</i> Paper Award</b>: M. Hu and B. Liu. “Mining and Summarizing Customer Reviews.” <i>Proceedings of the Tenth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD-2004)</i>, 2004. 
-<li><b>2014 KDD <i>Test-of-Time</i> Paper Award</b>: B. Liu, W. Hsu and Y. Ma. “Integrating Classification and Association Rule Mining.” <i>Proceedings of the Fourth International Conference on Knowledge Discovery and Data Mining (KDD-1998)</i>, 1998. 
-</ol>
-<br>
-<li> <b>Professional Services</b>: He served as the Chair of ACM SIGKDD (7/1/2013 - 6/30/2017). SIGKDD is the premier academic community for data mining, data science, and big data. He has also served as the Program Committee Chair of the flagship data mining conferences of ACM, IEEE and SIAM (KDD, ICDM, and SDM respectively) and three other conferences (CIKM, WSDM, and PAKDD), as associate editors of several leading data mining journals, e.g., TKDE, TWEB, TKDD, DMKD, and as area/track chairs or senior program committee members of numerous NLP, AI, data mining, and Web technology conferences. </li>
-<br>
-<li> <b>Press Coverage</b>: His work has also made important sociatal impact. He and his work have been reported widely in <a href="http://www.cs.uic.edu/~liub/FBS/media-coverage.html">popular press and tech news media</a> internationally, including <a href="http://www.nytimes.com/2012/01/27/technology/for-2-a-star-a-retailer-gets-5-star-reviews.html?_r=3&ref=business"><i>a front-page article</i></a> in the <b><i>New York Times</i></b>.</li>
-</ul>
+<!-- Identity Provider Selection: Start -->
+        <h1>Select your Illinois Campus</h1>
 
-<br>
-<p>Created on June 15, 2015 by <a href="http://www.cs.uic.edu/~liub">Bing Liu</a>.
+    <p class="text">
 
-</body></html>
+    This service, <span class="serviceName">Web Services - Illinois.edu</span>,     supports multiple groups associated with the University of Illinois. Select your campus below to go to the appropriate login screen.
+    </p>
+
+    <div class="list">
+
+<form id="IdPList" name="IdPList" method="post" onSubmit="return checkForm()" action="/discovery/DS?entityID=https%3A%2F%2Fillinois.edu%2Fshibboleth&amp;return=https%3A%2F%2Fforms.uofi.uic.edu%2FShibboleth.sso%2FLogin%3FSAMLDS%3D1%26target%3Dss%253Amem%253A4efc819026cf5c30730e33fba1989fda41edabd84cff2e422864d47032d6a96f">
+	<fieldset class="no-border">
+        <legend><h2>Select your campus:</h2></legend>
+
+	<div id="userIdPSelection"> 
+	
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://shibboleth.uic.edu/shibboleth" id="https://shibboleth.uic.edu/shibboleth" data="uic.edu University of Illinois at Chicago" ><label for="https://shibboleth.uic.edu/shibboleth">University of Illinois at Chicago</label></p>
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="https://uisshibb1.uis.edu/idp/shibboleth" id="https://uisshibb1.uis.edu/idp/shibboleth" data="uis.edu University of Illinois at Springfield" ><label for="https://uisshibb1.uis.edu/idp/shibboleth">University of Illinois at Springfield</label></p>
+	<p class="campus-list-item"><input type="radio" name="user_idp" value="urn:mace:incommon:uiuc.edu" id="urn:mace:incommon:uiuc.edu" data="uiuc.edu University of Illinois at Urbana-Champaign" ><label for="urn:mace:incommon:uiuc.edu">University of Illinois at Urbana-Champaign</label></p>	</div>
+	</fieldset>
+	<input type="submit" name="Select" accesskey="s" value="Select"> 
+				<!-- Value permanent must be a number which is equivalent to the days the cookie should be valid -->
+		<input type="checkbox" name="permanent" id="rememberPermanent" value="3650">
+		<label for="rememberPermanent">Remember my choice</label>
+		</form>
+	</div>
+
+<!-- Identity Provider Selection: End -->
+	
+</main>
+
+	<!-- Body: End -->
+	<footer id="footer" role="contentinfo">
+        <p class="text">
+Need assistance? Send email to <a href="mailto:consult@illinois.edu">consult@illinois.edu</a> with a description.
+        </p>
+	</footer><!-- #footer -->
+
+</div><!-- #pageWrapper -->
+
+</body>
+</html>

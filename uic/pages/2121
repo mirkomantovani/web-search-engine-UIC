@@ -1,82 +1,533 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html id="ctl00_html" xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head id="ctl00_Head1"><title>
+	Calendar - UICEHSO
+</title><base href="https://www.ehso.uic.edu/cms/One.aspx?portalId=82400&amp;pageId=82413" /><script id="ctl00_js_8c2a37d5602b170c39d33fc4faec5f6c" type="text/javascript" src="/javascript/jquery.latest.js"></script><script id="ctl00_js_47956c7a713f993a02ee18a90b1bbcdc" type="text/javascript" src="/javascript/jquery.migrate.js"></script><script>
+var headID = document.getElementsByTagName("head")[0];
+var ShortcutIcon = document.createElement('link');
+ShortcutIcon.type = 'image/vnd.microsoft.icon';
+ShortcutIcon.rel = 'shortcut icon';
+ShortcutIcon.href = '/UserFiles/Servers/Server_82316/Image/Theme/favicon.ico';
+headID.appendChild(ShortcutIcon);
+
+var Icon = document.createElement('link');
+Icon.type = 'image/vnd.microsoft.icon';
+Icon.rel = 'shortcut icon';
+Icon.href = '/UserFiles/Servers/Server_82316/Image/Theme/favicon.ico';
+headID.appendChild(Icon);
+</script><meta name="google-site-verification" content="1VkRTZDb9NLmZeBfFUJwSV23CZ6ARM62i5O_frdJUbI" /><meta id="viewport" name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" /><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><link href="/UserFiles/Servers/Server_82316/File/styles/ie.css" rel="stylesheet" type="text/css" /><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><link href="App_Themes/default/merged.css" type="text/css" rel="stylesheet" /><meta name="rating" /><meta name="description" /><meta name="Keywords" /><meta name="google-site-verification" /><script id="ctl00_js_a8a1cc2072f41ebd930eb171d5360b15" type="text/javascript" src="/javascript/jquery.ui.js"></script><link id="ctl00_css_93f1642cb79dcae790a48dfc5244c6bb" href="/common/resources/shared/stylesheets/jquery-ui/v1.10.3/jquery-ui.css" rel="stylesheet" type="text/css" media="all" /><link id="ctl00_css_0600f167ac6562009da39ef7aa5da4f8" href="/App_Themes/jquery.mmenu.all.css" rel="stylesheet" type="text/css" media="all" /><script id="ctl00_js_17e699d4f22ea4832cf5b54b404784e8" type="text/javascript" src="/javascript/jquery.mmenu.min.all.js"></script><link id="ctl00_css_20fc5cfec0f32561613dcc8f43915eb0" href="/common/pages/PortalThemeStyle.ashx?templateId=322" rel="stylesheet" type="text/css" media="all" /><link rel="stylesheet" type="text/css" href="/common/RichTextConfig/CustomFCKWebStyle.aspx?portalId=82400" /><link href="/Telerik.Web.UI.WebResource.axd?compress=1&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2014.2.724.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a9ac720df-7b88-4e1e-8026-2b8c24207e88%3aed2942d4%3a1f65231b%3a7f7626a2%3a45085116" type="text/css" rel="stylesheet" /></head>
+<body id="ctl00_PageBody" style="margin: 0px">
+    
+
+<div id="mobile_banner"></div>
+
+    <form method="post" action="./calendar?portalId=82400&amp;pageId=82413" id="aspnetForm">
+<input type="hidden" name="ctl00_RadStyleSheetManager1_TSSM" id="ctl00_RadStyleSheetManager1_TSSM" value="" />
+<input type="hidden" name="ctl00_ScriptManager1_TSM" id="ctl00_ScriptManager1_TSM" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTMxNjc3NTM3NQ8WBB4UX19BbnRpWHNyZlRva2VuT25TU0wFMTdhNTczZDNlNzYyYTQyNTk5NWNhOThkYTA0OWNhY2ZiLUxpVUE0YXRhd0QrMVRnPT0eEl9fQW50aVhzcmZVc2VyTmFtZQUHNV9HdWVzdBYCZg9kFgICAQ8WBh4FeG1sbnMFHGh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWweBGxhbmcFBWVuLVVTHgh4bWw6bGFuZwUFZW4tVVMWAgIDDxYCHgVzdHlsZQULbWFyZ2luOiAwcHgWAgIBD2QWBAIYDw8WAh4HVmlzaWJsZWhkZAInD2QWBgIEDw8WAh8GaGQWAmYPZBYCZg9kFgICAQ9kFgICAQ8PFgIfBmhkZAIGD2QWBAIDDw8WAh8GaGQWBgIBDxQrAAJkZGQCAw8UKwACZGRkAgUPFgIfBmhkAiIPZBYCZg9kFgJmD2QWAgIBD2QWAmYPZBYEZg8PFgIfBmhkFgQCAQ8WAh8GaGQCAw9kFgICAQ9kFgJmD2QWDAIBDxAPZBYCHwUFDWRpc3BsYXk6bm9uZTtkZGQCAw8QD2QWAh8FBQ1kaXNwbGF5Om5vbmU7ZGRkAgcPZBYCAgEPZBYGAgEPZBYEAgEPDxYCHghJbWFnZVVybAVAL2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9jYWxlbmRhcl9saXN0X3BhbmVsX2NvbGxhcHNlLmdpZmRkAgMPDxYCHgRUZXh0BQdVSUNFSFNPZGQCAw9kFgQCAQ8UKwACFCsAAmQQFgRmAgECAgIDFgQUKwACZGQUKwACZGQUKwACZGQUKwACZGQPFgRmZmZmFgEFblRlbGVyaWsuV2ViLlVJLlJhZFRhYiwgVGVsZXJpay5XZWIuVUksIFZlcnNpb249MjAxNC4yLjcyNC40MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0xMjFmYWU3ODE2NWJhM2Q0ZGQCAw8UKwACZBUEDnJwdkNtc0NhbGVuZGFyFHJwdldvcmtzcGFjZUNhbGVuZGFyDnJwdkxtc0NhbGVuZGFyD3JwdkVyZWdDYWxlbmRhchYEZg9kFgICAQ8UKwACFCsAAhQrAAIPFgIeCkNoZWNrQm94ZXNnZGRkZGQCAw9kFgICAw8WAh4Dc3JjBUQvY29tbW9uL3Jlc291cmNlcy9zaGFyZWQvaW1hZ2VzL29iamVjdHMvd29ya3NwYWNlX2NhbGVuZGFyL3NtYWxsLmdpZmQCBQ9kFgICAQ8WAh8KBSx+L2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9sb2FkaW5nLmdpZmQCCQ8WAh8FBQ1kaXNwbGF5Om5vbmU7ZAILDxYCHwUFDWRpc3BsYXk6bm9uZTtkAg0PZBYCAgEPDxYCHwcFLH4vY29tbW9uL3Jlc291cmNlcy9zaGFyZWQvaW1hZ2VzL2xvYWRpbmcuZ2lmZGQCAQ9kFgJmD2QWBGYPZBYEAgMPD2QWAh8FBQ1kaXNwbGF5Om5vbmU7FggCAQ8PFgIfCAUGU2VhcmNoZGQCBQ8PFgIfCAUCSW5kZAIJDxYCHgV2YWx1ZQUERmluZGQCCw8WAh8LBQhWaWV3IEFsbGQCBQ9kFh4CAQ8PFgYfBwVAL2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9vYmplY3RzL3dvcmtzcGFjZV9jYWxlbmRhci8xLmdpZh4HVG9vbFRpcAUKRGFpbHkgVmlldx8IBQpEYWlseSBWaWV3FgQeBGhyZWYFC2phdmFzY3JpcHQ6Hgh2aWV3bW9kZQUBMWQCAw8PFgYfBwVAL2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9vYmplY3RzL3dvcmtzcGFjZV9jYWxlbmRhci83LmdpZh8MBQtXZWVrbHkgVmlldx8IBQtXZWVrbHkgVmlldxYEHw0FC2phdmFzY3JpcHQ6Hw4FATNkAgUPDxYGHwcFQS9jb21tb24vcmVzb3VyY2VzL3NoYXJlZC9pbWFnZXMvb2JqZWN0cy93b3Jrc3BhY2VfY2FsZW5kYXIvMzEuZ2lmHwwFDE1vbnRobHkgVmlldx8IBQxNb250aGx5IFZpZXdkZAIHDw8WBh8HBUIvY29tbW9uL3Jlc291cmNlcy9zaGFyZWQvaW1hZ2VzL29iamVjdHMvd29ya3NwYWNlX2NhbGVuZGFyLzM2NS5naWYfDAULWWVhcmx5IFZpZXcfCAULWWVhcmx5IFZpZXcWAh8NBQtqYXZhc2NyaXB0OmQCCQ8PFgYfBwU2L2NvbW1vbi9wYWdlcy9CdXR0b24uYXNoeD90ZXh0PVRvZGF5JmJnY29sb3I9JTIzOUM5Q0NFHwwFBVRvZGF5HwgFBVRvZGF5FgIfDQULamF2YXNjcmlwdDpkAgsPEGQQFQgFRGFpbHkKRGFpbHkgTGlzdAZXZWVrbHkLV2Vla2x5IExpc3QNV2Vla2x5IEJ5IERheQdNb250aGx5BlllYXJseQpFdmVudCBMaXN0FQgBMAExATIBMwE0ATUBNgE3FCsDCGdnZ2dnZ2dnZGQCDQ9kFgICAQ8PFgYfBwUnL2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9hZGQuZ2lmHwwFCUFkZCBFdmVudB8IBQlBZGQgRXZlbnQWBB4FU3R5bGUFHGN1cnNvcjpwb2ludGVyO2Rpc3BsYXk6bm9uZTsfDQULamF2YXNjcmlwdDpkAg8PZBYCAgEPDxYGHwcFKS9jb21tb24vcmVzb3VyY2VzL3NoYXJlZC9pbWFnZXMvcHJpbnQuZ2lmHwwFBVByaW50HwgFBVByaW50FgIfDQULamF2YXNjcmlwdDpkAhEPFgIfBQUNZGlzcGxheTpub25lOxYCAgEPDxYGHwcFMS9jb21tb24vcmVzb3VyY2VzL3NoYXJlZC9pbWFnZXMvY2FsZW5kYXJfZG93bi5naWYfDAUNSW1wb3J0IEV2ZW50cx8IBQ1JbXBvcnQgRXZlbnRzFgIfDQULamF2YXNjcmlwdDpkAhMPZBYCAgEPDxYGHwcFMS9jb21tb24vcmVzb3VyY2VzL3NoYXJlZC9pbWFnZXMvZXhwb3J0X2V2ZW50cy5naWYfDAUNRXhwb3J0IEV2ZW50cx8IBQ1FeHBvcnQgRXZlbnRzFgIfDQULamF2YXNjcmlwdDpkAhUPFgIfBQUJZGlzcGxheTo7FgICAQ8PFgYfBwUrL2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9tYWlsX29rLnBuZx8MBRlTdWJzY3JpYmUgdG8gZW1haWwgYWxlcnRzHwgFGVN1YnNjcmliZSB0byBlbWFpbCBhbGVydHMWAh8NBQtqYXZhc2NyaXB0OmQCFw9kFgICAQ8PFgYfBwUwL2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9SU1NfYW5kX2lDYWwucG5nHwwFFlN1YnNjcmliZSB2aWEgaUNhbC9SU1MfCAUWU3Vic2NyaWJlIHZpYSBpQ2FsL1JTUxYCHw0FC2phdmFzY3JpcHQ6ZAIZD2QWBAIBDxYCHwZoZAIDDw8WCB8HBS1+L2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9jb3B5TGluay5wbmcfDAUWQ29weSBsaW5rIHRvIHRoaXMgdmlldx8IBRZDb3B5IGxpbmsgdG8gdGhpcyB2aWV3HwZoFgQfDQULamF2YXNjcmlwdDoeB29uY2xpY2sFIGNvcHlUb0NsaXBib2FyZCgpOyByZXR1cm4gZmFsc2U7ZAIbDxYCHwUFDWRpc3BsYXk6bm9uZTsWBAIBDw8WBh8HBTcvY29tbW9uL3BhZ2VzL0J1dHRvbi5hc2h4P3RleHQ9RmlsdGVyJmJnY29sb3I9JTIzOUM5Q0NFHwwFBkZpbHRlch8IBQZGaWx0ZXIWAh8NBQtqYXZhc2NyaXB0OmQCAw9kFgICAw8UKwACFCsAAhQrAAIPFgYeFUVuYWJsZUVtYmVkZGVkU2NyaXB0c2ceHEVuYWJsZUVtYmVkZGVkQmFzZVN0eWxlc2hlZXRnHhJSZXNvbHZlZFJlbmRlck1vZGULKXJUZWxlcmlrLldlYi5VSS5SZW5kZXJNb2RlLCBUZWxlcmlrLldlYi5VSSwgVmVyc2lvbj0yMDE0LjIuNzI0LjQwLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTEyMWZhZTc4MTY1YmEzZDQBZGRkZGQCHQ8WAh8FBQ1kaXNwbGF5Om5vbmU7ZAIBD2QWAgIBDw8WAh8HBSx+L2NvbW1vbi9yZXNvdXJjZXMvc2hhcmVkL2ltYWdlcy9sb2FkaW5nLmdpZmRkAggPDxYCHwgF1QE8c3BhbiBzdHlsZT0ibWFyZ2luLXRvcDoyMHB4Ij4mY29weTsyMDE4IFRoZSBCb2FyZCBvZiBUcnVzdGVlcyBvZiB0aGUgVW5pdmVyc2l0eSBvZiBJbGxpbm9pcyB8IDxhIGhyZWY9Imh0dHA6Ly93d3cudnBhYS51aWxsaW5vaXMuZWR1L3BvbGljaWVzL3dlYl9wcml2YWN5LmNmbSIgY2xhc3M9IlNTbGluayIgdGFyZ2V0PSJfYmxhbmsiPldlYiBQcml2YWN5PC9hPjwvc3Bhbj5kZBgFBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUnY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjdGwwMSRyYWRtZW51BS9jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGN0bDA4JHVjQ2FsJHJ0dkZpbHRlcgU4Y3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRjdGwwOCRjcCRzY3BDdXJyZW50JHJnTG1zSXRlbXMPFCsAAmQXAQUIUGFnZVNpemUCCmQFPmN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY3RsMDgkY3Akc2NwQ3VycmVudCRyZ1dvcmtzcGFjZUl0ZW1zDxQrAAJkFwEFCFBhZ2VTaXplAgpkBS5jdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGN0bDAwJGx2Vmlld1N1YnBhZ2VzD2dkBTZjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGN0bDAwJGx2RWRpdEV4dGVybmFsU3VicGFnZXMPZ2RyVMLrUWZ3syqMc7+kukclndcmeg==" />
 
 
-    <title>UIC Bluestem ID Server</title>
+<script src="/Common/JavaScript/Json2.js" type="text/javascript"></script>
+<script src="/Common/JavaScript/JQuery/jquery-cookie.js" type="text/javascript"></script><script type="text/javascript">
+            
+                function OpenNewWindow(url, arguments)
+                {  
+                    return window.open(url, "",arguments);
+                }
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bluestem/assets/styles/login.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-<body>
-
-  <div class="jumbotron" role="banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-2 logo"> </div>
-      </div>
-    </div>
-  </div>
+                function OpenNewWindowJS(url, ignore, arguments){  
+                    return OpenNewWindow(url, arguments);  
+                }
 
 
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 login-alert">
-      <div class="alert alert-danger" role="alert">
-        <h1>Invalid Referral to UIC WWW Identification Service</h1>
+                function OpenNewWindowNoReturn(url, arguments){  
+                    OpenNewWindow(url, arguments);  
+                }
 
-        <p class="lead">Please configure your browser to accept cookies and try again.</p>
+              </script> 
+<script src="/common/javascript/PLMoreDropDown.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function _search(){var frm=document.forms['aspnetForm'];if(!frm)frm=document.aspnetForm;window.location='/workspaces/Search.aspx?contextId='+frm.SearchPlace.value+'&place='+frm.SearchOne.value+'&searchTerm='+escape(frm.SearchTerm.value).replace(/\+/g, '%2C').replace(/\"/g,'%22').replace(/'/g, '%27');}
+            function clickButton(e, buttonid)
+            { 
+              var bt = document.getElementById(buttonid); 
+              if (typeof bt == 'object')
+		        { 
 
-        <p>
-          You arrived at this service someway other than by
-          referral from an authorized server, perhaps by
-          typing in a URL, or returning to a previous
-          authentication page.
-        </p>
+                    if (navigator.appName.indexOf('Microsoft Internet Explorer')>(-1)){ 
+                          if (event.keyCode == 13){ 
+                                bt.click(); 
+                                return false; 
+                          } 
+                    } 
+	    	        else
+			        {
+	                  if (e.keyCode == 13)
+	          	        { 
+                                bt.click(); 
+                                return false; 
+                          } 
+                    } 
+              } 
+            } //]]>
+</script>
 
-      </div>
-    </div>
-  </div>
+<script src="/Common/JavaScript/Common_Control.js" type="text/javascript"></script>
+<script src="/Javascript/attrchange.js" type="text/javascript"></script>
+<script src="/Javascript/accessibleMenu.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+;$(function() { $('nav#mMenuCMS').mmenu({"slidingSubmenus":false,"position":"left","zposition":"back"}, {"pageNodetype":"form"});});//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=Zrjj72i5wsvjwLKDhe2L4eKDikhEiOSWX9h2e896ZKeZK2s6WEqxLydrptjPu9iu28wxWTyA8w1mvISsoMbvtFhjqXPHvwfuAZTgv2cHRTU04oHu0&amp;t=f2cd5c5" type="text/javascript"></script>
+<script src="/common/javascript/Common_DOM.js" type="text/javascript"></script>
+<script src="/common/javascript/DateTime.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=GvlRsGbCQxsv2aGwYaBYXjeiB7c74APkuxiDRhIWZjr5yJAfgNRSHikLtO6mijLdueh8a-ibwtAiUJwcem3YnhphcjxnoNJ-n1OZRqrIV2DUWMjGHZ41W8G3ZY5asm-ndrRFgA2&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=6ab8GZbFSzTiyjJAyApGlNwJ_44E-KC5KNdgrx_ErpuiH5sV-r2RZ5QbiOJcs4hjVf8EUENf-YY20eRGjSypybX3pBoGLcN4JAUU7Lmu0PLXjQTyWk-aPPsAdTqPGu1HguS0bg2&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=LREHNGSx7bfBPgZxT42pdYKc1BK1GXRWNti-oIrDy41RFmznZT_YjZyqXqKQit9wjFU7cJ42tqQcRlKUjqsKJcTEJs8S2mBVsA-Tn8xsubFoCOWEhdtCxknnIagMP_hWXo0qCw2&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=HjxJPM99NIINtAMsAQBjEKrMxNlfw03k-5_uy_Jwfwt9kPn55vEuP_9i7MK9Dw3h14-XQNFeteRlSr0TB0dNYLL0nso__yO1zOdhBK1eDJmAH03zBz30pBJ2h5y5WjtA2roMaW-IT8FkjuaL8pgIPOY8uMw1&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=czXwYTiMA_j8JqJ4fw-DCXhWZH0bag6cYRlxZPYPT0xhCxl20IIh28abB2s_PtbGuPOSZ3nelpNuGhb6c-syoxDrAMQ3dxUP7xvtsHgzYJig6IjAb1ADMYbrOgsbz7yMKP7WMcMWMEEESWxP5mwf-51wlIg1&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zF_p-bua-Pd8j4glaVwEH9iwa7bT9ZTSwUNwtlxi0PVyZTBQyQ4SbnePR244gy9wHs0nnolRu0CyCB4RR_oxKA51BIfAiKfqM0zn3m71uQH8n52MB5vMmWuIdxxe48a8rjvLWZwYEAJKBo6S4rY22AicC3BsHsVWUfjg--LNTMYJBBBe0&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=vn_hXUJG86Kx4GiLJuyFChHzhspB0oo9vFY_WZ1jls6L-Ut65HZC0sHTc0WuD24y_3QmX_BCRmkLWMD_4Mq2lZy7IV7WQEXyl1eMWwQq84jpDn1JWvm8peRwo4-aobX9t0ypTuNX1CeE-k9AS62XukbuLVQ1&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=qz-vrnl6n4ShzhMDyeHavYrfCnwO4qYXDr9haYZVxlzmqkaDyPhTSpjalXfNFJAfDBVTrg5HMNqgMhf2pB3FYW3jwCDZzc7o9DRUHIKupcYxu0IpNdr2ey5ehTkJXxAl0bS_Gsk36n0lkUUWy3w5Nl5UKgE1&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=TZa8SF3giSvg1LGVaPghpYBHuNVWHkAeR5vC3LSN8g48iNj-kf_vqIA33n4dAuaPN0m3JLJDck1k6YkE30p4_qcllv6EASA_2AKxxd82QgLeZeeu--Sl0jebgVyHcNkLmS2qsg2&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=LW7iQyb8H-FVKL8CpQxGw7gDmqbuMAfE6eW89BKUICPtcsqk4gI227UhSxrxA0G6jMNS7LIeDFBWmgL0StuO722zC9g1Q-jr4zTzI7ytVhYpIXR6ym21Znl84HvqqvxNFaT1WLxnJ9CHHiKicRPJIID1gYI1&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=tICeeD3e8Wpqg_F5ItKerz81Vv0v9R0ZnXxH-viRL4aJ_ozZ8k_NF2dI4euipcitVwdbaPzZbP2GQHb5d-DhIcvPYQa6HXM_HCR5-oCpA1_u6xGeKBO5GNkkH5QckoexS8tpc2d4b36Vg5QUty_OgxI8LCI1&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/Common/Controls/General/Calendar/Calendar.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=9N9FEFe6Gj9a0WuCbheFSQkLIkiRGNWBUS-ZvRlA3N623HNsELv76Nemk1Wo0G1AeTdpFK5nFLojlSktmSsxiCDnyqvMofH4k3o9_uZgM8hXp3VIQER03RDk6HnInmHTXTLqyN32uirGPa0CEWTtqClKjBg1&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=MDGbirZUSmpF92tRMOIF7Whz9jHwH1y1758AYYCE0DR13tvo_1DOyounNyCDKaM8fgPpz1I44NiAjd6LyT72YTcZ8CbFjHsGbUu8_MGXt8xHcIZCmKImVGoVWCCoT_MRsPhhJiAHSbAGX49Z2dkOtg29vh01&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=aKTkayRo7N9MhGtUuY8MacMg25cXlhLuA7RSvJ2TOE1qDbUUOlIVilo7N2dWBuTKbOe1M_OW2EUQTxPhWyCtncTEEFZrVNvhmoFGaeuY8qyDqZaTfoIisAHBTHa0AmsiXUXyhg2&amp;t=3dff6ce5" type="text/javascript"></script>
+<script src="/common/controls/General/CalendarPicker/CalendarPickerWS.asmx/js" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F495CFC0" />
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+            
+    
+    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+            
+    
+            
+    
+    
+    
+    
+    
+    
+            
+    
+    
+    
+    
+    
+    <!-- PUB WRAPPER - Loaded below in Style Sheets --><div id="wrap"><!-- START #pub-wrapper --><div id="pub-wrapper"><!-- START #pub-container --><div id="pub-container"><div id="logo"><a href="http://www.uic.edu"><img class="img img-responsive" alt="UIC Wordmark" src="/UserFiles/Servers/Server_82316/Image/theme/CAMP.CIRC.SM.WHT.png" style=" width: 60px;"></img></a></div><!-- START #pub-links --><div id="pub-links"></div><!-- END #pub-links --><!-- START #search --><div id="search" role="search"><script>
+  (function() {
+    var cx = '017077135089854586136:jipfmn3z1dy';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script><div class="gcse-search"></div></div><!-- END #search --></div><!-- END #pub-container --></div><!-- END #pub-wrapper --><div class="wrapper"><a href="#mMenuCMS" id="mobile-bar"><div class="reso-m-btn">MENU</div></a><div id="navbar"></div>
+    
+    
+<div id="pageTheme"><div id="header"><div class="inner-header"><div class="sitename"><a href="/" title="Home">
+Environmental Health and Safety Office</a></div></div></div><div id="subpage_bg"><div id="menubar"><div class="inner-bar"><div id="ctl00_ContentPlaceHolder1_ctl01_radmenu" class="RadMenu RadMenu_  wrapword telerik_main_menu NoIcon">
+	<!-- 2014.2.724.40 --><ul class="rmRootGroup rmHorizontal">
+		<li class="rmItem rmFirst"><a title="Home" class="rmLink rmRootLink" href="/home"><span class="rmText">Home</span></a></li><li class="rmItem "><a title="Research Safety" class="rmLink rmRootLink" href="/research_safety"><span class="rmText">Research Safety</span></a><div class="rmSlide">
+			<ul class="rmVertical rmGroup rmLevel1">
+				<li class="rmItem rmFirst"><a title="Biological Safety" class="rmLink" href="/research_safety/biological_safety"><span class="rmText">Biological Safety</span></a></li><li class="rmItem "><a title="Laboratory Safety" class="rmLink" href="/research_safety/laboratory_safety"><span class="rmText">Laboratory Safety</span></a><div class="rmSlide">
+					<ul class="rmVertical rmGroup rmLevel2">
+						<li class="rmItem rmFirst"><a title="Chemical Hazard Labels" class="rmLink" href="/research_safety/laboratory_safety/printable_labels_for_chemical_containers"><span class="rmText">Chemical Hazard Labels</span></a></li><li class="rmItem "><a title="Laboratory Compliance Documents for PIs, CHOs and Managers" class="rmLink" href="/research_safety/laboratory_safety/documents_for_principal_investigators__lab_manager"><span class="rmText">Laboratory Compliance Documents for PIs, CHOs and Managers</span></a></li><li class="rmItem "><a title="Emergency Procedures" class="rmLink" href="/research_safety/laboratory_safety/emergency_procedures"><span class="rmText">Emergency Procedures</span></a></li><li class="rmItem "><a title="Fume Hoods" class="rmLink" href="/research_safety/laboratory_safety/fume_hoods"><span class="rmText">Fume Hoods</span></a></li><li class="rmItem "><a title="Lab ID Cards" class="rmLink" href="/research_safety/laboratory_safety/lab_id_cards"><span class="rmText">Lab ID Cards</span></a></li><li class="rmItem "><a title="Lab Safety Plan" class="rmLink" href="/research_safety/laboratory_safety/lab_safety_plan"><span class="rmText">Lab Safety Plan</span></a></li><li class="rmItem "><a title="Personal Protective Equipment" class="rmLink" href="/research_safety/laboratory_safety/personal_protective_equipment"><span class="rmText">Personal Protective Equipment</span></a></li><li class="rmItem "><a title="Safety Data Sheets" class="rmLink" href="/research_safety/laboratory_safety/safety_data_sheets"><span class="rmText">Safety Data Sheets</span></a></li><li class="rmItem "><a title="Safety Fact Sheets" class="rmLink" href="/research_safety/laboratory_safety/safety_fact_sheets"><span class="rmText">Safety Fact Sheets</span></a></li><li class="rmItem "><a title="Standard Operating Procedures" class="rmLink" href="/research_safety/laboratory_safety/standard_operating_procedures"><span class="rmText">Standard Operating Procedures</span></a></li><li class="rmItem "><a title="Training" class="rmLink" href="/research_safety/laboratory_safety/labsafety_training"><span class="rmText">Training</span></a></li><li class="rmItem rmLast"><a title="Designated Area Sign" class="rmLink" href="javascript:var w=window.open(&#39;/research_safety/laboratory_safety/DAS&#39;,&#39;&#39;,&#39;width=700,height=500,toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1&#39;);"><span class="rmText">Designated Area Sign</span></a></li>
+					</ul>
+				</div></li><li class="rmItem "><a title="Radiation Safety" class="rmLink" href="/research_safety/radiation_safety"><span class="rmText">Radiation Safety</span></a><div class="rmSlide">
+					<ul class="rmVertical rmGroup rmLevel2">
+						<li class="rmItem rmFirst"><a title="Manual, Policies and Redacted License" class="rmLink" href="/research_safety/radiation_safety/manual_and_policies"><span class="rmText">Manual, Policies and Redacted License</span></a></li><li class="rmItem "><a title="Dose Limits" class="rmLink" href="/research_safety/radiation_safety/dose_limits"><span class="rmText">Dose Limits</span></a></li><li class="rmItem "><a title="Forms" class="rmLink" href="/research_safety/radiation_safety/Radiation_forms"><span class="rmText">Forms</span></a></li><li class="rmItem "><a title="Glossary" class="rmLink" href="/research_safety/radiation_safety/glossary"><span class="rmText">Glossary</span></a></li><li class="rmItem "><a title="Radiation Monitoring Badges" class="rmLink" href="/research_safety/radiation_safety/radiation_monitoring_badges"><span class="rmText">Radiation Monitoring Badges</span></a></li><li class="rmItem "><a title="Radiation Survey Meters" class="rmLink" href="/research_safety/radiation_safety/radiation_survey_meters"><span class="rmText">Radiation Survey Meters</span></a></li><li class="rmItem "><a title="Radionuclide Lab Rules" class="rmLink" href="/research_safety/radiation_safety/lab_rules"><span class="rmText">Radionuclide Lab Rules</span></a></li><li class="rmItem "><a title="Radioactive Waste Disposal Guidelines" class="rmLink" href="/research_safety/radiation_safety/radioactive_waste_disposal_guidelines"><span class="rmText">Radioactive Waste Disposal Guidelines</span></a></li><li class="rmItem "><a title="Radioactive Waste Collection Request" class="rmLink" href="/research_safety/radiation_safety/radioactive_waste_collection_request"><span class="rmText">Radioactive Waste Collection Request</span></a></li><li class="rmItem rmLast"><a title="Web Links" class="rmLink" href="/research_safety/radiation_safety/web_links"><span class="rmText">Web Links</span></a></li>
+					</ul>
+				</div></li><li class="rmItem "><a title="Laser Safety" class="rmLink" href="/research_safety/laser_safety"><span class="rmText">Laser Safety</span></a></li><li class="rmItem rmLast"><a title="Shipping" class="rmLink" href="/research_safety/Shipping"><span class="rmText">Shipping</span></a><div class="rmSlide">
+					<ul class="rmVertical rmGroup rmLevel2">
+						<li class="rmItem rmFirst"><a title="Couriers" class="rmLink" href="/research_safety/Shipping/shipping_couriers"><span class="rmText">Couriers</span></a></li><li class="rmItem "><a title="Regulations" class="rmLink" href="/research_safety/Shipping/shipping_regulations"><span class="rmText">Regulations</span></a></li><li class="rmItem "><a title="Supplies" class="rmLink" href="/research_safety/Shipping/shipping_supplies"><span class="rmText">Supplies</span></a></li><li class="rmItem "><a title="Chem Tel Notification Form" class="rmLink" href="/research_safety/Shipping/shipping_forms"><span class="rmText">Chem Tel Notification Form</span></a></li><li class="rmItem "><a title="Training" class="rmLink" href="/research_safety/Shipping/shipping_training"><span class="rmText">Training</span></a></li><li class="rmItem "><a title="Dangerous Goods Checklists" class="rmLink" href="/research_safety/Shipping/dangerous_goods_checklist"><span class="rmText">Dangerous Goods Checklists</span></a></li><li class="rmItem rmLast"><a title="Dry Ice" class="rmLink" href="/research_safety/Shipping/dry_ice"><span class="rmText">Dry Ice</span></a></li>
+					</ul>
+				</div></li>
+			</ul>
+		</div></li><li class="rmItem "><a title="Chemical Disposal" class="rmLink rmRootLink" href="/chemical_disposal"><span class="rmText">Chemical Disposal</span></a><div class="rmSlide">
+			<ul class="rmVertical rmGroup rmLevel1">
+				<li class="rmItem rmFirst"><a title="Request Chemical Waste Removal" class="rmLink" href="/chemical_disposal/r_w_r"><span class="rmText">Request Chemical Waste Removal</span></a></li><li class="rmItem rmLast"><a title="Labeling Unwanted Chemical Solvents" class="rmLink" href="/chemical_disposal/labeling_unwanted_chemical_solvents"><span class="rmText">Labeling Unwanted Chemical Solvents</span></a></li>
+			</ul>
+		</div></li><li class="rmItem "><a title="Occupational Safety" class="rmLink rmRootLink" href="/occupational_safety"><span class="rmText">Occupational Safety</span></a><div class="rmSlide">
+			<ul class="rmVertical rmGroup rmLevel1">
+				<li class="rmItem rmFirst"><a title="Asbestos" class="rmLink" href="/occupational_safety/asbestos"><span class="rmText">Asbestos</span></a><div class="rmSlide">
+					<ul class="rmVertical rmGroup rmLevel2">
+						<li class="rmItem rmFirst rmLast"><a title="UIC Buildings Known to Have Asbestos Containing Materials" class="rmLink" href="/occupational_safety/asbestos/u_i_c_buildings_known_to_have_asbestos_containing_"><span class="rmText">UIC Buildings Known to Have Asbestos Containing Materials</span></a></li>
+					</ul>
+				</div></li><li class="rmItem "><a title="EMS" class="rmLink" href="/occupational_safety/faqs"><span class="rmText">EMS</span></a></li><li class="rmItem "><a title="CPR and AED Programs" class="rmLink" href="/occupational_safety/CPR"><span class="rmText">CPR and AED Programs</span></a></li><li class="rmItem "><a title="Food Safety" class="rmLink" href="/occupational_safety/food_safety"><span class="rmText">Food Safety</span></a><div class="rmSlide">
+					<ul class="rmVertical rmGroup rmLevel2">
+						<li class="rmItem rmFirst"><a title="Food Handling Guidelines" class="rmLink" href="/occupational_safety/food_safety/food_handling_guidelines"><span class="rmText">Food Handling Guidelines</span></a></li><li class="rmItem "><a title="Temporary event and License" class="rmLink" href="/occupational_safety/food_safety/temporary_event_and_license"><span class="rmText">Temporary event and License</span></a></li><li class="rmItem "><a title="Foodborne Illness" class="rmLink" href="/occupational_safety/food_safety/foodborne_illness"><span class="rmText">Foodborne Illness</span></a></li><li class="rmItem "><a title="Training" class="rmLink" href="/occupational_safety/food_safety/training_foodsafety"><span class="rmText">Training</span></a></li><li class="rmItem rmLast"><a title="Resources/Tools" class="rmLink" href="/occupational_safety/food_safety/resources__tools_foodsafety"><span class="rmText">Resources/Tools</span></a></li>
+					</ul>
+				</div></li><li class="rmItem "><a title="Hazard Communication" class="rmLink" href="/occupational_safety/hazard_communication"><span class="rmText">Hazard Communication</span></a></li><li class="rmItem "><a title="Mold" class="rmLink" href="/occupational_safety/Mold"><span class="rmText">Mold</span></a></li><li class="rmItem "><a title="Odors" class="rmLink" href="/occupational_safety/Odors"><span class="rmText">Odors</span></a></li><li class="rmItem "><a title="Respiratory Protection Program" class="rmLink" href="/occupational_safety/respiratory_protection_program"><span class="rmText">Respiratory Protection Program</span></a></li><li class="rmItem "><a title="Emergency Shower and Eyewash Safety Program" class="rmLink" href="/occupational_safety/emergency_shower_and_eyewash_safety_program"><span class="rmText">Emergency Shower and Eyewash Safety Program</span></a></li><li class="rmItem "><a title="Construction Safety Guidelines" class="rmLink" href="/occupational_safety/ConstructionSafetyGuidelines"><span class="rmText">Construction Safety Guidelines</span></a></li><li class="rmItem rmLast"><a title="Trades Safety" class="rmLink" href="/occupational_safety/trades_safety"><span class="rmText">Trades Safety</span></a></li>
+			</ul>
+		</div></li><li class="rmItem "><a title="Fire Safety" class="rmLink rmRootLink" href="/fire_safety"><span class="rmText">Fire Safety</span></a><div class="rmSlide">
+			<ul class="rmVertical rmGroup rmLevel1">
+				<li class="rmItem rmFirst"><a title="What to Do in Case of Fire" class="rmLink" href="/fire_safety/firesafety_racepass"><span class="rmText">What to Do in Case of Fire</span></a></li><li class="rmItem "><a title="What to Do if You Smell Smoke" class="rmLink" href="/fire_safety/firesafety_smoke"><span class="rmText">What to Do if You Smell Smoke</span></a></li><li class="rmItem "><a title="General Building Evacuation Procedures" class="rmLink" href="/fire_safety/firesafety_bep"><span class="rmText">General Building Evacuation Procedures</span></a></li><li class="rmItem rmLast"><a title="Building Specific Evacuation Plans" class="rmLink" href="/fire_safety/building_specific_evacuation_plans_"><span class="rmText">Building Specific Evacuation Plans</span></a></li>
+			</ul>
+		</div></li><li class="rmItem "><a title="Calendar" class="rmLink rmRootLink rmFocused rmSelected" href="/calendar"><span class="rmText">Calendar</span></a></li><li class="rmItem rmLast"><a title="About Us" class="rmLink rmRootLink" href="/about_us"><span class="rmText">About Us</span></a><div class="rmSlide">
+			<ul class="rmVertical rmGroup rmLevel1">
+				<li class="rmItem rmFirst"><a title="Mission Statement" class="rmLink" href="/about_us/mission_statement"><span class="rmText">Mission Statement</span></a></li><li class="rmItem "><a title="Staff Directory" class="rmLink" href="/about_us/staff_directory"><span class="rmText">Staff Directory</span></a></li><li class="rmItem rmLast"><a title="News" class="rmLink" href="/about_us/news"><span class="rmText">News</span></a></li>
+			</ul>
+		</div></li>
+	</ul><input id="ctl00_ContentPlaceHolder1_ctl01_radmenu_ClientState" name="ctl00_ContentPlaceHolder1_ctl01_radmenu_ClientState" type="hidden" />
 </div>
 
- <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-2">
-	<p>
-	  &copy; University of Illinois Board of Trustees |
-          <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
-	</p>
-      </div>
-    </div>
-  </div>
-</footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="/bluestem/assets/js/jquery.placeholder.min.js"></script>
-<script>
-	$(function() {
-	// Invoke placeholder plugin
-	$('input').placeholder(); 
-	});
+    <!-- PlaceHolder tag prevents inline radmenu.ClientID code below clashing with Utility.EnsureScriptManager(this); -->
+    <script>
+
+        $(document).ready(function () {
+            giveAllMenuLinksAUniqueIdentifier();
+            $(".rmLink").on("keydown", setSpacebarToOpenMenus);
+        });
+
+        function giveAllMenuLinksAUniqueIdentifier() {
+            //Give all menu items a unique attribute value so that I can identify them when spacebar is clicked. Same 'menunumber' attribute is set in .aspx code on menu items.
+            var index = 0;
+            $(".telerik_main_menu li.rmItem a.rmLink").each(function (index) {
+                $(this).attr("menunumber", index);
+            });
+        }
+
+        function setSpacebarToOpenMenus(e) {
+            //Open submenus on spacebar press. 
+            var theKey = e.which;
+            if (theKey == 32) { // 32 is keycode for spacebar. 
+                var menuNumber = $(this).attr("menunumber");
+                var menu = $find("ctl00_ContentPlaceHolder1_ctl01_radmenu");
+                var menuItem = menu.findItemByAttribute("menunumber", menuNumber);
+                var submenuItems = menuItem.get_items();
+                if (submenuItems.get_count() > 0) {
+                    if (menuItem.get_isOpen() == false) {
+                        menuItem.open();
+                        e.preventDefault();
+                    };
+                };
+            };
+        };
+
+        function ClickItem(menu, args) {
+            //Event set in OnClientItemClicking="ClickItem";
+            //When user clicks (presses Enter key) a menu item, if submenu is not open, then open it; otherwise navigate to the item's link. 
+            var item = args.get_item();
+            var submenuItems = item.get_items();
+            if (submenuItems.get_count() > 0) {
+                //If submenu is closed, then open it; otherwise click the menu item link. 
+                if (item.get_isOpen() == false) {
+                    args.set_cancel(true); //Cancel the default click action so that it doesn't trigger the menu item's navigation link.
+                    item.open();
+                }
+                else {
+                    if (typeof item.redirectToLink == 'undefined') {
+                        item.redirectToLink = true;
+                        item.click();
+                    } else {
+                        delete item.redirectToLink;
+                    }
+                }
+            }
+        }
+
+    </script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("a.mm-subopen").html("<span class=\"offScreen\">Expand menu item</span>");
+    });
+</script><nav id="mMenuCMS" class="mm-menu, cms-responsive-menu"><ul><li><a href="/home">Home</a></li><li><a href="/research_safety">Research Safety</a><ul><li><a href="/research_safety/biological_safety">Biological Safety</a></li><li><a href="/research_safety/laboratory_safety">Laboratory Safety</a><ul><li><a href="/research_safety/laboratory_safety/printable_labels_for_chemical_containers">Chemical Hazard Labels</a></li><li><a href="/research_safety/laboratory_safety/documents_for_principal_investigators__lab_manager">Laboratory Compliance Documents for PIs, CHOs and Managers</a></li><li><a href="/research_safety/laboratory_safety/emergency_procedures">Emergency Procedures</a></li><li><a href="/research_safety/laboratory_safety/fume_hoods">Fume Hoods</a></li><li><a href="/research_safety/laboratory_safety/lab_id_cards">Lab ID Cards</a></li><li><a href="/research_safety/laboratory_safety/lab_safety_plan">Lab Safety Plan</a></li><li><a href="/research_safety/laboratory_safety/personal_protective_equipment">Personal Protective Equipment</a></li><li><a href="/research_safety/laboratory_safety/safety_data_sheets">Safety Data Sheets</a></li><li><a href="/research_safety/laboratory_safety/safety_fact_sheets">Safety Fact Sheets</a></li><li><a href="/research_safety/laboratory_safety/standard_operating_procedures">Standard Operating Procedures</a></li><li><a href="/research_safety/laboratory_safety/labsafety_training">Training</a></li><li><a href="javascript:var w=window.open('/research_safety/laboratory_safety/DAS','','width=700,height=500,toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1');">Designated Area Sign</a></li></ul></li><li><a href="/research_safety/radiation_safety">Radiation Safety</a><ul><li><a href="/research_safety/radiation_safety/manual_and_policies">Manual, Policies and Redacted License</a></li><li><a href="/research_safety/radiation_safety/dose_limits">Dose Limits</a></li><li><a href="/research_safety/radiation_safety/Radiation_forms">Forms</a></li><li><a href="/research_safety/radiation_safety/glossary">Glossary</a></li><li><a href="/research_safety/radiation_safety/radiation_monitoring_badges">Radiation Monitoring Badges</a></li><li><a href="/research_safety/radiation_safety/radiation_survey_meters">Radiation Survey Meters</a></li><li><a href="/research_safety/radiation_safety/lab_rules">Radionuclide Lab Rules</a></li><li><a href="/research_safety/radiation_safety/radioactive_waste_disposal_guidelines">Radioactive Waste Disposal Guidelines</a></li><li><a href="/research_safety/radiation_safety/radioactive_waste_collection_request">Radioactive Waste Collection Request</a></li><li><a href="/research_safety/radiation_safety/web_links">Web Links</a></li></ul></li><li><a href="/research_safety/laser_safety">Laser Safety</a></li><li><a href="/research_safety/Shipping">Shipping</a><ul><li><a href="/research_safety/Shipping/shipping_couriers">Couriers</a></li><li><a href="/research_safety/Shipping/shipping_regulations">Regulations</a></li><li><a href="/research_safety/Shipping/shipping_supplies">Supplies</a></li><li><a href="/research_safety/Shipping/shipping_forms">Chem Tel Notification Form</a></li><li><a href="/research_safety/Shipping/shipping_training">Training</a></li><li><a href="/research_safety/Shipping/dangerous_goods_checklist">Dangerous Goods Checklists</a></li><li><a href="/research_safety/Shipping/dry_ice">Dry Ice</a></li></ul></li></ul></li><li><a href="/chemical_disposal">Chemical Disposal</a><ul><li><a href="/chemical_disposal/r_w_r">Request Chemical Waste Removal</a></li><li><a href="/chemical_disposal/labeling_unwanted_chemical_solvents">Labeling Unwanted Chemical Solvents</a></li></ul></li><li><a href="/occupational_safety">Occupational Safety</a><ul><li><a href="/occupational_safety/asbestos">Asbestos</a><ul><li><a href="/occupational_safety/asbestos/u_i_c_buildings_known_to_have_asbestos_containing_">UIC Buildings Known to Have Asbestos Containing Materials</a></li></ul></li><li><a href="/occupational_safety/faqs">EMS</a></li><li><a href="/occupational_safety/CPR">CPR and AED Programs</a></li><li><a href="/occupational_safety/food_safety">Food Safety</a><ul><li><a href="/occupational_safety/food_safety/food_handling_guidelines">Food Handling Guidelines</a></li><li><a href="/occupational_safety/food_safety/temporary_event_and_license">Temporary event and License</a></li><li><a href="/occupational_safety/food_safety/foodborne_illness">Foodborne Illness</a></li><li><a href="/occupational_safety/food_safety/training_foodsafety">Training</a></li><li><a href="/occupational_safety/food_safety/resources__tools_foodsafety">Resources/Tools</a></li></ul></li><li><a href="/occupational_safety/hazard_communication">Hazard Communication</a></li><li><a href="/occupational_safety/Mold">Mold</a></li><li><a href="/occupational_safety/Odors">Odors</a></li><li><a href="/occupational_safety/respiratory_protection_program">Respiratory Protection Program</a></li><li><a href="/occupational_safety/emergency_shower_and_eyewash_safety_program">Emergency Shower and Eyewash Safety Program</a></li><li><a href="/occupational_safety/ConstructionSafetyGuidelines">Construction Safety Guidelines</a></li><li><a href="/occupational_safety/trades_safety">Trades Safety</a></li></ul></li><li><a href="/fire_safety">Fire Safety</a><ul><li><a href="/fire_safety/firesafety_racepass">What to Do in Case of Fire</a></li><li><a href="/fire_safety/firesafety_smoke">What to Do if You Smell Smoke</a></li><li><a href="/fire_safety/firesafety_bep">General Building Evacuation Procedures</a></li><li><a href="/fire_safety/building_specific_evacuation_plans_">Building Specific Evacuation Plans</a></li></ul></li><li class="mm-selected"><a href="#">Calendar</a></li><li><a href="/about_us">About Us</a><ul><li><a href="/about_us/mission_statement">Mission Statement</a></li><li><a href="/about_us/staff_directory">Staff Directory</a></li><li><a href="/about_us/news">News</a></li></ul></li></ul></nav></div></div><div id="subpage_theme"><div id="subpage"><div id="breadcrumbs"><div><a href="/">UICEHSO</a>&nbsp;&raquo;&nbsp;<span id="spanBreadcrumbPageId">Calendar</span></div></div><div class="col-lg-12"><div id="subpage_content" role="main"><h1>Calendar</h1><div class="ptl_page"><div class="ptl_col_1"><div class="ptl_portlet_vertical"><div class="ptl_top_portlet" style="display:none;"></div>
+
+<script  type="text/javascript">
+function AddEventClick(sender, currentDate){
+    window.location = '/calendar/?portalId=82400&pageId=82413&objectId.2298=87186&contextId.2298=87185&parentId.2298=87186&action.2298=add&objectType.2298=workspace_event&currentDate='+currentDate.format("yyyy-MM-dd")+'&view='+sender.get_viewModeName();
+}
+
+function ViewEventClick(sender, theEvent){   
+   var url = '/cms/One.aspx?portalId=82400&pageId=82413&contextId.2298=87185&parentId.2298=87186&returnTo=87186&objectId.2298=' + theEvent.EventId + '&currentDate='+sender.get_currentDate().format("yyyy-MM-dd")+'&view='+sender.get_viewModeName() + (theEvent.Reference == '' ? '' : '&ref=' + theEvent.Reference);   
+   window.location = url;
+}
+
+function ImportEventsClick(sender, calendarId){
+    window.location = '/calendar/?portalId=82400&pageId=82413&objectId.2298=87186&contextId.2298=87185&parentId.2298=87186&action.2298=import&objectType.2298=workspace_calendar';
+}
+
+function ExportEventsClick(sender, calendarId){
+    var cal = $find('ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlContainer');
+    window.location = '/calendar/?portalId=82400&pageId=82413&objectId.2298=87186&contextId.2298=87185&parentId.2298=87186&action.2298=export&objectType.2298=workspace_calendar' + '&firstday=' + cal.get_firstDay().format('yyyyMMdd') + '&lastday=' + cal.get_lastDay().format('yyyyMMdd');
+}
+
+function SubscribeToEmailsClick(sender, calendarId){
+    window.location = '/alerts/AlertAE.aspx?objectId=87186&action=add&alertType=ContentsAlert&returnTo=%2fcalendar';
+}
+
+function SubscribeToICalAndRssFeedsClick(sender, calendarId) {
+    window.location = '/calendar/?portalId=82400&pageId=82413&objectId.2298=87186&contextId.2298=87185&parentId.2298=87186&action.2298=subscribeToICalAndRssFeeds&objectType.2298=workspace_calendar&CalendarName=Workspace+Calendar&PageName=Calendar';
+}
+
+//calendar picker
+
+function ShowCalendarPicker(phCPId, imgIconId, collapseIcon, expandIcon)
+{
+    var ph= document.getElementById(phCPId);
+    var img = document.getElementById (imgIconId); 
+    if(ph)
+   { 
+        if(ph.style.display=="none")
+       { 
+            ph.style.display = "";
+           img.src = collapseIcon; 
+       } 
+        else
+       { 
+            ph.style.display = "none";    
+            img.src = expandIcon; 
+       } 
+   } 
+}
+
+function hideCalendarPicker(phCPId)
+{
+    var ph = document.getElementById (phCPId);
+    if(ph)
+        ph.style.display = "none";  
+}
+
+function RebindEvents(){
+    var cp = $find('ctl00_ContentPlaceHolder1_ctl08_cp_divContainer');
+    var calIds = cp.get_selectedCalendarIds(); 
+    var cal = $find('ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlContainer');
+    cal.set_calendarIds(calIds);
+    cal.Render();   
+}
+
 </script>
-<script>
-  $('#disable-on-click').on('click', function(){
-    $('#disable-on-click').attr("disabled", true);
-  	$("#login-form").submit()
-  });
+
+
+
+
+
+<script type="text/javascript">
+    function copyToClipboard() {
+        var cal = $find('ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlContainer');
+        var currentURL = cal.get_CurrentUrl();
+        window.alert("The link is now copied to your clipboard. Please use CTRL/Command + V to Paste");
+        if (window.clipboardData)
+            window.clipboardData.setData('text', currentURL);
+        else
+            return currentURL;
+    }		
 </script>
-  </body>
+<div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlContainer" style="padding: 2px 2px 2px 2px;">
+	
+    <div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlHoverEvent" style="border: solid 1px #000000; background-color: #ffffff;
+        width: 180px; display: none;">
+
+	</div>
+    <div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlSearch" style="display:none;">
+		
+        <table style="width: 100%;">
+            <tr>
+                <td class="search_bar">
+                    <span id="ctl00_ContentPlaceHolder1_ctl08_ucCal_lblSearch">Search</span>
+                    <input name="ctl00$ContentPlaceHolder1$ctl08$ucCal$txtSearch" type="text" id="ctl00_ContentPlaceHolder1_ctl08_ucCal_txtSearch" />
+                    <span id="ctl00_ContentPlaceHolder1_ctl08_ucCal_lblIn">In</span>
+                    <select name="ctl00$ContentPlaceHolder1$ctl08$ucCal$ddlSearch" id="ctl00_ContentPlaceHolder1_ctl08_ucCal_ddlSearch">
+
+		</select>
+                    <input name="ctl00$ContentPlaceHolder1$ctl08$ucCal$btnFind" type="button" id="ctl00_ContentPlaceHolder1_ctl08_ucCal_btnFind" value="Find" class="button" />
+                    <input name="ctl00$ContentPlaceHolder1$ctl08$ucCal$btnViewAll" type="button" id="ctl00_ContentPlaceHolder1_ctl08_ucCal_btnViewAll" value="View All" class="button" />
+                </td>
+            </tr>
+        </table>
+    
+	</div>
+    <div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlStatic" style="padding: 0; background-color: #EEEEEE;">
+		
+        <table cellpadding="2">
+            <tr>
+                <td>
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlDailyViewMode" title="Daily View" href="javascript:" viewmode="1" style="cursor: pointer;"><img title="Daily View" src="/common/resources/shared/images/objects/workspace_calendar/1.gif" alt="Daily View" /></a>
+                </td>
+                <td>
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlWeeklyViewMode" title="Weekly View" href="javascript:" viewmode="3" style="cursor: pointer;"><img title="Weekly View" src="/common/resources/shared/images/objects/workspace_calendar/7.gif" alt="Weekly View" /></a>
+                </td>
+                <td>
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlMonthlyViewMode" title="Monthly View" style="cursor: pointer;"><img title="Monthly View" src="/common/resources/shared/images/objects/workspace_calendar/31.gif" alt="Monthly View" /></a>
+                </td>
+                <td>
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlYearlyViewMode" title="Yearly View" href="javascript:" style="cursor: pointer;"><img title="Yearly View" src="/common/resources/shared/images/objects/workspace_calendar/365.gif" alt="Yearly View" /></a>
+                </td>
+                <td>
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlToday" title="Today" href="javascript:" style="cursor: pointer;"><img title="Today" src="/common/pages/Button.ashx?text=Today&amp;bgcolor=%239C9CCE" alt="Today" /></a>
+                </td>
+                <td>
+                    <select name="ctl00$ContentPlaceHolder1$ctl08$ucCal$ddlViewMode" id="ctl00_ContentPlaceHolder1_ctl08_ucCal_ddlViewMode" style="font-size: 11px;">
+			<option value="0">Daily</option>
+			<option value="1">Daily List</option>
+			<option value="2">Weekly</option>
+			<option value="3">Weekly List</option>
+			<option value="4">Weekly By Day</option>
+			<option selected="selected" value="5">Monthly</option>
+			<option value="6">Yearly</option>
+			<option value="7">Event List</option>
+
+		</select>
+                </td>
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellAdd">
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlAddEvent" title="Add Event" href="javascript:" style="cursor:pointer;display:none;"><img title="Add Event" src="/common/resources/shared/images/add.gif" alt="Add Event" /></a>
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellPrint">
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlPrint" title="Print" href="javascript:" style="cursor: pointer;"><img title="Print" src="/common/resources/shared/images/print.gif" alt="Print" /></a>
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellImport" style="display:none;">
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlImportEvents" title="Import Events" href="javascript:" style="cursor: pointer;"><img title="Import Events" src="/common/resources/shared/images/calendar_down.gif" alt="Import Events" /></a>
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellExport">
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlExportEvents" title="Export Events" href="javascript:" style="cursor: pointer;"><img title="Export Events" src="/common/resources/shared/images/export_events.gif" alt="Export Events" /></a>
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellSubscribe" style="display:;">
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlSubscribe" title="Subscribe to email alerts" href="javascript:" style="cursor: pointer;"><img title="Subscribe to email alerts" src="/common/resources/shared/images/mail_ok.png" alt="Subscribe to email alerts" /></a>
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellRss">
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlRss" title="Subscribe via iCal/RSS" href="javascript:" style="cursor: pointer;"><img title="Subscribe via iCal/RSS" src="/common/resources/shared/images/RSS_and_iCal.png" alt="Subscribe via iCal/RSS" /></a>
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellCopylink">
+                    
+                    
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellFilter" style="display:none;">
+                    <a id="ctl00_ContentPlaceHolder1_ctl08_ucCal_hlFilter" title="Filter" href="javascript:" style="cursor: pointer;"><img title="Filter" src="/common/pages/Button.ashx?text=Filter&amp;bgcolor=%239C9CCE" alt="Filter" /></a>
+                    <div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlQuickFilter" style="z-index: 10; width: 300px; height: 300px;
+                        background-color: #ffffff; border: solid 1px #000000; display: none;">
+			
+                        <table style="width: 100%; height: 100%; border: solid 5px #ddffff;" cellspacing="0">
+                            <tr style="height: 20px; background-color: #ddffff;">
+                                <td style="padding-bottom: 4px;">
+                                    <div style="float: left">
+                                        Filter</div>
+                                    <div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_divCloseFilter" style="float: right; width: 22px; text-align: center; background-color: #bb0000;
+                                        padding-top: 4px; color: #ffffff; font-weight: bold; cursor: pointer;">
+                                        X</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: solid 1px #000000; vertical-align: top;">
+                                    <div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_rtvFilter" class="RadTreeView RadTreeView_Default">
+				<input id="ctl00_ContentPlaceHolder1_ctl08_ucCal_rtvFilter_ClientState" name="ctl00_ContentPlaceHolder1_ctl08_ucCal_rtvFilter_ClientState" type="hidden" />
+			</div>
+                                    <div style="text-align: right; padding-right: 10px;">
+                                        <input name="ctl00$ContentPlaceHolder1$ctl08$ucCal$btnFilter" type="button" id="ctl00_ContentPlaceHolder1_ctl08_ucCal_btnFilter" value="Filter" class="button" /></div>
+                                </td>
+                            </tr>
+                        </table>
+                    
+		</div>
+                </td>
+		
+                <td id="ctl00_ContentPlaceHolder1_ctl08_ucCal_cellDdlFilter" style="display:none;">
+                    <select name="ctl00$ContentPlaceHolder1$ctl08$ucCal$ddlFilter" id="ctl00_ContentPlaceHolder1_ctl08_ucCal_ddlFilter" style="font-size: 11px;">
+
+		</select>
+                </td>
+		
+            </tr>
+        </table>
+    
+	</div>
+    <div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlDynamic" style="padding: 4px 0 0 0;
+        text-align: center; background: #ffffff;">
+
+	</div>
+    <iframe id="ctl00_ContentPlaceHolder1_ctl08_ucCal_ifmCalendarHidden" style="display: none;"></iframe>
+
+</div>
+<div id="ctl00_ContentPlaceHolder1_ctl08_ucCal_loadingPanel" style="display:none;background-color:#999999;">
+	
+    <img id="ctl00_ContentPlaceHolder1_ctl08_ucCal_imgLoading" src="common/resources/shared/images/loading.gif" />
+
+</div>
+
+
+
+
+
+</div></div></div></div></div></div><div class="clear"></div></div></div></div></div><!-- end wrapper--><div class="clear"></div><div class="push"></div></div><!-- END WRAP --><div class="footer" role="contentinfo"><div class="pa20"><div class="float-left"><div class="ss-credit"><span id="ctl00_lblCompany" class="label_skin_corporation"><span style="margin-top:20px">&copy;2018 The Board of Trustees of the University of Illinois | <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm" class="SSlink" target="_blank">Web Privacy</a></span></span></div></div><div class="float-right"><div class="uofi-icons"><div class="campus-icons"><div class="campus-uic"><a href="http://www.uic.edu"><img src="/UserFiles/Servers/Server_82316/Image/Theme/uic-logo.png"></img></a></div></div></div></div><div class="clear"></div></div></div><!-- End Footer --><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script type="text/javascript" src="//www.uic.edu/apps/web-alert/alert.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+Telerik.Web.UI.RadTreeView._preInitialize("ctl00_ContentPlaceHolder1_ctl08_ucCal_rtvFilter","0");;(function() {
+                        function loadHandler() {
+                            var hf = $get('ctl00_RadStyleSheetManager1_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Web.UI, Version=2014.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:9ac720df-7b88-4e1e-8026-2b8c24207e88:ed2942d4:1f65231b:7f7626a2:45085116';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_selectedItemIndex":"5","_selectedValue":"82413","clientStateFieldID":"ctl00_ContentPlaceHolder1_ctl01_radmenu_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":100}","expandDelay":0,"itemData":[{"attributes":{"menunumber":"0"},"value":"82408","navigateUrl":"/home"},{"attributes":{"menunumber":"1"},"items":[{"attributes":{"menunumber":"2"},"value":"103969","navigateUrl":"/research_safety/biological_safety"},{"attributes":{"menunumber":"3"},"items":[{"attributes":{"menunumber":"4"},"value":"208592","navigateUrl":"/research_safety/laboratory_safety/printable_labels_for_chemical_containers"},{"attributes":{"menunumber":"5"},"value":"205398","navigateUrl":"/research_safety/laboratory_safety/documents_for_principal_investigators__lab_manager"},{"attributes":{"menunumber":"6"},"value":"214046","navigateUrl":"/research_safety/laboratory_safety/emergency_procedures"},{"attributes":{"menunumber":"7"},"value":"214050","navigateUrl":"/research_safety/laboratory_safety/fume_hoods"},{"attributes":{"menunumber":"8"},"value":"214054","navigateUrl":"/research_safety/laboratory_safety/lab_id_cards"},{"attributes":{"menunumber":"9"},"value":"214058","navigateUrl":"/research_safety/laboratory_safety/lab_safety_plan"},{"attributes":{"menunumber":"10"},"value":"214065","navigateUrl":"/research_safety/laboratory_safety/personal_protective_equipment"},{"attributes":{"menunumber":"11"},"value":"214068","navigateUrl":"/research_safety/laboratory_safety/safety_data_sheets"},{"attributes":{"menunumber":"12"},"value":"214071","navigateUrl":"/research_safety/laboratory_safety/safety_fact_sheets"},{"attributes":{"menunumber":"13"},"value":"214076","navigateUrl":"/research_safety/laboratory_safety/standard_operating_procedures"},{"attributes":{"menunumber":"14"},"value":"214086","navigateUrl":"/research_safety/laboratory_safety/labsafety_training"},{"attributes":{"menunumber":"15"},"value":"934692","navigateUrl":"javascript:var w=window.open(\u0027/research_safety/laboratory_safety/DAS\u0027,\u0027\u0027,\u0027width=700,height=500,toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1\u0027);"}],"value":"103984","navigateUrl":"/research_safety/laboratory_safety"},{"attributes":{"menunumber":"16"},"items":[{"attributes":{"menunumber":"17"},"value":"495124","navigateUrl":"/research_safety/radiation_safety/manual_and_policies"},{"attributes":{"menunumber":"18"},"value":"257808","navigateUrl":"/research_safety/radiation_safety/dose_limits"},{"attributes":{"menunumber":"19"},"value":"201178","navigateUrl":"/research_safety/radiation_safety/Radiation_forms"},{"attributes":{"menunumber":"20"},"value":"268719","navigateUrl":"/research_safety/radiation_safety/glossary"},{"attributes":{"menunumber":"21"},"value":"257802","navigateUrl":"/research_safety/radiation_safety/radiation_monitoring_badges"},{"attributes":{"menunumber":"22"},"value":"264804","navigateUrl":"/research_safety/radiation_safety/radiation_survey_meters"},{"attributes":{"menunumber":"23"},"value":"257813","navigateUrl":"/research_safety/radiation_safety/lab_rules"},{"attributes":{"menunumber":"24"},"value":"257797","navigateUrl":"/research_safety/radiation_safety/radioactive_waste_disposal_guidelines"},{"attributes":{"menunumber":"25"},"value":"351875","navigateUrl":"/research_safety/radiation_safety/radioactive_waste_collection_request"},{"attributes":{"menunumber":"26"},"value":"257793","navigateUrl":"/research_safety/radiation_safety/web_links"}],"value":"103991","navigateUrl":"/research_safety/radiation_safety"},{"attributes":{"menunumber":"27"},"value":"192440","navigateUrl":"/research_safety/laser_safety"},{"attributes":{"menunumber":"28"},"items":[{"attributes":{"menunumber":"29"},"value":"357967","navigateUrl":"/research_safety/Shipping/shipping_couriers"},{"attributes":{"menunumber":"30"},"value":"357968","navigateUrl":"/research_safety/Shipping/shipping_regulations"},{"attributes":{"menunumber":"31"},"value":"357969","navigateUrl":"/research_safety/Shipping/shipping_supplies"},{"attributes":{"menunumber":"32"},"value":"357970","navigateUrl":"/research_safety/Shipping/shipping_forms"},{"attributes":{"menunumber":"33"},"value":"357974","navigateUrl":"/research_safety/Shipping/shipping_training"},{"attributes":{"menunumber":"34"},"value":"357975","navigateUrl":"/research_safety/Shipping/dangerous_goods_checklist"},{"attributes":{"menunumber":"35"},"value":"357976","navigateUrl":"/research_safety/Shipping/dry_ice"}],"value":"357965","navigateUrl":"/research_safety/Shipping"}],"value":"103966","navigateUrl":"/research_safety"},{"attributes":{"menunumber":"36"},"items":[{"attributes":{"menunumber":"37"},"value":"104167","navigateUrl":"/chemical_disposal/r_w_r"},{"attributes":{"menunumber":"38"},"value":"214039","navigateUrl":"/chemical_disposal/labeling_unwanted_chemical_solvents"}],"value":"120503","navigateUrl":"/chemical_disposal"},{"attributes":{"menunumber":"39"},"items":[{"attributes":{"menunumber":"40"},"items":[{"attributes":{"menunumber":"41"},"value":"917128","navigateUrl":"/occupational_safety/asbestos/u_i_c_buildings_known_to_have_asbestos_containing_"}],"value":"192443","navigateUrl":"/occupational_safety/asbestos"},{"attributes":{"menunumber":"42"},"value":"103946","navigateUrl":"/occupational_safety/faqs"},{"attributes":{"menunumber":"43"},"value":"743372","navigateUrl":"/occupational_safety/CPR"},{"attributes":{"menunumber":"44"},"items":[{"attributes":{"menunumber":"45"},"value":"223216","navigateUrl":"/occupational_safety/food_safety/food_handling_guidelines"},{"attributes":{"menunumber":"46"},"value":"223218","navigateUrl":"/occupational_safety/food_safety/temporary_event_and_license"},{"attributes":{"menunumber":"47"},"value":"223222","navigateUrl":"/occupational_safety/food_safety/foodborne_illness"},{"attributes":{"menunumber":"48"},"value":"228210","navigateUrl":"/occupational_safety/food_safety/training_foodsafety"},{"attributes":{"menunumber":"49"},"value":"228251","navigateUrl":"/occupational_safety/food_safety/resources__tools_foodsafety"}],"value":"120496","navigateUrl":"/occupational_safety/food_safety"},{"attributes":{"menunumber":"50"},"value":"137987","navigateUrl":"/occupational_safety/hazard_communication"},{"attributes":{"menunumber":"51"},"value":"324117","navigateUrl":"/occupational_safety/Mold"},{"attributes":{"menunumber":"52"},"value":"326007","navigateUrl":"/occupational_safety/Odors"},{"attributes":{"menunumber":"53"},"value":"327402","navigateUrl":"/occupational_safety/respiratory_protection_program"},{"attributes":{"menunumber":"54"},"value":"850346","navigateUrl":"/occupational_safety/emergency_shower_and_eyewash_safety_program"},{"attributes":{"menunumber":"55"},"value":"1006623","navigateUrl":"/occupational_safety/ConstructionSafetyGuidelines"},{"attributes":{"menunumber":"56"},"value":"1007613","navigateUrl":"/occupational_safety/trades_safety"}],"value":"120491","navigateUrl":"/occupational_safety"},{"attributes":{"menunumber":"57"},"items":[{"attributes":{"menunumber":"58"},"value":"204030","navigateUrl":"/fire_safety/firesafety_racepass"},{"attributes":{"menunumber":"59"},"value":"204109","navigateUrl":"/fire_safety/firesafety_smoke"},{"attributes":{"menunumber":"60"},"value":"204033","navigateUrl":"/fire_safety/firesafety_bep"},{"attributes":{"menunumber":"61"},"value":"918823","navigateUrl":"/fire_safety/building_specific_evacuation_plans_"}],"value":"176756","navigateUrl":"/fire_safety"},{"attributes":{"menunumber":"62"},"value":"82413","selected":true,"navigateUrl":"/calendar","cssClass":"rmFocused"},{"attributes":{"menunumber":"63"},"items":[{"attributes":{"menunumber":"64"},"value":"200342","navigateUrl":"/about_us/mission_statement"},{"attributes":{"menunumber":"65"},"value":"103943","navigateUrl":"/about_us/staff_directory"},{"attributes":{"menunumber":"66"},"value":"82411","navigateUrl":"/about_us/news"}],"value":"82410","navigateUrl":"/about_us"}]}, {"itemClicking":ClickItem}, null, $get("ctl00_ContentPlaceHolder1_ctl01_radmenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Intrafinity.Web.Controls.Calendar, {"addEventIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlAddEvent"),"backgroundColor":"#ffffff","btnFilter":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_btnFilter"),"btnFind":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_btnFind"),"btnViewAll":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_btnViewAll"),"calendarHeight":768,"calendarId":87186,"calendarIds":[87186],"currentDate":"2018/11/25","dailyHourCellHeight":48,"dailyIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlDailyViewMode"),"dateLabelBgColor":"#DDDDDD","dateLabelWidth":48,"ddlFilter":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_ddlFilter"),"ddlSearch":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_ddlSearch"),"ddlViewMode":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_ddlViewMode"),"divCloseFilter":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_divCloseFilter"),"eventsExportUrl":"/common/controls/General/Calendar/CalendarEventsExport.ashx","exportEventsIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlExportEvents"),"filterIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlFilter"),"firstDayOfWeek":0,"fontSize":11,"generalWebService":"/common/controls/WorkspaceCalendar/ws/WorkspaceCalendarWS.asmx","hasDocType":true,"headerAndBorderColor":"#9C9CCE","ifmCalendarHidden":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_ifmCalendarHidden"),"importEventsIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlImportEvents"),"isSubscribed":false,"monthlyCellHeight":108,"monthlyIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlMonthlyViewMode"),"needAdjustPosition":false,"pnlDynamic":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlDynamic"),"pnlFilter":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlQuickFilter"),"pnlHoverEvent":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlHoverEvent"),"pnlSearch":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlSearch"),"pnlStatic":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlStatic"),"printIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlPrint"),"renderOnLoad":true,"rssIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlRss"),"selectedBgColor":"#ffffea","serviceMethodName":"GetEventList","serviceMethodParamList":{"calendarIds":[87186],"startDate":new Date(1543125600000),"endDate":new Date(1543125600000),"stringFieldSet":{},"stringSelectedField":null,"stringSearchValue":null,"enumFilter":null},"servicePath":"/common/controls/WorkspaceCalendar/ws/WorkspaceCalendarWS.asmx","startTimeOfHourlyView":8,"subscribeIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlSubscribe"),"subscribeIconUrl":"/common/resources/shared/images/mail_ok.png","timeLabelWidth":48,"todayBgColor":"#eaFFFF","todayIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlToday"),"txtSearch":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_txtSearch"),"unsubscribeIconUrl":"/common/resources/shared/images/mail_delete.png","viewMode":5,"weeklyByDayCellHeight":96,"weeklyHourCellHeight":48,"weeklyIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlWeeklyViewMode"),"weeklyListCellHeight":0,"yearlyIcon":$get("ctl00_ContentPlaceHolder1_ctl08_ucCal_hlYearlyViewMode")}, {"exportEventsClick":ExportEventsClick,"importEventsClick":ImportEventsClick,"rssClick":SubscribeToICalAndRssFeedsClick,"subscribeClick":SubscribeToEmailsClick,"viewEventClick":ViewEventClick}, {"loadingPanel":"ctl00_ContentPlaceHolder1_ctl08_ucCal_loadingPanel","rtvFilter":"ctl00_ContentPlaceHolder1_ctl08_ucCal_rtvFilter"}, $get("ctl00_ContentPlaceHolder1_ctl08_ucCal_pnlContainer"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTreeView, {"_checkBoxes":true,"_checkChildNodes":true,"_skin":"Default","_uniqueId":"ctl00$ContentPlaceHolder1$ctl08$ucCal$rtvFilter","clientStateFieldID":"ctl00_ContentPlaceHolder1_ctl08_ucCal_rtvFilter_ClientState","collapseAnimation":"{\"duration\":200}","expandAnimation":"{\"duration\":200}","nodeData":[]}, null, null, $get("ctl00_ContentPlaceHolder1_ctl08_ucCal_rtvFilter"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":0,"isSticky":false,"minDisplayTime":200,"skin":"","transparency":50,"uniqueID":"ctl00$ContentPlaceHolder1$ctl08$ucCal$loadingPanel","zIndex":90000}, null, null, $get("ctl00_ContentPlaceHolder1_ctl08_ucCal_loadingPanel"));
+});
+//]]>
+</script>
+</form>
+    <script type="text/javascript">
+        window.isMobile = 0 == 1;
+        if (!theForm) {
+                var theForm = document.forms['aspnetForm'];
+                if (!theForm) 
+                    theForm = document.aspnetForm;
+            }
+            if (theForm) {
+                theForm.action = window.location.href;
+            }
+    </script>
+</body>
 </html>
 

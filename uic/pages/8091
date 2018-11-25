@@ -1,595 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<head>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
-<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
-<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-<title> ProjectF16 &lt; CS211 &lt; TWiki</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS211/ProjectF16?_T=2018-11-21" type="application/x-wiki" title="edit ProjectF16" />
-<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<meta name="SCRIPTURLPATH" content="/bin" />
-<meta name="SCRIPTSUFFIX" content="" />
-<meta name="TEXT_JUMP" content="Jump" />
-<meta name="TEXT_SEARCH" content="Search" />
-<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
-<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS211/WebRss" />
-<base href="https://www.cs.uic.edu/bin/view/CS211/ProjectF16"></base>
-<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
-<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/TWikiTemplates/base.css');
-</style>
-<style type="text/css" media="all">
-#patternTopBar,
-#patternClearHeaderCenter,
-#patternClearHeaderLeft,
-#patternClearHeaderRight,
-#patternTopBarContentsOuter,
-#patternTopBarContents {
-/*	height:64px; */ /* top bar height; make room for header columns */
-	overflow:hidden;
-}
-#patternOuter {
-	margin-left:14em;
-}
-#patternLeftBar {
-	width:14em;
-	margin-left:-14em;
-}
-</style>
-<style type="text/css" media="all">
-@import url('/pub/TWiki/PatternSkin/layout.css');
-@import url('/pub/TWiki/PatternSkin/style.css');
-@import url('/pub/TWiki/PatternSkin/colors.css');
-</style>
-<style type="text/css" media="all">
-	/* Styles that are set using variables */
-	.patternBookView .twikiTopRow,
-	.patternWebIndicator a img,
-	.patternWebIndicator a:hover img {
-		background-color:#D0D0D0;
-	}
-	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
-	
-	.patternBookView {
-		border-color:#D0D0D0;
-	}
-	.patternPreviewPage #patternMain {
-		/* uncomment to set the preview image */
-		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
-	}
-	
-</style><style type="text/css" media="all">
 
-@import url('/pub/Main/WebPreferences/mainweb.css');
+    <title>UIC Bluestem ID Server</title>
 
-</style>
-<style type="text/css" media="all">
-	@import url("/pub/TWiki/PatternSkin/print.css");
-</style>
-<!--[if IE]><style type="text/css" media="screen">
-pre {
-	overflow-x:auto;
-	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
-}
-</style>
-<![endif]-->
-<!--[if lte IE 6]> 
-<style type="text/css">
-#patternLeftBar {
-	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
-}
-</style><![endif]-->
-<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bluestem/assets/styles/login.css">
 
-<!-- Google Analytics Snippet -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
 
-<script type="text/javascript">
+  <div class="jumbotron" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 logo"> </div>
+      </div>
+    </div>
+  </div>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-17081517-1']);
-  _gaq.push(['_setDomainName', 'none']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
 
-  (function() {
-	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
-'.google-analytics.com/ga.js';
-	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 login-alert">
+      <div class="alert alert-danger" role="alert">
+        <h1>Invalid Referral to UIC WWW Identification Service</h1>
 
-</script>
+        <p class="lead">Please configure your browser to accept cookies and try again.</p>
 
-<!-- /Google Analytics Snippet -->
-<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
-@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
-</style>
-<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
-<script type="text/javascript">
-// <![CDATA[
-var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
-document.write(styleText);
-// ]]>
-</script>
+        <p>
+          You arrived at this service someway other than by
+          referral from an authorized server, perhaps by
+          typing in a URL, or returning to a previous
+          authentication page.
+        </p>
 
-<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
-.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
-.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
-.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
-.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
-.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
-.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
-.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
-.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
-.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
-.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
-.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
-</style>
-<!-- scroll_box_engine --> <script type='text/javascript'>
- // inspired by www.dhtmlgoodies.com/index.html?whichScript=scrolling_content
- var scrollData = new Array();
- function doScrollCanvas( containerID )
- {
-  var vPos = scrollData[containerID]['canvasObj'].style.top;
-  if( scrollData[containerID]['doScroll'] ) {
-   vPos = vPos.replace(/[^\-0-9]/g,'') - scrollData[containerID]['verticalStep'];
-   if( vPos/1 + scrollData[containerID]['canvasHeight']/1 < 1 ) { vPos = 0 };
-   scrollData[containerID]['canvasObj'].style.top = vPos + 'px';
-  }
-  setTimeout('doScrollCanvas("' + containerID + '")', scrollData[containerID]['delay']);
-}
- function doStopScroll()
- {
-  var containerID = this.id;
-  scrollData[containerID]['doScroll'] = false;
- }
- function doStartScroll()
- {
-  var containerID = this.id;
-  scrollData[containerID]['doScroll'] = true;
- }
- function initScrollBox( containerID, delay, vstep, width, height )
- {
-  var scrollContainer = document.getElementById( containerID );
-  var scrollCanvas = scrollContainer.getElementsByTagName( 'DIV' )[0];
-  if( ! delay ) { delay = 1000; }
-  if( ! vstep ) { vstep = scrollContainer.clientHeight; }
-  if( width )   { scrollContainer.parentNode.style.width = width + 'px'; }
-  if( height )  { scrollContainer.style.height = height + 'px'; }
-  scrollContainer.onmouseover = doStopScroll;
-  scrollContainer.onmouseout = doStartScroll;
-  scrollData[containerID] = new Array();
-  scrollData[containerID]['canvasObj'] = scrollCanvas;
-  scrollData[containerID]['canvasHeight'] = scrollCanvas.offsetHeight;
-  scrollData[containerID]['verticalStep'] = vstep;
-  scrollData[containerID]['delay'] = delay;
-  scrollData[containerID]['doScroll'] = true;
-  scrollCanvas.style.top = scrollData[containerID]['verticalStep'] + 'px';
-  doScrollCanvas( containerID );
- }
-</script>
-<style type='text/css' media='all'>
- .scrollBoxOuter {
-  border: solid #d0d0d0 1px;
-  -moz-box-shadow: 2px 2px 3px #e8e8e8;
-  -webkit-box-shadow: 2px 2px 3px #e8e8e8;
-  box-shadow: 2px 2px 3px #e8e8e8;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  width: 300px;
-  padding: 15px;
-  background-image: url(/pub/TWiki/ScrollBoxAddOn/gradient-title.png);
-  background-repeat: repeat-x;
-  background-color: #ffffff;
- }
- .scrollBoxTitle {
-  text-align:center;
-  font-size:19px;
-  font-weight:bold;
-  color: #333335;
-  margin: -5px 0 0 0;
-  padding: 0 0 12px 0;
-  white-space: nowrap;
-  overflow: hidden;
- }
- .scrollBoxTitle a:link,
- .scrollBoxTitle a:visited {
-  color: #333335;
- }
- .scrollBoxContainer {
-  overflow: hidden;
-  height: 40px;
-  padding: 0px;
-  position: relative;
- }
- .scrollBoxContent {
-  position: relative;
-  top: 0px;
-  padding: 0px;
-  text-align: justify;
- }
- .scrollBoxContent img {
-  padding: 0px;
-  vertical-align: middle;
- }
- </style></head>
-<body class="patternViewPage">
-<a name="PageTop"></a>
-<div id="patternScreen">
-<div id="patternPageShadow">
-<div id="patternPage">
-<div id="patternWrapper"><div id="patternOuter">
-<div id="patternFloatWrap">
-<div id="patternMain"><div id="patternClearHeaderCenter"></div>
-<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS211/WebHome">CS211 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS211/CS211F16" class="twikiLink">CS211F16</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS211/ProjectF16" title='Topic revision: 10 (2016-11-11 - 16:45:01)'>ProjectF16</a> <span class='patternRevInfo'>(2016-11-11, Main.troy)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS211/ProjectF16?t=1542826967' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS211/ProjectF16' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="CS_211_Programming_Practicum"></a> CS 211 - Programming Practicum </h1>
-<h4><a name="Fall_2016"></a> <a name="Spring_2016"></a> Fall 2016 </h4>
-<h3><a name="Programming_Assignments"></a> <a name="Programming_Assignments"></a> Programming Assignments </h3> <ul>
-<li> Programming Project 1: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj1f16.pdf" target="_top">proj1f16.pdf</a> - Due: Tuesday 9/6/16 at 11:59pm <ul>
-<li> Data Files to Test Code using <strong>REDIRECTION!!!!</strong> <ul>
-<li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectS16/proj1data1.txt" target="_top">proj1data1.txt</a>
-</li> <li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectS16/proj1data2.txt" target="_top">proj1data2.txt</a>
-</li></ul> 
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Programming Project 2: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj2f16.pdf" target="_top">proj2f16.pdf</a> - Due: Monday 9/19/2016 at 11:59pm
-</li></ul> 
-<p /> <ul>
-<li> Programming Project 3: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj3f16.pdf" target="_top">proj3f16.pdf</a> - Due Monday 10/3/2016 at 11:59pm <ul>
-<li> Code you are welcome to use as a starting point: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/maze.c" target="_top">maze.c</a>
-</li> <li> Sample Input Files <ul>
-<li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/mazeData1.txt" target="_top">mazeData1.txt</a>
-</li> <li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/mazeData2.txt" target="_top">mazeData2.txt</a>
-</li> <li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/mazeData3.txt" target="_top">mazeData3.txt</a>
-</li> <li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/mazeData4.txt" target="_top">mazeData4.txt</a>
-</li></ul> 
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Programming Project 4: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj4f16.pdf" target="_top">proj4f16.pdf</a> - Due Monday 10/17/16 at 11:59pm <ul>
-<li> Code to use for User Interface: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj4base.c" target="_top">proj4base.c</a>
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Programming Project 5: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj5f16.pdf" target="_top">proj5f16.pdf</a> - Due Tuesday 11/1/16 at 11:59pm <ul>
-<li> Base code to use for User Interface: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/Proj5Base.java" target="_top">Proj5Base.java</a>
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Programming Project 6: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj6s16.pdf" target="_top">proj6s16.pdf</a> - Due Monday 11/14/16 at 11:59pm <ul>
-<li> Base Code for User Interface: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/Proj6Base.java" target="_top">Proj6Base.java</a>
-</li> <li>  <ul>
-<li> Data Files - Creates a 7 Airport Network <ul>
-<li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectS16/proj6data1.txt" target="_top">proj6data1.txt</a>
-</li></ul> 
-</li> <li> Data Files - Works with f command <ul>
-<li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectS16/proj6data2.txt" target="_top">proj6data2.txt</a>
-</li> <li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectS16/proj6data3.txt" target="_top">proj6data3.txt</a>
-</li></ul> 
-</li> <li> Data Files - Attempts Infinite Recursive f command <ul>
-<li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectS16/proj6data4.txt" target="_top">proj6data4.txt</a>
-</li> <li> <a href="https://www.cs.uic.edu/pub/CS211/ProjectS16/proj6data5.txt" target="_top">proj6data5.txt</a>
-</li></ul> 
-</li></ul> 
-</li></ul> 
-</li></ul> 
-<p /> <ul>
-<li> Programming Project 7: <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/proj7f16.pdf" target="_top">proj7f16.pdf</a> - Due: Monday 11/28/16 at 11:59pm <ul>
-<li> Grid Display Class - <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/GD3.java" target="_top">GD3.java</a>
-</li> <li> Prof. Troy's Initial Code to Solve a Similar Problem - <a href="https://www.cs.uic.edu/pub/CS211/ProjectF16/Proj7Troya.java" target="_top">Proj7Troya.java</a>
-</li></ul> 
-</li></ul> 
-Grading status can be viewed <a href="https://docs.google.com/spreadsheets/d/1EW5SRHt3dWA46w312AhTyN2xZOR5KNu7JtkmAEPhlco/edit?usp=sharing" target="_blank">here</a>.
-<p />
--- <style> .userReportsSig { display: inline-block; white-space: nowrap; padding: 0 2px 0 0; border: 1px solid #e8e8eb; background-color: #f4f4fa; -moz-box-shadow: 1px 1px 2px #e8e8e8; -webkit-box-shadow: 1px 1px 2px #e8e8e8; box-shadow: 1px 1px 2px #e8e8e8; -moz-border-radius: 4px; border-radius: 4px; } .userReportsSig a:link { border: 0 none; } .userReportsSig img { vertical-align: middle; } .userReportsBubble { position: absolute; background-image: url(/pub/TWiki/UserReports/faded-bubble.png); background-repeat: no-repeat; margin-top: -57px; margin-left: -18px; width: 920px; height: 90px; z-index: -1; } </style><span class="userReportsSig"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Troy?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="troy&#32;2016&#32;08&#32;22 (this topic does not yet exist; you can create it)"><img src="/pub/Main/UserProfileHeader/default-user-profile.jpg" height="24" alt="" /> troy  - 2016-08-22</a></span> </span>
-<p />
-<h2><a name="Comments"></a> Comments </h2>
-<p />
-For what it's worth, I HAD a fair amount of code for this assignment, but I lost it (during my code submission);  If I can find it, I'll submit it; otherwise I'm at a loss.  Thank you.
-<p />
--- <span class="userReportsSig"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/Mradlo2?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="mradlo&#32;2&#32;&#32;&#32;&#32;2016&#32;09&#32;06 (this topic does not yet exist; you can create it)"><img src="/pub/Main/UserProfileHeader/default-user-profile.jpg" height="24" alt="" /> mradlo 2  - 2016-09-06</a></span> </span><div class="userReportsBubble"></div><div style='height: 5px;'></div>
-<form method="post" action="https://www.cs.uic.edu/bin/save/CS211/ProjectF16" enctype="multipart/form-data" name="above0" id="above0"><input type="hidden" name="crypttoken" value="5b31f6a1bec317ae720a96c2c634cece" /><div class="commentPlugin commentPluginPromptBox" style="margin: 5px 0;"> <div class="scrollBoxOuter" style="padding: 7px; width: auto; background-color: #f6f6fb;">
- <div class="scrollBoxContainer" style="height: auto; "> <div><textarea  rows="5" cols="80" name="comment" class="twikiTextarea" wrap="soft" style="width: 100%" onfocus="if(this.value=='')this.value=''" onblur="if(this.value=='')this.value=''"></textarea></div><div style="padding: 5px 0 0 0;"><input  type="submit" value="Add comment" class="twikiButton" /></div> </div>
-</div></div><!--/commentPlugin-->
-<input type="hidden" name="comment_action" value="save"  />
-<input type="hidden" name="comment_type" value="above"  />
-<input type="hidden" name="comment_index" value="0"  /></form> </div><!-- /patternTopic-->
-<div class="twikiContentFooter"></div><div class="twikiAttachments">
-<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
-<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS211/ProjectF16?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS211/ProjectF16?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS211/ProjectF16?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS211/ProjectF16?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS211/ProjectF16?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/CS211/ProjectF16?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS211/ProjectF16?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/GD3.java">GD3.java</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=GD3.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 3.5&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-11-11 - 16:44</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/Proj5Base.java">Proj5Base.java</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=Proj5Base.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 8.1&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-10-18 - 18:27</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/Proj6Base.java">Proj6Base.java</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=Proj6Base.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.1&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-10-31 - 13:16</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/java.gif" width="16" height="16" alt="Java source code file" title="Java source code file" border="0" /><span class="twikiHidden">java</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/Proj7Troya.java">Proj7Troya.java</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=Proj7Troya.java;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 4.6&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-11-11 - 16:44</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/c.gif" width="16" height="16" alt="C source code file" title="C source code file" border="0" /><span class="twikiHidden">c</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/maze.c">maze.c</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=maze.c;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 1.8&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-20 - 16:03</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/mazeData1.txt">mazeData1.txt</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=mazeData1.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.1&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-20 - 16:04</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/mazeData2.txt">mazeData2.txt</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=mazeData2.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.1&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-20 - 16:04</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/mazeData3.txt">mazeData3.txt</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=mazeData3.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.1&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-20 - 16:04</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/txt.gif" width="16" height="16" alt="Text" title="Text" border="0" /><span class="twikiHidden">txt</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/mazeData4.txt">mazeData4.txt</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=mazeData4.txt;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 0.1&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-20 - 16:04</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/proj1f16.pdf">proj1f16.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=proj1f16.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 148.5&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-08-22 - 18:00</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/proj2f16.pdf">proj2f16.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=proj2f16.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 187.2&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-06 - 18:10</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/proj3f16.pdf">proj3f16.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=proj3f16.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 211.2&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-09-20 - 16:11</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/c.gif" width="16" height="16" alt="C source code file" title="C source code file" border="0" /><span class="twikiHidden">c</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/proj4base.c">proj4base.c</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=proj4base.c;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 7.8&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-10-05 - 03:14</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/proj4f16.pdf">proj4f16.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=proj4f16.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 206.6&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-10-05 - 03:13</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/proj5f16.pdf">proj5f16.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=proj5f16.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 192.2&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-10-18 - 18:27</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS211/ProjectF16/proj6s16.pdf">proj6s16.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS211/ProjectF16?filename=proj6s16.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 190.4&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2016-10-31 - 13:16</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/CS211/ProjectF16/proj7f16.pdf">proj7f16.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/CS211/ProjectF16?filename=proj7f16.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 236.9&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2016-11-11 - 16:42</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS211.ProjectF16;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
-		</tr></table>
-</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
-<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS211/ProjectF16?t=1542826967' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS211/ProjectF16' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS211/ProjectF16?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS211/ProjectF16?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r10&nbsp;<a rel="nofollow" href="/bin/rdiff/CS211/ProjectF16?rev1=10;rev2=9">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS211/ProjectF16?rev=9">r9</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS211/ProjectF16?rev1=9;rev2=8">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS211/ProjectF16?rev=8">r8</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS211/ProjectF16?rev1=8;rev2=7">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS211/ProjectF16?rev=7">r7</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CS211/ProjectF16?rev1=7;rev2=6">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS211/ProjectF16?rev=6">r6</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS211/ProjectF16?template=backlinksweb' rel='nofollow' title='Search the CS211 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS211/ProjectF16?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS211/ProjectF16?t=1542826967;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS211/ProjectF16?template=oopsmore&amp;param1=10&amp;param2=10' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r10 - 2016-11-11 - 16:45:01 - Main.troy</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
-</div><!-- /patternMainContents-->
-</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
-<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
-<li> <a href="/bin/view/CS211/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS211</a>
-</li></ul> 
-</div> <ul>
-<li> <a href="/bin/view/CS211/CS211F18" class="twikiLink">Home Page: Fall 2018</a>
-</li> <li> <a href="https://www.cs.uic.edu/pub/CS211/CS211F18/syl211f18.pdf" target="_top">Syllabus: Fall 2018</a>
-</li> <li> <a href="/bin/view/CS211/NotesF18" class="twikiLink">Notes: Fall 2018</a>
-</li> <li> <a href="/bin/view/CS211/ProjectF18" class="twikiLink">Assignments: Fall 2018</a>
-</li> <li> <a href="/bin/view/CS211/LabsF18" class="twikiLink">Lab Exercises: Fall 2018</a>
-</li> <li> <a href="/bin/view/CS211/ReviewsF14" class="twikiLink">Code Review Page</a>
-</li></ul> 
-<a href="/bin/edit/CS211.WebLeftBar" target="_top">&#91;edit this menu</a>]
-<p />
-<hr />
-<p />
-<div class="patternLeftBarPersonal">
-<ul><li class="patternLogIn"><a href="/bin/logon/CS211/ProjectF16">Log In</a> </li></ul>
-</div><!--/patternLeftBarPersonal-->
-<p /> <ul>
-<li> <a href="https://www.cs.uic.edu/CS211" target="_top">CS 211 Web Home</a>
-</li> <li> <a href="/bin/view/CS211/WebCreateNewTopic?topicparent=ProjectF16" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
-</li> <li> <a href="/bin/view/CS211/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
-</li> <li> <a href="/bin/view/CS211/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
-</li> <li> <a href="/bin/view/CS211/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
-</li> <li> <a href="/bin/view/CS211/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
-</li> <li> <a href="/bin/view/CS211/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
-</li> <li> <a href="/bin/view/CS211/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
-</li> <li> <a href="/bin/view/CS211/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
-</li></ul> 
-<p />
-<hr />
-</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
-</div><!-- /patternFloatWrap-->
-<div class="clear">&nbsp;</div>
-</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
-<map id="logomap" name="logomap">
-	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
-	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
-	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
-</map>
-<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
+      </div>
+    </div>
+  </div>
 </div>
-<p />
-<div style="margin-left:650px; position:relative;">
-	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
-		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
-		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
-	</form>
-</div>
-<p />
-<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
-<div id="navMenu">
-<ul>
-<li> <a href="#">ABOUT US</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
-	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">ACADEMICS</a>
-	<ul>
-	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
-	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
-	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
-	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
-	<li><a href="/Main/Courses">Courses</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">RESEARCH</a>
-	<ul>
-	<li><a href="/Main/Research">Overview</a></li>
-	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
-	<li><a href="/Main/Research#Labs">Labs</a></li>
-	</ul>
-</li>
-</ul>
-<ul>
-<li> <a href="#">PEOPLE</a>
-	<ul>
-	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
-	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
-	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
-	<li><a href="/Main/Students">Students</a></li>
-	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
-	</ul>
-</li>
-</ul>
-<br class="clearFloat"/>
-</div>
-</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
-<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
-<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
-</div><!-- /patternPage-->
-</div><!-- /patternPageShadow-->
-</div><!-- /patternScreen-->
-</body></html>
-<p />
+
+ <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+	<p>
+	  &copy; University of Illinois Board of Trustees |
+          <a href="http://www.vpaa.uillinois.edu/policies/web_privacy.cfm">Privacy Policy</a>
+	</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/bluestem/assets/js/jquery.placeholder.min.js"></script>
+<script>
+	$(function() {
+	// Invoke placeholder plugin
+	$('input').placeholder(); 
+	});
+</script>
+<script>
+  $('#disable-on-click').on('click', function(){
+    $('#disable-on-click').attr("disabled", true);
+  	$("#login-form").submit()
+  });
+</script>
+  </body>
+</html>
+

@@ -4,10 +4,10 @@
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
 <link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
 <script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
-<title> WiCS &lt; CSGSA &lt; TWiki</title>
+<title> WebCreateNewTopic &lt; PSYu &lt; TWiki</title>
 
 <link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
-<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CSGSA/WiCS?_T=2018-11-21" type="application/x-wiki" title="edit WiCS" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/PSYu/WebCreateNewTopic?_T=2018-11-25" type="application/x-wiki" title="edit WebCreateNewTopic" />
 <link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
 <meta name="SCRIPTURLPATH" content="/bin" />
 <meta name="SCRIPTSUFFIX" content="" />
@@ -15,8 +15,8 @@
 <meta name="TEXT_SEARCH" content="Search" />
 <meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
 <meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CSGSA/WebRss" />
-<base href="https://www.cs.uic.edu/bin/view/CSGSA/WiCS"></base>
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/PSYu/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/PSYu/WebCreateNewTopic"></base>
 <!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
@@ -24,7 +24,34 @@
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
 <script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
-<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script><script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiString.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/unicode_chars.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+function openTemplateWindow () {
+	var window = twiki.Window.openPopup(
+		"https://www.cs.uic.edu/bin/view/",
+			{
+	 			topic:"WebTemplateTopics",
+	 			web:"TWiki",
+	 			template:"viewplain",
+	 			attributes:"resizable=1,scrollbars=1,status=1,toolbar=1",
+	 			urlparams:"web=PSYu"
+	 		}
+	 	);
+	return false;
+}
+function getQueryUrl() {
+	return "/bin/view/PSYu/WebCreateNewTopic?;pickparent=1"
+}
+/* Localized texts */
+var TEXT_FEEDBACK_HEADER = "Topic will be named: ";
+/* Url params */
+var URL_PICK_PARENT = "";
+var URL_TEMPLATE = "";
+//]]>
+</script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/webtopiccreator.js"></script>
 <style type="text/css" media="all">
 @import url('/pub/TWiki/TWikiTemplates/base.css');
 </style>
@@ -111,48 +138,7 @@ pre {
 </script>
 
 <!-- /Google Analytics Snippet -->
-<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
-@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
-</style>
-<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
-<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
-<script type="text/javascript">
-// <![CDATA[
-var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
-document.write(styleText);
-// ]]>
-</script>
-
-<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
-.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
-.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
-.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
-.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
-.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
-.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
-.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
-.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
-.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
-.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
-.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
-.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
-.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
-</style></head>
+</head>
 <body class="patternViewPage">
 <a name="PageTop"></a>
 <div id="patternScreen">
@@ -161,110 +147,64 @@ document.write(styleText);
 <div id="patternWrapper"><div id="patternOuter">
 <div id="patternFloatWrap">
 <div id="patternMain"><div id="patternClearHeaderCenter"></div>
-<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CSGSA/WebHome">CSGSA Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CSGSA/WebLeftBar" class="twikiLink">WebLeftBar</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CSGSA/WiCS" title='Topic revision: 10 (2014-03-11 - 15:40:30)'>WiCS</a> <span class='patternRevInfo'>(2014-03-11, Main.pbeltr1)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CSGSA/WiCS?t=1542824961' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CSGSA/WiCS' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h1><a name="Women_in_Computer_Science_WiCS_U"></a> Women in Computer Science (<a href="/bin/view/CSGSA/WiCS" class="twikiCurrentTopicLink twikiLink">WiCS</a>) @ UIC </h1>
-<h3><a name="Trash_WiCS_Tea_4_8_2011"></a> Trash/WiCS Tea -- 4/8/2011 </h3>
+<div id="patternMainContents"><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic">
+<h1><a name="Create_New_Topic_in_PSYu_Web"></a> Create New Topic in PSYu Web </h1>
+<form name="newtopicform" id="newtopicform" action="/bin/edit/PSYu/">
+<input type="hidden" name="onlynewtopic" value="on" />
+<input type="hidden" name="nowysiwyg" value="0" />
+<div class="twikiFormSteps">
+<div class="twikiFormStep">
+<h3><a name="Topic_name"></a> Topic name: </h3>
+<p>
+<input type="text" class="twikiInputField" name="topic" id="topic" size="40"   /> <span id="webTopicCreatorFeedback" class="twikiGrayText"><!--generated name will be put here--></span>
+</p><p><input type="checkbox" id="nonwikiword" name="nonwikiword" %NONWIKIWORDFLAG% /><label for="nonwikiword">Allow non WikiWord for the new topic name</label><br /> It's usually best to choose a <a target='WikiWord' class='twikiPopUp' href='/bin/view/TWiki/WikiWord' rel='nofollow'>WikiWord</a> for the new topic name, otherwise automatic linking may not work. Characters not allowed in topic names, such as spaces will automatically be removed.</p>
+</div><!--/twikiFormStep-->
+<div class="twikiFormStep">
+<h3><a name="Topic_parent"></a> Topic parent: </h3>
+<p>
+<input type='text' size='40' name='topicparent' class='twikiInputField' value='' />&nbsp;<a id='pickparent' href='/bin/view/PSYu/WebCreateNewTopic?;pickparent=1'>Pick from a list</a>
+</p>
+</div><!--/twikiFormStep-->
+<div class="twikiFormStep">
+<h3><a name="Use_template"></a> Use template: </h3>
+<p>
+<select name="templatetopic" class="twikiSelect"><option value="">Default template</option></select> <a id="viewtemplates" href="https://www.cs.uic.edu/bin/view/TWiki/WebTemplateTopics?web=PSYu">View templates</a> 
+</p>
+</div><!--/twikiFormStep-->
+<div class="twikiFormStep">
+<p>
+<input id="submit" type="submit" class="twikiSubmit" value='Create this topic' />
+</p>
+</div><!--/twikiFormStep-->
+</div><!--/twikiFormSteps-->
+</form>
+</div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
 <p />
-This is an opportunity for undergraduate, graduate and faculty women in the CS dept. to network, socialize and learn about the CS dept. and programs within.
-<p />
-<strong><em>Place</em></strong>: SEO 1325<br /><strong><em>Date/Time</em></strong>: Friday, Apr. 8th from 3-4pm
-<h3><a name="Trash_WiCS_Tea_11_19_2010"></a> Trash/WiCS Tea -- 11/19/2010 </h3>
-<p />
-This is an opportunity for undergraduate, graduate and faculty women in the CS dept. to network, socialize and learn about the CS dept. and programs within.
-<p />
-<strong><em>Place</em></strong>: SEO 1325<br /><strong><em>Date/Time</em></strong>: Friday, Nov. 19th from 3-4pm
-<h3><a name="Grace_Hopper_Celebration_of_Wome"></a> <a href="http://gracehopper.org/2010/" target="_top">Grace Hopper Celebration of Women in Computing 2010</a> </h3>
-<p />
-<em><strong>GHC report + panel discussion on Trash/WiCS issues<br /> </strong></em>on <em> <strong>Friday</strong> <strong>. Oct 22nd, 2010 </strong></em>from<em><strong> 4-5pm</strong></em><br /> in <strong><em>SEO 1000</em></strong>.
-<p />
-Check out the <a target="_blank" href="http://uic-ghc-2010.blogspot.com/">blog</a> where the UIC CS students who went to the <a target="_top" href="http://gracehopper.org/2010/">Grace Hopper Celebration of Women in Computing </a>2010 share their experiences.
-<h3><a name="Trash_WiCS_Lunch_3_15_2010"></a> Trash/WiCS Lunch -- 3/15/2010 </h3>
-<p />
-We will have guest speaker <a href="http://www.soc.northwestern.edu/justine/" target="_top">Prof. Justine Cassell</a> from Northwestern University give a talk about her research followed by lunch and the opportunity to pick her brain and learn about her unique career path.<br /><em><strong>Place</strong></em>: SEO 1000<br /><strong><em>Date/Time</em></strong>: Monday, March 15th from 12pm-1pm<br /><strong>RSVP required!!!</strong> (Email Habiba at <a href="mailto&#58;habibah&#64;gmail&#46;com">habibah&#64;gmail.com</a>)
-<p />
-.....
-<p />
-<strong><em>Title</em></strong>: Social Practice: Identity and Culture in Embodied Conversational Agents<br /> <br /><em><strong>Speaker</strong></em>: Justine Cassell<br /> <font size="2"> </font><font face="Verdana, Arial, Helvetica, sans-serif" color="#ffffff" style="color: #000000" size="2">Professor, Media Technology &amp; Society,<br /> Northwestern University,<br /> <a target="_blank" href="http://www.soc.northwestern.edu/justine/">http://www.soc.northwestern.edu/justine/</a><br /></font><em><strong>Date &amp; Time</strong></em>: Mon. March 15th, 11am<br /> <strong><em>Venue</em></strong>: SEO 1000<br /> <br /><em><strong>Abstract</strong></em>:<br />In this talk I propose a particular sociocultural approach to the study of the so-called "social emotions" - intrinsically dyadic states such as rapport, friendship, intimacy, affection. I rely on this approach to describe the surface level observable verbal and nonverbal behaviors that function to evoke, deepen, reveal, and destroy these dyadic social emotions. I show how the social emotions do not always play a positive role in people's interactions. And then I describe how the relationship between observable behaviors and inferable underlying social states functions against a background of culture and history, and therefore plays a role in deploying, displaying, and demonstrating aspects of identity. Each step of this talk is demonstrated by experiments that involve human-human, and human-computer agent interaction. I include novel approaches to modeling and generating behaviors for human-agent interaction on the basis of the human-human corpora. And finally, lessons are drawn both for the study of human behavior, and the improved design of technologies capable of engaging in human-computer interaction over the long-term.
-<p />
-<h3><a name="UIC_WISE_receives_Google_RISE_Aw"></a> UIC WISE receives Google RISE Award -- 2/10/2010 </h3>
-<p />
-The <a href="http://www.uicwise.org/" target="_top">Women in Science and Engineering (WISE)</a> organization at UIC (Veronica Arreola director) has received a 2010 <a href="http://www.google.com/corporate/diversity/rise/" target="_top">Google RISE Award</a> to support the activities of <a href="http://www.cs.uic.edu/bin/view/CSGSA/WiCS" target="_top">Women in Computer Science (WiCS)</a> (student leader <a href="http://www.cs.uic.edu/~aanand/" target="_top">Anushka Anand</a> and faculty advisor <a href="http://compbio.cs.uic.edu/~tanya/" target="_top">Prof. Tanya Berger-Wolf</a>).
-<div id=":72"> <br /> Google RISE (Roots in Science and Engineering) Awards are designed to promote and support science, technology, engineering, mathematics (STEM) and computer science (CS) education initiatives. </div><div id=":72"> </div><div id=":72">Keep an eye out for the great things to come supported by this award!</div><div id=":72">&lt; Contact Anushka if you would like to get involved!&gt;<br /> </div>
-<p />
-<h3><a name=""></a>  </h3>
-<h3><a name="Grace_Hopper_Celebration_of_AN1"></a> <a href="http://gracehopper.org/2009/" target="_top">Grace Hopper Celebration of Women in Computing 2009</a> </h3>
-<p />
-<em><strong>GHC report + panel discussion on Trash/WiCS issues<br /> </strong></em>on <em> <strong>Friday</strong> <strong>. Oct 16th, 2009 </strong></em>from<em><strong> 4-4:30pm</strong></em><br /> in <strong><em>SEO 1000</em></strong>.
-<p />
-Check out the <a href="/bin/view/CSGSA/GHC2009" class="twikiLink">impressions of the GHC 2009</a> page where the 8 UIC CS students who went to the <a target="_top" href="http://gracehopper.org/2009/">Grace Hopper Celebration of Women in Computing</a>2009 share their experiences.
-<p />
-Also, for notes on the sessions of the conference visit: <a href="http://community.anitaborg.org/wiki/index.php/Ghc2009" target="_top">http://community.anitaborg.org/wiki/index.php/Ghc2009</a>
-<p />
-<h3><a name="Trash_WiCS_Lunch_2009"></a> Trash/WiCS Lunch 2009 </h3>
-<p />
-Mark your calendars for the<strong><br />2009 Trash/WiCS Lunch</strong><br />on <em><strong>Tues. Oct 13th, 2009 </strong></em>from<em><strong> 1-2:30pm</strong></em><br />in <strong><em>SEO 1000</em></strong>.
-<p />
-This is a gathering of all the women undergrads, grads and faculty in the CS dept. to share ideas, network, socialize and plan future collaborations like<br />gaming contests or outreach events. All that over free food! How great does that sound?! So don't miss out! For more informa tion, see:
-<p />
-<a href="https://www.cs.uic.edu/pub/CSGSA/WiCS/wicsFlyer.pdf" target="_top">wicsFlyer.pdf</a>
-<p />
-<hr /> </div><!-- /patternTopic-->
-<div class="twikiContentFooter"></div><div class="twikiAttachments">
-<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
-<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
-		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CSGSA/WiCS?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CSGSA/WiCS?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CSGSA/WiCS?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CSGSA/WiCS?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CSGSA/WiCS?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/CSGSA/WiCS?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
-			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/CSGSA/WiCS?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
-		</tr>
-		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
-			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/pdf.gif" width="16" height="16" alt="PDF" title="PDF" border="0" /><span class="twikiHidden">pdf</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/CSGSA/WiCS/wicsFlyer.pdf">wicsFlyer.pdf</a> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/CSGSA/WiCS?filename=wicsFlyer.pdf;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
-			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 50.9&nbsp;K </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2009-10-06 - 01:34</span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CSGSA.WiCS;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
-			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> <a href="/bin/view/CSGSA/WiCS" class="twikiCurrentTopicLink twikiLink">WiCS</a> Lunch oct2009 flyer </td>
-		</tr></table>
-</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
-<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CSGSA/WiCS?t=1542824961' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CSGSA/WiCS' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CSGSA/WiCS?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CSGSA/WiCS?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r10&nbsp;<a rel="nofollow" href="/bin/rdiff/CSGSA/WiCS?rev1=10;rev2=9">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CSGSA/WiCS?rev=9">r9</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CSGSA/WiCS?rev1=9;rev2=8">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CSGSA/WiCS?rev=8">r8</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CSGSA/WiCS?rev1=8;rev2=7">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CSGSA/WiCS?rev=7">r7</a>&nbsp;<a rel="nofollow" href="/bin/rdiff/CSGSA/WiCS?rev1=7;rev2=6">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CSGSA/WiCS?rev=6">r6</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CSGSA/WiCS?template=backlinksweb' rel='nofollow' title='Search the CSGSA Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CSGSA/WiCS?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CSGSA/WiCS?t=1542824961;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CSGSA/WiCS?template=oopsmore&amp;param1=10&amp;param2=10' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r10 - 2014-03-11 - 15:40:30 - Main.pbeltr1</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
 </div><!-- /patternMainContents-->
 </div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
 <div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
-<li> <a href="/bin/view/CSGSA/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CSGSA</a>
+<li> <a href="/bin/view/PSYu/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> PSYu</a>
 </li></ul> 
 </div> <ul>
-<li> <a href="/bin/view/CSGSA/WebHome" class="twikiCurrentWebHomeLink twikiLink">CSGSA Front Page</a>
-</li> <li> <a href="/bin/view/CSGSA/Officers" class="twikiLink">The Officers</a>
-</li> <li> <a href="/bin/view/CSGSA/Organization" class="twikiLink">The Organization</a>
-</li> <li> <a href="/bin/view/CSGSA/Constitution" class="twikiLink">The Constitution</a>
-</li> <li> <a href="/bin/view/CSGSA/Calendar" class="twikiLink">Events Calendar</a>
-</li> <li> <a href="/bin/view/CSGSA/PastActivities" class="twikiLink">Past Activities</a>
-</li> <li> <a href="/bin/view/CSGSA/WiCS" class="twikiCurrentTopicLink twikiLink">WiCS</a>
-</li> <li> <a href="/bin/view/CSGSA/Resources" class="twikiLink">Resources</a>
+<li> <a href="/bin/view/PSYu/Research" class="twikiLink">Research</a>
+</li> <li> <a href="/bin/view/PSYu/Teaching" class="twikiLink">Teaching</a>
+</li> <li> <a href="http://bdsc.lab.uic.edu/" target="_top">Lab</a>
+</li> <li> <a href="/bin/view/PSYu/RecentPublicatios" class="twikiLink">Recent Publicatios</a>
+</li> <li> <a href="/bin/view/PSYu/Publications" class="twikiLink">Prior 2012 Publications</a>
+</li> <li> <a href="/bin/view/PSYu/Links" class="twikiLink">Links</a>
+</li> <li> <a href="/bin/view/PSYu/Awards" class="twikiLink">Awards</a>
+</li> <li> 
+</li> <li> 
+</li> <li> <a href="/bin/view/PSYu/Contact" class="twikiLink">Contact</a>
 </li></ul> 
-<a href="/bin/edit/CSGSA.WebLeftBar" target="_top">[edit this</a>]
-<p />
-<hr />
-<div class="patternLeftBarPersonal">
-<ul><li class="patternLogIn"><a href="/bin/logon/CSGSA/WiCS">Log In</a> </li></ul>
-</div><!--/patternLeftBarPersonal-->
+<a href="/bin/edit/PSYu.WebLeftBar" target="_top">edit this</a>
 <p /> <ul>
-<li> <strong><a href="/bin/view/CSGSA/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CSGSA Web</a></strong>
-</li> <li> <a href="/bin/view/CSGSA/WebCreateNewTopic?topicparent=WiCS" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
-</li> <li> <a href="/bin/view/CSGSA/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
-</li> <li> <a href="/bin/view/CSGSA/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
-</li> <li> <a href="/bin/view/CSGSA/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
-</li> <li> <a href="/bin/view/CSGSA/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
-</li> <li> <a href="/bin/view/CSGSA/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
-</li> <li> <a href="/bin/view/CSGSA/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
-</li> <li> <a href="/bin/view/CSGSA/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+<li> <a href="/bin/view/PSYu/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> PSYu Web</a>
+</li> <li> <a href="/bin/view/PSYu/WebCreateNewTopic?topicparent=WebCreateNewTopic" target="_top"><img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/PSYu/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/PSYu/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
 </li></ul> 
-<p />
-<hr />
 </div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
 </div><!-- /patternFloatWrap-->
 <div class="clear">&nbsp;</div>

@@ -1,216 +1,343 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="https://ampersand.honors.uic.edu/xmlrpc.php">
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> Proj2s12 &lt; CS101 &lt; TWiki</title>
 
-<title>Focus on Faculty: Richard Stringham &#8211; The Ampersand</title>
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="The Ampersand &raquo; Feed" href="https://ampersand.honors.uic.edu/feed/" />
-<link rel="alternate" type="application/rss+xml" title="The Ampersand &raquo; Comments Feed" href="https://ampersand.honors.uic.edu/comments/feed/" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ampersand.honors.uic.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<link rel="icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="https://www.cs.uic.edu/bin/edit/CS101/Proj2s12?_T=2018-11-25" type="application/x-wiki" title="edit Proj2s12" />
+<link rel="shortcut icon" href="https://www1.cs.uic.edu/images/favicon.ico" type="image/x-icon" />
+<meta name="SCRIPTURLPATH" content="/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/bin/view/CS101/WebRss" />
+<base href="https://www.cs.uic.edu/bin/view/CS101/Proj2s12"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/pub/TWiki/PatternSkin/pattern.js"></script>
+<style type="text/css" media="all">
+@import url('/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight,
+#patternTopBarContentsOuter,
+#patternTopBarContents {
+/*	height:64px; */ /* top bar height; make room for header columns */
+	overflow:hidden;
+}
+#patternOuter {
+	margin-left:14em;
+}
+#patternLeftBar {
+	width:14em;
+	margin-left:-14em;
 }
 </style>
-<link rel='stylesheet' id='motif-fonts-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C400italic%2C700%2C700italic%7CDroid+Sans%3A400%2C700&#038;subset=latin' type='text/css' media='all' />
-<link rel='stylesheet' id='genericons-css'  href='https://ampersand.honors.uic.edu/wp-content/themes/motif/fonts/genericons.css?ver=2.09' type='text/css' media='all' />
-<link rel='stylesheet' id='motif-style-css'  href='https://ampersand.honors.uic.edu/wp-content/themes/motif/style.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='https://api.w.org/' href='https://ampersand.honors.uic.edu/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ampersand.honors.uic.edu/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ampersand.honors.uic.edu/wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='Athlete Focus: The Business of Baseball' href='https://ampersand.honors.uic.edu/gabe-dwyer/' />
-<link rel='next' title='The Gilman Scholarship: The Gateway to My Semester in Barcelona' href='https://ampersand.honors.uic.edu/the-gilman-scholarship-the-gateway-to-my-semester-in-barcelona/' />
-<meta name="generator" content="WordPress 4.9.8" />
-<link rel="canonical" href="https://ampersand.honors.uic.edu/richard-stringham/" />
-<link rel='shortlink' href='https://ampersand.honors.uic.edu/?p=589' />
-<link rel="alternate" type="application/json+oembed" href="https://ampersand.honors.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fampersand.honors.uic.edu%2Frichard-stringham%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://ampersand.honors.uic.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fampersand.honors.uic.edu%2Frichard-stringham%2F&#038;format=xml" />
-	<style type="text/css" id="motif-header-css">
-					.site-title,
-			.site-description {
-				clip: rect(1px, 1px, 1px, 1px);
-				position: absolute;
-			}
-			</style>
-	<style type="text/css" id="custom-background-css">
-body.custom-background { background-image: url("https://ampersand.honors.uic.edu/wp-content/themes/motif/images/body-bg.png"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: scroll; }
+<style type="text/css" media="all">
+@import url('/pub/TWiki/PatternSkin/layout.css');
+@import url('/pub/TWiki/PatternSkin/style.css');
+@import url('/pub/TWiki/PatternSkin/colors.css');
 </style>
-</head>
-
-<body class="post-template-default single single-post postid-589 single-format-standard custom-background">
-<div id="page" class="hfeed site">
-		<header id="masthead" class="site-header" role="banner">
-
-		<div class="site-branding">
-						<div class="site-image">
-				<a href="https://ampersand.honors.uic.edu/" title="The Ampersand" rel="home" class="header-image-link">
-					<img src="https://ampersand.honors.uic.edu/wp-content/uploads/2015/10/cropped-AmpersandFinalHeader.png" width="1500" height="349" alt="" />
-				</a>
-			</div><!-- .header-image -->
-			
-			
-			<h1 class="site-title"><a href="https://ampersand.honors.uic.edu/" title="The Ampersand" rel="home">The Ampersand</a></h1>
-
-						<h2 class="site-description">UIC Honors College</h2>
-					</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle">Menu</h1>
-			<div class="screen-reader-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
-
-			<div class="menu-master-menu-container"><ul id="menu-master-menu" class="menu"><li id="menu-item-950" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-950"><a href="https://ampersand.honors.uic.edu/">Home</a></li>
-<li id="menu-item-951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951"><a href="https://ampersand.honors.uic.edu/about-us-1/">About Us</a></li>
-<li id="menu-item-949" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-949"><a href="https://ampersand.honors.uic.edu/news/">News</a></li>
-<li id="menu-item-952" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-952"><a href="https://ampersand.honors.uic.edu/category/blog-posts/">Blog</a></li>
-<li id="menu-item-948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-948"><a href="https://ampersand.honors.uic.edu/authors/">Contributors</a></li>
-<li id="menu-item-947" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-947"><a href="https://ampersand.honors.uic.edu/past-issues/">Past Issues</a></li>
-<li id="menu-item-946" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-946"><a href="https://ampersand.honors.uic.edu/suggestions/">Contact Us</a></li>
-</ul></div>		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		
-			
-<article id="post-589" class="post-589 post type-post status-publish format-standard hentry category-faculty tag-focus-on-faculty">
-
-	<header class="entry-header">
-				<h1 class="entry-title">Focus on Faculty: Richard Stringham</h1>
-		
-				<div class="entry-meta">
-			<span class="date"><a href="https://ampersand.honors.uic.edu/richard-stringham/" title="Permalink to Focus on Faculty: Richard Stringham" rel="bookmark"><time class="entry-date published" datetime="2014-02-01T18:13:18+00:00">February 1, 2014</time><time class="updated" datetime="2016-02-15T18:15:18+00:00">February 15, 2016</time></a></span><span class="author vcard"><a class="url fn n" href="https://ampersand.honors.uic.edu/author/rpate243/" title="View all posts by rpate243">rpate243</a></span>
-			
-			
-		</div><!-- .entry-meta -->
-			</header><!-- .entry-header -->
-
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#D0D0D0;
+	}
+	#patternTopBarContents { background-image:url(none); background-repeat:no-repeat;}
 	
-		<div class="entry-content">
-		<div>
-<p><a href="http://ampersand.honors.uic.edu/wp-content/uploads/2014/04/FellowStringham2008.jpg"><img class="alignleft size-medium wp-image-590" src="http://ampersand.honors.uic.edu/wp-content/uploads/2014/04/FellowStringham2008.jpg" alt="FellowStringham2008" width="240" height="300" /></a>Richard Stringham, M.D. is passionate about UIC and its students. As the Director of Medical Student Education and Assistant Professor of Clinical Family Medicine at the UIC College of Medicine, Dr. Stringham is focused on seeing students succeed and has been distinguished with multiple honors—including the UIC College of Medicine M-3 Golden Apple Award and the Council for Excellence in Teaching and Learning’s Teaching Recognition Program Award. Although he divides his time between caring for patients, teaching future doctors, and researching innovations in the field of medicine, Stringham is an educator at heart.</p>
-<p>As the Director of Medical Student Education, Stringham has tips for Honors College students who are looking to become a part of the medical field. He encourages students to be “thorough communicators” and learn about other cultures in order to stay abreast of the continually changing facets of medicine. Stringham recently spoke to the Honors College’s Society of Future Physicians about the medical school process, answering questions and providing unique insight into the field. Sharing in the educational mission of the Honors College, he fosters the intellectual stimulation of the students and hopes to get more involved with the undergraduate population in the future.</p>
-<p>While working with third year medical students in the College of Medicine, Dr. Stringham loves combining the “clinical and teaching aspects of medicine.” He finds it extremely gratifying to see medical students make connections between basic medical sciences and actual medical practice. When he is not practicing medicine or teaching, Stringham researches medical assessments and the psychological factors affecting participation in the evaluation process. He is interested in finding out why patients say “yes” or “no” to having a medical student see them in the clinical setting. Focused on building a brighter future for the medical field, Dr. Stringham exemplifies the duties of an educator.</p>
-<p><em>by Rafid Rahman, Freshman, Biology  </em></p>
+	.patternBookView {
+		border-color:#D0D0D0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+@import url('/pub/Main/WebPreferences/mainweb.css');
+
+</style>
+<style type="text/css" media="all">
+	@import url("/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+<!-- Google Analytics Snippet -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17081517-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+'.google-analytics.com/ga.js';
+	 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- /Google Analytics Snippet -->
+<!--GENERATED_HEADERS--><!-- TWISTYPLUGIN_TWISTY --> <style type="text/css" media="all">
+@import url("https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.css");
+</style>
+<script type='text/javascript' src='https://www.cs.uic.edu/pub/TWiki/BehaviourContrib/behaviour.compressed.js'></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiPref.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="https://www.cs.uic.edu/pub/TWiki/TwistyContrib/twist.compressed.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var styleText = '<style type="text/css" media="all">.twikiMakeVisible{display:inline;}.twikiMakeVisibleInline{display:inline;}.twikiMakeVisibleBlock{display:block;}.twikiMakeHidden{display:none;}</style>';
+document.write(styleText);
+// ]]>
+</script>
+
+<!-- TABLEPLUGIN_twikiAttachmentsTable --> <style type="text/css" media="all">
+.tableSortIcon img {padding-left:.3em; vertical-align:text-bottom;}
+.twikiTable#twikiAttachmentsTable td {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable th {border-style:solid none;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable th {vertical-align:middle;}
+.twikiTable#twikiAttachmentsTable td {vertical-align:top;}
+.twikiTable#twikiAttachmentsTable th {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable th.twikiSortedCol {background-color:#eeeeee;}
+.twikiTable#twikiAttachmentsTable th {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:link font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:visited font {color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable th a:hover font {color:#ffffff;background-color:#0066cc;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td {background-color:#ffffff;}
+.twikiTable#twikiAttachmentsTable tr.twikiTableRowdataBg0 td.twikiSortedCol {background-color:#f5f5f5;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol0 {text-align:center;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol1 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol2 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol3 {text-align:right;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol4 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol5 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol6 {text-align:left;}
+.twikiTable#twikiAttachmentsTable td.twikiTableCol7 {text-align:center;}
+</style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop"><span class="patternHomePath twikiLeft"><a href="/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#D0D0D0" />&nbsp;<a href="/bin/view/CS101/WebHome">CS101 Web</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS101/CS101Spring2012" class="twikiLink">CS101Spring2012</a><span class='twikiSeparator'>&gt;</span><a href="/bin/view/CS101/AssignmentsS12" class="twikiLink">AssignmentsS12</a><span class='twikiSeparator'>&gt;</span><a href="https://www.cs.uic.edu/bin/view/CS101/Proj2s12" title='Topic revision: 2 (2012-03-01 - 19:41:35)'>Proj2s12</a> <span class='patternRevInfo'>(2012-03-01, Main.troy)</span></span><!-- /patternHomePath--><span class="patternToolBar twikiRight"><span><a href='https://www.cs.uic.edu/bin/edit/CS101/Proj2s12?t=1543180037' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span><a href='/bin/attach/CS101/Proj2s12' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span></span><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <h2><a name="CS_101_Introduction_to_Computing"></a> <a href="https://www.cs.uic.edu/CS101" target="_top">CS 101 - Introduction to Computing </a> </h2>
+<h2><a name="Project_2_Image_Authentication"></a> Project 2 - Image Authentication </h2>
+<h3><a name="Due_Date_Thursday_3_8_2012_at_11"></a> Due Date: Thursday 3/8/2012 at 11:59 pm </h3>
+ For this assignment, we will be doing image authentication. The idea is that we are checking to see if a copy of a picture has been modified away from the original picture.
+<p />
+We will be using three pictures for this project. The first picture will be the original. The second picture will be the copy that is being checked for modifications. The third picture will be created by the program which will show only the parts of the original that were modified in the copy. The user is to prompt the user for the original and the copy (using <a href="/bin/view/CS101/FileChooser" class="twikiLink">FileChooser</a>.pickAFile() twice is the suggested way to prompt the user for these two pictures).
+<p />
+The first two pictures must have the same width and height. If the two pictures do not have the same size, print out an error message and quit the program. The third pictures is to be created to have the same width and height.
+<p />
+For each pixel position in the first picture, compare the color of that pixel with the color of the pixel in the same position from second picture. If the two pixels have the same color (i.e. the original is not modified in the copy), set the color of this position in the third picture to black. If the two pixels do not have the same color, set the color of this position in the third picture to the color of the pixel from the original picture.
+<p />
+After all the positions have been checked and the third picture has been completely created, the third picture is to be displayed and the user should be asked to provide a filename to save the third picture. Again, <a href="/bin/view/CS101/FileChooser" class="twikiLink">FileChooser</a>.pickAFile() should be used for the prompting of the filename.
+<p />
+Note: if the color in the original picture at a modified position is black or nearly black, it may be hard to detect the modified parts.
+<p />
+The following are original pictures and modified pictures: <ul>
+<li> Picture 1: Lady in Stripes<br /><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/barbara_jpeg_wm.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/barbara_jpeg_wm.gif" target="_top">Original Image</a></p><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/barbara_jpeg_manip.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/barbara_jpeg_manip.gif" target="_top">Modified Images</a></p><p> </p>
+</li> <li> Picture 2: Birds of a Feather<br /><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/birds_1.jpg" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/birds_1.jpg" target="_top">Original Image</a></p><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/birds_2.jpg" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/birds_2.jpg" target="_top">Modified Images</a></p><p> </p>
+</li> <li> Picture : The Shipyard <p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/fishingboat_wm.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/fishingboat_wm.gif" target="_top">Original Image</a></p><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/fishingboat_manip.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/fishingboat_manip.gif" target="_top">Modified Images</a></p><p> </p>
+</li> <li> Picture 4: Where's Alfred? <br /><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/houses_jpeg_wm.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/houses_jpeg_wm.gif" target="_top">Original Image</a></p><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/houses_jpeg_manip.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/houses_jpeg_manip.gif" target="_top">Modified Images</a></p><p> </p>
+</li> <li> Picture 5: Eating Oranges <p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/man512_jpeg_wm.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/man512_jpeg_wm.gif" target="_top">Original Image</a></p><p> <img alt="" src="http://www.cs.uic.edu/~troy/spring10/cs101/projects/man512_jpeg_manip.gif" /><br /> <a href="http://www.cs.uic.edu/~troy/spring10/cs101/projects/man512_jpeg_manip.gif" target="_top">Modified Images</a></p>
+</li> <li> <p> </p>
+</li> <li> Picture 6: The Butterfly<p> <img alt="butterflyorig.jpg" src="https://www.cs.uic.edu/pub/CS101/Proj2s12/butterflyorig.jpg" /><br /> Original Image</p><p> <img alt="butterflymanip.jpg" src="https://www.cs.uic.edu/pub/CS101/Proj2s12/butterflymanip.jpg" /><br /> Modified Image</p><p> </p>
+</li></ul> 
+<a href="/bin/view/CS101/Proj2ResultsS12" class="twikiLink"><font face="#mce_temp_font#">Look here for results of this program.</font></a>
+<p />
+<h3><a name="Project_Collaboration"></a> Project Collaboration </h3>
+ You are allowed to receive help on this project from other students who are also taking CS 101. Each student must still complete and submit his/her own project. You will be required to include a <strong>Collaboration Statement</strong> somewhere on your project if you receive help. This statement can simply be something like the following: <blockquote> For this project, I received help from the following member of CS 101.  <ul>
+<li> <strong>Devang Jariwala</strong>, netID: djariw1
+</li> <li> <strong>Shun Liang</strong>, netID: sliang2
+</li> <li> <strong>Hongwei Zhu</strong>, netID: hzhu7
+</li></ul> 
+</blockquote> This statement should list each helping student's name in a comment in the "header comment" of your Java file that includes the main() method. 
+<h3><a name="Programming_Style"></a> Programming Style </h3>
+ Your program must be written in good programming style which includes:  <ul>
+<li> Meaningful Variable Names
+</li> <li> Proper Indentation of Code
+</li> <li> Blank Lines between Code Sections
+</li> <li> Use of Methods
+</li> <li> In-Line Commenting
+</li> <li> Header Comment for the File
+</li> <li> Header Comments for each Method.
+</li></ul> 
+<h3><a name="How_assignments_should_be_submit"></a> How assignments should be submitted </h3>
+ You are also to submit the Java file electronically via the Assignment link in Blackboard for this lab. You are to name your file with the lab number and your netID. Please only submit source code file (the <strong>.java</strong> file, not the <strong>.class</strong> file nor the <strong>.java~</strong> file).
+<p />
+<cite> <a href="file:///C:/Documents%20and%20Settings/Pat%20Troy/My%20Documents/Courses/101%20IntroductionToComputing/folder%20s11/i101/WWW/" target="_top">CS 101 Home Page</a><br /> <a href="http://www.cs.uic.edu/" target="_top">Department of Computer Science</a><br /> <a href="http://www.uic.edu/" target="_top">University of Illinois at Chicago</a></cite> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div><div class="twikiAttachments">
+<div class="twistyPlugin twikiMakeVisibleInline">  <span id="topicattachmentslistshow" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleopen.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span> <span id="topicattachmentslisthide" class="twistyRememberSetting twistyTrigger twikiUnvisited twistyHidden twistyInited"><a href="#"><img src="/pub/TWiki/TWikiDocGraphics/toggleclose.gif" border="0" alt="" /><span class="twikiLinkLabel twikiUnvisited">Attachments</span></a> </span>  </div><!--/twistyPlugin twikiMakeVisibleInline--> <div class="twistyPlugin"><div id="topicattachmentslisttoggle" class="twistyRememberSetting twistyContent twikiMakeHidden twistyInited">
+<table summary="Topic attachments" cellspacing="0" id="twikiAttachmentsTable" cellpadding="0" class="twikiTable" rules="rows" border="1"><caption>Topic attachments</caption>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol0 twikiFirstCol"> <a rel="nofollow" href="/bin/view/CS101/Proj2s12?sortcol=0;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">I</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol1"> <a rel="nofollow" href="/bin/view/CS101/Proj2s12?sortcol=1;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Attachment</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol2"> <a rel="nofollow" href="/bin/view/CS101/Proj2s12?sortcol=2;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Action</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol3"> <a rel="nofollow" href="/bin/view/CS101/Proj2s12?sortcol=3;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Size</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol4"> <a rel="nofollow" href="/bin/view/CS101/Proj2s12?sortcol=4;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Date</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol5"> <a rel="nofollow" href="/bin/view/CS101/Proj2s12?sortcol=5;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Who</font></a> </th>
+			<th bgcolor="#ffffff" valign="middle" class="twikiTableCol6 twikiLastCol"> <a rel="nofollow" href="/bin/view/CS101/Proj2s12?sortcol=6;table=1;up=0#sorted_table" title="Sort by this column"><font color="#0066cc">Comment</font></a> </th>
+		</tr>
+		<tr class="twikiTableEven twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol"> <img src="/pub/TWiki/TWikiDocGraphics/jpg.gif" width="16" height="16" alt="JPEG" title="JPEG" border="0" /><span class="twikiHidden">jpg</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1"> <a href="/pub/CS101/Proj2s12/butterflymanip.jpg">butterflymanip.jpg</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2"> <a href="/bin/attach/CS101/Proj2s12?filename=butterflymanip.jpg;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3"> 35.1&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4"> <span class="twikiNoBreak">2012-02-17 - 15:28</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS101.Proj2s12;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0">
+			<td bgcolor="#ffffff" align="center" valign="top" class="twikiTableCol0 twikiFirstCol twikiLast"> <img src="/pub/TWiki/TWikiDocGraphics/jpg.gif" width="16" height="16" alt="JPEG" title="JPEG" border="0" /><span class="twikiHidden">jpg</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol1 twikiLast"> <a href="/pub/CS101/Proj2s12/butterflyorig.jpg">butterflyorig.jpg</a> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol2 twikiLast"> <a href="/bin/attach/CS101/Proj2s12?filename=butterflyorig.jpg;revInfo=1" title="change, update, previous revisions, move, delete..." rel="nofollow">manage</a> </td>
+			<td bgcolor="#ffffff" align="right" valign="top" class="twikiTableCol3 twikiLast"> 34.9&nbsp;K </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol4 twikiLast"> <span class="twikiNoBreak">2012-02-17 - 15:28</span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol5 twikiLast"> <span class="twikiNewLink"><a href="https://www.cs.uic.edu/bin/edit/Main/UnknownUser?topicparent=CS101.Proj2s12;nowysiwyg=0" rel="nofollow" title="UnknownUser (this topic does not yet exist; you can create it)">UnknownUser</a></span> </td>
+			<td bgcolor="#ffffff" align="left" valign="top" class="twikiTableCol6 twikiLastCol twikiLast"> &nbsp; </td>
+		</tr></table>
+</div></div> <!--/twistyPlugin--></div><!--//twikiAttachments--></div><!-- /patternContent-->
+<a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons"><span><a href='https://www.cs.uic.edu/bin/edit/CS101/Proj2s12?t=1543180037' rel='nofollow' title='Edit this topic text' accesskey='e'><span class='twikiAccessKey'>E</span>dit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/attach/CS101/Proj2s12' rel='nofollow' title='Attach an image or document to this topic' accesskey='a'><span class='twikiAccessKey'>A</span>ttach</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS101/Proj2s12?cover=print' rel='nofollow' title='Printable version of this topic' accesskey='p'><span class='twikiAccessKey'>P</span>rint version</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><span><a href='/bin/rdiff/CS101/Proj2s12?type=history' rel='nofollow' title='View total topic history' accesskey='h'><span class='twikiAccessKey'>H</span>istory</a></span>: r2&nbsp;<a rel="nofollow" href="/bin/rdiff/CS101/Proj2s12?rev1=2;rev2=1">&lt;</a>&nbsp;<a rel="nofollow" href="/bin/view/CS101/Proj2s12?rev=1">r1</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS101/Proj2s12?template=backlinksweb' rel='nofollow' title='Search the CS101 Web for topics that link to here' accesskey='b'><span class='twikiAccessKey'>B</span>acklinks</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/view/CS101/Proj2s12?raw=on' rel='nofollow' title='View raw text without formatting' accesskey='r'><span class='twikiAccessKey'>R</span>aw View</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='https://www.cs.uic.edu/bin/edit/CS101/Proj2s12?t=1543180037;nowysiwyg=1' rel='nofollow' title='Raw Edit this topic text' accesskey='w'>Ra<span class='twikiAccessKey'>w</span> edit</a></span><span class='twikiSeparator'>&nbsp;|&nbsp;</span><span><a href='/bin/oops/CS101/Proj2s12?template=oopsmore&amp;param1=2&amp;param2=2' rel='nofollow' title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'><span class='twikiAccessKey'>M</span>ore topic actions</a></span></span></div><!--/patternTopicAction--></div><!--/patternTopicActions--><div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r2 - 2012-03-01 - 19:41:35 - Main.troy</div><!-- /patternRevInfo--><div class="patternMoved"></div><!-- /patternMoved--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain--><div id="patternLeftBar"><div id="patternClearHeaderLeft"></div>
+<div id="patternLeftBarContents"><div class="patternWebIndicator"> <ul>
+<li> <a href="/bin/view/CS101/WebHome" class="twikiCurrentWebHomeLink twikiLink"><img src="/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" width="13" height="13" alt="Web background" title="Web background" border="0" /> CS101</a>
+</li></ul> 
+</div> <ul>
+<li> <a href="/bin/view/CS101/Syllabus" class="twikiLink">Syllabus</a>
+</li> <li> <a href="/bin/view/CS101/LectureNotes" class="twikiLink">Lecture Notes</a>
+</li> <li> <a href="/bin/view/CS101/Homeworks" class="twikiLink">Homeworks</a>
+</li> <li> <a href="/bin/view/CS101/AdditionalMaterial" class="twikiLink">Additional Material</a>
+</li></ul> 
+<a href="/bin/edit/CS101.WebLeftBar" target="_top">[edit this menu</a>]
+<p />
+<hr />
+<div class="patternLeftBarPersonal">
+<ul><li class="patternLogIn"><a href="/bin/logon/CS101/Proj2s12">Log In</a> </li></ul>
+</div><!--/patternLeftBarPersonal-->
+<p /> <ul>
+<li> <strong><a href="/bin/view/CS101/WebHome" class="twikiCurrentWebHomeLink twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/home.gif" width="16" height="16" alt="Home" title="Home" border="0" /> CS101 Web</a></strong>
+</li> <li> <a href="/bin/view/CS101/WebCreateNewTopic?topicparent=Proj2s12" target="_top"> <img src="/pub/TWiki/TWikiDocGraphics/newtopic.gif" width="16" height="16" alt="New topic" title="New topic" border="0" /> Create New Topic</a>
+</li> <li> <a href="/bin/view/CS101/WebTopicList" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/index.gif" width="16" height="16" alt="Index" title="Index" border="0" /> Index</a>
+</li> <li> <a href="/bin/view/CS101/WebSearch" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/searchtopic.gif" width="16" height="16" alt="Search topic" title="Search topic" border="0" /> Search</a>
+</li> <li> <a href="/bin/view/CS101/WebChanges" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/changes.gif" width="16" height="16" alt="Changes" title="Changes" border="0" /> Changes</a>
+</li> <li> <a href="/bin/view/CS101/WebNotify" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/notify.gif" width="16" height="16" alt="Notify" title="Notify" border="0" /> Notifications</a>
+</li> <li> <a href="/bin/view/CS101/WebRss" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/feed.gif" width="16" height="16" alt="RSS feed, rounded corners" title="RSS feed, rounded corners" border="0" /> RSS Feed</a>
+</li> <li> <a href="/bin/view/CS101/WebStatistics" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/statistics.gif" width="16" height="16" alt="Statistics" title="Statistics" border="0" /> Statistics</a>
+</li> <li> <a href="/bin/view/CS101/WebPreferences" class="twikiLink"> <img src="/pub/TWiki/TWikiDocGraphics/wrench.gif" width="16" height="16" alt="Wrench, tools" title="Wrench, tools" border="0" /> Preferences</a>
+</li></ul> 
+<p />
+<hr />
+</div><!-- /patternLeftBarContents--></div><!-- /patternLeftBar-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><div id="twikiLogo" class="twikiImage">
+<map id="logomap" name="logomap">
+	<area shape="rect" alt="" title="" coords="144,20,317,74" href="https://www.cs.uic.edu" target=""/>
+	<area shape="rect" alt="College of Engineering" title="" coords="125,76,300,91" href="http://www.engineering.uic.edu/" target=""/>
+	<area shape="rect" alt="University of Illinois at Chicago" title="" coords="10,20,120,71" href="http://www.uic.edu" target=""/>
+</map>
+<img src="https://www.cs.uic.edu/pub/cslogo_ds.png" alt="Home - this site is powered by TWiki(R)" border="0" style="border:none;" usemap="#logomap"/>
 </div>
-			</div><!-- .entry-content -->
-	
-		<footer class="entry-meta">
-		<span class="categories-links"><a href="https://ampersand.honors.uic.edu/category/faculty/" rel="category tag">Faculty Focus</a></span><span class="tags-links"><a href="https://ampersand.honors.uic.edu/tag/focus-on-faculty/" rel="tag">Focus on Faculty</a></span>	</footer><!-- .entry-meta -->
-	
-</article><!-- #post-## -->
-
-				<nav role="navigation" id="nav-below" class="post-navigation">
-		<h1 class="screen-reader-text">Post navigation</h1>
-
-	
-		<div class="nav-previous"><a href="https://ampersand.honors.uic.edu/gabe-dwyer/" rel="prev"><span class="meta-nav">&larr;</span> Athlete Focus: The Business of Baseball</a></div>		<div class="nav-next"><a href="https://ampersand.honors.uic.edu/the-gilman-scholarship-the-gateway-to-my-semester-in-barcelona/" rel="next">The Gilman Scholarship: The Gateway to My Semester in Barcelona <span class="meta-nav">&rarr;</span></a></div>
-	
-	</nav><!-- #nav-below -->
-	
-			
-		
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<div id="secondary" class="widget-area sidebar-widget-area" role="complementary">
-		<aside id="text-5" class="widget widget_text"><h1 class="widget-title">Interested in writing for us?</h1>			<div class="textwidget">Email us at uicampersand@gmail.com!</div>
-		</aside><aside id="categories-4" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
-	<li class="cat-item cat-item-2"><a href="https://ampersand.honors.uic.edu/category/awards/" >Awards, Competitions and Scholarships</a>
+<p />
+<div style="margin-left:650px; position:relative;">
+	<form name="quickSearchForm" method="get" action="https://www.google.com/search">
+		<input id=quickSearchBox type="text" class="twikiInputField" name="q" size="18" maxlength="255" value=""/>
+		<input type="hidden" name="sitesearch" value="cs.uic.edu"/>
+	</form>
+</div>
+<p />
+<div id="menuContainer" style="overflow:visible; position:absolute; z-index:2; width:640px; left:342px; top:58px;">
+<div id="navMenu">
+<ul>
+<li> <a href="#">ABOUT US</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/Main/AboutCS">Our Department</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/NewsArchive">Recent News</a></li>
+	<li><a href="https://www.cs.uic.edu/bin/view/Main/Contact">Contact Us</a></li>
+	</ul>
 </li>
-	<li class="cat-item cat-item-3"><a href="https://ampersand.honors.uic.edu/category/blog-posts/" >Blog</a>
+</ul>
+<ul>
+<li> <a href="#">ACADEMICS</a>
+	<ul>
+	<li><a href="/Main/ProspectiveStudents">Prospective Students</a></li>
+	<li><a href="/Main/UndergraduatePrograms">Undergraduate</a></li>
+	<li><a href="/Main/ComputerScienceMinor">CS Minor</a></li>       
+	<li><a href="/Main/GraduatePrograms">Graduate</a></li>
+	<li><a href="/Main/Courses">Courses</a></li>
+	</ul>
 </li>
-	<li class="cat-item cat-item-4"><a href="https://ampersand.honors.uic.edu/category/core-classes-and-seminars/" >Core Classes and Seminars</a>
+</ul>
+<ul>
+<li> <a href="#">RESEARCH</a>
+	<ul>
+	<li><a href="/Main/Research">Overview</a></li>
+	<li><a href="/Main/Faculty-Area">By Faculty</a></li>
+	<li><a href="/Main/Research#Labs">Labs</a></li>
+	</ul>
 </li>
-	<li class="cat-item cat-item-57"><a href="https://ampersand.honors.uic.edu/category/courses/" >Courses</a>
+</ul>
+<ul>
+<li> <a href="#">PEOPLE</a>
+	<ul>
+	<li><a href="https://www.cs.uic.edu/faculty/">Faculty</a></li>
+	<li><a href="https://www.cs.uic.edu/adjuncts/">Adjuncts</a></li>
+	<li><a href="https://www.cs.uic.edu/staff">Staff</a></li>
+	<li><a href="/Main/Students">Students</a></li>
+	<li><a href="/Main/Alumni?y=2015">Alumni</a></li>
+	</ul>
 </li>
-	<li class="cat-item cat-item-5"><a href="https://ampersand.honors.uic.edu/category/events/" >Events</a>
-</li>
-	<li class="cat-item cat-item-6"><a href="https://ampersand.honors.uic.edu/category/faculty/" >Faculty Focus</a>
-</li>
-	<li class="cat-item cat-item-65"><a href="https://ampersand.honors.uic.edu/category/features-3/" >Features</a>
-</li>
-	<li class="cat-item cat-item-7"><a href="https://ampersand.honors.uic.edu/category/orgs/" >Organizations</a>
-</li>
-	<li class="cat-item cat-item-8"><a href="https://ampersand.honors.uic.edu/category/parent-corner/" >Parent Corner</a>
-</li>
-	<li class="cat-item cat-item-62"><a href="https://ampersand.honors.uic.edu/category/research/" >Research</a>
-</li>
-	<li class="cat-item cat-item-59"><a href="https://ampersand.honors.uic.edu/category/research-capstones/" >Research/Capstones</a>
-</li>
-	<li class="cat-item cat-item-10"><a href="https://ampersand.honors.uic.edu/category/resources/" >Resources</a>
-</li>
-	<li class="cat-item cat-item-11"><a href="https://ampersand.honors.uic.edu/category/student-focus/" >Student Focus</a>
-</li>
-	<li class="cat-item cat-item-12"><a href="https://ampersand.honors.uic.edu/category/study-abroad/" >Study Abroad</a>
-</li>
-	<li class="cat-item cat-item-1"><a href="https://ampersand.honors.uic.edu/category/uncategorized/" >Uncategorized</a>
-</li>
-		</ul>
-</aside></div><!-- #secondary -->
-
-	</div><!-- #content -->
-
-	
-<div id="tertiary" class="widget-area footer-widget-area" role="complementary">
-		<div class="first footer-widgets">
-		<aside id="search-4" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://ampersand.honors.uic.edu/">
-				<label>
-					<span class="screen-reader-text">Search for:</span>
-					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
-				</label>
-				<input type="submit" class="search-submit" value="Search" />
-			</form></aside>	</div><!-- .first -->
-	
-	
-	</div><!-- #tertiary -->
-
-	<footer id="colophon" class="site-footer">
-
-				<div id="footer-navbar" class="footer-navbar">
-			<nav id="secondary-navigation" class="subordinate-navigation" role="navigation">
-				<ul id="menu-master-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-950"><a href="https://ampersand.honors.uic.edu/">Home</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951"><a href="https://ampersand.honors.uic.edu/about-us-1/">About Us</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-949"><a href="https://ampersand.honors.uic.edu/news/">News</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-952"><a href="https://ampersand.honors.uic.edu/category/blog-posts/">Blog</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-948"><a href="https://ampersand.honors.uic.edu/authors/">Contributors</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-947"><a href="https://ampersand.honors.uic.edu/past-issues/">Past Issues</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-946"><a href="https://ampersand.honors.uic.edu/suggestions/">Contact Us</a></li>
-</ul>			</nav><!-- #secondary-navigation -->
-		</div><!-- #footer-navbar -->
-		
-		<div class="site-info"  role="contentinfo">
-						<a href="http://wordpress.org/" title="A Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress</a>
-			<span class="sep"> | </span>
-			Theme: Motif by <a href="http://wordpress.com/themes/motif/" rel="designer">WordPress.com</a>.			<span class="sep"> | </span>
-			<a href="https://www.vpaa.uillinois.edu/resources/web_privacy">Web Privacy Notice</a>
-		</div><!-- .site-info -->
-
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<script type='text/javascript' src='https://ampersand.honors.uic.edu/wp-content/themes/motif/js/navigation.js?ver=20130922'></script>
-<script type='text/javascript' src='https://ampersand.honors.uic.edu/wp-content/themes/motif/js/skip-link-focus-fix.js?ver=20130922'></script>
-<script type='text/javascript' src='https://ampersand.honors.uic.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
-
-</body>
-</html>
+</ul>
+<br class="clearFloat"/>
+</div>
+</div></div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><table width="100%"><tr>
+<td>Copyright 2016 The Board of Trustees<br/> of the University of Illinois.<a href="webmaster@cs.uic.edu">webmaster@cs.uic.edu</a></td>
+<td><a href="https://wisest.uic.edu" target=_blank>WISEST<br />Helping Women Faculty Advance<br />Funded by NSF</a> </td><td>  <a href="http://engineering.uic.edu/bin/view/COE/CollegeGift" target="_top"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/gift.jpg" /></a> <a href="http://www1.cs.uic.edu/www/donate.php?audience=public" target="_top"> </a> </td><td> <a target="_blank" href="http://www.cs.uic.edu/CSOpenHouse"><img alt="" src="https://www.cs.uic.edu/pub/Main/WebHome/openHouseButton.gif" border="0" /></a> </td></tr></table></div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>
+<p />
