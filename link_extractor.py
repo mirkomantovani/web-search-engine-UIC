@@ -29,6 +29,18 @@ class LinkExtractor(HTMLParser):
                         # Stripping trailing slashes
                         url = url.rstrip('/')
                         url = url.strip()
+                        url = url.split('<')[0]
+                        spl = url.split(':')
+                        # if len(spl) > 2:
+                        #     print("")
+                        #     print(url)
+                        #     print("")
+                        #     print('link extractor spl len greater 2')
+                        #     print(spl[0])
+                        #     print(spl[1])
+                        #     print(spl[2])
+                        if len(spl) == 2 and spl[0] == 'http':
+                            url = spl[0]+'s:'+spl[1]
                         if url and self.restrict_to_domain and self.is_in_domain(url):
                             self.links.add(url)
 
