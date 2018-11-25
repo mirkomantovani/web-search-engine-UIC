@@ -15,7 +15,7 @@ N_PAGES = 10000
 start = time.time()
 
 print('Preprocessing '+str(N_PAGES)+' pages')
-tokenizer = CustomTokeni zer(N_PAGES)
+tokenizer = CustomTokenizer(N_PAGES)
 web_g = tokenizer.preprocess_documents()
 docs_tokens = tokenizer.get_docs_tokens()
 
