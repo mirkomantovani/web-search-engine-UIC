@@ -3,7 +3,7 @@ import math
 from collections import Counter
 import operator
 
-E_CONST = 0.5
+E_CONST = 0.1
 PAGE_RANK_MULTIPLIER = 20
 '''This E constant is the expansion multiplier, determines the weight of the expanded words in the query w.r.t
 the words of the query'''
